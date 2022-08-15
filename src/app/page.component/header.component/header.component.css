@@ -1,0 +1,48 @@
+header {
+    position: fixed;
+    width: 100%;
+    border-radius: 0 0 15px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    background-color: var(--dark-blue);
+    box-shadow: 5px 5px 10px #003177,
+             -5px -5px 10px #0047ab;
+}
+
+header nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+header nav a {
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 20px;
+    color: var(--text);
+    border-radius: 15px;
+    padding: 10px;
+    box-shadow:  5px 5px 10px #003177,
+             -5px -5px 10px #0047ab;
+    transition: 0.5s ease;
+}
+
+header nav a:hover {
+    color: var(--hover);
+    box-shadow: inset 5px 5px 10px #003177,
+            inset -5px -5px 10px #0047ab;
+}
+
+header nav a span {
+    margin-left: 7px;
+}
+
+header .title {
+    margin: 0 15px;
+    font-size: 25px;
+    font-weight: 700;
+}

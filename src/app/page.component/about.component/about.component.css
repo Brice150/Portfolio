@@ -1,0 +1,23 @@
+.about {
+    padding-top: 80px;
+    width: 100%;
+    height: 100vh;
+}
+
+@media only screen and (max-width: 558px) {
+    .about {
+        padding-top: 120px;
+    }
+}
+
+@media only screen and (max-width: 358px) {
+    .about {
+        padding-top: 160px;
+    }
+}
+
+@media only screen and (max-width: 332px) {
+    .about {
+        padding-top: 200px;
+    }
+}

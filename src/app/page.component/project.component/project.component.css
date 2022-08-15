@@ -1,0 +1,23 @@
+.project {
+    padding-top: 80px;
+    width: 100%;
+    height: 100vh;
+}
+
+@media only screen and (max-width: 558px) {
+    .project {
+        padding-top: 120px;
+    }
+}
+
+@media only screen and (max-width: 358px) {
+    .project {
+        padding-top: 160px;
+    }
+}
+
+@media only screen and (max-width: 332px) {
+    .project {
+        padding-top: 200px;
+    }
+}
