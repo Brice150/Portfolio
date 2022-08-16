@@ -1,3 +1,12 @@
 .container {
     background-color: var(--background);
 }
+
+.line {
+    background-color: var(--light-blue);
+    height: 1vh;
+    margin: auto 5%;
+    border-radius: 50px;
+    box-shadow:  5px 5px 10px #a4a4a4,
+             -5px -5px 10px #c4c4c4;
+}

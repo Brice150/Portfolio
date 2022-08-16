@@ -4,9 +4,98 @@
     height: 100vh;
 }
 
+.container {
+    background-color: var(--background);
+    margin: auto 5%;
+    height: 90vh;
+    border-radius: 16px;
+    box-shadow:  8px 8px 16px #909090,
+             -8px -8px 16px #d8d8d8;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.container h1 {
+    font-size: 25px;
+    font-weight: 800;
+    color: black;
+    padding-top: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.container h1 span {
+    color: var(--dark-blue);
+}
+
+.container form {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    width: 80%;
+    max-width: 1200px;
+}
+
+.container form .form-input {
+    margin-bottom: 80px;
+    width: 100%;
+    background: none;
+    color: black;
+    font-size: 17px;
+    font-weight: 700;
+    border-radius: 7px;
+    box-shadow:  3px 3px 7px #a4a4a4,
+             -3px -3px 7px #c4c4c4;
+    border: none;
+    padding: 5px;
+}
+
+.container form .form-input::placeholder {
+    color: var(--dark-blue);
+}
+
+.container form .form-input:focus {
+    box-shadow: inset 3px 3px 7px #a4a4a4,
+            inset -3px -3px 7px #c4c4c4;
+    outline: none;
+}
+
+.container form textarea {
+    resize: none;
+    height: 200px;
+}
+
+.container form .btn {
+    background: none;
+    border: none;
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--text);
+    background-color: var(--light-blue);
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow:  3px 3px 7px #a4a4a4,
+             -3px -3px 7px #c4c4c4;
+    cursor: pointer;
+    transition: 0.5s ease;
+}
+
+.container form .btn:hover {
+    box-shadow: inset 3px 3px 7px #a4a4a4,
+            inset -3px -3px 7px #c4c4c4;
+    color: black;
+}
+
 @media only screen and (max-width: 558px) {
     .contact {
         padding-top: 120px;
+    }
+
+    .container {
+        height: 85vh;
     }
 }
 
@@ -14,10 +103,18 @@
     .contact {
         padding-top: 160px;
     }
+
+    .container {
+        height: 80vh;
+    }
 }
 
 @media only screen and (max-width: 332px) {
     .contact {
         padding-top: 200px;
+    }
+
+    .container {
+        height: 75vh;
     }
 }

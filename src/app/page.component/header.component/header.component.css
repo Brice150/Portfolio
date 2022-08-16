@@ -26,15 +26,15 @@ header nav a {
     color: var(--text);
     border-radius: 15px;
     padding: 10px;
-    box-shadow:  5px 5px 10px #003177,
-             -5px -5px 10px #0047ab;
+    box-shadow:  8px 8px 15px #003074,
+             -8px -8px 15px #0048ae;
     transition: 0.5s ease;
 }
 
 header nav a:hover {
     color: var(--hover);
-    box-shadow: inset 5px 5px 10px #003177,
-            inset -5px -5px 10px #0047ab;
+    box-shadow: inset 8px 8px 15px #003074,
+            inset -8px -8px 15px #0048ae;
 }
 
 header nav a span {
@@ -45,4 +45,9 @@ header .title {
     margin: 0 15px;
     font-size: 25px;
     font-weight: 700;
+    transition: 0.5s ease;
+}
+
+header .title:hover {
+    color: var(--text);
 }

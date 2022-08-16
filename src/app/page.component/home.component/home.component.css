@@ -4,9 +4,38 @@
     height: 100vh;
 }
 
+.container {
+    background-color: var(--background);
+    margin: auto 5%;
+    height: 90vh;
+    border-radius: 16px;
+    box-shadow:  8px 8px 16px #909090,
+             -8px -8px 16px #d8d8d8;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.container h1 {
+    font-size: 25px;
+    font-weight: 800;
+    color: black;
+    padding-top: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.container h1 span {
+    color: var(--dark-blue);
+}
+
 @media only screen and (max-width: 558px) {
     .home {
         padding-top: 120px;
+    }
+
+    .container {
+        height: 85vh;
     }
 }
 
@@ -14,10 +43,18 @@
     .home {
         padding-top: 160px;
     }
+
+    .container {
+        height: 80vh;
+    }
 }
 
 @media only screen and (max-width: 332px) {
     .home {
         padding-top: 200px;
+    }
+
+    .container {
+        height: 75vh;
     }
 }
