@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-contact',
@@ -8,7 +9,7 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./contact.component.css']
 })
 export class AppComponentContact {
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private snackBar: MatSnackBar) {}
 
   onSubmit(contactForm: NgForm) {
     if (contactForm.valid) {
@@ -18,8 +19,8 @@ export class AppComponentContact {
         { name: email.name, replyto: email.email, subject: email.subject, message: email.message },
         { 'headers': headers }).subscribe(
           (response: any) => {
-            console.log(response);
             contactForm.reset();
+            this.snackBar.open("Message sent", "Dismiss", {duration: 2000});
           }
         );
     }
