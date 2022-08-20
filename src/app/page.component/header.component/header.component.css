@@ -9,6 +9,7 @@ header {
     background-color: var(--dark-blue);
     box-shadow: 5px 5px 10px #003177,
              -5px -5px 10px #0047ab;
+    z-index: 10;
 }
 
 header nav {

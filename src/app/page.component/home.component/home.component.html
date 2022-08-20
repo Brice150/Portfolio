@@ -2,7 +2,22 @@
     <div class="container">
         <h1><span>Home</span></h1>
         <div class="content">
-            <a href="./assets/files/CV.pdf" download="CV.pdf" title="CV" (click)="download()" class="btn">Download CV</a>
+            <div class="presentation">
+                <img [src]="imagePath + 'Photo_CV.jpg'" alt="Photo_CV">
+                <div class="titles">
+                    <h2>Hi, I'm Brice</h2>
+                    <h3>Full-Stack Developer</h3>
+                    <p>With a french aerospace engineering degree,</p>
+                    <p>I currently participate in security and defence data recovery at Sopra Steria.</p>
+                    <p>I also create web applications on my freetime.</p>
+                </div>
+            </div>
+            <div class="links">
+                <a href="https://www.linkedin.com/in/brice-lecomte/" target="_blank" title="LinkedIn"><i class='bx bxl-linkedin-square' ></i></a>
+                <a href="https://github.com/Brice150" target="_blank" title="GitHub"><i class='bx bxl-github'></i></a>
+                <a (click)="toContact()" title="Contact Me" class="message"><i class='bx bxs-message'></i></a>
+            </div>
+            <a href="./assets/files/CV.pdf" download="CV.pdf" title="Download CV" (click)="download()" class="btn">Download CV</a>
         </div>
     </div>
 </div>
