@@ -29,6 +29,36 @@
     color: var(--dark-blue);
 }
 
+.container .content {
+    width: 100%;
+    height: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container .content .btn {
+    text-decoration: none;
+    background: none;
+    border: none;
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--text);
+    background-color: var(--light-blue);
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow:  3px 3px 7px #a4a4a4,
+             -3px -3px 7px #c4c4c4;
+    cursor: pointer;
+    transition: 0.5s ease;
+}
+
+.container .content .btn:hover {
+    box-shadow: inset 3px 3px 7px #a4a4a4,
+            inset -3px -3px 7px #c4c4c4;
+    color: black;
+}
+
 @media only screen and (max-width: 558px) {
     .home {
         padding-top: 120px;
