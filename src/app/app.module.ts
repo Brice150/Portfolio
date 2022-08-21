@@ -9,6 +9,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatSnackBarModule }from '@angular/material/snack-bar';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatExpansionModule } from '@angular/material/expansion';
+import { MatStepperModule } from '@angular/material/stepper';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   imports: [
@@ -20,7 +22,9 @@ import { MatExpansionModule } from '@angular/material/expansion';
     HttpClientModule,
     MatSnackBarModule,
     MatDialogModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatStepperModule,
+    MatIconModule
   ],
   declarations: [AppComponent, routingComponents],
   bootstrap: [AppComponent]

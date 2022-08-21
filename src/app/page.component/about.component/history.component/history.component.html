@@ -1,0 +1,62 @@
+<mat-stepper #stepper [labelPosition]="'bottom'">
+  <mat-step state="edit">
+    <ng-template matStepLabel>
+      <span [ngStyle]="{'color': 'white'}">2017-2020</span>
+    </ng-template>
+    <div class="container">
+      <div class="picture">
+        <img [src]="imagePath + 'ensma.png'" alt="ISAE-ENSMA" class="ensma">
+      </div>
+      <div class="text">
+        <h4>ISAE-ENSMA</h4>
+        <p>Engineering Diploma and Master's Degree in Aerospace</p>
+      </div>
+    </div>
+  </mat-step>
+  <mat-step state="edit">
+    <ng-template matStepLabel>
+      <span [ngStyle]="{'color': 'white'}">2021</span>
+    </ng-template>
+    <div class="container">
+      <div class="picture">
+        <img [src]="imagePath + 'm2i.png'" alt="M2i" class="m2i">
+      </div>
+      <div class="text">
+        <h4>M2i Certificate</h4>
+        <p>Java Web Application Training</p>
+      </div>
+    </div>
+  </mat-step>
+  <mat-step state="edit">
+    <ng-template matStepLabel>
+      <span [ngStyle]="{'color': 'white'}">2021-Today</span>
+    </ng-template>
+    <div class="container">
+      <div class="picture">
+        <img [src]="imagePath + 'plart.png'" alt="PLART" class="plart">
+      </div>
+      <div class="text">
+        <h4>Full-Stack Developer</h4>
+        <p>3D Printing Web Application Project</p>
+      </div>
+    </div>
+  </mat-step>
+  <mat-step state="edit">
+    <ng-template matStepLabel>
+      <span [ngStyle]="{'color': 'white'}">2021-Today</span>
+    </ng-template>
+    <div class="container">
+      <div class="picture">
+        <img [src]="imagePath + 'sopra.jpg'" alt="Sopra Steria" class="sopra">
+      </div>
+      <div class="text">
+        <h4>Web Application Engineer</h4>
+        <p>Sopra Steria, Rennes France</p>
+      </div>
+    </div>
+  </mat-step>
+    
+  <ng-template matStepperIcon="edit">
+    <mat-icon>timeline</mat-icon>
+  </ng-template>
+</mat-stepper>

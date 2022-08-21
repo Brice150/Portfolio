@@ -1,0 +1,144 @@
+mat-accordion {
+    width: 90%;
+    box-shadow:  8px 8px 16px #909090,
+             -8px -8px 16px #d8d8d8;
+    
+}
+
+mat-accordion mat-expansion-panel {
+    background-color: var(--background);
+}
+
+mat-accordion mat-expansion-panel mat-panel-title {
+    color: var(--text);
+    font-size: 18px;
+    font-weight: 600;
+    padding: 3px 0;
+    display: flex;
+    align-items: center;
+}
+
+mat-accordion mat-expansion-panel mat-panel-title i {
+    margin-right: 10px;
+    color: var(--dark-blue);
+}
+
+::ng-deep .mat-expansion-indicator:after {
+    color: var(--dark-blue);
+}
+
+.skill {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.skill p {
+    width: 150px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.skill .bar {
+    margin-left: 10px;
+    margin-bottom: 10px;
+    width: 80%;
+    background-color: var(--background);
+    display: block;
+    border: 1px solid 8px var(--background);
+    border-radius: 1em;
+    overflow: hidden;
+    height: 1.8em;
+    box-shadow: inset 3px 3px 5px #bebebe,
+            inset -3px -3px 5px #ffffff;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.skill .bar .prog {
+    height: 75%;
+    float: left;
+    transition: 1s;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    margin: 0 0.3em;
+    border-radius: 1em;
+    animation: fill 1s ease-in;
+}
+
+.skill .bar .prog.angular {
+    width: 85%;
+    background: linear-gradient(90deg, var(--dark-blue), var(--light-blue));
+}
+
+.skill .bar .prog.html {
+    width: 90%;
+    background: linear-gradient(90deg, var(--dark-blue), var(--light-blue));
+}
+
+.skill .bar .prog.js {
+    width: 70%;
+    background: linear-gradient(90deg, var(--dark-blue), var(--light-blue));
+}
+
+.skill .bar .prog.spring {
+    width: 80%;
+    background: linear-gradient(90deg, red, rgb(255, 125, 125));
+}
+
+.skill .bar .prog.java {
+    width: 70%;
+    background: linear-gradient(90deg, red, rgb(255, 125, 125));
+}
+
+.skill .bar .prog.postgres {
+    width: 90%;
+    background: linear-gradient(90deg, red, rgb(255, 125, 125));
+}
+
+.skill .bar .prog.vscode {
+    width: 85%;
+    background: linear-gradient(90deg, green, rgb(125, 255, 125));
+}
+
+.skill .bar .prog.talend {
+    width: 90%;
+    background: linear-gradient(90deg, green, rgb(125, 255, 125));
+}
+
+.skill .bar .prog.git {
+    width: 70%;
+    background: linear-gradient(90deg, green, rgb(125, 255, 125));
+}
+
+.skill .bar .prog.team {
+    width: 90%;
+    background: linear-gradient(90deg, orange, rgb(255, 205, 125));
+}
+
+.skill .bar .prog.decision {
+    width: 80%;
+    background: linear-gradient(90deg, orange, rgb(255, 205, 125));
+}
+
+.skill .bar .prog.adapt {
+    width: 85%;
+    background: linear-gradient(90deg, orange, rgb(255, 205, 125));
+}
+
+.skill .bar .prog.english {
+    width: 85%;
+    background: linear-gradient(90deg, purple, rgb(255, 125, 255));
+}
+
+.skill .bar .prog.french {
+    width: 99%;
+    background: linear-gradient(90deg, purple, rgb(255, 125, 255));
+}
+
+@keyframes fill {
+    0% { width: 0;}
+}

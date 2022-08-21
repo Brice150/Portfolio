@@ -1,0 +1,61 @@
+mat-stepper {
+    background-color: var(--background);
+    margin-top: 20px;
+}
+
+mat-stepper .container {
+    display: flex;
+    align-items: center;
+}
+
+mat-stepper .container .picture {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+mat-stepper .container .ensma {
+    width: 80px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+mat-stepper .container .m2i {
+    width: 45px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+mat-stepper .container .plart {
+    width: 100px;
+    height: auto;
+    margin-bottom: 30px;
+}
+
+mat-stepper .container .sopra {
+    width: 45px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+mat-stepper .container h4 {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--dark-blue);
+}
+
+mat-stepper .container p {
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--text);
+}
+
+span {
+    font-weight: 600;
+}
+
+::ng-deep .mat-step-header .mat-step-icon {
+    background-color: var(--dark-blue); 
+ }

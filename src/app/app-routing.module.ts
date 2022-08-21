@@ -3,6 +3,8 @@ import { ExtraOptions, RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component/app.component';
 import { AppComponentCard } from './card.component/card.component';
 import { AppComponentAbout } from './page.component/about.component/about.component';
+import { AppComponentHistory } from './page.component/about.component/history.component/history.component';
+import { AppComponentSkills } from './page.component/about.component/skills.component/skills.component';
 import { AppComponentContact } from './page.component/contact.component/contact.component';
 import { AppComponentHeader } from './page.component/header.component/header.component';
 import { AppComponentHome } from './page.component/home.component/home.component';
@@ -33,4 +35,6 @@ export const routingComponents = [
   AppComponentHome,
   AppComponentAbout,
   AppComponentContact,
-  AppComponentProject]
+  AppComponentProject,
+  AppComponentSkills,
+  AppComponentHistory]
