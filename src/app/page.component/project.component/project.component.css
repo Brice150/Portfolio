@@ -12,6 +12,7 @@
     display: flex;
     align-items: center;
     flex-direction: column;
+    border: 7px solid var(--light-blue);
 }
 
 .container .content {
@@ -36,6 +37,7 @@
 }
 
 .container .btn {
+    margin-bottom: 20px;
     margin-top: 30px;
     text-decoration: none;
     background: none;
