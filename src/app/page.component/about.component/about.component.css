@@ -52,28 +52,16 @@ app-skills, app-history {
     .about {
         padding-top: 120px;
     }
-
-    .container {
-        height: 85vh;
-    }
 }
 
 @media only screen and (max-width: 358px) {
     .about {
         padding-top: 160px;
     }
-
-    .container {
-        height: 80vh;
-    }
 }
 
 @media only screen and (max-width: 332px) {
     .about {
         padding-top: 200px;
-    }
-
-    .container {
-        height: 75vh;
     }
 }

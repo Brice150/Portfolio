@@ -1,6 +1,6 @@
 <div class="container">
-    <div *ngFor="let image of images; let index = index" class="pictures">
-        <div class="image">
+    <div class="pictures">
+        <div *ngFor="let image of images; let index = index" class="image">
             <img [src]="imagePath + image">
             <p>{{texts[index]}}</p>
         </div>

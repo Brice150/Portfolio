@@ -133,10 +133,6 @@
         padding-top: 120px;
     }
 
-    .container {
-        height: 85vh;
-    }
-
     .container .content .presentation img {
         width: 200px;
     }
@@ -161,10 +157,6 @@
         padding-top: 160px;
     }
 
-    .container {
-        height: 80vh;
-    }
-
     .container .content .presentation img {
         width: 150px;
     }
@@ -177,10 +169,6 @@
 @media only screen and (max-width: 332px) {
     .home {
         padding-top: 200px;
-    }
-
-    .container {
-        height: 75vh;
     }
 
     .container .content .presentation .titles h3{

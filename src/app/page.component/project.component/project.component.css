@@ -64,28 +64,16 @@
     .project {
         padding-top: 120px;
     }
-
-    .container {
-        height: 85vh;
-    }
 }
 
 @media only screen and (max-width: 358px) {
     .project {
         padding-top: 160px;
     }
-
-    .container {
-        height: 80vh;
-    }
 }
 
 @media only screen and (max-width: 332px) {
     .project {
         padding-top: 200px;
-    }
-
-    .container {
-        height: 75vh;
     }
 }

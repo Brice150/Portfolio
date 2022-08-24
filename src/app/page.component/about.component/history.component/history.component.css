@@ -6,6 +6,7 @@ mat-stepper {
 mat-stepper .container {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 mat-stepper .container .picture {
@@ -14,6 +15,10 @@ mat-stepper .container .picture {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+mat-stepper .container .text {
+    width: 80%;
 }
 
 mat-stepper .container .ensma {
@@ -59,3 +64,10 @@ span {
 ::ng-deep .mat-step-header .mat-step-icon {
     background-color: var(--dark-blue); 
  }
+
+ @media only screen and (max-width: 692px) {
+    .container {
+        justify-content: center;
+        text-align: center;
+    }
+}

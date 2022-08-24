@@ -94,28 +94,16 @@
     .contact {
         padding-top: 120px;
     }
-
-    .container {
-        height: 85vh;
-    }
 }
 
 @media only screen and (max-width: 358px) {
     .contact {
         padding-top: 160px;
     }
-
-    .container {
-        height: 80vh;
-    }
 }
 
 @media only screen and (max-width: 332px) {
     .contact {
         padding-top: 200px;
-    }
-
-    .container {
-        height: 75vh;
     }
 }
