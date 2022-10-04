@@ -23,6 +23,12 @@
     height: 100%;
 }
 
+.container .content video {
+    cursor: pointer;
+    width: 90%;
+    border-radius: 16px;
+}
+
 .container h1 {
     font-size: 25px;
     font-weight: 800;

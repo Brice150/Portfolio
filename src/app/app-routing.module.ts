@@ -8,10 +8,7 @@ import { AppComponentSkills } from './page.component/about.component/skills.comp
 import { AppComponentContact } from './page.component/contact.component/contact.component';
 import { AppComponentHeader } from './page.component/header.component/header.component';
 import { AppComponentHome } from './page.component/home.component/home.component';
-import { AppComponentPage } from './page.component/page.component';
-import { AppComponentDialog } from './page.component/project.component/dialog.component/dialog.component';
-import { AppComponentItems } from './page.component/project.component/items.component/items.component';
-import { AppComponentProject } from './page.component/project.component/project.component';
+import { AppComponentPage } from './page.component/page.component';import { AppComponentProject } from './page.component/project.component/project.component';
 
 const routes: Routes = [
   {path: 'page', component: AppComponentPage},
@@ -39,6 +36,4 @@ export const routingComponents = [
   AppComponentContact,
   AppComponentProject,
   AppComponentSkills,
-  AppComponentHistory,
-  AppComponentItems,
-  AppComponentDialog]
+  AppComponentHistory]
