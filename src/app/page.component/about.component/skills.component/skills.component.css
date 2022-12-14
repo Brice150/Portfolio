@@ -10,7 +10,7 @@ mat-accordion mat-expansion-panel {
 }
 
 mat-accordion mat-expansion-panel mat-panel-title {
-    color: var(--text);
+    color: var(--dark-blue);
     font-size: 18px;
     font-weight: 600;
     padding: 3px 0;

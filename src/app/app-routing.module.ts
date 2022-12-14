@@ -9,10 +9,14 @@ import { AppComponentContact } from './page.component/contact.component/contact.
 import { AppComponentHeader } from './page.component/header.component/header.component';
 import { AppComponentHome } from './page.component/home.component/home.component';
 import { AppComponentPage } from './page.component/page.component';import { AppComponentProject } from './page.component/project.component/project.component';
+import { AppComponentPickme } from './pickme.component/pickme.component';
+import { AppComponentPlart } from './plart.component/plart.component';
 
 const routes: Routes = [
   {path: 'page', component: AppComponentPage},
   {path: 'card', component: AppComponentCard},
+  {path: 'plart', component: AppComponentPlart},
+  {path: 'pickme', component: AppComponentPickme},
   {path: '', redirectTo: '/card', pathMatch: 'full'},
 ];
 
@@ -36,4 +40,6 @@ export const routingComponents = [
   AppComponentContact,
   AppComponentProject,
   AppComponentSkills,
-  AppComponentHistory]
+  AppComponentHistory,
+  AppComponentPlart,
+  AppComponentPickme]

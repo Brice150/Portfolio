@@ -1,9 +1,35 @@
 <div class="project" id="project">
     <div class="container">
-        <h1><span>Full-Stack</span> Project</h1>
+        <h1><span>Full-Stack</span> Projects</h1>
         <div class="content">
-            <video [src]="videoPath+'PLART.mp4'" autoplay loop muted controls></video>
-            <a href="https://github.com/Brice150/PLART" target="_blank" title="Go to code" class="btn">Go to code</a>
+            <a class="project-content" title="PLART" routerLink="/plart">
+                <div class="image"><img [src]="imagePath + 'projects/PLART.png'" alt="PLART"></div>
+                <div class="description">
+                    <h2>PLART</h2>
+                    <h3>A 3D printing web application</h3>
+                    <ul>
+                        <span>Main features :</span>
+                        <li>Safely login</li>
+                        <li>Upload/download objects</li>
+                        <li>Send a message to a user</li>
+                        <li>Admin page</li>
+                    </ul> 
+                </div> 
+            </a>
+            <a class="project-content" title="PICKME">
+                <div class="image"><img [src]="imagePath + 'projects/PICKME.png'" alt="PICKME"></div>
+                <div class="description">
+                    <h2>PICK ME</h2>
+                    <h3>A dating application</h3>
+                    <ul>
+                        <span>Main features :</span>
+                        <li>Safely login</li>
+                        <li>Select attractive users and match</li>
+                        <li>Send a message to a match</li>
+                        <li>Admin page</li>
+                    </ul>
+                </div>
+            </a>
         </div>
     </div>
 </div>
