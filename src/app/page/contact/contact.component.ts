@@ -19,7 +19,7 @@ export class ContactComponent {
         { name: email.name, replyto: email.email, subject: email.subject, message: email.message },
         { 'headers': headers }).subscribe(
           (response: any) => {
-            contactForm.reset();
+            contactForm.resetForm();
             this.snackBar.open("Message sent", "Dismiss", {duration: 2000});
           }
         );
