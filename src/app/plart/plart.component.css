@@ -124,18 +124,20 @@ header .title:hover {
     font-size: 22px;
 }
 
+.container .content .card ul {
+    padding-left: 20px;
+}
+
 .container .content .card ul span{
     font-weight: 600;
-    font-size: 15px;
 }
 
 .container .content .card ul li {
-    font-size: 15px;
     font-weight: 400;
 }
 
 .container .content .card .back-content ul {
-    margin-top: 30px;
+    margin-top: 10px;
 }
 
 .container video {

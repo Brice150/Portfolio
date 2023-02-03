@@ -48,20 +48,8 @@ app-skills, app-history {
     width: 90%;
 }
 
-@media only screen and (max-width: 558px) {
+@media only screen and (max-width: 650px) {
     .about {
-        padding-top: 120px;
-    }
-}
-
-@media only screen and (max-width: 358px) {
-    .about {
-        padding-top: 160px;
-    }
-}
-
-@media only screen and (max-width: 332px) {
-    .about {
-        padding-top: 200px;
+        padding-top: 180px;
     }
 }
