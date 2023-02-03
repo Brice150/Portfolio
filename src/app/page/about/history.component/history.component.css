@@ -33,10 +33,10 @@ mat-stepper .container .m2i {
     margin-bottom: 10px;
 }
 
-mat-stepper .container .plart {
-    width: 100px;
+mat-stepper .container .web {
+    width: 45px;
     height: auto;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
 }
 
 mat-stepper .container .sopra {
