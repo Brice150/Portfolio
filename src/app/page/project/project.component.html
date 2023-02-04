@@ -2,42 +2,28 @@
     <div class="container">
         <h1><span>Full-Stack</span> Projects</h1>
         <div class="content">
-            <div class="project-content">
-                <div class="image"><img [src]="imagePath + 'projects/PLART.png'" alt="PLART"></div>
-                <div class="description">
-                    <div class="title">
-                        <img [src]="imagePath + 'logos/plart.png'" alt="PLART">
-                        <h2>PLART</h2>
+            <swiper [config]="config">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide" *ngFor="let project of projects">
+                        <div class="inner-content">
+                            <div class="image"><img [src]="imagePath + project.image" [alt]="project.image"></div>
+                            <div class="description">
+                                <div class="title">
+                                    <img [src]="imagePath + project.logo" alt="project.logo">
+                                    <h2>{{project.name}}</h2>
+                                </div>
+                                <h3>{{project.title}}</h3>
+                                <ul>
+                                    <span>Main features :</span>
+                                    <li *ngFor="let feature of project.features">{{feature}}</li>
+                                </ul> 
+                            </div> 
+                            <a title="More Info" [routerLink]="project.link" class="btn">More Info</a>
+                        </div>
                     </div>
-                    <h3>3D Printing Web Application</h3>
-                    <ul>
-                        <span>Main features :</span>
-                        <li>Safely login</li>
-                        <li>Upload/download objects</li>
-                        <li>Send a message to a user</li>
-                        <li>Admin page</li>
-                    </ul> 
-                </div> 
-                <a title="More Info" routerLink="/plart" class="btn">More Info</a>
-            </div>
-            <div class="project-content">
-                <div class="image"><img [src]="imagePath + 'projects/PICKME.png'" alt="PICK ME"></div>
-                <div class="description">
-                    <div class="title">
-                        <img [src]="imagePath + 'logos/pickme.png'" alt="PICK ME">
-                        <h2>PICK ME</h2>
-                    </div>
-                    <h3>Dating Web Application</h3>
-                    <ul>
-                        <span>Main features :</span>
-                        <li>Safely login</li>
-                        <li>Select attractive users and match</li>
-                        <li>Send a message to a match</li>
-                        <li>Admin page</li>
-                    </ul>
                 </div>
-                <a title="More Info" routerLink="/pickme" class="btn">More Info</a>
-            </div>
+                <div class="swiper-pagination"></div>
+            </swiper>
         </div>
     </div>
 </div>
