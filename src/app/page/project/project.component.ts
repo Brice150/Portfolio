@@ -52,19 +52,25 @@ export class ProjectComponent {
     pagination: { 
       el: '.swiper-pagination', 
       clickable: true, 
-      dynamicBullets: false
-    },
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev'
+      dynamicBullets: true
     },
     spaceBetween: 80,
     breakpoints: {
       0: {
-        slidesPerView: 1
+        slidesPerView: 1,
+        loop: true
       },
       700: {
-        slidesPerView: 2
+        slidesPerView: 2,
+        loop: true
+      },
+      1300: {
+        slidesPerView: 3,
+        loop: false
+      },
+      1850: {
+        slidesPerView: 4,
+        loop: false
       }
     }
   };
