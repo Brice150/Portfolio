@@ -8,5 +8,5 @@ import { environment } from 'src/environments/environment';
 })
 export class PickmeComponent {
   videoPath: string = environment.videoPath;
-  imagePath: string = environment.imagePath;
+  imagePath: string = environment.imagePath + "/projects/pickme/";
 }

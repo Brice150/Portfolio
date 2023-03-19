@@ -4,7 +4,30 @@
   
 # Portfolio
 
-This Angular application is my portfolio.
+Frontend : Angular CLI
+
+## Pages Features
+
+### Card
+
+- Tilting visit card
+
+### Home
+
+- General description and links to know more about me
+
+### About
+
+- View information of my skills and background
+
+### Project
+
+- View my Full-Stack projects in a swiper
+- Link to more information about the project
+
+### Contact
+
+- Contact form with validators that sends me an email of your message
 
 ## Run Locally
 

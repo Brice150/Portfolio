@@ -8,4 +8,5 @@ import { environment } from 'src/environments/environment';
 })
 export class PlartComponent {
   videoPath: string = environment.videoPath;
+  imagePath: string = environment.imagePath + "/projects/plart/";
 }

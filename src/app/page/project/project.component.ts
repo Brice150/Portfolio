@@ -17,7 +17,7 @@ export class ProjectComponent {
       name: 'PLART',
       title: '3D Printing Web Application',
       logo: 'logos/plart.png',
-      image: 'projects/PLART.png',
+      image: 'projects/plart/PLART.png',
       features: [
         'Safely login',
         'Upload/download objects',
@@ -30,7 +30,7 @@ export class ProjectComponent {
       name: 'PICK ME',
       title: 'Dating Web Application',
       logo: 'logos/pickme.png',
-      image: 'projects/PICKME.png',
+      image: 'projects/pickme/PICKME.png',
       features: [
         'Safely login',
         'Select attractive users and match',

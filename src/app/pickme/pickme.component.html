@@ -9,46 +9,102 @@
 
 <div class="container">
     <div class="content">
-        <div class="card-container">
-            <div class="card">
-                <div class="front-content">
-                    <h2>Pages Features</h2>
+        <div class="picture-container">
+            <div class="desktop">
+                <div class="connect">
+                    <span>Connect Page</span>
+                    <div class="pictures">
+                        <img [src]="imagePath + 'desktop/Login.png'" alt="PICKME">
+                    </div>
                     <ul>
-                        <span>Connect</span>
                         <li>Register with email confirmation</li>
                         <li>Login with form control and failure animation</li>
                         <li>Logout is available on any page once logged in</li>
-                        <br>
-                        <span>Select</span>
-                        <li>View people selected for you</li>
-                        <li>See more info about a profile</li>
-                        <li>Like someone</li>
-                        <br>
-                        <span>Like</span>
-                        <li>View people that liked you</li>
-                        <li>See more info about a profile</li>
-                        <li>Like someone back</li>
                     </ul>
                 </div>
-                <div class="back-content">
+                <div class="select">
+                    <span>Select Page</span>
+                    <div class="pictures">
+                        <img [src]="imagePath + 'PICKME.png'" alt="PICKME">
+                    </div>
                     <ul>
-                        <span>Match</span>
-                        <li>View matches</li>
-                        <li>Unlike someone</li>
-                        <li>See more info about a profile</li>
-                        <li>Send a message to someone</li>
-                        <li>Update or delete a message</li>
-                        <br>
-                        <span>Admin</span>
+                        <li>View profiles that are similar to yours</li>
+                        <li>Select profile age you want to see</li>
+                        <li>Like a profile</li>
+                        <li>View more information about a profile</li>
+                    </ul>
+                </div>
+                <div class="profile">
+                    <span>Profile Page</span>
+                    <div class="pictures">
+                        <img [src]="imagePath + 'desktop/Profile1.png'" alt="PICKME">
+                        <img [src]="imagePath + 'desktop/Profile2.png'" alt="PICKME">
+                    </div>
+                    <ul>
+                        <li>Modify your profile</li>
+                        <li>Add pictures and select main profile picture</li>
+                        <li>Delete your account (needs confirmation)</li>
+                    </ul>
+                </div>
+                <div class="like">
+                    <span>Like Page</span>
+                    <div class="pictures">
+                        <img [src]="imagePath + 'desktop/Like.png'" alt="PICKME">
+                    </div>
+                    <ul>
+                        <li>View profiles that liked you</li>
+                        <li>Like a profile</li>
+                        <li>View more information about a profile</li>
+                    </ul>
+                </div>
+                <div class="match">
+                    <span>Match Page</span>
+                    <div class="pictures">
+                        <img [src]="imagePath + 'desktop/Match.png'" alt="PICKME">
+                    </div>
+                    <ul>
+                        <li>View profiles that matched with you</li>
+                        <li>Search a user</li>
+                        <li>Dislike a profile</li>
+                        <li>View more information about a profile</li>
+                        <li>Send a message, update or delete it</li>
+                    </ul>
+                </div>
+                <div class="admin">
+                    <span>Admin Page</span>
+                    <div class="pictures">
+                        <img [src]="imagePath + 'desktop/Admin-user.png'" alt="PICKME">
+                        <img [src]="imagePath + 'desktop/Admin-message.png'" alt="PICKME">
+                    </div>
+                    <ul>
                         <li>Admin role needed to view this page</li>
                         <li>Search user or message</li>
-                        <li>See all users profile or messages</li>
+                        <li>See all users or messages</li>
+                        <li>View more information about a profile</li>
                         <li>Delete user or message</li>
                     </ul>
                 </div>
+                <div class="more-info">
+                    <span>More Info Page</span>
+                    <div class="pictures">
+                        <img [src]="imagePath + 'desktop/More-info1.png'" alt="PICKME">
+                        <img [src]="imagePath + 'desktop/More-info2.png'" alt="PICKME">
+                    </div>
+                </div>               
+            </div>
+            <div class="phone">
+                <span>Responsive design</span>
+                <div class="pictures">
+                    <img [src]="imagePath + 'phone/Admin.png'" alt="PICKME">
+                    <img [src]="imagePath + 'phone/Match.png'" alt="PICKME">
+                    <img [src]="imagePath + 'phone/Select.png'" alt="PICKME">
+                </div>
             </div>
         </div>
-        <img [src]="imagePath + 'projects/workInProgress.png'" alt="Work in progress">
+        <div class="video-container">
+            <span>Demo Video</span>
+            <video [src]="videoPath+'PICKME.mp4'" autoplay loop muted controls></video>
+        </div>
     </div>
     <a href="https://github.com/Brice150/PICKME" target="_blank" title="View Code" class="btn">View Code</a>
 </div>
