@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { MatSnackBar } from '@angular/material/snack-bar';
 import { environment } from 'src/environments/environment';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-home',
@@ -10,13 +10,15 @@ import { environment } from 'src/environments/environment';
 export class HomeComponent {
   imagePath: string = environment.imagePath;
 
-  constructor(private snackBar: MatSnackBar) {}
+  constructor(private toastr: ToastrService) {}
 
   toContact() {
     document.getElementById("contact")?.scrollIntoView({behavior:"smooth"});
   }
 
   download() {
-    this.snackBar.open("CV downloaded", "Dismiss", {duration: 2000});
+    this.toastr.success("CV downloaded", "File", {
+      positionClass: "toast-bottom-center" 
+    });
   }
 }
