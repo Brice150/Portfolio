@@ -9,33 +9,52 @@
 
 <div class="container">
     <div class="content">
-        <div class="picture-container">
-            <div class="desktop">
-                <div class="connect">
-                    <span>Connect Page</span>
-                    <div class="pictures">
-                        <img [src]="imagePath + 'desktop/Login.png'" alt="PICKME">
-                    </div>
-                    <ul>
-                        <li>Register with email confirmation</li>
-                        <li>Login with form control and failure animation</li>
-                        <li>Logout is available on any page once logged in</li>
-                    </ul>
+        <mat-accordion>
+            <mat-expansion-panel expanded>
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  <i class='bx bx-laptop'></i>
+                  <span>Connect Page</span>
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+              <div class="expansion-content">
+                <div class="pictures">
+                    <img class="larger" [src]="imagePath + 'desktop/Login.png'" alt="PICKME">
                 </div>
-                <div class="select">
-                    <span>Select Page</span>
-                    <div class="pictures">
-                        <img [src]="imagePath + 'PICKME.png'" alt="PICKME">
-                    </div>
-                    <ul>
-                        <li>View profiles that are similar to yours</li>
-                        <li>Select profile age you want to see</li>
-                        <li>Like a profile</li>
-                        <li>View more information about a profile</li>
-                    </ul>
+                <ul>
+                    <li>Register with email confirmation</li>
+                    <li>Login with form control and failure animation</li>
+                    <li>Logout is available on any page once logged in</li>
+                </ul>
+              </div>
+            </mat-expansion-panel>
+            <mat-expansion-panel>
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  <i class='bx bx-search'></i>
+                  <span>Select Page</span>
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+              <div class="expansion-content">
+                <div class="pictures">
+                    <img class="larger" [src]="imagePath + 'PICKME.png'" alt="PICKME">
                 </div>
-                <div class="profile">
+                <ul>
+                    <li>View profiles that are similar to yours</li>
+                    <li>Select profile age you want to see</li>
+                    <li>Like a profile</li>
+                    <li>View more information about a profile</li>
+                </ul>
+              </div>
+            </mat-expansion-panel>
+            <mat-expansion-panel>
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    <i class='bx bxs-user'></i>
                     <span>Profile Page</span>
+                  </mat-panel-title>
+                </mat-expansion-panel-header>
+                <div class="expansion-content">
                     <div class="pictures">
                         <img [src]="imagePath + 'desktop/Profile1.png'" alt="PICKME">
                         <img [src]="imagePath + 'desktop/Profile2.png'" alt="PICKME">
@@ -46,10 +65,17 @@
                         <li>Delete your account (needs confirmation)</li>
                     </ul>
                 </div>
-                <div class="like">
+            </mat-expansion-panel>
+            <mat-expansion-panel>
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    <i class='bx bxs-like'></i>
                     <span>Like Page</span>
+                  </mat-panel-title>
+                </mat-expansion-panel-header>
+                <div class="expansion-content">
                     <div class="pictures">
-                        <img [src]="imagePath + 'desktop/Like.png'" alt="PICKME">
+                        <img class="larger" [src]="imagePath + 'desktop/Like.png'" alt="PICKME">
                     </div>
                     <ul>
                         <li>View profiles that liked you</li>
@@ -57,8 +83,15 @@
                         <li>View more information about a profile</li>
                     </ul>
                 </div>
-                <div class="match">
+            </mat-expansion-panel>
+            <mat-expansion-panel>
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    <i class='bx bxs-flame'></i>
                     <span>Match Page</span>
+                  </mat-panel-title>
+                </mat-expansion-panel-header>
+                <div class="expansion-content">
                     <div class="pictures">
                         <img [src]="imagePath + 'desktop/Match.png'" alt="PICKME">
                     </div>
@@ -70,8 +103,15 @@
                         <li>Send a message, update or delete it</li>
                     </ul>
                 </div>
-                <div class="admin">
+            </mat-expansion-panel>
+            <mat-expansion-panel>
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    <i class='bx bxs-key'></i>
                     <span>Admin Page</span>
+                  </mat-panel-title>
+                </mat-expansion-panel-header>
+                <div class="expansion-content">
                     <div class="pictures">
                         <img [src]="imagePath + 'desktop/Admin-user.png'" alt="PICKME">
                         <img [src]="imagePath + 'desktop/Admin-message.png'" alt="PICKME">
@@ -84,27 +124,48 @@
                         <li>Delete user or message</li>
                     </ul>
                 </div>
-                <div class="more-info">
+            </mat-expansion-panel>
+            <mat-expansion-panel>
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    <i class='bx bxs-plus-circle'></i>
                     <span>More Info Page</span>
+                  </mat-panel-title>
+                </mat-expansion-panel-header>
+                <div class="expansion-content">
                     <div class="pictures">
                         <img [src]="imagePath + 'desktop/More-info1.png'" alt="PICKME">
                         <img [src]="imagePath + 'desktop/More-info2.png'" alt="PICKME">
                     </div>
-                </div>               
-            </div>
-            <div class="phone">
-                <span>Responsive design</span>
-                <div class="pictures">
-                    <img [src]="imagePath + 'phone/Admin.png'" alt="PICKME">
-                    <img [src]="imagePath + 'phone/Match.png'" alt="PICKME">
-                    <img [src]="imagePath + 'phone/Select.png'" alt="PICKME">
                 </div>
-            </div>
-        </div>
-        <div class="video-container">
-            <span>Demo Video</span>
-            <video [src]="videoPath+'PICKME.mp4'" autoplay loop muted controls></video>
-        </div>
+            </mat-expansion-panel>
+            <mat-expansion-panel>
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    <i class='bx bx-devices'></i>
+                    <span>Responsive design</span>
+                  </mat-panel-title>
+                </mat-expansion-panel-header>
+                <div class="expansion-content">
+                    <div class="pictures">
+                        <img class="smaller" [src]="imagePath + 'phone/Admin.png'" alt="PICKME">
+                        <img class="smaller" [src]="imagePath + 'phone/Match.png'" alt="PICKME">
+                        <img class="smaller" [src]="imagePath + 'phone/Select.png'" alt="PICKME">
+                    </div>
+                </div>
+            </mat-expansion-panel>
+            <mat-expansion-panel>
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    <i class='bx bxs-video'></i>
+                    <span>Demo Video</span>
+                  </mat-panel-title>
+                </mat-expansion-panel-header>
+                <div class="expansion-content">
+                    <video [src]="videoPath+'PICKME.mp4'" autoplay loop muted controls></video>
+                </div>
+            </mat-expansion-panel>
+        </mat-accordion>
     </div>
     <a href="https://github.com/Brice150/PICKME" target="_blank" title="View Code" class="btn">View Code</a>
 </div>
