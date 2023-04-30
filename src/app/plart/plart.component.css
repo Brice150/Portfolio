@@ -73,48 +73,7 @@ header .title:hover {
     width: 100%;
 }
 
-.container .content .picture-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    width: 100%;
-}
-
-.container .content .picture-container .desktop {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    width: 100%;
-}
-
-.container .content .picture-container .desktop .nav, .home, .object, .connect, .account, .message, .admin {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    width: 100%;
-    margin-top: 20px;
-}
-
-.container .content .picture-container .phone {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    width: 100%;
-    margin-top: 20px;
-}
-
-.container span {
-    font-size: 22px;
-    font-weight: 800;
-    margin-bottom: 5px;
-    color: var(--dark-blue);
-}
-
-.container .content .picture-container .pictures {
+.container .content .pictures {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
@@ -122,33 +81,27 @@ header .title:hover {
     width: 100%;
 }
 
-.container .content .picture-container .desktop .pictures img:not(.smaller) {
+.container .content .pictures img {
     width: 100%;
-    max-width: 600px;
+    max-width: 500px;
     border-radius: 16px;
     box-shadow:  8px 8px 16px #909090,
              -8px -8px 16px #d8d8d8;
-    margin: 10px;
+    margin: 15px;
 }
 
-.container .content .picture-container .phone .pictures img {
-    width: 100%;
-    max-width: 350px;
-    height: 750px;
-    border-radius: 16px;
-    box-shadow:  8px 8px 16px #909090,
-             -8px -8px 16px #d8d8d8;
-    margin: 10px;
+.container .content .pictures .larger {
+    max-width: 900px;
+}
+
+.container .content .pictures .smaller {
+    max-width: 300px;
+    height: 650px;
     object-fit: fill;
 }
 
-.smaller {
-    width: 100%;
+.container .content .pictures .other {
     max-width: 300px;
-    border-radius: 16px;
-    box-shadow:  8px 8px 16px #909090,
-             -8px -8px 16px #d8d8d8;
-    margin: 10px;
 }
 
 .container ul li {
@@ -156,15 +109,6 @@ header .title:hover {
     font-size: 16px;
     font-weight: 500;
     color: var(--dark-blue);
-}
-
-.container .video-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    width: 100%;
-    margin-top: 20px;
 }
 
 .container video {
@@ -199,4 +143,38 @@ header .title:hover {
     box-shadow: inset 5px 5px 23px #9c9c9c,
             inset -5px -5px 23px #ffffff;
     color: black;
+}
+
+mat-accordion {
+    width: 90%;
+    padding-top: 30px;
+}
+
+mat-accordion mat-expansion-panel {
+    background-color: var(--background);
+}
+
+mat-accordion mat-expansion-panel mat-panel-title {
+    color: var(--dark-blue);
+    font-size: 18px;
+    font-weight: 600;
+    padding: 3px 0;
+    display: flex;
+    align-items: center;
+}
+
+mat-accordion mat-expansion-panel mat-panel-title i {
+    margin-right: 10px;
+    color: var(--dark-blue);
+}
+
+::ng-deep .mat-expansion-indicator:after {
+    color: var(--dark-blue);
+}
+
+.expansion-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
