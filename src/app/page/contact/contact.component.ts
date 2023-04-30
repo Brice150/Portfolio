@@ -18,16 +18,24 @@ export class ContactComponent {
     if (contactForm.valid) {
       const email = contactForm.value;
       const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
-      this.http.post('https://formspree.io/f/mbjbjwpk',
+      this.http.post(
+        'https://formspree.io/f/mbjbjwpk',
         { name: email.name, replyto: email.email, subject: email.subject, message: email.message },
-        { 'headers': headers }).subscribe(
-          (response: any) => {
+        { 'headers': headers })
+        .subscribe({
+          next: (response: any) => {
             contactForm.resetForm();
             this.toastr.success("Message sent", "Message", {
               positionClass: "toast-bottom-center" 
             });
+          },
+          error: (error: any) => {
+            contactForm.resetForm();
+            this.toastr.error("Error message not sent", "Message", {
+              positionClass: "toast-bottom-center" 
+            });
           }
-        );
+      });
     }
   }
 }
