@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { MatSnackBar } from '@angular/material/snack-bar';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-contact',
@@ -9,7 +9,10 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   styleUrls: ['./contact.component.css']
 })
 export class ContactComponent {
-  constructor(private http: HttpClient, private snackBar: MatSnackBar) {}
+  constructor(
+    private http: HttpClient,
+    private toastr: ToastrService
+    ) {}
 
   onSubmit(contactForm: NgForm) {
     if (contactForm.valid) {
@@ -20,7 +23,9 @@ export class ContactComponent {
         { 'headers': headers }).subscribe(
           (response: any) => {
             contactForm.resetForm();
-            this.snackBar.open("Message sent", "Dismiss", {duration: 2000});
+            this.toastr.success("Message sent", "Message", {
+              positionClass: "toast-bottom-center" 
+            });
           }
         );
     }
