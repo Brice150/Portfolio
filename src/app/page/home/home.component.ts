@@ -19,6 +19,6 @@ export class HomeComponent {
   download() {
     this.toastr.success("CV downloaded", "File", {
       positionClass: "toast-bottom-center" 
-    });
+    })
   }
 }
