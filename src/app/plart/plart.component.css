@@ -121,8 +121,16 @@ header .title:hover {
     margin: 10px;
 }
 
-.container .btn {
+.container .buttons {
     margin: 30px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.container .buttons .btn {
+    margin: 0 20px;
     text-decoration: none;
     background: none;
     border: none;
@@ -138,7 +146,7 @@ header .title:hover {
     transition: 0.5s ease;
 }
 
-.container .btn:hover {
+.container .buttons .btn:hover {
     background-color: white;
     box-shadow: inset 5px 5px 23px #9c9c9c,
             inset -5px -5px 23px #ffffff;
