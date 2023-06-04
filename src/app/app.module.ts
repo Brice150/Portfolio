@@ -7,6 +7,7 @@ import { PickmeModule } from './pickme/pickme.module';
 import { PlartModule } from './plart/plart.module';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserModule } from '@angular/platform-browser';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 @NgModule({
   declarations: [AppComponent],
@@ -20,6 +21,6 @@ import { BrowserModule } from '@angular/platform-browser';
     ToastrModule.forRoot()
   ],
   bootstrap: [AppComponent],
-  providers: []
+  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}]
 })
 export class AppModule { }
