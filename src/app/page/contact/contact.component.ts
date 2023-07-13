@@ -32,7 +32,7 @@ export class ContactComponent implements OnDestroy{
         .subscribe({
           next: (response: any) => {
             contactForm.resetForm();
-            this.toastr.success("Message sent", "Message", {
+            this.toastr.info("Message sent", "Message", {
               positionClass: "toast-bottom-center" 
             });
           },

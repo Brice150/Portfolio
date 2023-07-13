@@ -87,6 +87,7 @@ swiper .swiper-wrapper {
     letter-spacing: 4px;
     font-size: 22px;
     margin: 0 10px;
+    white-space: nowrap;
 }
 
 .container .content .swiper-slide .description h3 {

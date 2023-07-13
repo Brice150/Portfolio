@@ -1,0 +1,85 @@
+<header>
+    <div class="title" title="GAMETIME">GAMETIME</div>
+    <nav>
+        <a class="return" routerLink="/page" title="Return">
+            <i class='bx bx-left-arrow-alt'></i>
+        </a>
+    </nav>
+</header>
+
+<div class="container">
+    <div class="content">
+        <mat-accordion>
+            <mat-expansion-panel expanded>
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  <i class='bx bxs-home'></i>
+                  <span>Page</span>
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+              <div class="expansion-content">
+                <div class="pictures">
+                    <img [src]="imagePath + 'Page.png'" alt="GAMETIME">
+                </div>
+                <ul>
+                    <li>Handle your account and learn how to play</li>
+                    <li>Choose to play to various games</li>
+                </ul>
+              </div>
+            </mat-expansion-panel>
+            <mat-expansion-panel>
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  <i class='bx bx-check-square'></i>
+                  <span>Motus</span>
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+              <div class="expansion-content">
+                <div class="pictures">
+                    <img class="larger" [src]="imagePath + 'Motus.png'" alt="GAMETIME">
+                </div>
+                <ul>
+                    <li>Select word lendth and try to guess the word</li>
+                    <li>Previous tries will show if a letter is correct or not</li>
+                    <li>Earn medals if you found the word in less than 6 tries</li>
+                </ul>
+              </div>
+            </mat-expansion-panel>
+            <mat-expansion-panel>
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    <i class='bx bxs-flag'></i>
+                    <span>Drapeau</span>
+                  </mat-panel-title>
+                </mat-expansion-panel-header>
+                <div class="expansion-content">
+                    <div class="pictures">
+                      <img class="larger" [src]="imagePath + 'Flag.png'" alt="GAMETIME">
+                    </div>
+                    <ul>
+                        <li>Try to guess a country name based on his flag</li>
+                        <li>Previous tries will show if a letter is correct or not</li>
+                        <li>Earn medals if you found the word in less than 6 tries</li>
+                    </ul>
+                </div>
+            </mat-expansion-panel>
+            <mat-expansion-panel>
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    <i class='bx bxs-group'></i>
+                    <span>Multiplayer</span>
+                  </mat-panel-title>
+                </mat-expansion-panel-header>
+                <div class="expansion-content">
+                    <div class="pictures">
+                        <img [src]="imagePath + 'Multiplayer.png'" alt="GAMETIME">
+                    </div>
+                </div>
+            </mat-expansion-panel>
+        </mat-accordion>
+    </div>
+    <div class="buttons">
+      <a href="https://github.com/Brice150/GAMETIME" target="_blank" title="View Code" class="btn">View Code</a>
+      <a href="https://brice150.github.io/GAMETIME/" target="_blank" title="View Code" class="btn">Try it</a>
+    </div>
+</div>

@@ -38,6 +38,19 @@ export class ProjectComponent {
         'Admin page'
       ],
       link: '/pickme'
+    }, 
+    {
+      name: 'GAME TIME',
+      title: 'Gaming Web Application',
+      logo: 'logos/gametime.png',
+      image: 'projects/gametime/GAMETIME.png',
+      features: [
+        'Handle your account',
+        'Guess a word in various games',
+        'Play against other players',
+        'Earn medals'
+      ],
+      link: '/gametime'
     }
   ];
 
