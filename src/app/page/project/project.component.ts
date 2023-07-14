@@ -47,7 +47,6 @@ export class ProjectComponent {
       features: [
         'Handle your account',
         'Guess a word in various games',
-        'Play against other players',
         'Earn medals'
       ],
       link: '/gametime'
