@@ -46,7 +46,7 @@ export class ProjectComponent {
       image: 'projects/gametime/GAMETIME.png',
       features: [
         'Handle your account',
-        'Guess a word in various games',
+        'Guess a word or number in various games',
         'Earn medals'
       ],
       link: '/gametime'
