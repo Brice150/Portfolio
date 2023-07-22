@@ -15,7 +15,7 @@ export class ProjectComponent {
   [
     {
       name: 'PLART',
-      title: '3D Printing Web Application',
+      title: '3D Printing',
       logo: 'logos/plart.png',
       image: 'projects/plart/PLART.png',
       features: [
@@ -28,7 +28,7 @@ export class ProjectComponent {
     }, 
     {
       name: 'PICK ME',
-      title: 'Dating Web Application',
+      title: 'Dating',
       logo: 'logos/pickme.png',
       image: 'projects/pickme/PICKME.png',
       features: [
@@ -41,7 +41,7 @@ export class ProjectComponent {
     }, 
     {
       name: 'GAME TIME',
-      title: 'Gaming Web Application',
+      title: 'Gaming',
       logo: 'logos/gametime.png',
       image: 'projects/gametime/GAMETIME.png',
       features: [
