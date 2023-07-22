@@ -23,7 +23,7 @@ Frontend : Angular
 
   ### Project
 
-  - View my Full-Stack projects in a swiper
+  - View my web-application projects in a swiper
   - Link to more information about the project
 
   ### Contact
