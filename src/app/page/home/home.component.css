@@ -51,6 +51,7 @@
     align-items: center;
     width: 300px;
     height: auto;
+    background-color: var(--dark-blue);
     border-radius: 50%;
     box-shadow:  3px 3px 7px #a4a4a4,
              -3px -3px 7px #c4c4c4;

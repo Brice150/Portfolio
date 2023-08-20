@@ -21,6 +21,9 @@
     width: 150px;
     height: auto;
     border-radius: 50%;
+    background-color: white;
+    box-shadow:  5px 5px 23px #002558,
+             -5px -5px 23px #0053ca;
 }
 
 .card h2 {
