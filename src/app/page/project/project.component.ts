@@ -50,6 +50,19 @@ export class ProjectComponent {
         'Earn medals'
       ],
       link: '/gametime'
+    }, 
+    {
+      name: 'DASHBOARD',
+      title: 'Forecasting',
+      logo: 'logos/dashboard.png',
+      image: 'projects/dashboard/DASHBOARD.png',
+      features: [
+        'Select dark/light mode',
+        'See weather forecast for 4 days',
+        'See finance forecast for 25 years',
+        'Handle your tasks'
+      ],
+      link: '/dashboard'
     }
   ];
 
@@ -78,7 +91,7 @@ export class ProjectComponent {
       },
       1300: {
         slidesPerView: 3,
-        loop: false
+        loop: true
       },
       1850: {
         slidesPerView: 4,

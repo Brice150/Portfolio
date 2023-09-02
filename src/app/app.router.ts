@@ -4,6 +4,7 @@ import { PageComponent } from './page/page.component';
 import { PickmeComponent } from './pickme/pickme.component';
 import { PlartComponent } from './plart/plart.component';
 import { GametimeComponent } from './gametime/gametime.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 const routes: Routes = [
   {path: 'page', component: PageComponent},
@@ -11,6 +12,7 @@ const routes: Routes = [
   {path: 'plart', component: PlartComponent},
   {path: 'pickme', component: PickmeComponent},
   {path: 'gametime', component: GametimeComponent},
+  {path: 'dashboard', component: DashboardComponent},
   {path: '', redirectTo: '/card', pathMatch: 'full'},
 ];
 

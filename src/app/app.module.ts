@@ -8,6 +8,7 @@ import { PlartModule } from './plart/plart.module';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserModule } from '@angular/platform-browser';
 import { GametimeModule } from './gametime/gametime.module';
+import { DashboardModule } from './dashboard/dashboard.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -19,6 +20,7 @@ import { GametimeModule } from './gametime/gametime.module';
     PickmeModule, 
     PlartModule,
     GametimeModule,
+    DashboardModule,
     ToastrModule.forRoot()
   ],
   bootstrap: [AppComponent]
