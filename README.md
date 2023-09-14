@@ -9,48 +9,48 @@ Frontend : Angular
 <details>
   <summary>Pages Features</summary>
 
-  ### Card
+### Card
 
-  - Tilting visit card
+- Tilting visit card
 
-  ### Home
+### Home
 
-  - General description and links to know more about me
+- General description and links to know more about me
 
-  ### About
+### About
 
-  - View information of my skills and background
+- View information of my skills and background
 
-  ### Project
+### Project
 
-  - View my web-application projects in a swiper
-  - Link to more information about the project
+- View my web-application projects in a swiper
+- Link to more information about the project
 
-  ### Contact
+### Contact
 
-  - Contact form with validators that sends me an email of your message
+- Contact form with validators that sends me an email of your message
 
 </details>
 
 <details>
   <summary>Run Locally</summary>
 
-  ### Clone the project
+### Clone the project
 
-  ```bash
-    git clone https://github.com/Brice150/Portfolio.git
-  ```
+```bash
+  git clone https://github.com/Brice150/Portfolio.git
+```
 
-  ### Install dependencies
+### Install dependencies
 
-  ```bash
-    npm install
-  ```
+```bash
+  npm install
+```
 
-  ### Start the server
+### Start the server
 
-  ```bash
-    ng serve -o
-  ```
+```bash
+  ng serve -o
+```
 
 </details>
