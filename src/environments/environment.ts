@@ -1,5 +1,5 @@
 export const environment = {
   production: false,
   imagePath: './assets/images/',
-  videoPath: './assets/videos/'
+  videoPath: './assets/videos/',
 };
