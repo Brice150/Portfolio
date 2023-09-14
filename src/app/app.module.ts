@@ -9,9 +9,10 @@ import { ToastrModule } from 'ngx-toastr';
 import { BrowserModule } from '@angular/platform-browser';
 import { GametimeModule } from './gametime/gametime.module';
 import { DashboardModule } from './dashboard/dashboard.module';
+import { ErrorPathComponent } from './error-path/error-path.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, ErrorPathComponent],
   imports: [
     BrowserModule, 
     appRouter, 
