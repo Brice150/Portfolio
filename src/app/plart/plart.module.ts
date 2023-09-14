@@ -6,9 +6,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
 
 @NgModule({
   declarations: [PlartComponent],
-  imports: [
-    CommonModule, RouterModule, MatExpansionModule
-  ],
-  exports: [PlartComponent]
+  imports: [CommonModule, RouterModule, MatExpansionModule],
+  exports: [PlartComponent],
 })
-export class PlartModule { }
+export class PlartModule {}

@@ -6,9 +6,7 @@ import { NgxUsefulSwiperModule } from 'ngx-useful-swiper';
 
 @NgModule({
   declarations: [ProjectComponent],
-  imports: [
-    CommonModule, RouterModule, NgxUsefulSwiperModule
-  ],
-  exports: [ProjectComponent]
+  imports: [CommonModule, RouterModule, NgxUsefulSwiperModule],
+  exports: [ProjectComponent],
 })
-export class ProjectModule { }
+export class ProjectModule {}

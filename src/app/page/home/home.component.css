@@ -1,187 +1,181 @@
 .home {
-    padding-top: 80px;
-    width: 100%;
+  padding-top: 80px;
+  width: 100%;
 }
 
 .container {
-    background-color: var(--background);
-    margin: auto 5%;
-    border-radius: 16px;
-    box-shadow:  8px 8px 16px #909090,
-             -8px -8px 16px #d8d8d8;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    border: 7px solid var(--dark-blue);
+  background-color: var(--background);
+  margin: auto 5%;
+  border-radius: 16px;
+  box-shadow: 8px 8px 16px #909090, -8px -8px 16px #d8d8d8;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border: 7px solid var(--dark-blue);
 }
 
 .container h1 {
-    font-size: 25px;
-    font-weight: 800;
-    color: black;
-    padding-top: 10px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
+  font-size: 25px;
+  font-weight: 800;
+  color: black;
+  padding-top: 10px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
 }
 
 .container h1 span {
-    color: var(--dark-blue);
+  color: var(--dark-blue);
 }
 
 .container .content {
-    width: 100%;
-    height: 90%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  width: 100%;
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .container .content .presentation {
-    width: 90%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 .container .content .presentation img {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 300px;
-    height: auto;
-    background-color: var(--dark-blue);
-    border-radius: 50%;
-    box-shadow:  3px 3px 7px #a4a4a4,
-             -3px -3px 7px #c4c4c4;
-    margin: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  height: auto;
+  background-color: var(--dark-blue);
+  border-radius: 50%;
+  box-shadow: 3px 3px 7px #a4a4a4, -3px -3px 7px #c4c4c4;
+  margin: 40px;
 }
 
-.container .content .presentation .titles h2{
-    color: var(--dark-blue);
-    font-size: 35px;
-    font-weight: 700;
+.container .content .presentation .titles h2 {
+  color: var(--dark-blue);
+  font-size: 35px;
+  font-weight: 700;
 }
 
-.container .content .presentation .titles h3{
-    color: black;
-    font-size: 25px;
-    font-weight: 700;
-    margin-bottom: 40px;
+.container .content .presentation .titles h3 {
+  color: black;
+  font-size: 25px;
+  font-weight: 700;
+  margin-bottom: 40px;
 }
 
-.container .content .presentation .titles p{
-    font-size: 16px;
-    font-weight: 600;
+.container .content .presentation .titles p {
+  font-size: 16px;
+  font-weight: 600;
 }
 
 .container .content .links {
-    margin-top: 10px;
-    display: flex;
-    justify-content: center;
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
 }
 
 .container .content .links a {
-    cursor: pointer;
-    text-decoration: none;
-    font-size: 50px;
-    margin: 0 15px;
-    margin-bottom: 15px;
-    color: var(--dark-blue);
-    border-radius: 10px;
-    padding: 4px;
-    box-shadow:  5px 5px 23px #9c9c9c,
-             -5px -5px 23px #ffffff;
-    transition: 0.5s ease;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 50px;
+  margin: 0 15px;
+  margin-bottom: 15px;
+  color: var(--dark-blue);
+  border-radius: 10px;
+  padding: 4px;
+  box-shadow: 5px 5px 23px #9c9c9c, -5px -5px 23px #ffffff;
+  transition: 0.5s ease;
 }
 
 .container .content .links .message {
-    font-size: 48px;
-    padding-top: 8px;
+  font-size: 48px;
+  padding-top: 8px;
 }
 
 .container .content .links a:hover {
-    color: var(--hover);
-    box-shadow: inset 5px 5px 23px #9c9c9c,
-            inset -5px -5px 23px #ffffff;
+  color: var(--hover);
+  box-shadow: inset 5px 5px 23px #9c9c9c, inset -5px -5px 23px #ffffff;
 }
 
 .container .content .btn {
-    margin-bottom: 20px;
-    text-decoration: none;
-    background: none;
-    border: none;
-    font-size: 17px;
-    font-weight: 700;
-    color: var(--text);
-    background-color: var(--dark-blue);
-    padding: 10px;
-    border-radius: 0.4em;
-    box-shadow:  5px 5px 23px #9c9c9c,
-             -5px -5px 23px #ffffff;
-    cursor: pointer;
-    transition: 0.5s ease;
+  margin-bottom: 20px;
+  text-decoration: none;
+  background: none;
+  border: none;
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--text);
+  background-color: var(--dark-blue);
+  padding: 10px;
+  border-radius: 0.4em;
+  box-shadow: 5px 5px 23px #9c9c9c, -5px -5px 23px #ffffff;
+  cursor: pointer;
+  transition: 0.5s ease;
 }
 
 .container .content .btn:hover {
-    background-color: white;
-    box-shadow: inset 5px 5px 23px #9c9c9c,
-            inset -5px -5px 23px #ffffff;
-    color: black;
+  background-color: white;
+  box-shadow: inset 5px 5px 23px #9c9c9c, inset -5px -5px 23px #ffffff;
+  color: black;
 }
 
 @media only screen and (max-width: 650px) {
-    .home {
-        padding-top: 180px;
-    }
+  .home {
+    padding-top: 180px;
+  }
 }
 
 @media only screen and (max-width: 550px) {
-    .container .content .presentation img {
-        width: 200px;
-    }
+  .container .content .presentation img {
+    width: 200px;
+  }
 }
 
 @media only screen and (max-width: 374px) {
-    .container .content .presentation .titles h2{
-        font-size: 30px;
-    }
-    
-    .container .content .presentation .titles h3{
-        font-size: 20px;
-    }
+  .container .content .presentation .titles h2 {
+    font-size: 30px;
+  }
 
-    .container .content .presentation .titles p{
-        font-size: 14px;
-    }
+  .container .content .presentation .titles h3 {
+    font-size: 20px;
+  }
+
+  .container .content .presentation .titles p {
+    font-size: 14px;
+  }
 }
 
 @media only screen and (max-width: 358px) {
-    .container .content .presentation img {
-        width: 150px;
-    }
+  .container .content .presentation img {
+    width: 150px;
+  }
 
-    .container .content .presentation .titles h3{
-        margin-bottom: 20px;
-    }
+  .container .content .presentation .titles h3 {
+    margin-bottom: 20px;
+  }
 }
 
 @media only screen and (max-width: 332px) {
-    .container .content .presentation .titles h3{
-        margin-bottom: 5px;
-    }
+  .container .content .presentation .titles h3 {
+    margin-bottom: 5px;
+  }
 
-    .container .content .links a {
-        font-size: 30px;
-    }
+  .container .content .links a {
+    font-size: 30px;
+  }
 
-    .container .content .links .message {
-        font-size: 29px;
-    }
+  .container .content .links .message {
+    font-size: 29px;
+  }
 
-    .container .content .btn {
-        font-size: 14px;
-        padding: 5px;
-    }
+  .container .content .btn {
+    font-size: 14px;
+    padding: 5px;
+  }
 }

@@ -6,13 +6,12 @@ import { SwiperOptions } from 'swiper';
 @Component({
   selector: 'app-project',
   templateUrl: './project.component.html',
-  styleUrls: ['./project.component.css']
+  styleUrls: ['./project.component.css'],
 })
 export class ProjectComponent {
   videoPath: string = environment.videoPath;
   imagePath: string = environment.imagePath;
-  projects: Project[] = 
-  [
+  projects: Project[] = [
     {
       name: 'PLART',
       title: '3D Printing',
@@ -22,10 +21,10 @@ export class ProjectComponent {
         'Safely login',
         'Upload/download objects',
         'Send a message to a user',
-        'Admin page'
+        'Admin page',
       ],
-      link: '/plart'
-    }, 
+      link: '/plart',
+    },
     {
       name: 'PICK ME',
       title: 'Dating',
@@ -35,10 +34,10 @@ export class ProjectComponent {
         'Safely login',
         'Select attractive users and match',
         'Send a message to a match',
-        'Admin page'
+        'Admin page',
       ],
-      link: '/pickme'
-    }, 
+      link: '/pickme',
+    },
     {
       name: 'GAME TIME',
       title: 'Gaming',
@@ -47,10 +46,10 @@ export class ProjectComponent {
       features: [
         'Handle your account',
         'Guess a word or number in various games',
-        'Earn medals'
+        'Earn medals',
       ],
-      link: '/gametime'
-    }, 
+      link: '/gametime',
+    },
     {
       name: 'DASHBOARD',
       title: 'Forecasting',
@@ -60,10 +59,10 @@ export class ProjectComponent {
         'Select dark/light mode',
         'See weather forecast for 4 days',
         'See finance forecast for 25 years',
-        'Handle your tasks'
+        'Handle your tasks',
       ],
-      link: '/dashboard'
-    }
+      link: '/dashboard',
+    },
   ];
 
   config: SwiperOptions = {
@@ -74,29 +73,29 @@ export class ProjectComponent {
     },
     speed: 1500,
     loop: true,
-    pagination: { 
-      el: '.swiper-pagination', 
-      clickable: true, 
-      dynamicBullets: true
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+      dynamicBullets: true,
     },
     spaceBetween: 80,
     breakpoints: {
       0: {
         slidesPerView: 1,
-        loop: true
+        loop: true,
       },
       700: {
         slidesPerView: 2,
-        loop: true
+        loop: true,
       },
       1300: {
         slidesPerView: 3,
-        loop: true
+        loop: true,
       },
       1850: {
         slidesPerView: 4,
-        loop: false
-      }
-    }
+        loop: false,
+      },
+    },
   };
 }

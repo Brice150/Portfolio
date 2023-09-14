@@ -8,11 +8,11 @@ import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [ContactComponent],
   imports: [
-    CommonModule, 
-    FormsModule, 
-    HttpClientModule, 
-    BrowserAnimationsModule
+    CommonModule,
+    FormsModule,
+    HttpClientModule,
+    BrowserAnimationsModule,
   ],
-  exports : [ContactComponent]
+  exports: [ContactComponent],
 })
-export class ContactModule { }
+export class ContactModule {}

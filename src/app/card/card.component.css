@@ -1,154 +1,152 @@
 .screen {
-    width: 100%;
-    height: 100vh;
-    background-color: var(--background);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  width: 100%;
+  height: 100vh;
+  background-color: var(--background);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .card {
-    width: 90%;
-    max-width: 350px;
-    background-color: var(--dark-blue);
-    text-align: center;
-    padding-top: 50px;
-    border: 1px solid grey;
-    border-radius: 16px;
+  width: 90%;
+  max-width: 350px;
+  background-color: var(--dark-blue);
+  text-align: center;
+  padding-top: 50px;
+  border: 1px solid grey;
+  border-radius: 16px;
 }
 
 .card img {
-    width: 150px;
-    height: auto;
-    border-radius: 50%;
-    background-color: white;
-    box-shadow:  5px 5px 23px #002558,
-             -5px -5px 23px #0053ca;
+  width: 150px;
+  height: auto;
+  border-radius: 50%;
+  background-color: white;
+  box-shadow: 5px 5px 23px #002558, -5px -5px 23px #0053ca;
 }
 
 .card h2 {
-    font-size: 30px;
-    font-weight: 600;
-    margin-top: 20px;
-    color: var(--text);
+  font-size: 30px;
+  font-weight: 600;
+  margin-top: 20px;
+  color: var(--text);
 }
 
 .card p {
-    font-size: 20px;
-    margin: 10px auto;
-    max-width: 330px;
-    color: var(--text);
+  font-size: 20px;
+  margin: 10px auto;
+  max-width: 330px;
+  color: var(--text);
 }
 
 .card .links {
-    margin-top: 20px;
-    display: flex;
-    justify-content: center;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
 }
 
 .card .links a {
-    cursor: pointer;
-    text-decoration: none;
-    font-size: 50px;
-    margin: 15px;
-    color: var(--text);
-    border-radius: 10px;
-    padding: 4px;
-    box-shadow:  5px 5px 23px #002558,
-             -5px -5px 23px #0053ca;
-    transition: 0.5s ease;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 50px;
+  margin: 15px;
+  color: var(--text);
+  border-radius: 10px;
+  padding: 4px;
+  box-shadow: 5px 5px 23px #002558, -5px -5px 23px #0053ca;
+  transition: 0.5s ease;
 }
 
 .card .links a:hover {
-    color: var(--hover);
-    box-shadow: inset 5px 5px 23px #002558,
-            inset -5px -5px 23px #0053ca;
+  color: var(--hover);
+  box-shadow: inset 5px 5px 23px #002558, inset -5px -5px 23px #0053ca;
 }
 
 .card .website-button {
-    background-color: var(--text);
-    padding: 10px 0;
-    border-radius: 0 0 16px 16px;
+  background-color: var(--text);
+  padding: 10px 0;
+  border-radius: 0 0 16px 16px;
 }
 
 .card .website-button .button {
-    cursor: pointer;
-    position: relative;
-    display: inline-block;
-    padding: 10px;
-    color: var(--dark-blue);
-    text-transform: uppercase;
-    letter-spacing: 4px;
-    text-decoration: none;
-    font-size: 24px;
-    font-weight: 700;
-    overflow: hidden;
-    transition: 0.2s;
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+  padding: 10px;
+  color: var(--dark-blue);
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  text-decoration: none;
+  font-size: 24px;
+  font-weight: 700;
+  overflow: hidden;
+  transition: 0.2s;
 }
 
 .card .website-button .button:hover {
-    color: var(--hover);
-    background-color: var(--dark-blue);
-    box-shadow: 0 0 10px var(--dark-blue), 0 0 40px var(--dark-blue), 0 0 80px var(--dark-blue);
-    transition-delay: 1s;
+  color: var(--hover);
+  background-color: var(--dark-blue);
+  box-shadow: 0 0 10px var(--dark-blue), 0 0 40px var(--dark-blue),
+    0 0 80px var(--dark-blue);
+  transition-delay: 1s;
 }
 
 .card .website-button .button span {
-    position: absolute;
-    display: block;
+  position: absolute;
+  display: block;
 }
 
 .card .website-button .button span:nth-child(1) {
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 2px;
-    background: linear-gradient(90deg, transparent, var(--dark-blue));
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--dark-blue));
 }
 
 .card .website-button .button:hover span:nth-child(1) {
-    left: 100%;
-    transition: 1s;
+  left: 100%;
+  transition: 1s;
 }
 
 .card .website-button .button span:nth-child(3) {
-    bottom: 0;
-    right: -100%;
-    width: 100%;
-    height: 2px;
-    background: linear-gradient(270deg, transparent, var(--dark-blue));
+  bottom: 0;
+  right: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(270deg, transparent, var(--dark-blue));
 }
 
 .card .website-button .button:hover span:nth-child(3) {
-    right: 100%;
-    transition: 1s;
-    transition-delay: 0.5s;
+  right: 100%;
+  transition: 1s;
+  transition-delay: 0.5s;
 }
 
 .card .website-button .button span:nth-child(2) {
-    top: -100%;
-    right: 0;
-    width: 2px;
-    height: 100%;
-    background: linear-gradient(180deg, transparent, var(--dark-blue));
+  top: -100%;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg, transparent, var(--dark-blue));
 }
 
 .card .website-button .button:hover span:nth-child(2) {
-    top: 100%;
-    transition: 1s;
-    transition-delay: 0.25s;
+  top: 100%;
+  transition: 1s;
+  transition-delay: 0.25s;
 }
 
 .card .website-button .button span:nth-child(4) {
-    bottom: -100%;
-    left: 0;
-    width: 2px;
-    height: 100%;
-    background: linear-gradient(360deg, transparent, var(--dark-blue));
+  bottom: -100%;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(360deg, transparent, var(--dark-blue));
 }
 
 .card .website-button .button:hover span:nth-child(4) {
-    bottom: 100%;
-    transition: 1s;
-    transition-delay: 0.75s;
+  bottom: 100%;
+  transition: 1s;
+  transition-delay: 0.75s;
 }

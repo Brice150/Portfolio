@@ -1,118 +1,146 @@
 <header>
-    <div class="title" title="DASHBOARD">DASHBOARD</div>
-    <nav>
-        <a class="return" routerLink="/page" title="Return">
-            <i class='bx bx-left-arrow-alt'></i>
-        </a>
-    </nav>
+  <div class="title" title="DASHBOARD">DASHBOARD</div>
+  <nav>
+    <a class="return" routerLink="/page" title="Return">
+      <i class="bx bx-left-arrow-alt"></i>
+    </a>
+  </nav>
 </header>
 
 <div class="container">
-    <div class="content">
-        <mat-accordion>
-            <mat-expansion-panel expanded>
-              <mat-expansion-panel-header>
-                <mat-panel-title>
-                  <i class='bx bxs-cloud-rain'></i>
-                  <span>Weather</span>
-                </mat-panel-title>
-              </mat-expansion-panel-header>
-              <div class="expansion-content">
-                <div class="pictures">
-                    <img [src]="imagePath + 'Weather.png'" alt="DASHBOARD">
-                </div>
-                <ul>
-                    <li>See weather forecast for 4 days</li>
-                    <li>Change weather city</li>
-                </ul>
-              </div>
-            </mat-expansion-panel>
-            <mat-expansion-panel>
-              <mat-expansion-panel-header>
-                <mat-panel-title>
-                  <i class='bx bxs-credit-card-alt'></i>
-                  <span>Finance</span>
-                </mat-panel-title>
-              </mat-expansion-panel-header>
-              <div class="expansion-content">
-                <div class="pictures">
-                    <img [src]="imagePath + 'Finance.png'" alt="DASHBOARD">
-                </div>
-                <ul>
-                    <li>See finance forecast for 25 years</li>
-                    <li>Change saving strategy</li>
-                </ul>
-              </div>
-            </mat-expansion-panel>
-            <mat-expansion-panel>
-                <mat-expansion-panel-header>
-                  <mat-panel-title>
-                    <i class='bx bx-task'></i>
-                    <span>Tasks</span>
-                  </mat-panel-title>
-                </mat-expansion-panel-header>
-                <div class="expansion-content">
-                    <div class="pictures">
-                      <img class="larger" [src]="imagePath + 'Tasks.png'" alt="DASHBOARD">
-                    </div>
-                    <ul>
-                        <li>See your tasks</li>
-                        <li>Add, update or delete a task</li>
-                    </ul>
-                </div>
-            </mat-expansion-panel>
-            <mat-expansion-panel>
-              <mat-expansion-panel-header>
-                <mat-panel-title>
-                  <i class='bx bx-line-chart'></i>
-                  <span>Weather Graph</span>
-                </mat-panel-title>
-              </mat-expansion-panel-header>
-              <div class="expansion-content">
-                  <div class="pictures">
-                    <img class="larger" [src]="imagePath + 'Weather-dialog.png'" alt="DASHBOARD">
-                  </div>
-                  <ul>
-                      <li>View weather stats hourly for a selected day</li>
-                  </ul>
-              </div>
-          </mat-expansion-panel>
-          <mat-expansion-panel>
-              <mat-expansion-panel-header>
-                <mat-panel-title>
-                  <i class='bx bx-bar-chart-alt'></i>
-                  <span>Finance Graph</span>
-                </mat-panel-title>
-              </mat-expansion-panel-header>
-              <div class="expansion-content">
-                  <div class="pictures">
-                    <img class="larger" [src]="imagePath + 'Finance-dialog.png'" alt="DASHBOARD">
-                  </div>
-                  <ul>
-                      <li>View your invested money vs interests</li>
-                  </ul>
-              </div>
-          </mat-expansion-panel>
-          <mat-expansion-panel>
-            <mat-expansion-panel-header>
-              <mat-panel-title>
-                <i class='bx bxs-moon'></i>
-                <span>Dark/Light Mode</span>
-              </mat-panel-title>
-            </mat-expansion-panel-header>
-            <div class="expansion-content">
-                <div class="pictures">
-                  <img class="larger" [src]="imagePath + 'Light.png'" alt="DASHBOARD">
-                </div>
-                <ul>
-                    <li>Select dark/light mode</li>
-                </ul>
-            </div>
-        </mat-expansion-panel>
-        </mat-accordion>
-    </div>
-    <div class="buttons">
-      <a href="https://github.com/Brice150/DASHBOARD" target="_blank" title="View Code" class="btn">View Code</a>
-      <a href="https://brice150.github.io/DASHBOARD/" target="_blank" title="View Code" class="btn">Try it</a>
-    </div>
+  <div class="content">
+    <mat-accordion>
+      <mat-expansion-panel expanded>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <i class="bx bxs-cloud-rain"></i>
+            <span>Weather</span>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <div class="expansion-content">
+          <div class="pictures">
+            <img [src]="imagePath + 'Weather.png'" alt="DASHBOARD" />
+          </div>
+          <ul>
+            <li>See weather forecast for 4 days</li>
+            <li>Change weather city</li>
+          </ul>
+        </div>
+      </mat-expansion-panel>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <i class="bx bxs-credit-card-alt"></i>
+            <span>Finance</span>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <div class="expansion-content">
+          <div class="pictures">
+            <img [src]="imagePath + 'Finance.png'" alt="DASHBOARD" />
+          </div>
+          <ul>
+            <li>See finance forecast for 25 years</li>
+            <li>Change saving strategy</li>
+          </ul>
+        </div>
+      </mat-expansion-panel>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <i class="bx bx-task"></i>
+            <span>Tasks</span>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <div class="expansion-content">
+          <div class="pictures">
+            <img
+              class="larger"
+              [src]="imagePath + 'Tasks.png'"
+              alt="DASHBOARD"
+            />
+          </div>
+          <ul>
+            <li>See your tasks</li>
+            <li>Add, update or delete a task</li>
+          </ul>
+        </div>
+      </mat-expansion-panel>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <i class="bx bx-line-chart"></i>
+            <span>Weather Graph</span>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <div class="expansion-content">
+          <div class="pictures">
+            <img
+              class="larger"
+              [src]="imagePath + 'Weather-dialog.png'"
+              alt="DASHBOARD"
+            />
+          </div>
+          <ul>
+            <li>View weather stats hourly for a selected day</li>
+          </ul>
+        </div>
+      </mat-expansion-panel>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <i class="bx bx-bar-chart-alt"></i>
+            <span>Finance Graph</span>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <div class="expansion-content">
+          <div class="pictures">
+            <img
+              class="larger"
+              [src]="imagePath + 'Finance-dialog.png'"
+              alt="DASHBOARD"
+            />
+          </div>
+          <ul>
+            <li>View your invested money vs interests</li>
+          </ul>
+        </div>
+      </mat-expansion-panel>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <i class="bx bxs-moon"></i>
+            <span>Dark/Light Mode</span>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <div class="expansion-content">
+          <div class="pictures">
+            <img
+              class="larger"
+              [src]="imagePath + 'Light.png'"
+              alt="DASHBOARD"
+            />
+          </div>
+          <ul>
+            <li>Select dark/light mode</li>
+          </ul>
+        </div>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </div>
+  <div class="buttons">
+    <a
+      href="https://github.com/Brice150/DASHBOARD"
+      target="_blank"
+      title="View Code"
+      class="btn"
+      >View Code</a
+    >
+    <a
+      href="https://brice150.github.io/DASHBOARD/"
+      target="_blank"
+      title="View Code"
+      class="btn"
+      >Try it</a
+    >
+  </div>
 </div>

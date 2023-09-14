@@ -1,171 +1,210 @@
 <header>
-    <div class="title" title="PLART">PLART</div>
-    <nav>
-        <a class="return" routerLink="/page" title="Return">
-            <i class='bx bx-left-arrow-alt'></i>
-        </a>
-    </nav>
+  <div class="title" title="PLART">PLART</div>
+  <nav>
+    <a class="return" routerLink="/page" title="Return">
+      <i class="bx bx-left-arrow-alt"></i>
+    </a>
+  </nav>
 </header>
 
 <div class="container">
-    <div class="content">
-        <mat-accordion>
-            <mat-expansion-panel expanded>
-              <mat-expansion-panel-header>
-                <mat-panel-title>
-                    <i class='bx bxs-navigation'></i>
-                    <span>Navigation</span>
-                </mat-panel-title>
-              </mat-expansion-panel-header>
-              <div class="expansion-content">
-                <div class="pictures">
-                    <img class="other" [src]="imagePath + 'desktop/Nav.png'" alt="PLART">
-                </div>
-              </div>
-            </mat-expansion-panel>
-            <mat-expansion-panel>
-              <mat-expansion-panel-header>
-                <mat-panel-title>
-                    <i class='bx bxs-home'></i>
-                    <span>Home Page</span>
-                </mat-panel-title>
-              </mat-expansion-panel-header>
-              <div class="expansion-content">
-                <div class="pictures">
-                    <img [src]="imagePath + 'desktop/Slider.png'" alt="PLART">
-                    <img [src]="imagePath + 'desktop/Stat.png'" alt="PLART">
-                </div>
-                <ul>
-                    <li>Images swiper with dynamic descriptions</li>
-                    <li>Animated website stats with go to connect, user or objects pages when clicked</li>
-                </ul>
-              </div>
-            </mat-expansion-panel>
-            <mat-expansion-panel>
-                <mat-expansion-panel-header>
-                  <mat-panel-title>
-                    <i class='bx bx-cube-alt'></i>
-                    <span>Object Page</span>
-                  </mat-panel-title>
-                </mat-expansion-panel-header>
-                <div class="expansion-content">
-                    <div class="pictures">
-                        <img class="larger" [src]="imagePath + 'PLART.png'" alt="PLART">
-                    </div>
-                    <ul>
-                        <li>Search object or filter objects by category</li>
-                        <li>See objects with a rotating card animation</li>
-                        <li>Download the 3D printable file of any object</li>
-                    </ul>
-                </div>
-            </mat-expansion-panel>
-            <mat-expansion-panel>
-                <mat-expansion-panel-header>
-                  <mat-panel-title>
-                    <i class='bx bx-laptop'></i>
-                    <span>Connect Page</span>
-                  </mat-panel-title>
-                </mat-expansion-panel-header>
-                <div class="expansion-content">
-                    <div class="pictures">
-                        <img [src]="imagePath + 'desktop/Login.png'" alt="PLART">
-                    </div>
-                    <ul>
-                        <li>Register with email confirmation</li>
-                        <li>Login with form control and failure animation</li>
-                        <li>Logout is available on any page once logged in</li>
-                    </ul>
-                </div>
-            </mat-expansion-panel>
-            <mat-expansion-panel>
-                <mat-expansion-panel-header>
-                  <mat-panel-title>
-                    <i class='bx bxs-user'></i>
-                    <span>Account Page</span>
-                  </mat-panel-title>
-                </mat-expansion-panel-header>
-                <div class="expansion-content">
-                    <div class="pictures">
-                        <img [src]="imagePath + 'desktop/Account.png'" alt="PLART">
-                        <img [src]="imagePath + 'desktop/Add-object.png'" alt="PLART">
-                    </div>
-                    <ul>
-                        <li>Login needed to view this page</li>
-                        <li>Modify or delete your account (delete needs confirmation)</li>
-                        <li>See your objects and download them</li>
-                        <li>Add an object with a file and optionnal image</li>
-                        <li>Modify or delete your objects (delete needs confirmation)</li>
-                    </ul>
-                </div>
-            </mat-expansion-panel>
-            <mat-expansion-panel>
-                <mat-expansion-panel-header>
-                  <mat-panel-title>
-                    <i class='bx bxs-message'></i>
-                    <span>Message Page</span>
-                  </mat-panel-title>
-                </mat-expansion-panel-header>
-                <div class="expansion-content">
-                    <div class="pictures">
-                        <img [src]="imagePath + 'desktop/Message.png'" alt="PLART">
-                        <img class="other" [src]="imagePath + 'desktop/User-search.png'" alt="PLART">
-                    </div>
-                    <ul>
-                        <li>Login needed to view this page</li>
-                        <li>Search user</li>
-                        <li>See messages and messages number per user</li>
-                        <li>Send, modify or delete a message</li>
-                    </ul>
-                </div>
-            </mat-expansion-panel>
-            <mat-expansion-panel>
-                <mat-expansion-panel-header>
-                  <mat-panel-title>
-                    <i class='bx bxs-key'></i>
-                    <span>Admin Page</span>
-                  </mat-panel-title>
-                </mat-expansion-panel-header>
-                <div class="expansion-content">
-                    <div class="pictures">
-                        <img class="larger" [src]="imagePath + 'desktop/Admin.png'" alt="PLART">
-                    </div>
-                    <ul>
-                        <li>Admin role needed to view this page</li>
-                        <li>Search user, object or message</li>
-                        <li>See all users, objects or messages</li>
-                        <li>Delete user, object or message</li>
-                    </ul>
-                </div>
-            </mat-expansion-panel>
-            <mat-expansion-panel>
-                <mat-expansion-panel-header>
-                  <mat-panel-title>
-                    <i class='bx bx-devices'></i>
-                    <span>Responsive design</span>
-                  </mat-panel-title>
-                </mat-expansion-panel-header>
-                <div class="expansion-content">
-                    <div class="pictures">
-                        <img class="smaller" [src]="imagePath + 'phone/Admin.png'" alt="PLART">
-                        <img class="smaller" [src]="imagePath + 'phone/Message.png'" alt="PLART">
-                        <img class="smaller" [src]="imagePath + 'phone/Object.png'" alt="PLART">
-                    </div>
-                </div>
-            </mat-expansion-panel>
-            <mat-expansion-panel>
-                <mat-expansion-panel-header>
-                  <mat-panel-title>
-                    <i class='bx bxs-video'></i>
-                    <span>Demo Video</span>
-                  </mat-panel-title>
-                </mat-expansion-panel-header>
-                <div class="expansion-content">
-                    <video [src]="videoPath+'PLART.mp4'" autoplay loop muted controls></video>
-                </div>
-            </mat-expansion-panel>
-        </mat-accordion>
-    </div>
-    <div class="buttons">
-      <a href="https://github.com/Brice150/PLART" target="_blank" title="View Code" class="btn">View Code</a>
-    </div>
+  <div class="content">
+    <mat-accordion>
+      <mat-expansion-panel expanded>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <i class="bx bxs-navigation"></i>
+            <span>Navigation</span>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <div class="expansion-content">
+          <div class="pictures">
+            <img
+              class="other"
+              [src]="imagePath + 'desktop/Nav.png'"
+              alt="PLART"
+            />
+          </div>
+        </div>
+      </mat-expansion-panel>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <i class="bx bxs-home"></i>
+            <span>Home Page</span>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <div class="expansion-content">
+          <div class="pictures">
+            <img [src]="imagePath + 'desktop/Slider.png'" alt="PLART" />
+            <img [src]="imagePath + 'desktop/Stat.png'" alt="PLART" />
+          </div>
+          <ul>
+            <li>Images swiper with dynamic descriptions</li>
+            <li>
+              Animated website stats with go to connect, user or objects pages
+              when clicked
+            </li>
+          </ul>
+        </div>
+      </mat-expansion-panel>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <i class="bx bx-cube-alt"></i>
+            <span>Object Page</span>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <div class="expansion-content">
+          <div class="pictures">
+            <img class="larger" [src]="imagePath + 'PLART.png'" alt="PLART" />
+          </div>
+          <ul>
+            <li>Search object or filter objects by category</li>
+            <li>See objects with a rotating card animation</li>
+            <li>Download the 3D printable file of any object</li>
+          </ul>
+        </div>
+      </mat-expansion-panel>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <i class="bx bx-laptop"></i>
+            <span>Connect Page</span>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <div class="expansion-content">
+          <div class="pictures">
+            <img [src]="imagePath + 'desktop/Login.png'" alt="PLART" />
+          </div>
+          <ul>
+            <li>Register with email confirmation</li>
+            <li>Login with form control and failure animation</li>
+            <li>Logout is available on any page once logged in</li>
+          </ul>
+        </div>
+      </mat-expansion-panel>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <i class="bx bxs-user"></i>
+            <span>Account Page</span>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <div class="expansion-content">
+          <div class="pictures">
+            <img [src]="imagePath + 'desktop/Account.png'" alt="PLART" />
+            <img [src]="imagePath + 'desktop/Add-object.png'" alt="PLART" />
+          </div>
+          <ul>
+            <li>Login needed to view this page</li>
+            <li>Modify or delete your account (delete needs confirmation)</li>
+            <li>See your objects and download them</li>
+            <li>Add an object with a file and optionnal image</li>
+            <li>Modify or delete your objects (delete needs confirmation)</li>
+          </ul>
+        </div>
+      </mat-expansion-panel>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <i class="bx bxs-message"></i>
+            <span>Message Page</span>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <div class="expansion-content">
+          <div class="pictures">
+            <img [src]="imagePath + 'desktop/Message.png'" alt="PLART" />
+            <img
+              class="other"
+              [src]="imagePath + 'desktop/User-search.png'"
+              alt="PLART"
+            />
+          </div>
+          <ul>
+            <li>Login needed to view this page</li>
+            <li>Search user</li>
+            <li>See messages and messages number per user</li>
+            <li>Send, modify or delete a message</li>
+          </ul>
+        </div>
+      </mat-expansion-panel>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <i class="bx bxs-key"></i>
+            <span>Admin Page</span>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <div class="expansion-content">
+          <div class="pictures">
+            <img
+              class="larger"
+              [src]="imagePath + 'desktop/Admin.png'"
+              alt="PLART"
+            />
+          </div>
+          <ul>
+            <li>Admin role needed to view this page</li>
+            <li>Search user, object or message</li>
+            <li>See all users, objects or messages</li>
+            <li>Delete user, object or message</li>
+          </ul>
+        </div>
+      </mat-expansion-panel>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <i class="bx bx-devices"></i>
+            <span>Responsive design</span>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <div class="expansion-content">
+          <div class="pictures">
+            <img
+              class="smaller"
+              [src]="imagePath + 'phone/Admin.png'"
+              alt="PLART"
+            />
+            <img
+              class="smaller"
+              [src]="imagePath + 'phone/Message.png'"
+              alt="PLART"
+            />
+            <img
+              class="smaller"
+              [src]="imagePath + 'phone/Object.png'"
+              alt="PLART"
+            />
+          </div>
+        </div>
+      </mat-expansion-panel>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <i class="bx bxs-video"></i>
+            <span>Demo Video</span>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <div class="expansion-content">
+          <video
+            [src]="videoPath + 'PLART.mp4'"
+            autoplay
+            loop
+            muted
+            controls
+          ></video>
+        </div>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </div>
+  <div class="buttons">
+    <a
+      href="https://github.com/Brice150/PLART"
+      target="_blank"
+      title="View Code"
+      class="btn"
+      >View Code</a
+    >
+  </div>
 </div>

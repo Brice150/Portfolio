@@ -1,29 +1,35 @@
 <div class="project" id="project">
-    <div class="container">
-        <h1><span>Web-Application</span> Projects</h1>
-        <div class="content">
-            <swiper [config]="config">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide" *ngFor="let project of projects">
-                        <div class="inner-content">
-                            <div class="image"><img [src]="imagePath + project.image" [alt]="project.image"></div>
-                            <div class="description">
-                                <div class="title">
-                                    <img [src]="imagePath + project.logo" alt="project.logo">
-                                    <h2>{{project.name}}</h2>
-                                </div>
-                                <h3>{{project.title}}</h3>
-                                <ul>
-                                    <span>Main features :</span>
-                                    <li *ngFor="let feature of project.features">{{feature}}</li>
-                                </ul> 
-                            </div> 
-                            <a title="More Info" [routerLink]="project.link" class="btn">More Info</a>
-                        </div>
-                    </div>
+  <div class="container">
+    <h1><span>Web-Application</span> Projects</h1>
+    <div class="content">
+      <swiper [config]="config">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide" *ngFor="let project of projects">
+            <div class="inner-content">
+              <div class="image">
+                <img [src]="imagePath + project.image" [alt]="project.image" />
+              </div>
+              <div class="description">
+                <div class="title">
+                  <img [src]="imagePath + project.logo" alt="project.logo" />
+                  <h2>{{ project.name }}</h2>
                 </div>
-                <div class="swiper-pagination"></div>
-            </swiper>
+                <h3>{{ project.title }}</h3>
+                <ul>
+                  <span>Main features :</span>
+                  <li *ngFor="let feature of project.features">
+                    {{ feature }}
+                  </li>
+                </ul>
+              </div>
+              <a title="More Info" [routerLink]="project.link" class="btn"
+                >More Info</a
+              >
+            </div>
+          </div>
         </div>
+        <div class="swiper-pagination"></div>
+      </swiper>
     </div>
+  </div>
 </div>

@@ -6,9 +6,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
 
 @NgModule({
   declarations: [PickmeComponent],
-  imports: [
-    CommonModule, RouterModule, MatExpansionModule
-  ],
-  exports: [PickmeComponent]
+  imports: [CommonModule, RouterModule, MatExpansionModule],
+  exports: [PickmeComponent],
 })
-export class PickmeModule { }
+export class PickmeModule {}

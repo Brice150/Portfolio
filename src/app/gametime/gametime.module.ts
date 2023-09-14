@@ -6,9 +6,7 @@ import { GametimeComponent } from './gametime.component';
 
 @NgModule({
   declarations: [GametimeComponent],
-  imports: [
-    CommonModule, RouterModule, MatExpansionModule
-  ],
-  exports: [GametimeComponent]
+  imports: [CommonModule, RouterModule, MatExpansionModule],
+  exports: [GametimeComponent],
 })
-export class GametimeModule { }
+export class GametimeModule {}

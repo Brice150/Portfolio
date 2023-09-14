@@ -5,12 +5,12 @@ import VanillaTilt from 'vanilla-tilt';
 @Component({
   selector: 'app-root',
   templateUrl: './card.component.html',
-  styleUrls: ['./card.component.css']
+  styleUrls: ['./card.component.css'],
 })
-export class CardComponent implements OnInit{
+export class CardComponent implements OnInit {
   imagePath: string = environment.imagePath;
 
   ngOnInit() {
-    VanillaTilt.init(document.querySelector(".card") as any);
+    VanillaTilt.init(document.querySelector('.card') as any);
   }
 }

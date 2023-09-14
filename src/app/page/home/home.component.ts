@@ -5,7 +5,7 @@ import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.css'],
 })
 export class HomeComponent {
   imagePath: string = environment.imagePath;
@@ -13,12 +13,12 @@ export class HomeComponent {
   constructor(private toastr: ToastrService) {}
 
   toContact() {
-    document.getElementById("contact")?.scrollIntoView({behavior:"smooth"});
+    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
   }
 
   download() {
-    this.toastr.info("CV downloaded", "File", {
-      positionClass: "toast-bottom-center" 
-    })
+    this.toastr.info('CV downloaded', 'File', {
+      positionClass: 'toast-bottom-center',
+    });
   }
 }

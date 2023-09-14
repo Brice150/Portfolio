@@ -1,73 +1,73 @@
 mat-stepper {
-    background-color: var(--background);
-    margin-top: 20px;
+  background-color: var(--background);
+  margin-top: 20px;
 }
 
 mat-stepper .container {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 mat-stepper .container .picture {
-    width: 100px;
-    height: 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 mat-stepper .container .text {
-    width: 80%;
+  width: 80%;
 }
 
 mat-stepper .container .ensma {
-    width: 80px;
-    height: auto;
-    margin-bottom: 20px;
+  width: 80px;
+  height: auto;
+  margin-bottom: 20px;
 }
 
 mat-stepper .container .m2i {
-    width: 45px;
-    height: auto;
-    margin-bottom: 10px;
+  width: 45px;
+  height: auto;
+  margin-bottom: 10px;
 }
 
 mat-stepper .container .web {
-    width: 45px;
-    height: auto;
-    margin-bottom: 10px;
+  width: 45px;
+  height: auto;
+  margin-bottom: 10px;
 }
 
 mat-stepper .container .sopra {
-    width: 80px;
-    height: auto;
-    margin-bottom: 10px;
+  width: 80px;
+  height: auto;
+  margin-bottom: 10px;
 }
 
 mat-stepper .container h4 {
-    font-size: 20px;
-    font-weight: 600;
-    color: var(--dark-blue);
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--dark-blue);
 }
 
 mat-stepper .container p {
-    font-size: 17px;
-    font-weight: 600;
-    color: black;
+  font-size: 17px;
+  font-weight: 600;
+  color: black;
 }
 
 span {
-    font-weight: 600;
+  font-weight: 600;
 }
 
 ::ng-deep .mat-step-header .mat-step-icon {
-    background-color: var(--dark-blue); 
- }
+  background-color: var(--dark-blue);
+}
 
- @media only screen and (max-width: 692px) {
-    .container {
-        justify-content: center;
-        text-align: center;
-    }
+@media only screen and (max-width: 692px) {
+  .container {
+    justify-content: center;
+    text-align: center;
+  }
 }

@@ -11,14 +11,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 @NgModule({
   declarations: [PageComponent],
   imports: [
-    CommonModule, 
-    ContactModule, 
-    AboutModule, 
-    HeaderModule, 
-    HomeModule, 
-    ProjectModule, 
-    BrowserAnimationsModule
+    CommonModule,
+    ContactModule,
+    AboutModule,
+    HeaderModule,
+    HomeModule,
+    ProjectModule,
+    BrowserAnimationsModule,
   ],
-  exports: [PageComponent]
+  exports: [PageComponent],
 })
-export class PageModule { }
+export class PageModule {}

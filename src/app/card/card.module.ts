@@ -5,9 +5,7 @@ import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [CardComponent],
-  imports: [
-    CommonModule, RouterModule
-  ],
-  exports: [CardComponent]
+  imports: [CommonModule, RouterModule],
+  exports: [CardComponent],
 })
-export class CardModule { }
+export class CardModule {}

@@ -6,9 +6,7 @@ import { HistoryModule } from './history.component/history.module';
 
 @NgModule({
   declarations: [AboutComponent],
-  imports: [
-    CommonModule, SkillsModule, HistoryModule
-  ],
-  exports : [AboutComponent]
+  imports: [CommonModule, SkillsModule, HistoryModule],
+  exports: [AboutComponent],
 })
-export class AboutModule { }
+export class AboutModule {}

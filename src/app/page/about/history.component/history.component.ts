@@ -6,12 +6,14 @@ import { environment } from 'src/environments/environment';
   selector: 'app-history',
   templateUrl: './history.component.html',
   styleUrls: ['./history.component.css'],
-  providers: [ {
-    provide: STEPPER_GLOBAL_OPTIONS,
-    useValue: {
-      displayDefaultIndicatorType: false
-    }
-  }]
+  providers: [
+    {
+      provide: STEPPER_GLOBAL_OPTIONS,
+      useValue: {
+        displayDefaultIndicatorType: false,
+      },
+    },
+  ],
 })
 export class HistoryComponent {
   imagePath: string = environment.imagePath;

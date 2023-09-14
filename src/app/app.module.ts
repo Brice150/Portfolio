@@ -14,16 +14,16 @@ import { ErrorPathComponent } from './error-path/error-path.component';
 @NgModule({
   declarations: [AppComponent, ErrorPathComponent],
   imports: [
-    BrowserModule, 
-    appRouter, 
-    CardModule, 
-    PageModule, 
-    PickmeModule, 
+    BrowserModule,
+    appRouter,
+    CardModule,
+    PageModule,
+    PickmeModule,
     PlartModule,
     GametimeModule,
     DashboardModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

@@ -1,121 +1,145 @@
 <header>
-    <div class="title" title="GAMETIME">GAMETIME</div>
-    <nav>
-        <a class="return" routerLink="/page" title="Return">
-            <i class='bx bx-left-arrow-alt'></i>
-        </a>
-    </nav>
+  <div class="title" title="GAMETIME">GAMETIME</div>
+  <nav>
+    <a class="return" routerLink="/page" title="Return">
+      <i class="bx bx-left-arrow-alt"></i>
+    </a>
+  </nav>
 </header>
 
 <div class="container">
-    <div class="content">
-        <mat-accordion>
-            <mat-expansion-panel expanded>
-              <mat-expansion-panel-header>
-                <mat-panel-title>
-                  <i class='bx bxs-home'></i>
-                  <span>Page</span>
-                </mat-panel-title>
-              </mat-expansion-panel-header>
-              <div class="expansion-content">
-                <div class="pictures">
-                    <img [src]="imagePath + 'Page.png'" alt="GAMETIME">
-                </div>
-                <ul>
-                    <li>Handle your account and learn how to play</li>
-                    <li>Choose to play to various games</li>
-                </ul>
-              </div>
-            </mat-expansion-panel>
-            <mat-expansion-panel>
-              <mat-expansion-panel-header>
-                <mat-panel-title>
-                  <i class='bx bxs-objects-horizontal-left'></i>
-                  <span>Motus</span>
-                </mat-panel-title>
-              </mat-expansion-panel-header>
-              <div class="expansion-content">
-                <div class="pictures">
-                    <img class="larger" [src]="imagePath + 'Motus.png'" alt="GAMETIME">
-                </div>
-                <ul>
-                    <li>Find a word</li>
-                    <li>Hint : first letter, red and yellow letter colors</li>
-                </ul>
-              </div>
-            </mat-expansion-panel>
-            <mat-expansion-panel>
-                <mat-expansion-panel-header>
-                  <mat-panel-title>
-                    <i class='bx bxs-flag'></i>
-                    <span>Drapeau</span>
-                  </mat-panel-title>
-                </mat-expansion-panel-header>
-                <div class="expansion-content">
-                    <div class="pictures">
-                      <img class="larger" [src]="imagePath + 'Flag.png'" alt="GAMETIME">
-                    </div>
-                    <ul>
-                        <li>Find a country</li>
-                        <li>Hint : flag, red and yellow letter colors</li>
-                    </ul>
-                </div>
-            </mat-expansion-panel>
-            <mat-expansion-panel>
-              <mat-expansion-panel-header>
-                <mat-panel-title>
-                  <i class='bx bxs-grid'></i>
-                  <span>Meli Melo</span>
-                </mat-panel-title>
-              </mat-expansion-panel-header>
-              <div class="expansion-content">
-                  <div class="pictures">
-                    <img class="larger" [src]="imagePath + 'Meli.png'" alt="GAMETIME">
-                  </div>
-                  <ul>
-                      <li>Find a word</li>
-                      <li>Hint : not in order letters, red letter color</li>
-                  </ul>
-              </div>
-          </mat-expansion-panel>
-          <mat-expansion-panel>
-            <mat-expansion-panel-header>
-              <mat-panel-title>
-                <i class='bx bxs-badge-dollar'></i>
-                <span>Juste Prix</span>
-              </mat-panel-title>
-            </mat-expansion-panel-header>
-            <div class="expansion-content">
-                <div class="pictures">
-                  <img class="larger" [src]="imagePath + 'Juste.png'" alt="GAMETIME">
-                </div>
-                <ul>
-                    <li>Find a number</li>
-                    <li>Hint : green arrow if +, red arrow if -</li>
-                </ul>
-            </div>
-        </mat-expansion-panel>
-        <mat-expansion-panel>
-            <mat-expansion-panel-header>
-              <mat-panel-title>
-                <i class='bx bx-math'></i>
-                <span>Calcul</span>
-              </mat-panel-title>
-            </mat-expansion-panel-header>
-            <div class="expansion-content">
-                <div class="pictures">
-                  <img class="larger" [src]="imagePath + 'Calcul.png'" alt="GAMETIME">
-                </div>
-                <ul>
-                    <li>Find a number</li>
-                    <li>Hint : equation, green arrow if + and red arrow if -</li>
-                </ul>
-            </div>
-        </mat-expansion-panel>
-        </mat-accordion>
-    </div>
-    <div class="buttons">
-      <a href="https://github.com/Brice150/GAMETIME" target="_blank" title="View Code" class="btn">View Code</a>
-      <a href="https://brice150.github.io/GAMETIME/" target="_blank" title="View Code" class="btn">Try it</a>
-    </div>
+  <div class="content">
+    <mat-accordion>
+      <mat-expansion-panel expanded>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <i class="bx bxs-home"></i>
+            <span>Page</span>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <div class="expansion-content">
+          <div class="pictures">
+            <img [src]="imagePath + 'Page.png'" alt="GAMETIME" />
+          </div>
+          <ul>
+            <li>Handle your account and learn how to play</li>
+            <li>Choose to play to various games</li>
+          </ul>
+        </div>
+      </mat-expansion-panel>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <i class="bx bxs-objects-horizontal-left"></i>
+            <span>Motus</span>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <div class="expansion-content">
+          <div class="pictures">
+            <img
+              class="larger"
+              [src]="imagePath + 'Motus.png'"
+              alt="GAMETIME"
+            />
+          </div>
+          <ul>
+            <li>Find a word</li>
+            <li>Hint : first letter, red and yellow letter colors</li>
+          </ul>
+        </div>
+      </mat-expansion-panel>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <i class="bx bxs-flag"></i>
+            <span>Drapeau</span>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <div class="expansion-content">
+          <div class="pictures">
+            <img class="larger" [src]="imagePath + 'Flag.png'" alt="GAMETIME" />
+          </div>
+          <ul>
+            <li>Find a country</li>
+            <li>Hint : flag, red and yellow letter colors</li>
+          </ul>
+        </div>
+      </mat-expansion-panel>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <i class="bx bxs-grid"></i>
+            <span>Meli Melo</span>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <div class="expansion-content">
+          <div class="pictures">
+            <img class="larger" [src]="imagePath + 'Meli.png'" alt="GAMETIME" />
+          </div>
+          <ul>
+            <li>Find a word</li>
+            <li>Hint : not in order letters, red letter color</li>
+          </ul>
+        </div>
+      </mat-expansion-panel>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <i class="bx bxs-badge-dollar"></i>
+            <span>Juste Prix</span>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <div class="expansion-content">
+          <div class="pictures">
+            <img
+              class="larger"
+              [src]="imagePath + 'Juste.png'"
+              alt="GAMETIME"
+            />
+          </div>
+          <ul>
+            <li>Find a number</li>
+            <li>Hint : green arrow if +, red arrow if -</li>
+          </ul>
+        </div>
+      </mat-expansion-panel>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <i class="bx bx-math"></i>
+            <span>Calcul</span>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <div class="expansion-content">
+          <div class="pictures">
+            <img
+              class="larger"
+              [src]="imagePath + 'Calcul.png'"
+              alt="GAMETIME"
+            />
+          </div>
+          <ul>
+            <li>Find a number</li>
+            <li>Hint : equation, green arrow if + and red arrow if -</li>
+          </ul>
+        </div>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </div>
+  <div class="buttons">
+    <a
+      href="https://github.com/Brice150/GAMETIME"
+      target="_blank"
+      title="View Code"
+      class="btn"
+      >View Code</a
+    >
+    <a
+      href="https://brice150.github.io/GAMETIME/"
+      target="_blank"
+      title="View Code"
+      class="btn"
+      >Try it</a
+    >
+  </div>
 </div>

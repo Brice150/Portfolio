@@ -1,11 +1,15 @@
 <mat-stepper #stepper [labelPosition]="'bottom'">
   <mat-step state="edit">
     <ng-template matStepLabel>
-      <span [ngStyle]="{'color': 'black'}">2017-2020</span>
+      <span [ngStyle]="{ color: 'black' }">2017-2020</span>
     </ng-template>
     <div class="container">
       <div class="picture">
-        <img [src]="imagePath + 'logos/ensma.png'" alt="ISAE-ENSMA" class="ensma">
+        <img
+          [src]="imagePath + 'logos/ensma.png'"
+          alt="ISAE-ENSMA"
+          class="ensma"
+        />
       </div>
       <div class="text">
         <h4>ISAE-ENSMA</h4>
@@ -15,11 +19,11 @@
   </mat-step>
   <mat-step state="edit">
     <ng-template matStepLabel>
-      <span [ngStyle]="{'color': 'black'}">2021</span>
+      <span [ngStyle]="{ color: 'black' }">2021</span>
     </ng-template>
     <div class="container">
       <div class="picture">
-        <img [src]="imagePath + 'logos/m2i.png'" alt="M2i" class="m2i">
+        <img [src]="imagePath + 'logos/m2i.png'" alt="M2i" class="m2i" />
       </div>
       <div class="text">
         <h4>M2i Certificate</h4>
@@ -29,11 +33,11 @@
   </mat-step>
   <mat-step state="edit">
     <ng-template matStepLabel>
-      <span [ngStyle]="{'color': 'black'}">2021-Today</span>
+      <span [ngStyle]="{ color: 'black' }">2021-Today</span>
     </ng-template>
     <div class="container">
       <div class="picture">
-        <img [src]="imagePath + 'logo.png'" alt="Web application" class="web">
+        <img [src]="imagePath + 'logo.png'" alt="Web application" class="web" />
       </div>
       <div class="text">
         <h4>Full-Stack Developer</h4>
@@ -43,11 +47,15 @@
   </mat-step>
   <mat-step state="edit">
     <ng-template matStepLabel>
-      <span [ngStyle]="{'color': 'black'}">2021-Today</span>
+      <span [ngStyle]="{ color: 'black' }">2021-Today</span>
     </ng-template>
     <div class="container">
       <div class="picture">
-        <img [src]="imagePath + 'logos/sopra.png'" alt="Sopra Steria" class="sopra">
+        <img
+          [src]="imagePath + 'logos/sopra.png'"
+          alt="Sopra Steria"
+          class="sopra"
+        />
       </div>
       <div class="text">
         <h4>Web Application Engineer</h4>
@@ -55,7 +63,7 @@
       </div>
     </div>
   </mat-step>
-    
+
   <ng-template matStepperIcon="edit">
     <mat-icon>timeline</mat-icon>
   </ng-template>
