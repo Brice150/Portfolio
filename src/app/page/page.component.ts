@@ -35,7 +35,7 @@ export class PageComponent implements OnInit {
   }
 
   initializeVanillaTilt() {
-    if (window.innerWidth >= 900) {
+    if (!window.matchMedia('(max-width: 900px)').matches) {
       VanillaTilt.init(document.querySelectorAll('.card') as any);
     }
   }
