@@ -73,9 +73,8 @@ mat-accordion mat-expansion-panel mat-panel-title i {
 }
 
 .skill .bar {
-  margin-left: 10px;
   margin-bottom: 10px;
-  width: 80%;
+  width: 100%;
   background-color: var(--background);
   display: block;
   border: 1px solid 8px var(--background);
