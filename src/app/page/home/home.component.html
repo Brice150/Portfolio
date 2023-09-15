@@ -1,41 +1,37 @@
-<div class="home" id="home">
-  <div class="container">
+<div class="container">
+  <div class="card" data-tilt data-tilt-max="10" id="home">
     <h1><span>Home</span></h1>
-    <div class="content">
-      <div class="presentation">
-        <img [src]="imagePath + 'logo.png'" />
-        <div class="titles">
-          <h2>Hi, I'm Brice</h2>
-          <h3>Full-Stack Developer</h3>
-          <p>With a french aerospace engineering degree,</p>
-          <p>
-            I currently participate in the creation of a web application for
-            managing military vehicles maintenance at Sopra Steria
-          </p>
-        </div>
-      </div>
-      <div class="links">
-        <a
-          href="https://www.linkedin.com/in/brice-lecomte/"
-          target="_blank"
-          title="LinkedIn"
-          ><i class="bx bxl-linkedin-square"></i
-        ></a>
-        <a href="https://github.com/Brice150" target="_blank" title="GitHub"
-          ><i class="bx bxl-github"></i
-        ></a>
-        <a (click)="toContact()" title="Contact Me" class="message"
-          ><i class="bx bxs-message"></i
-        ></a>
-      </div>
-      <a
-        href="./assets/files/CV.pdf"
-        download="CV.pdf"
-        title="Download CV"
-        (click)="download()"
-        class="btn"
-        >Download CV</a
-      >
+    <img [src]="imagePath + 'logo.png'" />
+    <div class="flex">
+      <div class="name">Brice Lecomte</div>
+      <div class="title">Full-Stack Developer</div>
     </div>
+    <div class="description">
+      With a french aerospace engineering degree, I currently participate in the
+      creation of a web application for managing military vehicles maintenance
+      at Sopra Steria
+    </div>
+    <div class="links">
+      <a
+        href="https://www.linkedin.com/in/brice-lecomte/"
+        target="_blank"
+        title="LinkedIn"
+        ><i class="bx bxl-linkedin-square"></i
+      ></a>
+      <a href="https://github.com/Brice150" target="_blank" title="GitHub"
+        ><i class="bx bxl-github"></i
+      ></a>
+      <a href="mailto:brice.lecomte0@gmail.com" target="_blank" title="Mail"
+        ><i class="bx bxs-envelope"></i
+      ></a>
+    </div>
+    <a
+      href="./assets/files/CV.pdf"
+      download="CV.pdf"
+      title="Download CV"
+      (click)="download()"
+      class="btn"
+      >Download CV</a
+    >
   </div>
 </div>

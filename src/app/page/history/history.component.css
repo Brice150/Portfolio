@@ -1,12 +1,49 @@
-mat-stepper {
+.container {
+  width: 100%;
   background-color: var(--background);
-  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
+}
+
+.card {
+  width: 80%;
+  max-width: 400px;
+  height: 600px;
+  padding: 20px;
+  background-color: var(--dark-blue);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 16px;
+  position: relative;
+}
+
+h1 {
+  position: absolute;
+  top: 10px;
+  font-size: 25px;
+  font-weight: 800;
+  color: black;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+mat-stepper {
+  width: 100%;
+  box-shadow: 5px 5px 23px #002558, -5px -5px 23px #0053ca;
+  background-color: var(--background);
+  border-radius: 5px;
 }
 
 mat-stepper .container {
   display: flex;
+  justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
+  flex-direction: column;
+  min-height: 300px;
 }
 
 mat-stepper .container .picture {
@@ -18,7 +55,12 @@ mat-stepper .container .picture {
 }
 
 mat-stepper .container .text {
-  width: 80%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
 }
 
 mat-stepper .container .ensma {

@@ -1,20 +1,17 @@
 import { RouterModule, Routes } from '@angular/router';
-import { CardComponent } from './card/card.component';
 import { PageComponent } from './page/page.component';
-import { PickmeComponent } from './pickme/pickme.component';
-import { PlartComponent } from './plart/plart.component';
-import { GametimeComponent } from './gametime/gametime.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
+import { PlartComponent } from './projects/plart/plart.component';
+import { DashboardComponent } from './projects/dashboard/dashboard.component';
 import { ErrorPathComponent } from './error-path/error-path.component';
+import { PickmeComponent } from './projects/pickme/pickme.component';
+import { GametimeComponent } from './projects/gametime/gametime.component';
 
 const routes: Routes = [
-  { path: 'page', component: PageComponent },
-  { path: 'card', component: CardComponent },
+  { path: '', component: PageComponent },
   { path: 'plart', component: PlartComponent },
   { path: 'pickme', component: PickmeComponent },
   { path: 'gametime', component: GametimeComponent },
   { path: 'dashboard', component: DashboardComponent },
-  { path: '', redirectTo: '/card', pathMatch: 'full' },
   { path: '**', component: ErrorPathComponent },
 ];
 

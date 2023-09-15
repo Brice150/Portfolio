@@ -1,23 +1,24 @@
-import { Component } from '@angular/core';
-import { environment } from 'src/environments/environment';
+import { Component, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
+import { environment } from 'src/environments/environment';
+import VanillaTilt from 'vanilla-tilt';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit {
   imagePath: string = environment.imagePath;
 
   constructor(private toastr: ToastrService) {}
 
-  toContact() {
-    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+  ngOnInit() {
+    VanillaTilt.init(document.getElementById('home') as any);
   }
 
   download() {
-    this.toastr.info('CV downloaded', 'File', {
+    this.toastr.success('CV downloaded', 'File', {
       positionClass: 'toast-bottom-center',
     });
   }

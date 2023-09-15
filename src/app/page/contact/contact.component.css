@@ -1,71 +1,73 @@
-.contact {
-  padding-top: 80px;
-  padding-bottom: 40px;
+.container {
   width: 100%;
+  background-color: var(--background);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
 }
 
-.container {
-  background-color: var(--background);
-  margin: auto 5%;
-  border-radius: 16px;
-  box-shadow: 8px 8px 16px #909090, -8px -8px 16px #d8d8d8;
+.card {
+  width: 80%;
+  max-width: 400px;
+  height: 600px;
+  padding: 20px;
+  background-color: var(--dark-blue);
   display: flex;
+  justify-content: center;
   align-items: center;
   flex-direction: column;
-  border: 7px solid var(--dark-blue);
+  border-radius: 16px;
+  position: relative;
 }
 
-.container h1 {
+h1 {
+  position: absolute;
+  top: 10px;
   font-size: 25px;
   font-weight: 800;
   color: black;
-  padding-top: 10px;
   letter-spacing: 1px;
   text-transform: uppercase;
 }
 
-.container h1 span {
-  color: var(--dark-blue);
-}
-
-.container form {
+form {
+  margin-top: 20px;
   display: flex;
   align-items: center;
   flex-direction: column;
   justify-content: center;
-  height: 100%;
-  width: 80%;
-  max-width: 1200px;
+  width: 100%;
 }
 
-.container form .form-input {
+form .form-input {
   margin: 20px 0;
   width: 100%;
   background: none;
-  color: black;
+  color: var(--text);
   font-size: 17px;
   font-weight: 700;
   border-radius: 7px;
-  box-shadow: 5px 5px 23px #9c9c9c, -5px -5px 23px #ffffff;
+  box-shadow: 5px 5px 23px #002558, -5px -5px 23px #0053ca;
   border: none;
   padding: 5px;
 }
 
-.container form .form-input::placeholder {
-  color: var(--dark-blue);
+form .form-input::placeholder {
+  color: var(--text);
 }
 
-.container form .form-input:focus {
-  box-shadow: inset 5px 5px 23px #9c9c9c, inset -5px -5px 23px #ffffff;
+form .form-input:focus {
+  box-shadow: inset 5px 5px 23px #002558, -5px -5px 23px #0053ca;
   outline: none;
 }
 
-.container form textarea {
+form textarea {
   resize: none;
   height: 200px;
 }
 
-.container form .btn {
+form .btn {
   margin-top: 20px;
   margin-bottom: 20px;
   background: none;
@@ -76,18 +78,17 @@
   background-color: var(--dark-blue);
   padding: 10px;
   border-radius: 0.4em;
-  box-shadow: 5px 5px 23px #9c9c9c, -5px -5px 23px #ffffff;
+  box-shadow: 5px 5px 23px #002558, -5px -5px 23px #0053ca;
   cursor: pointer;
   transition: 0.5s ease;
 }
 
-.container form .btn:hover {
-  background-color: white;
-  box-shadow: inset 5px 5px 23px #9c9c9c, inset -5px -5px 23px #ffffff;
+form .btn:hover {
+  box-shadow: inset 5px 5px 23px #002558, -5px -5px 23px #0053ca;
   color: black;
 }
 
-.container form span {
+form span {
   font-size: 20px;
   font-weight: 500;
   color: red;
