@@ -32,7 +32,6 @@ h1 {
 }
 
 mat-accordion {
-  margin-top: 20px;
   width: 100%;
   box-shadow: 5px 5px 23px #002558, -5px -5px 23px #0053ca;
 }

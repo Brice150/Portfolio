@@ -31,14 +31,15 @@ h1 {
   text-transform: uppercase;
 }
 
-mat-stepper {
+mat-vertical-stepper {
   width: 100%;
   box-shadow: 5px 5px 23px #002558, -5px -5px 23px #0053ca;
   background-color: var(--background);
   border-radius: 5px;
+  height: 500px;
 }
 
-mat-stepper .container {
+mat-vertical-stepper .container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -46,7 +47,7 @@ mat-stepper .container {
   padding: 0;
 }
 
-mat-stepper .container .picture {
+mat-vertical-stepper .container .picture {
   width: 100px;
   height: 80px;
   display: flex;
@@ -54,7 +55,7 @@ mat-stepper .container .picture {
   align-items: center;
 }
 
-mat-stepper .container .text {
+mat-vertical-stepper .container .text {
   width: 100%;
   display: flex;
   justify-content: center;
@@ -63,33 +64,33 @@ mat-stepper .container .text {
   text-align: center;
 }
 
-mat-stepper .container .ensma {
+mat-vertical-stepper .container .ensma {
   width: 80px;
   height: auto;
 }
 
-mat-stepper .container .m2i {
+mat-vertical-stepper .container .m2i {
   width: 45px;
   height: auto;
 }
 
-mat-stepper .container .web {
+mat-vertical-stepper .container .web {
   width: 45px;
   height: auto;
 }
 
-mat-stepper .container .sopra {
+mat-vertical-stepper .container .sopra {
   width: 80px;
   height: auto;
 }
 
-mat-stepper .container h4 {
+mat-vertical-stepper .container h4 {
   font-size: 20px;
   font-weight: 600;
   color: var(--dark-blue);
 }
 
-mat-stepper .container p {
+mat-vertical-stepper .container p {
   font-size: 17px;
   font-weight: 600;
   color: black;

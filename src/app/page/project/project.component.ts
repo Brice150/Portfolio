@@ -14,28 +14,32 @@ export class ProjectComponent implements OnInit {
   projects: Project[] = [
     {
       name: 'PLART',
-      title: '3D Printing',
+      description:
+        'A 3D printing web application to share files with other users and chat',
       logo: 'logos/plart.png',
       image: 'projects/plart/PLART.png',
       link: '/plart',
     },
     {
       name: 'PICK ME',
-      title: 'Dating',
+      description:
+        'A dating web application to like, chat and match with other users',
       logo: 'logos/pickme.png',
       image: 'projects/pickme/PICKME.png',
       link: '/pickme',
     },
     {
       name: 'GAME TIME',
-      title: 'Gaming',
+      description:
+        'A gaming application to show off your skills with words and numbers',
       logo: 'logos/gametime.png',
       image: 'projects/gametime/GAMETIME.png',
       link: '/gametime',
     },
     {
       name: 'DASHBOARD',
-      title: 'Forecasting',
+      description:
+        'A personnal dashboard web application to see weather, tasks or finance',
       logo: 'logos/dashboard.png',
       image: 'projects/dashboard/DASHBOARD.png',
       link: '/dashboard',

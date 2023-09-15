@@ -1,7 +1,7 @@
 <div class="container">
   <div class="card" data-tilt data-tilt-max="10" id="history">
     <h1>History</h1>
-    <mat-stepper #stepper [labelPosition]="'bottom'" orientation="vertical">
+    <mat-vertical-stepper #stepper>
       <mat-step state="edit">
         <ng-template matStepLabel>
           <span [ngStyle]="{ color: 'black' }">2017-2020</span>
@@ -73,6 +73,6 @@
       <ng-template matStepperIcon="edit">
         <mat-icon>timeline</mat-icon>
       </ng-template>
-    </mat-stepper>
+    </mat-vertical-stepper>
   </div>
 </div>
