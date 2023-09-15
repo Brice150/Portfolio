@@ -20,6 +20,12 @@ export class HistoryComponent implements OnInit {
   imagePath: string = environment.imagePath;
 
   ngOnInit() {
-    VanillaTilt.init(document.getElementById('history') as any);
+    this.initializeVanillaTilt();
+  }
+
+  initializeVanillaTilt() {
+    if (window.innerWidth >= 900) {
+      VanillaTilt.init(document.getElementById('history') as any);
+    }
   }
 }

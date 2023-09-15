@@ -14,7 +14,13 @@ export class HomeComponent implements OnInit {
   constructor(private toastr: ToastrService) {}
 
   ngOnInit() {
-    VanillaTilt.init(document.getElementById('home') as any);
+    this.initializeVanillaTilt();
+  }
+
+  initializeVanillaTilt() {
+    if (window.innerWidth >= 900) {
+      VanillaTilt.init(document.getElementById('home') as any);
+    }
   }
 
   download() {

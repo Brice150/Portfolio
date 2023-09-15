@@ -47,6 +47,12 @@ export class ProjectComponent implements OnInit {
   ];
 
   ngOnInit() {
-    VanillaTilt.init(document.getElementById('project') as any);
+    this.initializeVanillaTilt();
+  }
+
+  initializeVanillaTilt() {
+    if (window.innerWidth >= 900) {
+      VanillaTilt.init(document.getElementById('project') as any);
+    }
   }
 }

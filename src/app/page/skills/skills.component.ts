@@ -8,6 +8,12 @@ import VanillaTilt from 'vanilla-tilt';
 })
 export class SkillsComponent implements OnInit {
   ngOnInit() {
-    VanillaTilt.init(document.getElementById('skills') as any);
+    this.initializeVanillaTilt();
+  }
+
+  initializeVanillaTilt() {
+    if (window.innerWidth >= 900) {
+      VanillaTilt.init(document.getElementById('skills') as any);
+    }
   }
 }
