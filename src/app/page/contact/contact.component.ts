@@ -26,7 +26,6 @@ export class ContactComponent implements OnDestroy, OnInit {
   ) {}
 
   ngOnInit() {
-    this.initializeVanillaTilt();
     this.contactForm = this.fb.group({
       name: [
         '',
@@ -128,12 +127,6 @@ export class ContactComponent implements OnDestroy, OnInit {
           return ', ';
         }
       });
-    }
-  }
-
-  initializeVanillaTilt() {
-    if (window.innerWidth >= 900) {
-      VanillaTilt.init(document.getElementById('contact') as any);
     }
   }
 }

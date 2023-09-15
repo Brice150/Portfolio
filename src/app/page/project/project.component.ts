@@ -1,14 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Project } from 'src/app/core/interface/project';
 import { environment } from 'src/environments/environment';
-import VanillaTilt from 'vanilla-tilt';
 
 @Component({
   selector: 'app-project',
   templateUrl: './project.component.html',
   styleUrls: ['./project.component.css'],
 })
-export class ProjectComponent implements OnInit {
+export class ProjectComponent {
   imagePath: string = environment.imagePath;
 
   projects: Project[] = [
@@ -45,14 +44,4 @@ export class ProjectComponent implements OnInit {
       link: '/dashboard',
     },
   ];
-
-  ngOnInit() {
-    this.initializeVanillaTilt();
-  }
-
-  initializeVanillaTilt() {
-    if (window.innerWidth >= 900) {
-      VanillaTilt.init(document.getElementById('project') as any);
-    }
-  }
 }

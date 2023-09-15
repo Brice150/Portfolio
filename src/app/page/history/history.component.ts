@@ -1,7 +1,6 @@
 import { STEPPER_GLOBAL_OPTIONS } from '@angular/cdk/stepper';
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { environment } from 'src/environments/environment';
-import VanillaTilt from 'vanilla-tilt';
 
 @Component({
   selector: 'app-history',
@@ -16,16 +15,6 @@ import VanillaTilt from 'vanilla-tilt';
     },
   ],
 })
-export class HistoryComponent implements OnInit {
+export class HistoryComponent {
   imagePath: string = environment.imagePath;
-
-  ngOnInit() {
-    this.initializeVanillaTilt();
-  }
-
-  initializeVanillaTilt() {
-    if (window.innerWidth >= 900) {
-      VanillaTilt.init(document.getElementById('history') as any);
-    }
-  }
 }

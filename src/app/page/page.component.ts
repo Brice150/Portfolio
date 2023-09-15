@@ -1,16 +1,16 @@
-import { Component } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { SwiperOptions } from 'swiper';
+import VanillaTilt from 'vanilla-tilt';
 
 @Component({
   selector: 'app-root',
   templateUrl: './page.component.html',
   styleUrls: ['./page.component.css'],
 })
-export class PageComponent {
+export class PageComponent implements OnInit {
   config: SwiperOptions = {
     mousewheel: {},
     keyboard: {},
-    grabCursor: true,
     loop: false,
     pagination: {
       el: '.swiper-pagination',
@@ -29,4 +29,19 @@ export class PageComponent {
       },
     },
   };
+
+  ngOnInit() {
+    this.initializeVanillaTilt();
+  }
+
+  initializeVanillaTilt() {
+    if (window.innerWidth >= 900) {
+      VanillaTilt.init(document.querySelectorAll('.card') as any);
+    }
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event: Event) {
+    this.initializeVanillaTilt();
+  }
 }
