@@ -1,4 +1,4 @@
-import { Component, HostListener, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { SwiperOptions } from 'swiper';
 import VanillaTilt from 'vanilla-tilt';
 
@@ -38,10 +38,5 @@ export class PageComponent implements OnInit {
     if (window.innerWidth >= 900) {
       VanillaTilt.init(document.querySelectorAll('.card') as any);
     }
-  }
-
-  @HostListener('window:resize', ['$event'])
-  onResize(event: Event) {
-    this.initializeVanillaTilt();
   }
 }
