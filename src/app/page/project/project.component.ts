@@ -12,20 +12,12 @@ export class ProjectComponent {
 
   projects: Project[] = [
     {
-      name: 'PLART',
+      name: 'DASHBOARD',
       description:
-        'A 3D printing web application to share files with other users and chat',
-      logo: 'logos/plart.png',
-      image: 'projects/plart/PLART.png',
-      link: '/plart',
-    },
-    {
-      name: 'PICK ME',
-      description:
-        'A dating web application to like, chat and match with other users',
-      logo: 'logos/pickme.png',
-      image: 'projects/pickme/PICKME.png',
-      link: '/pickme',
+        'A personnal dashboard web application to see weather, tasks or finance',
+      logo: 'logos/dashboard.png',
+      image: 'projects/dashboard/DASHBOARD.png',
+      link: '/dashboard',
     },
     {
       name: 'GAME TIME',
@@ -36,12 +28,20 @@ export class ProjectComponent {
       link: '/gametime',
     },
     {
-      name: 'DASHBOARD',
+      name: 'PICK ME',
       description:
-        'A personnal dashboard web application to see weather, tasks or finance',
-      logo: 'logos/dashboard.png',
-      image: 'projects/dashboard/DASHBOARD.png',
-      link: '/dashboard',
+        'A dating web application to like, chat and match with other users',
+      logo: 'logos/pickme.png',
+      image: 'projects/pickme/PICKME.png',
+      link: '/pickme',
+    },
+    {
+      name: 'PLART',
+      description:
+        'A 3D printing web application to share files with other users and chat',
+      logo: 'logos/plart.png',
+      image: 'projects/plart/PLART.png',
+      link: '/plart',
     },
   ];
 }

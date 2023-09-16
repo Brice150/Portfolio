@@ -52,7 +52,7 @@ mat-tab {
   justify-content: center;
   flex-direction: column;
   width: 100%;
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 .image {
@@ -125,7 +125,7 @@ mat-tab {
 
 .btn {
   margin-top: 12px;
-  margin-bottom: 22px;
+  margin-bottom: 28px;
   text-decoration: none;
   background: none;
   border: none;
@@ -144,4 +144,10 @@ mat-tab {
   background-color: white;
   box-shadow: inset 5px 5px 23px #9c9c9c, inset -5px -5px 23px #ffffff;
   color: black;
+}
+
+@media screen and (max-width: 448px) {
+  .btn {
+    margin-bottom: 17px;
+  }
 }
