@@ -99,7 +99,7 @@ mat-accordion mat-expansion-panel mat-panel-title i {
 }
 
 .skill .bar .prog.angular {
-  width: 85%;
+  width: 90%;
   background: linear-gradient(90deg, var(--dark-blue), var(--light-blue));
 }
 
@@ -124,17 +124,17 @@ mat-accordion mat-expansion-panel mat-panel-title i {
 }
 
 .skill .bar .prog.postgres {
-  width: 90%;
+  width: 75%;
   background: linear-gradient(90deg, red, rgb(255, 125, 125));
 }
 
 .skill .bar .prog.vscode {
-  width: 85%;
+  width: 90%;
   background: linear-gradient(90deg, green, rgb(125, 255, 125));
 }
 
 .skill .bar .prog.talend {
-  width: 90%;
+  width: 80%;
   background: linear-gradient(90deg, green, rgb(125, 255, 125));
 }
 
