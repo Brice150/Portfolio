@@ -9,9 +9,9 @@ Frontend : Angular
 <details>
   <summary>Pages Features</summary>
 
-### Card
+### Cards
 
-- Tilting visit card
+- Portfolio contains cards that can tilt or slide when scrolling or dragging
 
 ### Home
 
@@ -23,7 +23,7 @@ Frontend : Angular
 
 ### Project
 
-- View my web-application projects in a swiper
+- View my web-application projects
 - Link to more information about the project
 
 ### Contact
