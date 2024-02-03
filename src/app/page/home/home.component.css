@@ -68,9 +68,14 @@ h1 {
 
 .card .description {
   text-align: justify;
-  font-size: 18px;
+  font-size: 17px;
   font-weight: 600;
   color: black;
+  background-color: white;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  padding: 5px;
+  box-shadow: 5px 5px 23px #002558, -5px -5px 23px #0053ca;
 }
 
 .card .links {
@@ -115,4 +120,14 @@ h1 {
 .btn:hover {
   box-shadow: inset 5px 5px 23px #002558, inset -5px -5px 23px #0053ca;
   color: var(--hover);
+}
+
+@media screen and (max-width: 400px) {
+  .card img {
+    width: 150px;
+  }
+
+  .card .description {
+    font-size: 16px;
+  }
 }

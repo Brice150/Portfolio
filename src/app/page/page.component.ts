@@ -9,14 +9,15 @@ import VanillaTilt from 'vanilla-tilt';
 })
 export class PageComponent implements OnInit {
   config: SwiperOptions = {
-    mousewheel: {},
-    keyboard: {},
+    mousewheel: true,
+    keyboard: true,
     loop: false,
     pagination: {
       el: '.swiper-pagination',
       clickable: true,
       dynamicBullets: true,
     },
+    simulateTouch: false,
     breakpoints: {
       0: {
         slidesPerView: 1,

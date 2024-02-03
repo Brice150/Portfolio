@@ -4,6 +4,7 @@ import { DashboardComponent } from './projects/dashboard/dashboard.component';
 import { GametimeComponent } from './projects/gametime/gametime.component';
 import { PickmeComponent } from './projects/pickme/pickme.component';
 import { PlartComponent } from './projects/plart/plart.component';
+import { SimulatorComponent } from './projects/simulator/simulator.component';
 
 const routes: Routes = [
   { path: '', component: PageComponent },
@@ -11,6 +12,7 @@ const routes: Routes = [
   { path: 'pickme', component: PickmeComponent },
   { path: 'gametime', component: GametimeComponent },
   { path: 'dashboard', component: DashboardComponent },
+  { path: 'simulator', component: SimulatorComponent },
   { path: '**', component: PageComponent },
 ];
 

@@ -5,7 +5,11 @@
       <mat-tab *ngFor="let project of projects" [label]="project.name">
         <div class="content">
           <div class="image">
-            <img [src]="imagePath + project.image" [alt]="project.image" />
+            <img
+              [ngClass]="{ bordersimulator: project.name === 'SIMULATOR' }"
+              [src]="imagePath + project.image"
+              [alt]="project.image"
+            />
           </div>
           <div class="description">
             <div class="title">

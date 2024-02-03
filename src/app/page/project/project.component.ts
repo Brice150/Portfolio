@@ -12,6 +12,13 @@ export class ProjectComponent {
 
   projects: Project[] = [
     {
+      name: 'SIMULATOR',
+      description: 'A subsidies simulator to make your home more eco-friendly',
+      logo: 'logos/simulator.png',
+      image: 'projects/simulator/SIMULATOR.png',
+      link: '/simulator',
+    },
+    {
       name: 'DASHBOARD',
       description:
         'A personnal dashboard web application to see weather, tasks or finance',

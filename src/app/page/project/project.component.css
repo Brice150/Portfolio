@@ -68,6 +68,10 @@ mat-tab {
   object-fit: cover;
 }
 
+.image img.bordersimulator {
+  border: 3px solid #729b79;
+}
+
 .description {
   margin-top: 10px;
   width: 80%;

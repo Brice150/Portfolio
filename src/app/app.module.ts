@@ -9,6 +9,7 @@ import { DashboardModule } from './projects/dashboard/dashboard.module';
 import { GametimeModule } from './projects/gametime/gametime.module';
 import { PickmeModule } from './projects/pickme/pickme.module';
 import { PlartModule } from './projects/plart/plart.module';
+import { SimulatorModule } from './projects/simulator/simulator.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -21,6 +22,7 @@ import { PlartModule } from './projects/plart/plart.module';
     PlartModule,
     GametimeModule,
     DashboardModule,
+    SimulatorModule,
     ToastrModule.forRoot(),
   ],
   bootstrap: [AppComponent],
