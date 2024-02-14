@@ -43,8 +43,8 @@ form {
 form .form-input {
   margin: 20px 0;
   width: 100%;
-  background: none;
-  color: var(--text);
+  background-color: var(--text);
+  color: var(--dark-blue);
   font-size: 17px;
   font-weight: 700;
   border-radius: 7px;
@@ -54,7 +54,7 @@ form .form-input {
 }
 
 form .form-input::placeholder {
-  color: var(--text);
+  color: var(--hover);
 }
 
 form .form-input:focus {
