@@ -109,7 +109,7 @@ mat-accordion mat-expansion-panel mat-panel-title i {
 }
 
 .skill .bar .prog.js {
-  width: 70%;
+  width: 80%;
   background: linear-gradient(90deg, var(--dark-blue), var(--light-blue));
 }
 

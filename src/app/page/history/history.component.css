@@ -70,17 +70,17 @@ mat-vertical-stepper .container .ensma {
 }
 
 mat-vertical-stepper .container .m2i {
-  width: 45px;
+  width: 55px;
   height: auto;
 }
 
-mat-vertical-stepper .container .web {
-  width: 45px;
+mat-vertical-stepper .container .angular {
+  width: 80px;
   height: auto;
 }
 
 mat-vertical-stepper .container .sopra {
-  width: 80px;
+  width: 60px;
   height: auto;
 }
 

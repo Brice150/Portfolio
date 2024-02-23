@@ -2,25 +2,44 @@
   <div class="card" data-tilt data-tilt-max="10" data-tilt-gyroscope="false">
     <h1>Projects</h1>
     <mat-tab-group>
-      <mat-tab *ngFor="let project of projects" [label]="project.name">
-        <div class="content">
+      <mat-tab label="Frontend">
+        <div
+          class="content"
+          *ngFor="let project of frontendProjects"
+          (click)="openDialog(project)"
+          [title]="project.name"
+        >
           <div class="image">
-            <img
-              [ngClass]="{ bordersimulator: project.name === 'SIMULATOR' }"
-              [src]="imagePath + project.image"
-              [alt]="project.image"
-            />
+            <img [src]="imagePath + project.image" [alt]="project.name" />
           </div>
           <div class="description">
             <div class="title">
-              <img [src]="imagePath + project.logo" alt="project.logo" />
+              <img
+                [src]="imagePath + project.logo"
+                [alt]="project.name"
+                [ngClass]="project.name === 'TESLA' ? 'smaller' : null"
+              />
               <span>{{ project.name }}</span>
             </div>
-            <span>{{ project.description }}</span>
           </div>
-          <a [routerLink]="project.link" title="More Info" class="btn">
-            More Info
-          </a>
+        </div>
+      </mat-tab>
+      <mat-tab label="Full-Stack">
+        <div
+          class="content"
+          *ngFor="let project of fullStackProjects"
+          (click)="openDialog(project)"
+          [title]="project.name"
+        >
+          <div class="image">
+            <img [src]="imagePath + project.image" [alt]="project.name" />
+          </div>
+          <div class="description">
+            <div class="title">
+              <img [src]="imagePath + project.logo" [alt]="project.name" />
+              <span>{{ project.name }}</span>
+            </div>
+          </div>
         </div>
       </mat-tab>
     </mat-tab-group>
