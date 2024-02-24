@@ -13,15 +13,14 @@
     </div>
     <span class="description">{{ project.description }}</span>
   </div>
-  <div class="video">
-    <video
-      [src]="videoPath + project.video"
-      autoplay
-      loop
-      muted
-      controls
-    ></video>
-  </div>
+  <video
+    [poster]="imagePath + project.image"
+    [src]="videoPath + project.video"
+    autoplay
+    loop
+    muted
+    controls
+  ></video>
   <div class="buttons">
     <a [href]="project.repoLink" target="_blank" title="View Code" class="btn"
       >View Code</a
