@@ -54,11 +54,17 @@ mat-tab-group {
   width: 180px;
   height: 200px;
   margin-top: 10px;
-  background-color: var(--dark-blue);
-  border: 2px solid var(--dark-blue);
   border-radius: 10px;
   cursor: pointer;
   transition: 0.5s ease;
+}
+
+.content:hover {
+  background-color: var(--dark-blue);
+}
+
+.content:hover .title {
+  color: var(--text);
 }
 
 .image {
@@ -73,7 +79,7 @@ mat-tab-group {
   height: 150px;
   border-radius: 10px;
   object-fit: cover;
-  cursor: pointer;
+  border: 2px solid var(--dark-blue);
 }
 
 .title {
@@ -82,7 +88,8 @@ mat-tab-group {
   justify-content: center;
   align-items: center;
   width: 100%;
-  color: var(--text);
+  color: var(--dark-blue);
+  transition: 0.5s ease;
 }
 
 .title img {
@@ -94,15 +101,6 @@ mat-tab-group {
 .title img.smaller {
   width: 30px;
   height: 30px;
-}
-
-.content:hover {
-  background-color: white;
-  border: 2px solid white;
-}
-
-.content:hover .title {
-  color: black;
 }
 
 ::ng-deep span {
@@ -123,33 +121,4 @@ mat-tab-group {
 
 ::ng-deep .mat-mdc-tab-header-pagination-chevron {
   border-color: var(--dark-blue);
-}
-
-.btn {
-  margin-top: 12px;
-  margin-bottom: 28px;
-  text-decoration: none;
-  background: none;
-  border: none;
-  font-size: 17px;
-  font-weight: 700;
-  color: var(--text);
-  background-color: var(--dark-blue);
-  padding: 10px;
-  border-radius: 0.4em;
-  box-shadow: 5px 5px 23px #9c9c9c, -5px -5px 23px #ffffff;
-  cursor: pointer;
-  transition: 0.5s ease;
-}
-
-.btn:hover {
-  background-color: white;
-  box-shadow: inset 5px 5px 23px #9c9c9c, inset -5px -5px 23px #ffffff;
-  color: black;
-}
-
-@media screen and (max-width: 448px) {
-  .btn {
-    margin-bottom: 17px;
-  }
 }

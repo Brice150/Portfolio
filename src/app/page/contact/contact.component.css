@@ -32,70 +32,50 @@ h1 {
 }
 
 form {
-  margin-top: 20px;
   display: flex;
   align-items: center;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
+  height: 500px;
   width: 100%;
 }
 
-form .form-input {
-  margin: 20px 0;
+mat-form-field {
   width: 100%;
-  background-color: var(--text);
-  color: var(--dark-blue);
-  font-size: 17px;
-  font-weight: 700;
-  border-radius: 7px;
-  box-shadow: 5px 5px 23px #002558, -5px -5px 23px #0053ca;
-  border: none;
-  padding: 5px;
 }
 
-form .form-input::placeholder {
-  color: var(--hover);
-}
-
-form .form-input:focus {
-  box-shadow: inset 5px 5px 23px #002558, -5px -5px 23px #0053ca;
-  outline: none;
-}
-
-form textarea {
+form mat-form-field textarea {
   resize: none;
-  height: 200px;
+  min-height: 230px;
 }
 
-form .btn {
-  margin-top: 20px;
-  margin-bottom: 20px;
-  background: none;
-  border: none;
-  font-size: 17px;
-  font-weight: 700;
-  color: var(--text);
-  background-color: var(--dark-blue);
-  padding: 10px;
-  border-radius: 0.4em;
-  box-shadow: 5px 5px 23px #002558, -5px -5px 23px #0053ca;
-  cursor: pointer;
-  transition: 0.5s ease;
+::ng-deep form mat-form-field .mat-mdc-form-field-icon-suffix {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
-form .btn:hover {
-  box-shadow: inset 5px 5px 23px #002558, -5px -5px 23px #0053ca;
+::ng-deep .mdc-text-field {
+  border-radius: 5px !important;
+}
+
+::ng-deep .mdc-text-field--filled {
+  background-color: var(--background) !important;
+}
+
+::ng-deep
+  .mdc-text-field:not(.mdc-text-field--disabled)
+  .mdc-text-field__input {
   color: black;
 }
 
-form span {
-  font-size: 20px;
-  font-weight: 500;
-  color: red;
+::ng-deep .mdc-text-field:not(.mdc-text-field--disabled) .mdc-floating-label {
+  color: var(--dark-blue);
 }
 
-@media only screen and (max-width: 650px) {
-  .contact {
-    padding-top: 180px;
-  }
+::ng-deep
+  .mdc-text-field--invalid:not(.mdc-text-field--disabled)
+  .mdc-floating-label {
+  color: var(--error);
 }
