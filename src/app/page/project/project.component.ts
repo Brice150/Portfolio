@@ -36,6 +36,15 @@ export class ProjectComponent {
 
   frontendProjects: Project[] = [
     {
+      name: 'DASHBOARD',
+      logo: 'logos/dashboard.png',
+      image: 'projects/DASHBOARD.png',
+      video: 'projects/DASHBOARD.mp4',
+      description: 'A personal everyday dashboard',
+      repoLink: 'https://github.com/Brice150/DASHBOARD',
+      siteLink: 'https://brice150.github.io/DASHBOARD/',
+    },
+    {
       name: 'TESLA',
       logo: 'logos/tesla.png',
       image: 'projects/TESLA.png',
@@ -52,15 +61,6 @@ export class ProjectComponent {
       description: 'A house renovation subsidies calculator',
       repoLink: 'https://github.com/Brice150/Simulator',
       siteLink: 'https://brice150.github.io/Simulator/',
-    },
-    {
-      name: 'DASHBOARD',
-      logo: 'logos/dashboard.png',
-      image: 'projects/DASHBOARD.png',
-      video: 'projects/DASHBOARD.mp4',
-      description: 'A personal everyday dashboard',
-      repoLink: 'https://github.com/Brice150/DASHBOARD',
-      siteLink: 'https://brice150.github.io/DASHBOARD/',
     },
     {
       name: 'GAME TIME',
