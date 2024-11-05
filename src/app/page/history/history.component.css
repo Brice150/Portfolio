@@ -84,6 +84,11 @@ mat-vertical-stepper .container .sopra {
   height: auto;
 }
 
+mat-vertical-stepper .container .capgemini {
+  width: 90px;
+  height: auto;
+}
+
 mat-vertical-stepper .container h4 {
   font-size: 20px;
   font-weight: 600;
