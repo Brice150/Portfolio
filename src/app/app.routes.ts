@@ -1,9 +1,31 @@
-import { RouterModule, Routes } from '@angular/router';
-import { PageComponent } from './page/page.component';
+import { Routes } from '@angular/router';
+import { HomeComponent } from './home/home.component';
+import { SkillsComponent } from './skills/skills.component';
+import { HistoryComponent } from './history/history.component';
+import { ProjectsComponent } from './projects/projects.component';
+import { ContactComponent } from './contact/contact.component';
 
-const routes: Routes = [
-  { path: '', component: PageComponent },
-  { path: '**', component: PageComponent },
+export const routes: Routes = [
+  { path: 'home', component: HomeComponent, data: { animation: 'HomePage' } },
+  {
+    path: 'skills',
+    component: SkillsComponent,
+    data: { animation: 'SkillsPage' },
+  },
+  {
+    path: 'history',
+    component: HistoryComponent,
+    data: { animation: 'HistoryPage' },
+  },
+  {
+    path: 'projects',
+    component: ProjectsComponent,
+    data: { animation: 'ProjectsPage' },
+  },
+  {
+    path: 'contact',
+    component: ContactComponent,
+    data: { animation: 'ContactPage' },
+  },
+  { path: '**', redirectTo: 'home', pathMatch: 'full' },
 ];
-
-export const appRouter = RouterModule.forRoot(routes);

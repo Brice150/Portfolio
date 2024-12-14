@@ -1,0 +1,90 @@
+<section>
+  <div class="arrow left" routerLink="/skills" title="Previous">
+    <i class="bx bx-chevron-left"></i>
+  </div>
+  <div class="arrow right" routerLink="/projects" title="Next">
+    <i class="bx bx-chevron-right"></i>
+  </div>
+  <div class="title">
+    <h1>History</h1>
+  </div>
+  <div class="content">
+    <div class="timeline">
+      <div class="element">
+        <div class="main">
+          <div class="title-element">
+            <h2>2017-2020</h2>
+            <h3>ISAE-ENSMA</h3>
+          </div>
+          <div class="image">
+            <img
+              [src]="imagePath + 'ensma.webp'"
+              alt="ISAE-ENSMA"
+              class="ensma"
+            />
+          </div>
+        </div>
+        <div class="description">
+          <ul>
+            <li>
+              Calculated the amount of dihydrogen mass flow rate needed to cool
+              Ariane 5 Vulcain 2 Nozzle
+            </li>
+            <li>Optimised a business supersonic aircraft turbofan</li>
+            <li>Lead a ULM design project team</li>
+          </ul>
+        </div>
+      </div>
+      <div class="element" style="--delay: 0.7s">
+        <div class="main">
+          <div class="title-element">
+            <h2>2021-2024</h2>
+            <h3>Sopra Steria</h3>
+          </div>
+          <div class="image">
+            <img
+              [src]="imagePath + 'sopra.webp'"
+              alt="Sopra Steria"
+              class="sopra"
+            />
+          </div>
+        </div>
+        <div class="description">
+          <ul>
+            <li>
+              Participated in the creation of a web application for managing
+              military vehicles maintenance using Angular and Spring
+            </li>
+            <li>
+              Used Talend Open Studio to collect data from various file types
+              (xlsx, xml, json ...) and Rest APIs to insert it into databases
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="element" style="--delay: 1.2s">
+        <div class="main">
+          <div class="title-element">
+            <h2>2024-Today</h2>
+            <h3>Capgemini</h3>
+          </div>
+          <div class="image">
+            <img
+              [src]="imagePath + 'capgemini.webp'"
+              alt="Capgemini"
+              class="capgemini"
+            />
+          </div>
+        </div>
+        <div class="description">
+          <ul>
+            <li>
+              Contributed to the development of multiple web applications
+              focused on boat and sailor management using Angular and Spring
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

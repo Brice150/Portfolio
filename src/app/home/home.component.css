@@ -1,0 +1,286 @@
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+section {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  max-width: 1200px;
+  height: 650px;
+  border-radius: var(--strong-radius);
+  background: rgba(17, 25, 40, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px 0 black;
+}
+
+section .arrow {
+  position: absolute;
+  color: var(--primary);
+  font-size: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  border-radius: var(--light-radius);
+  transition: 0.5s ease;
+}
+
+section .arrow.left {
+  left: 0;
+}
+
+section .arrow.right {
+  right: 0;
+}
+
+section .title {
+  position: absolute;
+  top: 10px;
+}
+
+section .title h1 {
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--primary);
+  text-align: center;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin: 0;
+  padding: 0;
+}
+
+section .content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 30px;
+}
+
+section .content img {
+  width: 250px;
+  height: auto;
+  border-radius: var(--strong-radius);
+  background-color: var(--primary);
+  animation: animateElement 0.8s ease-out forwards;
+  animation-delay: var(--delay);
+  opacity: 0;
+}
+
+section .content .flex {
+  position: absolute;
+  top: 140px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 90%;
+}
+
+section .content .flex .main {
+  max-width: 550px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  height: 250px;
+  margin: 0 10px;
+}
+
+section .content .flex .main .info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 15px;
+}
+
+section .content .flex .main .info h2 {
+  font-size: 30px;
+  font-weight: 600;
+  color: var(--primary);
+  margin: 0;
+  padding: 0;
+  animation: animateElement 0.8s ease-out forwards;
+  animation-delay: var(--delay);
+  opacity: 0;
+}
+
+section .content .flex .main .info h3 {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--primary);
+  margin: 0;
+  padding: 0;
+  animation: animateElement 0.8s ease-out forwards;
+  animation-delay: var(--delay);
+  opacity: 0;
+}
+
+section .content .flex .main .description {
+  text-align: justify;
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--accent);
+  background-color: var(--primary);
+  border-radius: var(--light-radius);
+  line-height: 25px;
+  padding: 12px;
+  animation: animateElement 0.8s ease-out forwards;
+  animation-delay: var(--delay);
+  opacity: 0;
+}
+
+section .content .links {
+  position: absolute;
+  bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  height: 130px;
+}
+
+section .content .links .flex-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+section .content .links .flex-links a {
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 50px;
+  color: var(--primary);
+  border-radius: var(--light-radius);
+  padding: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: animateElement 0.8s ease-out forwards;
+  animation-delay: var(--delay);
+  opacity: 0;
+  transition: 0.5s ease;
+}
+
+section .content .links .flex-links a:hover {
+  color: var(--accent);
+  background-color: var(--primary);
+  margin-bottom: -10px;
+  margin-top: 10px;
+}
+
+section .content .btn {
+  text-decoration: none;
+  background: none;
+  border: none;
+  color: var(--primary);
+  padding: 10px;
+  border-radius: var(--light-radius);
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  animation: animateElement 0.8s ease-out forwards;
+  animation-delay: var(--delay);
+  opacity: 0;
+  transition: 0.5s ease;
+}
+
+section .content .btn span {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+section .content .btn i {
+  font-size: 35px;
+}
+
+section .content .btn:hover {
+  color: var(--accent);
+  background-color: var(--primary);
+  margin-bottom: -8px;
+  margin-top: 8px;
+}
+
+@keyframes animateElement {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  section .arrow:hover {
+    color: var(--accent);
+    background-color: var(--primary);
+  }
+
+  section .arrow:hover.left {
+    left: -10px;
+  }
+
+  section .arrow:hover.right {
+    right: -10px;
+  }
+}
+
+@media screen and (max-width: 1013px) {
+  section .content .flex .main {
+    height: 200px;
+  }
+
+  section .content .flex {
+    top: 50px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  section .arrow.left {
+    left: -15px;
+  }
+
+  section .arrow.right {
+    right: -15px;
+  }
+
+  section .content img {
+    width: 200px;
+    margin-bottom: 10px;
+  }
+
+  section .content {
+    margin-top: 0;
+  }
+
+  section .content .flex .main .info .job {
+    margin-bottom: 10px;
+  }
+}
+
+@media screen and (max-width: 683px) {
+  section .content .flex .main .description {
+    padding: 5px;
+    margin-top: 10px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  section .content .flex .main .description {
+    line-height: 20px;
+  }
+}

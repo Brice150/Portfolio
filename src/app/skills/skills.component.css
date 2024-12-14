@@ -1,0 +1,237 @@
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+section {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  max-width: 1200px;
+  height: 650px;
+  border-radius: var(--strong-radius);
+  background: rgba(17, 25, 40, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px 0 black;
+}
+
+section .arrow {
+  position: absolute;
+  color: var(--primary);
+  font-size: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  border-radius: var(--light-radius);
+  transition: 0.5s ease;
+}
+
+section .arrow.left {
+  left: 0;
+}
+
+section .arrow.right {
+  right: 0;
+}
+
+section .arrow.bottom {
+  display: none;
+  bottom: 0;
+}
+
+section .title {
+  position: absolute;
+  top: 10px;
+}
+
+section .title h1 {
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--primary);
+  text-align: center;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin: 0;
+  padding: 0;
+}
+
+section .content {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 30px;
+  max-height: 584px;
+  overflow-y: auto;
+}
+
+section .content .categories {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 40px;
+  width: 90%;
+}
+
+section .content .categories .category {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 250px;
+  color: var(--primary);
+  border-radius: var(--light-radius);
+  padding-top: 10px;
+  animation: animateElement 0.8s ease-out forwards;
+  animation-delay: var(--delay);
+  opacity: 0;
+  transition: 0.5s ease;
+}
+
+section .content .category.active {
+  cursor: pointer;
+}
+
+section .content .category.active:hover {
+  background-color: var(--primary);
+  margin-bottom: -10px;
+  margin-top: 10px;
+  color: var(--accent);
+}
+
+section .content .category h2 {
+  font-size: 22px;
+  font-weight: 700;
+  margin: 0 0 10px 0;
+  padding: 0;
+}
+
+section .content .category .skills {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+section .content .category .skills i {
+  font-size: 40px;
+}
+
+section .content .category .skills img {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+}
+
+section .content .category .certificate {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+section .content .category .certificate img {
+  width: 250px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: var(--light-radius);
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 200;
+}
+
+.overlay img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: var(--light-radius);
+}
+
+@keyframes animateElement {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  section .arrow:hover {
+    color: var(--accent);
+    background-color: var(--primary);
+  }
+
+  section .arrow:hover.left {
+    left: -10px;
+  }
+
+  section .arrow:hover.right {
+    right: -10px;
+  }
+}
+
+@media screen and (max-width: 1025px) {
+  section .content .categories .category {
+    width: 200px;
+  }
+
+  section .content .category .certificate img {
+    width: 200px;
+    height: 140px;
+  }
+
+  section .content .category .skills .bxl-javascript {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 840px) {
+  section .content .categories {
+    gap: 18px;
+  }
+
+  section .content .categories .category {
+    padding-top: 0;
+  }
+
+  section .content .category.active:hover {
+    margin-bottom: 0;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  section .arrow.left {
+    left: -15px;
+  }
+
+  section .arrow.right {
+    right: -15px;
+  }
+}
+
+@media screen and (max-width: 517px) {
+  section .arrow.bottom {
+    display: block;
+    margin-bottom: -25px;
+  }
+}

@@ -1,0 +1,133 @@
+<section>
+  <div class="arrow left" routerLink="/home" title="Previous">
+    <i class="bx bx-chevron-left"></i>
+  </div>
+  <div class="arrow right" routerLink="/history" title="Next">
+    <i class="bx bx-chevron-right"></i>
+  </div>
+  <div class="arrow bottom" (click)="scrollDown()" title="Scroll Down">
+    <i class="bx bx-chevron-down"></i>
+  </div>
+  @if (expandedImageSrc()) {
+  <div class="overlay" (click)="closeImage()">
+    <img [src]="expandedImageSrc()" alt="Expanded Image" />
+  </div>
+  }
+  <div class="title">
+    <h1>Skills</h1>
+  </div>
+  <div class="content" #content>
+    <div class="categories">
+      <div
+        class="category active"
+        (click)="onImageClick(imagePath + 'certificates/Angular Training.webp')"
+        style="--delay: 0.2s"
+      >
+        <h2>Frontend</h2>
+        <div class="skills">
+          <img
+            [src]="imagePath + 'logos/angular.webp'"
+            alt="Angular"
+            title="Angular"
+            style="margin-top: -1px"
+          />
+          <i class="bx bxl-html5" title="HTML" style="color: #e54c21"></i>
+          <i class="bx bxl-css3" title="CSS" style="color: #214ce5"></i>
+          <i
+            class="bx bxl-typescript"
+            title="Typescript"
+            style="color: #007acc"
+          ></i>
+          <i
+            class="bx bxl-javascript"
+            title="Javascript"
+            style="color: #f3e11d"
+          ></i>
+        </div>
+        <div class="certificate">
+          <img
+            [src]="imagePath + 'certificates/Angular Training.webp'"
+            alt="Angular Training"
+            title="Angular Training"
+          />
+        </div>
+      </div>
+      <div
+        class="category active"
+        (click)="onImageClick(imagePath + 'certificates/M2i.webp')"
+        style="--delay: 0.4s"
+      >
+        <h2>Backend</h2>
+        <div class="skills">
+          <i
+            class="bx bxl-spring-boot"
+            title="Spring Boot"
+            style="color: #6db33f"
+          ></i>
+          <img [src]="imagePath + 'logos/java.webp'" alt="Java" title="Java" />
+        </div>
+        <div class="certificate">
+          <img
+            [src]="imagePath + 'certificates/M2i.webp'"
+            alt="M2i"
+            title="M2i"
+          />
+        </div>
+      </div>
+      <div
+        class="category active"
+        (click)="onImageClick(imagePath + 'certificates/Talend Academy.webp')"
+        style="--delay: 0.6s"
+      >
+        <h2>Softwares</h2>
+        <div class="skills">
+          <img
+            [src]="imagePath + 'logos/intelliJ.webp'"
+            alt="IntelliJ"
+            title="IntelliJ"
+          />
+          <i
+            class="bx bxl-visual-studio"
+            title="VSCode"
+            style="color: #0a75b8"
+          ></i>
+          <img
+            [src]="imagePath + 'logos/talend.webp'"
+            alt="Talend"
+            title="Talend"
+          />
+        </div>
+        <div class="certificate">
+          <img
+            [src]="imagePath + 'certificates/Talend Academy.webp'"
+            alt="Talend Academy"
+            title="Talend Academy"
+          />
+        </div>
+      </div>
+      <div class="category" style="--delay: 0.8s">
+        <h2>Databases</h2>
+        <div class="skills">
+          <i
+            class="bx bxl-postgresql"
+            title="PostgresSQL"
+            style="color: #2f6792"
+          ></i>
+          <img
+            [src]="imagePath + 'logos/oracle.webp'"
+            alt="Oracle"
+            title="Oracle"
+          />
+        </div>
+      </div>
+      <div class="category" style="--delay: 1s">
+        <h2>Git</h2>
+        <div class="skills">
+          <i class="bx bxl-git" title="Git" style="color: #f05033"></i>
+          <i class="bx bxl-github" title="Github" style="color: white"></i>
+          <i class="bx bxl-gitlab" title="Gitlab" style="color: #e24329"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

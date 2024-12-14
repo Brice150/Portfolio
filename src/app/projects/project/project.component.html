@@ -1,0 +1,20 @@
+<div class="project">
+  <img
+    [src]="imagePath + project().image"
+    [alt]="project().name"
+    class="image"
+  />
+  <div class="title">
+    <img
+      [src]="imagePath + project().logo"
+      [alt]="project().name"
+      class="logo"
+    />
+    <h2>{{ project().name }}</h2>
+  </div>
+  <span class="description">{{ project().description }}</span>
+  <a title="View More" (click)="viewMore()" class="btn">
+    <i class="bx bxs-folder-open"></i>
+    <span>View More</span>
+  </a>
+</div>

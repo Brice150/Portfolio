@@ -1,0 +1,57 @@
+import { Project } from '../../app/core/interface/project';
+
+export const projects: Project[] = [
+  {
+    name: 'DASHBOARD',
+    logo: 'projects/logos/dashboard.webp',
+    image: 'projects/DASHBOARD.webp',
+    video: 'projects/DASHBOARD.mp4',
+    description: 'A personal everyday dashboard',
+    repoLink: 'https://github.com/Brice150/DASHBOARD',
+    siteLink: 'https://brice150.github.io/DASHBOARD/',
+  },
+  {
+    name: 'PICK ME',
+    logo: 'projects/logos/pickme.webp',
+    image: 'projects/PICKME.webp',
+    video: 'projects/PICKME.mp4',
+    description: 'A dating web application',
+    repoLink: 'https://github.com/Brice150/PICKME',
+    siteLink: 'https://pick-me.up.railway.app/#/',
+  },
+  {
+    name: 'TESLA',
+    logo: 'projects/logos/tesla.webp',
+    image: 'projects/TESLA.webp',
+    video: 'projects/TESLA.mp4',
+    description: 'A car configurator',
+    repoLink: 'https://github.com/Brice150/Tesla',
+    siteLink: 'https://main--astonishing-torrone-2afc2a.netlify.app/',
+  },
+  {
+    name: 'SIMULATOR',
+    logo: 'projects/logos/simulator.webp',
+    image: 'projects/SIMULATOR.webp',
+    video: 'projects/SIMULATOR.mp4',
+    description: 'A house renovation subsidies calculator',
+    repoLink: 'https://github.com/Brice150/Simulator',
+    siteLink: 'https://brice150.github.io/Simulator/',
+  },
+  {
+    name: 'GAME TIME',
+    logo: 'projects/logos/gametime.webp',
+    image: 'projects/GAMETIME.webp',
+    video: 'projects/GAMETIME.mp4',
+    description: 'A gaming web application',
+    repoLink: 'https://github.com/Brice150/GAMETIME',
+    siteLink: 'https://brice150.github.io/GAMETIME/',
+  },
+  {
+    name: 'PLART',
+    logo: 'projects/logos/plart.webp',
+    image: 'projects/PLART.webp',
+    video: 'projects/PLART.mp4',
+    description: 'A 3D printing web application',
+    repoLink: 'https://github.com/Brice150/PLART',
+  },
+];

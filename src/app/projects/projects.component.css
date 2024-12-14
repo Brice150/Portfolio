@@ -1,0 +1,124 @@
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  max-width: 1200px;
+  height: 650px;
+  border-radius: var(--strong-radius);
+  background: rgba(17, 25, 40, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px 0 black;
+}
+
+.container .arrow {
+  position: absolute;
+  color: var(--primary);
+  font-size: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  border-radius: var(--light-radius);
+  transition: 0.5s ease;
+}
+
+.container .arrow.left {
+  left: 0;
+}
+
+.container .arrow.right {
+  right: 0;
+}
+
+.container .title {
+  position: absolute;
+  top: 10px;
+}
+
+.container .title h1 {
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--primary);
+  text-align: center;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin: 0;
+  padding: 0;
+}
+
+.container .content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 90%;
+  margin-top: 30px;
+}
+
+swiper-container {
+  width: 80%;
+  height: 550px;
+  max-width: 420px;
+  border-radius: var(--strong-radius);
+  animation: animateElement 1.4s ease-out forwards;
+  animation-delay: var(--delay);
+  opacity: 0;
+}
+
+swiper-slide {
+  width: 100%;
+  border-radius: var(--strong-radius);
+  cursor: grab;
+}
+
+@keyframes animateElement {
+  0% {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .container .arrow:hover {
+    color: var(--accent);
+    background-color: var(--primary);
+  }
+
+  .container .arrow:hover.left {
+    left: -10px;
+  }
+
+  .container .arrow:hover.right {
+    right: -10px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .container .arrow.left {
+    left: -15px;
+  }
+
+  .container .arrow.right {
+    right: -15px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  swiper-container {
+    height: 450px;
+  }
+}

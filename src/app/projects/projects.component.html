@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="arrow left" routerLink="/history" title="Previous">
+    <i class="bx bx-chevron-left"></i>
+  </div>
+  <div class="arrow right" routerLink="/contact" title="Next">
+    <i class="bx bx-chevron-right"></i>
+  </div>
+  <div class="title">
+    <h1>Projects</h1>
+  </div>
+  <div class="content">
+    <swiper-container effect="cards" mousewheel="true">
+      @for (project of projects; track project) {
+      <swiper-slide>
+        <app-project [project]="project"></app-project>
+      </swiper-slide>
+      }
+    </swiper-container>
+  </div>
+</div>

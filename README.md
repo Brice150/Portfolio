@@ -1,5 +1,5 @@
 <div align="center">
-<img height="130px" width="130px" src="./src/assets/images/logo.png">
+<img height="130px" width="130px" src="./src/assets/images/logo.webp">
 </div>
   
 # Portfolio
@@ -9,26 +9,31 @@ Frontend : Angular
 <details>
   <summary>Pages Features</summary>
 
-### Cards
-
-- Portfolio contains cards that can tilt or slide when scrolling or dragging
-
 ### Home
 
 - General description and links to know more about me
 
-### About
+## Skills
 
-- View information of my skills and background
+Discover the diverse set of skills I bring to the table. This section highlights my expertise in :
 
-### Project
+- Programming languages
+- Frameworks and tools
 
-- View my web-application projects
-- Link to more information about the project
+## History
 
-### Contact
+Explore my professional background, including :
 
-- Contact form with validators that sends me an email of your message
+- Work experience
+- Educational milestones
+
+## Projects
+
+Browse through my portfolio of web application projects.
+
+## Contact
+
+Reach out to me via a user-friendly contact form. The form includes validation to ensure accurate submissions and sends your message directly to my inbox
 
 </details>
 

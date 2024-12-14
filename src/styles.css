@@ -1,11 +1,12 @@
 :root {
-  --light-blue: #38b6ff;
-  --dark-blue: #003c91;
-  --text: #ffffff;
-  --background: #ffffff;
-  --scrollbar: #38b6ff;
-  --hover: #000000;
-  --error: #f44336;
+  --primary: white;
+  --secondary: black;
+  --accent: #0088ff;
+
+  --strong-radius: 20px;
+  --light-radius: 10px;
+
+  --background: linear-gradient(to right, #000428, #004e92);
 }
 
 html,
@@ -18,8 +19,18 @@ body {
   padding: 0;
   box-sizing: border-box;
   font-family: Roboto, "Helvetica Neue", sans-serif;
+  background: var(--background);
 }
 
 ::-webkit-scrollbar {
   display: none;
+}
+
+.toast-container .ngx-toastr.custom {
+  box-shadow: none;
+  border-radius: var(--light-radius);
+}
+
+.toast-container .ngx-toastr.custom.info {
+  background-color: var(--accent);
 }
