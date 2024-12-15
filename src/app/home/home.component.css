@@ -10,7 +10,8 @@ section {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 90%;
+  width: 100%;
+  margin: 0 10px;
   max-width: 1200px;
   height: 650px;
   border-radius: var(--strong-radius);
@@ -239,7 +240,7 @@ section .content .btn:hover {
   }
 }
 
-@media screen and (max-width: 1013px) {
+@media screen and (max-width: 933px) {
   section .content .flex .main {
     height: 200px;
   }

@@ -10,7 +10,8 @@ section {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 90%;
+  width: 100%;
+  margin: 0 10px;
   max-width: 1200px;
   height: 650px;
   border-radius: var(--strong-radius);

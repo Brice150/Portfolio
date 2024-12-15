@@ -5,8 +5,8 @@
   flex-direction: column;
   background-color: var(--primary);
   border-radius: var(--strong-radius);
-  height: 550px;
-  max-width: 420px;
+  height: 100%;
+  width: 100%;
   position: relative;
 }
 
@@ -100,11 +100,13 @@
   }
 }
 
-@media screen and (max-width: 500px) {
-  .project {
-    height: 450px;
+@media screen and (max-width: 600px) {
+  .project .image {
+    height: 300px;
   }
+}
 
+@media screen and (max-width: 500px) {
   .project .image {
     height: 250px;
   }
