@@ -260,10 +260,24 @@ section .content .timeline .element .description ul li {
   }
 }
 
+@media screen and (max-width: 496px) {
+  section {
+    margin-top: 100px;
+    height: calc(100vh - 150px);
+    height: calc(100dvh - 150px);
+  }
+}
+
 @media screen and (max-width: 400px) {
   section .content .timeline .element .main {
     flex-wrap: wrap;
     justify-content: center;
     gap: 5px;
+  }
+}
+
+@media screen and (max-height: 785px) {
+  section .content .timeline .element {
+    margin: 35px 0;
   }
 }

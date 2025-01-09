@@ -3,12 +3,6 @@
   align-items: center;
   justify-content: center;
   height: 100vh;
+  height: 100dvh;
   overflow: hidden;
-}
-
-@media screen and (max-width: 496px) {
-  .container {
-    margin-top: 50px;
-    height: calc(100vh - 50px);
-  }
 }

@@ -236,3 +236,41 @@ section .content .category .certificate img {
     margin-bottom: -25px;
   }
 }
+
+@media screen and (max-width: 496px) {
+  section {
+    margin-top: 100px;
+    height: calc(100vh - 150px);
+    height: calc(100dvh - 150px);
+  }
+}
+
+@media screen and (max-height: 785px) {
+  section .content {
+    max-height: 540px;
+  }
+}
+
+@media screen and (max-height: 740px) {
+  section .content {
+    max-height: 500px;
+  }
+}
+
+@media screen and (max-height: 715px) {
+  section .content {
+    max-height: 480px;
+  }
+}
+
+@media screen and (max-height: 690px) {
+  section .content {
+    max-height: 460px;
+  }
+}
+
+@media screen and (max-height: 670px) {
+  section .content {
+    max-height: 440px;
+  }
+}

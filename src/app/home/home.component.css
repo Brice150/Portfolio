@@ -280,8 +280,31 @@ section .content .btn:hover {
   }
 }
 
+@media screen and (max-width: 496px) {
+  section {
+    margin-top: 100px;
+    height: calc(100vh - 150px);
+    height: calc(100dvh - 150px);
+  }
+
+  section .content .links {
+    height: 117px;
+  }
+}
+
 @media screen and (max-width: 425px) {
   section .content .flex .main .description {
     line-height: 20px;
+  }
+}
+
+@media screen and (max-height: 785px) {
+  section .content .flex .main {
+    height: 100px;
+    margin-bottom: 100px;
+  }
+
+  section .content .flex .main .description {
+    display: none;
   }
 }

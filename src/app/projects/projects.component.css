@@ -5,7 +5,7 @@
   width: 100%;
 }
 
-.container {
+section {
   position: relative;
   display: flex;
   justify-content: center;
@@ -20,7 +20,7 @@
   box-shadow: 0 8px 32px 0 black;
 }
 
-.container .arrow {
+section .arrow {
   position: absolute;
   color: var(--primary);
   font-size: 60px;
@@ -33,20 +33,20 @@
   transition: 0.5s ease;
 }
 
-.container .arrow.left {
+section .arrow.left {
   left: 0;
 }
 
-.container .arrow.right {
+section .arrow.right {
   right: 0;
 }
 
-.container .title {
+section .title {
   position: absolute;
   top: 10px;
 }
 
-.container .title h1 {
+section .title h1 {
   font-size: 28px;
   font-weight: 800;
   color: var(--primary);
@@ -57,7 +57,7 @@
   padding: 0;
 }
 
-.container .content {
+section .content {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -94,26 +94,26 @@ swiper-slide {
 }
 
 @media screen and (min-width: 768px) {
-  .container .arrow:hover {
+  section .arrow:hover {
     color: var(--accent);
     background-color: var(--primary);
   }
 
-  .container .arrow:hover.left {
+  section .arrow:hover.left {
     left: -10px;
   }
 
-  .container .arrow:hover.right {
+  section .arrow:hover.right {
     right: -10px;
   }
 }
 
 @media screen and (max-width: 768px) {
-  .container .arrow.left {
+  section .arrow.left {
     left: -15px;
   }
 
-  .container .arrow.right {
+  section .arrow.right {
     right: -15px;
   }
 }
@@ -128,6 +128,14 @@ swiper-slide {
 @media screen and (max-width: 500px) {
   swiper-container {
     height: 450px;
+  }
+}
+
+@media screen and (max-width: 496px) {
+  section {
+    margin-top: 100px;
+    height: calc(100vh - 150px);
+    height: calc(100dvh - 150px);
   }
 }
 
