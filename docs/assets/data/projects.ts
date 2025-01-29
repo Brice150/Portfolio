@@ -2,6 +2,15 @@ import { Project } from '../../app/core/interface/project';
 
 export const projects: Project[] = [
   {
+    name: 'FOODLOVE',
+    logo: 'projects/logos/foodlove.webp',
+    image: 'projects/FOODLOVE.webp',
+    video: 'projects/FOODLOVE.mp4',
+    description: 'A recipes management web application',
+    repoLink: 'https://github.com/Brice150/FOODLOVE',
+    siteLink: 'https://brice150.github.io/FOODLOVE/',
+  },
+  {
     name: 'DASHBOARD',
     logo: 'projects/logos/dashboard.webp',
     image: 'projects/DASHBOARD.webp',
