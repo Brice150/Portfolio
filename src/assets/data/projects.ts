@@ -55,12 +55,4 @@ export const projects: Project[] = [
     repoLink: 'https://github.com/Brice150/GAMETIME',
     siteLink: 'https://brice150.github.io/GAMETIME/',
   },
-  {
-    name: 'PLART',
-    logo: 'projects/logos/plart.webp',
-    image: 'projects/PLART.webp',
-    video: 'projects/PLART.mp4',
-    description: 'A 3D printing web application',
-    repoLink: 'https://github.com/Brice150/PLART',
-  },
 ];
