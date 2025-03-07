@@ -13,7 +13,9 @@ section {
   width: 100%;
   margin: 0 10px;
   max-width: 1200px;
-  height: 650px;
+  height: calc(100vh - 150px);
+  height: calc(100dvh - 150px);
+  max-height: 650px;
   border-radius: var(--strong-radius);
   background: rgba(17, 25, 40, 0.15);
   border: 1px solid rgba(255, 255, 255, 0.2);
@@ -263,8 +265,6 @@ section .content .timeline .element .description ul li {
 @media screen and (max-width: 496px) {
   section {
     margin-top: 100px;
-    height: calc(100vh - 150px);
-    height: calc(100dvh - 150px);
   }
 }
 
