@@ -2,6 +2,15 @@ import { Project } from '../../app/core/interface/project';
 
 export const projects: Project[] = [
   {
+    name: 'PERFORMAX',
+    logo: 'projects/logos/performax.webp',
+    image: 'projects/PERFORMAX.webp',
+    video: 'projects/PERFORMAX.mp4',
+    description: 'A fitness web application',
+    repoLink: 'https://github.com/Brice150/PERFORMAX',
+    siteLink: 'https://brice150.github.io/PERFORMAX/',
+  },
+  {
     name: 'MONEY TRACKER',
     logo: 'projects/logos/moneytracker.webp',
     image: 'projects/MONEYTRACKER.webp',
