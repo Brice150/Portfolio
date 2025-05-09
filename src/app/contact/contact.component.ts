@@ -36,7 +36,7 @@ export class ContactComponent implements OnInit {
         '',
         [
           Validators.required,
-          Validators.minLength(4),
+          Validators.minLength(2),
           Validators.maxLength(50),
         ],
       ],
@@ -45,7 +45,7 @@ export class ContactComponent implements OnInit {
         '',
         [
           Validators.required,
-          Validators.minLength(4),
+          Validators.minLength(2),
           Validators.maxLength(50),
         ],
       ],
