@@ -35,7 +35,6 @@ export const projects: Project[] = [
     video: 'projects/PICKME.mp4',
     description: 'A dating web application',
     repoLink: 'https://github.com/Brice150/PICKME',
-    siteLink: 'https://pick-me.up.railway.app/#/',
   },
   {
     name: 'TESLA',
