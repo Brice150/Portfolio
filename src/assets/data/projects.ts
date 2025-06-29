@@ -37,15 +37,6 @@ export const projects: Project[] = [
     repoLink: 'https://github.com/Brice150/PICKME',
   },
   {
-    name: 'TESLA',
-    logo: 'projects/logos/tesla.webp',
-    image: 'projects/TESLA.webp',
-    video: 'projects/TESLA.mp4',
-    description: 'A car configurator',
-    repoLink: 'https://github.com/Brice150/Tesla',
-    siteLink: 'https://main--astonishing-torrone-2afc2a.netlify.app/',
-  },
-  {
     name: 'SIMULATOR',
     logo: 'projects/logos/simulator.webp',
     image: 'projects/SIMULATOR.webp',
