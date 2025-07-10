@@ -2,24 +2,6 @@ import { Project } from '../../app/core/interface/project';
 
 export const projects: Project[] = [
   {
-    name: 'PERFORMAX',
-    logo: 'projects/logos/performax.webp',
-    image: 'projects/PERFORMAX.webp',
-    video: 'projects/PERFORMAX.mp4',
-    description: 'A fitness web application',
-    repoLink: 'https://github.com/Brice150/PERFORMAX',
-    siteLink: 'https://brice150.github.io/PERFORMAX/',
-  },
-  {
-    name: 'MONEY TRACKER',
-    logo: 'projects/logos/moneytracker.webp',
-    image: 'projects/MONEYTRACKER.webp',
-    video: 'projects/MONEYTRACKER.mp4',
-    description: 'An expenses / investments tracker web application',
-    repoLink: 'https://github.com/Brice150/MONEYTRACKER',
-    siteLink: 'https://brice150.github.io/MONEYTRACKER/',
-  },
-  {
     name: 'FOODLOVE',
     logo: 'projects/logos/foodlove.webp',
     image: 'projects/FOODLOVE.webp',
@@ -27,6 +9,24 @@ export const projects: Project[] = [
     description: 'A recipes management web application',
     repoLink: 'https://github.com/Brice150/FOODLOVE',
     siteLink: 'https://brice150.github.io/FOODLOVE/',
+  },
+  {
+    name: 'MONEY TRACKER',
+    logo: 'projects/logos/moneytracker.webp',
+    image: 'projects/MONEYTRACKER.webp',
+    video: 'projects/MONEYTRACKER.mp4',
+    description: 'A finance tracker web application',
+    repoLink: 'https://github.com/Brice150/MONEYTRACKER',
+    siteLink: 'https://brice150.github.io/MONEYTRACKER/',
+  },
+  {
+    name: 'PERFORMAX',
+    logo: 'projects/logos/performax.webp',
+    image: 'projects/PERFORMAX.webp',
+    video: 'projects/PERFORMAX.mp4',
+    description: 'A fitness web application',
+    repoLink: 'https://github.com/Brice150/PERFORMAX',
+    siteLink: 'https://brice150.github.io/PERFORMAX/',
   },
   {
     name: 'PICK ME',
