@@ -23,8 +23,8 @@ nav {
   opacity: 0;
 }
 
-nav a {
-  text-decoration: none;
+nav button {
+  border: none;
   cursor: pointer;
   color: var(--primary);
   font-size: 19px;
@@ -32,13 +32,14 @@ nav a {
   border-radius: var(--strong-radius);
   background-color: transparent;
   padding: 8px;
-  width: 70px;
+  width: 85px;
   text-align: center;
   opacity: 0;
   transform: translateY(-20px);
   animation: animateLink 0.8s ease-out forwards;
   animation-delay: var(--delay);
   transition: 0.5s ease;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
 @keyframes animateLink {
@@ -52,12 +53,12 @@ nav a {
   }
 }
 
-nav a.active {
+nav button.active {
   color: var(--accent);
   background-color: var(--primary);
 }
 
-nav a:not(.active):hover {
+nav button:not(.active):hover {
   color: var(--accent);
   background-color: var(--primary);
   margin-top: -10px;

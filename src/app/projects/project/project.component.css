@@ -55,7 +55,6 @@
 .project .btn {
   position: absolute;
   bottom: 20px;
-  text-decoration: none;
   background: none;
   border: none;
   color: var(--primary);
