@@ -15,9 +15,10 @@ export class HomeComponent {
   toastr = inject(ToastrService);
   imagePath: string = environment.imagePath;
 
-  download() {
-    this.toastr.success('CV downloaded', 'File', {
+  download(): void {
+    this.toastr.info('CV downloaded', 'File', {
       positionClass: 'toast-bottom-center',
+      toastClass: 'ngx-toastr custom info',
     });
   }
 }

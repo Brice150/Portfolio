@@ -86,7 +86,7 @@ export class ContactComponent implements OnInit {
             this.clearForm();
             this.toastr.error('Message not sent', 'Message', {
               positionClass: 'toast-bottom-center',
-              toastClass: 'ngx-toastr custom',
+              toastClass: 'ngx-toastr custom error',
             });
           },
         });

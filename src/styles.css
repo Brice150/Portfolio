@@ -35,3 +35,7 @@ body {
 .toast-container .ngx-toastr.custom.info {
   background-color: var(--accent);
 }
+
+.toast-container .ngx-toastr.custom.error {
+  background-color: red;
+}
