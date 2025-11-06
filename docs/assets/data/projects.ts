@@ -2,15 +2,6 @@ import { Project } from '../../app/core/interface/project';
 
 export const projects: Project[] = [
   {
-    name: 'GAME TIME',
-    logo: 'projects/logos/gametime.webp',
-    image: 'projects/GAMETIME.webp',
-    video: 'projects/GAMETIME.mp4',
-    description: 'A gaming web application',
-    repoLink: 'https://github.com/Brice150/GAMETIME',
-    siteLink: 'https://brice150.github.io/GAMETIME/',
-  },
-  {
     name: 'FOODLOVE',
     logo: 'projects/logos/foodlove.webp',
     image: 'projects/FOODLOVE.webp',
@@ -18,6 +9,15 @@ export const projects: Project[] = [
     description: 'A recipes management web application',
     repoLink: 'https://github.com/Brice150/FOODLOVE',
     siteLink: 'https://brice150.github.io/FOODLOVE/',
+  },
+  {
+    name: 'GAME TIME',
+    logo: 'projects/logos/gametime.webp',
+    image: 'projects/GAMETIME.webp',
+    video: 'projects/GAMETIME.mp4',
+    description: 'A gaming web application',
+    repoLink: 'https://github.com/Brice150/GAMETIME',
+    siteLink: 'https://brice150.github.io/GAMETIME/',
   },
   {
     name: 'MONEY TRACKER',
