@@ -3,14 +3,14 @@
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  background: var(--background);
+  background: var(--primary);
   padding: 20px;
-  border-radius: 10px;
+  border-radius: var(--strong-radius);
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  width: 90%;
+  width: 95%;
   max-width: 1200px;
 }
 
@@ -22,16 +22,16 @@
   align-items: center;
   justify-content: center;
   border: none;
-  color: var(--primary);
+  color: var(--accent);
   border-radius: var(--light-radius);
   cursor: pointer;
   transition: 0.5s ease;
-  background-color: var(--background);
+  background-color: transparent;
 }
 
 .container .close:hover {
-  color: var(--accent);
-  background-color: var(--primary);
+  color: var(--primary);
+  background-color: var(--accent);
   top: 10px;
 }
 
@@ -61,7 +61,7 @@
 .container .title-container .title h1 {
   font-size: 28px;
   font-weight: 800;
-  color: var(--primary);
+  color: var(--accent);
   text-align: center;
   letter-spacing: 1px;
   text-transform: uppercase;
@@ -70,7 +70,7 @@
 }
 
 .container .title-container .description {
-  color: var(--primary);
+  color: var(--secondary);
   font-size: 20px;
   font-weight: 500;
   text-align: center;
@@ -81,9 +81,12 @@
   cursor: pointer;
   width: 100%;
   max-width: 800px;
-  height: 450px;
+  aspect-ratio: 4 / 3;
+  background-color: black;
   border-radius: 10px;
-  margin: 10px;
+  margin: 10px 0;
+  object-fit: contain;
+  display: block;
 }
 
 .container video.video-poster {
@@ -105,7 +108,7 @@
   text-decoration: none;
   background: none;
   border: none;
-  color: var(--primary);
+  color: var(--accent);
   padding: 10px;
   border-radius: var(--light-radius);
   cursor: pointer;
@@ -126,49 +129,47 @@
 }
 
 .container .buttons .btn:hover {
-  color: var(--accent);
-  background-color: var(--primary);
+  color: var(--primary);
+  background-color: var(--accent);
   margin-bottom: -8px;
   margin-top: 8px;
 }
 
 @media screen and (max-width: 768px) {
+  .container {
+    width: 90%;
+  }
   .container video {
-    height: 300px;
+    max-width: 600px;
   }
 }
 
 @media screen and (max-width: 540px) {
   .container {
-    width: 80%;
+    width: 85%;
   }
-
   .container video {
-    height: 250px;
+    max-width: 480px;
   }
 }
 
 @media screen and (max-width: 450px) {
+  .container {
+    width: 85%;
+  }
   .container video {
-    height: 200px;
+    max-width: 360px;
   }
 }
 
 @media screen and (max-width: 400px) {
   .container {
+    width: 85%;
     min-height: 400px;
   }
-
   .container video {
-    height: 170px;
+    max-width: 320px;
   }
-}
-
-@media screen and (max-width: 400px) {
-  .container {
-    min-height: 450px;
-  }
-
   .container .title-container .title img {
     width: 50px;
     height: 50px;

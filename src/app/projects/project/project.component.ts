@@ -19,6 +19,7 @@ export class ProjectComponent {
   viewMore(): void {
     this.dialog.open(DialogComponent, {
       data: this.project(),
+      autoFocus: false,
     });
   }
 }

@@ -17,14 +17,13 @@ section {
   height: calc(100dvh - 150px);
   max-height: 650px;
   border-radius: var(--strong-radius);
-  background: rgba(17, 25, 40, 0.15);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 8px 32px 0 black;
+  background: var(--primary);
+  box-shadow: var(--box-shadow);
 }
 
 section .arrow {
   position: absolute;
-  color: var(--primary);
+  color: var(--accent);
   font-size: 60px;
   display: flex;
   align-items: center;
@@ -51,7 +50,7 @@ section .title {
 section .title h1 {
   font-size: 28px;
   font-weight: 800;
-  color: var(--primary);
+  color: var(--accent);
   text-align: center;
   letter-spacing: 1px;
   text-transform: uppercase;
@@ -72,7 +71,7 @@ section .content img {
   width: 250px;
   height: auto;
   border-radius: var(--strong-radius);
-  background-color: var(--primary);
+  background-color: var(--accent);
   animation: animateElement 0.8s ease-out forwards;
   animation-delay: var(--delay);
   opacity: 0;
@@ -109,7 +108,7 @@ section .content .flex .main .info {
 section .content .flex .main .info h2 {
   font-size: 30px;
   font-weight: 600;
-  color: var(--primary);
+  color: var(--accent);
   margin: 0;
   padding: 0;
   animation: animateElement 0.8s ease-out forwards;
@@ -120,7 +119,7 @@ section .content .flex .main .info h2 {
 section .content .flex .main .info h3 {
   font-size: 20px;
   font-weight: 600;
-  color: var(--primary);
+  color: var(--secondary);
   margin: 0;
   padding: 0;
   animation: animateElement 0.8s ease-out forwards;
@@ -132,8 +131,8 @@ section .content .flex .main .description {
   text-align: justify;
   font-size: 17px;
   font-weight: 600;
-  color: var(--accent);
-  background-color: var(--primary);
+  background-color: var(--accent);
+  color: var(--primary);
   border-radius: var(--light-radius);
   line-height: 25px;
   padding: 12px;
@@ -163,7 +162,7 @@ section .content .links .flex-links a {
   cursor: pointer;
   text-decoration: none;
   font-size: 50px;
-  color: var(--primary);
+  color: var(--accent);
   border-radius: var(--light-radius);
   padding: 6px;
   display: flex;
@@ -176,8 +175,8 @@ section .content .links .flex-links a {
 }
 
 section .content .links .flex-links a:hover {
-  color: var(--accent);
-  background-color: var(--primary);
+  color: var(--primary);
+  background-color: var(--accent);
   margin-bottom: -10px;
   margin-top: 10px;
 }
@@ -186,7 +185,7 @@ section .content .btn {
   text-decoration: none;
   background: none;
   border: none;
-  color: var(--primary);
+  color: var(--accent);
   padding: 10px;
   border-radius: var(--light-radius);
   cursor: pointer;
@@ -210,8 +209,8 @@ section .content .btn i {
 }
 
 section .content .btn:hover {
-  color: var(--accent);
-  background-color: var(--primary);
+  color: var(--primary);
+  background-color: var(--accent);
   margin-bottom: -8px;
   margin-top: 8px;
 }
@@ -229,8 +228,8 @@ section .content .btn:hover {
 
 @media screen and (min-width: 768px) {
   section .arrow:hover {
-    color: var(--accent);
-    background-color: var(--primary);
+    color: var(--primary);
+    background-color: var(--accent);
   }
 
   section .arrow:hover.left {

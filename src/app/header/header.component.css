@@ -15,9 +15,8 @@ nav {
   padding: 2px;
   position: fixed;
   border-radius: var(--strong-radius);
-  background-color: rgba(17, 25, 40, 0.15);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 8px 32px 0 black;
+  background-color: var(--primary);
+  box-shadow: var(--box-shadow);
   z-index: 100;
   animation: animateElement 1s linear forwards;
   opacity: 0;
@@ -26,7 +25,7 @@ nav {
 nav button {
   border: none;
   cursor: pointer;
-  color: var(--primary);
+  color: var(--accent);
   font-size: 19px;
   font-weight: 500;
   border-radius: var(--strong-radius);
@@ -54,13 +53,13 @@ nav button {
 }
 
 nav button.active {
-  color: var(--accent);
-  background-color: var(--primary);
+  color: var(--primary);
+  background-color: var(--accent);
 }
 
 nav button:not(.active):hover {
-  color: var(--accent);
-  background-color: var(--primary);
+  color: var(--primary);
+  background-color: var(--accent);
   margin-top: -10px;
   margin-bottom: 10px;
 }

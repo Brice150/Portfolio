@@ -17,14 +17,13 @@ section {
   height: calc(100dvh - 150px);
   max-height: 650px;
   border-radius: var(--strong-radius);
-  background: rgba(17, 25, 40, 0.15);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 8px 32px 0 black;
+  background: var(--primary);
+  box-shadow: var(--box-shadow);
 }
 
 section .arrow {
   position: absolute;
-  color: var(--primary);
+  color: var(--accent);
   font-size: 60px;
   display: flex;
   align-items: center;
@@ -56,7 +55,7 @@ section .title {
 section .title h1 {
   font-size: 28px;
   font-weight: 800;
-  color: var(--primary);
+  color: var(--accent);
   text-align: center;
   letter-spacing: 1px;
   text-transform: uppercase;
@@ -70,7 +69,6 @@ section .content {
   align-items: center;
   flex-direction: column;
   width: 100%;
-  margin-top: 30px;
   max-height: 584px;
   overflow-y: auto;
 }
@@ -82,6 +80,7 @@ section .content .categories {
   flex-wrap: wrap;
   gap: 40px;
   width: 90%;
+  margin-top: 30px;
 }
 
 section .content .categories .category {
@@ -91,6 +90,7 @@ section .content .categories .category {
   flex-direction: column;
   width: 250px;
   color: var(--primary);
+  background-color: var(--accent);
   border-radius: var(--light-radius);
   padding-top: 10px;
   animation: animateElement 0.8s ease-out forwards;
@@ -122,7 +122,9 @@ section .content .category .skills {
   justify-content: center;
   align-items: center;
   gap: 10px;
-  margin-bottom: 10px;
+  background-color: var(--primary);
+  width: 100%;
+  padding: 10px 0;
 }
 
 section .content .category .skills i {
@@ -145,7 +147,14 @@ section .content .category .certificate img {
   width: 250px;
   height: 180px;
   object-fit: cover;
-  border-radius: var(--light-radius);
+  border-radius: 0 0 var(--light-radius) var(--light-radius);
+}
+
+section .content .category .bottom {
+  height: 5px;
+  width: 100%;
+  background-color: var(--accent);
+  border-radius: 0 0 var(--light-radius) var(--light-radius);
 }
 
 .overlay {
@@ -180,8 +189,8 @@ section .content .category .certificate img {
 
 @media screen and (min-width: 768px) {
   section .arrow:hover {
-    color: var(--accent);
-    background-color: var(--primary);
+    color: var(--primary);
+    background-color: var(--accent);
   }
 
   section .arrow:hover.left {
@@ -211,10 +220,6 @@ section .content .category .certificate img {
 @media screen and (max-width: 840px) {
   section .content .categories {
     gap: 18px;
-  }
-
-  section .content .categories .category {
-    padding-top: 0;
   }
 
   section .content .category.active:hover {

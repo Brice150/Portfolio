@@ -3,7 +3,7 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-color: var(--primary);
+  background-color: var(--accent);
   border-radius: var(--strong-radius);
   height: 100%;
   width: 100%;
@@ -12,12 +12,17 @@
 
 .project .title {
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
   gap: 10px;
   position: absolute;
-  bottom: 140px;
+  bottom: 130px;
   color: var(--accent);
+  background-color: var(--primary);
+  width: 200px;
+  padding: 5px;
+  border-radius: var(--light-radius);
+  margin-top: 10px;
 }
 
 .project .title .logo {
@@ -44,12 +49,12 @@
 
 .project .description {
   position: absolute;
-  bottom: 100px;
+  bottom: 85px;
   text-align: center;
   font-size: 18px;
   font-weight: 500;
   padding: 0 20px;
-  color: var(--accent);
+  color: var(--secondary);
 }
 
 .project .btn {
@@ -65,11 +70,10 @@
   justify-content: center;
   align-items: center;
   gap: 10px;
-  background-color: var(--accent);
+  background-color: transparent;
   animation: animateElement 1.5s ease-out forwards;
   animation-delay: var(--delay);
   opacity: 0;
-  border: 2px solid var(--accent);
   transition: 0.5s ease;
 }
 
@@ -103,6 +107,15 @@
 @media screen and (max-width: 600px) {
   .project .image {
     height: 300px;
+  }
+}
+
+@media screen and (max-width: 535px) {
+  .project .description {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 220px;
   }
 }
 

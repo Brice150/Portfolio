@@ -17,14 +17,13 @@ section {
   height: calc(100dvh - 150px);
   max-height: 650px;
   border-radius: var(--strong-radius);
-  background: rgba(17, 25, 40, 0.15);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 8px 32px 0 black;
+  background: var(--primary);
+  box-shadow: var(--box-shadow);
 }
 
 section .arrow {
   position: absolute;
-  color: var(--primary);
+  color: var(--accent);
   font-size: 60px;
   display: flex;
   align-items: center;
@@ -51,7 +50,7 @@ section .title {
 section .title h1 {
   font-size: 28px;
   font-weight: 800;
-  color: var(--primary);
+  color: var(--accent);
   text-align: center;
   letter-spacing: 1px;
   text-transform: uppercase;
@@ -80,8 +79,7 @@ section .content .timeline::after {
   left: 10%;
   height: 100%;
   width: 3px;
-  z-index: -1;
-  background-color: var(--primary);
+  background-color: var(--accent);
   border-radius: 50px;
   animation: lineAnimated 2s linear forwards;
 }
@@ -142,7 +140,7 @@ section .content .timeline .element .main {
 }
 
 section .content .timeline .element .main .title-element {
-  color: var(--primary);
+  color: var(--accent);
   border-radius: var(--light-radius);
   display: flex;
   justify-content: center;
@@ -154,11 +152,11 @@ section .content .timeline .element .main .title-element {
 section .content .timeline .element .main .title-element h2 {
   font-size: 22px;
   font-weight: 600;
-  color: var(--secondary);
+  color: var(--primary);
   border-radius: var(--light-radius);
   margin: 0;
   padding: 5px 0;
-  background-color: var(--primary);
+  background-color: var(--accent);
   width: 100%;
   text-align: center;
   margin-bottom: 8px;
@@ -167,7 +165,7 @@ section .content .timeline .element .main .title-element h2 {
 section .content .timeline .element .main .title-element h3 {
   font-size: 20px;
   font-weight: 600;
-  color: var(--primary);
+  color: var(--accent);
   margin: 0;
   padding: 0;
   width: 100%;
@@ -206,15 +204,15 @@ section .content .timeline .element .description ul {
 }
 
 section .content .timeline .element .description ul li {
-  color: var(--primary);
+  color: var(--secondary);
   margin-bottom: 10px;
   text-align: justify;
 }
 
 @media screen and (min-width: 768px) {
   section .arrow:hover {
-    color: var(--accent);
-    background-color: var(--primary);
+    color: var(--primary);
+    background-color: var(--accent);
   }
 
   section .arrow:hover.left {
