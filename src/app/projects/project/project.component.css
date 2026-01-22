@@ -89,8 +89,6 @@
 .project .btn:hover {
   color: var(--accent);
   background-color: var(--primary);
-  margin-bottom: -8px;
-  margin-top: 8px;
 }
 
 @keyframes animateElement {

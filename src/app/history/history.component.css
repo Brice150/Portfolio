@@ -152,7 +152,7 @@ section .content .timeline .element .main .title-element {
 section .content .timeline .element .main .title-element h2 {
   font-size: 22px;
   font-weight: 600;
-  color: var(--primary);
+  color: var(--secondary);
   border-radius: var(--light-radius);
   margin: 0;
   padding: 5px 0;
@@ -211,7 +211,7 @@ section .content .timeline .element .description ul li {
 
 @media screen and (min-width: 768px) {
   section .arrow:hover {
-    color: var(--primary);
+    color: var(--secondary);
     background-color: var(--accent);
   }
 

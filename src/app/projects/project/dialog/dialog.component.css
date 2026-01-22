@@ -30,9 +30,8 @@
 }
 
 .container .close:hover {
-  color: var(--primary);
+  color: var(--secondary);
   background-color: var(--accent);
-  top: 10px;
 }
 
 .container .close i {
@@ -129,10 +128,8 @@
 }
 
 .container .buttons .btn:hover {
-  color: var(--primary);
+  color: var(--secondary);
   background-color: var(--accent);
-  margin-bottom: -8px;
-  margin-top: 8px;
 }
 
 @media screen and (max-width: 768px) {

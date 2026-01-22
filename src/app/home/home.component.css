@@ -130,9 +130,9 @@ section .content .flex .main .info h3 {
 section .content .flex .main .description {
   text-align: justify;
   font-size: 17px;
-  font-weight: 600;
+  font-weight: 500;
   background-color: var(--accent);
-  color: var(--primary);
+  color: var(--secondary);
   border-radius: var(--light-radius);
   line-height: 25px;
   padding: 12px;
@@ -175,10 +175,8 @@ section .content .links .flex-links a {
 }
 
 section .content .links .flex-links a:hover {
-  color: var(--primary);
+  color: var(--secondary);
   background-color: var(--accent);
-  margin-bottom: -10px;
-  margin-top: 10px;
 }
 
 section .content .btn {
@@ -209,10 +207,8 @@ section .content .btn i {
 }
 
 section .content .btn:hover {
-  color: var(--primary);
+  color: var(--secondary);
   background-color: var(--accent);
-  margin-bottom: -8px;
-  margin-top: 8px;
 }
 
 @keyframes animateElement {
@@ -228,7 +224,7 @@ section .content .btn:hover {
 
 @media screen and (min-width: 768px) {
   section .arrow:hover {
-    color: var(--primary);
+    color: var(--secondary);
     background-color: var(--accent);
   }
 
