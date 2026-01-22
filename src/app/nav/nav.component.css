@@ -23,22 +23,33 @@ nav {
 }
 
 nav button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
   border: none;
   cursor: pointer;
   color: var(--accent);
-  font-size: 20px;
-  font-weight: 550;
   border-radius: var(--strong-radius);
   background-color: transparent;
-  padding: 8px;
-  width: 85px;
-  text-align: center;
+  padding: 6px;
+  width: 110px;
   opacity: 0;
   transform: translateY(-20px);
   animation: animateLink 0.8s ease-out forwards;
   animation-delay: var(--delay);
   transition: 0.5s ease;
+}
+
+nav button i {
+  font-size: 30px;
+}
+
+nav button span {
   font-family: Roboto, "Helvetica Neue", sans-serif;
+  text-align: center;
+  font-size: 21px;
+  font-weight: 550;
 }
 
 @keyframes animateLink {

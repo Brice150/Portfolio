@@ -6,14 +6,15 @@
     <i class="bx bx-chevron-right"></i>
   </div>
   <div class="title">
-    <h1>Projects</h1>
+    <i class="bx bxs-briefcase-alt"></i>
+    <h1>Projets</h1>
   </div>
   <div class="content">
     <swiper-container effect="cards" mousewheel="true">
       @for (project of projects; track project) {
-      <swiper-slide>
-        <app-project [project]="project"></app-project>
-      </swiper-slide>
+        <swiper-slide>
+          <app-project [project]="project"></app-project>
+        </swiper-slide>
       }
     </swiper-container>
   </div>

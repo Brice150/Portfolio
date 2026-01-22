@@ -3,7 +3,5 @@ export interface Project {
   logo: string;
   image: string;
   video: string;
-  description: string;
-  repoLink: string;
-  siteLink?: string;
+  link: string;
 }

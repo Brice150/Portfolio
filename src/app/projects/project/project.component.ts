@@ -1,9 +1,9 @@
 import { CommonModule } from '@angular/common';
 import { Component, inject, input } from '@angular/core';
-import { Project } from '../../core/interface/project';
-import { environment } from '../../../environments/environment';
-import { DialogComponent } from './dialog/dialog.component';
 import { MatDialog } from '@angular/material/dialog';
+import { environment } from '../../../environments/environment';
+import { Project } from '../../core/interface/project';
+import { DialogComponent } from '../../shared/components/dialog/dialog.component';
 
 @Component({
   selector: 'app-project',

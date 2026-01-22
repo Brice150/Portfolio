@@ -9,11 +9,12 @@
     <i class="bx bx-chevron-down"></i>
   </div>
   @if (expandedImageSrc()) {
-  <div class="overlay" (click)="closeImage()">
-    <img [src]="expandedImageSrc()" alt="Expanded Image" />
-  </div>
+    <div class="overlay" (click)="closeImage()">
+      <img [src]="expandedImageSrc()" alt="Expanded Image" />
+    </div>
   }
   <div class="title">
+    <i class="bx bxs-notepad"></i>
     <h1>Skills</h1>
   </div>
   <div class="content" #content>
@@ -79,7 +80,7 @@
         (click)="onImageClick(imagePath + 'certificates/Talend Academy.webp')"
         style="--delay: 0.6s"
       >
-        <h2>Softwares</h2>
+        <h2>Editeurs</h2>
         <div class="skills">
           <img
             [src]="imagePath + 'logos/intelliJ.webp'"
@@ -106,7 +107,7 @@
         </div>
       </div>
       <div class="category" style="--delay: 0.8s">
-        <h2>Databases</h2>
+        <h2>Base de données</h2>
         <div class="skills">
           <i
             class="bx bxl-postgresql"
@@ -122,7 +123,7 @@
         <div class="bottom"></div>
       </div>
       <div class="category" style="--delay: 1s">
-        <h2>Git</h2>
+        <h2>Autres</h2>
         <div class="skills">
           <i class="bx bxl-git" title="Git" style="color: #f05033"></i>
           <i class="bx bxl-github" title="Github" style="color: black"></i>

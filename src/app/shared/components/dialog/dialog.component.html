@@ -1,0 +1,38 @@
+<div mat-dialog-content class="container">
+  <button type="button" title="Close" class="close" (click)="close()">
+    <i class="bx bx-x"></i>
+  </button>
+  <div class="title-container">
+    <div class="title">
+      <img [src]="imagePath + project.logo" [alt]="project.name" />
+      <h1>{{ project.name }}</h1>
+    </div>
+  </div>
+  <video
+    [poster]="imagePath + project.image"
+    [src]="videoPath + project.video"
+    autoplay
+    loop
+    muted
+    controls
+  ></video>
+  <div class="buttons">
+    <a
+      [href]="project.link"
+      target="_blank"
+      [title]="
+        project.link === 'https://github.com/Brice150/PICKME'
+          ? 'Github'
+          : 'Tester'
+      "
+      class="btn"
+    >
+      <i class="bx bxs-hand-right"></i>
+      @if (project.link === "https://github.com/Brice150/PICKME") {
+        <span>Github</span>
+      } @else {
+        <span>Tester</span>
+      }
+    </a>
+  </div>
+</div>

@@ -3,56 +3,57 @@
     <i class="bx bx-chevron-left"></i>
   </div>
   <div class="title">
+    <i class="bx bxs-envelope"></i>
     <h1>Contact</h1>
   </div>
   <div class="content">
     <form [formGroup]="contactForm">
       <mat-form-field style="--delay: 0.2s">
-        <mat-label>Name</mat-label>
+        <mat-label>Nom</mat-label>
         <input matInput formControlName="name" />
-        @if (contactForm.get('name')!.invalid && (contactForm.get('name')!.dirty
-        || contactForm.get('name')!.touched)) {
-        <mat-error>
-          @if (contactForm.get('name')!.hasError('required')) {
-          <span>Name is required</span>
-          } @if (contactForm.get('name')!.hasError('minlength')) {
-          <span>Name is too short</span>
-          } @if (contactForm.get('name')!.hasError('maxlength')) {
-          <span>Name is too long</span>
-          }
-        </mat-error>
+        @if (contactForm.get("name")!.invalid) {
+          <mat-error>
+            @if (contactForm.get("name")!.hasError("required")) {
+              <span>Ce champ est requis</span>
+            }
+            @if (contactForm.get("name")!.hasError("minlength")) {
+              <span>Ce champ est trop court</span>
+            }
+            @if (contactForm.get("name")!.hasError("maxlength")) {
+              <span>Ce champ est trop long</span>
+            }
+          </mat-error>
         }
       </mat-form-field>
       <mat-form-field style="--delay: 0.4s">
         <mat-label>Email</mat-label>
         <input matInput formControlName="email" />
-        @if (contactForm.get('email')!.invalid &&
-        (contactForm.get('email')!.dirty || contactForm.get('email')!.touched))
-        {
-        <mat-error>
-          @if (contactForm.get('email')!.hasError('required')) {
-          <span>Email is required</span>
-          } @if (contactForm.get('email')!.hasError('email')) {
-          <span>Email is invalid</span>
-          }
-        </mat-error>
+        @if (contactForm.get("email")!.invalid) {
+          <mat-error>
+            @if (contactForm.get("email")!.hasError("required")) {
+              <span>Ce champ est requis</span>
+            }
+            @if (contactForm.get("email")!.hasError("email")) {
+              <span>L'email est invalide</span>
+            }
+          </mat-error>
         }
       </mat-form-field>
       <mat-form-field style="--delay: 0.6s">
-        <mat-label>Subject</mat-label>
+        <mat-label>Objet</mat-label>
         <input matInput formControlName="subject" />
-        @if (contactForm.get('subject')!.invalid &&
-        (contactForm.get('subject')!.dirty ||
-        contactForm.get('subject')!.touched)) {
-        <mat-error>
-          @if (contactForm.get('subject')!.hasError('required')) {
-          <span>Subject is required</span>
-          } @if (contactForm.get('subject')!.hasError('minlength')) {
-          <span>Subject is too short</span>
-          } @if (contactForm.get('subject')!.hasError('maxlength')) {
-          <span>Subject is too long</span>
-          }
-        </mat-error>
+        @if (contactForm.get("subject")!.invalid) {
+          <mat-error>
+            @if (contactForm.get("subject")!.hasError("required")) {
+              <span>Ce champ est requis</span>
+            }
+            @if (contactForm.get("subject")!.hasError("minlength")) {
+              <span>Ce champ est trop court</span>
+            }
+            @if (contactForm.get("subject")!.hasError("maxlength")) {
+              <span>Ce champ est trop long</span>
+            }
+          </mat-error>
         }
       </mat-form-field>
       <mat-form-field style="--delay: 0.8s">
@@ -83,18 +84,18 @@
         >
           <mat-icon class="delete">delete</mat-icon>
         </button>
-        @if (contactForm.get('message')!.invalid &&
-        (contactForm.get('message')!.dirty ||
-        contactForm.get('message')!.touched)) {
-        <mat-error>
-          @if (contactForm.get('message')!.hasError('required')) {
-          <span>Message is required</span>
-          } @if (contactForm.get('message')!.hasError('minlength')) {
-          <span>Message is too short</span>
-          } @if (contactForm.get('message')!.hasError('maxlength')) {
-          <span>Message is too long</span>
-          }
-        </mat-error>
+        @if (contactForm.get("message")!.invalid) {
+          <mat-error>
+            @if (contactForm.get("message")!.hasError("required")) {
+              <span>Ce champ est requis</span>
+            }
+            @if (contactForm.get("message")!.hasError("minlength")) {
+              <span>Ce champ est trop court</span>
+            }
+            @if (contactForm.get("message")!.hasError("maxlength")) {
+              <span>Ce champ est trop long</span>
+            }
+          </mat-error>
         }
       </mat-form-field>
     </form>

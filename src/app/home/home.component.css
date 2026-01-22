@@ -45,17 +45,25 @@ section .arrow.right {
 section .title {
   position: absolute;
   top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  color: var(--accent);
+}
+
+section .title i {
+  font-size: 40px;
 }
 
 section .title h1 {
   font-size: 28px;
   font-weight: 800;
-  color: var(--accent);
   text-align: center;
   letter-spacing: 1px;
   text-transform: uppercase;
   margin: 0;
-  padding: 0;
+  margin-top: 6px;
 }
 
 section .content {
@@ -83,8 +91,7 @@ section .content .flex {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  flex-wrap: wrap;
-  width: 90%;
+  width: 95%;
 }
 
 section .content .flex .main {
@@ -139,6 +146,7 @@ section .content .flex .main .description {
   animation: animateElement 0.8s ease-out forwards;
   animation-delay: var(--delay);
   opacity: 0;
+  margin-top: 20px;
 }
 
 section .content .links {
@@ -146,7 +154,8 @@ section .content .links {
   bottom: 20px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 10px;
   flex-direction: column;
   height: 130px;
 }
@@ -237,13 +246,28 @@ section .content .btn:hover {
   }
 }
 
-@media screen and (max-width: 933px) {
+@media screen and (max-width: 950px) {
+  section .content {
+    margin-top: 0;
+  }
+
   section .content .flex .main {
     height: 200px;
   }
 
   section .content .flex {
-    top: 50px;
+    top: 60px;
+    flex-direction: column;
+  }
+
+  section .content img {
+    width: 200px;
+    margin-bottom: 10px;
+  }
+
+  section .content .flex .main .description {
+    padding: 5px;
+    margin-top: 10px;
   }
 }
 
@@ -256,40 +280,21 @@ section .content .btn:hover {
     right: -15px;
   }
 
-  section .content img {
-    width: 200px;
-    margin-bottom: 10px;
-  }
-
-  section .content {
-    margin-top: 0;
-  }
-
-  section .content .flex .main .info .job {
-    margin-bottom: 10px;
+  section .content .flex .main .description {
+    line-height: 20px;
   }
 }
 
-@media screen and (max-width: 683px) {
-  section .content .flex .main .description {
-    padding: 5px;
-    margin-top: 10px;
+@media screen and (max-width: 553px) {
+  section .content .links {
+    height: 117px;
+    gap: 0;
   }
 }
 
 @media screen and (max-width: 496px) {
   section {
     margin-top: 100px;
-  }
-
-  section .content .links {
-    height: 117px;
-  }
-}
-
-@media screen and (max-width: 425px) {
-  section .content .flex .main .description {
-    line-height: 20px;
   }
 }
 

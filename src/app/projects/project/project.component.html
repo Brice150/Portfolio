@@ -5,16 +5,10 @@
     class="image"
   />
   <div class="title">
-    <img
-      [src]="imagePath + project().logo"
-      [alt]="project().name"
-      class="logo"
-    />
     <h2>{{ project().name }}</h2>
   </div>
-  <span class="description">{{ project().description }}</span>
-  <button type="button" title="View More" (click)="viewMore()" class="btn">
+  <button type="button" title="Consulter" (click)="viewMore()" class="btn">
     <i class="bx bxs-folder-open"></i>
-    <span>View More</span>
+    <span>Consulter</span>
   </button>
 </div>
