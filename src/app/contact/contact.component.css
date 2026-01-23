@@ -81,11 +81,11 @@ section .content form {
   align-items: center;
   flex-direction: column;
   width: 80%;
+  gap: 20px;
 }
 
 section .content mat-form-field {
   width: 100%;
-  margin-bottom: 12px;
   animation: animateElement 0.8s ease-out forwards;
   animation-delay: var(--delay);
   opacity: 0;
@@ -97,6 +97,7 @@ section .content mat-form-field mat-error {
 
 section .content mat-form-field mat-error span {
   font-size: 16px;
+  font-weight: 550;
 }
 
 section .content mat-form-field textarea {
@@ -123,7 +124,6 @@ form mat-form-field {
 }
 
 section .content .btn {
-  margin-top: 20px;
   text-decoration: none;
   background: none;
   border: none;
@@ -177,7 +177,7 @@ form
 }
 
 ::ng-deep .mdc-text-field--filled {
-  background-color: var(--background-nav) !important;
+  background-color: var(--secondary) !important;
 }
 
 ::ng-deep
@@ -219,7 +219,8 @@ form
 ::ng-deep
   .mdc-text-field--filled:not(.mdc-text-field--disabled)
   .mdc-text-field__input {
-  color: var(--secondary) !important;
+  color: var(--primary) !important;
+  font-weight: 550;
 }
 
 ::ng-deep
@@ -235,98 +236,8 @@ form
 }
 
 ::ng-deep mat-form-field.mat-form-field-invalid {
-  --secondary: red;
+  --primary: red;
   --accent: red;
-}
-
-::ng-deep .cap .mat-mdc-select-value-text {
-  text-transform: capitalize !important;
-}
-
-::ng-deep .mat-mdc-select {
-  color: var(--secondary) !important;
-}
-
-::ng-deep .mat-mdc-select-arrow svg {
-  fill: var(--accent) !important;
-}
-
-::ng-deep .mat-mdc-select-panel {
-  background-color: var(--background-nav) !important;
-}
-
-::ng-deep .mdc-list-item__primary-text {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  color: var(--secondary) !important;
-}
-
-::ng-deep .mdc-list-item--selected {
-  color: var(--accent) !important;
-}
-
-::ng-deep .mdc-list-item--selected span {
-  color: var(--accent) !important;
-}
-
-::ng-deep .mdc-list-item__primary-text span {
-  color: var(--secondary) !important;
-}
-
-::ng-deep .mdc-list-item__primary-text i {
-  color: var(--secondary) !important;
-  font-size: 25px;
-}
-
-::ng-deep
-  .mat-mdc-option.mdc-list-item--selected:not(.mdc-list-item--disabled):not(
-    .mat-mdc-option-multiple
-  ) {
-  background-color: var(--accent) !important;
-}
-
-::ng-deep
-  .mat-mdc-option.mdc-list-item--selected:not(.mdc-list-item--disabled):not(
-    .mat-mdc-option-multiple
-  )
-  .mdc-list-item__primary-text {
-  color: var(--primary) !important;
-}
-
-::ng-deep
-  .mat-mdc-option.mdc-list-item--selected:not(.mdc-list-item--disabled):not(
-    .mat-mdc-option-multiple
-  )
-  .mdc-list-item__primary-text
-  .flex
-  i {
-  color: var(--primary) !important;
-}
-
-::ng-deep
-  .mat-mdc-option.mdc-list-item--selected:not(.mdc-list-item--disabled):not(
-    .mat-mdc-option-multiple
-  )
-  .mdc-list-item__primary-text
-  .flex
-  .game {
-  color: var(--primary) !important;
-}
-
-::ng-deep .mat-pseudo-checkbox-minimal.mat-pseudo-checkbox-checked::after,
-.mat-pseudo-checkbox-minimal.mat-pseudo-checkbox-indeterminate::after {
-  color: var(--primary) !important;
-}
-
-::ng-deep .suffix .mat-mdc-form-field-icon-suffix {
-  color: var(--accent) !important;
-  left: -15px;
-}
-
-::ng-deep .mat-mdc-icon-button {
-  --mat-icon-button-icon-color: var(--accent);
 }
 
 @keyframes animateElement {
@@ -374,5 +285,9 @@ form
 @media screen and (max-width: 380px) {
   section .content mat-form-field textarea {
     height: 50px;
+  }
+
+  section .content form {
+    gap: 10px;
   }
 }
