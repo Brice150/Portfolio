@@ -8,26 +8,17 @@
   <div class="arrow bottom" (click)="scrollDown()" title="Scroll Down">
     <i class="bx bx-chevron-down"></i>
   </div>
-  @if (expandedImageSrc()) {
-    <div class="overlay" (click)="closeImage()">
-      <img [src]="expandedImageSrc()" alt="Expanded Image" />
-    </div>
-  }
   <div class="title">
     <i class="bx bxs-notepad"></i>
     <h1>Skills</h1>
   </div>
   <div class="content" #content>
     <div class="categories">
-      <div
-        class="category active"
-        (click)="onImageClick(imagePath + 'certificates/Angular Training.webp')"
-        style="--delay: 0.2s"
-      >
+      <div class="category" style="--delay: 0.2s">
         <h2>Frontend</h2>
         <div class="skills">
           <img
-            [src]="imagePath + 'logos/angular.webp'"
+            [src]="imagePath + 'angular.webp'"
             alt="Angular"
             title="Angular"
             style="margin-top: -1px"
@@ -45,19 +36,8 @@
             style="color: #f3e11d"
           ></i>
         </div>
-        <div class="certificate">
-          <img
-            [src]="imagePath + 'certificates/Angular Training.webp'"
-            alt="Angular Training"
-            title="Angular Training"
-          />
-        </div>
       </div>
-      <div
-        class="category active"
-        (click)="onImageClick(imagePath + 'certificates/M2i.webp')"
-        style="--delay: 0.4s"
-      >
+      <div class="category" style="--delay: 0.4s">
         <h2>Backend</h2>
         <div class="skills">
           <i
@@ -65,25 +45,30 @@
             title="Spring Boot"
             style="color: #6db33f"
           ></i>
-          <img [src]="imagePath + 'logos/java.webp'" alt="Java" title="Java" />
-        </div>
-        <div class="certificate">
-          <img
-            [src]="imagePath + 'certificates/M2i.webp'"
-            alt="M2i"
-            title="M2i"
-          />
+          <img [src]="imagePath + 'java.webp'" alt="Java" title="Java" />
         </div>
       </div>
-      <div
-        class="category active"
-        (click)="onImageClick(imagePath + 'certificates/Talend Academy.webp')"
-        style="--delay: 0.6s"
-      >
+      <div class="category" style="--delay: 0.6s">
+        <h2>Base de données</h2>
+        <div class="skills">
+          <i
+            class="bx bxl-postgresql"
+            title="PostgresSQL"
+            style="color: #2f6792"
+          ></i>
+          <img [src]="imagePath + 'oracle.webp'" alt="Oracle" title="Oracle" />
+          <i
+            class="bx bxl-firebase"
+            title="Firebase"
+            style="color: #ee9c11"
+          ></i>
+        </div>
+      </div>
+      <div class="category" style="--delay: 0.8s">
         <h2>Editeurs</h2>
         <div class="skills">
           <img
-            [src]="imagePath + 'logos/intelliJ.webp'"
+            [src]="imagePath + 'intelliJ.webp'"
             alt="IntelliJ"
             title="IntelliJ"
           />
@@ -92,35 +77,8 @@
             title="VSCode"
             style="color: #0a75b8"
           ></i>
-          <img
-            [src]="imagePath + 'logos/talend.webp'"
-            alt="Talend"
-            title="Talend"
-          />
+          <img [src]="imagePath + 'talend.webp'" alt="Talend" title="Talend" />
         </div>
-        <div class="certificate">
-          <img
-            [src]="imagePath + 'certificates/Talend Academy.webp'"
-            alt="Talend Academy"
-            title="Talend Academy"
-          />
-        </div>
-      </div>
-      <div class="category" style="--delay: 0.8s">
-        <h2>Base de données</h2>
-        <div class="skills">
-          <i
-            class="bx bxl-postgresql"
-            title="PostgresSQL"
-            style="color: #2f6792"
-          ></i>
-          <img
-            [src]="imagePath + 'logos/oracle.webp'"
-            alt="Oracle"
-            title="Oracle"
-          />
-        </div>
-        <div class="bottom"></div>
       </div>
       <div class="category" style="--delay: 1s">
         <h2>Autres</h2>
@@ -129,7 +87,6 @@
           <i class="bx bxl-github" title="Github" style="color: black"></i>
           <i class="bx bxl-gitlab" title="Gitlab" style="color: #e24329"></i>
         </div>
-        <div class="bottom"></div>
       </div>
     </div>
   </div>
