@@ -72,7 +72,7 @@ export class ContactComponent implements OnInit {
             subject: this.contactForm.value.subject,
             message: this.contactForm.value.message,
           },
-          { headers: headers }
+          { headers: headers },
         )
         .subscribe({
           next: () => {
@@ -90,6 +90,8 @@ export class ContactComponent implements OnInit {
             });
           },
         });
+    } else {
+      this.contactForm.markAllAsTouched();
     }
   }
 

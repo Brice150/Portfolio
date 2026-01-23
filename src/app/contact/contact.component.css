@@ -83,33 +83,85 @@ section .content form {
   width: 80%;
 }
 
-section .content form mat-form-field {
+section .content mat-form-field {
   width: 100%;
-  margin-bottom: 7px;
+  margin-bottom: 12px;
   animation: animateElement 0.8s ease-out forwards;
   animation-delay: var(--delay);
   opacity: 0;
 }
 
-section .content form mat-form-field textarea {
-  resize: none;
-  min-height: 230px;
-}
-
-section .content form mat-form-field mat-error {
+section .content mat-form-field mat-error {
   margin-top: 2px;
 }
 
-section .content form mat-form-field mat-error span {
+section .content mat-form-field mat-error span {
   font-size: 16px;
 }
 
-::ng-deep
+section .content mat-form-field textarea {
+  resize: none;
+  height: 100px;
+}
+
+button i {
+  font-size: 30px;
+}
+
+button .text {
+  font-size: 20px;
+  font-weight: 500;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+form mat-form-field {
+  margin-bottom: 0;
+}
+
+.mat-icon {
+  color: var(--accent);
+}
+
+section .content .btn {
+  margin-top: 20px;
+  text-decoration: none;
+  background: none;
+  border: none;
+  color: var(--accent);
+  padding: 10px;
+  border-radius: var(--light-radius);
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  animation: animateElement 0.8s ease-out forwards;
+  animation-delay: var(--delay);
+  opacity: 0;
+  transition: 0.5s ease;
+}
+
+section .content .btn span {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+section .content .btn i {
+  font-size: 35px;
+}
+
+section .content .btn:hover {
+  color: var(--secondary);
+  background-color: var(--accent);
+}
+
+form
+  ::ng-deep
   .mdc-text-field--filled:not(.mdc-text-field--disabled):not(
     .mdc-text-field--invalid
   )
   .mdc-floating-label {
-  color: var(--primary);
+  color: var(--accent);
 }
 
 ::ng-deep
@@ -117,14 +169,7 @@ section .content form mat-form-field mat-error span {
     .mdc-text-field--invalid
   ).mdc-text-field--focused
   .mdc-floating-label {
-  color: var(--primary);
-}
-
-::ng-deep form mat-form-field .mat-mdc-form-field-icon-suffix {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  color: var(--accent);
 }
 
 ::ng-deep .mdc-text-field {
@@ -132,7 +177,7 @@ section .content form mat-form-field mat-error span {
 }
 
 ::ng-deep .mdc-text-field--filled {
-  background-color: var(--accent) !important;
+  background-color: var(--background-nav) !important;
 }
 
 ::ng-deep
@@ -140,7 +185,7 @@ section .content form mat-form-field mat-error span {
     .mdc-text-field--focused
   ):hover
   .mdc-floating-label {
-  color: var(--primary) !important;
+  color: var(--accent) !important;
 }
 
 ::ng-deep .mat-mdc-form-field-focus-overlay {
@@ -150,7 +195,25 @@ section .content form mat-form-field mat-error span {
 ::ng-deep
   .mdc-text-field--filled:not(.mdc-text-field--disabled)
   .mdc-text-field__input {
-  caret-color: var(--secondary) !important;
+  caret-color: var(--accent) !important;
+}
+
+::ng-deep
+  .mdc-text-field--filled:not(
+    .mdc-text-field--disabled
+  ).mdc-text-field--invalid:not(.mdc-text-field--disabled):hover
+  .mdc-floating-label {
+  color: red !important;
+}
+
+::ng-deep
+  .mdc-text-field--filled:not(.mdc-text-field--disabled).mdc-text-field--invalid
+  .mdc-floating-label {
+  color: red !important;
+}
+
+::ng-deep .mat-mdc-form-field-error {
+  color: red !important;
 }
 
 ::ng-deep
@@ -160,41 +223,110 @@ section .content form mat-form-field mat-error span {
 }
 
 ::ng-deep
-  .mdc-text-field--filled:not(
-    .mdc-text-field--disabled
-  ).mdc-text-field--invalid:not(.mdc-text-field--disabled):hover
-  .mdc-floating-label {
-  color: var(--primary) !important;
-}
-
-::ng-deep
-  .mdc-text-field--filled:not(.mdc-text-field--disabled).mdc-text-field--invalid
-  .mdc-floating-label {
-  color: var(--primary) !important;
-}
-
-::ng-deep .mat-mdc-form-field-error {
-  color: red !important;
-}
-
-button:not(.mat-mdc-button-disabled) .send {
-  color: var(--primary);
-}
-
-::ng-deep
   .mdc-text-field--filled:not(.mdc-text-field--disabled)
   .mdc-line-ripple::before {
-  border-bottom-color: transparent !important;
+  border-bottom-color: var(--accent) !important;
 }
 
 ::ng-deep
   .mdc-text-field--filled:not(.mdc-text-field--disabled)
   .mdc-line-ripple::after {
-  border-bottom-color: transparent !important;
+  border-bottom-color: var(--accent) !important;
 }
 
-button .delete {
-  color: var(--primary);
+::ng-deep mat-form-field.mat-form-field-invalid {
+  --secondary: red;
+  --accent: red;
+}
+
+::ng-deep .cap .mat-mdc-select-value-text {
+  text-transform: capitalize !important;
+}
+
+::ng-deep .mat-mdc-select {
+  color: var(--secondary) !important;
+}
+
+::ng-deep .mat-mdc-select-arrow svg {
+  fill: var(--accent) !important;
+}
+
+::ng-deep .mat-mdc-select-panel {
+  background-color: var(--background-nav) !important;
+}
+
+::ng-deep .mdc-list-item__primary-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  color: var(--secondary) !important;
+}
+
+::ng-deep .mdc-list-item--selected {
+  color: var(--accent) !important;
+}
+
+::ng-deep .mdc-list-item--selected span {
+  color: var(--accent) !important;
+}
+
+::ng-deep .mdc-list-item__primary-text span {
+  color: var(--secondary) !important;
+}
+
+::ng-deep .mdc-list-item__primary-text i {
+  color: var(--secondary) !important;
+  font-size: 25px;
+}
+
+::ng-deep
+  .mat-mdc-option.mdc-list-item--selected:not(.mdc-list-item--disabled):not(
+    .mat-mdc-option-multiple
+  ) {
+  background-color: var(--accent) !important;
+}
+
+::ng-deep
+  .mat-mdc-option.mdc-list-item--selected:not(.mdc-list-item--disabled):not(
+    .mat-mdc-option-multiple
+  )
+  .mdc-list-item__primary-text {
+  color: var(--primary) !important;
+}
+
+::ng-deep
+  .mat-mdc-option.mdc-list-item--selected:not(.mdc-list-item--disabled):not(
+    .mat-mdc-option-multiple
+  )
+  .mdc-list-item__primary-text
+  .flex
+  i {
+  color: var(--primary) !important;
+}
+
+::ng-deep
+  .mat-mdc-option.mdc-list-item--selected:not(.mdc-list-item--disabled):not(
+    .mat-mdc-option-multiple
+  )
+  .mdc-list-item__primary-text
+  .flex
+  .game {
+  color: var(--primary) !important;
+}
+
+::ng-deep .mat-pseudo-checkbox-minimal.mat-pseudo-checkbox-checked::after,
+.mat-pseudo-checkbox-minimal.mat-pseudo-checkbox-indeterminate::after {
+  color: var(--primary) !important;
+}
+
+::ng-deep .suffix .mat-mdc-form-field-icon-suffix {
+  color: var(--accent) !important;
+  left: -15px;
+}
+
+::ng-deep .mat-mdc-icon-button {
+  --mat-icon-button-icon-color: var(--accent);
 }
 
 @keyframes animateElement {
@@ -239,8 +371,8 @@ button .delete {
   }
 }
 
-@media screen and (max-height: 785px) {
-  section .content form mat-form-field textarea {
-    min-height: 100px;
+@media screen and (max-width: 380px) {
+  section .content mat-form-field textarea {
+    height: 50px;
   }
 }

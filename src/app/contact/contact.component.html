@@ -7,7 +7,7 @@
     <h1>Contact</h1>
   </div>
   <div class="content">
-    <form [formGroup]="contactForm">
+    <form [formGroup]="contactForm" (ngSubmit)="submitForm()">
       <mat-form-field style="--delay: 0.2s">
         <mat-label>Nom</mat-label>
         <input matInput formControlName="name" />
@@ -34,7 +34,7 @@
               <span>Ce champ est requis</span>
             }
             @if (contactForm.get("email")!.hasError("email")) {
-              <span>L'email est invalide</span>
+              <span>Ce champ est invalide</span>
             }
           </mat-error>
         }
@@ -59,31 +59,6 @@
       <mat-form-field style="--delay: 0.8s">
         <mat-label>Message</mat-label>
         <textarea matInput formControlName="message"></textarea>
-        <button
-          mat-icon-button
-          matSuffix
-          type="button"
-          title="Send Message"
-          [disabled]="
-            contactForm.invalid ||
-            !contactForm.get('name')?.value ||
-            !contactForm.get('email')?.value ||
-            !contactForm.get('subject')?.value ||
-            !contactForm.get('message')?.value
-          "
-          (click)="submitForm(); $event.stopPropagation()"
-        >
-          <mat-icon class="send">send</mat-icon>
-        </button>
-        <button
-          mat-icon-button
-          matSuffix
-          type="button"
-          title="Clear Form"
-          (click)="clearForm(); $event.stopPropagation()"
-        >
-          <mat-icon class="delete">delete</mat-icon>
-        </button>
         @if (contactForm.get("message")!.invalid) {
           <mat-error>
             @if (contactForm.get("message")!.hasError("required")) {
@@ -98,6 +73,10 @@
           </mat-error>
         }
       </mat-form-field>
+      <button type="submit" title="Envoyer" class="btn" style="--delay: 1s">
+        <i class="bx bxs-send"></i>
+        <span class="text">Envoyer</span>
+      </button>
     </form>
   </div>
 </section>
