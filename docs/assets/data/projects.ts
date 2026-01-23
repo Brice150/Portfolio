@@ -3,7 +3,7 @@ import { Project } from '../../app/core/interface/project';
 export const projects: Project[] = [
   {
     name: 'Application de développement personnel',
-    image: 'projects/LIFE-CONTROL.png',
+    image: 'projects/LIFE-CONTROL.webp',
     link: 'https://life-control-c981c.web.app/',
   },
   {
@@ -19,7 +19,7 @@ export const projects: Project[] = [
   },
   {
     name: 'Application de bibliothèque multimédia',
-    image: 'projects/CLASS-E-FILE.png',
+    image: 'projects/CLASS-E-FILE.webp',
     link: 'https://brice150.github.io/CLASS-E-FILE/',
   },
   {
