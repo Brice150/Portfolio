@@ -81,13 +81,13 @@
   }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 450px) {
   .project .image {
     height: 300px;
   }
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 380px) {
   .project .image {
     height: 250px;
   }

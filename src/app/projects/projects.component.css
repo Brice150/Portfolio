@@ -127,9 +127,23 @@ swiper-slide {
   }
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 450px) {
   swiper-container {
+    max-width: 350px;
+    height: 450px;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  swiper-container {
+    max-width: 300px;
     height: 400px;
+  }
+}
+
+@media screen and (max-width: 340px) {
+  swiper-container {
+    max-width: 280px;
   }
 }
 
