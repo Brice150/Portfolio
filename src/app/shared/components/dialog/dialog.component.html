@@ -4,7 +4,6 @@
   </button>
   <div class="title-container">
     <div class="title">
-      <img [src]="imagePath + project.logo" [alt]="project.name" />
       <h1>{{ project.name }}</h1>
     </div>
   </div>
@@ -17,22 +16,9 @@
     controls
   ></video>
   <div class="buttons">
-    <a
-      [href]="project.link"
-      target="_blank"
-      [title]="
-        project.link === 'https://github.com/Brice150/PICKME'
-          ? 'Github'
-          : 'Tester'
-      "
-      class="btn"
-    >
-      <i class="bx bxs-hand-right"></i>
-      @if (project.link === "https://github.com/Brice150/PICKME") {
-        <span>Github</span>
-      } @else {
-        <span>Tester</span>
-      }
+    <a [href]="project.link" target="_blank" title="Github" class="btn">
+      <i class="bx bxl-github"></i>
+      <span>Github</span>
     </a>
   </div>
 </div>

@@ -7,8 +7,15 @@
   <div class="title">
     <h2>{{ project().name }}</h2>
   </div>
-  <button type="button" title="Consulter" (click)="viewMore()" class="btn">
-    <i class="bx bxs-folder-open"></i>
-    <span>Consulter</span>
-  </button>
+  @if (project().video) {
+    <button type="button" title="Consulter" (click)="viewMore()" class="btn">
+      <i class="bx bxs-folder-open"></i>
+      <span>Consulter</span>
+    </button>
+  } @else {
+    <a [href]="project().link" target="_blank" title="Tester" class="btn">
+      <i class="bx bxs-hand-right"></i>
+      <span>Tester</span>
+    </a>
+  }
 </div>

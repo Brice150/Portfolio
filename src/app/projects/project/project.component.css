@@ -51,12 +51,14 @@
   animation: animateElement 1.5s ease-out forwards;
   animation-delay: var(--delay);
   opacity: 0;
+  text-decoration: none;
   transition: 0.5s ease;
 }
 
 .project .btn span {
   font-size: 22px;
   font-weight: 700;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
 .project .btn i {
