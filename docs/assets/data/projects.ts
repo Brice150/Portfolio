@@ -2,7 +2,7 @@ import { Project } from '../../app/core/interface/project';
 
 export const projects: Project[] = [
   {
-    name: 'Application de développement personnel',
+    name: 'Gestion vie quotidienne',
     image: 'projects/LIFE-CONTROL.webp',
     link: 'https://life-control-c981c.web.app/',
   },
@@ -13,12 +13,12 @@ export const projects: Project[] = [
     link: 'https://github.com/Brice150/PICKME',
   },
   {
-    name: 'Application de quiz multijoueur',
+    name: 'Quiz multijoueur',
     image: 'projects/GAMETIME.webp',
     link: 'https://brice150.github.io/GAMETIME/',
   },
   {
-    name: 'Application de bibliothèque multimédia',
+    name: 'Bibliothèque multimédia',
     image: 'projects/CLASS-E-FILE.webp',
     link: 'https://brice150.github.io/CLASS-E-FILE/',
   },
