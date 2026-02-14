@@ -77,17 +77,25 @@ export class ContactComponent implements OnInit {
         .subscribe({
           next: () => {
             this.clearForm();
-            this.toastr.info('Message sent', 'Message', {
-              positionClass: 'toast-bottom-center',
-              toastClass: 'ngx-toastr custom info',
-            });
+            this.toastr.info(
+              'Votre message a bien été envoyé. Je reviendrai vers vous rapidement !',
+              'Message',
+              {
+                positionClass: 'toast-bottom-center',
+                toastClass: 'ngx-toastr custom info',
+              },
+            );
           },
           error: () => {
             this.clearForm();
-            this.toastr.error('Message not sent', 'Message', {
-              positionClass: 'toast-bottom-center',
-              toastClass: 'ngx-toastr custom error',
-            });
+            this.toastr.error(
+              "Impossible d’envoyer votre message, veuillez réessayer ultérieurement ou m'envoyer un email",
+              'Erreur',
+              {
+                positionClass: 'toast-bottom-center',
+                toastClass: 'ngx-toastr custom error',
+              },
+            );
           },
         });
     } else {
