@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://brice150.github.io/Portfolio/sitemap.xml

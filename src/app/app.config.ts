@@ -5,6 +5,7 @@ import { routes } from './app.routes';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { provideHttpClient } from '@angular/common/http';
 import { register as registerSwiperElements } from 'swiper/element/bundle';
+import { provideClientHydration, withEventReplay } from '@angular/platform-browser';
 
 registerSwiperElements();
 export const appConfig: ApplicationConfig = {
@@ -13,6 +14,6 @@ export const appConfig: ApplicationConfig = {
     provideRouter(routes),
     provideToastr(),
     provideAnimationsAsync(),
-    provideHttpClient(),
+    provideHttpClient(), provideClientHydration(withEventReplay()),
   ],
 };
