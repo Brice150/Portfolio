@@ -2,8 +2,9 @@
   <button
     type="button"
     title="Accueil"
-    routerLink="/home"
+    routerLink="/"
     routerLinkActive="active"
+    [routerLinkActiveOptions]="{ exact: true }"
     style="--delay: 0.2s"
   >
     <span>Accueil</span>
