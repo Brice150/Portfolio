@@ -202,7 +202,8 @@ section .content .flex-links a {
   justify-content: center;
   transition:
     transform 0.4s ease,
-    background-color 0.4s ease;
+    background-color 0.4s ease,
+    color 0.4s ease;
 }
 
 section .content .flex-links a:hover {
@@ -232,7 +233,8 @@ section .content .btn {
   gap: 10px;
   transition:
     transform 0.4s ease,
-    background-color 0.4s ease;
+    background-color 0.4s ease,
+    color 0.4s ease;
 }
 
 section .content .btn:hover {

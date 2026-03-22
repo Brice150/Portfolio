@@ -149,6 +149,12 @@ section .content .timeline .element .main {
   width: 250px;
   border-radius: var(--light-radius);
   background-color: var(--accent);
+  transition: transform 0.4s ease;
+}
+
+section .content .timeline .element .main:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
 section .content .timeline .element .main .title-element {

@@ -123,6 +123,12 @@ form mat-form-field {
   color: var(--accent);
 }
 
+section .content .btn-wrapper {
+  animation: animateElement 0.8s ease-out forwards;
+  animation-delay: var(--delay);
+  opacity: 0;
+}
+
 section .content .btn {
   text-decoration: none;
   background: none;
@@ -135,10 +141,10 @@ section .content .btn {
   justify-content: center;
   align-items: center;
   gap: 10px;
-  animation: animateElement 0.8s ease-out forwards;
-  animation-delay: var(--delay);
-  opacity: 0;
-  transition: 0.5s ease;
+  transition:
+    transform 0.4s ease,
+    background-color 0.4s ease,
+    color 0.4s ease;
 }
 
 section .content .btn span {
@@ -153,6 +159,8 @@ section .content .btn i {
 section .content .btn:hover {
   color: var(--secondary);
   background-color: var(--accent);
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
 form
