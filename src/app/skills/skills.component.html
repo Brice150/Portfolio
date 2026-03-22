@@ -14,78 +14,110 @@
   </div>
   <div class="content" #content>
     <div class="categories">
-      <div class="category" style="--delay: 0.2s">
-        <h2>Frontend</h2>
-        <div class="skills">
-          <img
-            [src]="imagePath + 'angular.webp'"
-            alt="Angular"
-            title="Angular"
-            style="margin-top: -1px"
-          />
-          <i class="bx bxl-html5" title="HTML" style="color: #e54c21"></i>
-          <i class="bx bxl-css3" title="CSS" style="color: #214ce5"></i>
-          <i
-            class="bx bxl-typescript"
-            title="Typescript"
-            style="color: #007acc"
-          ></i>
-          <i
-            class="bx bxl-javascript"
-            title="Javascript"
-            style="color: #f3e11d"
-          ></i>
+      <div class="category-wrapper" style="--delay: 0.2s">
+        <div class="category">
+          <h2>Frontend</h2>
+          <div class="skills">
+            <img
+              [src]="imagePath + 'angular.webp'"
+              alt="Angular"
+              title="Angular"
+              style="margin-top: -1px"
+              loading="lazy"
+              decoding="async"
+            />
+            <i class="bx bxl-html5" title="HTML" style="color: #e54c21"></i>
+            <i class="bx bxl-css3" title="CSS" style="color: #214ce5"></i>
+            <i
+              class="bx bxl-typescript"
+              title="Typescript"
+              style="color: #007acc"
+            ></i>
+            <i
+              class="bx bxl-javascript"
+              title="Javascript"
+              style="color: #f3e11d"
+            ></i>
+          </div>
         </div>
       </div>
-      <div class="category" style="--delay: 0.4s">
-        <h2>Backend</h2>
-        <div class="skills">
-          <i
-            class="bx bxl-spring-boot"
-            title="Spring Boot"
-            style="color: #6db33f"
-          ></i>
-          <img [src]="imagePath + 'java.webp'" alt="Java" title="Java" />
+      <div class="category-wrapper" style="--delay: 0.4s">
+        <div class="category">
+          <h2>Backend</h2>
+          <div class="skills">
+            <i
+              class="bx bxl-spring-boot"
+              title="Spring Boot"
+              style="color: #6db33f"
+            ></i>
+            <img
+              [src]="imagePath + 'java.webp'"
+              alt="Java"
+              title="Java"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
         </div>
       </div>
-      <div class="category" style="--delay: 0.6s">
-        <h2>Base de données</h2>
-        <div class="skills">
-          <i
-            class="bx bxl-postgresql"
-            title="PostgresSQL"
-            style="color: #2f6792"
-          ></i>
-          <img [src]="imagePath + 'oracle.webp'" alt="Oracle" title="Oracle" />
-          <i
-            class="bx bxl-firebase"
-            title="Firebase"
-            style="color: #ee9c11"
-          ></i>
+      <div class="category-wrapper" style="--delay: 0.6s">
+        <div class="category">
+          <h2>Base de données</h2>
+          <div class="skills">
+            <i
+              class="bx bxl-postgresql"
+              title="PostgresSQL"
+              style="color: #2f6792"
+            ></i>
+            <img
+              [src]="imagePath + 'oracle.webp'"
+              alt="Oracle"
+              title="Oracle"
+              loading="lazy"
+              decoding="async"
+            />
+            <i
+              class="bx bxl-firebase"
+              title="Firebase"
+              style="color: #ee9c11"
+            ></i>
+          </div>
         </div>
       </div>
-      <div class="category" style="--delay: 0.8s">
-        <h2>Editeurs</h2>
-        <div class="skills">
-          <img
-            [src]="imagePath + 'intelliJ.webp'"
-            alt="IntelliJ"
-            title="IntelliJ"
-          />
-          <i
-            class="bx bxl-visual-studio"
-            title="VSCode"
-            style="color: #0a75b8"
-          ></i>
-          <img [src]="imagePath + 'talend.webp'" alt="Talend" title="Talend" />
+      <div class="category-wrapper" style="--delay: 0.8s">
+        <div class="category">
+          <h2>Editeurs</h2>
+          <div class="skills">
+            <img
+              [src]="imagePath + 'intelliJ.webp'"
+              alt="IntelliJ"
+              title="IntelliJ"
+              loading="lazy"
+              decoding="async"
+            />
+            <i
+              class="bx bxl-visual-studio"
+              title="VSCode"
+              style="color: #0a75b8"
+            ></i>
+            <img
+              [src]="imagePath + 'talend.webp'"
+              alt="Talend"
+              title="Talend"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
         </div>
       </div>
-      <div class="category" style="--delay: 1s">
-        <h2>Autres</h2>
-        <div class="skills">
-          <i class="bx bxl-git" title="Git" style="color: #f05033"></i>
-          <i class="bx bxl-github" title="Github" style="color: black"></i>
-          <i class="bx bxl-gitlab" title="Gitlab" style="color: #e24329"></i>
+      <div class="category-wrapper" style="--delay: 1s">
+        <div class="category">
+          <h2>Autres</h2>
+          <div class="skills">
+            <i class="bx bxl-git" title="Git" style="color: #f05033"></i>
+            <i class="bx bxl-github" title="Github" style="color: black"></i>
+            <i class="bx bxl-gitlab" title="Gitlab" style="color: #e24329"></i>
+          </div>
         </div>
       </div>
     </div>

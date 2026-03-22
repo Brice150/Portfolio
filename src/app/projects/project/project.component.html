@@ -3,6 +3,8 @@
     [src]="imagePath + project().image"
     [alt]="project().name"
     class="image"
+    loading="lazy"
+    decoding="async"
   />
   <div class="title">
     <h2>{{ project().name }}</h2>

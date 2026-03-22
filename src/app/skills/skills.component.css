@@ -91,6 +91,12 @@ section .content .categories {
   margin-top: 30px;
 }
 
+section .content .categories .category-wrapper {
+  animation: animateElement 0.8s ease-out forwards;
+  animation-delay: var(--delay);
+  opacity: 0;
+}
+
 section .content .categories .category {
   display: flex;
   justify-content: center;
@@ -101,10 +107,12 @@ section .content .categories .category {
   background-color: var(--accent);
   border-radius: var(--light-radius);
   padding: 10px;
-  animation: animateElement 0.8s ease-out forwards;
-  animation-delay: var(--delay);
-  opacity: 0;
-  transition: 0.5s ease;
+  transition: transform 0.4s ease;
+}
+
+section .content .categories .category:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
 section .content .category h2 {
@@ -123,6 +131,11 @@ section .content .category .skills {
   border-radius: var(--light-radius);
   width: 100%;
   padding: 10px 0;
+  transition: background-color 0.4s ease;
+}
+
+section .content .categories .category:hover .skills {
+  background-color: var(--secondary);
 }
 
 section .content .category .skills i {
