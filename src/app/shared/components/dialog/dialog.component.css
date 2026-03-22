@@ -25,13 +25,18 @@
   color: var(--accent);
   border-radius: var(--light-radius);
   cursor: pointer;
-  transition: 0.5s ease;
+  transition:
+    transform 0.4s ease,
+    background-color 0.4s ease,
+    color 0.4s ease;
   background-color: transparent;
 }
 
 .container .close:hover {
   color: var(--secondary);
   background-color: var(--accent);
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
 .container .close i {
@@ -113,7 +118,10 @@
   justify-content: center;
   align-items: center;
   gap: 10px;
-  transition: 0.5s ease;
+  transition:
+    transform 0.4s ease,
+    background-color 0.4s ease,
+    color 0.4s ease;
 }
 
 .container .buttons .btn span {
@@ -128,6 +136,8 @@
 .container .buttons .btn:hover {
   color: var(--secondary);
   background-color: var(--accent);
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
 @media screen and (max-width: 768px) {

@@ -207,7 +207,7 @@ section .content .flex-links a {
 }
 
 section .content .flex-links a:hover {
-  transform: scale(1.15);
+  transform: scale(1.05);
   color: var(--secondary);
   background-color: var(--accent);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
@@ -238,7 +238,7 @@ section .content .btn {
 }
 
 section .content .btn:hover {
-  transform: scale(1.08);
+  transform: scale(1.05);
   color: var(--secondary);
   background-color: var(--accent);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);

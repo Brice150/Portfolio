@@ -6,79 +6,89 @@
     <i class="bx bxs-envelope"></i>
     <h1>Contact</h1>
   </div>
-  <div class="content">
-    <form [formGroup]="contactForm" (ngSubmit)="submitForm()">
-      <mat-form-field style="--delay: 0.2s">
-        <mat-label>Nom</mat-label>
-        <input matInput formControlName="name" />
-        @if (contactForm.get("name")!.invalid) {
-          <mat-error>
-            @if (contactForm.get("name")!.hasError("required")) {
-              <span>Ce champ est requis</span>
-            }
-            @if (contactForm.get("name")!.hasError("minlength")) {
-              <span>Ce champ est trop court</span>
-            }
-            @if (contactForm.get("name")!.hasError("maxlength")) {
-              <span>Ce champ est trop long</span>
-            }
-          </mat-error>
-        }
-      </mat-form-field>
-      <mat-form-field style="--delay: 0.4s">
-        <mat-label>Email</mat-label>
-        <input matInput formControlName="email" />
-        @if (contactForm.get("email")!.invalid) {
-          <mat-error>
-            @if (contactForm.get("email")!.hasError("required")) {
-              <span>Ce champ est requis</span>
-            }
-            @if (contactForm.get("email")!.hasError("email")) {
-              <span>Ce champ est invalide</span>
-            }
-          </mat-error>
-        }
-      </mat-form-field>
-      <mat-form-field style="--delay: 0.6s">
-        <mat-label>Objet</mat-label>
-        <input matInput formControlName="subject" />
-        @if (contactForm.get("subject")!.invalid) {
-          <mat-error>
-            @if (contactForm.get("subject")!.hasError("required")) {
-              <span>Ce champ est requis</span>
-            }
-            @if (contactForm.get("subject")!.hasError("minlength")) {
-              <span>Ce champ est trop court</span>
-            }
-            @if (contactForm.get("subject")!.hasError("maxlength")) {
-              <span>Ce champ est trop long</span>
-            }
-          </mat-error>
-        }
-      </mat-form-field>
-      <mat-form-field style="--delay: 0.8s">
-        <mat-label>Message</mat-label>
-        <textarea matInput formControlName="message"></textarea>
-        @if (contactForm.get("message")!.invalid) {
-          <mat-error>
-            @if (contactForm.get("message")!.hasError("required")) {
-              <span>Ce champ est requis</span>
-            }
-            @if (contactForm.get("message")!.hasError("minlength")) {
-              <span>Ce champ est trop court</span>
-            }
-            @if (contactForm.get("message")!.hasError("maxlength")) {
-              <span>Ce champ est trop long</span>
-            }
-          </mat-error>
-        }
-      </mat-form-field>
-      <div class="btn-wrapper" style="--delay: 1s">
-        <button type="submit" title="Envoyer" class="btn">
-          <i class="bx bxs-send"></i>
-          <span class="text">Envoyer</span>
-        </button>
-      </div>
-    </form>
-  </div>
+  @if (!loading && !isMessageSent) {
+    <div class="content">
+      <form [formGroup]="contactForm" (ngSubmit)="submitForm()">
+        <mat-form-field style="--delay: 0.2s">
+          <mat-label>Nom</mat-label>
+          <input matInput formControlName="name" />
+          @if (contactForm.get("name")!.invalid) {
+            <mat-error>
+              @if (contactForm.get("name")!.hasError("required")) {
+                <span>Ce champ est requis</span>
+              }
+              @if (contactForm.get("name")!.hasError("minlength")) {
+                <span>Ce champ est trop court</span>
+              }
+              @if (contactForm.get("name")!.hasError("maxlength")) {
+                <span>Ce champ est trop long</span>
+              }
+            </mat-error>
+          }
+        </mat-form-field>
+        <mat-form-field style="--delay: 0.4s">
+          <mat-label>Email</mat-label>
+          <input matInput formControlName="email" />
+          @if (contactForm.get("email")!.invalid) {
+            <mat-error>
+              @if (contactForm.get("email")!.hasError("required")) {
+                <span>Ce champ est requis</span>
+              }
+              @if (contactForm.get("email")!.hasError("email")) {
+                <span>Ce champ est invalide</span>
+              }
+            </mat-error>
+          }
+        </mat-form-field>
+        <mat-form-field style="--delay: 0.6s">
+          <mat-label>Objet</mat-label>
+          <input matInput formControlName="subject" />
+          @if (contactForm.get("subject")!.invalid) {
+            <mat-error>
+              @if (contactForm.get("subject")!.hasError("required")) {
+                <span>Ce champ est requis</span>
+              }
+              @if (contactForm.get("subject")!.hasError("minlength")) {
+                <span>Ce champ est trop court</span>
+              }
+              @if (contactForm.get("subject")!.hasError("maxlength")) {
+                <span>Ce champ est trop long</span>
+              }
+            </mat-error>
+          }
+        </mat-form-field>
+        <mat-form-field style="--delay: 0.8s">
+          <mat-label>Message</mat-label>
+          <textarea matInput formControlName="message"></textarea>
+          @if (contactForm.get("message")!.invalid) {
+            <mat-error>
+              @if (contactForm.get("message")!.hasError("required")) {
+                <span>Ce champ est requis</span>
+              }
+              @if (contactForm.get("message")!.hasError("minlength")) {
+                <span>Ce champ est trop court</span>
+              }
+              @if (contactForm.get("message")!.hasError("maxlength")) {
+                <span>Ce champ est trop long</span>
+              }
+            </mat-error>
+          }
+        </mat-form-field>
+        <div class="btn-wrapper" style="--delay: 1s">
+          <button type="submit" title="Envoyer" class="btn">
+            <i class="bx bxs-send"></i>
+            <span class="text">Envoyer</span>
+          </button>
+        </div>
+      </form>
+    </div>
+  } @else if (loading) {
+    <mat-spinner></mat-spinner>
+  } @else {
+    <div class="message">
+      <h2>
+        Votre message a bien été envoyé. Je reviendrai vers vous rapidement !
+      </h2>
+    </div>
+  }
 </section>

@@ -1,14 +1,19 @@
 import { CommonModule } from '@angular/common';
-import { Component, inject, OnInit } from '@angular/core';
-import { RouterModule } from '@angular/router';
-import { ReactiveFormsModule } from '@angular/forms';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { ToastrService } from 'ngx-toastr';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
+import { Component, inject, OnInit } from '@angular/core';
+import {
+  FormBuilder,
+  FormGroup,
+  ReactiveFormsModule,
+  Validators,
+} from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
+import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
+import { MatProgressSpinner } from '@angular/material/progress-spinner';
+import { RouterModule } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-contact',
@@ -20,6 +25,7 @@ import { MatIconModule } from '@angular/material/icon';
     MatInputModule,
     MatButtonModule,
     MatIconModule,
+    MatProgressSpinner,
   ],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.css',
@@ -29,6 +35,8 @@ export class ContactComponent implements OnInit {
   http = inject(HttpClient);
   toastr = inject(ToastrService);
   fb = inject(FormBuilder);
+  isMessageSent = false;
+  loading = false;
 
   ngOnInit(): void {
     this.contactForm = this.fb.group({
@@ -62,6 +70,7 @@ export class ContactComponent implements OnInit {
 
   submitForm(): void {
     if (this.contactForm.valid) {
+      this.loading = true;
       const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
       this.http
         .post(
@@ -77,19 +86,14 @@ export class ContactComponent implements OnInit {
         .subscribe({
           next: () => {
             this.clearForm();
-            this.toastr.info(
-              'Votre message a bien été envoyé. Je reviendrai vers vous rapidement !',
-              'Message',
-              {
-                positionClass: 'toast-bottom-center',
-                toastClass: 'ngx-toastr custom info',
-              },
-            );
+            this.isMessageSent = true;
+            this.loading = false;
           },
           error: () => {
             this.clearForm();
+            this.loading = false;
             this.toastr.error(
-              "Impossible d’envoyer votre message, veuillez réessayer ultérieurement ou m'envoyer un email",
+              'Impossible d’envoyer votre message, veuillez réessayer ultérieurement ou envoyer un email',
               'Erreur',
               {
                 positionClass: 'toast-bottom-center',
