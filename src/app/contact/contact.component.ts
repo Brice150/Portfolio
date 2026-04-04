@@ -14,6 +14,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatProgressSpinner } from '@angular/material/progress-spinner';
 import { RouterModule } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { SeoService } from '../core/services/seo.service';
 
 @Component({
   selector: 'app-contact',
@@ -35,10 +36,18 @@ export class ContactComponent implements OnInit {
   http = inject(HttpClient);
   toastr = inject(ToastrService);
   fb = inject(FormBuilder);
+  seoService = inject(SeoService);
   isMessageSent = false;
   loading = false;
 
   ngOnInit(): void {
+    this.seoService.setPage({
+      title: 'Contact - Brice Lecomte',
+      description:
+        'Contactez Brice Lecomte pour vos projets de développement web et SaaS.',
+      url: 'https://portfolio-brice.web.app/contact',
+    });
+
     this.contactForm = this.fb.group({
       name: [
         '',

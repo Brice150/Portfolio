@@ -86,44 +86,83 @@
     />
 
     <!-- Schema.org -->
-
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "WebSite",
-        "name": "Portfolio - Brice Lecomte",
-        "url": "https://portfolio-brice.web.app/",
-        "@id": "https://portfolio-brice.web.app/#website"
-      }
-    </script>
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "Person",
-        "name": "Brice Lecomte",
-        "@id": "https://portfolio-brice.web.app/#person",
-        "alternateName": "Brice150",
-        "url": "https://portfolio-brice.web.app/",
-        "image": "https://portfolio-brice.web.app/assets/images/logo.webp",
-        "jobTitle": "Développeur Web Full Stack",
-        "description": "Développeur spécialisé Angular & Java, conception d'applications web modernes et solutions SaaS.",
-        "knowsAbout": [
-          "Angular",
-          "Spring Boot",
-          "TypeScript",
-          "Java",
-          "JavaScript",
-          "HTML",
-          "CSS",
-          "SaaS"
-        ],
-        "nationality": {
-          "@type": "Country",
-          "name": "France"
-        },
-        "sameAs": [
-          "https://github.com/brice150",
-          "https://www.linkedin.com/in/brice-lecomte/"
+        "@graph": [
+          {
+            "@type": "WebSite",
+            "@id": "https://portfolio-brice.web.app/#website",
+            "url": "https://portfolio-brice.web.app/",
+            "name": "Portfolio - Brice Lecomte",
+            "inLanguage": "fr",
+            "publisher": {
+              "@id": "https://portfolio-brice.web.app/#person"
+            },
+            "hasPart": [
+              {
+                "@type": "WebPage",
+                "@id": "https://portfolio-brice.web.app/#home",
+                "url": "https://portfolio-brice.web.app/",
+                "name": "Accueil"
+              },
+              {
+                "@type": "WebPage",
+                "@id": "https://portfolio-brice.web.app/#skills",
+                "url": "https://portfolio-brice.web.app/skills",
+                "name": "Compétences"
+              },
+              {
+                "@type": "WebPage",
+                "@id": "https://portfolio-brice.web.app/#history",
+                "url": "https://portfolio-brice.web.app/history",
+                "name": "Expériences"
+              },
+              {
+                "@type": "WebPage",
+                "@id": "https://portfolio-brice.web.app/#projects",
+                "url": "https://portfolio-brice.web.app/projects",
+                "name": "Projets"
+              },
+              {
+                "@type": "WebPage",
+                "@id": "https://portfolio-brice.web.app/#contact",
+                "url": "https://portfolio-brice.web.app/contact",
+                "name": "Contact"
+              }
+            ]
+          },
+          {
+            "@type": "Person",
+            "@id": "https://portfolio-brice.web.app/#person",
+            "name": "Brice Lecomte",
+            "alternateName": "Brice150",
+            "url": "https://portfolio-brice.web.app/",
+            "image": "https://portfolio-brice.web.app/assets/images/logo.webp",
+            "jobTitle": "Développeur Web Full Stack",
+            "description": "Développeur spécialisé Angular et Java, créateur de SaaS et d'applications web modernes.",
+            "knowsAbout": [
+              "Angular",
+              "Spring Boot",
+              "TypeScript",
+              "Java",
+              "JavaScript",
+              "SaaS",
+              "Développement web"
+            ],
+            "nationality": {
+              "@type": "Country",
+              "name": "France"
+            },
+            "worksFor": {
+              "@type": "Organization",
+              "name": "Freelance / LECOMTE DIGITAL SOLUTIONS"
+            },
+            "sameAs": [
+              "https://github.com/brice150",
+              "https://www.linkedin.com/in/brice-lecomte/"
+            ]
+          }
         ]
       }
     </script>
