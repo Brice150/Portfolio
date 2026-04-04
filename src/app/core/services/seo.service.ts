@@ -1,4 +1,5 @@
-import { inject, Injectable } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
+import { inject, Injectable, PLATFORM_ID } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 
 @Injectable({
@@ -8,6 +9,7 @@ export class SeoService {
   schemaId = 'dynamic-schema';
   meta = inject(Meta);
   title = inject(Title);
+  platformId = inject(PLATFORM_ID);
 
   setPage(config: { title: string; description: string; url: string }): void {
     this.title.setTitle(config.title);
@@ -48,6 +50,8 @@ export class SeoService {
   }
 
   injectSchema(schema: any): void {
+    if (!isPlatformBrowser(this.platformId)) return;
+
     const existing = document.getElementById(this.schemaId);
     if (existing) {
       existing.remove();
