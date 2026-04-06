@@ -3,8 +3,8 @@ import { Project } from '../../app/core/interface/project';
 export const projects: Project[] = [
   {
     name: 'Gestion vie quotidienne',
-    image: 'projects/LIFE-CONTROL.webp',
-    link: 'https://life-control-c981c.web.app/',
+    image: 'projects/LIFE-RISE.webp',
+    link: 'https://life-rise.web.app/',
   },
   {
     name: 'Application de rencontre',
