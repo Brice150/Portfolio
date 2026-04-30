@@ -7,52 +7,64 @@
 Frontend : Angular
 
 <details>
-  <summary>Pages Features</summary>
+  <summary>Features</summary>
 
-### Home
+### 🏠 Accueil
 
-- General description and links to know more about me
+- Présentation générale du portfolio
+- Liens pour en savoir plus sur moi et mon parcours
 
-## Skills
+---
 
-Discover the diverse set of skills I bring to the table. This section highlights my expertise in :
+### 🧠 Compétences
 
-- Programming languages
-- Frameworks and tools
+Découvrez l’ensemble de mes compétences techniques. Cette section met en avant :
 
-## History
+- Langages de programmation maîtrisés
+- Frameworks et outils utilisés
 
-Explore my professional background, including :
+---
 
-- Work experience
-- Educational milestones
+### 📜 Parcours
 
-## Projects
+Explorez mon parcours professionnel et académique, incluant :
 
-Browse through my portfolio of web application projects.
+- Expériences professionnelles
+- Diplômes et formations
 
-## Contact
+---
 
-Reach out to me via a user-friendly contact form. The form includes validation to ensure accurate submissions and sends your message directly to my inbox
+### 💼 Projets
+
+Découvrez une sélection de mes projets d’applications web réalisés.
+
+---
+
+### 📬 Contact
+
+Contactez-moi via un formulaire simple et intuitif.  
+Le formulaire inclut une validation des champs afin de garantir la qualité des informations envoyées et transmet directement votre message à ma boîte mail.
+
+---
 
 </details>
 
 <details>
-  <summary>Run Locally</summary>
+  <summary>Installation locale</summary>
 
-### Clone the project
+### Cloner le projet
 
 ```bash
-  git clone https://github.com/Brice150/Portfolio.git
+  git clone https://github.com/Brice150/Life-Rise.git
 ```
 
-### Install dependencies
+### Installer les dépendances
 
 ```bash
   npm install
 ```
 
-### Start the server
+### Lancer l'application
 
 ```bash
   ng serve -o
