@@ -298,7 +298,7 @@ section .content .btn:hover {
     flex-direction: column;
   }
 
-  section .content img {
+  section .content .img-wrapper img {
     width: 200px;
     margin-bottom: 10px;
   }
@@ -333,6 +333,10 @@ section .content .btn:hover {
 @media screen and (max-width: 496px) {
   section {
     margin-top: 100px;
+  }
+
+  section .content .img-wrapper img {
+    width: 170px;
   }
 }
 
