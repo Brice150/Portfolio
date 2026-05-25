@@ -18,11 +18,6 @@ export const projects: Project[] = [
     link: 'https://brice150.github.io/GAMETIME/',
   },
   {
-    name: 'Bibliothèque multimédia',
-    image: 'projects/CLASS-E-FILE.webp',
-    link: 'https://brice150.github.io/CLASS-E-FILE/',
-  },
-  {
     name: 'Simulateur d’aides à la rénovation',
     image: 'projects/SIMULATOR.webp',
     link: 'https://brice150.github.io/Simulator/',
