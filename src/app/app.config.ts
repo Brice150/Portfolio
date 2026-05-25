@@ -12,16 +12,19 @@ import {
   MAT_DATE_LOCALE,
 } from '@angular/material/core';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
-import { provideRouter, withInMemoryScrolling } from '@angular/router';
+import {
+  provideRouter,
+  withInMemoryScrolling,
+  withPreloading,
+} from '@angular/router';
 import { provideToastr } from 'ngx-toastr';
-import { register as registerSwiperElements } from 'swiper/element/bundle';
 import { routes } from './app.routes';
+import { SmartPreloading } from './core/services/smart-preloading.service';
 import {
   FRENCH_DATE_FORMATS,
   FrenchDateAdapter,
 } from './shared/french-date-adapter';
 
-registerSwiperElements();
 registerLocaleData(localeFr);
 
 export const appConfig: ApplicationConfig = {
@@ -33,6 +36,7 @@ export const appConfig: ApplicationConfig = {
         scrollPositionRestoration: 'top',
         anchorScrolling: 'enabled',
       }),
+      withPreloading(SmartPreloading),
     ),
     provideToastr(),
     provideAnimationsAsync(),
