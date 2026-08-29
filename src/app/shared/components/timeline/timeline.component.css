@@ -46,7 +46,8 @@
   box-shadow: 0 0 0 4px var(--accent-soft);
 }
 
-.entry:hover .marker {
+/* L’étape en cours garde son aplat : la teinter au survol effacerait l’icône. */
+.entry:not(.is-current):hover .marker {
   color: var(--accent);
   border-color: var(--accent);
 }

@@ -55,7 +55,6 @@ export const milestones: Milestone[] = [
       'Spring Boot',
       'Oracle',
       'PostgreSQL',
-      'SQL',
       'Talend',
     ],
   },
@@ -76,7 +75,7 @@ export const milestones: Milestone[] = [
         period: 'Juil. 2021 — Déc. 2022',
         summary:
           'Conception et exploitation de flux d’intégration Talend sur des données d’aéronefs militaires : reprises, transformations et contrôles de cohérence sur des volumes conséquents.',
-        stack: ['Talend', 'Java', 'SQL', 'PostgreSQL'],
+        stack: ['Talend', 'Java', 'PostgreSQL'],
       },
       {
         label: 'Seconde mission — Développement Full-Stack',

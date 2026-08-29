@@ -183,31 +183,36 @@ h2 {
   font-size: 0.74rem;
 }
 
-/* --- Projet suivant ------------------------------------------------------ */
+/* --- Projets voisins ----------------------------------------------------- */
 
-.next-link {
+.siblings {
   display: grid;
-  grid-template-columns: 1fr auto;
+  gap: 1rem;
+}
+
+.sibling {
+  display: flex;
   align-items: center;
-  gap: 0.35rem 1.5rem;
-  padding: clamp(1.35rem, 1rem + 1.5vw, 2.25rem);
+  gap: 1.25rem;
+  padding: clamp(1.25rem, 1rem + 1.2vw, 1.9rem);
   border: 1px solid var(--border);
   border-radius: var(--r-lg);
   background: var(--surface);
-  transition:
-    border-color var(--dur) var(--ease),
-    background var(--dur) var(--ease);
 }
 
-.next-link:hover {
-  border-color: color-mix(in srgb, var(--accent) 45%, transparent);
-  background:
-    radial-gradient(110% 130% at 100% 50%, var(--accent-soft), transparent 60%),
-    var(--surface);
+.sibling.is-next {
+  text-align: right;
 }
 
-.next-label {
-  grid-column: 1;
+.sibling-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  flex: 1;
+  min-width: 0;
+}
+
+.sibling-label {
   font-family: var(--font-mono);
   font-size: 0.7rem;
   letter-spacing: 0.12em;
@@ -215,30 +220,41 @@ h2 {
   color: var(--accent);
 }
 
-.next-name {
-  grid-column: 1;
+.sibling-name {
   font-family: var(--font-display);
   font-size: var(--step-2);
   font-weight: 600;
 }
 
-.next-tagline {
-  grid-column: 1;
+.sibling-tagline {
   font-size: 0.9rem;
   color: var(--text-muted);
 }
 
-.next-link app-icon {
-  grid-column: 2;
-  grid-row: 1 / -1;
+.sibling app-icon {
+  flex: none;
   color: var(--accent);
   transition: translate var(--dur) var(--ease);
 }
 
-.next-link:hover app-icon {
+.sibling.is-previous:hover app-icon {
+  translate: -6px 0;
+}
+
+.sibling.is-next:hover app-icon {
   translate: 6px 0;
 }
 
+@media (width >= 760px) {
+  .siblings {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  /* Sans précédent, le suivant reste aligné à droite. */
+  .sibling.is-next:only-child {
+    grid-column: 2;
+  }
+}
 @media (width >= 960px) {
   .body {
     grid-template-columns: minmax(0, 1.65fr) minmax(0, 1fr);

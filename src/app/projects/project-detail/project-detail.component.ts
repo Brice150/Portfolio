@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, Component, OnInit, computed, inject, input } f
 import { Router, RouterLink } from '@angular/router';
 import { environment } from '../../../environments/environment';
 import { SITE_URL } from '../../shared/data/profile';
-import { projectBySlug, projects } from '../../shared/data/projects';
+import { projectBySlug, projectsByDate } from '../../shared/data/projects';
 import { SeoService } from '../../core/services/seo.service';
 import { DeviceShowcaseComponent } from '../../shared/components/device-showcase/device-showcase.component';
 import { IconComponent } from '../../shared/components/icon/icon.component';
@@ -26,13 +26,22 @@ export class ProjectDetailComponent implements OnInit {
 
   readonly project = computed(() => projectBySlug(this.slug()));
 
-  readonly nextProject = computed(() => {
+  /** Voisins dans l’ordre chronologique de la page Projets. */
+  private readonly neighbours = computed(() => {
     const current = this.project();
-    if (!current) return undefined;
+    if (!current) return { previous: undefined, next: undefined };
 
-    const index = projects.findIndex((item) => item.slug === current.slug);
-    return projects[(index + 1) % projects.length];
+    const ordered = projectsByDate();
+    const index = ordered.findIndex((item) => item.slug === current.slug);
+
+    return {
+      previous: index > 0 ? ordered[index - 1] : undefined,
+      next: index < ordered.length - 1 ? ordered[index + 1] : undefined,
+    };
   });
+
+  readonly previousProject = computed(() => this.neighbours().previous);
+  readonly nextProject = computed(() => this.neighbours().next);
 
   ngOnInit(): void {
     const project = this.project();
