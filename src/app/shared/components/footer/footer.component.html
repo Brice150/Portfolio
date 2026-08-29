@@ -67,24 +67,6 @@
             </button>
           </li>
           <li>
-            <button
-              type="button"
-              class="copy"
-              [appCopyText]="profile.phone"
-              appCopyLabel="Numéro de téléphone copié"
-              #copyPhone="appCopyText"
-            >
-              <app-icon [name]="copyPhone.copied() ? 'check' : 'copy'" size="0.9em" />
-              <span>
-                @if (copyPhone.copied()) {
-                  Numéro copié
-                } @else {
-                  {{ profile.phone }}
-                }
-              </span>
-            </button>
-          </li>
-          <li>
             <a [href]="profile.linkedin" target="_blank" rel="noopener">
               LinkedIn
               <app-icon name="arrow-up-right" size="0.9em" />

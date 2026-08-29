@@ -27,7 +27,7 @@
 - [Parcours](https://portfolio-brice.web.app/parcours) : missions détaillées, reconversion, formation, certifications
 - [Projets](https://portfolio-brice.web.app/projets) : 5 applications avec fiches détaillées
 - [Expertise](https://portfolio-brice.web.app/expertise) : domaines d'intervention et façon de travailler
-- [Contact](https://portfolio-brice.web.app/contact) : formulaire, e-mail, téléphone, LinkedIn
+- [Contact](https://portfolio-brice.web.app/contact) : formulaire, e-mail, LinkedIn
 
 ## Contact
 

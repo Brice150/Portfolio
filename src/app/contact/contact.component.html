@@ -52,6 +52,7 @@
               <span class="channel-value">{{ channel.value }}</span>
               <span class="channel-hint">{{ channel.hint }}</span>
             </span>
+            <app-icon name="arrow-up-right" size="1em" class="external" />
           </a>
         </li>
       }
@@ -144,29 +145,21 @@
             </mat-form-field>
           </div>
 
-          <div class="row">
-            <mat-form-field appearance="outline">
-              <mat-label>Entreprise</mat-label>
-              <input matInput formControlName="company" autocomplete="organization" />
-              <mat-hint>Facultatif</mat-hint>
-            </mat-form-field>
-
-            <mat-form-field appearance="outline">
-              <mat-label>Objet</mat-label>
-              <input matInput formControlName="subject" />
-              @if (form.controls.subject.touched && form.controls.subject.invalid) {
-                <mat-error>
-                  @if (form.controls.subject.hasError('required')) {
-                    Merci de préciser l’objet de votre message.
-                  } @else if (form.controls.subject.hasError('minlength')) {
-                    L’objet est trop court pour être utile.
-                  } @else {
-                    L’objet dépasse 90 caractères.
-                  }
-                </mat-error>
-              }
-            </mat-form-field>
-          </div>
+          <mat-form-field appearance="outline">
+            <mat-label>Objet</mat-label>
+            <input matInput formControlName="subject" />
+            @if (form.controls.subject.touched && form.controls.subject.invalid) {
+              <mat-error>
+                @if (form.controls.subject.hasError('required')) {
+                  Merci de préciser l’objet de votre message.
+                } @else if (form.controls.subject.hasError('minlength')) {
+                  L’objet est trop court pour être utile.
+                } @else {
+                  L’objet dépasse 90 caractères.
+                }
+              </mat-error>
+            }
+          </mat-form-field>
 
           <mat-form-field appearance="outline" class="message-field">
             <mat-label>Votre message</mat-label>

@@ -53,7 +53,6 @@ export class ContactComponent implements OnInit {
   readonly form = this.formBuilder.nonNullable.group({
     name: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(60)]],
     email: ['', [Validators.required, Validators.email, Validators.maxLength(120)]],
-    company: [''],
     subject: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(90)]],
     message: [
       '',
@@ -71,13 +70,6 @@ export class ContactComponent implements OnInit {
   readonly isSending = computed(() => this.status() === 'sending');
 
   readonly channels = [
-    {
-      icon: 'phone' as const,
-      label: 'Téléphone',
-      value: profile.phone,
-      href: `tel:${profile.phoneHref}`,
-      hint: 'Du lundi au vendredi, 9 h – 19 h',
-    },
     {
       icon: 'linkedin' as const,
       label: 'LinkedIn',
@@ -98,7 +90,7 @@ export class ContactComponent implements OnInit {
     this.seoService.setPage({
       title: 'Contact | Brice Lecomte, développeur Angular & Java',
       description:
-        'Contacter Brice Lecomte, développeur Full-Stack Angular et Java : formulaire, e-mail, téléphone ou LinkedIn. Réponse sous 48 heures ouvrées.',
+        'Contacter Brice Lecomte, développeur Full-Stack Angular et Java : formulaire, e-mail ou LinkedIn. Réponse sous 48 heures ouvrées.',
       path: '/contact',
     });
   }
@@ -121,14 +113,13 @@ export class ContactComponent implements OnInit {
     this.status.set('sending');
     this.errorMessage.set('');
 
-    const { name, email, company, subject, message } = this.form.getRawValue();
+    const { name, email, subject, message } = this.form.getRawValue();
 
     this.http
       .post(FORMSPREE_ENDPOINT, {
         name,
         _replyto: email,
         email,
-        company,
         _subject: subject,
         subject,
         message,

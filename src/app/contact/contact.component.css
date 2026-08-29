@@ -90,6 +90,20 @@ h2 {
   color: var(--text-muted);
 }
 
+.external {
+  flex: none;
+  align-self: center;
+  color: var(--text-faint);
+  transition:
+    color var(--dur-fast) var(--ease),
+    translate var(--dur-fast) var(--ease);
+}
+
+.channel:hover .external {
+  color: var(--accent);
+  translate: 2px -2px;
+}
+
 .availability {
   margin-top: 1.25rem;
   padding: 1.25rem;

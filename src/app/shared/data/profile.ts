@@ -16,8 +16,6 @@ export const profile = {
   role: 'Développeur Full-Stack Angular / Java',
   seniority: 'Confirmé',
   email: 'brice.lecomte0@gmail.com',
-  phone: '+33 6 30 84 63 97',
-  phoneHref: '+33630846397',
   linkedin: 'https://www.linkedin.com/in/brice-lecomte/',
   github: 'https://github.com/Brice150',
   cv: './assets/files/Brice Lecomte.pdf',

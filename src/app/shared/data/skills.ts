@@ -6,17 +6,17 @@ export const skillGroups: SkillGroup[] = [
     title: 'Frontend',
     icon: 'monitor',
     description:
-      'Mon terrain principal. Angular depuis la version 12, suivi à chaque montée de version majeure : standalone components, signals, control flow, zoneless.',
+      'Mon terrain principal, suivi à chaque montée de version majeure d’Angular : standalone components, signals, zoneless.',
     skills: [
       {
         name: 'Angular',
         level: 95,
-        note: 'Le socle de mes interfaces. Architecture par features, lazy loading, signals, formulaires réactifs typés, SSR et prerendering.',
+        note: 'Versions 12 à 21. Architecture par features, lazy loading, signals, formulaires réactifs typés, SSR et prerendering.',
       },
       {
         name: 'TypeScript',
         level: 92,
-        note: 'Le typage qui attrape les erreurs avant la production. Mode strict partout, génériques, types utilitaires, discriminated unions.',
+        note: 'Le typage qui attrape les erreurs avant la production. Mode strict partout, génériques, types utilitaires.',
       },
       {
         name: 'RxJS',
@@ -26,12 +26,12 @@ export const skillGroups: SkillGroup[] = [
       {
         name: 'HTML sémantique & CSS moderne',
         level: 90,
-        note: 'Écrits à la main, sans framework CSS. Grid et flexbox, variables CSS, container queries, clamp fluide. Le balisage avant l’artifice.',
+        note: 'Écrits à la main, sans framework CSS. Grid et flexbox, variables CSS, media queries. Le balisage avant l’artifice.',
       },
       {
         name: 'Angular Material & CDK',
         level: 88,
-        note: 'Adapté à la charte du projet, jamais pris tel quel. Theming Material 3 par tokens, CDK pour l’overlay, le focus trap et le drag and drop.',
+        note: 'Adapté à la charte du projet, jamais pris tel quel. Personnalisation du thème et des composants : formulaires, dialogs, menus, tableaux.',
       },
       {
         name: 'Accessibilité (RGAA / WCAG)',
@@ -60,7 +60,7 @@ export const skillGroups: SkillGroup[] = [
       {
         name: 'Spring Boot',
         level: 87,
-        note: 'Le cadre qui structure le back. API REST, Spring Data JPA, Spring Security, validation, gestion centralisée des erreurs.',
+        note: 'Versions 2 à 4. Le cadre qui structure le back : API REST, Spring Data JPA, Spring Security, validation, gestion centralisée des erreurs.',
       },
       {
         name: 'Conception d’API REST',
@@ -89,12 +89,12 @@ export const skillGroups: SkillGroup[] = [
       {
         name: 'PostgreSQL',
         level: 82,
-        note: 'Modélisation, index, jointures complexes. Lecture des plans d’exécution pour lever les requêtes qui traînent.',
+        note: 'Modélisation, index, jointures complexes. Identification des requêtes coûteuses quand un écran ralentit.',
       },
       {
         name: 'Oracle',
         level: 72,
-        note: 'Environnements grands comptes du secteur public. PL/SQL et procédures stockées à faire évoluer sans casser l’historique.',
+        note: 'Environnements grands comptes du secteur public. Requêtes et évolutions de schéma sur des bases déjà en production.',
       },
       {
         name: 'Firebase',
@@ -113,7 +113,7 @@ export const skillGroups: SkillGroup[] = [
       {
         name: 'Git (GitHub, GitLab)',
         level: 90,
-        note: 'Branches courtes, commits atomiques, rebase propre avant fusion. Revues de code exigeantes et argumentées.',
+        note: 'Branches courtes, commits atomiques, rebase propre avant merge. Revues de code exigeantes et argumentées.',
       },
       {
         name: 'IntelliJ IDEA & VS Code',

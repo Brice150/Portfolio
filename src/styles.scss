@@ -439,10 +439,13 @@ ol {
   width: 100%;
 }
 
-.mdc-notched-outline__leading,
-.mdc-notched-outline__notch,
-.mdc-notched-outline__trailing {
-  border-radius: 0;
+/* Champs Material : on garde le contour natif, avec des angles plus doux,
+   accordés aux rayons du reste du site. */
+.mat-mdc-form-field {
+  --mat-form-field-outlined-container-shape: 14px;
+  --mdc-outlined-text-field-outline-color: var(--border-strong);
+  --mdc-outlined-text-field-hover-outline-color: var(--accent);
+  --mdc-outlined-text-field-focus-outline-width: 2px;
 }
 
 /* ------------------------------------------------------------------------- */
