@@ -1,5 +1,6 @@
 import { DOCUMENT } from '@angular/common';
 import { Directive, OnDestroy, inject, input, signal } from '@angular/core';
+import { ToastService } from '../../core/services/toast.service';
 
 /** Durée d'affichage de la confirmation, en millisecondes. */
 const FEEDBACK_DELAY = 2200;
@@ -24,8 +25,11 @@ const FEEDBACK_DELAY = 2200;
 })
 export class CopyTextDirective implements OnDestroy {
   readonly appCopyText = input.required<string>();
+  /** Libellé annoncé dans la notification de confirmation. */
+  readonly appCopyLabel = input('Copié dans le presse-papier');
 
   private readonly document = inject(DOCUMENT);
+  private readonly toastService = inject(ToastService);
   private timer?: ReturnType<typeof setTimeout>;
 
   readonly copied = signal(false);
@@ -39,9 +43,11 @@ export class CopyTextDirective implements OnDestroy {
       await this.write(value);
       this.failed.set(false);
       this.copied.set(true);
+      this.toastService.success(this.appCopyLabel());
     } catch {
       this.copied.set(false);
       this.failed.set(true);
+      this.toastService.error('Copie impossible. Sélectionnez le texte pour le copier à la main.');
     }
 
     clearTimeout(this.timer);

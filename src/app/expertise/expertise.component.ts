@@ -7,6 +7,7 @@ import { IconComponent } from '../shared/components/icon/icon.component';
 import { PageHeroComponent } from '../shared/components/page-hero/page-hero.component';
 import { SectionHeaderComponent } from '../shared/components/section-header/section-header.component';
 import { RevealDirective } from '../shared/directives/reveal.directive';
+import { ToastService } from '../core/services/toast.service';
 
 @Component({
   selector: 'app-expertise',
@@ -22,6 +23,8 @@ import { RevealDirective } from '../shared/directives/reveal.directive';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ExpertiseComponent implements OnInit {
+  private readonly toastService = inject(ToastService);
+
   private readonly seoService = inject(SeoService);
 
   readonly offers = serviceOffers;
@@ -36,5 +39,9 @@ export class ExpertiseComponent implements OnInit {
         'Création d’applications métier, reprise d’un existant, optimisation des performances, conformité RGAA et DSFR : les domaines sur lesquels j’interviens en Angular et Java.',
       path: '/expertise',
     });
+  }
+
+  onCvDownload(): void {
+    this.toastService.success('CV téléchargé. Merci de votre intérêt !');
   }
 }

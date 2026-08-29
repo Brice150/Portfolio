@@ -8,10 +8,10 @@ import {
 } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { MatSnackBar } from '@angular/material/snack-bar';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { profile } from '../shared/data/profile';
 import { SeoService } from '../core/services/seo.service';
+import { ToastService } from '../core/services/toast.service';
 import { IconComponent } from '../shared/components/icon/icon.component';
 import { PageHeroComponent } from '../shared/components/page-hero/page-hero.component';
 import { CopyTextDirective } from '../shared/directives/copy-text.directive';
@@ -40,7 +40,7 @@ type FormStatus = 'idle' | 'sending' | 'sent' | 'error';
 export class ContactComponent implements OnInit {
   private readonly http = inject(HttpClient);
   private readonly formBuilder = inject(FormBuilder);
-  private readonly snackBar = inject(MatSnackBar);
+  private readonly toastService = inject(ToastService);
   private readonly seoService = inject(SeoService);
   private readonly document = inject(DOCUMENT);
 
@@ -137,22 +137,12 @@ export class ContactComponent implements OnInit {
         next: () => {
           this.status.set('sent');
           this.form.reset();
-          this.snackBar.open('Message envoyé. Merci !', 'Fermer', {
-            duration: 5000,
-            panelClass: 'snack-success',
-            horizontalPosition: 'center',
-            verticalPosition: 'bottom',
-          });
+          this.toastService.success('Message envoyé. Je reviens vers vous sous 48 h.');
         },
         error: (error: HttpErrorResponse) => {
           this.status.set('error');
           this.errorMessage.set(this.describeError(error));
-          this.snackBar.open('L’envoi a échoué.', 'Fermer', {
-            duration: 7000,
-            panelClass: 'snack-error',
-            horizontalPosition: 'center',
-            verticalPosition: 'bottom',
-          });
+          this.toastService.error('L’envoi a échoué. Le détail est indiqué au-dessus du formulaire.');
         },
       });
   }

@@ -5,6 +5,7 @@ import { profile, roleRotation, yearsOfExperience } from '../../shared/data/prof
 import { ThemeService } from '../../core/services/theme.service';
 import { IconComponent } from '../../shared/components/icon/icon.component';
 import { CopyTextDirective } from '../../shared/directives/copy-text.directive';
+import { ToastService } from '../../core/services/toast.service';
 
 /** Durée d'affichage de chaque accroche, en millisecondes. */
 const ROTATION_INTERVAL = 3200;
@@ -17,6 +18,8 @@ const ROTATION_INTERVAL = 3200;
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HeroComponent implements OnDestroy {
+  private readonly toastService = inject(ToastService);
+
   readonly profile = profile;
   readonly rotation = roleRotation;
   readonly years = yearsOfExperience();
@@ -40,5 +43,9 @@ export class HeroComponent implements OnDestroy {
 
   ngOnDestroy(): void {
     if (this.timer) clearInterval(this.timer);
+  }
+
+  onCvDownload(): void {
+    this.toastService.success('CV téléchargé. Merci de votre intérêt !');
   }
 }

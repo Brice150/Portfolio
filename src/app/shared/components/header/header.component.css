@@ -122,7 +122,14 @@
   z-index: -1;
   border-radius: var(--r-full);
   background: var(--accent-deep);
-  view-transition-name: nav-pill;
+  animation: pill-in var(--dur) var(--ease-out);
+}
+
+@keyframes pill-in {
+  from {
+    opacity: 0;
+    scale: 0.9;
+  }
 }
 
 /* --- Actions ------------------------------------------------------------- */
@@ -192,7 +199,7 @@
   flex-direction: column;
   gap: 1.25rem;
   max-height: calc(100dvh - var(--nav-h));
-  padding: 1.25rem var(--gutter) 2rem;
+  padding: 1.25rem var(--gutter) 1.5rem;
   overflow-y: auto;
   background: var(--bg-elev);
   border-bottom: 1px solid var(--border);
@@ -275,32 +282,6 @@
 .hint {
   font-size: 0.8rem;
   color: var(--text-faint);
-}
-
-.mobile-footer {
-  display: flex;
-  justify-content: center;
-  gap: 0.6rem;
-  padding-top: 1rem;
-  border-top: 1px solid var(--border);
-}
-
-.social {
-  display: grid;
-  place-items: center;
-  width: 2.75rem;
-  height: 2.75rem;
-  border: 1px solid var(--border);
-  border-radius: var(--r-sm);
-  color: var(--text-muted);
-  transition:
-    color var(--dur-fast) var(--ease),
-    border-color var(--dur-fast) var(--ease);
-}
-
-.social:hover {
-  color: var(--accent);
-  border-color: var(--accent);
 }
 
 @keyframes fade {

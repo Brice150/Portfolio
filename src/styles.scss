@@ -444,24 +444,6 @@ ol {
   border-radius: 0;
 }
 
-.mat-mdc-snack-bar-container {
-  --mdc-snackbar-container-color: var(--surface-3);
-  --mdc-snackbar-supporting-text-color: var(--text);
-  --mat-snack-bar-button-color: var(--accent);
-}
-
-.mat-mdc-snack-bar-container.snack-success {
-  --mdc-snackbar-container-color: var(--success);
-  --mdc-snackbar-supporting-text-color: light-dark(#ffffff, #04231a);
-  --mat-snack-bar-button-color: light-dark(#ffffff, #04231a);
-}
-
-.mat-mdc-snack-bar-container.snack-error {
-  --mdc-snackbar-container-color: var(--danger);
-  --mdc-snackbar-supporting-text-color: light-dark(#ffffff, #2a0710);
-  --mat-snack-bar-button-color: light-dark(#ffffff, #2a0710);
-}
-
 /* ------------------------------------------------------------------------- */
 /* Scrollbars                                                                 */
 /* ------------------------------------------------------------------------- */
@@ -556,9 +538,9 @@ html[data-motion='reduced'] [data-reveal] {
 /* Transitions de vue entre les pages                                         */
 /* ------------------------------------------------------------------------- */
 
-/* Seul le contenu principal est animé : l'entête et le pied de page portent
-   leurs propres noms de transition et restent donc stables d'une route à
-   l'autre. La pastille de navigation, elle, se déplace d'un onglet à l'autre. */
+/* Seul le contenu principal est animé. L'entête et le pied de page restent
+   stables d'une route à l'autre ; la pastille de l'onglet actif se contente
+   d'apparaître en fondu, sans traverser la barre. */
 
 ::view-transition-old(page) {
   animation: page-leave 150ms var(--ease) both;
@@ -566,11 +548,6 @@ html[data-motion='reduced'] [data-reveal] {
 
 ::view-transition-new(page) {
   animation: page-enter 340ms var(--ease-out) both;
-}
-
-::view-transition-group(nav-pill) {
-  animation-duration: 340ms;
-  animation-timing-function: var(--ease);
 }
 
 @keyframes page-leave {
@@ -589,14 +566,12 @@ html[data-motion='reduced'] [data-reveal] {
 
 @media (prefers-reduced-motion: reduce) {
   ::view-transition-old(page),
-  ::view-transition-new(page),
-  ::view-transition-group(nav-pill) {
+  ::view-transition-new(page) {
     animation: none;
   }
 }
 
 html[data-motion='reduced'] ::view-transition-old(page),
-html[data-motion='reduced'] ::view-transition-new(page),
-html[data-motion='reduced'] ::view-transition-group(nav-pill) {
+html[data-motion='reduced'] ::view-transition-new(page) {
   animation: none;
 }

@@ -6,7 +6,7 @@ export const projects: Project[] = [
     name: 'Life Rise',
     tagline: 'Toute la vie quotidienne réunie dans une seule application',
     summary:
-      'Dix-neuf espaces de gestion — repas, sport, finances, tâches, inventaire, voyages — reliés par un assistant conversationnel et partageables entre les profils d’un même foyer.',
+      '19 espaces de gestion — repas, sport, finances, tâches, inventaire, voyages — reliés par un assistant conversationnel et partageables entre les profils d’un même foyer.',
     year: '2025 — 2026',
     status: 'live',
     featured: true,
@@ -23,9 +23,10 @@ export const projects: Project[] = [
       'Firestore',
       'IA générative',
       'SSR / Prerender',
+      'Stripe',
     ],
     facts: [
-      { label: 'Durée', value: '9 mois' },
+      { label: 'Durée', value: '1 an (temps libre)' },
       { label: 'Espaces', value: '19' },
       { label: 'Profils', value: '6 par compte' },
       { label: 'Statut', value: 'En ligne' },
@@ -34,7 +35,7 @@ export const projects: Project[] = [
       'Gérer son quotidien suppose aujourd’hui de jongler entre une dizaine d’applications qui ne communiquent jamais entre elles. Life Rise part de ce constat : un seul endroit pour suivre ce qui compte, avec une donnée unifiée, une expérience cohérente d’un espace à l’autre, et la possibilité de partager avec son conjoint, sa famille ou sa colocation.',
     sections: [
       {
-        title: 'Une base commune, dix-neuf espaces',
+        title: 'Une base commune, 19 espaces',
         body: 'Chaque domaine — nourriture, fitness, finance, organisation, inventaire, voyages, prévisions — est une feature Angular chargée en lazy loading, avec son propre modèle et ses propres services. Le noyau applicatif porte l’authentification, l’accès Firestore, le thème et les composants partagés. Ce découpage permet d’ajouter un espace sans toucher aux autres, et de garder un bundle initial léger malgré l’étendue fonctionnelle.',
       },
       {
@@ -51,7 +52,7 @@ export const projects: Project[] = [
       },
     ],
     features: [
-      'Dix-neuf espaces de gestion, du tableau de bord aux prévisions',
+      '19 espaces de gestion, du tableau de bord aux prévisions',
       'Assistant conversationnel capable de créer, modifier et supprimer après confirmation',
       'Complétion automatique des formulaires à partir du contexte',
       'Jusqu’à six profils par compte, avec partage d’éléments entre profils',
@@ -76,9 +77,9 @@ export const projects: Project[] = [
       desktop: 'projects/shots/gametime-desktop.webp',
       mobile: 'projects/shots/gametime-mobile.webp',
     },
-    stack: ['Angular', 'TypeScript', 'Angular Material', 'Firebase', 'Firestore'],
+    stack: ['Angular', 'TypeScript', 'Angular Material', 'Firebase'],
     facts: [
-      { label: 'Durée', value: '4 mois' },
+      { label: 'Durée', value: '6 mois (temps libre)' },
       { label: 'Jeux', value: '3' },
       { label: 'Mode', value: 'Multijoueur' },
       { label: 'Statut', value: 'En ligne' },
@@ -125,9 +126,9 @@ export const projects: Project[] = [
       desktop: 'projects/shots/simulator-desktop.webp',
       mobile: 'projects/shots/simulator-mobile.webp',
     },
-    stack: ['Angular', 'TypeScript', 'Formulaires réactifs', 'GitHub Pages'],
+    stack: ['Angular', 'TypeScript'],
     facts: [
-      { label: 'Durée', value: '2 mois' },
+      { label: 'Durée', value: '2 semaines (temps libre)' },
       { label: 'Nature', value: 'Calculateur' },
       { label: 'Équipe', value: 'Solo' },
       { label: 'Statut', value: 'En ligne' },
@@ -167,7 +168,7 @@ export const projects: Project[] = [
     cover: 'projects/PICKME.webp',
     stack: ['Angular', 'TypeScript', 'Java', 'Spring Boot', 'PostgreSQL'],
     facts: [
-      { label: 'Durée', value: '6 mois' },
+      { label: 'Durée', value: '6 mois (temps libre)' },
       { label: 'Nature', value: 'Full-stack' },
       { label: 'Équipe', value: 'Solo' },
       { label: 'Statut', value: 'Démo vidéo' },
@@ -211,12 +212,11 @@ export const projects: Project[] = [
       mobile: 'projects/shots/portfolio-mobile.webp',
     },
     stack: [
-      'Angular 21',
-      'Signals',
-      'Zoneless',
+      'Angular',
+      'Typescript',
       'Angular Material',
       'SSR / Prerender',
-      'Firebase Hosting',
+      'Zoneless',
     ],
     facts: [
       { label: 'Rendu', value: 'Prérendu' },
@@ -256,4 +256,5 @@ export const projects: Project[] = [
 export const projectBySlug = (slug: string): Project | undefined =>
   projects.find((project) => project.slug === slug);
 
-export const featuredProjects = (): Project[] => projects.filter((project) => project.featured);
+export const featuredProjects = (): Project[] =>
+  projects.filter((project) => project.featured);

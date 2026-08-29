@@ -71,7 +71,8 @@
         <app-icon name="briefcase" size="1.05em" />
         <span>Voir les réalisations</span>
       </a>
-      <a [href]="profile.cv" [download]="'CV ' + profile.fullName + '.pdf'" class="btn btn-ghost">
+      <a [href]="profile.cv" [download]="'CV ' + profile.fullName + '.pdf'"
+        (click)="onCvDownload()" class="btn btn-ghost">
         <app-icon name="download" size="1.05em" />
         <span>Télécharger le CV</span>
       </a>

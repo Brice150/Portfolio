@@ -14,7 +14,8 @@
           <app-icon name="send" size="1.05em" />
           <span>Écrire un message</span>
         </a>
-        <a [href]="profile.cv" [download]="'CV ' + profile.fullName + '.pdf'" class="btn btn-ghost">
+        <a [href]="profile.cv" [download]="'CV ' + profile.fullName + '.pdf'"
+        (click)="onCvDownload()" class="btn btn-ghost">
           <app-icon name="download" size="1.05em" />
           <span>Télécharger le CV</span>
         </a>
@@ -66,7 +67,22 @@
             </button>
           </li>
           <li>
-            <a [href]="'tel:' + profile.phoneHref">{{ profile.phone }}</a>
+            <button
+              type="button"
+              class="copy"
+              [appCopyText]="profile.phone"
+              appCopyLabel="Numéro de téléphone copié"
+              #copyPhone="appCopyText"
+            >
+              <app-icon [name]="copyPhone.copied() ? 'check' : 'copy'" size="0.9em" />
+              <span>
+                @if (copyPhone.copied()) {
+                  Numéro copié
+                } @else {
+                  {{ profile.phone }}
+                }
+              </span>
+            </button>
           </li>
           <li>
             <a [href]="profile.linkedin" target="_blank" rel="noopener">

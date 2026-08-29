@@ -6,8 +6,8 @@
     </h1>
 
     <p class="role">
-      Développeur Full-Stack <strong>Angular</strong> &amp; <strong>Java</strong>,
-      {{ years }} ans d’expérience.
+      Développeur Full-Stack <strong>Angular</strong> &amp;
+      <strong>Java</strong>, {{ years }} ans d’expérience.
     </p>
 
     <p class="rotation" aria-live="off">
@@ -20,10 +20,13 @@
     </p>
 
     <p class="pitch justified">
-      Ingénieur aérospatial devenu développeur, je conçois depuis {{ years }} ans des
-      applications métier en Angular et Java pour des clients publics&nbsp;: ministère des Armées,
-      puis administration maritime. Des domaines réglementés, où une règle de gestion mal traduite
-      a des conséquences concrètes, et où la qualité du code se mesure sur la durée.
+      Ingénieur aérospatial devenu développeur, je conçois depuis
+      {{ years }} ans des applications métier en Angular et Java pour des
+      acteurs publics de premier plan&nbsp;: le ministère des Armées, puis la
+      Direction générale des affaires maritimes, de la pêche et de l'aquaculture
+      (DGAMPA). J'évolue dans des domaines fortement réglementés, où une règle
+      de gestion mal traduite a des conséquences concrètes et où la qualité du
+      code s'apprécie sur la durée.
     </p>
 
     <div class="actions">
@@ -34,6 +37,7 @@
       <a
         [href]="profile.cv"
         [download]="'CV ' + profile.fullName + '.pdf'"
+        (click)="onCvDownload()"
         class="btn btn-ghost"
       >
         <app-icon name="download" size="1.05em" />
@@ -56,6 +60,7 @@
         <button
           type="button"
           [appCopyText]="profile.email"
+          appCopyLabel="Adresse e-mail copiée"
           #copyMail="appCopyText"
           [attr.aria-label]="
             copyMail.copied()
