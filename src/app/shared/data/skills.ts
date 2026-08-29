@@ -6,42 +6,42 @@ export const skillGroups: SkillGroup[] = [
     title: 'Frontend',
     icon: 'monitor',
     description:
-      'Tout ce que l’utilisateur voit et manipule dans son navigateur. Angular depuis sa version 12, suivi à chaque montée de version majeure : standalone components, signals, control flow, zoneless.',
+      'Mon terrain principal. Angular depuis la version 12, suivi à chaque montée de version majeure : standalone components, signals, control flow, zoneless.',
     skills: [
       {
         name: 'Angular',
         level: 95,
-        note: 'Le socle de toutes les interfaces que je livre : application découpée en modules chargés à la demande, pages pré-générées pour un affichage immédiat, état géré finement. Lazy loading, standalone components, signals, formulaires typés, OnPush, SSR.',
+        note: 'Le socle de mes interfaces. Architecture par features, lazy loading, signals, formulaires réactifs typés, OnPush systématique, SSR et prerendering.',
       },
       {
         name: 'TypeScript',
         level: 92,
-        note: 'JavaScript avec un filet de sécurité : les erreurs de données apparaissent pendant l’écriture du code plutôt qu’en production. Mode strict partout, génériques, types utilitaires.',
+        note: 'Le typage qui attrape les erreurs avant la production. Mode strict partout, génériques, types utilitaires, discriminated unions.',
       },
       {
         name: 'RxJS',
         level: 85,
-        note: 'La bibliothèque qui met de l’ordre dans tout ce qui arrive de façon décalée : réponse du serveur, saisie clavier, clic. Composition d’opérateurs, recherche temporisée, désabonnements maîtrisés.',
+        note: 'Pour tout ce qui arrive de façon asynchrone. Composition d’opérateurs, switchMap et debounce sur les recherches, désabonnements maîtrisés.',
       },
       {
         name: 'HTML sémantique & CSS moderne',
         level: 90,
-        note: 'La structure et l’habillage des pages, écrits à la main. Un balisage qui décrit d’abord le sens du contenu, l’effet visuel ensuite. Grid, flexbox, variables CSS, container queries, animations.',
+        note: 'Écrits à la main, sans framework CSS. Grid et flexbox, variables CSS, container queries, clamp fluide ; le balisage avant l’artifice.',
       },
       {
         name: 'Angular Material & CDK',
         level: 88,
-        note: 'La bibliothèque de composants d’interface de Google, adaptée à la charte de chaque projet plutôt qu’utilisée telle quelle. Theming Material 3, surcharges maîtrisées, CDK pour l’overlay et le drag and drop.',
+        note: 'Adapté à la charte du projet, jamais pris tel quel. Theming Material 3 par tokens, CDK pour l’overlay, le focus trap et le drag and drop.',
       },
       {
         name: 'Accessibilité (RGAA / WCAG)',
         level: 78,
-        note: 'Rendre l’application utilisable par tous, y compris au clavier seul ou au lecteur d’écran — une obligation légale sur les projets publics. Parcours clavier, rôles ARIA, contrastes vérifiés, préférences de mouvement respectées.',
+        note: 'Obligatoire sur les projets publics. Parcours clavier complet, rôles ARIA là où le HTML ne suffit pas, contrastes vérifiés, prefers-reduced-motion respecté.',
       },
       {
         name: 'DSFR — Design Système de l’État',
         level: 75,
-        note: 'Le système de design imposé aux sites de l’État : composants, typographies et couleurs officiels, à intégrer sans les réinventer. Il garantit la cohérence avec les autres services publics.',
+        note: 'Le design system imposé aux sites de l’État. Composants, typographies et contrastes conformes, intégrés sans réécrire l’existant.',
       },
     ],
   },
@@ -50,32 +50,32 @@ export const skillGroups: SkillGroup[] = [
     title: 'Backend',
     icon: 'server',
     description:
-      'La partie invisible, celle qui calcule, vérifie et enregistre. Java et Spring Boot au quotidien depuis 2021, sur des applications métier aux vraies contraintes de volume et de règles de gestion.',
+      'Java et Spring Boot au quotidien depuis 2021, sur des applications métier aux vraies contraintes de volume et de règles de gestion.',
     skills: [
       {
         name: 'Java',
         level: 88,
-        note: 'Le langage du serveur, référence des grands systèmes d’entreprise pour sa fiabilité. Versions 8 à 21, streams, Optional, records. Certification obtenue en 2021, au démarrage de la reconversion.',
+        note: 'Versions 8 à 21, streams, Optional, records. Certification obtenue en 2021, au démarrage de la reconversion.',
       },
       {
         name: 'Spring Boot',
         level: 87,
-        note: 'Le cadre qui structure une application Java : sécurité, accès aux données, exposition des services. API REST, Spring Data JPA, Spring Security, validation, gestion centralisée des erreurs.',
+        note: 'Le cadre qui structure le back. API REST, Spring Data JPA, Spring Security, validation, gestion centralisée des erreurs.',
       },
       {
         name: 'Conception d’API REST',
         level: 84,
-        note: 'Le contrat par lequel l’interface et le serveur se parlent : quelles données, sous quelle forme, quelle réponse en cas d’erreur. Ressources cohérentes, pagination, codes de statut justes, contrats documentés.',
+        note: 'Le contrat entre le front et le back. Ressources cohérentes, pagination, codes de statut justes, contrats documentés et stables.',
       },
       {
         name: 'Hibernate / JPA',
         level: 75,
-        note: 'Le pont entre le code Java et la base de données, qui évite d’écrire du SQL à la main partout. Mapping relationnel, requêtes JPQL et natives, stratégies de chargement choisies explicitement.',
+        note: 'Le lien entre objets Java et tables SQL. Mapping relationnel, requêtes JPQL et natives, stratégies de chargement choisies plutôt que subies.',
       },
       {
         name: 'Tests & qualité',
         level: 82,
-        note: 'Des vérifications automatiques rejouées à chaque modification, qui signalent une régression avant les utilisateurs. JUnit, Mockito, tests d’intégration sur les couches de service.',
+        note: 'JUnit, Mockito, tests d’intégration sur les couches de service. Le test qui documente le comportement prime sur la couverture de ligne.',
       },
     ],
   },
@@ -84,22 +84,22 @@ export const skillGroups: SkillGroup[] = [
     title: 'Données',
     icon: 'database',
     description:
-      'Là où vivent les données de l’application. Des bases en production, souvent héritées, qu’il faut comprendre avant de vouloir les corriger.',
+      'Des bases relationnelles en production, souvent héritées, qu’il faut comprendre avant de vouloir les corriger.',
     skills: [
       {
         name: 'PostgreSQL',
         level: 82,
-        note: 'La base de données relationnelle libre la plus répandue. Modélisation, index, jointures complexes, et analyse des requêtes lentes pour retrouver de la vitesse.',
+        note: 'Modélisation, index, jointures complexes. Lecture des plans d’exécution pour lever les requêtes qui traînent.',
       },
       {
         name: 'Oracle',
         level: 72,
-        note: 'La base historique des grands comptes, rencontrée sur mes missions du secteur public. PL/SQL et procédures stockées existantes, à faire évoluer sans casser l’historique.',
+        note: 'Environnements grands comptes du secteur public. PL/SQL et procédures stockées à faire évoluer sans casser l’historique.',
       },
       {
         name: 'Firebase',
         level: 85,
-        note: 'L’ensemble Google qui fournit base de données, authentification et hébergement clés en main. Firestore, Authentication et Hosting : le bon choix pour livrer vite et seul.',
+        note: 'Firestore, Authentication et Hosting sur mes projets personnels. Le bon outil quand il faut livrer vite et seul.',
       },
     ],
   },
@@ -113,27 +113,27 @@ export const skillGroups: SkillGroup[] = [
       {
         name: 'Git (GitHub, GitLab)',
         level: 90,
-        note: 'L’outil qui conserve l’historique du code et permet à plusieurs développeurs d’avancer sans se gêner. Branches courtes, commits lisibles, rebase propre avant fusion, revues de code.',
+        note: 'Branches courtes, commits atomiques, rebase propre avant fusion. Revues de code exigeantes et argumentées.',
       },
       {
         name: 'IntelliJ IDEA & VS Code',
         level: 88,
-        note: 'Les deux environnements dans lesquels j’écris : IntelliJ pour le Java, VS Code pour le front. Renommages et réorganisations outillés plutôt que rechercher-remplacer.',
+        note: 'IntelliJ pour le Java, VS Code pour le front. Refactorings outillés plutôt que rechercher-remplacer.',
       },
       {
         name: 'CI/CD & déploiement',
         level: 65,
-        note: 'L’automatisation qui teste et met en ligne l’application à chaque modification, sans manipulation manuelle. Pipelines GitLab CI, builds automatisés, déploiement continu sur Firebase Hosting.',
+        note: 'Pipelines GitLab CI, builds automatisés, déploiement continu sur Firebase Hosting.',
       },
       {
         name: 'IA générative',
         level: 82,
-        note: 'Un outil de travail quotidien : explorer une piste, produire un premier squelette, relire une modification. Prompts ciblés et contexte minimal pour en maîtriser le coût, aucune ligne livrée sans relecture.',
+        note: 'Exploration, squelettes, relecture de diff. Prompts ciblés et contexte minimal pour maîtriser le coût en tokens ; rien n’est livré sans relecture.',
       },
       {
         name: 'Agilité',
         level: 80,
-        note: 'La méthode d’organisation de toutes mes missions : livrer par cycles courts plutôt qu’en une seule fois. Sprints, daily, refinement, démonstrations client, estimations tenues.',
+        note: 'Sprints, daily, refinement, démonstrations client. Estimer honnêtement et tenir les jalons annoncés.',
       },
     ],
   },
