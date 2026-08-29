@@ -37,10 +37,10 @@ export const routes: Routes = [
       ),
   },
   {
-    path: 'prestations',
+    path: 'expertise',
     loadComponent: () =>
-      import('./features/services/services.component').then((m) => m.ServicesComponent),
-    title: 'Prestations | Brice Lecomte',
+      import('./features/expertise/expertise.component').then((m) => m.ExpertiseComponent),
+    title: 'Expertise | Brice Lecomte',
   },
   {
     path: 'contact',
@@ -48,6 +48,7 @@ export const routes: Routes = [
       import('./features/contact/contact.component').then((m) => m.ContactComponent),
     title: 'Contact | Brice Lecomte',
   },
+  { path: 'prestations', redirectTo: 'expertise', pathMatch: 'full' },
   {
     path: 'not-found',
     loadComponent: () =>

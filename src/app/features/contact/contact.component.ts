@@ -88,7 +88,7 @@ export class ContactComponent implements OnInit {
       label: 'LinkedIn',
       value: 'brice-lecomte',
       href: profile.linkedin,
-      hint: 'Pour les approches recruteurs',
+      hint: 'Parcours détaillé et publications',
     },
     {
       icon: 'github' as const,
@@ -103,7 +103,7 @@ export class ContactComponent implements OnInit {
     this.seoService.setPage({
       title: 'Contact | Brice Lecomte, développeur Angular & Java',
       description:
-        'Une mission Angular / Java à pourvoir sur Paris en full remote ? Écrivez-moi via le formulaire, par e-mail ou sur LinkedIn. Réponse sous 48 heures.',
+        'Contacter Brice Lecomte, développeur Full-Stack Angular et Java : formulaire, e-mail, téléphone ou LinkedIn. Réponse sous 48 heures ouvrées.',
       path: '/contact',
     });
   }

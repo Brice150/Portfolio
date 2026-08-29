@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, OnInit, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { collaboration, serviceOffers } from '../../core/data/expertise';
 import { profile, yearsOfExperience } from '../../core/data/profile';
-import { collaboration, serviceOffers } from '../../core/data/services';
 import { SeoService } from '../../core/services/seo.service';
 import { IconComponent } from '../../shared/components/icon/icon.component';
 import { PageHeroComponent } from '../../shared/components/page-hero/page-hero.component';
@@ -9,7 +9,7 @@ import { SectionHeaderComponent } from '../../shared/components/section-header/s
 import { RevealDirective } from '../../shared/directives/reveal.directive';
 
 @Component({
-  selector: 'app-services',
+  selector: 'app-expertise',
   imports: [
     RouterLink,
     PageHeroComponent,
@@ -17,11 +17,11 @@ import { RevealDirective } from '../../shared/directives/reveal.directive';
     IconComponent,
     RevealDirective,
   ],
-  templateUrl: './services.component.html',
-  styleUrl: './services.component.css',
+  templateUrl: './expertise.component.html',
+  styleUrl: './expertise.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ServicesComponent implements OnInit {
+export class ExpertiseComponent implements OnInit {
   private readonly seoService = inject(SeoService);
 
   readonly offers = serviceOffers;
@@ -31,10 +31,10 @@ export class ServicesComponent implements OnInit {
 
   ngOnInit(): void {
     this.seoService.setPage({
-      title: 'Prestations | Développeur Angular & Java en full remote',
+      title: 'Expertise | Développeur Angular & Java — Brice Lecomte',
       description:
-        'Création d’applications métier, reprise d’un existant, optimisation des performances, mise en conformité RGAA. Développeur full-stack confirmé disponible sur Paris en télétravail complet.',
-      path: '/prestations',
+        'Création d’applications métier, reprise d’un existant, optimisation des performances, conformité RGAA et DSFR : les domaines sur lesquels j’interviens en Angular et Java.',
+      path: '/expertise',
     });
   }
 }

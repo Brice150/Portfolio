@@ -13,11 +13,7 @@
   </div>
 
   <div class="body">
-    <p class="meta">
-      <span>{{ project().year }}</span>
-      <span aria-hidden="true">·</span>
-      <span>{{ project().role }}</span>
-    </p>
+    <p class="meta">{{ project().year }}</p>
 
     <h3>
       <a [routerLink]="['/projets', project().slug]" class="title-link">

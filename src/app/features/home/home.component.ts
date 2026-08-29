@@ -49,7 +49,7 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.seoService.setPage({
       title: 'Brice Lecomte | Développeur Full-Stack Angular & Java',
-      description: `Développeur Full-Stack Angular et Java confirmé, ${this.years} ans d’expérience en ESN. Reconverti depuis l’ingénierie aérospatiale, disponible sur Paris en full remote.`,
+      description: `Développeur Full-Stack Angular et Java confirmé, ${this.years} ans d’expérience en ESN sur des applications métier réglementées. Ingénieur aérospatial reconverti au développement logiciel.`,
       path: '/',
       type: 'profile',
     });

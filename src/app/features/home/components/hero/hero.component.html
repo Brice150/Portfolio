@@ -1,10 +1,5 @@
 <section class="hero shell" aria-labelledby="hero-titre">
   <div class="text">
-    <p class="badge">
-      <span class="dot" aria-hidden="true"></span>
-      {{ profile.availability }} — {{ profile.target }}
-    </p>
-
     <h1 id="hero-titre">
       <span class="hello">Bonjour, je suis</span>
       <span class="name gradient-text">{{ profile.fullName }}</span>
@@ -24,11 +19,11 @@
       }
     </p>
 
-    <p class="pitch">
-      J’ai commencé par calculer des moteurs d’avion avant de comprendre que ce qui m’intéressait
-      vraiment, c’était le logiciel qui les simulait. Depuis {{ years }} ans, je conçois et fais
-      évoluer des applications métier en Angular et Java, dans des contextes où la donnée est
-      sensible, les règles complexes et les utilisateurs exigeants.
+    <p class="pitch justified">
+      Ingénieur aérospatial devenu développeur, je conçois depuis {{ years }} ans des
+      applications métier en Angular et Java pour des clients publics&nbsp;: ministère des Armées,
+      puis administration maritime. Des domaines réglementés, où une règle de gestion mal traduite
+      a des conséquences concrètes, et où la qualité du code se mesure sur la durée.
     </p>
 
     <div class="actions">
@@ -76,20 +71,5 @@
         decoding="async"
       />
     </div>
-
-    <div class="floating card-stack">
-      <app-icon name="code" size="1.1em" />
-      <span>Angular 21 · zoneless</span>
-    </div>
-
-    <div class="floating card-location">
-      <app-icon name="pin" size="1.1em" />
-      <span>{{ profile.baseLocation }}</span>
-    </div>
   </div>
-
-  <a href="#profil" class="scroll-cue">
-    <span>Découvrir le profil</span>
-    <app-icon name="chevron-down" size="1.15em" />
-  </a>
 </section>

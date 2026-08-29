@@ -5,7 +5,15 @@
 
   <div class="inner shell-wide">
     <a routerLink="/" class="brand" [attr.aria-label]="profile.fullName + ' — retour à l’accueil'">
-      <span class="monogram" aria-hidden="true">BL</span>
+      <img
+        [src]="imagePath + 'logo.webp'"
+        alt=""
+        class="avatar"
+        width="76"
+        height="76"
+        fetchpriority="high"
+        decoding="async"
+      />
       <span class="brand-text">
         <span class="brand-name">{{ profile.fullName }}</span>
         <span class="brand-role">{{ profile.role }}</span>
@@ -32,11 +40,6 @@
 
     <div class="actions">
       <app-settings-panel />
-
-      <a routerLink="/contact" class="btn cta">
-        <span>Me contacter</span>
-        <app-icon name="arrow-right" size="1.1em" />
-      </a>
 
       <button
         type="button"

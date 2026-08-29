@@ -16,18 +16,13 @@
   cursor: pointer;
   transition:
     color var(--dur-fast) var(--ease),
-    border-color var(--dur-fast) var(--ease),
-    rotate var(--dur) var(--ease);
+    border-color var(--dur-fast) var(--ease);
 }
 
 .trigger:hover,
 .trigger.is-open {
   color: var(--accent);
   border-color: var(--accent);
-}
-
-.trigger.is-open {
-  rotate: 30deg;
 }
 
 .popover {

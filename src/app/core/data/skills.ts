@@ -38,6 +38,11 @@ export const skillGroups: SkillGroup[] = [
         level: 78,
         note: 'Parcours clavier complet, rôles ARIA quand le HTML ne suffit pas, contrastes vérifiés, respect de prefers-reduced-motion.',
       },
+      {
+        name: 'DSFR — Design Système de l’État',
+        level: 75,
+        note: 'Intégration du référentiel imposé aux services publics : composants, typographie, contrastes et motifs d’interaction conformes, sans réinventer ce qui existe.',
+      },
     ],
   },
   {
@@ -96,11 +101,6 @@ export const skillGroups: SkillGroup[] = [
         level: 75,
         note: 'Firestore, Authentication et Hosting sur mes projets personnels : le bon outil quand il faut livrer vite et seul.',
       },
-      {
-        name: 'Talend',
-        level: 65,
-        note: 'Flux d’intégration et reprises de données rencontrés en mission côté Sopra Steria.',
-      },
     ],
   },
   {
@@ -124,6 +124,11 @@ export const skillGroups: SkillGroup[] = [
         name: 'CI/CD & déploiement',
         level: 72,
         note: 'Pipelines GitLab CI, builds automatisés, déploiement continu sur Firebase Hosting pour mes projets.',
+      },
+      {
+        name: 'IA générative',
+        level: 82,
+        note: 'Usage quotidien pour explorer une piste, produire un squelette ou relire un diff. Prompts ciblés et contexte minimal pour maîtriser le coût en tokens ; aucune ligne livrée sans relecture.',
       },
       {
         name: 'Agilité',

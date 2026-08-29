@@ -12,7 +12,7 @@
           </ol>
         </nav>
 
-        <p class="eyebrow">{{ current.year }} · {{ current.role }}</p>
+        <p class="eyebrow">{{ current.year }}</p>
         <h1>{{ current.name }}</h1>
         <p class="tagline">{{ current.tagline }}</p>
 
@@ -51,7 +51,7 @@
     @if (current.links.video) {
       <section class="section shell" aria-labelledby="demo-titre">
         <h2 id="demo-titre">Démonstration vidéo</h2>
-        <p class="video-note">
+        <p class="video-note justified">
           Ce projet n’est pas hébergé publiquement&nbsp;: il manipule des données personnelles que
           je ne souhaite pas exposer. Voici l’application en fonctionnement.
         </p>
@@ -72,13 +72,13 @@
       <div class="content">
         <section class="block" appReveal>
           <h2>Le contexte</h2>
-          <p>{{ current.context }}</p>
+          <p class="justified">{{ current.context }}</p>
         </section>
 
         @for (section of current.sections; track section.title; let i = $index) {
           <section class="block" [appReveal]="i * 70">
             <h2>{{ section.title }}</h2>
-            <p>{{ section.body }}</p>
+            <p class="justified">{{ section.body }}</p>
           </section>
         }
       </div>

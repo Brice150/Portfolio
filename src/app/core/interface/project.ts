@@ -26,7 +26,6 @@ export interface Project {
   /** Résumé court affiché sur la carte. */
   summary: string;
   year: string;
-  role: string;
   status: ProjectStatus;
   featured: boolean;
   /** Image de couverture (carte + partage social). */

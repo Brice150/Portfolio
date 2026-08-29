@@ -6,7 +6,7 @@ export const serviceOffers: ServiceOffer[] = [
     icon: 'rocket',
     title: 'Construire une application métier de zéro',
     pitch:
-      'Vous avez un besoin fonctionnel clair et pas encore de socle technique. Je pose l’architecture front et back, je livre les premiers écrans utilisables vite, puis j’étends module par module.',
+      'Un besoin fonctionnel clair, pas encore de socle technique. Poser l’architecture front et back, livrer vite les premiers écrans utilisables, puis étendre module par module.',
     deliverables: [
       'Architecture Angular par domaine, prête à accueillir plusieurs équipes',
       'API REST Java / Spring Boot et modèle de données relationnel',
@@ -19,7 +19,7 @@ export const serviceOffers: ServiceOffer[] = [
     icon: 'wrench',
     title: 'Reprendre et faire évoluer un existant',
     pitch:
-      'C’est ce que j’ai fait pendant cinq ans. Reprendre une base de code écrite par d’autres, comprendre les règles métier avant de les toucher, et livrer des évolutions sans casser ce qui tourne.',
+      'Le cœur de mes cinq dernières années. Reprendre une base de code écrite par d’autres, comprendre les règles métier avant de les toucher, et livrer des évolutions sans casser ce qui tourne.',
     deliverables: [
       'Prise en main du domaine fonctionnel avant toute refonte',
       'Évolutions et corrections sur applications en production',
@@ -32,7 +32,7 @@ export const serviceOffers: ServiceOffer[] = [
     icon: 'gauge',
     title: 'Reprendre la main sur les performances',
     pitch:
-      'Une application qui rame fait fuir ses utilisateurs avant que la fonctionnalité ne compte. J’identifie où le temps se perd réellement, côté navigateur comme côté base de données.',
+      'Une application qui rame fait fuir ses utilisateurs avant que la fonctionnalité ne compte. Identifier où le temps se perd réellement, côté navigateur comme côté base de données.',
     deliverables: [
       'Audit de chargement : bundle, lazy loading, rendu initial',
       'Passage en OnPush et assainissement de la détection de changement',
@@ -43,14 +43,14 @@ export const serviceOffers: ServiceOffer[] = [
   {
     id: 'accessibilite',
     icon: 'accessibility',
-    title: 'Mettre une application en conformité',
+    title: 'Mettre une application publique en conformité',
     pitch:
-      'Le RGAA n’est plus optionnel pour un grand nombre d’acteurs. Je reprends les composants existants pour les rendre utilisables au clavier, lisibles par un lecteur d’écran et correctement contrastés.',
+      'Le RGAA s’impose à un nombre croissant d’acteurs, et le DSFR avec lui sur les projets de l’État. Rendre les composants existants utilisables au clavier, lisibles par un lecteur d’écran et correctement contrastés.',
     deliverables: [
       'Revue des parcours clavier et de l’ordre de tabulation',
       'Correction de la structure sémantique et des rôles ARIA',
       'Vérification des contrastes et des tailles de cible',
-      'Respect des préférences système, dont la réduction de mouvement',
+      'Intégration du Design Système de l’État sur les projets publics',
     ],
   },
 ];
@@ -59,19 +59,19 @@ export const collaboration = {
   title: 'Comment je travaille',
   points: [
     {
-      icon: 'globe' as const,
-      title: 'Full remote, ancré à Rennes',
-      text: 'Je cherche une mission parisienne en télétravail complet. Cinq ans d’ESN m’ont appris à travailler avec des équipes réparties : rituels tenus, écrit soigné, disponibilité réelle sur les plages communes.',
+      icon: 'users' as const,
+      title: 'Intégré à l’équipe, pas en silo',
+      text: 'Daily, refinement, revues de code croisées, démonstrations client : je prends ma part des rituels et je m’adapte aux outils en place plutôt que d’imposer les miens.',
     },
     {
-      icon: 'users' as const,
-      title: 'Intégré à votre équipe',
-      text: 'Je ne travaille pas en silo. Daily, refinement, revues de code croisées, démonstrations client : je prends ma part des rituels et je m’adapte à vos outils plutôt que d’imposer les miens.',
+      icon: 'globe' as const,
+      title: 'À l’aise en équipe répartie',
+      text: 'Cinq ans d’ESN sur des projets distribués : écrit soigné, décisions tracées, disponibilité réelle sur les plages communes. Le distanciel demande plus de rigueur, pas moins.',
     },
     {
       icon: 'clock' as const,
       title: 'Des engagements tenables',
-      text: 'J’estime honnêtement, y compris quand la réponse est « plus long que prévu ». Sur mes trois missions, tenir les jalons annoncés a toujours primé sur l’effet d’annonce.',
+      text: 'Estimer honnêtement, y compris quand la réponse est « plus long que prévu ». Sur mes missions, tenir les jalons annoncés a toujours primé sur l’effet d’annonce.',
     },
     {
       icon: 'book' as const,

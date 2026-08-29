@@ -64,6 +64,9 @@
 }
 
 .col a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
   color: var(--text-muted);
   font-size: 0.92rem;
   transition: color var(--dur-fast) var(--ease);
@@ -73,17 +76,14 @@
   color: var(--accent);
 }
 
-.identity .monogram {
-  display: grid;
-  place-items: center;
-  width: 2.6rem;
-  height: 2.6rem;
+.identity .avatar {
+  width: 3rem;
+  height: 3rem;
   margin-bottom: 0.9rem;
-  border-radius: var(--r-sm);
-  background: linear-gradient(140deg, var(--accent), var(--accent-2));
-  color: var(--accent-contrast);
-  font-family: var(--font-display);
-  font-weight: 700;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--r-full);
+  object-fit: cover;
+  object-position: top center;
 }
 
 .name {
@@ -92,49 +92,15 @@
   font-weight: 600;
 }
 
-.role,
-.location {
+.role {
   font-size: 0.88rem;
   color: var(--text-muted);
-}
-
-.location {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  margin-top: 0.6rem;
 }
 
 .tech li {
   font-family: var(--font-mono);
   font-size: 0.8rem;
   color: var(--text-muted);
-}
-
-.socials {
-  display: flex;
-  gap: 0.5rem;
-  margin-top: 1rem;
-}
-
-.social {
-  display: grid;
-  place-items: center;
-  width: 2.5rem;
-  height: 2.5rem;
-  border: 1px solid var(--border);
-  border-radius: var(--r-sm);
-  color: var(--text-muted);
-  transition:
-    color var(--dur-fast) var(--ease),
-    border-color var(--dur-fast) var(--ease),
-    translate var(--dur-fast) var(--ease);
-}
-
-.social:hover {
-  color: var(--accent);
-  border-color: var(--accent);
-  translate: 0 -2px;
 }
 
 /* --- Bas de page --------------------------------------------------------- */
@@ -147,7 +113,7 @@
   gap: 0.75rem;
   padding-top: 1.5rem;
   font-size: 0.83rem;
-  color: var(--text-faint);
+  color: var(--text-muted);
 }
 
 .top-link {

@@ -10,6 +10,7 @@ import {
 import { NavigationEnd, Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { filter } from 'rxjs/operators';
+import { environment } from '../../../environments/environment';
 import { navItems, profile } from '../../core/data/profile';
 import { IconComponent } from '../../shared/components/icon/icon.component';
 import { SettingsPanelComponent } from '../settings-panel/settings-panel.component';
@@ -25,6 +26,7 @@ import { SettingsPanelComponent } from '../settings-panel/settings-panel.compone
 export class HeaderComponent {
   readonly navItems = navItems;
   readonly profile = profile;
+  readonly imagePath = environment.imagePath;
 
   readonly menuOpen = signal(false);
   readonly scrolled = signal(false);

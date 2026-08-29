@@ -33,7 +33,7 @@ export class AboutComponent implements OnInit {
     this.seoService.setPage({
       title: 'À propos | Brice Lecomte, développeur Angular & Java',
       description:
-        'De l’ingénierie aérospatiale au développement web : le récit d’une reconversion assumée, ce que j’en ai gardé, et ce que je cherche aujourd’hui.',
+        'De l’ingénierie aérospatiale au développement web : le récit d’une reconversion assumée, ce qu’elle a laissé en héritage, et la façon de travailler qui en découle.',
       path: '/a-propos',
       type: 'profile',
     });

@@ -143,7 +143,9 @@ async function capture(browserWsUrl, url, viewport, maxHeight) {
         const style = document.createElement('style');
         style.textContent =
           '.skip-link{display:none!important}' +
-          'header.bar{position:absolute!important;top:0!important}';
+          'header.bar{position:absolute!important;top:0!important}' +
+          // Fige les textes en cours d'animation, qui sinon sont capturés à mi-transition.
+          '.rotation-item{animation:none!important;opacity:1!important}';
         document.head.appendChild(style);
       })()`,
     });

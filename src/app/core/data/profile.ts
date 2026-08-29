@@ -15,9 +15,6 @@ export const profile = {
   },
   role: 'Développeur Full-Stack Angular / Java',
   seniority: 'Confirmé',
-  baseLocation: 'Rennes, France',
-  target: 'Paris — full remote',
-  availability: 'Ouvert aux opportunités',
   email: 'brice.lecomte0@gmail.com',
   phone: '+33 6 30 84 63 97',
   phoneHref: '+33630846397',
@@ -35,17 +32,17 @@ export const roleRotation: string[] = [
   'Angular · TypeScript · RxJS & Signals',
   'Java · Spring Boot · REST',
   'PostgreSQL · Oracle · SQL',
-  'Accessibilité · Performance · SSR',
+  'DSFR · RGAA · Performance',
 ];
 
 export const navItems: NavItem[] = [
   { label: 'Accueil', path: '/', icon: 'home', hint: 'Le profil en une page', exact: true },
   { label: 'À propos', path: '/a-propos', icon: 'user', hint: 'De l’aérospatial au web' },
   { label: 'Compétences', path: '/competences', icon: 'code', hint: 'La stack, en détail' },
-  { label: 'Parcours', path: '/parcours', icon: 'route', hint: 'Cinq ans, trois missions' },
-  { label: 'Projets', path: '/projets', icon: 'briefcase', hint: 'Ce que je construis' },
-  { label: 'Prestations', path: '/prestations', icon: 'target', hint: 'Comment je peux aider' },
-  { label: 'Contact', path: '/contact', icon: 'mail', hint: 'Parlons de votre projet' },
+  { label: 'Parcours', path: '/parcours', icon: 'route', hint: 'Trois entreprises, quatre missions' },
+  { label: 'Projets', path: '/projets', icon: 'briefcase', hint: 'Applications livrées' },
+  { label: 'Expertise', path: '/expertise', icon: 'target', hint: 'Domaines d’intervention' },
+  { label: 'Contact', path: '/contact', icon: 'mail', hint: 'Échanger sur un sujet' },
 ];
 
 export const highlights: Highlight[] = [
@@ -54,7 +51,7 @@ export const highlights: Highlight[] = [
     value: `${yearsOfExperience()} ans`,
     label: 'd’expérience Full-Stack',
     detail:
-      'Trois missions en ESN, sur des domaines métier exigeants — défense puis maritime pour le secteur public. Toujours du Angular en front et du Java/Spring en back.',
+      'Quatre missions en ESN sur des domaines réglementés — défense puis administration maritime. Toujours du Angular en front et du Java/Spring en back.',
   },
   {
     icon: 'users',
@@ -75,7 +72,7 @@ export const highlights: Highlight[] = [
     value: '2',
     label: 'certifications techniques',
     detail:
-      'Certification Java (M2i, 2021) et certification Angular (Angular Training, 2024), en complément d’un diplôme d’ingénieur ISAE-ENSMA.',
+      'Certification Java (M2i, 2021) et certification Angular (Angular Training, 2024), en complément d’un double diplôme d’ingénieur aérospatial.',
   },
 ];
 
@@ -84,46 +81,58 @@ export const principles: WorkPrinciple[] = [
     icon: 'shield',
     title: 'La lisibilité avant l’astuce',
     description:
-      'Un code que l’équipe relit sans effort vaut mieux qu’une élégance que personne n’ose modifier. Je nomme explicitement, je découpe petit, je documente ce qui n’est pas évident et je laisse le reste parler de lui-même.',
+      'Un code que l’équipe relit sans effort vaut mieux qu’une élégance que personne n’ose modifier. Nommer explicitement, découper petit, documenter ce qui n’est pas évident et laisser le reste parler de lui-même.',
   },
   {
     icon: 'gauge',
     title: 'La performance se mesure',
     description:
-      'Lazy loading, OnPush, prerendering, requêtes SQL tracées : je ne devine pas où le temps se perd, je le profile. Sur mes missions, l’amélioration continue des performances a toujours fait partie du contrat.',
+      'Lazy loading, OnPush, prerendering, requêtes SQL tracées : le temps perdu se profile, il ne se devine pas. Sur mes missions, l’amélioration continue des performances fait partie du contrat.',
   },
   {
     icon: 'accessibility',
     title: 'L’accessibilité n’est pas une option',
     description:
-      'Navigation clavier complète, contrastes vérifiés, structure sémantique, préférences de mouvement respectées. Le RGAA n’est pas une contrainte de fin de projet mais une manière de coder dès le premier commit.',
+      'Navigation clavier complète, contrastes vérifiés, structure sémantique, préférences de mouvement respectées. Sur les projets publics, le RGAA se traite dès le premier commit, pas en recette.',
+  },
+  {
+    icon: 'sparkles',
+    title: 'L’IA comme accélérateur, pas comme auteur',
+    description:
+      'Utilisée tous les jours pour explorer une piste, générer un squelette ou relire un diff, avec des prompts ciblés et un contexte minimal afin de maîtriser le coût en tokens. Le code livré reste relu, compris et assumé ligne à ligne.',
+  },
+  {
+    icon: 'target',
+    title: 'Le métier avant la technique',
+    description:
+      'Traduire un barème réglementaire ou un référentiel cadastral en modèle de données suppose d’avoir compris la règle. Le temps passé avec les utilisateurs métier évite des semaines de correctifs.',
   },
   {
     icon: 'branch',
     title: 'La transmission fait partie du travail',
     description:
-      'J’ai encadré un stagiaire, un alternant et accompagné des développeurs juniors. Expliquer un choix technique oblige à le clarifier : l’équipe y gagne, et moi aussi.',
+      'Un stagiaire, un alternant et plusieurs développeurs juniors accompagnés. Expliquer un choix technique oblige à le clarifier : l’équipe y gagne, et celui qui explique aussi.',
   },
 ];
 
-/** Ce que j'ai gardé de l'ingénierie aérospatiale. */
+/** Ce que l'ingénierie aérospatiale a laissé derrière elle. */
 export const transferableStrengths: WorkPrinciple[] = [
   {
     icon: 'target',
     title: 'La rigueur du calcul',
     description:
-      'Cinq ans à dimensionner des systèmes où l’approximation coûte cher. J’ai gardé le réflexe de vérifier les hypothèses avant de construire dessus.',
+      'Cinq ans à dimensionner des systèmes où l’approximation coûte cher, et le réflexe durable de vérifier les hypothèses avant de construire dessus.',
   },
   {
     icon: 'layers',
     title: 'La pensée système',
     description:
-      'Un moteur, comme une application, est un ensemble de sous-ensembles qui interagissent. Décomposer, isoler, tester chaque brique : c’est le même métier avec d’autres outils.',
+      'Un moteur, comme une application, est un ensemble de sous-ensembles qui interagissent. Décomposer, isoler, tester chaque brique : le même métier avec d’autres outils.',
   },
   {
     icon: 'lightbulb',
     title: 'Le goût du problème neuf',
     description:
-      'Se reconvertir, c’est accepter de redevenir débutant. Cette capacité à absorber un domaine inconnu, je la remobilise à chaque nouvelle mission métier.',
+      'Se reconvertir suppose d’accepter de redevenir débutant. Cette capacité à absorber un domaine inconnu se remobilise à chaque nouvelle mission métier.',
   },
 ];

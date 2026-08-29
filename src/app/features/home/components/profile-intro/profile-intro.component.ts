@@ -16,12 +16,13 @@ export class ProfileIntroComponent {
   readonly profile = profile;
   readonly years = yearsOfExperience();
 
+  /** Repères factuels, sans information de localisation ni de disponibilité. */
   readonly facts = [
-    { icon: 'pin' as const, label: 'Basé à', value: 'Rennes, France' },
-    { icon: 'globe' as const, label: 'Recherche', value: 'Paris, full remote' },
-    { icon: 'graduation' as const, label: 'Formation', value: 'Ingénieur ISAE-ENSMA' },
-    { icon: 'award' as const, label: 'Certifié', value: 'Angular · Java' },
-    { icon: 'users' as const, label: 'Langues', value: 'Français · Anglais C1' },
-    { icon: 'briefcase' as const, label: 'Statut', value: 'En poste, à l’écoute' },
+    { icon: 'graduation' as const, label: 'Formation', value: 'Double diplôme d’ingénieur aérospatial' },
+    { icon: 'award' as const, label: 'Certifications', value: 'Angular · Java' },
+    { icon: 'monitor' as const, label: 'Front', value: 'Angular · TypeScript · RxJS' },
+    { icon: 'server' as const, label: 'Back', value: 'Java · Spring Boot · SQL' },
+    { icon: 'shield' as const, label: 'Domaines', value: 'Défense · Maritime public' },
+    { icon: 'globe' as const, label: 'Langues', value: 'Français · Anglais C1' },
   ];
 }

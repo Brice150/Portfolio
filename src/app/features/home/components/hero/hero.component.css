@@ -8,39 +8,11 @@
 
 /* --- Colonne texte ------------------------------------------------------- */
 
-.badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.35rem 0.85rem;
-  border: 1px solid color-mix(in srgb, var(--success) 35%, transparent);
-  border-radius: var(--r-full);
-  background: color-mix(in srgb, var(--success) 12%, transparent);
-  color: var(--success);
-  font-size: 0.78rem;
-  font-weight: 500;
-}
-
-.dot {
-  width: 0.45rem;
-  height: 0.45rem;
-  border-radius: var(--r-full);
-  background: currentcolor;
-  box-shadow: 0 0 0 0 currentcolor;
-  animation: ping 2.4s ease-out infinite;
-}
-
-@keyframes ping {
-  70% {
-    box-shadow: 0 0 0 7px transparent;
-  }
-}
-
 h1 {
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
-  margin-block: 1.25rem 1rem;
+  margin-bottom: 1rem;
 }
 
 .hello {
@@ -97,7 +69,7 @@ h1 {
 }
 
 .pitch {
-  max-width: 56ch;
+  max-width: 58ch;
   margin-top: 1.5rem;
   font-size: var(--step-1);
   color: var(--text-muted);
@@ -173,72 +145,7 @@ h1 {
   object-fit: cover;
 }
 
-.floating {
-  position: absolute;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.55rem 0.9rem;
-  border: 1px solid var(--border);
-  border-radius: var(--r-full);
-  background: color-mix(in srgb, var(--bg-elev) 88%, transparent);
-  color: var(--text-muted);
-  font-size: 0.78rem;
-  font-weight: 500;
-  white-space: nowrap;
-  box-shadow: var(--shadow-md);
-  backdrop-filter: blur(10px);
-}
-
-.card-stack {
-  top: 9%;
-  left: -8%;
-  color: var(--accent);
-  animation: bob 6s ease-in-out infinite;
-}
-
-.card-location {
-  right: -6%;
-  bottom: 12%;
-  animation: bob 7.5s ease-in-out 0.8s infinite;
-}
-
-@keyframes bob {
-  50% {
-    translate: 0 -8px;
-  }
-}
-
-/* --- Invitation à défiler ------------------------------------------------ */
-
-.scroll-cue {
-  position: absolute;
-  bottom: clamp(0.75rem, 0.4rem + 1vw, 1.5rem);
-  left: 0;
-  display: none;
-  align-items: center;
-  gap: 0.4rem;
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--text-faint);
-  transition: color var(--dur-fast) var(--ease);
-}
-
-.scroll-cue:hover {
-  color: var(--accent);
-}
-
-.scroll-cue app-icon {
-  animation: nudge 2s ease-in-out infinite;
-}
-
-@keyframes nudge {
-  50% {
-    translate: 0 4px;
-  }
-}
+/* --- Points de rupture --------------------------------------------------- */
 
 /* Sur mobile, le portrait passe en tête : plus incarné qu’un mur de texte.
    Aucun élément interactif dedans, l’ordre de lecture reste correct. */
@@ -247,17 +154,7 @@ h1 {
     order: -1;
     width: min(72%, 15.5rem);
   }
-
-  .card-stack {
-    left: -4%;
-  }
-
-  .card-location {
-    right: -3%;
-  }
 }
-
-/* --- Points de rupture --------------------------------------------------- */
 
 @media (width >= 880px) {
   .hero {
@@ -267,16 +164,9 @@ h1 {
   .portrait {
     width: min(100%, 26rem);
   }
-
-  .scroll-cue {
-    display: inline-flex;
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .dot,
-  .floating,
-  .scroll-cue app-icon,
   .rotation-item {
     animation: none;
   }

@@ -45,10 +45,10 @@ html {
   --surface-2: light-dark(#f2f4f9, #171c25);
   --surface-3: light-dark(#e8ecf4, #1e242f);
 
-  /* Texte */
+  /* Texte — contrastes relevés pour rester lisibles sur les deux fonds */
   --text: light-dark(#0b1017, #edf1f7);
-  --text-muted: light-dark(#4e5a6b, #9ba6b5);
-  --text-faint: light-dark(#78849a, #6b7686);
+  --text-muted: light-dark(#3d4756, #bcc5d1);
+  --text-faint: light-dark(#5a6575, #98a3b2);
 
   /* Bordures */
   --border: light-dark(rgb(9 12 20 / 10%), rgb(255 255 255 / 9%));
@@ -61,6 +61,8 @@ html {
   --accent-contrast: #ffffff;
   --accent-soft: light-dark(rgb(37 99 235 / 10%), rgb(79 141 255 / 14%));
   --accent-ring: light-dark(rgb(37 99 235 / 35%), rgb(79 141 255 / 45%));
+  /* Version soutenue de l'accent, pour les aplats portant du texte blanc. */
+  --accent-deep: light-dark(#1a3f9e, #1f4cb5);
 
   /* États */
   --success: light-dark(#047857, #34d399);
@@ -124,6 +126,7 @@ html[data-accent='violet'] {
   --accent-2: light-dark(#c026d3, #e879f9);
   --accent-soft: light-dark(rgb(124 58 237 / 10%), rgb(167 139 250 / 15%));
   --accent-ring: light-dark(rgb(124 58 237 / 35%), rgb(167 139 250 / 45%));
+  --accent-deep: light-dark(#5b21b6, #6d3fd4);
 }
 
 html[data-accent='emerald'] {
@@ -133,6 +136,7 @@ html[data-accent='emerald'] {
   --accent-contrast: light-dark(#ffffff, #04231a);
   --accent-soft: light-dark(rgb(4 120 87 / 10%), rgb(52 211 153 / 15%));
   --accent-ring: light-dark(rgb(4 120 87 / 35%), rgb(52 211 153 / 45%));
+  --accent-deep: light-dark(#065f46, #0f7a5a);
 }
 
 html[data-accent='amber'] {
@@ -142,6 +146,7 @@ html[data-accent='amber'] {
   --accent-contrast: light-dark(#ffffff, #2b1a02);
   --accent-soft: light-dark(rgb(180 83 9 / 10%), rgb(251 191 36 / 15%));
   --accent-ring: light-dark(rgb(180 83 9 / 35%), rgb(251 191 36 / 45%));
+  --accent-deep: light-dark(#92400e, #a5620d);
 }
 
 /* Material suit l'accent choisi */
@@ -327,6 +332,21 @@ ol {
 
 .muted {
   color: var(--text-muted);
+}
+
+/* Texte long en pavé justifié. La césure s'appuie sur le `lang="fr"` du
+   document, sans quoi la justification creuserait des rivières. */
+.justified {
+  text-align: justify;
+  text-wrap: pretty;
+  hyphens: auto;
+}
+
+@media (width < 560px) {
+  /* Sur colonne étroite, la justification produit trop d'espaces. */
+  .justified {
+    text-align: left;
+  }
 }
 
 .gradient-text {

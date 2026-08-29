@@ -1,33 +1,33 @@
 # Brice Lecomte — Développeur Full-Stack Angular / Java
 
 > Développeur full-stack confirmé, 5 ans d'expérience en ESN sur des applications
-> métier Angular et Java. Reconverti depuis l'ingénierie aérospatiale (ISAE-ENSMA).
-> Basé à Rennes, recherche une mission sur Paris en télétravail complet.
+> métier réglementées : ministère des Armées, puis administration maritime (DGAMPA).
+> Ingénieur aérospatial de formation (ISAE-ENSMA), reconverti au développement logiciel.
 
 ## Profil
 
 - Rôle : Développeur Full-Stack Angular / Java, niveau confirmé
 - Expérience : Sopra Steria (2021-2024), Capgemini (2024-2026), Open (2026-)
-- Formation : Diplôme d'ingénieur et Master en aérospatial, ISAE-ENSMA (2017-2021)
+- Formation : Double diplôme d'ingénieur aérospatial, ISAE-ENSMA (2017-2021)
 - Certifications : Angular (Angular Training, 2024), Java (M2i Formation, 2021)
 - Langues : français (natif), anglais C1 (TOEIC 945/990)
-- Disponibilité : ouvert aux opportunités, Paris en full remote
 
 ## Compétences principales
 
-- Frontend : Angular, TypeScript, RxJS, signals, Angular Material & CDK, HTML/CSS, RGAA
+- Frontend : Angular, TypeScript, RxJS, signals, Angular Material & CDK, DSFR, RGAA
 - Backend : Java, Spring Boot, API REST, Hibernate/JPA, JUnit
 - Données : PostgreSQL, Oracle, Firebase/Firestore, Talend
 - Outils : Git (GitHub, GitLab), IntelliJ IDEA, VS Code, GitLab CI
+- Méthode : usage quotidien et maîtrisé de l'IA générative comme outillage de développement
 
 ## Pages
 
 - [Accueil](https://portfolio-brice.web.app/) : synthèse du profil, chiffres clés, projets mis en avant
 - [À propos](https://portfolio-brice.web.app/a-propos) : récit détaillé de la reconversion et du parcours
 - [Compétences](https://portfolio-brice.web.app/competences) : stack détaillée avec niveau et usage réel
-- [Parcours](https://portfolio-brice.web.app/parcours) : expériences, formation, certifications
+- [Parcours](https://portfolio-brice.web.app/parcours) : missions, formation, certifications
 - [Projets](https://portfolio-brice.web.app/projets) : cinq applications avec fiches détaillées
-- [Prestations](https://portfolio-brice.web.app/prestations) : types de missions et mode de collaboration
+- [Expertise](https://portfolio-brice.web.app/expertise) : domaines d'intervention et façon de travailler
 - [Contact](https://portfolio-brice.web.app/contact) : formulaire, e-mail, téléphone, LinkedIn
 
 ## Contact

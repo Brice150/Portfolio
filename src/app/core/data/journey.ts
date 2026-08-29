@@ -4,33 +4,34 @@ export const milestones: Milestone[] = [
   {
     id: 'open',
     kind: 'work',
-    period: '2026 — aujourd’hui',
+    period: 'Févr. 2026 — aujourd’hui',
     startYear: 2026,
     title: 'Développeur Full-Stack confirmé',
     organisation: 'Open',
-    location: 'Rennes, France',
+    location: 'Rennes',
     logo: 'history/open.webp',
     current: true,
     summary:
-      'Nouvelle étape en ESN, sur des applications métier Angular et Java. Je rejoins l’équipe avec le rôle attendu d’un profil confirmé : produire, arbitrer techniquement et faire monter les autres.',
+      'Poursuite du travail engagé pour la DGAMPA, sur une autre application du parc : la refonte complète de l’outil de gestion des parcelles du cadastre aquacole, bâtie sur le Design Système de l’État.',
     achievements: [
-      'Prise en main rapide d’un contexte fonctionnel et d’une base de code existante.',
-      'Développement full-stack sur la chaîne Angular / Spring Boot.',
-      'Application des standards de qualité et de revue de code sur lesquels je m’appuie depuis cinq ans.',
+      'Refonte d’une application de gestion des parcelles du cadastre aquacole, en Angular et Java.',
+      'Mise en œuvre du DSFR, le Design Système de l’État, comme socle d’interface.',
+      'Conformité RGAA visée sur l’ensemble du périmètre, hors partie cartographique.',
+      'Reprise du domaine métier maritime déjà pratiqué sur la mission précédente, sans temps de latence.',
     ],
-    stack: ['Angular', 'TypeScript', 'Java', 'Spring Boot', 'SQL', 'Git'],
+    stack: ['Angular', 'TypeScript', 'Java', 'Spring Boot', 'DSFR', 'RGAA', 'SQL'],
   },
   {
     id: 'capgemini',
     kind: 'work',
-    period: '2024 — 2026',
+    period: 'Juil. 2024 — Janv. 2026',
     startYear: 2024,
     title: 'Développeur Full-Stack confirmé',
     organisation: 'Capgemini',
-    location: 'Rennes, France',
+    location: 'Rennes',
     logo: 'history/capgemini.webp',
     summary:
-      'Deux ans sur un ensemble d’applications web dédiées à la gestion des navires de plaisance, pour un client du secteur public. Un domaine réglementaire où chaque règle de gestion a une conséquence juridique, et où la donnée existante ne se réécrit pas.',
+      'Un an et demi sur les applications de gestion des navires de plaisance de la DGAMPA. Un domaine réglementaire où chaque règle de gestion a une portée juridique, et où la donnée existante ne se réécrit pas.',
     achievements: [
       'Conception et évolution de plusieurs applications web de gestion des navires de plaisance.',
       'Développement complet de la taxation 2026 : traduction d’un nouveau barème réglementaire en règles de calcul, en modèle de données et en interfaces de saisie et de contrôle.',
@@ -38,39 +39,54 @@ export const milestones: Milestone[] = [
       'Amélioration continue des performances : identification des requêtes coûteuses, révision des stratégies de chargement, allègement des écrans les plus sollicités.',
       'Encadrement d’un alternant sur toute sa période et accompagnement des développeurs juniors de l’équipe.',
     ],
-    stack: ['Angular', 'TypeScript', 'RxJS', 'Java', 'Spring Boot', 'Oracle', 'GitLab'],
+    stack: ['Angular', 'TypeScript', 'RxJS', 'Java', 'Spring Boot', 'Oracle', 'Talend', 'GitLab'],
   },
   {
     id: 'sopra',
     kind: 'work',
-    period: '2021 — 2024',
+    period: 'Sept. 2021 — Juin 2024',
     startYear: 2021,
     title: 'Développeur Full-Stack',
     organisation: 'Sopra Steria',
-    location: 'Rennes, France',
+    location: 'Rennes',
     logo: 'history/sopra.webp',
     summary:
-      'Ma première mission de développeur, et celle qui a tout ancré : une application web de gestion de la maintenance des véhicules militaires. Trois ans pour passer du statut de reconverti à celui de référent frontend de l’équipe.',
+      'Trois ans au service du ministère des Armées, sur deux missions successives : d’abord l’intégration de données, puis le développement full-stack, avec une prise de responsabilité progressive jusqu’au rôle de référent frontend.',
+    missions: [
+      {
+        label: 'Première mission — Intégration de données',
+        period: 'Sept. 2021 — Sept. 2022',
+        summary:
+          'Conception et exploitation de flux d’intégration Talend sur des données d’aéronefs militaires : reprises, transformations et contrôles de cohérence sur des volumes conséquents.',
+        stack: ['Talend', 'SQL', 'Oracle', 'Git'],
+      },
+      {
+        label: 'Seconde mission — Développement full-stack',
+        period: 'Sept. 2022 — Juin 2024',
+        summary:
+          'Deux ans sur une application web de gestion de la maintenance de véhicules militaires terrestres, de la conception au maintien en condition opérationnelle.',
+        stack: ['Angular', 'TypeScript', 'Java', 'Spring Boot', 'PostgreSQL', 'Git'],
+      },
+    ],
     achievements: [
-      'Participation à la conception et au développement d’une application de gestion de la maintenance de véhicules militaires, en Angular et Java.',
-      'Rôle de référent frontend : choix d’architecture, conventions, revues systématiques des développements de l’équipe.',
+      'Rôle de référent frontend au bout de deux ans : choix d’architecture, conventions, revues systématiques des développements de l’équipe.',
       'Pilotage d’une équipe de deux développeurs pour tenir les jalons et les délais annoncés au client.',
       'Accompagnement d’un stagiaire, avec transmission des bonnes pratiques pour soutenir sa montée en compétences.',
       'Montée en charge progressive sur le back Java/Spring, jusqu’à couvrir la chaîne complète.',
     ],
-    stack: ['Angular', 'TypeScript', 'Java', 'Spring Boot', 'PostgreSQL', 'Talend', 'Git'],
+    stack: [],
   },
   {
     id: 'reconversion',
     kind: 'turning-point',
-    period: '2021',
+    period: 'Avr. — Sept. 2021',
     startYear: 2021,
     title: 'La bascule vers le développement',
     organisation: 'Reconversion professionnelle',
     summary:
-      'Diplôme d’ingénieur aérospatial en poche, je fais le choix assumé de ne pas exercer dans l’aéronautique. Ce qui m’intéressait dans mes projets d’école, ce n’était pas la turbine : c’était le code qui la simulait. Je passe une certification Java, je construis mes premiers projets, et je rejoins une ESN comme développeur.',
+      'Diplôme d’ingénieur aérospatial en poche, choix assumé de ne pas exercer dans l’aéronautique. Ce qui retenait mon attention dans les projets d’école, ce n’était pas la turbine : c’était le code qui la simulait.',
     achievements: [
-      'Certification Java validée chez M2i Formation en 2021.',
+      'Certification Java validée chez M2i Formation en juillet 2021.',
       'Premiers projets web personnels menés seul, du besoin jusqu’au déploiement.',
       'Entrée en ESN comme développeur full-stack, sans repasser par la case stage.',
     ],
@@ -79,13 +95,13 @@ export const milestones: Milestone[] = [
   {
     id: 'ensma',
     kind: 'education',
-    period: '2017 — 2021',
+    period: 'Sept. 2017 — Avr. 2021',
     startYear: 2017,
-    title: 'Diplôme d’ingénieur et Master en aérospatial',
+    title: 'Double diplôme d’ingénieur aérospatial',
     organisation: 'ISAE-ENSMA',
-    location: 'Poitiers, France',
+    location: 'Poitiers',
     summary:
-      'Une école d’ingénieurs généraliste tournée vers la mécanique et l’énergétique : optimisation moteur, analyse thermique avancée, gestion de projet, innovation drone. La formation qui m’a appris à modéliser un système complexe avant de le construire.',
+      'Une école d’ingénieurs tournée vers la mécanique et l’énergétique : optimisation moteur, analyse thermique avancée, gestion de projet, innovation drone. La formation qui apprend à modéliser un système complexe avant de le construire.',
     achievements: [
       'Diplôme d’ingénieur et Master en aérospatial, obtenus en 2021.',
       'Projets d’optimisation moteur et d’analyse thermique avancée.',
@@ -110,7 +126,7 @@ export const certifications: Certification[] = [
     icon: 'server',
   },
   {
-    title: 'Diplôme d’ingénieur & Master aérospatial',
+    title: 'Double diplôme d’ingénieur aérospatial',
     issuer: 'ISAE-ENSMA',
     year: '2021',
     icon: 'graduation',
@@ -124,7 +140,11 @@ export const certifications: Certification[] = [
 ];
 
 /** Ce qui se passe en dehors de l'écran — et qui dit aussi quelque chose du profil. */
-export const personalNotes: { icon: 'globe' | 'star' | 'shield' | 'gauge'; title: string; text: string }[] = [
+export const personalNotes: {
+  icon: 'globe' | 'star' | 'shield' | 'gauge';
+  title: string;
+  text: string;
+}[] = [
   {
     icon: 'globe',
     title: 'Quatre mois en Suède',

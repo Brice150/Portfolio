@@ -1,7 +1,8 @@
+/* Six convictions : grille 3x2 sur grand écran. */
 .principles {
   display: grid;
   gap: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 21rem), 1fr));
 }
 
 .principle {
