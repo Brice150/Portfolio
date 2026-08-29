@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, Component, OnInit, computed, inject, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { environment } from '../../environments/environment';
+import { ProjectStatus } from '../core/interfaces/project';
 import { projectsByDate } from '../shared/data/projects';
 import { SeoService } from '../core/services/seo.service';
 import { DeviceShowcaseComponent } from '../shared/components/device-showcase/device-showcase.component';
@@ -28,6 +29,12 @@ export class ProjectsComponent implements OnInit {
 
   readonly projects = projectsByDate();
   readonly imagePath = environment.imagePath;
+
+  readonly statusLabels: Record<ProjectStatus, string> = {
+    live: 'En ligne',
+    archive: 'Non hébergé',
+    wip: 'En cours',
+  };
 
   readonly activeProject = signal('all');
 

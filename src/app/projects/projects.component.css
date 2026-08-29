@@ -112,3 +112,82 @@
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 }
+
+/* --- Statut et code non public ------------------------------------------- */
+
+.entry {
+  position: relative;
+}
+
+.status {
+  position: absolute;
+  top: clamp(1.1rem, 0.8rem + 1vw, 1.75rem);
+  right: clamp(1.1rem, 0.8rem + 1vw, 1.75rem);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.3rem 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: var(--r-full);
+  background: var(--surface-2);
+  color: var(--text-muted);
+  font-size: 0.74rem;
+  font-weight: 600;
+}
+
+.status.is-live {
+  border-color: color-mix(in srgb, var(--success) 40%, transparent);
+  background: color-mix(in srgb, var(--success) 12%, transparent);
+  color: var(--success);
+}
+
+.pulse {
+  width: 0.45rem;
+  height: 0.45rem;
+  border-radius: var(--r-full);
+  background: currentcolor;
+}
+
+.status.is-live .pulse {
+  box-shadow: 0 0 0 0 currentcolor;
+  animation: pulse 2.2s ease-out infinite;
+}
+
+@keyframes pulse {
+  70% {
+    box-shadow: 0 0 0 6px transparent;
+  }
+}
+
+.btn.is-locked {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.btn.is-locked:hover {
+  background: transparent;
+  border-color: var(--border-strong);
+  translate: 0 0;
+  box-shadow: none;
+}
+
+.locked-note {
+  display: flex;
+  gap: 0.55rem;
+  max-width: 52ch;
+  margin-top: 0.9rem;
+  font-size: 0.83rem;
+  line-height: 1.6;
+  color: var(--text-faint);
+}
+
+.locked-note app-icon {
+  flex: none;
+  margin-top: 0.15rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .status.is-live .pulse {
+    animation: none;
+  }
+}

@@ -42,7 +42,7 @@
 
   <ul class="collab">
     @for (point of collaboration.points; track point.title; let i = $index) {
-      <li class="collab-item" [appReveal]="i * 80">
+      <li class="collab-item card-hover" [appReveal]="i * 80">
         <app-icon [name]="point.icon" size="1.2em" />
         <div>
           <h3>{{ point.title }}</h3>

@@ -363,6 +363,49 @@ ol {
   border-radius: var(--r-md);
 }
 
+/* Survol commun des cartes. Le trait coloré se déploie en bas par défaut,
+   en haut avec la variante, pour varier sans casser la cohérence. */
+.card-hover {
+  position: relative;
+  overflow: hidden;
+  transition:
+    border-color var(--dur) var(--ease),
+    translate var(--dur) var(--ease);
+}
+
+.card-hover::after {
+  content: '';
+  position: absolute;
+  inset: auto 0 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  scale: 0 1;
+  transform-origin: left;
+  transition: scale var(--dur) var(--ease);
+}
+
+.card-hover--top::after {
+  inset: 0 0 auto;
+}
+
+.card-hover:hover,
+.card-hover:focus-within {
+  border-color: color-mix(in srgb, var(--accent) 40%, transparent);
+  translate: 0 -3px;
+}
+
+.card-hover:hover::after,
+.card-hover:focus-within::after {
+  scale: 1 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card-hover:hover,
+  .card-hover:focus-within {
+    translate: 0 0;
+  }
+}
+
 .chip {
   display: inline-flex;
   align-items: center;

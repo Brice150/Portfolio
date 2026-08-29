@@ -22,14 +22,6 @@
   border: 1px solid var(--border);
   border-radius: var(--r-md);
   background: var(--surface);
-  transition:
-    border-color var(--dur) var(--ease),
-    translate var(--dur) var(--ease);
-}
-
-.certification:hover {
-  border-color: color-mix(in srgb, var(--accent) 40%, transparent);
-  translate: 0 -3px;
 }
 
 .cert-icon {
@@ -79,14 +71,6 @@
   border: 1px solid var(--border);
   border-radius: var(--r-md);
   background: var(--surface);
-  transition:
-    border-color var(--dur) var(--ease),
-    translate var(--dur) var(--ease);
-}
-
-.strength:hover {
-  border-color: color-mix(in srgb, var(--accent) 40%, transparent);
-  translate: 0 -3px;
 }
 
 .strength-icon {

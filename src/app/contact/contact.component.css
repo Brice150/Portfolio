@@ -142,6 +142,7 @@ h2 {
 /* --- Formulaire ---------------------------------------------------------- */
 
 .form-zone {
+  transition: border-color var(--dur) var(--ease);
   padding: clamp(1.35rem, 1rem + 1.5vw, 2.5rem);
   border: 1px solid var(--border);
   border-radius: var(--r-lg);
@@ -149,6 +150,10 @@ h2 {
     radial-gradient(110% 80% at 100% 0%, var(--accent-soft), transparent 55%),
     var(--surface);
   box-shadow: var(--shadow-md);
+}
+
+.form-zone:focus-within {
+  border-color: color-mix(in srgb, var(--accent) 40%, transparent);
 }
 
 .form-intro {

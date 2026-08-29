@@ -3,6 +3,8 @@ export type ProjectStatus = 'live' | 'archive' | 'wip';
 export interface ProjectLink {
   live?: string;
   github?: string;
+  /** Raison affichée lorsque le code source n’est volontairement pas public. */
+  sourceRestricted?: string;
 }
 
 export interface ProjectShots {

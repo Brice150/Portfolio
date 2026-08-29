@@ -115,11 +115,6 @@ html:not(.js) .bar-fill {
   border: 1px solid var(--border);
   border-radius: var(--r-md);
   background: var(--surface);
-  transition: border-color var(--dur) var(--ease);
-}
-
-.practice:hover {
-  border-color: color-mix(in srgb, var(--accent) 40%, transparent);
 }
 
 .practice-icon {

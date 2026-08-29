@@ -34,7 +34,9 @@
             <li class="skill" [style.--level.%]="skill.level">
               <div class="skill-head">
                 <h3>{{ skill.name }}</h3>
-                <span class="level">{{ skill.level }}<span aria-hidden="true">/100</span></span>
+                <span class="level"
+                  >{{ skill.level }}<span aria-hidden="true">/100</span></span
+                >
               </div>
               <div class="bar" aria-hidden="true">
                 <span class="bar-fill"></span>
@@ -56,11 +58,12 @@
     <div>
       <h2>Une note sur ces niveaux</h2>
       <p class="justified">
-        Les pourcentages ci-dessus sont une auto-évaluation, pas une note d’examen. Ils traduisent
-        ma capacité à intervenir seul sur un sujet donné. Au-delà de 85, je suis autonome et je peux
-        arbitrer pour l’équipe. Entre 70 et 85, je livre sans difficulté mais je continue
-        d’apprendre. En dessous, j’ai pratiqué en contexte réel sans en faire ma spécialité. Je
-        préfère annoncer cela clairement plutôt que d’afficher 5 étoiles partout.
+        Les pourcentages ci-dessus sont une auto-évaluation, pas une note
+        d’examen. Ils traduisent ma capacité à intervenir seul sur un sujet
+        donné. Au-delà de 85, je suis autonome et je peux arbitrer pour
+        l’équipe. Entre 70 et 85, je livre sans difficulté mais je continue
+        d’apprendre. En dessous, j’ai pratiqué en contexte réel sans en faire ma
+        spécialité.
       </p>
     </div>
   </div>
@@ -76,7 +79,7 @@
 
   <ul class="practices">
     @for (practice of practices; track practice.title; let i = $index) {
-      <li class="practice" [appReveal]="i * 90">
+      <li class="practice card-hover" [appReveal]="i * 90">
         <span class="practice-icon" aria-hidden="true">
           <app-icon [name]="practice.icon" size="1.15em" />
         </span>

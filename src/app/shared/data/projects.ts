@@ -27,10 +27,10 @@ export const projects: Project[] = [
       'Stripe',
     ],
     facts: [
-      { label: 'Durée', value: '1 an (temps libre)' },
+      { label: 'Durée (temps libre)', value: '1 an' },
       { label: 'Espaces', value: '19' },
       { label: 'Profils', value: '6 par compte' },
-      { label: 'Statut', value: 'En ligne' },
+      { label: 'Assistant', value: 'IA intégrée' },
     ],
     context:
       'Gérer son quotidien suppose aujourd’hui de jongler entre une dizaine d’applications qui ne communiquent jamais entre elles. Life Rise part de ce constat : un seul endroit pour suivre ce qui compte, avec une donnée unifiée, une expérience cohérente d’un espace à l’autre, et la possibilité de partager avec son conjoint, sa famille ou sa colocation.',
@@ -62,6 +62,8 @@ export const projects: Project[] = [
     ],
     links: {
       live: 'https://life-rise.web.app/',
+      sourceRestricted:
+        'Life Rise est un produit en ligne, avec des comptes et des données d’utilisateurs réels. En publier les sources reviendrait à en distribuer des copies.',
     },
   },
   {
@@ -81,10 +83,10 @@ export const projects: Project[] = [
     },
     stack: ['Angular', 'TypeScript', 'Angular Material', 'Firebase'],
     facts: [
-      { label: 'Durée', value: '1 an (temps libre)' },
+      { label: 'Durée (temps libre)', value: '6 mois' },
       { label: 'Jeux', value: '3' },
       { label: 'Mode', value: 'Multijoueur' },
-      { label: 'Statut', value: 'En ligne' },
+      { label: 'Temps réel', value: 'Firestore' },
     ],
     context:
       'Un projet volontairement orienté temps réel, pour sortir du CRUD et se confronter à la synchronisation d’états entre plusieurs joueurs : qui répond quand, que se passe-t-il si quelqu’un quitte la partie, comment garder tout le monde sur la même manche.',
@@ -131,10 +133,10 @@ export const projects: Project[] = [
     },
     stack: ['Angular', 'TypeScript'],
     facts: [
-      { label: 'Durée', value: '2 semaines (temps libre)' },
+      { label: 'Durée (temps libre)', value: '2 jours' },
       { label: 'Nature', value: 'Calculateur' },
-      { label: 'Équipe', value: 'Solo' },
-      { label: 'Statut', value: 'En ligne' },
+      { label: 'Parcours', value: 'Guidé en étapes' },
+      { label: 'Réalisation', value: 'Seul, de bout en bout' },
     ],
     context:
       'Les dispositifs d’aide à la rénovation énergétique sont nombreux, cumulables et conditionnés à des seuils qui changent. L’information existe mais elle est éclatée sur plusieurs sites administratifs. Ce simulateur ramène l’ensemble à un parcours de quelques questions.',
@@ -170,12 +172,16 @@ export const projects: Project[] = [
     status: 'archive',
     featured: false,
     cover: 'projects/PICKME.webp',
+    shots: {
+      desktop: 'projects/shots/pickme-desktop.webp',
+      mobile: 'projects/shots/pickme-mobile.webp',
+    },
     stack: ['Angular', 'TypeScript', 'Java', 'Spring Boot', 'PostgreSQL'],
     facts: [
-      { label: 'Durée', value: '1 an (temps libre)' },
+      { label: 'Durée (temps libre)', value: '1 an' },
       { label: 'Nature', value: 'Full-stack' },
-      { label: 'Équipe', value: 'Solo' },
-      { label: 'Statut', value: 'Code ouvert' },
+      { label: 'Périmètre', value: 'Front, back et base' },
+      { label: 'Réalisation', value: 'Seul, de bout en bout' },
     ],
     context:
       'Le projet qui tient le front et le back en même temps : un front Angular exigeant en interactions, et un back Java/Spring avec une vraie modélisation relationnelle. Une application de rencontre est un excellent prétexte — elle concentre authentification, upload, filtrage, appariement et temps réel.',
@@ -223,9 +229,9 @@ export const projects: Project[] = [
       'Zoneless',
     ],
     facts: [
+      { label: 'Durée (temps libre)', value: '2 semaines' },
       { label: 'Rendu', value: 'Prérendu' },
-      { label: 'Change detection', value: 'OnPush' },
-      { label: 'Dépendances', value: 'Minimales' },
+      { label: 'Détection', value: 'OnPush' },
       { label: 'Référentiel', value: 'RGAA' },
     ],
     context:
@@ -257,9 +263,15 @@ export const projects: Project[] = [
   },
 ];
 
+/** Dernière année mentionnée dans le libellé de période. */
+const lastYear = (project: Project): number => {
+  const years = project.year.match(/d{4}/g) ?? [];
+  return Number(years.at(-1) ?? project.startYear);
+};
+
 /** Projets classés du plus récent au plus ancien. */
 export const projectsByDate = (): Project[] =>
-  [...projects].sort((a, b) => b.startYear - a.startYear);
+  [...projects].sort((a, b) => lastYear(b) - lastYear(a) || b.startYear - a.startYear);
 
 export const projectBySlug = (slug: string): Project | undefined =>
   projects.find((project) => project.slug === slug);
