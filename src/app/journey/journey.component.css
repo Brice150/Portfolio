@@ -145,11 +145,10 @@
   color: var(--text-muted);
 }
 
-/* Quatre notes : grille 2x2 plutôt qu'une carte orpheline en fin de ligne. */
 .notes {
   display: grid;
   gap: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 26rem), 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr));
 }
 
 .note {

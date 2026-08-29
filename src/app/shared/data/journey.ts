@@ -4,7 +4,7 @@ export const milestones: Milestone[] = [
   {
     id: 'open',
     kind: 'work',
-    period: 'Févr. 2026 — aujourd’hui',
+    period: 'Mai 2026 — aujourd’hui',
     startYear: 2026,
     title: 'Développeur Full-Stack confirmé',
     organisation: 'Open',
@@ -24,7 +24,7 @@ export const milestones: Milestone[] = [
   {
     id: 'capgemini',
     kind: 'work',
-    period: 'Juil. 2024 — Janv. 2026',
+    period: 'Nov. 2024 — Avr. 2026',
     startYear: 2024,
     title: 'Développeur Full-Stack confirmé',
     organisation: 'Capgemini',
@@ -44,27 +44,27 @@ export const milestones: Milestone[] = [
   {
     id: 'sopra',
     kind: 'work',
-    period: 'Sept. 2021 — Juin 2024',
+    period: 'Juil. 2021 — Oct. 2024',
     startYear: 2021,
     title: 'Développeur Full-Stack',
     organisation: 'Sopra Steria',
     location: 'Rennes',
     logo: 'history/sopra.webp',
     summary:
-      'Trois ans au service du ministère des Armées, sur deux missions successives : d’abord l’intégration de données, puis le développement full-stack, avec une prise de responsabilité progressive jusqu’au rôle de référent frontend.',
+      'Trois ans et quatre mois au service du ministère des Armées, sur deux missions successives : d’abord l’intégration de données, puis le développement full-stack, avec une prise de responsabilité progressive jusqu’au rôle de référent frontend.',
     missions: [
       {
         label: 'Première mission — Intégration de données',
-        period: 'Sept. 2021 — Sept. 2022',
+        period: 'Juil. 2021 — Déc. 2022',
         summary:
           'Conception et exploitation de flux d’intégration Talend sur des données d’aéronefs militaires : reprises, transformations et contrôles de cohérence sur des volumes conséquents.',
         stack: ['Talend', 'SQL', 'Oracle', 'Git'],
       },
       {
         label: 'Seconde mission — Développement full-stack',
-        period: 'Sept. 2022 — Juin 2024',
+        period: 'Janv. 2023 — Oct. 2024',
         summary:
-          'Deux ans sur une application web de gestion de la maintenance de véhicules militaires terrestres, de la conception au maintien en condition opérationnelle.',
+          'Près de deux ans sur une application web de gestion de la maintenance de véhicules militaires terrestres, de la conception au maintien en condition opérationnelle.',
         stack: ['Angular', 'TypeScript', 'Java', 'Spring Boot', 'PostgreSQL', 'Git'],
       },
     ],
@@ -79,16 +79,17 @@ export const milestones: Milestone[] = [
   {
     id: 'reconversion',
     kind: 'turning-point',
-    period: 'Avr. — Sept. 2021',
+    period: 'Avr. — Juil. 2021',
     startYear: 2021,
     title: 'La bascule vers le développement',
     organisation: 'Reconversion professionnelle',
     summary:
-      'Diplôme d’ingénieur aérospatial en poche, choix assumé de ne pas exercer dans l’aéronautique. Ce qui retenait mon attention dans les projets d’école, ce n’était pas la turbine : c’était le code qui la simulait.',
+      'Diplôme d’ingénieur aérospatial en poche, choix assumé de ne pas exercer dans l’aéronautique : le métier menait vers des calculs très théoriques, quand les réalisations concrètes se trouvaient du côté du logiciel. Trois mois entre l’obtention du diplôme et la prise de poste.',
     achievements: [
+      'Reconversion menée via une POEI Java, avec un CDI à la clé chez Sopra Steria.',
       'Certification Java validée chez M2i Formation en juillet 2021.',
       'Premiers projets web personnels menés seul, du besoin jusqu’au déploiement.',
-      'Entrée en ESN comme développeur full-stack, sans repasser par la case stage.',
+      'Entrée en ESN comme développeur full-stack en CDI, sans passer par un stage de développement.',
     ],
     stack: ['Java', 'Angular', 'Autoformation'],
   },
@@ -101,14 +102,30 @@ export const milestones: Milestone[] = [
     organisation: 'ISAE-ENSMA',
     location: 'Poitiers',
     summary:
-      'Une école d’ingénieurs tournée vers la mécanique et l’énergétique : optimisation moteur, analyse thermique avancée, gestion de projet, innovation drone. La formation qui apprend à modéliser un système complexe avant de le construire.',
+      'Une école d’ingénieurs tournée vers la mécanique et l’énergétique : optimisation moteur, analyse thermique avancée, gestion de projet, innovation drone. La formation qui apprend à modéliser un système complexe avant de le construire, et deux stages de calcul menés en laboratoire puis en industrie.',
+    missions: [
+      {
+        label: 'Stage ingénieur aérothermique — Safran',
+        period: 'Juil. — Déc. 2020',
+        summary:
+          'Modélisation CFD en 1D, 2D et 3D de cavités de turbines haute pression, avec pour objectif de limiter l’élévation de température des écoulements. Six mois en Seine-et-Marne, sur un sujet directement industriel.',
+        stack: ['CFD', 'Simulation numérique', 'Aérothermique'],
+      },
+      {
+        label: 'Stage ingénieur aérothermique — KTH, Stockholm',
+        period: 'Juin — Sept. 2019',
+        summary:
+          'Création d’un modèle CFD 3D pour l’étude du flux radial de purge dans les cavités de turbines haute pression, au Kungliga Tekniska högskolan. Quatre mois de travail et de vie entièrement en anglais.',
+        stack: ['CFD 3D', 'Modélisation', 'Anglais professionnel'],
+      },
+    ],
     achievements: [
       'Diplôme d’ingénieur et Master en aérospatial, obtenus en 2021.',
       'Projets d’optimisation moteur et d’analyse thermique avancée.',
       'Gestion de projet en équipe et projet d’innovation autour des drones.',
       'TOEIC 945/990 (niveau C1) et First Certificate de Cambridge.',
     ],
-    stack: ['Modélisation', 'Calcul scientifique', 'Gestion de projet'],
+    stack: [],
   },
 ];
 
@@ -141,15 +158,10 @@ export const certifications: Certification[] = [
 
 /** Ce qui se passe en dehors de l'écran — et qui dit aussi quelque chose du profil. */
 export const personalNotes: {
-  icon: 'globe' | 'star' | 'shield' | 'gauge';
+  icon: 'star' | 'shield' | 'gauge';
   title: string;
   text: string;
 }[] = [
-  {
-    icon: 'globe',
-    title: 'Quatre mois en Suède',
-    text: 'Un long séjour qui a solidifié mon anglais au quotidien et mon goût pour les environnements de travail internationaux.',
-  },
   {
     icon: 'shield',
     title: 'Ju-jitsu, ceinture verte',
