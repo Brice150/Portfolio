@@ -5,7 +5,6 @@ import { SeoService } from '../core/services/seo.service';
 import { IconComponent } from '../shared/components/icon/icon.component';
 import { SectionHeaderComponent } from '../shared/components/section-header/section-header.component';
 import { RevealDirective } from '../shared/directives/reveal.directive';
-import { FeaturedProjectsComponent } from './featured-projects/featured-projects.component';
 import { HeroComponent } from './hero/hero.component';
 import { HighlightGridComponent } from './highlight-grid/highlight-grid.component';
 import { ProfileIntroComponent } from './profile-intro/profile-intro.component';
@@ -18,7 +17,6 @@ import { TechMarqueeComponent } from './tech-marquee/tech-marquee.component';
     HighlightGridComponent,
     ProfileIntroComponent,
     TechMarqueeComponent,
-    FeaturedProjectsComponent,
     SectionHeaderComponent,
     IconComponent,
     RevealDirective,

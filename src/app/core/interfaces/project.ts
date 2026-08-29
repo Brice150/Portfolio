@@ -26,6 +26,8 @@ export interface Project {
   /** Résumé court affiché sur la carte. */
   summary: string;
   year: string;
+  /** Année de début, utilisée pour classer les projets du plus récent au plus ancien. */
+  startYear: number;
   status: ProjectStatus;
   featured: boolean;
   /** Image de couverture (carte + partage social). */

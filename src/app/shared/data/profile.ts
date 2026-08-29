@@ -38,7 +38,6 @@ export const navItems: NavItem[] = [
   { label: 'Compétences', path: '/competences', icon: 'code', hint: 'La stack, en détail' },
   { label: 'Parcours', path: '/parcours', icon: 'route', hint: 'De l’aérospatial au web' },
   { label: 'Projets', path: '/projets', icon: 'briefcase', hint: 'Applications livrées' },
-  { label: 'Expertise', path: '/expertise', icon: 'target', hint: 'Domaines d’intervention' },
   { label: 'Contact', path: '/contact', icon: 'mail', hint: 'Échanger sur un sujet' },
 ];
 

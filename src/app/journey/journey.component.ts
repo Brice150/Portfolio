@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component, OnInit, computed, inject, signal } from '@angular/core';
+import { collaboration } from '../shared/data/expertise';
 import { certifications, milestones, personalNotes } from '../shared/data/journey';
 import { profile, transferableStrengths } from '../shared/data/profile';
 import { MilestoneKind } from '../core/interfaces/experience';
@@ -28,6 +29,7 @@ export class JourneyComponent implements OnInit {
   private readonly seoService = inject(SeoService);
 
   readonly certifications = certifications;
+  readonly collaboration = collaboration;
   readonly strengths = transferableStrengths;
   readonly notes = personalNotes;
   readonly profile = profile;

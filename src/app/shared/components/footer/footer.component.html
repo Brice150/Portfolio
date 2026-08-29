@@ -52,7 +52,9 @@
         <h3>Contact</h3>
         <ul>
           <li>
-            <button type="button" class="copy" [appCopyText]="profile.email" #copyMail="appCopyText">
+            <button type="button" class="copy" [appCopyText]="profile.email"
+              appCopyLabel="Adresse e-mail copiée"
+              #copyMail="appCopyText">
               <app-icon
                 [name]="copyMail.copied() ? 'check' : copyMail.failed() ? 'alert' : 'copy'"
                 size="0.9em"

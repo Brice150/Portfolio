@@ -87,6 +87,37 @@
 </section>
 
 <section class="section shell">
+  <app-section-header
+    eyebrow="Interventions"
+    title="Les situations où j’apporte le plus de valeur"
+    lead="Quatre types de sujets sur lesquels mon apport est le plus net, tirés de ce que j’ai réellement fait en mission."
+    centered
+  />
+
+  <ul class="offers">
+    @for (offer of offers; track offer.id; let i = $index) {
+      <li class="offer" [appReveal]="i * 90">
+        <span class="offer-icon" aria-hidden="true">
+          <app-icon [name]="offer.icon" size="1.3em" />
+        </span>
+
+        <h3>{{ offer.title }}</h3>
+        <p class="pitch">{{ offer.pitch }}</p>
+
+        <ul class="deliverables">
+          @for (item of offer.deliverables; track item) {
+            <li>
+              <app-icon name="check" size="0.95em" />
+              <span>{{ item }}</span>
+            </li>
+          }
+        </ul>
+      </li>
+    }
+  </ul>
+</section>
+
+<section class="section shell">
   <div class="honesty" appReveal>
     <span class="honesty-icon" aria-hidden="true">
       <app-icon name="info" size="1.2em" />
@@ -99,6 +130,23 @@
         arbitrer pour l’équipe. Entre 70 et 85, je livre sans difficulté mais je continue
         d’apprendre. En dessous, j’ai pratiqué en contexte réel sans en faire ma spécialité. Je
         préfère annoncer cela clairement plutôt que d’afficher 5 étoiles partout.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="section shell">
+  <div class="honesty" appReveal>
+    <span class="honesty-icon" aria-hidden="true">
+      <app-icon name="info" size="1.2em" />
+    </span>
+    <div>
+      <h2>Ce que je ne fais pas</h2>
+      <p class="justified">
+        Je ne suis ni designer, ni expert DevOps, ni data engineer. Je sais lire une maquette,
+        travailler avec un pipeline existant et écrire du SQL correct, mais si un besoin porte
+        principalement sur l’un de ces 3 métiers, quelqu’un d’autre sera plus efficace. Autant le
+        dire dès le premier échange plutôt que de le découvrir au troisième sprint.
       </p>
     </div>
   </div>

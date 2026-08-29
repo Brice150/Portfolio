@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component, OnInit, computed, inject, signal } from '@angular/core';
+import { serviceOffers } from '../shared/data/expertise';
 import { practices, skillGroups } from '../shared/data/skills';
 import { SeoService } from '../core/services/seo.service';
 import { IconComponent } from '../shared/components/icon/icon.component';
@@ -23,6 +24,7 @@ export class SkillsComponent implements OnInit {
 
   readonly groups = skillGroups;
   readonly practices = practices;
+  readonly offers = serviceOffers;
 
   /** `null` affiche toutes les familles de compétences. */
   readonly activeGroup = signal<string | null>(null);

@@ -8,6 +8,7 @@ export const projects: Project[] = [
     summary:
       '19 espaces de gestion — repas, sport, finances, tâches, inventaire, voyages — reliés par un assistant conversationnel et partageables entre les profils d’un même foyer.',
     year: '2025 — 2026',
+    startYear: 2025,
     status: 'live',
     featured: true,
     cover: 'projects/LIFE-RISE.webp',
@@ -70,6 +71,7 @@ export const projects: Project[] = [
     summary:
       'Motus, drapeaux et marques : 3 jeux jouables à plusieurs dans une même partie, avec salons, décompte synchronisé et classement en direct.',
     year: '2024',
+    startYear: 2024,
     status: 'live',
     featured: true,
     cover: 'projects/GAMETIME.webp',
@@ -119,6 +121,7 @@ export const projects: Project[] = [
     summary:
       'Un simulateur qui calcule les aides à la rénovation énergétique auxquelles un foyer peut prétendre, à partir de quelques informations simples.',
     year: '2023',
+    startYear: 2023,
     status: 'live',
     featured: false,
     cover: 'projects/SIMULATOR.webp',
@@ -163,6 +166,7 @@ export const projects: Project[] = [
     summary:
       'Profils, préférences, système de correspondance réciproque et messagerie, sur une API Java/Spring Boot et une base relationnelle.',
     year: '2024',
+    startYear: 2024,
     status: 'archive',
     featured: false,
     cover: 'projects/PICKME.webp',
@@ -204,6 +208,7 @@ export const projects: Project[] = [
     summary:
       'Une vitrine technique autant qu’un CV : rendu prérendu, détection de changement sans Zone.js et accessibilité traitée dès la conception plutôt qu’en fin de projet.',
     year: '2026',
+    startYear: 2026,
     status: 'live',
     featured: true,
     cover: 'logo.webp',
@@ -252,6 +257,10 @@ export const projects: Project[] = [
     },
   },
 ];
+
+/** Projets classés du plus récent au plus ancien. */
+export const projectsByDate = (): Project[] =>
+  [...projects].sort((a, b) => b.startYear - a.startYear);
 
 export const projectBySlug = (slug: string): Project | undefined =>
   projects.find((project) => project.slug === slug);

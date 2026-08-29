@@ -1,92 +1,66 @@
 <app-page-hero
   eyebrow="Projets"
   title="Des applications réelles, pas des exercices de tutoriel"
-  lead="Chacun de ces projets a été mené seul, du besoin initial au déploiement. Survolez un écran pour le faire défiler : ce sont les vraies interfaces, pas des maquettes."
+  lead="Chacun de ces projets a été mené seul, du besoin initial au déploiement, et présenté ici du plus récent au plus ancien. Survolez un écran pour le faire défiler : ce sont les vraies interfaces, pas des maquettes."
 />
 
-<section class="section shell showcase" aria-labelledby="vitrine-titre">
-  <h2 id="vitrine-titre" class="sr-only">Aperçu interactif des projets</h2>
-
-  <div class="tabs" role="tablist" aria-label="Choisir un projet à prévisualiser">
-    @for (project of showcaseProjects; track project.slug; let i = $index) {
-      <button
-        type="button"
-        role="tab"
-        class="tab"
-        [class.is-active]="selectedSlug() === project.slug"
-        [attr.aria-selected]="selectedSlug() === project.slug"
-        [attr.tabindex]="selectedSlug() === project.slug ? 0 : -1"
-        [attr.aria-controls]="'panneau-' + project.slug"
-        [id]="'onglet-' + project.slug"
-        (click)="select(project.slug)"
-        (keydown)="onTabKeydown($event, i)"
-      >
-        {{ project.name }}
-      </button>
-    }
-  </div>
-
-  <div
-    class="panel"
-    role="tabpanel"
-    [id]="'panneau-' + selected().slug"
-    [attr.aria-labelledby]="'onglet-' + selected().slug"
-    tabindex="0"
-  >
-    <div class="preview">
-      <app-device-showcase [project]="selected()" />
-    </div>
-
-    <div class="details">
-      <p class="eyebrow">{{ selected().year }}</p>
-      <h3>{{ selected().name }}</h3>
-      <p class="tagline">{{ selected().tagline }}</p>
-      <p class="summary">{{ selected().summary }}</p>
-
-      <ul class="facts">
-        @for (fact of selected().facts; track fact.label) {
-          <li>
-            <span class="fact-label">{{ fact.label }}</span>
-            <span class="fact-value">{{ fact.value }}</span>
-          </li>
-        }
-      </ul>
-
-      <ul class="stack" [attr.aria-label]="'Technologies de ' + selected().name">
-        @for (tech of selected().stack; track tech) {
-          <li class="chip">{{ tech }}</li>
-        }
-      </ul>
-
-      <div class="actions">
-        <a [routerLink]="['/projets', selected().slug]" class="btn">
-          <span>Voir la fiche complète</span>
-          <app-icon name="arrow-right" size="1.05em" />
-        </a>
-
-        @if (selected().links.live) {
-          <a [href]="selected().links.live" target="_blank" rel="noopener" class="btn btn-ghost">
-            <app-icon name="external" size="1.05em" />
-            <span>Ouvrir le site</span>
-          </a>
+<div class="section shell list">
+  @for (project of projects; track project.slug; let i = $index) {
+    <article class="entry" [appReveal]="i * 60">
+      <div class="preview">
+        @if (project.shots) {
+          <app-device-showcase [project]="project" />
+        } @else {
+          <img
+            [src]="imagePath + project.cover"
+            [alt]="'Aperçu du projet ' + project.name"
+            class="cover"
+            loading="lazy"
+            decoding="async"
+          />
         }
       </div>
-    </div>
-  </div>
-</section>
 
-<section class="section shell">
-  <app-section-header
-    eyebrow="Tous les projets"
-    title="5 réalisations, 5 contextes différents"
-    lead="Du calculateur en 2 mois à l’application full-stack sur 9 mois, chaque projet a été choisi pour la difficulté technique qu’il m’imposait."
-  />
+      <div class="details">
+        <p class="eyebrow">{{ project.year }}</p>
+        <h2>{{ project.name }}</h2>
+        <p class="tagline">{{ project.tagline }}</p>
+        <p class="summary">{{ project.summary }}</p>
 
-  <ul class="grid">
-    @for (project of projects; track project.slug; let i = $index) {
-      <li [appReveal]="i * 80">
-        <app-project-card [project]="project" [stackLimit]="5" />
-      </li>
-    }
-  </ul>
-</section>
+        <ul class="facts">
+          @for (fact of project.facts; track fact.label) {
+            <li>
+              <span class="fact-label">{{ fact.label }}</span>
+              <span class="fact-value">{{ fact.value }}</span>
+            </li>
+          }
+        </ul>
+
+        <ul class="stack" [attr.aria-label]="'Technologies de ' + project.name">
+          @for (tech of project.stack; track tech) {
+            <li class="chip">{{ tech }}</li>
+          }
+        </ul>
+
+        <div class="actions">
+          <a [routerLink]="['/projets', project.slug]" class="btn">
+            <span>Voir la fiche complète</span>
+            <app-icon name="arrow-right" size="1.05em" />
+          </a>
+
+          @if (project.links.live) {
+            <a [href]="project.links.live" target="_blank" rel="noopener" class="btn btn-ghost">
+              <app-icon name="external" size="1.05em" />
+              <span>Ouvrir le site</span>
+            </a>
+          } @else if (project.links.github) {
+            <a [href]="project.links.github" target="_blank" rel="noopener" class="btn btn-ghost">
+              <app-icon name="github" size="1.05em" />
+              <span>Code source</span>
+            </a>
+          }
+        </div>
+      </div>
+    </article>
+  }
+</div>

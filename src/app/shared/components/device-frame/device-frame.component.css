@@ -173,7 +173,7 @@
   margin-inline: auto;
   padding: 0.55rem;
   border: 1px solid var(--frame-edge);
-  border-radius: 2.6rem;
+  border-radius: 1.9rem;
   background: linear-gradient(155deg, var(--frame-edge), var(--frame));
   box-shadow: var(--shadow-lg);
 }
@@ -181,25 +181,13 @@
 .phone .bezel {
   position: relative;
   overflow: hidden;
-  border-radius: 2.1rem;
+  border-radius: 1.45rem;
   background: light-dark(#ffffff, #0b0e13);
 }
 
 .phone .screen {
   aspect-ratio: 9 / 19;
-  border-radius: 2.1rem;
-}
-
-.island {
-  position: absolute;
-  top: 0.55rem;
-  left: 50%;
-  translate: -50% 0;
-  z-index: 2;
-  width: 32%;
-  height: 1.35rem;
-  border-radius: var(--r-full);
-  background: #05070a;
+  border-radius: 1.45rem;
 }
 
 .home-bar {

@@ -30,18 +30,13 @@ export const routes: Routes = [
       ),
   },
   {
-    path: 'expertise',
-    loadComponent: () =>
-      import('./expertise/expertise.component').then((m) => m.ExpertiseComponent),
-    title: 'Expertise | Brice Lecomte',
-  },
-  {
     path: 'contact',
     loadComponent: () => import('./contact/contact.component').then((m) => m.ContactComponent),
     title: 'Contact | Brice Lecomte',
   },
   // Anciennes URL : les liens déjà partagés continuent de fonctionner.
-  { path: 'prestations', redirectTo: 'expertise', pathMatch: 'full' },
+  { path: 'prestations', redirectTo: 'competences', pathMatch: 'full' },
+  { path: 'expertise', redirectTo: 'competences', pathMatch: 'full' },
   { path: 'a-propos', redirectTo: 'parcours', pathMatch: 'full' },
   {
     path: 'not-found',

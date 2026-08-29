@@ -8,7 +8,6 @@ import {
 } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { toSignal } from '@angular/core/rxjs-interop';
 import { profile } from '../shared/data/profile';
 import { SeoService } from '../core/services/seo.service';
 import { ToastService } from '../core/services/toast.service';
@@ -53,7 +52,6 @@ export class ContactComponent implements OnInit {
   readonly form = this.formBuilder.nonNullable.group({
     name: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(60)]],
     email: ['', [Validators.required, Validators.email, Validators.maxLength(120)]],
-    subject: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(90)]],
     message: [
       '',
       [Validators.required, Validators.minLength(20), Validators.maxLength(MESSAGE_MAX_LENGTH)],
@@ -62,11 +60,6 @@ export class ContactComponent implements OnInit {
     website: [''],
   });
 
-  private readonly messageValue = toSignal(this.form.controls.message.valueChanges, {
-    initialValue: '',
-  });
-
-  readonly messageLength = computed(() => this.messageValue().length);
   readonly isSending = computed(() => this.status() === 'sending');
 
   readonly channels = [
@@ -113,15 +106,14 @@ export class ContactComponent implements OnInit {
     this.status.set('sending');
     this.errorMessage.set('');
 
-    const { name, email, subject, message } = this.form.getRawValue();
+    const { name, email, message } = this.form.getRawValue();
 
     this.http
       .post(FORMSPREE_ENDPOINT, {
         name,
         _replyto: email,
         email,
-        _subject: subject,
-        subject,
+        _subject: `Message de ${name} via le portfolio`,
         message,
       })
       .subscribe({
