@@ -81,7 +81,7 @@ export const projects: Project[] = [
     },
     stack: ['Angular', 'TypeScript', 'Angular Material', 'Firebase'],
     facts: [
-      { label: 'Durée', value: '6 mois (temps libre)' },
+      { label: 'Durée', value: '1 an (temps libre)' },
       { label: 'Jeux', value: '3' },
       { label: 'Mode', value: 'Multijoueur' },
       { label: 'Statut', value: 'En ligne' },
@@ -165,17 +165,17 @@ export const projects: Project[] = [
     tagline: 'Une application de rencontre construite de zéro, front et back',
     summary:
       'Profils, préférences, système de correspondance réciproque et messagerie, sur une API Java/Spring Boot et une base relationnelle.',
-    year: '2024',
-    startYear: 2024,
+    year: '2023 — 2024',
+    startYear: 2023,
     status: 'archive',
     featured: false,
     cover: 'projects/PICKME.webp',
     stack: ['Angular', 'TypeScript', 'Java', 'Spring Boot', 'PostgreSQL'],
     facts: [
-      { label: 'Durée', value: '6 mois (temps libre)' },
+      { label: 'Durée', value: '1 an (temps libre)' },
       { label: 'Nature', value: 'Full-stack' },
       { label: 'Équipe', value: 'Solo' },
-      { label: 'Statut', value: 'Démo vidéo' },
+      { label: 'Statut', value: 'Code ouvert' },
     ],
     context:
       'Le projet qui tient le front et le back en même temps : un front Angular exigeant en interactions, et un back Java/Spring avec une vraie modélisation relationnelle. Une application de rencontre est un excellent prétexte — elle concentre authentification, upload, filtrage, appariement et temps réel.',
@@ -186,7 +186,7 @@ export const projects: Project[] = [
       },
       {
         title: 'Pourquoi il n’est pas en ligne',
-        body: 'Héberger une application de rencontre implique de traiter des données personnelles sensibles et des photos d’utilisateurs réels. Le projet reste donc démontré en vidéo et ouvert en lecture sur GitHub, ce qui est plus honnête que de laisser tourner un service non modéré.',
+        body: 'Héberger une application de rencontre implique de traiter des données personnelles sensibles et des photos d’utilisateurs réels. Le code reste ouvert en lecture sur GitHub, ce qui est plus honnête que de laisser tourner un service que je ne modère pas.',
       },
     ],
     features: [
@@ -198,7 +198,6 @@ export const projects: Project[] = [
     ],
     links: {
       github: 'https://github.com/Brice150/PICKME',
-      video: 'PICKME.mp4',
     },
   },
   {

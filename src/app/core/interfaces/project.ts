@@ -3,8 +3,6 @@ export type ProjectStatus = 'live' | 'archive' | 'wip';
 export interface ProjectLink {
   live?: string;
   github?: string;
-  /** Démonstration vidéo, pour les projets sans démo publique en ligne. */
-  video?: string;
 }
 
 export interface ProjectShots {

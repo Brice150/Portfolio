@@ -57,13 +57,15 @@
 
           @if (project.links.live) {
             <a [href]="project.links.live" target="_blank" rel="noopener" class="btn btn-ghost">
-              <app-icon name="external" size="1.05em" />
-              <span>Ouvrir le site</span>
+              <span>Visiter le site</span>
+              <app-icon name="arrow-up-right" size="1.05em" />
             </a>
-          } @else if (project.links.github) {
+          }
+
+          @if (project.links.github) {
             <a [href]="project.links.github" target="_blank" rel="noopener" class="btn btn-ghost">
-              <app-icon name="github" size="1.05em" />
               <span>Code source</span>
+              <app-icon name="arrow-up-right" size="1.05em" />
             </a>
           }
         </div>

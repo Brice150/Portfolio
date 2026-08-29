@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component, OnInit, inject } from '@angular/core';
+import { collaboration } from '../shared/data/expertise';
 import { highlights, principles, yearsOfExperience } from '../shared/data/profile';
 import { skillGroups } from '../shared/data/skills';
 import { SeoService } from '../core/services/seo.service';
@@ -30,6 +31,7 @@ export class HomeComponent implements OnInit {
 
   readonly highlights = highlights;
   readonly principles = principles;
+  readonly collaboration = collaboration;
   readonly years = yearsOfExperience();
 
   readonly technologies = skillGroups

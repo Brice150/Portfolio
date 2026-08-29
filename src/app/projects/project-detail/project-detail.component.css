@@ -18,29 +18,40 @@
 }
 
 .breadcrumb {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.75rem;
 }
 
 .breadcrumb ol {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
-  font-size: 0.82rem;
-  color: var(--text-faint);
+  align-items: center;
+  gap: 0.55rem;
+  font-size: 0.95rem;
+  color: var(--text-muted);
 }
 
 .breadcrumb li + li::before {
   content: '/';
-  margin-right: 0.5rem;
+  margin-right: 0.55rem;
   color: var(--border-strong);
 }
 
 .breadcrumb a {
+  padding: 0.2rem 0.1rem;
+  color: var(--accent);
+  font-weight: 500;
   transition: color var(--dur-fast) var(--ease);
 }
 
 .breadcrumb a:hover {
-  color: var(--accent);
+  color: var(--accent-hover);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.breadcrumb [aria-current] {
+  color: var(--text);
+  font-weight: 600;
 }
 
 h1 {
@@ -96,19 +107,6 @@ h1 {
 h2 {
   margin-bottom: 0.9rem;
   font-size: var(--step-2);
-}
-
-.video-note {
-  max-width: 68ch;
-  margin-bottom: 1.5rem;
-  color: var(--text-muted);
-}
-
-.demo {
-  width: 100%;
-  border: 1px solid var(--border);
-  border-radius: var(--r-md);
-  background: #000;
 }
 
 /* --- Corps --------------------------------------------------------------- */

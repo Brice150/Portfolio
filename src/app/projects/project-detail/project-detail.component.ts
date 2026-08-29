@@ -22,7 +22,6 @@ export class ProjectDetailComponent implements OnInit {
   private readonly seoService = inject(SeoService);
   private readonly router = inject(Router);
 
-  readonly videoPath = environment.videoPath;
   readonly imagePath = environment.imagePath;
 
   readonly project = computed(() => projectBySlug(this.slug()));

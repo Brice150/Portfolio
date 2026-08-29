@@ -36,7 +36,7 @@ export const serviceOffers: ServiceOffer[] = [
     deliverables: [
       'Audit de chargement : bundle, lazy loading, rendu initial',
       'Passage en OnPush et assainissement de la détection de changement',
-      'Analyse des requêtes coûteuses et des N+1 côté back',
+      'Analyse des requêtes coûteuses côté base de données',
       'Mise en place de SSR ou de prerendering quand c’est pertinent',
     ],
   },

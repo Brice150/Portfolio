@@ -19,14 +19,14 @@
         <div class="actions">
           @if (current.links.live) {
             <a [href]="current.links.live" target="_blank" rel="noopener" class="btn">
-              <app-icon name="external" size="1.05em" />
-              <span>Ouvrir le site</span>
+              <span>Visiter le site</span>
+              <app-icon name="arrow-up-right" size="1.05em" />
             </a>
           }
           @if (current.links.github) {
             <a [href]="current.links.github" target="_blank" rel="noopener" class="btn btn-ghost">
-              <app-icon name="github" size="1.05em" />
               <span>Code source</span>
+              <app-icon name="arrow-up-right" size="1.05em" />
             </a>
           }
         </div>
@@ -45,26 +45,6 @@
     @if (current.shots) {
       <section class="section shell" aria-label="Aperçu de l’interface">
         <app-device-showcase [project]="current" />
-      </section>
-    }
-
-    @if (current.links.video) {
-      <section class="section shell" aria-labelledby="demo-titre">
-        <h2 id="demo-titre">Démonstration vidéo</h2>
-        <p class="video-note justified">
-          Ce projet n’est pas hébergé publiquement&nbsp;: il manipule des données personnelles que
-          je ne souhaite pas exposer. Voici l’application en fonctionnement.
-        </p>
-        <video
-          class="demo"
-          [src]="videoPath + current.links.video"
-          [poster]="imagePath + current.cover"
-          controls
-          preload="none"
-          playsinline
-        >
-          Votre navigateur ne prend pas en charge la lecture vidéo.
-        </video>
       </section>
     }
 

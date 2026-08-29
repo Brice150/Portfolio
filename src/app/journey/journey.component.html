@@ -95,24 +95,3 @@
     </ul>
   </div>
 </section>
-
-<section class="section shell">
-  <app-section-header
-    eyebrow="Collaboration"
-    [title]="collaboration.title"
-    lead="Ce qui compte autant que la technique, et qui se voit dès les premières semaines d’une mission."
-    centered
-  />
-
-  <ul class="collab">
-    @for (point of collaboration.points; track point.title; let i = $index) {
-      <li class="collab-item" [appReveal]="i * 80">
-        <app-icon [name]="point.icon" size="1.2em" />
-        <div>
-          <h3>{{ point.title }}</h3>
-          <p>{{ point.text }}</p>
-        </div>
-      </li>
-    }
-  </ul>
-</section>
