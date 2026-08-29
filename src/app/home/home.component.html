@@ -1,0 +1,36 @@
+<app-hero />
+
+<section class="section shell" aria-label="Chiffres clés">
+  <app-highlight-grid [items]="highlights" />
+</section>
+
+<app-tech-marquee [items]="technologies" />
+
+<section id="profil" class="section shell">
+  <app-profile-intro />
+</section>
+
+<section class="section shell" aria-labelledby="principes-titre">
+  <app-section-header
+    eyebrow="Méthode"
+    title="Ce qui guide le code au quotidien"
+    lead="Pas des slogans : les arbitrages qui se défendent en revue de code, tous les jours."
+    centered
+  />
+
+  <ul class="principles">
+    @for (principle of principles; track principle.title; let i = $index) {
+      <li class="principle" [appReveal]="i * 90">
+        <span class="principle-icon" aria-hidden="true">
+          <app-icon [name]="principle.icon" size="1.2em" />
+        </span>
+        <h3>{{ principle.title }}</h3>
+        <p class="justified">{{ principle.description }}</p>
+      </li>
+    }
+  </ul>
+</section>
+
+<section class="section shell">
+  <app-featured-projects />
+</section>

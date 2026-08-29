@@ -7,6 +7,9 @@
 main {
   flex: 1;
   padding-top: var(--nav-h);
+  /* Isole le contenu de page pour que la transition de vue ne fasse pas
+     clignoter l’entête ni le pied de page, qui ne changent pas. */
+  view-transition-name: page;
 }
 
 main:focus {

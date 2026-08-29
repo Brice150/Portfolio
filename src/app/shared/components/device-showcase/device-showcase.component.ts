@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, booleanAttribute, computed, input } from '@angular/core';
-import { Project } from '../../../core/interface/project';
+import { Project } from '../../../core/interfaces/project';
 import { DeviceFrameComponent } from '../device-frame/device-frame.component';
 
 /**

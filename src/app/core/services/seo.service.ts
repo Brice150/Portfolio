@@ -1,7 +1,7 @@
 import { DOCUMENT } from '@angular/common';
 import { Injectable, inject } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
-import { SITE_URL, profile } from '../data/profile';
+import { SITE_URL, profile } from '../../shared/data/profile';
 
 export interface PageSeo {
   title: string;

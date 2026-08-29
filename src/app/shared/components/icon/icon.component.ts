@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, computed, input } from '@angular/core';
-import { ICONS, IconDefinition } from '../../../core/data/icons';
-import { IconName } from '../../../core/interface/icon';
+import { ICONS, IconDefinition } from '../../data/icons';
+import { IconName } from '../../../core/interfaces/icon';
 
 /**
  * Icône SVG inline. Décorative par défaut (aria-hidden) ; passer `label`

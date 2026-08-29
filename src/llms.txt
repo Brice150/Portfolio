@@ -23,9 +23,8 @@
 ## Pages
 
 - [Accueil](https://portfolio-brice.web.app/) : synthèse du profil, chiffres clés, projets mis en avant
-- [À propos](https://portfolio-brice.web.app/a-propos) : récit détaillé de la reconversion et du parcours
 - [Compétences](https://portfolio-brice.web.app/competences) : stack détaillée avec niveau et usage réel
-- [Parcours](https://portfolio-brice.web.app/parcours) : missions, formation, certifications
+- [Parcours](https://portfolio-brice.web.app/parcours) : missions détaillées, reconversion, formation, certifications
 - [Projets](https://portfolio-brice.web.app/projets) : cinq applications avec fiches détaillées
 - [Expertise](https://portfolio-brice.web.app/expertise) : domaines d'intervention et façon de travailler
 - [Contact](https://portfolio-brice.web.app/contact) : formulaire, e-mail, téléphone, LinkedIn

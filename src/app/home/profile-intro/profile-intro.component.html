@@ -1,0 +1,80 @@
+<div class="layout">
+  <div class="prose" appReveal>
+    <app-section-header
+      eyebrow="Le profil"
+      title="Un ingénieur devenu développeur, et qui n’a rien laissé en route"
+    />
+
+    <p class="justified">
+      Diplômé ingénieur en aérospatial de l’ISAE-ENSMA en 2021, j’ai choisi le développement
+      logiciel plutôt que l’aéronautique. Non par défaut&nbsp;: dans chaque projet d’école, la
+      partie qui retenait mon attention était le code, pas la turbine. Certification Java validée
+      dans la foulée, premiers projets web construits seul, puis entrée en ESN comme développeur
+      sans repasser par la case stage.
+    </p>
+
+    <p class="justified">
+      Depuis, quatre missions sur des applications métier à forte contrainte réglementaire. Chez
+      Sopra Steria, d’abord des flux de données Talend sur des aéronefs militaires, puis deux ans
+      d’Angular et de Java sur la maintenance de véhicules terrestres, pour le ministère des
+      Armées. Chez Capgemini, la gestion des navires de plaisance pour la DGAMPA, avec le
+      développement complet de la taxation 2026. Aujourd’hui chez Open, toujours à la DGAMPA&nbsp;:
+      la refonte de l’application de gestion des parcelles du cadastre aquacole, en Angular et
+      Java, bâtie sur le Design Système de l’État et menée en conformité RGAA sur l’ensemble du
+      périmètre, hors partie cartographique.
+    </p>
+
+    <p class="justified">
+      Ce qui a évolué au fil de ces missions, c’est moins la stack que le périmètre&nbsp;: référent
+      frontend au bout de deux ans, pilotage d’une équipe de deux développeurs sur les jalons
+      client, encadrement d’un stagiaire puis d’un alternant. La valeur d’un développeur confirmé
+      ne se mesure pas à la quantité de code produit, mais à ce que l’équipe livre sereinement
+      autour de lui.
+    </p>
+
+    <p class="justified">
+      L’IA fait aujourd’hui partie de l’outillage quotidien — explorer une piste, générer un
+      squelette, relire un diff — avec des prompts ciblés et un contexte minimal pour en maîtriser
+      le coût en tokens. Aucune ligne n’est livrée sans avoir été relue, comprise et assumée. En
+      parallèle, plusieurs applications conçues et déployées seul, dont Life&nbsp;Rise, qui réunit
+      dix-neuf modules, un assistant conversationnel et du partage entre profils&nbsp;: le terrain
+      d’essai des nouveautés d’Angular avant de les proposer en mission.
+    </p>
+
+    <a routerLink="/parcours" class="btn btn-soft">
+      <span>Voir le parcours détaillé</span>
+      <app-icon name="arrow-right" size="1.05em" />
+    </a>
+  </div>
+
+  <aside class="facts" appReveal="120" aria-label="Repères">
+    <h3>Repères</h3>
+    <dl>
+      @for (fact of facts; track fact.label) {
+        <div class="fact">
+          <dt>
+            <app-icon [name]="fact.icon" size="1.05em" />
+            <span>{{ fact.label }}</span>
+          </dt>
+          <dd>{{ fact.value }}</dd>
+        </div>
+      }
+    </dl>
+
+    <button type="button" class="mail-link" [appCopyText]="profile.email" #copyMail="appCopyText">
+      <app-icon
+        [name]="copyMail.copied() ? 'check' : copyMail.failed() ? 'alert' : 'copy'"
+        size="1.05em"
+      />
+      <span>
+        @if (copyMail.copied()) {
+          Adresse copiée
+        } @else if (copyMail.failed()) {
+          Copie impossible — {{ profile.email }}
+        } @else {
+          {{ profile.email }}
+        }
+      </span>
+    </button>
+  </aside>
+</div>

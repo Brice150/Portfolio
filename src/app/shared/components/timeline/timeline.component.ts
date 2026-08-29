@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, booleanAttribute, input } from '@angular/core';
 import { environment } from '../../../../environments/environment';
-import { Milestone, MilestoneKind } from '../../../core/interface/experience';
-import { IconName } from '../../../core/interface/icon';
+import { Milestone, MilestoneKind } from '../../../core/interfaces/experience';
+import { IconName } from '../../../core/interfaces/icon';
 import { IconComponent } from '../icon/icon.component';
 import { RevealDirective } from '../../directives/reveal.directive';
 

@@ -1,0 +1,45 @@
+/* Six convictions : grille 3x2 sur grand écran. */
+.principles {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 21rem), 1fr));
+}
+
+.principle {
+  padding: 1.5rem;
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  background: var(--surface);
+  transition:
+    border-color var(--dur) var(--ease),
+    background var(--dur) var(--ease);
+}
+
+.principle:hover {
+  border-color: color-mix(in srgb, var(--accent) 40%, transparent);
+  background:
+    radial-gradient(120% 120% at 50% 0%, var(--accent-soft), transparent 60%),
+    var(--surface);
+}
+
+.principle-icon {
+  display: grid;
+  place-items: center;
+  width: 2.6rem;
+  height: 2.6rem;
+  margin-bottom: 1rem;
+  border: 1px solid var(--border);
+  border-radius: var(--r-sm);
+  color: var(--accent);
+}
+
+.principle h3 {
+  margin-bottom: 0.6rem;
+  font-size: 1.08rem;
+}
+
+.principle p {
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: var(--text-muted);
+}
