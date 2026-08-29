@@ -334,8 +334,9 @@ ol {
   color: var(--text-muted);
 }
 
-/* Texte long en pavé justifié. La césure s'appuie sur le `lang="fr"` du
-   document, sans quoi la justification creuserait des rivières. */
+/* Texte long en pavé justifié. À réserver aux colonnes larges : sur une carte
+   étroite, la justification creuse des rivières. La césure s'appuie sur le
+   `lang="fr"` du document. */
 .justified {
   text-align: justify;
   text-wrap: pretty;

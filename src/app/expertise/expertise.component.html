@@ -17,7 +17,7 @@
         </span>
 
         <h2>{{ offer.title }}</h2>
-        <p class="pitch justified">{{ offer.pitch }}</p>
+        <p class="pitch">{{ offer.pitch }}</p>
 
         <ul class="deliverables">
           @for (item of offer.deliverables; track item) {
@@ -46,7 +46,7 @@
         <app-icon [name]="point.icon" size="1.2em" />
         <div>
           <h3>{{ point.title }}</h3>
-          <p class="justified">{{ point.text }}</p>
+          <p>{{ point.text }}</p>
         </div>
       </li>
     }
