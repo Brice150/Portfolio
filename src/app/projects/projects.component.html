@@ -2,10 +2,17 @@
   eyebrow="Projets"
   title="Des applications réelles, pas des exercices de tutoriel"
   lead="Chacun de ces projets a été mené seul, du besoin initial au déploiement, et présenté ici du plus récent au plus ancien. Survolez un écran pour le faire défiler : ce sont les vraies interfaces, pas des maquettes."
-/>
+>
+  <app-filter-bar
+    [options]="filters"
+    [active]="activeProject()"
+    label="Filtrer les projets"
+    (changed)="selectProject($event)"
+  />
+</app-page-hero>
 
 <div class="section shell list">
-  @for (project of projects; track project.slug; let i = $index) {
+  @for (project of visibleProjects(); track project.slug; let i = $index) {
     <article class="entry" [appReveal]="i * 60">
       <div class="preview">
         @if (project.shots) {

@@ -1,9 +1,10 @@
-import { ChangeDetectionStrategy, Component, OnInit, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit, computed, inject, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { environment } from '../../environments/environment';
 import { projectsByDate } from '../shared/data/projects';
 import { SeoService } from '../core/services/seo.service';
 import { DeviceShowcaseComponent } from '../shared/components/device-showcase/device-showcase.component';
+import { FilterBarComponent, FilterOption } from '../shared/components/filter-bar/filter-bar.component';
 import { IconComponent } from '../shared/components/icon/icon.component';
 import { PageHeroComponent } from '../shared/components/page-hero/page-hero.component';
 import { RevealDirective } from '../shared/directives/reveal.directive';
@@ -13,6 +14,7 @@ import { RevealDirective } from '../shared/directives/reveal.directive';
   imports: [
     RouterLink,
     PageHeroComponent,
+    FilterBarComponent,
     DeviceShowcaseComponent,
     IconComponent,
     RevealDirective,
@@ -27,6 +29,20 @@ export class ProjectsComponent implements OnInit {
   readonly projects = projectsByDate();
   readonly imagePath = environment.imagePath;
 
+  readonly activeProject = signal('all');
+
+  readonly filters: FilterOption[] = [
+    { value: 'all', label: 'Tous' },
+    ...this.projects.map((project) => ({ value: project.slug, label: project.name })),
+  ];
+
+  readonly visibleProjects = computed(() => {
+    const active = this.activeProject();
+    return active === 'all'
+      ? this.projects
+      : this.projects.filter((project) => project.slug === active);
+  });
+
   ngOnInit(): void {
     this.seoService.setPage({
       title: 'Projets | Applications web Angular & Java — Brice Lecomte',
@@ -34,5 +50,9 @@ export class ProjectsComponent implements OnInit {
         '5 applications web conçues, développées et déployées de bout en bout : gestion du quotidien, quiz multijoueur, simulateur d’aides, application full-stack Java et ce portfolio.',
       path: '/projets',
     });
+  }
+
+  selectProject(slug: string): void {
+    this.activeProject.set(slug);
   }
 }

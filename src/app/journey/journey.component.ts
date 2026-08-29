@@ -5,6 +5,7 @@ import { profile, transferableStrengths } from '../shared/data/profile';
 import { MilestoneKind } from '../core/interfaces/experience';
 import { SeoService } from '../core/services/seo.service';
 import { IconComponent } from '../shared/components/icon/icon.component';
+import { FilterBarComponent, FilterOption } from '../shared/components/filter-bar/filter-bar.component';
 import { PageHeroComponent } from '../shared/components/page-hero/page-hero.component';
 import { SectionHeaderComponent } from '../shared/components/section-header/section-header.component';
 import { TimelineComponent } from '../shared/components/timeline/timeline.component';
@@ -16,6 +17,7 @@ type JourneyFilter = 'all' | MilestoneKind;
   selector: 'app-journey',
   imports: [
     PageHeroComponent,
+    FilterBarComponent,
     SectionHeaderComponent,
     TimelineComponent,
     IconComponent,
@@ -36,7 +38,7 @@ export class JourneyComponent implements OnInit {
 
   readonly filter = signal<JourneyFilter>('all');
 
-  readonly filters: { value: JourneyFilter; label: string }[] = [
+  readonly filters: FilterOption[] = [
     { value: 'all', label: 'Tout le parcours' },
     { value: 'work', label: 'Expériences' },
     { value: 'turning-point', label: 'Reconversion' },
@@ -57,7 +59,7 @@ export class JourneyComponent implements OnInit {
     });
   }
 
-  setFilter(value: JourneyFilter): void {
-    this.filter.set(value);
+  setFilter(value: string): void {
+    this.filter.set(value as JourneyFilter);
   }
 }

@@ -3,19 +3,12 @@
   title="4 missions, un diplôme d’ingénieur et une bascule assumée"
   lead="Chaque étape avec son contexte réel, les réalisations précises et la stack employée — détaillée mission par mission lorsqu’elles se sont succédé chez un même employeur."
 >
-  <div class="filters" role="group" aria-label="Filtrer le parcours">
-    @for (option of filters; track option.value) {
-      <button
-        type="button"
-        class="filter"
-        [class.is-active]="filter() === option.value"
-        [attr.aria-pressed]="filter() === option.value"
-        (click)="setFilter(option.value)"
-      >
-        {{ option.label }}
-      </button>
-    }
-  </div>
+  <app-filter-bar
+    [options]="filters"
+    [active]="filter()"
+    label="Filtrer le parcours"
+    (changed)="setFilter($event)"
+  />
 </app-page-hero>
 
 <section class="section shell">

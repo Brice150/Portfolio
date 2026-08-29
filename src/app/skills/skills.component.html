@@ -7,29 +7,12 @@
     ' briques que j’utilise, ce que j’en fais réellement en mission et le niveau auquel je me situe honnêtement.'
   "
 >
-  <div class="filters" role="group" aria-label="Filtrer par famille de compétences">
-    <button
-      type="button"
-      class="filter"
-      [class.is-active]="activeGroup() === null"
-      [attr.aria-pressed]="activeGroup() === null"
-      (click)="selectGroup(null)"
-    >
-      Tout
-    </button>
-    @for (group of groups; track group.id) {
-      <button
-        type="button"
-        class="filter"
-        [class.is-active]="activeGroup() === group.id"
-        [attr.aria-pressed]="activeGroup() === group.id"
-        (click)="selectGroup(group.id)"
-      >
-        <app-icon [name]="group.icon" size="1em" />
-        <span>{{ group.title }}</span>
-      </button>
-    }
-  </div>
+  <app-filter-bar
+    [options]="filters"
+    [active]="activeGroup()"
+    label="Filtrer par famille de compétences"
+    (changed)="selectGroup($event)"
+  />
 </app-page-hero>
 
 <section class="section shell">
