@@ -42,7 +42,7 @@ export class ProjectsComponent implements OnInit {
     this.seoService.setPage({
       title: 'Projets | Applications web Angular & Java — Brice Lecomte',
       description:
-        'Cinq applications web conçues, développées et déployées de bout en bout : gestion du quotidien, quiz multijoueur, simulateur d’aides, application full-stack Java et ce portfolio.',
+        '5 applications web conçues, développées et déployées de bout en bout : gestion du quotidien, quiz multijoueur, simulateur d’aides, application full-stack Java et ce portfolio.',
       path: '/projets',
     });
   }

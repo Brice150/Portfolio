@@ -50,21 +50,21 @@ export const highlights: Highlight[] = [
     value: `${yearsOfExperience()} ans`,
     label: 'd’expérience Full-Stack',
     detail:
-      'Quatre missions en ESN sur des domaines réglementés — défense puis administration maritime. Toujours du Angular en front et du Java/Spring en back.',
+      '4 missions en ESN sur des domaines réglementés — défense puis administration maritime. Toujours du Angular en front et du Java/Spring en back.',
   },
   {
     icon: 'users',
     value: '4',
     label: 'développeurs accompagnés',
     detail:
-      'Référent frontend, pilotage d’une équipe de deux développeurs, encadrement d’un stagiaire puis d’un alternant, revues de code au quotidien.',
+      'Référent frontend, pilotage d’une équipe de 2 développeurs, encadrement d’un stagiaire puis d’un alternant, revues de code au quotidien.',
   },
   {
     icon: 'rocket',
     value: '5',
     label: 'projets personnels aboutis',
     detail:
-      'Menés de bout en bout : conception, développement, déploiement et maintenance. Quatre sont en ligne, le cinquième est démontré en vidéo.',
+      'Menés de bout en bout : conception, développement, déploiement et maintenance. 4 sont en ligne, le 5e est démontré en vidéo.',
   },
   {
     icon: 'award',
@@ -86,7 +86,7 @@ export const principles: WorkPrinciple[] = [
     icon: 'gauge',
     title: 'La performance se mesure',
     description:
-      'Lazy loading, OnPush, prerendering, requêtes SQL tracées : le temps perdu se profile, il ne se devine pas. Sur mes missions, l’amélioration continue des performances fait partie du contrat.',
+      'Lazy loading, prerendering, requêtes SQL tracées : le temps perdu se profile, il ne se devine pas. Sur mes missions, l’amélioration continue des performances fait partie du contrat.',
   },
   {
     icon: 'accessibility',
@@ -120,7 +120,7 @@ export const transferableStrengths: WorkPrinciple[] = [
     icon: 'target',
     title: 'La rigueur du calcul',
     description:
-      'Cinq ans à dimensionner des systèmes où l’approximation coûte cher, et le réflexe durable de vérifier les hypothèses avant de construire dessus.',
+      '5 ans à dimensionner des systèmes où l’approximation coûte cher, et le réflexe durable de vérifier les hypothèses avant de construire dessus.',
   },
   {
     icon: 'layers',

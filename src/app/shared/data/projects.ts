@@ -44,7 +44,7 @@ export const projects: Project[] = [
       },
       {
         title: 'Le collectif, pas seulement le solo',
-        body: 'Jusqu’à six profils par compte, avec partage de recettes, de séances de sport et d’éléments d’inventaire, gestion à plusieurs des tâches, des repas et des finances communes, et une messagerie temps réel avec réactions. C’est la partie qui a demandé le plus de soin sur le modèle de données : décider ce qui reste strictement personnel et ce qui devient collectif.',
+        body: 'Jusqu’à 6 profils par compte, avec partage de recettes, de séances de sport et d’éléments d’inventaire, gestion à plusieurs des tâches, des repas et des finances communes, et une messagerie temps réel avec réactions. C’est la partie qui a demandé le plus de soin sur le modèle de données : décider ce qui reste strictement personnel et ce qui devient collectif.',
       },
       {
         title: 'Ce que le projet a apporté',
@@ -55,7 +55,7 @@ export const projects: Project[] = [
       '19 espaces de gestion, du tableau de bord aux prévisions',
       'Assistant conversationnel capable de créer, modifier et supprimer après confirmation',
       'Complétion automatique des formulaires à partir du contexte',
-      'Jusqu’à six profils par compte, avec partage d’éléments entre profils',
+      'Jusqu’à 6 profils par compte, avec partage d’éléments entre profils',
       'Messagerie temps réel avec réactions',
       'Données hébergées en Europe et conformité RGPD',
     ],
@@ -68,7 +68,7 @@ export const projects: Project[] = [
     name: 'Game Time',
     tagline: 'Des jeux de réflexion à plusieurs, en temps réel',
     summary:
-      'Motus, drapeaux et marques : trois jeux jouables à plusieurs dans une même partie, avec salons, décompte synchronisé et classement en direct.',
+      'Motus, drapeaux et marques : 3 jeux jouables à plusieurs dans une même partie, avec salons, décompte synchronisé et classement en direct.',
     year: '2024',
     status: 'live',
     featured: true,
@@ -92,7 +92,7 @@ export const projects: Project[] = [
         body: 'La difficulté d’un jeu multijoueur n’est pas le jeu : c’est le temps. Chaque client doit voir la même question au même moment, le décompte doit rester cohérent malgré les latences, et une déconnexion ne doit pas bloquer la partie pour les autres. La logique s’articule autour d’un état de partie unique stocké dans Firestore, dont chaque écran n’est qu’une projection.',
       },
       {
-        title: 'Trois jeux, une seule mécanique',
+        title: '3 jeux, une seule mécanique',
         body: 'Motus, reconnaissance de drapeaux et identification de marques partagent le même moteur de partie : salon, manches, scores, classement. Seule la règle de validation d’une réponse change. Cette abstraction a permis d’ajouter le troisième jeu en une fraction du temps qu’avait demandé le premier.',
       },
       {
@@ -101,7 +101,7 @@ export const projects: Project[] = [
       },
     ],
     features: [
-      'Trois jeux : Motus, drapeaux et marques',
+      '3 jeux : Motus, drapeaux et marques',
       'Salons multijoueurs avec plusieurs participants simultanés',
       'Décompte synchronisé et enchaînement automatique des manches',
       'Classement mis à jour en direct entre chaque question',
@@ -138,7 +138,7 @@ export const projects: Project[] = [
     sections: [
       {
         title: 'Traduire une règle en code',
-        body: 'Le cœur du projet est un moteur de règles : des barèmes, des plafonds, des conditions de cumul. Ces règles sont isolées de l’interface pour qu’une évolution réglementaire se traduise par un changement de données, pas par une réécriture de composants. Le même réflexe a servi trois ans plus tard sur la taxation 2026, en mission.',
+        body: 'Le cœur du projet est un moteur de règles : des barèmes, des plafonds, des conditions de cumul. Ces règles sont isolées de l’interface pour qu’une évolution réglementaire se traduise par un changement de données, pas par une réécriture de composants. Le même réflexe a servi 3 ans plus tard sur la taxation 2026, en mission.',
       },
       {
         title: 'Un parcours guidé',
@@ -174,7 +174,7 @@ export const projects: Project[] = [
       { label: 'Statut', value: 'Démo vidéo' },
     ],
     context:
-      'Le projet qui tient les deux bouts de la chaîne en même temps : un front Angular exigeant en interactions, et un back Java/Spring avec une vraie modélisation relationnelle. Une application de rencontre est un excellent prétexte — elle concentre authentification, upload, filtrage, appariement et temps réel.',
+      'Le projet qui tient le front et le back en même temps : un front Angular exigeant en interactions, et un back Java/Spring avec une vraie modélisation relationnelle. Une application de rencontre est un excellent prétexte — elle concentre authentification, upload, filtrage, appariement et temps réel.',
     sections: [
       {
         title: 'Modéliser la correspondance',
@@ -229,11 +229,11 @@ export const projects: Project[] = [
     sections: [
       {
         title: 'Zoneless et signals',
-        body: 'L’application tourne sans Zone.js : l’état est porté par des signals, tous les composants sont en stratégie OnPush, et Angular ne recalcule que ce qui a réellement changé. Le résultat est un bundle plus léger et une détection de changement prévisible.',
+        body: 'L’application tourne sans Zone.js : l’état est porté par des signals et tous les composants sont en stratégie OnPush. Le résultat est un bundle plus léger et une détection de changement prévisible. C’est le premier projet où je pousse ce parti pris jusqu’au bout, et je le reprends depuis sur mes développements personnels.',
       },
       {
         title: 'Prerendering statique',
-        body: 'Chaque route, fiches projet comprises, est générée en HTML au moment du build. Firebase Hosting ne sert que des fichiers statiques, le contenu est visible immédiatement et indexable, puis l’application s’hydrate avec rejeu des évènements pour ne perdre aucun clic.',
+        body: 'Chaque route, fiches projet comprises, est générée en HTML au moment du build. Firebase Hosting ne sert que des fichiers statiques, le contenu est visible immédiatement et indexable, puis l’application prend le relais côté navigateur.',
       },
       {
         title: 'Accessibilité dès la conception',
@@ -241,7 +241,7 @@ export const projects: Project[] = [
       },
     ],
     features: [
-      'Thème clair, sombre ou système, avec quatre couleurs d’accent',
+      'Thème clair, sombre ou système, avec 4 couleurs d’accent',
       'Réglage des animations, mémorisé entre les visites',
       'Maquettes desktop et mobile réellement défilables',
       'Routes prérendues, dont les fiches projet générées à partir des données',

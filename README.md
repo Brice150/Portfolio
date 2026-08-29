@@ -23,7 +23,6 @@ en avant sont celles qu'il applique à lui-même.
 | Détection de changement | **Zoneless** + `OnPush` partout | Pas de Zone.js dans le bundle, recalculs prévisibles |
 | État | Signals (`signal`, `computed`, `input`) | Réactivité fine, interopérabilité RxJS via `toSignal` |
 | Rendu | `outputMode: static` — prerendering intégral | Chaque route livrée en HTML, y compris les fiches projet |
-| Hydratation | `provideClientHydration(withEventReplay())` | Aucun clic perdu pendant l'hydratation |
 | UI | Angular Material 3 + CDK | Theming par tokens système, accent dynamique |
 | Styles | CSS natif, `light-dark()`, container queries | Un seul jeu de tokens pour les deux thèmes |
 | Icônes | SVG inline maison | Zéro requête réseau, zéro police d'icônes |
@@ -35,11 +34,11 @@ Aucune dépendance de carrousel, de notifications ou d'icônes : tout est fait m
 
 Le site vise le RGAA sans en faire une case à cocher en fin de projet :
 
-- lien d'évitement, structure sémantique et points de repère ARIA ;
+- lien d'évitement, structure sémantique et points de repère ARIA,
 - navigation clavier complète, y compris les onglets projets (flèches, `Home`, `End`)
-  et les maquettes d'appareils, qui se défilent au clavier ;
-- `aria-current`, `aria-expanded`, `aria-pressed` et piège à focus sur le menu mobile ;
-- respect de `prefers-reduced-motion`, doublé d'un réglage explicite pour le visiteur ;
+  et les maquettes d'appareils, qui se défilent au clavier,
+- `aria-current`, `aria-expanded`, `aria-pressed` et piège à focus sur le menu mobile,
+- respect de `prefers-reduced-motion`, doublé d'un réglage explicite pour le visiteur,
 - contrastes vérifiés dans les deux thèmes, cibles tactiles d'au moins 44 px.
 
 ## Préférences visiteur
@@ -47,8 +46,8 @@ Le site vise le RGAA sans en faire une case à cocher en fin de projet :
 Un panneau de réglages, mémorisé dans le stockage local et appliqué avant le premier
 rendu pour éviter tout clignotement :
 
-- thème clair / sombre / système ;
-- quatre couleurs d'accent (azur, violet, émeraude, ambre) ;
+- thème clair / sombre / système,
+- 4 couleurs d'accent (azur, violet, émeraude, ambre),
 - animations activées ou réduites.
 
 ## Structure
@@ -97,7 +96,7 @@ générés depuis les sites réels, en pilotant Chrome via le protocole DevTools
 node tools/capture-shots.mjs
 ```
 
-Sans argument, l'outil recapture tous les projets ; on peut aussi cibler un slug
+Sans argument, l'outil recapture tous les projets. On peut aussi cibler un slug
 (`node tools/capture-shots.mjs life-rise`). La capture du portfolio lui-même suppose
 que `npm start` tourne.
 

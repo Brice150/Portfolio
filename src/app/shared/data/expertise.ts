@@ -19,7 +19,7 @@ export const serviceOffers: ServiceOffer[] = [
     icon: 'wrench',
     title: 'Reprendre et faire évoluer un existant',
     pitch:
-      'Le cœur de mes cinq dernières années. Reprendre une base de code écrite par d’autres, comprendre les règles métier avant de les toucher, et livrer des évolutions sans casser ce qui tourne.',
+      'Le cœur de mes 5 dernières années. Reprendre une base de code écrite par d’autres, comprendre les règles métier avant de les toucher, et livrer des évolutions sans casser ce qui tourne.',
     deliverables: [
       'Prise en main du domaine fonctionnel avant toute refonte',
       'Évolutions et corrections sur applications en production',
@@ -66,7 +66,7 @@ export const collaboration = {
     {
       icon: 'globe' as const,
       title: 'À l’aise en équipe répartie',
-      text: 'Cinq ans d’ESN sur des projets distribués : écrit soigné, décisions tracées, disponibilité réelle sur les plages communes. Le distanciel demande plus de rigueur, pas moins.',
+      text: '5 ans d’ESN sur des projets distribués : écrit soigné, décisions tracées, disponibilité réelle sur les plages communes. Le distanciel demande plus de rigueur, pas moins.',
     },
     {
       icon: 'clock' as const,

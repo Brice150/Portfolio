@@ -50,7 +50,7 @@ export class JourneyComponent implements OnInit {
     this.seoService.setPage({
       title: 'Parcours | Brice Lecomte, développeur Angular & Java',
       description:
-        'De l’ISAE-ENSMA à Open en passant par Sopra Steria et Capgemini : quatre missions full-stack Angular et Java sur des domaines réglementés, après une reconversion assumée.',
+        'De l’ISAE-ENSMA à Open en passant par Sopra Steria et Capgemini : 4 missions full-stack Angular et Java sur des domaines réglementés, après une reconversion assumée.',
       path: '/parcours',
     });
   }

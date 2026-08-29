@@ -51,7 +51,7 @@ export const milestones: Milestone[] = [
     location: 'Rennes',
     logo: 'history/sopra.webp',
     summary:
-      'Trois ans et quatre mois au service du ministère des Armées, sur deux missions successives : d’abord l’intégration de données, puis le développement full-stack, avec une prise de responsabilité progressive jusqu’au rôle de référent frontend.',
+      '3 ans et 4 mois au service du ministère des Armées, sur 2 missions successives : d’abord l’intégration de données, puis le développement full-stack, avec une prise de responsabilité progressive jusqu’au rôle de référent frontend.',
     missions: [
       {
         label: 'Première mission — Intégration de données',
@@ -64,13 +64,13 @@ export const milestones: Milestone[] = [
         label: 'Seconde mission — Développement full-stack',
         period: 'Janv. 2023 — Oct. 2024',
         summary:
-          'Près de deux ans sur une application web de gestion de la maintenance de véhicules militaires terrestres, de la conception au maintien en condition opérationnelle.',
+          'Près de 2 ans sur une application web de gestion de la maintenance de véhicules militaires terrestres, de la conception au maintien en condition opérationnelle.',
         stack: ['Angular', 'TypeScript', 'Java', 'Spring Boot', 'PostgreSQL', 'Git'],
       },
     ],
     achievements: [
-      'Rôle de référent frontend au bout de deux ans : choix d’architecture, conventions, revues systématiques des développements de l’équipe.',
-      'Pilotage d’une équipe de deux développeurs pour tenir les jalons et les délais annoncés au client.',
+      'Rôle de référent frontend au bout de 2 ans : choix d’architecture, conventions, revues systématiques des développements de l’équipe.',
+      'Pilotage d’une équipe de 2 développeurs pour tenir les jalons et les délais annoncés au client.',
       'Accompagnement d’un stagiaire, avec transmission des bonnes pratiques pour soutenir sa montée en compétences.',
       'Montée en charge progressive sur le back Java/Spring, jusqu’à couvrir la chaîne complète.',
     ],
@@ -84,7 +84,7 @@ export const milestones: Milestone[] = [
     title: 'La bascule vers le développement',
     organisation: 'Reconversion professionnelle',
     summary:
-      'Diplôme d’ingénieur aérospatial en poche, choix assumé de ne pas exercer dans l’aéronautique : le métier menait vers des calculs très théoriques, quand les réalisations concrètes se trouvaient du côté du logiciel. Trois mois entre l’obtention du diplôme et la prise de poste.',
+      'Diplôme d’ingénieur aérospatial en poche, choix assumé de ne pas exercer dans l’aéronautique : le métier menait vers des calculs très théoriques, quand les réalisations concrètes se trouvaient du côté du logiciel. 3 mois entre l’obtention du diplôme et la prise de poste.',
     achievements: [
       'Reconversion menée via une POEI Java, avec un CDI à la clé chez Sopra Steria.',
       'Certification Java validée chez M2i Formation en juillet 2021.',
@@ -102,20 +102,20 @@ export const milestones: Milestone[] = [
     organisation: 'ISAE-ENSMA',
     location: 'Poitiers',
     summary:
-      'Une école d’ingénieurs tournée vers la mécanique et l’énergétique : optimisation moteur, analyse thermique avancée, gestion de projet, innovation drone. La formation qui apprend à modéliser un système complexe avant de le construire, et deux stages de calcul menés en laboratoire puis en industrie.',
+      'Une école d’ingénieurs tournée vers la mécanique et l’énergétique : optimisation moteur, analyse thermique avancée, gestion de projet, innovation drone. La formation qui apprend à modéliser un système complexe avant de le construire, et 2 stages de calcul menés en laboratoire puis en industrie.',
     missions: [
       {
         label: 'Stage ingénieur aérothermique — Safran',
         period: 'Juil. — Déc. 2020',
         summary:
-          'Modélisation CFD en 1D, 2D et 3D de cavités de turbines haute pression, avec pour objectif de limiter l’élévation de température des écoulements. Six mois en Seine-et-Marne, sur un sujet directement industriel.',
+          'Modélisation CFD en 1D, 2D et 3D de cavités de turbines haute pression, avec pour objectif de limiter l’élévation de température des écoulements. 6 mois en Seine-et-Marne, sur un sujet directement industriel.',
         stack: ['CFD', 'Simulation numérique', 'Aérothermique'],
       },
       {
         label: 'Stage ingénieur aérothermique — KTH, Stockholm',
         period: 'Juin — Sept. 2019',
         summary:
-          'Création d’un modèle CFD 3D pour l’étude du flux radial de purge dans les cavités de turbines haute pression, au Kungliga Tekniska högskolan. Quatre mois de travail et de vie entièrement en anglais.',
+          'Création d’un modèle CFD 3D pour l’étude du flux radial de purge dans les cavités de turbines haute pression, au Kungliga Tekniska högskolan. 4 mois de travail et de vie entièrement en anglais.',
         stack: ['CFD 3D', 'Modélisation', 'Anglais professionnel'],
       },
     ],

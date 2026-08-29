@@ -148,6 +148,7 @@
 
 .top-link {
   display: inline-flex;
+  cursor: pointer;
   align-items: center;
   gap: 0.45rem;
   padding: 0.45rem 0.95rem;

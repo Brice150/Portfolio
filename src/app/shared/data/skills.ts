@@ -11,7 +11,7 @@ export const skillGroups: SkillGroup[] = [
       {
         name: 'Angular',
         level: 95,
-        note: 'Le socle de mes interfaces. Architecture par features, lazy loading, signals, formulaires réactifs typés, OnPush systématique, SSR et prerendering.',
+        note: 'Le socle de mes interfaces. Architecture par features, lazy loading, signals, formulaires réactifs typés, SSR et prerendering.',
       },
       {
         name: 'TypeScript',
@@ -26,7 +26,7 @@ export const skillGroups: SkillGroup[] = [
       {
         name: 'HTML sémantique & CSS moderne',
         level: 90,
-        note: 'Écrits à la main, sans framework CSS. Grid et flexbox, variables CSS, container queries, clamp fluide ; le balisage avant l’artifice.',
+        note: 'Écrits à la main, sans framework CSS. Grid et flexbox, variables CSS, container queries, clamp fluide. Le balisage avant l’artifice.',
       },
       {
         name: 'Angular Material & CDK',
@@ -128,7 +128,7 @@ export const skillGroups: SkillGroup[] = [
       {
         name: 'IA générative',
         level: 82,
-        note: 'Exploration, squelettes, relecture de diff. Prompts ciblés et contexte minimal pour maîtriser le coût en tokens ; rien n’est livré sans relecture.',
+        note: 'Exploration, squelettes, relecture de diff. Prompts ciblés et contexte minimal pour maîtriser le coût en tokens, et rien n’est livré sans relecture.',
       },
       {
         name: 'Agilité',
@@ -150,13 +150,13 @@ export const practices: Practice[] = [
     icon: 'gauge',
     title: 'Rendu et chargement',
     description:
-      'Routes en lazy loading, prerendering statique pour un premier rendu instantané, hydratation avec rejeu des évènements, images en WebP.',
+      'Routes en lazy loading, prerendering statique pour un premier rendu instantané, images en WebP.',
   },
   {
     icon: 'code',
     title: 'Détection de changement maîtrisée',
     description:
-      'OnPush sur tous les composants, état porté par des signals, application zoneless. Angular ne recalcule que ce qui a réellement changé.',
+      'OnPush sur tous les composants, état porté par des signals, application zoneless. Mis en place sur ce site et repris sur les projets suivants.',
   },
   {
     icon: 'shield',

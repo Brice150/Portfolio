@@ -112,10 +112,10 @@
 
     <div class="bottom">
       <p>© {{ currentYear }} {{ profile.fullName }}. Conçu et développé de A à Z.</p>
-      <a href="#haut-de-page" class="top-link">
+      <button type="button" class="top-link" (click)="scrollToTop()">
         <span>Haut de page</span>
         <app-icon name="chevron-up" size="1em" />
-      </a>
+      </button>
     </div>
   </div>
 </footer>

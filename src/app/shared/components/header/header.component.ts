@@ -21,7 +21,7 @@ import { SettingsPanelComponent } from '../settings-panel/settings-panel.compone
   templateUrl: './header.component.html',
   styleUrl: './header.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  host: { id: 'haut-de-page' },
+  host: { id: 'haut-de-page', tabindex: '-1' },
 })
 export class HeaderComponent {
   readonly navItems = navItems;
