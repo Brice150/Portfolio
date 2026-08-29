@@ -70,9 +70,7 @@
               <span>Visiter le site</span>
               <app-icon name="arrow-up-right" size="1.05em" />
             </a>
-          }
-
-          @if (project.links.github) {
+          } @else if (project.links.github) {
             <a
               [href]="project.links.github"
               target="_blank"
@@ -82,25 +80,8 @@
               <span>Code source</span>
               <app-icon name="arrow-up-right" size="1.05em" />
             </a>
-          } @else if (project.links.sourceRestricted) {
-            <button
-              type="button"
-              class="btn btn-ghost is-locked"
-              disabled
-              [attr.aria-describedby]="'source-' + project.slug"
-            >
-              <span>Code source</span>
-              <app-icon name="shield" size="1.05em" />
-            </button>
           }
         </div>
-
-        @if (project.links.sourceRestricted) {
-          <p class="locked-note" [id]="'source-' + project.slug">
-            <app-icon name="info" size="1em" />
-            <span>{{ project.links.sourceRestricted }}</span>
-          </p>
-        }
       </div>
     </article>
   }

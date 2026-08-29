@@ -18,7 +18,7 @@
 <section class="section shell">
   <div class="groups">
     @for (group of visibleGroups(); track group.id; let g = $index) {
-      <article class="group" [appReveal]="g * 90">
+      <article class="group card-hover" [appReveal]="g * 90">
         <header class="group-head">
           <span class="group-icon" aria-hidden="true">
             <app-icon [name]="group.icon" size="1.3em" />
@@ -51,7 +51,7 @@
 </section>
 
 <section class="section shell">
-  <div class="honesty" appReveal>
+  <div class="honesty card-hover" appReveal>
     <span class="honesty-icon" aria-hidden="true">
       <app-icon name="info" size="1.2em" />
     </span>
@@ -100,7 +100,7 @@
 
   <ul class="offers">
     @for (offer of offers; track offer.id; let i = $index) {
-      <li class="offer" [appReveal]="i * 90">
+      <li class="offer card-hover card-hover--line-top" [appReveal]="i * 90">
         <span class="offer-icon" aria-hidden="true">
           <app-icon [name]="offer.icon" size="1.3em" />
         </span>

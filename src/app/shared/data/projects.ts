@@ -37,7 +37,7 @@ export const projects: Project[] = [
     sections: [
       {
         title: 'Une base commune, 19 espaces',
-        body: 'Chaque domaine — nourriture, fitness, finance, organisation, inventaire, voyages, prévisions — est une feature Angular chargée en lazy loading, avec son propre modèle et ses propres services. Le noyau applicatif porte l’authentification, l’accès Firestore, le thème et les composants partagés. Ce découpage permet d’ajouter un espace sans toucher aux autres, et de garder un bundle initial léger malgré l’étendue fonctionnelle.',
+        body: 'Chaque domaine — nourriture, fitness, finance, organisation, inventaire, voyages, prévisions — est une feature Angular chargée en lazy loading, avec son propre modèle et ses propres services. Le noyau applicatif porte l’authentification, l’accès Firebase, le thème et les composants partagés. Ce découpage permet d’ajouter un espace sans toucher aux autres, et de garder un bundle initial léger malgré l’étendue fonctionnelle.',
       },
       {
         title: 'Un assistant conversationnel qui agit vraiment',
@@ -45,7 +45,7 @@ export const projects: Project[] = [
       },
       {
         title: 'Le collectif, pas seulement le solo',
-        body: 'Jusqu’à 6 profils par compte, avec partage de recettes, de séances de sport et d’éléments d’inventaire, gestion à plusieurs des tâches, des repas et des finances communes, et une messagerie temps réel avec réactions. C’est la partie qui a demandé le plus de soin sur le modèle de données : décider ce qui reste strictement personnel et ce qui devient collectif.',
+        body: 'Jusqu’à 6 profils par compte, avec partage de recettes, de séances de sport et d’éléments d’inventaire, gestion à plusieurs des tâches et des repas, et une messagerie temps réel avec réactions. Les finances, elles, restent strictement personnelles à chaque profil. C’est la partie qui a demandé le plus de soin sur le modèle de données : décider, domaine par domaine, ce qui se partage et ce qui ne se partage pas.',
       },
       {
         title: 'Ce que le projet a apporté',
@@ -57,13 +57,14 @@ export const projects: Project[] = [
       'Assistant conversationnel capable de créer, modifier et supprimer après confirmation',
       'Complétion automatique des formulaires à partir du contexte',
       'Jusqu’à 6 profils par compte, avec partage d’éléments entre profils',
+      'Finances strictement personnelles à chaque profil',
       'Messagerie temps réel avec réactions',
       'Données hébergées en Europe et conformité RGPD',
     ],
     links: {
       live: 'https://life-rise.web.app/',
       sourceRestricted:
-        'Life Rise est un produit en ligne, avec des comptes et des données d’utilisateurs réels. En publier les sources reviendrait à en distribuer des copies.',
+        'Life Rise est un produit payant, avec des comptes et des données d’utilisateurs réels. Ouvrir les sources reviendrait à offrir le moyen d’en faire tourner une copie gratuite en local, sans les limites de l’abonnement. Le code reste donc privé.',
     },
   },
   {
@@ -86,7 +87,7 @@ export const projects: Project[] = [
       { label: 'Durée (temps libre)', value: '6 mois' },
       { label: 'Jeux', value: '3' },
       { label: 'Mode', value: 'Multijoueur' },
-      { label: 'Temps réel', value: 'Firestore' },
+      { label: 'Temps réel', value: 'Firebase' },
     ],
     context:
       'Un projet volontairement orienté temps réel, pour sortir du CRUD et se confronter à la synchronisation d’états entre plusieurs joueurs : qui répond quand, que se passe-t-il si quelqu’un quitte la partie, comment garder tout le monde sur la même manche.',
@@ -100,8 +101,8 @@ export const projects: Project[] = [
         body: 'Motus, reconnaissance de drapeaux et identification de marques partagent le même moteur de partie : salon, manches, scores, classement. Seule la règle de validation d’une réponse change. Cette abstraction a permis d’ajouter le troisième jeu en une fraction du temps qu’avait demandé le premier.',
       },
       {
-        title: 'L’expérience de jeu',
-        body: 'Un jeu qui ne réagit pas instantanément n’est pas un jeu. Transitions, retours visuels sur les réponses et affichage du classement entre les manches sont traités en animations CSS pures, pour ne rien coûter au thread principal.',
+        title: 'Alimenter les jeux en contenu',
+        body: 'Motus s’appuie sur un dictionnaire de près de 40 000 mots français, filtré par longueur et nettoyé des formes inutilisables avant d’être embarqué. Le jeu des drapeaux, lui, consomme une API publique qui fournit pays, drapeaux et métadonnées : pas de banque d’images à maintenir, mais une dépendance externe à gérer, avec les erreurs et les temps de réponse que cela implique.',
       },
     ],
     features: [
@@ -121,7 +122,7 @@ export const projects: Project[] = [
     name: 'Simulateur de rénovation',
     tagline: 'Estimer ses aides à la rénovation sans y passer la journée',
     summary:
-      'Un simulateur qui calcule les aides à la rénovation énergétique auxquelles un foyer peut prétendre, à partir de quelques informations simples.',
+      'Un simulateur d’aides à la rénovation énergétique, écrit en 2 jours pour dépanner une connaissance en alternance marketing qui en avait besoin pour son projet.',
     year: '2023',
     startYear: 2023,
     status: 'live',
@@ -135,26 +136,26 @@ export const projects: Project[] = [
     facts: [
       { label: 'Durée (temps libre)', value: '2 jours' },
       { label: 'Nature', value: 'Calculateur' },
-      { label: 'Parcours', value: 'Guidé en étapes' },
-      { label: 'Réalisation', value: 'Seul, de bout en bout' },
+      { label: 'Contexte', value: 'Rendre service' },
+      { label: 'Réalisation', value: 'En un weekend' },
     ],
     context:
-      'Les dispositifs d’aide à la rénovation énergétique sont nombreux, cumulables et conditionnés à des seuils qui changent. L’information existe mais elle est éclatée sur plusieurs sites administratifs. Ce simulateur ramène l’ensemble à un parcours de quelques questions.',
+      'Une connaissance en alternance marketing avait besoin d’un simulateur d’aides à la rénovation énergétique pour son projet, sans avoir les moyens de le faire développer. Le sujet était clair, le besoin réel et le délai court : deux jours pour livrer quelque chose d’utilisable plutôt qu’une maquette.',
     sections: [
       {
-        title: 'Traduire une règle en code',
-        body: 'Le cœur du projet est un moteur de règles : des barèmes, des plafonds, des conditions de cumul. Ces règles sont isolées de l’interface pour qu’une évolution réglementaire se traduise par un changement de données, pas par une réécriture de composants. Le même réflexe a servi 3 ans plus tard sur la taxation 2026, en mission.',
+        title: 'Traduire un barème en calcul',
+        body: 'Les dispositifs d’aide à la rénovation énergétique sont nombreux, cumulables et conditionnés à des seuils. L’essentiel du travail a consisté à transcrire ces barèmes en calculs justes à partir des informations saisies. Le même exercice, à une tout autre échelle, m’attendait 3 ans plus tard avec la taxation 2026 en mission.',
       },
       {
-        title: 'Un parcours guidé',
-        body: 'Un formulaire de trente champs fait fuir. La saisie est découpée en étapes courtes, avec validation immédiate et récapitulatif avant résultat, en formulaires réactifs typés.',
+        title: 'Livrer vite, sans sur-concevoir',
+        body: 'Deux jours imposent des arbitrages : pas d’architecture élaborée, pas de fonctionnalité en trop, juste le chemin le plus court entre les questions posées et le montant affiché. C’est aussi un rappel utile qu’un outil simple qui rend service vaut mieux qu’un projet ambitieux jamais terminé.',
       },
     ],
     features: [
-      'Parcours de simulation en plusieurs étapes guidées',
-      'Moteur de règles séparé de l’interface',
-      'Validation en temps réel et messages d’erreur explicites',
-      'Récapitulatif du calcul avant affichage du résultat',
+      'Saisie des informations du foyer et du projet de rénovation',
+      'Calcul des aides applicables à partir des barèmes en vigueur',
+      'Résultat immédiat, sans compte ni installation',
+      'Développé en 2 jours pour répondre à un besoin concret',
     ],
     links: {
       live: 'https://brice150.github.io/Simulator/',
@@ -163,7 +164,7 @@ export const projects: Project[] = [
   },
   {
     slug: 'pickme',
-    name: 'PickMe',
+    name: 'Pick Me',
     tagline: 'Une application de rencontre construite de zéro, front et back',
     summary:
       'Profils, préférences, système de correspondance réciproque et messagerie, sur une API Java/Spring Boot et une base relationnelle.',
@@ -180,8 +181,8 @@ export const projects: Project[] = [
     facts: [
       { label: 'Durée (temps libre)', value: '1 an' },
       { label: 'Nature', value: 'Full-stack' },
-      { label: 'Périmètre', value: 'Front, back et base' },
-      { label: 'Réalisation', value: 'Seul, de bout en bout' },
+      { label: 'Périmètre', value: 'Front, Back et BDD' },
+      { label: 'Cœur du sujet', value: 'Algorithme de sélection' },
     ],
     context:
       'Le projet qui tient le front et le back en même temps : un front Angular exigeant en interactions, et un back Java/Spring avec une vraie modélisation relationnelle. Une application de rencontre est un excellent prétexte — elle concentre authentification, upload, filtrage, appariement et temps réel.',
@@ -191,13 +192,14 @@ export const projects: Project[] = [
         body: 'Le cœur du domaine est une relation many-to-many asymétrique : un utilisateur exprime un intérêt, la correspondance n’existe que s’il est réciproque. Traduire cette règle en schéma relationnel propre, puis en API qui ne laisse fuir aucune information sur les intentions de l’autre, a été la partie la plus intéressante.',
       },
       {
-        title: 'Pourquoi il n’est pas en ligne',
-        body: 'Héberger une application de rencontre implique de traiter des données personnelles sensibles et des photos d’utilisateurs réels. Le code reste ouvert en lecture sur GitHub, ce qui est plus honnête que de laisser tourner un service que je ne modère pas.',
+        title: 'Pourquoi il n’est plus en ligne',
+        body: 'Il l’a été. Je l’ai retiré pour deux raisons : l’hébergement avait un coût que rien ne justifiait pour une application que je n’utilisais pas au quotidien, et les applications de rencontre actuelles vont plus loin — elles analysent les photos par intelligence artificielle pour établir un score d’attractivité, ce que mon algorithme ne fait pas. Le code reste ouvert en lecture sur GitHub.',
       },
     ],
     features: [
       'Inscription, authentification et gestion de profil',
       'Préférences de recherche et filtrage des profils',
+      'Algorithme de sélection des profils selon la distance et les attributs',
       'Système de correspondance réciproque',
       'Messagerie entre profils correspondants',
       'API REST Java/Spring Boot sur base PostgreSQL',
@@ -271,7 +273,9 @@ const lastYear = (project: Project): number => {
 
 /** Projets classés du plus récent au plus ancien. */
 export const projectsByDate = (): Project[] =>
-  [...projects].sort((a, b) => lastYear(b) - lastYear(a) || b.startYear - a.startYear);
+  [...projects].sort(
+    (a, b) => lastYear(b) - lastYear(a) || b.startYear - a.startYear,
+  );
 
 export const projectBySlug = (slug: string): Project | undefined =>
   projects.find((project) => project.slug === slug);

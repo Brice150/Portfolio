@@ -5,35 +5,10 @@
 }
 
 .cell {
-  position: relative;
-  overflow: hidden;
   padding: 1.4rem;
   border: 1px solid var(--border);
   border-radius: var(--r-md);
   background: var(--surface);
-  transition:
-    border-color var(--dur) var(--ease),
-    translate var(--dur) var(--ease);
-}
-
-.cell::after {
-  content: '';
-  position: absolute;
-  inset: auto 0 0;
-  height: 2px;
-  background: linear-gradient(90deg, var(--accent), var(--accent-2));
-  scale: 0 1;
-  transform-origin: left;
-  transition: scale var(--dur) var(--ease);
-}
-
-.cell:hover {
-  border-color: color-mix(in srgb, var(--accent) 40%, transparent);
-  translate: 0 -3px;
-}
-
-.cell:hover::after {
-  scale: 1 1;
 }
 
 .icon {

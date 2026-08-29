@@ -1,6 +1,6 @@
 # Brice Lecomte — Développeur Full-Stack Angular / Java
 
-> Développeur full-stack confirmé, 5 ans d'expérience en ESN sur des applications
+> Développeur Full-Stack confirmé, 5 ans d'expérience en ESN sur des applications
 > métier réglementées : ministère des Armées, puis administration maritime (DGAMPA).
 > Ingénieur aérospatial de formation (ISAE-ENSMA), reconverti au développement logiciel.
 

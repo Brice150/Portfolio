@@ -12,7 +12,7 @@
       <li>
         <button
           type="button"
-          class="channel"
+          class="channel card-hover"
           [appCopyText]="profile.email"
           appCopyLabel="Adresse e-mail copiée"
           #copyMail="appCopyText"
@@ -42,7 +42,7 @@
             [href]="channel.href"
             [attr.target]="channel.href.startsWith('http') ? '_blank' : null"
             [attr.rel]="channel.href.startsWith('http') ? 'noopener' : null"
-            class="channel"
+            class="channel card-hover"
           >
             <span class="channel-icon" aria-hidden="true">
               <app-icon [name]="channel.icon" size="1.15em" />

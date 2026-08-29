@@ -176,35 +176,10 @@ html:not(.js) .bar-fill {
 }
 
 .offer {
-  position: relative;
-  overflow: hidden;
   padding: clamp(1.35rem, 1rem + 1.2vw, 2rem);
   border: 1px solid var(--border);
   border-radius: var(--r-lg);
   background: var(--surface);
-  transition:
-    border-color var(--dur) var(--ease),
-    translate var(--dur) var(--ease);
-}
-
-.offer::before {
-  content: '';
-  position: absolute;
-  inset: 0 0 auto;
-  height: 2px;
-  background: linear-gradient(90deg, var(--accent), var(--accent-2));
-  scale: 0 1;
-  transform-origin: left;
-  transition: scale var(--dur) var(--ease);
-}
-
-.offer:hover {
-  border-color: color-mix(in srgb, var(--accent) 40%, transparent);
-  translate: 0 -4px;
-}
-
-.offer:hover::before {
-  scale: 1 1;
 }
 
 .offer-icon {

@@ -20,7 +20,7 @@
 
   <ul class="principles">
     @for (principle of principles; track principle.title; let i = $index) {
-      <li class="principle" [appReveal]="i * 90">
+      <li class="principle card-hover" [appReveal]="i * 90">
         <span class="principle-icon" aria-hidden="true">
           <app-icon [name]="principle.icon" size="1.2em" />
         </span>

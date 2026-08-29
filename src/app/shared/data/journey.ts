@@ -19,7 +19,15 @@ export const milestones: Milestone[] = [
       'Conformité RGAA visée sur l’ensemble du périmètre, hors partie cartographique.',
       'Reprise du domaine métier maritime déjà pratiqué sur la mission précédente, sans temps de latence.',
     ],
-    stack: ['Angular', 'TypeScript', 'Java', 'Spring Boot', 'DSFR', 'RGAA', 'SQL'],
+    stack: [
+      'Angular',
+      'TypeScript',
+      'Java',
+      'Spring Boot',
+      'PostgreSQL',
+      'DSFR',
+      'RGAA',
+    ],
   },
   {
     id: 'capgemini',
@@ -36,10 +44,20 @@ export const milestones: Milestone[] = [
       'Conception et évolution de plusieurs applications web de gestion des navires de plaisance.',
       'Développement complet de la taxation 2026 : traduction d’un nouveau barème réglementaire en règles de calcul, en modèle de données et en interfaces de saisie et de contrôle.',
       'Maintenance évolutive et corrective sur un parc applicatif en production, avec des utilisateurs métier au quotidien.',
-      'Amélioration continue des performances : identification des requêtes coûteuses, révision des stratégies de chargement, allègement des écrans les plus sollicités.',
-      'Encadrement d’un alternant sur toute sa période et accompagnement des développeurs juniors de l’équipe.',
+      'Amélioration continue des performances : identification des requêtes coûteuses et révision des stratégies de chargement.',
+      'Encadrement d’un alternant et accompagnement des développeurs juniors de l’équipe.',
     ],
-    stack: ['Angular', 'TypeScript', 'RxJS', 'Java', 'Spring Boot', 'Oracle', 'Talend', 'GitLab'],
+    stack: [
+      'Angular',
+      'TypeScript',
+      'RxJS',
+      'Java',
+      'Spring Boot',
+      'Oracle',
+      'PostgreSQL',
+      'SQL',
+      'Talend',
+    ],
   },
   {
     id: 'sopra',
@@ -48,24 +66,30 @@ export const milestones: Milestone[] = [
     startYear: 2021,
     title: 'Développeur Full-Stack',
     organisation: 'Sopra Steria',
-    location: 'Rennes',
+    location: 'Paris puis Rennes',
     logo: 'history/sopra.webp',
     summary:
-      '3 ans et 4 mois au service du ministère des Armées, sur 2 missions successives : d’abord l’intégration de données, puis le développement full-stack, avec une prise de responsabilité progressive jusqu’au rôle de référent frontend.',
+      '3 ans et 4 mois au service du ministère des Armées, 6 mois à Paris puis le reste à Rennes, sur 2 missions successives : d’abord l’intégration de données, puis le développement Full-Stack, avec une prise de responsabilité progressive jusqu’au rôle de référent frontend.',
     missions: [
       {
         label: 'Première mission — Intégration de données',
         period: 'Juil. 2021 — Déc. 2022',
         summary:
           'Conception et exploitation de flux d’intégration Talend sur des données d’aéronefs militaires : reprises, transformations et contrôles de cohérence sur des volumes conséquents.',
-        stack: ['Talend', 'SQL', 'Oracle', 'Git'],
+        stack: ['Talend', 'Java', 'SQL', 'PostgreSQL'],
       },
       {
-        label: 'Seconde mission — Développement full-stack',
+        label: 'Seconde mission — Développement Full-Stack',
         period: 'Janv. 2023 — Oct. 2024',
         summary:
           'Près de 2 ans sur une application web de gestion de la maintenance de véhicules militaires terrestres, de la conception au maintien en condition opérationnelle.',
-        stack: ['Angular', 'TypeScript', 'Java', 'Spring Boot', 'PostgreSQL', 'Git'],
+        stack: [
+          'Angular',
+          'TypeScript',
+          'Java',
+          'Spring Boot',
+          'Oracle',
+        ],
       },
     ],
     achievements: [
@@ -83,15 +107,15 @@ export const milestones: Milestone[] = [
     startYear: 2021,
     title: 'La bascule vers le développement',
     organisation: 'Reconversion professionnelle',
+    location: 'À distance',
     summary:
-      'Diplôme d’ingénieur aérospatial en poche, choix assumé de ne pas exercer dans l’aéronautique : le métier menait vers des calculs très théoriques, quand les réalisations concrètes se trouvaient du côté du logiciel. 3 mois entre l’obtention du diplôme et la prise de poste.',
+      'Diplôme d’ingénieur aérospatial en poche, choix assumé de ne pas exercer dans l’aéronautique : le métier menait vers des calculs très théoriques, quand les réalisations concrètes se trouvaient du côté du logiciel.',
     achievements: [
       'Reconversion menée via une POEI Java, avec un CDI à la clé chez Sopra Steria.',
       'Certification Java validée chez M2i Formation en juillet 2021.',
-      'Premiers projets web personnels menés seul, du besoin jusqu’au déploiement.',
-      'Entrée en ESN comme développeur full-stack en CDI, sans passer par un stage de développement.',
+      'Entrée en ESN comme développeur Full-Stack en CDI, sans passer par un stage de développement.',
     ],
-    stack: ['Java', 'Angular', 'Autoformation'],
+    stack: ['Angular', 'Java'],
   },
   {
     id: 'ensma',
@@ -102,7 +126,7 @@ export const milestones: Milestone[] = [
     organisation: 'ISAE-ENSMA',
     location: 'Poitiers',
     summary:
-      'Une école d’ingénieurs tournée vers la mécanique et l’énergétique : optimisation moteur, analyse thermique avancée, gestion de projet, innovation drone. La formation qui apprend à modéliser un système complexe avant de le construire, et 2 stages de calcul menés en laboratoire puis en industrie.',
+      'Une école d’ingénieurs tournée vers la mécanique et l’énergétique : optimisation moteur, analyse thermique avancée, gestion de projet. La formation qui apprend à modéliser un système complexe avant de le construire, et 2 stages de calcul menés en laboratoire puis en industrie.',
     missions: [
       {
         label: 'Stage ingénieur aérothermique — Safran',
@@ -112,17 +136,17 @@ export const milestones: Milestone[] = [
         stack: ['CFD', 'Simulation numérique', 'Aérothermique'],
       },
       {
-        label: 'Stage ingénieur aérothermique — KTH, Stockholm',
+        label: 'Stage ingénieur aérothermique — KTH, Stockholm (Suède)',
         period: 'Juin — Sept. 2019',
         summary:
-          'Création d’un modèle CFD 3D pour l’étude du flux radial de purge dans les cavités de turbines haute pression, au Kungliga Tekniska högskolan. 4 mois de travail et de vie entièrement en anglais.',
-        stack: ['CFD 3D', 'Modélisation', 'Anglais professionnel'],
+          'Création d’un modèle CFD pour l’étude du flux radial de purge dans les cavités de turbines haute pression, au Kungliga Tekniska högskolan de Stockholm, en Suède. 4 mois de travail et de vie entièrement en anglais.',
+        stack: ['CFD', 'Simulation numérique', 'Aérothermique', 'Anglais professionnel'],
       },
     ],
     achievements: [
       'Diplôme d’ingénieur et Master en aérospatial, obtenus en 2021.',
       'Projets d’optimisation moteur et d’analyse thermique avancée.',
-      'Gestion de projet en équipe et projet d’innovation autour des drones.',
+      'Gestion de projet en équipe, sur des sujets de conception mécanique.',
       'TOEIC 945/990 (niveau C1) et First Certificate de Cambridge.',
     ],
     stack: [],

@@ -28,8 +28,25 @@
               <span>Code source</span>
               <app-icon name="arrow-up-right" size="1.05em" />
             </a>
+          } @else if (current.links.sourceRestricted) {
+            <button
+              type="button"
+              class="btn btn-ghost is-locked"
+              disabled
+              aria-describedby="source-restreint"
+            >
+              <span>Code source</span>
+              <app-icon name="shield" size="1.05em" />
+            </button>
           }
         </div>
+
+        @if (current.links.sourceRestricted) {
+          <p class="locked-note" id="source-restreint">
+            <app-icon name="info" size="1em" />
+            <span>{{ current.links.sourceRestricted }}</span>
+          </p>
+        }
 
         <ul class="facts">
           @for (fact of current.facts; track fact.label) {

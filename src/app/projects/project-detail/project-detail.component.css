@@ -249,3 +249,33 @@ h2 {
     top: calc(var(--nav-h) + 1.5rem);
   }
 }
+
+/* --- Code source non public ---------------------------------------------- */
+
+.btn.is-locked {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.btn.is-locked:hover {
+  background: transparent;
+  border-color: var(--border-strong);
+  translate: 0 0;
+  box-shadow: none;
+}
+
+.locked-note {
+  display: flex;
+  gap: 0.55rem;
+  max-width: 64ch;
+  margin-top: 1rem;
+  font-size: 0.86rem;
+  line-height: 1.65;
+  color: var(--text-muted);
+}
+
+.locked-note app-icon {
+  flex: none;
+  margin-top: 0.2rem;
+  color: var(--accent);
+}

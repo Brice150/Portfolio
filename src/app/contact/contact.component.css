@@ -32,14 +32,6 @@ h2 {
   border: 1px solid var(--border);
   border-radius: var(--r-sm);
   background: var(--surface);
-  transition:
-    border-color var(--dur-fast) var(--ease),
-    translate var(--dur-fast) var(--ease);
-}
-
-.channel:hover {
-  border-color: var(--accent);
-  translate: 3px 0;
 }
 
 .channel.is-copied {

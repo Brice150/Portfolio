@@ -363,17 +363,43 @@ ol {
   border-radius: var(--r-md);
 }
 
-/* Survol commun des cartes. Le trait coloré se déploie en bas par défaut,
-   en haut avec la variante, pour varier sans casser la cohérence. */
+/* Survol commun des cartes : contour teinté, léger soulèvement et halo venu
+   du haut. Le sélecteur est doublé pour passer devant la propriété border des
+   composants, qui a la même spécificité mais arrive plus tard dans la cascade. */
 .card-hover {
   position: relative;
   overflow: hidden;
+  isolation: isolate;
   transition:
     border-color var(--dur) var(--ease),
     translate var(--dur) var(--ease);
 }
 
-.card-hover::after {
+.card-hover::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: radial-gradient(130% 120% at 50% 0%, var(--accent-soft), transparent 62%);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--dur) var(--ease);
+}
+
+.card-hover.card-hover:hover,
+.card-hover.card-hover:focus-within {
+  border-color: color-mix(in srgb, var(--accent) 45%, transparent);
+  translate: 0 -3px;
+}
+
+.card-hover:hover::before,
+.card-hover:focus-within::before {
+  opacity: 1;
+}
+
+/* Trait dégradé, réservé à quelques blocs pour éviter l’uniformité totale. */
+.card-hover--line::after,
+.card-hover--line-top::after {
   content: '';
   position: absolute;
   inset: auto 0 0;
@@ -384,28 +410,23 @@ ol {
   transition: scale var(--dur) var(--ease);
 }
 
-.card-hover--top::after {
+.card-hover--line-top::after {
   inset: 0 0 auto;
 }
 
-.card-hover:hover,
-.card-hover:focus-within {
-  border-color: color-mix(in srgb, var(--accent) 40%, transparent);
-  translate: 0 -3px;
-}
-
-.card-hover:hover::after,
-.card-hover:focus-within::after {
+.card-hover--line:hover::after,
+.card-hover--line:focus-within::after,
+.card-hover--line-top:hover::after,
+.card-hover--line-top:focus-within::after {
   scale: 1 1;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .card-hover:hover,
-  .card-hover:focus-within {
+  .card-hover.card-hover:hover,
+  .card-hover.card-hover:focus-within {
     translate: 0 0;
   }
 }
-
 .chip {
   display: inline-flex;
   align-items: center;

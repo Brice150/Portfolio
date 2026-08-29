@@ -1,6 +1,6 @@
 <ul class="grid">
   @for (item of items(); track item.label; let i = $index) {
-    <li class="cell" [appReveal]="i * 90">
+    <li class="cell card-hover card-hover--line" [appReveal]="i * 90">
       <span class="icon" aria-hidden="true">
         <app-icon [name]="item.icon" size="1.25em" />
       </span>
