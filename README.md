@@ -55,18 +55,21 @@ rendu pour éviter tout clignotement :
 
 ```
 src/app/
-├── core/            # données de contenu, interfaces, services transverses
-│   ├── data/        # profil, compétences, parcours, projets, prestations, icônes
-│   ├── interface/
-│   └── services/    # SEO, préférences d'affichage
-├── layout/          # entête, pied de page, panneau de réglages
-├── features/        # une route = un dossier, chargé en lazy loading
-│   ├── home/        # + sous-composants dédiés
-│   ├── about/  skills/  journey/
-│   ├── projects/    # liste, carte, fiche détaillée
-│   ├── services/  contact/  not-found/
-└── shared/          # icône, maquettes d'appareils, timeline, directive de révélation
+├── core/
+│   ├── interfaces/   # contrats de données partagés
+│   └── services/     # SEO, préférences d’affichage
+├── shared/
+│   ├── components/   # entête, pied de page, réglages, icône, timeline,
+│   │                 # maquettes d’appareils, entêtes de page et de section
+│   ├── data/         # profil, compétences, parcours, projets, expertise, icônes
+│   └── directives/   # révélation au défilement, copie presse-papier
+├── home/             # hero, chiffres clés, bandeau tech, profil, projets phares
+├── skills/  journey/  expertise/  contact/  not-found/
+└── projects/         # liste, carte projet, fiche détaillée
 ```
+
+Une route égale un dossier à la racine de `app/`, chargé en lazy loading.
+Les sous-composants vivent directement dans le dossier de leur feature.
 
 ## Installation
 
