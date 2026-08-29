@@ -1,67 +1,102 @@
-import { isPlatformBrowser } from '@angular/common';
-import { inject, Injectable, PLATFORM_ID } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
+import { Injectable, inject } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
+import { SITE_URL, profile } from '../data/profile';
 
-@Injectable({
-  providedIn: 'root',
-})
+export interface PageSeo {
+  title: string;
+  description: string;
+  /** Chemin de la route, ex. `/projets`. */
+  path: string;
+  /** Chemin relatif dans les assets, ex. `projects/LIFE-RISE.webp`. */
+  image?: string;
+  type?: 'website' | 'article' | 'profile';
+  /** Données structurées additionnelles injectées avec la page. */
+  schema?: Record<string, unknown>;
+}
+
+const SCHEMA_ID = 'page-schema';
+
+/**
+ * Métadonnées de page. Le service manipule `DOCUMENT` plutôt que le `document`
+ * global afin que le canonical et le JSON-LD soient présents dans le HTML
+ * généré au prerendering, et pas seulement côté navigateur.
+ */
+@Injectable({ providedIn: 'root' })
 export class SeoService {
-  schemaId = 'dynamic-schema';
-  meta = inject(Meta);
-  title = inject(Title);
-  platformId = inject(PLATFORM_ID);
+  private readonly meta = inject(Meta);
+  private readonly title = inject(Title);
+  private readonly document = inject(DOCUMENT);
 
-  setPage(config: { title: string; description: string; url: string }): void {
+  setPage(config: PageSeo): void {
+    const url = `${SITE_URL}${config.path === '/' ? '/' : config.path}`;
+    const image = `${SITE_URL}/assets/images/${config.image ?? 'logo.webp'}`;
+
     this.title.setTitle(config.title);
+    this.meta.updateTag({ name: 'description', content: config.description });
 
-    this.meta.updateTag({
-      name: 'description',
-      content: config.description,
-    });
-
+    this.meta.updateTag({ property: 'og:type', content: config.type ?? 'website' });
     this.meta.updateTag({ property: 'og:title', content: config.title });
-    this.meta.updateTag({
-      property: 'og:description',
-      content: config.description,
-    });
-    this.meta.updateTag({ property: 'og:url', content: config.url });
+    this.meta.updateTag({ property: 'og:description', content: config.description });
+    this.meta.updateTag({ property: 'og:url', content: url });
+    this.meta.updateTag({ property: 'og:image', content: image });
 
-    this.meta.updateTag({ property: 'twitter:title', content: config.title });
-    this.meta.updateTag({
-      property: 'twitter:description',
-      content: config.description,
-    });
+    this.meta.updateTag({ name: 'twitter:card', content: 'summary_large_image' });
+    this.meta.updateTag({ name: 'twitter:title', content: config.title });
+    this.meta.updateTag({ name: 'twitter:description', content: config.description });
+    this.meta.updateTag({ name: 'twitter:image', content: image });
 
-    const schema = {
-      '@context': 'https://schema.org',
-      '@type': 'WebPage',
-      '@id': `${config.url}#page`,
-      name: config.title,
-      url: config.url,
-      isPartOf: {
-        '@id': 'https://portfolio-brice.web.app/#website',
+    this.setCanonical(url);
+    this.setSchema(
+      config.schema ?? {
+        '@context': 'https://schema.org',
+        '@type': 'WebPage',
+        '@id': `${url}#page`,
+        name: config.title,
+        description: config.description,
+        url,
+        inLanguage: 'fr-FR',
+        isPartOf: { '@id': `${SITE_URL}/#website` },
+        about: { '@id': `${SITE_URL}/#person` },
       },
-      about: {
-        '@id': 'https://portfolio-brice.web.app/#person',
-      },
-    };
-
-    this.injectSchema(schema);
+    );
   }
 
-  injectSchema(schema: any): void {
-    if (!isPlatformBrowser(this.platformId)) return;
+  private setCanonical(url: string): void {
+    const head = this.document.head;
+    let link = head.querySelector<HTMLLinkElement>('link[rel="canonical"]');
 
-    const existing = document.getElementById(this.schemaId);
-    if (existing) {
-      existing.remove();
+    if (!link) {
+      link = this.document.createElement('link');
+      link.setAttribute('rel', 'canonical');
+      head.appendChild(link);
     }
 
-    const script = document.createElement('script');
-    script.type = 'application/ld+json';
-    script.id = this.schemaId;
-    script.text = JSON.stringify(schema);
+    link.setAttribute('href', url);
+  }
 
-    document.head.appendChild(script);
+  private setSchema(schema: Record<string, unknown>): void {
+    const head = this.document.head;
+    this.document.getElementById(SCHEMA_ID)?.remove();
+
+    const script = this.document.createElement('script');
+    script.setAttribute('type', 'application/ld+json');
+    script.setAttribute('id', SCHEMA_ID);
+    script.textContent = JSON.stringify(schema);
+    head.appendChild(script);
+  }
+
+  /** Fiche projet : données structurées dédiées. */
+  projectSchema(name: string, description: string, url: string): Record<string, unknown> {
+    return {
+      '@context': 'https://schema.org',
+      '@type': 'CreativeWork',
+      '@id': `${url}#project`,
+      name,
+      description,
+      url,
+      inLanguage: 'fr-FR',
+      author: { '@type': 'Person', name: profile.fullName, url: SITE_URL },
+    };
   }
 }

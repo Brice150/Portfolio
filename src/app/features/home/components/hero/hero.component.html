@@ -1,0 +1,95 @@
+<section class="hero shell" aria-labelledby="hero-titre">
+  <div class="text">
+    <p class="badge">
+      <span class="dot" aria-hidden="true"></span>
+      {{ profile.availability }} — {{ profile.target }}
+    </p>
+
+    <h1 id="hero-titre">
+      <span class="hello">Bonjour, je suis</span>
+      <span class="name gradient-text">{{ profile.fullName }}</span>
+    </h1>
+
+    <p class="role">
+      Développeur Full-Stack <strong>Angular</strong> &amp; <strong>Java</strong>,
+      {{ years }} ans d’expérience.
+    </p>
+
+    <p class="rotation" aria-live="off">
+      <span class="rotation-caret" aria-hidden="true">&gt;</span>
+      @for (item of rotation; track item; let i = $index) {
+        @if (i === rotationIndex()) {
+          <span class="rotation-item">{{ item }}</span>
+        }
+      }
+    </p>
+
+    <p class="pitch">
+      J’ai commencé par calculer des moteurs d’avion avant de comprendre que ce qui m’intéressait
+      vraiment, c’était le logiciel qui les simulait. Depuis {{ years }} ans, je conçois et fais
+      évoluer des applications métier en Angular et Java, dans des contextes où la donnée est
+      sensible, les règles complexes et les utilisateurs exigeants.
+    </p>
+
+    <div class="actions">
+      <a routerLink="/projets" class="btn">
+        <span>Voir mes projets</span>
+        <app-icon name="arrow-right" size="1.05em" />
+      </a>
+      <a
+        [href]="profile.cv"
+        [download]="'CV ' + profile.fullName + '.pdf'"
+        class="btn btn-ghost"
+      >
+        <app-icon name="download" size="1.05em" />
+        <span>Télécharger le CV</span>
+      </a>
+    </div>
+
+    <ul class="socials">
+      <li>
+        <a [href]="profile.linkedin" target="_blank" rel="noopener">
+          <app-icon name="linkedin" label="Profil LinkedIn" />
+        </a>
+      </li>
+      <li>
+        <a [href]="profile.github" target="_blank" rel="noopener">
+          <app-icon name="github" label="Profil GitHub" />
+        </a>
+      </li>
+      <li>
+        <a [href]="'mailto:' + profile.email">
+          <app-icon name="mail" label="Envoyer un e-mail" />
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="portrait">
+    <div class="portrait-frame">
+      <img
+        [src]="imagePath + 'logo.webp'"
+        [alt]="'Portrait de ' + profile.fullName"
+        width="420"
+        height="420"
+        fetchpriority="high"
+        decoding="async"
+      />
+    </div>
+
+    <div class="floating card-stack">
+      <app-icon name="code" size="1.1em" />
+      <span>Angular 21 · zoneless</span>
+    </div>
+
+    <div class="floating card-location">
+      <app-icon name="pin" size="1.1em" />
+      <span>{{ profile.baseLocation }}</span>
+    </div>
+  </div>
+
+  <a href="#profil" class="scroll-cue">
+    <span>Découvrir le profil</span>
+    <app-icon name="chevron-down" size="1.15em" />
+  </a>
+</section>

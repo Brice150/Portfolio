@@ -1,8 +1,88 @@
-.container {
+:host {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  height: 100dvh;
+  flex-direction: column;
+  min-height: 100dvh;
+}
+
+main {
+  flex: 1;
+  padding-top: var(--nav-h);
+}
+
+main:focus {
+  outline: none;
+}
+
+/* ------------------------------------------------------------------------- */
+/* Ambiance de fond                                                           */
+/* ------------------------------------------------------------------------- */
+
+.ambience {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
   overflow: hidden;
+  pointer-events: none;
+}
+
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(90px);
+  opacity: 0.55;
+  will-change: transform;
+}
+
+.orb-a {
+  top: -18vh;
+  left: -10vw;
+  width: 46vw;
+  height: 46vw;
+  min-width: 22rem;
+  min-height: 22rem;
+  background: radial-gradient(closest-side, var(--accent), transparent 70%);
+  animation: drift-a 26s var(--ease) infinite alternate;
+}
+
+.orb-b {
+  top: 18vh;
+  right: -14vw;
+  width: 40vw;
+  height: 40vw;
+  min-width: 18rem;
+  min-height: 18rem;
+  background: radial-gradient(closest-side, var(--accent-2), transparent 70%);
+  opacity: 0.32;
+  animation: drift-b 32s var(--ease) infinite alternate;
+}
+
+.grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(to right, var(--border) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--border) 1px, transparent 1px);
+  background-size: 74px 74px;
+  mask-image: radial-gradient(115% 85% at 50% 0%, #000 12%, transparent 68%);
+  opacity: 0.55;
+}
+
+@keyframes drift-a {
+  to {
+    translate: 8vw 6vh;
+    scale: 1.12;
+  }
+}
+
+@keyframes drift-b {
+  to {
+    translate: -7vw 9vh;
+    scale: 0.9;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .orb {
+    animation: none;
+  }
 }

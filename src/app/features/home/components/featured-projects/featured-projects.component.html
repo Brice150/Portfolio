@@ -1,0 +1,20 @@
+<div class="head">
+  <app-section-header
+    eyebrow="Réalisations"
+    title="Trois projets menés de bout en bout"
+    lead="Conçus, développés et déployés seul, du premier schéma de données à la mise en ligne."
+  />
+
+  <a routerLink="/projets" class="all-link">
+    <span>Tous les projets</span>
+    <app-icon name="arrow-up-right" size="1.05em" />
+  </a>
+</div>
+
+<ul class="grid">
+  @for (project of projects; track project.slug; let i = $index) {
+    <li [appReveal]="i * 100">
+      <app-project-card [project]="project" />
+    </li>
+  }
+</ul>

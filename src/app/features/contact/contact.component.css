@@ -1,0 +1,285 @@
+.layout {
+  display: grid;
+  gap: clamp(1.75rem, 1.2rem + 2.2vw, 3rem);
+  align-items: start;
+}
+
+h2 {
+  margin-bottom: 1.1rem;
+  font-size: var(--step-2);
+}
+
+/* --- Canaux -------------------------------------------------------------- */
+
+.channels h2 {
+  font-size: 1.1rem;
+}
+
+.channels ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.channel {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.9rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: var(--r-sm);
+  background: var(--surface);
+  transition:
+    border-color var(--dur-fast) var(--ease),
+    translate var(--dur-fast) var(--ease);
+}
+
+.channel:hover {
+  border-color: var(--accent);
+  translate: 3px 0;
+}
+
+.channel-icon {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 2.4rem;
+  height: 2.4rem;
+  border-radius: var(--r-xs);
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+.channel-text {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.channel-label {
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+}
+
+.channel-value {
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+.channel-hint {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.availability {
+  margin-top: 1.25rem;
+  padding: 1.25rem;
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  background: var(--surface-2);
+}
+
+.availability p:last-child {
+  margin-top: 0.75rem;
+  font-size: 0.88rem;
+  line-height: 1.7;
+  color: var(--text-muted);
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.3rem 0.8rem;
+  border: 1px solid color-mix(in srgb, var(--success) 35%, transparent);
+  border-radius: var(--r-full);
+  background: color-mix(in srgb, var(--success) 12%, transparent);
+  color: var(--success);
+  font-size: 0.78rem;
+  font-weight: 500;
+}
+
+.dot {
+  width: 0.45rem;
+  height: 0.45rem;
+  border-radius: var(--r-full);
+  background: currentcolor;
+}
+
+/* --- Formulaire ---------------------------------------------------------- */
+
+.form-zone {
+  padding: clamp(1.35rem, 1rem + 1.5vw, 2.5rem);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  background:
+    radial-gradient(110% 80% at 100% 0%, var(--accent-soft), transparent 55%),
+    var(--surface);
+  box-shadow: var(--shadow-md);
+}
+
+.form-intro {
+  margin-bottom: 1.75rem;
+  font-size: 0.92rem;
+  color: var(--text-muted);
+}
+
+.row {
+  display: grid;
+  gap: 0 1rem;
+  grid-template-columns: 1fr;
+}
+
+.message-field {
+  margin-top: 0.25rem;
+}
+
+/* --- Alerte -------------------------------------------------------------- */
+
+.alert {
+  display: flex;
+  gap: 0.8rem;
+  margin-bottom: 1.5rem;
+  padding: 1rem 1.15rem;
+  border: 1px solid color-mix(in srgb, var(--danger) 40%, transparent);
+  border-radius: var(--r-sm);
+  background: color-mix(in srgb, var(--danger) 10%, transparent);
+}
+
+.alert app-icon {
+  flex: none;
+  margin-top: 0.2rem;
+  color: var(--danger);
+}
+
+.alert-title {
+  margin-bottom: 0.25rem;
+  font-weight: 600;
+  color: var(--danger);
+}
+
+.alert p {
+  font-size: 0.88rem;
+  line-height: 1.6;
+}
+
+.alert-fallback {
+  margin-top: 0.5rem;
+  color: var(--text-muted);
+}
+
+.alert-fallback a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* --- Piège à robots ------------------------------------------------------ */
+
+.honeypot {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+/* --- Envoi --------------------------------------------------------------- */
+
+.submit-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1.25rem;
+}
+
+.btn[disabled] {
+  opacity: 0.7;
+  cursor: progress;
+}
+
+.spinner {
+  width: 1.05em;
+  height: 1.05em;
+  border: 2px solid color-mix(in srgb, currentcolor 35%, transparent);
+  border-top-color: currentcolor;
+  border-radius: var(--r-full);
+  animation: spin 0.75s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    rotate: 360deg;
+  }
+}
+
+.privacy {
+  flex: 1;
+  min-width: 15rem;
+  font-size: 0.78rem;
+  line-height: 1.55;
+  color: var(--text-faint);
+}
+
+/* --- Confirmation -------------------------------------------------------- */
+
+.state {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.9rem;
+  padding-block: 1.5rem;
+}
+
+.state-icon {
+  display: grid;
+  place-items: center;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: var(--r-full);
+  background: color-mix(in srgb, var(--success) 15%, transparent);
+  color: var(--success);
+  animation: pop 480ms var(--ease-out);
+}
+
+@keyframes pop {
+  from {
+    scale: 0.6;
+    opacity: 0;
+  }
+}
+
+.state h2 {
+  margin: 0;
+}
+
+.state p {
+  max-width: 52ch;
+  color: var(--text-muted);
+}
+
+.state .btn {
+  margin-top: 0.5rem;
+}
+
+@media (width >= 620px) {
+  .row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (width >= 980px) {
+  .layout {
+    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.5fr);
+  }
+
+  .channels {
+    position: sticky;
+    top: calc(var(--nav-h) + 1.5rem);
+  }
+}

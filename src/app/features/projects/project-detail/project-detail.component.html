@@ -1,0 +1,122 @@
+@let current = project();
+
+@if (current) {
+  <article>
+    <div class="head">
+      <div class="shell">
+        <nav class="breadcrumb" aria-label="Fil d’Ariane">
+          <ol>
+            <li><a routerLink="/">Accueil</a></li>
+            <li><a routerLink="/projets">Projets</a></li>
+            <li aria-current="page">{{ current.name }}</li>
+          </ol>
+        </nav>
+
+        <p class="eyebrow">{{ current.year }} · {{ current.role }}</p>
+        <h1>{{ current.name }}</h1>
+        <p class="tagline">{{ current.tagline }}</p>
+
+        <div class="actions">
+          @if (current.links.live) {
+            <a [href]="current.links.live" target="_blank" rel="noopener" class="btn">
+              <app-icon name="external" size="1.05em" />
+              <span>Ouvrir le site</span>
+            </a>
+          }
+          @if (current.links.github) {
+            <a [href]="current.links.github" target="_blank" rel="noopener" class="btn btn-ghost">
+              <app-icon name="github" size="1.05em" />
+              <span>Code source</span>
+            </a>
+          }
+        </div>
+
+        <ul class="facts">
+          @for (fact of current.facts; track fact.label) {
+            <li>
+              <span class="fact-label">{{ fact.label }}</span>
+              <span class="fact-value">{{ fact.value }}</span>
+            </li>
+          }
+        </ul>
+      </div>
+    </div>
+
+    @if (current.shots) {
+      <section class="section shell" aria-label="Aperçu de l’interface">
+        <app-device-showcase [project]="current" />
+      </section>
+    }
+
+    @if (current.links.video) {
+      <section class="section shell" aria-labelledby="demo-titre">
+        <h2 id="demo-titre">Démonstration vidéo</h2>
+        <p class="video-note">
+          Ce projet n’est pas hébergé publiquement&nbsp;: il manipule des données personnelles que
+          je ne souhaite pas exposer. Voici l’application en fonctionnement.
+        </p>
+        <video
+          class="demo"
+          [src]="videoPath + current.links.video"
+          [poster]="imagePath + current.cover"
+          controls
+          preload="none"
+          playsinline
+        >
+          Votre navigateur ne prend pas en charge la lecture vidéo.
+        </video>
+      </section>
+    }
+
+    <div class="section shell body">
+      <div class="content">
+        <section class="block" appReveal>
+          <h2>Le contexte</h2>
+          <p>{{ current.context }}</p>
+        </section>
+
+        @for (section of current.sections; track section.title; let i = $index) {
+          <section class="block" [appReveal]="i * 70">
+            <h2>{{ section.title }}</h2>
+            <p>{{ section.body }}</p>
+          </section>
+        }
+      </div>
+
+      <aside class="side" aria-label="Informations techniques">
+        <div class="side-card">
+          <h2>Fonctionnalités</h2>
+          <ul class="features">
+            @for (feature of current.features; track feature) {
+              <li>
+                <app-icon name="check" size="0.95em" />
+                <span>{{ feature }}</span>
+              </li>
+            }
+          </ul>
+        </div>
+
+        <div class="side-card">
+          <h2>Stack technique</h2>
+          <ul class="stack">
+            @for (tech of current.stack; track tech) {
+              <li class="chip">{{ tech }}</li>
+            }
+          </ul>
+        </div>
+      </aside>
+    </div>
+
+    @let next = nextProject();
+    @if (next) {
+      <nav class="section shell next" aria-label="Projet suivant">
+        <a [routerLink]="['/projets', next.slug]" class="next-link">
+          <span class="next-label">Projet suivant</span>
+          <span class="next-name">{{ next.name }}</span>
+          <span class="next-tagline">{{ next.tagline }}</span>
+          <app-icon name="arrow-right" size="1.3em" />
+        </a>
+      </nav>
+    }
+  </article>
+}

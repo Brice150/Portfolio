@@ -1,0 +1,24 @@
+<section class="section shell wrapper">
+  <p class="code" aria-hidden="true">404</p>
+
+  <h1>Cette page a pris une autre route</h1>
+  <p class="lead">
+    L’adresse demandée n’existe pas, ou plus. Aucune erreur de votre part&nbsp;: c’est le genre de
+    lien qui vieillit mal. Voici où aller.
+  </p>
+
+  <ul class="links">
+    @for (item of navItems; track item.path) {
+      <li>
+        <a [routerLink]="item.path" class="link">
+          <app-icon [name]="item.icon" size="1.2em" />
+          <span class="link-text">
+            <span class="link-label">{{ item.label }}</span>
+            <span class="link-hint">{{ item.hint }}</span>
+          </span>
+          <app-icon name="arrow-right" size="1.05em" />
+        </a>
+      </li>
+    }
+  </ul>
+</section>

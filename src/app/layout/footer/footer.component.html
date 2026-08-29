@@ -1,0 +1,85 @@
+<footer class="foot">
+  <div class="shell">
+    <div class="cta-band">
+      <div class="cta-text">
+        <p class="eyebrow">Disponible</p>
+        <h2>Une mission Angular / Java à pourvoir&nbsp;?</h2>
+        <p class="lead">
+          Je cherche un poste de développeur full-stack confirmé sur Paris, en télétravail complet.
+          Écrivez-moi&nbsp;: je réponds sous 48&nbsp;heures.
+        </p>
+      </div>
+      <div class="cta-actions">
+        <a routerLink="/contact" class="btn">
+          <app-icon name="send" size="1.05em" />
+          <span>Me contacter</span>
+        </a>
+        <a [href]="profile.cv" [download]="'CV ' + profile.fullName + '.pdf'" class="btn btn-ghost">
+          <app-icon name="download" size="1.05em" />
+          <span>Télécharger le CV</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="grid">
+      <div class="col identity">
+        <span class="monogram" aria-hidden="true">BL</span>
+        <p class="name">{{ profile.fullName }}</p>
+        <p class="role">{{ profile.role }}</p>
+        <p class="location">
+          <app-icon name="pin" size="1em" />
+          <span>{{ profile.baseLocation }} · {{ profile.target }}</span>
+        </p>
+      </div>
+
+      <nav class="col" aria-label="Plan du site">
+        <h3>Navigation</h3>
+        <ul>
+          @for (item of navItems; track item.path) {
+            <li>
+              <a [routerLink]="item.path">{{ item.label }}</a>
+            </li>
+          }
+        </ul>
+      </nav>
+
+      <div class="col">
+        <h3>Contact</h3>
+        <ul>
+          <li>
+            <a [href]="'mailto:' + profile.email">{{ profile.email }}</a>
+          </li>
+          <li>
+            <a [href]="'tel:' + profile.phoneHref">{{ profile.phone }}</a>
+          </li>
+        </ul>
+        <div class="socials">
+          <a [href]="profile.linkedin" target="_blank" rel="noopener" class="social">
+            <app-icon name="linkedin" label="Profil LinkedIn" />
+          </a>
+          <a [href]="profile.github" target="_blank" rel="noopener" class="social">
+            <app-icon name="github" label="Profil GitHub" />
+          </a>
+        </div>
+      </div>
+
+      <div class="col">
+        <h3>Ce site</h3>
+        <ul class="tech">
+          <li>Angular 21 · zoneless</li>
+          <li>Signals · OnPush</li>
+          <li>Prerendering statique</li>
+          <li>Firebase Hosting</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="bottom">
+      <p>© {{ currentYear }} {{ profile.fullName }}. Conçu et développé de A à Z.</p>
+      <a href="#haut-de-page" class="top-link">
+        <span>Haut de page</span>
+        <app-icon name="chevron-up" size="1em" />
+      </a>
+    </div>
+  </div>
+</footer>

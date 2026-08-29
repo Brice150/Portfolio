@@ -1,0 +1,73 @@
+:host {
+  display: block;
+}
+
+.stage {
+  position: relative;
+  display: grid;
+  gap: 1.75rem;
+  padding-block: 1rem;
+}
+
+.glow {
+  position: absolute;
+  inset: 8% -6% 12%;
+  z-index: -1;
+  border-radius: 50%;
+  background: radial-gradient(closest-side, var(--accent-soft), transparent 72%);
+  filter: blur(28px);
+  pointer-events: none;
+}
+
+.laptop-slot,
+.phone-slot {
+  transition: translate var(--dur-slow) var(--ease);
+}
+
+/* Sur petits écrans, les deux maquettes se suivent verticalement. */
+.phone-slot {
+  width: min(62%, 13rem);
+  margin-inline: auto;
+}
+
+@media (width >= 720px) {
+  .stage {
+    grid-template-columns: 1fr;
+    padding-inline-end: 6rem;
+  }
+
+  .phone-slot {
+    position: absolute;
+    right: 0;
+    bottom: -1rem;
+    z-index: 2;
+    width: 26%;
+    max-width: 11rem;
+    margin: 0;
+  }
+
+  :host(:hover) .laptop-slot {
+    translate: -0.5% 0;
+  }
+
+  :host(:hover) .phone-slot {
+    translate: 0 -0.75rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .laptop-slot,
+  .phone-slot {
+    transition: none;
+  }
+}
+
+/* Variante compacte : uniquement l'ordinateur, sans dépassement. */
+:host(.is-compact) .stage {
+  padding-inline-end: 0;
+  padding-block: 0;
+}
+
+:host(.is-compact) .phone-slot {
+  display: none;
+}

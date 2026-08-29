@@ -1,0 +1,105 @@
+<app-page-hero
+  eyebrow="Compétences"
+  title="Ma stack, et ce que j’en fais concrètement"
+  [lead]="
+    'Une liste de technologies ne dit rien. Voici, pour chacune des ' +
+    skillCount +
+    ' briques que j’utilise, ce que j’en fais réellement en mission et le niveau auquel je me situe honnêtement.'
+  "
+>
+  <div class="filters" role="group" aria-label="Filtrer par famille de compétences">
+    <button
+      type="button"
+      class="filter"
+      [class.is-active]="activeGroup() === null"
+      [attr.aria-pressed]="activeGroup() === null"
+      (click)="selectGroup(null)"
+    >
+      Tout
+    </button>
+    @for (group of groups; track group.id) {
+      <button
+        type="button"
+        class="filter"
+        [class.is-active]="activeGroup() === group.id"
+        [attr.aria-pressed]="activeGroup() === group.id"
+        (click)="selectGroup(group.id)"
+      >
+        <app-icon [name]="group.icon" size="1em" />
+        <span>{{ group.title }}</span>
+      </button>
+    }
+  </div>
+</app-page-hero>
+
+<section class="section shell">
+  <div class="groups">
+    @for (group of visibleGroups(); track group.id; let g = $index) {
+      <article class="group" [appReveal]="g * 90">
+        <header class="group-head">
+          <span class="group-icon" aria-hidden="true">
+            <app-icon [name]="group.icon" size="1.3em" />
+          </span>
+          <div>
+            <h2>{{ group.title }}</h2>
+            <p>{{ group.description }}</p>
+          </div>
+        </header>
+
+        <ul class="skills">
+          @for (skill of group.skills; track skill.name) {
+            <li class="skill" [style.--level.%]="skill.level">
+              <div class="skill-head">
+                <h3>{{ skill.name }}</h3>
+                <span class="level">{{ skill.level }}<span aria-hidden="true">/100</span></span>
+              </div>
+              <div class="bar" aria-hidden="true">
+                <span class="bar-fill"></span>
+              </div>
+              <p class="note">{{ skill.note }}</p>
+            </li>
+          }
+        </ul>
+      </article>
+    }
+  </div>
+</section>
+
+<section class="section shell" aria-labelledby="pratiques">
+  <app-section-header
+    eyebrow="Pratiques"
+    title="Ce que je mets en place dans un projet Angular"
+    lead="Les partis pris techniques que j’applique par défaut, et que ce site respecte lui-même."
+    centered
+  />
+
+  <ul class="practices">
+    @for (practice of practices; track practice.title; let i = $index) {
+      <li class="practice" [appReveal]="i * 90">
+        <span class="practice-icon" aria-hidden="true">
+          <app-icon [name]="practice.icon" size="1.15em" />
+        </span>
+        <h3>{{ practice.title }}</h3>
+        <p>{{ practice.description }}</p>
+      </li>
+    }
+  </ul>
+</section>
+
+<section class="section shell">
+  <div class="honesty" appReveal>
+    <span class="honesty-icon" aria-hidden="true">
+      <app-icon name="info" size="1.2em" />
+    </span>
+    <div>
+      <h2>Une note sur ces niveaux</h2>
+      <p>
+        Les pourcentages ci-dessus sont une auto-évaluation, pas une note d’examen. Ils traduisent
+        ma capacité à intervenir seul sur un sujet donné&nbsp;: au-delà de 85, je suis autonome et
+        je peux arbitrer pour l’équipe&nbsp;; entre 70 et 85, je livre sans difficulté mais je
+        continue d’apprendre&nbsp;; en dessous, j’ai pratiqué en contexte réel sans en faire ma
+        spécialité. Je préfère annoncer cela clairement plutôt que d’afficher cinq étoiles partout.
+      </p>
+    </div>
+  </div>
+</section>

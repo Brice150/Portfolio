@@ -1,0 +1,46 @@
+<article class="card">
+  <div class="media">
+    <img
+      [src]="imagePath + project().cover"
+      [alt]="'Aperçu du projet ' + project().name"
+      loading="lazy"
+      decoding="async"
+    />
+    <span class="status" [class.is-live]="project().status === 'live'">
+      <span class="pulse" aria-hidden="true"></span>
+      {{ statusLabel() }}
+    </span>
+  </div>
+
+  <div class="body">
+    <p class="meta">
+      <span>{{ project().year }}</span>
+      <span aria-hidden="true">·</span>
+      <span>{{ project().role }}</span>
+    </p>
+
+    <h3>
+      <a [routerLink]="['/projets', project().slug]" class="title-link">
+        <span class="stretch"></span>
+        {{ project().name }}
+      </a>
+    </h3>
+
+    <p class="tagline">{{ project().tagline }}</p>
+    <p class="summary">{{ project().summary }}</p>
+
+    <ul class="stack" [attr.aria-label]="'Technologies de ' + project().name">
+      @for (tech of visibleStack(); track tech) {
+        <li class="chip">{{ tech }}</li>
+      }
+      @if (hiddenStackCount() > 0) {
+        <li class="chip more">+{{ hiddenStackCount() }}</li>
+      }
+    </ul>
+
+    <p class="more-link">
+      <span>Voir la fiche</span>
+      <app-icon name="arrow-right" size="1.05em" />
+    </p>
+  </div>
+</article>

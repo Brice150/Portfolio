@@ -1,0 +1,64 @@
+<ol class="timeline">
+  @for (milestone of milestones(); track milestone.id; let i = $index) {
+    <li class="entry" [class.is-current]="milestone.current" [appReveal]="i * 80">
+      <span class="marker" aria-hidden="true">
+        <app-icon [name]="iconFor(milestone.kind)" size="1.05em" />
+      </span>
+
+      <article class="card">
+        <header class="card-head">
+          <div class="titles">
+            <p class="period">
+              <time [attr.datetime]="milestone.startYear">{{ milestone.period }}</time>
+              @if (milestone.current) {
+                <span class="badge-current">En poste</span>
+              }
+            </p>
+            <h3>{{ milestone.title }}</h3>
+            <p class="org">
+              <span class="org-name">{{ milestone.organisation }}</span>
+              @if (milestone.location) {
+                <span class="sep" aria-hidden="true">·</span>
+                <span>{{ milestone.location }}</span>
+              }
+            </p>
+          </div>
+
+          @if (milestone.logo) {
+            <div class="logo">
+              <img
+                [src]="imagePath + milestone.logo"
+                [alt]="'Logo ' + milestone.organisation"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+          } @else {
+            <span class="kind">{{ labelFor(milestone.kind) }}</span>
+          }
+        </header>
+
+        <p class="summary">{{ milestone.summary }}</p>
+
+        @if (!compact() && milestone.achievements.length) {
+          <ul class="achievements">
+            @for (achievement of milestone.achievements; track achievement) {
+              <li>
+                <app-icon name="check" size="0.95em" />
+                <span>{{ achievement }}</span>
+              </li>
+            }
+          </ul>
+        }
+
+        @if (milestone.stack.length) {
+          <ul class="stack" [attr.aria-label]="'Technologies — ' + milestone.organisation">
+            @for (tech of milestone.stack; track tech) {
+              <li class="chip">{{ tech }}</li>
+            }
+          </ul>
+        }
+      </article>
+    </li>
+  }
+</ol>

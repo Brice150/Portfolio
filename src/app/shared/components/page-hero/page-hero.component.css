@@ -1,0 +1,28 @@
+.hero {
+  position: relative;
+  padding-block: clamp(3rem, 2rem + 4vw, 5.5rem) clamp(2rem, 1.4rem + 2.5vw, 3.5rem);
+  border-bottom: 1px solid var(--border);
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: -40% 30% auto -10%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(closest-side, var(--accent-soft), transparent 72%);
+  pointer-events: none;
+}
+
+h1 {
+  max-width: 20ch;
+  margin-block: 0.9rem 1.1rem;
+  font-size: var(--step-4);
+  font-weight: 700;
+  letter-spacing: -0.032em;
+}
+
+.lead {
+  max-width: 62ch;
+}

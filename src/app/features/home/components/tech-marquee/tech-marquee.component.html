@@ -1,0 +1,14 @@
+<div class="marquee" role="group" [attr.aria-label]="label()">
+  <ul class="track" aria-hidden="true">
+    @for (item of loop(); track $index) {
+      <li>{{ item }}</li>
+    }
+  </ul>
+
+  <!-- Liste lisible par les technologies d'assistance, sans duplication. -->
+  <ul class="sr-only">
+    @for (item of items(); track item) {
+      <li>{{ item }}</li>
+    }
+  </ul>
+</div>

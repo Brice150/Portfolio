@@ -1,0 +1,147 @@
+<app-page-hero
+  eyebrow="À propos"
+  title="J’ai quitté les moteurs d’avion pour le code. Voici pourquoi."
+  lead="Une reconversion n’est pas une ligne sur un CV : c’est une décision, une période d’inconfort, puis un métier qu’on finit par exercer mieux que si on y était arrivé par défaut."
+/>
+
+<article class="section shell story">
+  <section class="chapter" appReveal>
+    <p class="chapter-index" aria-hidden="true">01</p>
+    <h2>Cinq ans à apprendre à modéliser des systèmes complexes</h2>
+    <p>
+      J’ai intégré l’ISAE-ENSMA en 2017, une école d’ingénieurs tournée vers la mécanique et
+      l’énergétique. Optimisation moteur, analyse thermique avancée, gestion de projet, innovation
+      autour des drones&nbsp;: le programme m’a appris une chose avant toutes les autres, et elle n’a
+      rien de spécifique à l’aéronautique. Avant de construire quoi que ce soit, il faut le
+      modéliser&nbsp;; avant de modéliser, il faut poser ses hypothèses&nbsp;; et si une hypothèse
+      est fausse, tout ce qu’on empile dessus est faux aussi.
+    </p>
+    <p>
+      Cette discipline-là, je l’ai emportée avec moi. C’est exactement le même réflexe qui me fait
+      aujourd’hui remonter jusqu’au modèle de données quand un écran se comporte bizarrement,
+      plutôt que d’ajouter un correctif à l’endroit où le symptôme apparaît.
+    </p>
+  </section>
+
+  <section class="chapter" appReveal>
+    <p class="chapter-index" aria-hidden="true">02</p>
+    <h2>Le moment où j’ai compris que je m’étais trompé de sujet</h2>
+    <p>
+      Pendant mes projets d’école, il y avait toujours un moment où il fallait écrire le programme
+      qui ferait tourner le calcul. Officiellement, c’était l’intendance&nbsp;: le vrai sujet, c’était
+      la physique. Sauf que c’était systématiquement la partie que j’avais envie de reprendre le
+      soir, d’améliorer, de rendre plus propre. J’ai mis un certain temps à me l’avouer, parce que
+      changer de voie juste après cinq ans d’études ressemble à un aveu d’échec.
+    </p>
+    <p>
+      En 2021, diplôme d’ingénieur et master en poche, j’ai tranché. Pas d’année sabbatique, pas de
+      détour&nbsp;: certification Java validée chez M2i, premiers projets web construits seul pour
+      avoir quelque chose de concret à montrer, et candidatures en ESN comme développeur. Je suis
+      entré chez Sopra Steria directement en poste, sans repasser par un stage. La reconversion a
+      duré quelques mois&nbsp;; ce qui l’a rendue possible, c’est de ne pas avoir attendu d’être prêt
+      pour commencer à produire.
+    </p>
+  </section>
+
+  <section class="chapter" appReveal>
+    <p class="chapter-index" aria-hidden="true">03</p>
+    <h2>Cinq ans plus tard, le métier est devenu le mien</h2>
+    <p>
+      Trois missions, trois univers métier. La maintenance de véhicules militaires chez Sopra
+      Steria, où j’ai appris le rythme d’un vrai projet, puis pris le rôle de référent frontend et
+      piloté deux développeurs pour tenir des jalons client. La gestion des navires de plaisance
+      chez Capgemini, avec le développement complet de la taxation 2026&nbsp;: traduire un barème
+      réglementaire en règles de calcul, en modèle de données et en écrans de contrôle, sur un parc
+      applicatif déjà en production. Et aujourd’hui Open, sur la même chaîne Angular / Java.
+    </p>
+    <p>
+      Ce qui a le plus changé en {{ years }} ans, ce n’est pas ma maîtrise technique — elle
+      progresse, forcément — c’est mon rapport à l’équipe. J’ai encadré un stagiaire, puis un
+      alternant, puis accompagné des juniors. On découvre vite qu’expliquer un choix technique
+      oblige à le clarifier, et qu’une revue de code utile vaut mieux qu’une fonctionnalité livrée
+      seul dans son coin.
+    </p>
+  </section>
+
+  <section class="chapter" appReveal>
+    <p class="chapter-index" aria-hidden="true">04</p>
+    <h2>Ce que je cherche maintenant</h2>
+    <p>
+      Je veux rejoindre une équipe parisienne en télétravail complet, sur un produit ou un
+      applicatif métier où la qualité technique est un critère de décision et pas une variable
+      d’ajustement. Concrètement&nbsp;: du Angular récent plutôt que du legacy figé, un back Java qui
+      assume ses responsabilités, des revues de code qui existent vraiment, et des interlocuteurs
+      métier accessibles.
+    </p>
+    <p>
+      Je reste basé à Rennes et j’assume ce choix&nbsp;: cinq ans d’ESN m’ont appris à travailler avec
+      des équipes réparties, et le télétravail complet ne me fait pas peur — il me demande
+      simplement d’être plus rigoureux à l’écrit et plus disponible sur les plages communes. C’est
+      un contrat que je tiens.
+    </p>
+
+    <div class="chapter-actions">
+      <a routerLink="/parcours" class="btn">
+        <span>Voir le parcours détaillé</span>
+        <app-icon name="arrow-right" size="1.05em" />
+      </a>
+      <a routerLink="/contact" class="btn btn-ghost">
+        <app-icon name="send" size="1.05em" />
+        <span>Me contacter</span>
+      </a>
+    </div>
+  </section>
+</article>
+
+<section class="section shell">
+  <app-section-header
+    eyebrow="Bagage"
+    title="Ce que l’ingénierie m’a laissé et que le code n’aurait pas donné"
+    lead="Une reconversion ne remet pas le compteur à zéro. Elle déplace ce qu’on sait déjà faire."
+    centered
+  />
+
+  <ul class="strengths">
+    @for (strength of strengths; track strength.title; let i = $index) {
+      <li class="strength" [appReveal]="i * 90">
+        <span class="strength-icon" aria-hidden="true">
+          <app-icon [name]="strength.icon" size="1.2em" />
+        </span>
+        <h3>{{ strength.title }}</h3>
+        <p>{{ strength.description }}</p>
+      </li>
+    }
+  </ul>
+</section>
+
+<section class="section shell">
+  <app-section-header
+    eyebrow="Hors écran"
+    title="Le reste, qui compte aussi"
+    lead="Parce qu’un entretien technique finit toujours par la question « et à côté, vous faites quoi ? »"
+  />
+
+  <ul class="notes">
+    @for (note of notes; track note.title; let i = $index) {
+      <li class="note" [appReveal]="i * 80">
+        <app-icon [name]="note.icon" size="1.15em" />
+        <div>
+          <h3>{{ note.title }}</h3>
+          <p>{{ note.text }}</p>
+        </div>
+      </li>
+    }
+  </ul>
+
+  <div class="languages" appReveal>
+    <h3>Langues</h3>
+    <ul>
+      @for (language of profile.languages; track language.label) {
+        <li>
+          <span class="lang-label">{{ language.label }}</span>
+          <span class="lang-level">{{ language.level }}</span>
+        </li>
+      }
+    </ul>
+  </div>
+</section>

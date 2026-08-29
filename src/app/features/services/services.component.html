@@ -1,0 +1,80 @@
+<app-page-hero
+  eyebrow="Prestations"
+  title="Ce sur quoi vous pouvez réellement compter"
+  [lead]="
+    'Après ' +
+    years +
+    ' ans d’ESN, je sais assez précisément où j’apporte de la valeur — et où je ne suis pas la bonne personne. Voici les quatre situations dans lesquelles je suis le plus utile à une équipe.'
+  "
+/>
+
+<section class="section shell">
+  <ul class="offers">
+    @for (offer of offers; track offer.id; let i = $index) {
+      <li class="offer" [appReveal]="i * 90">
+        <span class="offer-icon" aria-hidden="true">
+          <app-icon [name]="offer.icon" size="1.3em" />
+        </span>
+
+        <h2>{{ offer.title }}</h2>
+        <p class="pitch">{{ offer.pitch }}</p>
+
+        <ul class="deliverables">
+          @for (item of offer.deliverables; track item) {
+            <li>
+              <app-icon name="check" size="0.95em" />
+              <span>{{ item }}</span>
+            </li>
+          }
+        </ul>
+      </li>
+    }
+  </ul>
+</section>
+
+<section class="section shell">
+  <app-section-header
+    eyebrow="Collaboration"
+    [title]="collaboration.title"
+    lead="Le télétravail complet n’est pas une facilité que je demande : c’est un mode de fonctionnement que je pratique et que je sais tenir."
+    centered
+  />
+
+  <ul class="collab">
+    @for (point of collaboration.points; track point.title; let i = $index) {
+      <li class="collab-item" [appReveal]="i * 80">
+        <app-icon [name]="point.icon" size="1.2em" />
+        <div>
+          <h3>{{ point.title }}</h3>
+          <p>{{ point.text }}</p>
+        </div>
+      </li>
+    }
+  </ul>
+</section>
+
+<section class="section shell">
+  <div class="honest" appReveal>
+    <div>
+      <p class="eyebrow">Transparence</p>
+      <h2>Ce que je ne fais pas</h2>
+      <p>
+        Je ne suis ni designer, ni expert DevOps, ni data engineer. Je sais lire une maquette,
+        travailler avec un pipeline existant et écrire du SQL correct, mais si votre besoin
+        principal porte sur l’un de ces trois métiers, quelqu’un d’autre sera plus efficace que moi.
+        Je préfère le dire dès le premier échange plutôt que de le découvrir au troisième sprint.
+      </p>
+    </div>
+
+    <div class="honest-cta">
+      <a routerLink="/contact" class="btn">
+        <app-icon name="send" size="1.05em" />
+        <span>Discutons de votre besoin</span>
+      </a>
+      <a [href]="profile.cv" [download]="'CV ' + profile.fullName + '.pdf'" class="btn btn-ghost">
+        <app-icon name="download" size="1.05em" />
+        <span>Télécharger le CV</span>
+      </a>
+    </div>
+  </div>
+</section>
