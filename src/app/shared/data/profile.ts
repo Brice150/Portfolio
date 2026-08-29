@@ -21,7 +21,7 @@ export const profile = {
   cv: './assets/files/Brice Lecomte.pdf',
   languages: [
     { label: 'Français', level: 'Langue maternelle' },
-    { label: 'Anglais', level: 'C1 — TOEIC 945/990' },
+    { label: 'Anglais', level: 'C1 (TOEIC 945/990)' },
   ],
 } as const;
 
@@ -47,7 +47,7 @@ export const highlights: Highlight[] = [
     value: `${yearsOfExperience()} ans`,
     label: 'd’expérience Full-Stack',
     detail:
-      '4 missions en ESN sur des domaines réglementés — défense puis administration maritime. Toujours du Angular en front et du Java/Spring en back.',
+      '4 missions en ESN sur des domaines réglementés : défense puis administration maritime. Toujours du Angular en front et du Java/Spring en back.',
   },
   {
     icon: 'users',
@@ -61,7 +61,7 @@ export const highlights: Highlight[] = [
     value: '5',
     label: 'projets personnels aboutis',
     detail:
-      'Menés de bout en bout : conception, développement, déploiement et maintenance. 4 sont en ligne, le 5e est démontré en vidéo.',
+      'Menés de bout en bout : conception, développement, déploiement et maintenance. 4 sont en ligne aujourd’hui.',
   },
   {
     icon: 'award',

@@ -65,7 +65,7 @@ export class ProjectsComponent implements OnInit {
 
   ngOnInit(): void {
     this.seoService.setPage({
-      title: 'Projets | Applications web Angular & Java — Brice Lecomte',
+      title: 'Projets | Brice Lecomte, développeur Angular & Java',
       description:
         '5 applications web conçues, développées et déployées de bout en bout : gestion du quotidien, quiz multijoueur, simulateur d’aides, application Full-Stack Java et ce portfolio.',
       path: '/projets',

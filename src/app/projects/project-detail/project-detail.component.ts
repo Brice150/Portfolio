@@ -54,7 +54,7 @@ export class ProjectDetailComponent implements OnInit {
     const url = `${SITE_URL}/projets/${project.slug}`;
 
     this.seoService.setPage({
-      title: `${project.name} — ${project.tagline} | Brice Lecomte`,
+      title: `${project.name} : ${project.tagline} | Brice Lecomte`,
       description: project.summary,
       path: `/projets/${project.slug}`,
       image: project.cover,

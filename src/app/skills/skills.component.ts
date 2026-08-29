@@ -44,7 +44,7 @@ export class SkillsComponent implements OnInit {
 
   ngOnInit(): void {
     this.seoService.setPage({
-      title: 'Compétences | Angular, Java, Spring Boot — Brice Lecomte',
+      title: 'Compétences | Brice Lecomte, développeur Angular & Java',
       description:
         'Le détail de ma stack : Angular, TypeScript, RxJS, Java, Spring Boot, PostgreSQL, Oracle, accessibilité et performance. Avec, pour chaque brique, ce que j’en fais réellement.',
       path: '/competences',

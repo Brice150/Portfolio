@@ -16,13 +16,9 @@
 }
 
 h1 {
-  max-width: 20ch;
   margin-block: 0.9rem 1.1rem;
   font-size: var(--step-4);
   font-weight: 700;
   letter-spacing: -0.032em;
 }
 
-.lead {
-  max-width: 62ch;
-}

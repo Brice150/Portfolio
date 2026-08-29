@@ -32,7 +32,7 @@ export const serviceOffers: ServiceOffer[] = [
     icon: 'gauge',
     title: 'Reprendre la main sur les performances',
     pitch:
-      'Une application qui rame fait fuir ses utilisateurs avant que la fonctionnalité ne compte. Identifier où le temps se perd réellement, côté navigateur comme côté base de données.',
+      'Des écrans qui se figent et des temps de réponse qui s’allongent, les utilisateurs le remarquent bien avant les nouvelles fonctionnalités. Identifier où le temps se perd réellement, côté navigateur comme côté base de données.',
     deliverables: [
       'Audit de chargement : bundle, lazy loading, rendu initial',
       'Passage en OnPush et assainissement de la détection de changement',
@@ -76,7 +76,7 @@ export const collaboration = {
     {
       icon: 'book' as const,
       title: 'Ce que je laisse derrière moi',
-      text: 'Une base de code qu’un autre développeur peut reprendre : conventions explicites, découpage lisible, décisions documentées. Une mission réussie est une mission dont on peut partir.',
+      text: 'Une base de code qu’un autre développeur peut reprendre : conventions explicites, découpage lisible, décisions documentées. Quand je quitte une mission, l’équipe doit pouvoir continuer sans avoir à me rappeler.',
     },
   ],
 };

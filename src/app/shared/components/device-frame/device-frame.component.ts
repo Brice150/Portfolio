@@ -56,8 +56,8 @@ export class DeviceFrameComponent implements OnDestroy {
   readonly source = computed(() => `${this.imagePath}${this.src()}`);
   readonly label = computed(() =>
     this.variant() === 'phone'
-      ? `${this.alt()} — aperçu mobile défilable`
-      : `${this.alt()} — aperçu bureau défilable`,
+      ? `${this.alt()}, aperçu mobile défilable`
+      : `${this.alt()}, aperçu bureau défilable`,
   );
 
   ngOnDestroy(): void {

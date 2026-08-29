@@ -38,7 +38,7 @@
           }
         </header>
 
-        <p class="summary">{{ milestone.summary }}</p>
+        <p class="summary justified">{{ milestone.summary }}</p>
 
         @if (!compact() && milestone.missions?.length) {
           <ol class="missions">
@@ -48,8 +48,8 @@
                   <span class="mission-label">{{ mission.label }}</span>
                   <span class="mission-period">{{ mission.period }}</span>
                 </p>
-                <p class="mission-summary">{{ mission.summary }}</p>
-                <ul class="stack" [attr.aria-label]="'Technologies — ' + mission.label">
+                <p class="mission-summary justified">{{ mission.summary }}</p>
+                <ul class="stack" [attr.aria-label]="'Technologies : ' + mission.label">
                   @for (tech of mission.stack; track tech) {
                     <li class="chip">{{ tech }}</li>
                   }
@@ -71,7 +71,7 @@
         }
 
         @if (milestone.stack.length) {
-          <ul class="stack" [attr.aria-label]="'Technologies — ' + milestone.organisation">
+          <ul class="stack" [attr.aria-label]="'Technologies : ' + milestone.organisation">
             @for (tech of milestone.stack; track tech) {
               <li class="chip">{{ tech }}</li>
             }

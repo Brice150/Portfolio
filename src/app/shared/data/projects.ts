@@ -6,8 +6,8 @@ export const projects: Project[] = [
     name: 'Life Rise',
     tagline: 'Toute la vie quotidienne réunie dans une seule application',
     summary:
-      '19 espaces de gestion — repas, sport, finances, tâches, inventaire, voyages — reliés par un assistant conversationnel et partageables entre les profils d’un même foyer.',
-    year: '2025 — 2026',
+      '19 espaces de gestion (repas, sport, finances, tâches, inventaire, voyages) reliés par un assistant conversationnel et partageables entre les profils d’un même foyer.',
+    year: '2025 - 2026',
     startYear: 2025,
     status: 'live',
     featured: true,
@@ -19,11 +19,12 @@ export const projects: Project[] = [
     stack: [
       'Angular',
       'TypeScript',
+      'RxJS',
       'Angular Material',
       'Firebase',
       'Firestore',
+      'IndexedDB',
       'IA générative',
-      'SSR / Prerender',
       'Stripe',
     ],
     facts: [
@@ -31,21 +32,26 @@ export const projects: Project[] = [
       { label: 'Espaces', value: '19' },
       { label: 'Profils', value: '6 par compte' },
       { label: 'Assistant', value: 'IA intégrée' },
+      { label: 'Hors ligne', value: 'Cache IndexedDB' },
     ],
     context:
       'Gérer son quotidien suppose aujourd’hui de jongler entre une dizaine d’applications qui ne communiquent jamais entre elles. Life Rise part de ce constat : un seul endroit pour suivre ce qui compte, avec une donnée unifiée, une expérience cohérente d’un espace à l’autre, et la possibilité de partager avec son conjoint, sa famille ou sa colocation.',
     sections: [
       {
         title: 'Une base commune, 19 espaces',
-        body: 'Chaque domaine — nourriture, fitness, finance, organisation, inventaire, voyages, prévisions — est une feature Angular chargée en lazy loading, avec son propre modèle et ses propres services. Le noyau applicatif porte l’authentification, l’accès Firebase, le thème et les composants partagés. Ce découpage permet d’ajouter un espace sans toucher aux autres, et de garder un bundle initial léger malgré l’étendue fonctionnelle.',
+        body: 'Chaque domaine (nourriture, fitness, finance, organisation, inventaire, voyages, prévisions) est une feature Angular chargée en lazy loading, avec son propre modèle et ses propres services. Le noyau applicatif porte l’authentification, l’accès Firebase, le thème et les composants partagés. Ce découpage permet d’ajouter un espace sans toucher aux autres, et de garder un bundle initial léger malgré l’étendue fonctionnelle.',
       },
       {
         title: 'Un assistant conversationnel qui agit vraiment',
-        body: 'Bob, l’assistant intégré, ne se contente pas de répondre : il crée, modifie ou supprime n’importe quel élément de l’application, après confirmation explicite de l’utilisateur. Il accepte la saisie vocale, et une fonction de complétion automatique remplit les champs vides d’un formulaire à partir du contexte. Le quota par profil est plafonné, ce qui impose de concevoir des appels précis plutôt que d’envoyer tout l’état de l’application à chaque requête — exactement la discipline que j’applique à mon usage professionnel de l’IA.',
+        body: 'Bob, l’assistant intégré, ne se contente pas de répondre : il crée, modifie ou supprime n’importe quel élément de l’application, après confirmation explicite de l’utilisateur. Il accepte la saisie vocale, et une fonction de complétion automatique remplit les champs vides d’un formulaire à partir du contexte. Le quota par profil est plafonné, ce qui impose de concevoir des appels précis plutôt que d’envoyer tout l’état de l’application à chaque requête, exactement la discipline que j’applique à mon usage professionnel de l’IA.',
       },
       {
         title: 'Le collectif, pas seulement le solo',
         body: 'Jusqu’à 6 profils par compte, avec partage de recettes, de séances de sport et d’éléments d’inventaire, gestion à plusieurs des tâches et des repas, et une messagerie temps réel avec réactions. Les finances, elles, restent strictement personnelles à chaque profil. C’est la partie qui a demandé le plus de soin sur le modèle de données : décider, domaine par domaine, ce qui se partage et ce qui ne se partage pas.',
+      },
+      {
+        title: 'Utilisable même sans réseau',
+        body: 'Les données déjà consultées sont conservées dans IndexedDB, côté navigateur. L’application s’ouvre donc sur du contenu immédiat plutôt que sur un écran de chargement, la navigation reste possible quand la connexion tombe, et les modifications faites hors ligne repartent vers Firestore dès son retour. Sur un modèle facturé à la lecture, c’est aussi une économie directe : les mêmes documents ne sont pas rechargés à chaque changement d’écran.',
       },
       {
         title: 'Ce que le projet a apporté',
@@ -59,6 +65,8 @@ export const projects: Project[] = [
       'Jusqu’à 6 profils par compte, avec partage d’éléments entre profils',
       'Finances strictement personnelles à chaque profil',
       'Messagerie temps réel avec réactions',
+      'Cache local IndexedDB : consultation et navigation possibles hors ligne',
+      'Pages publiques prérendues au build, pour un premier affichage immédiat',
       'Données hébergées en Europe et conformité RGPD',
     ],
     links: {
@@ -82,12 +90,12 @@ export const projects: Project[] = [
       desktop: 'projects/shots/gametime-desktop.webp',
       mobile: 'projects/shots/gametime-mobile.webp',
     },
-    stack: ['Angular', 'TypeScript', 'Angular Material', 'Firebase'],
+    stack: ['Angular', 'TypeScript', 'RxJS', 'Angular Material', 'Firebase'],
     facts: [
       { label: 'Durée (temps libre)', value: '6 mois' },
       { label: 'Jeux', value: '3' },
       { label: 'Mode', value: 'Multijoueur' },
-      { label: 'Temps réel', value: 'Firebase' },
+      { label: 'Dictionnaire', value: '40 000 mots' },
     ],
     context:
       'Un projet volontairement orienté temps réel, pour sortir du CRUD et se confronter à la synchronisation d’états entre plusieurs joueurs : qui répond quand, que se passe-t-il si quelqu’un quitte la partie, comment garder tout le monde sur la même manche.',
@@ -132,7 +140,7 @@ export const projects: Project[] = [
       desktop: 'projects/shots/simulator-desktop.webp',
       mobile: 'projects/shots/simulator-mobile.webp',
     },
-    stack: ['Angular', 'TypeScript'],
+    stack: ['Angular', 'TypeScript', 'RxJS'],
     facts: [
       { label: 'Durée (temps libre)', value: '2 jours' },
       { label: 'Nature', value: 'Calculateur' },
@@ -168,7 +176,7 @@ export const projects: Project[] = [
     tagline: 'Une application de rencontre construite de zéro, front et back',
     summary:
       'Profils, préférences, système de correspondance réciproque et messagerie, sur une API Java/Spring Boot et une base relationnelle.',
-    year: '2023 — 2024',
+    year: '2023 - 2024',
     startYear: 2023,
     status: 'archive',
     featured: false,
@@ -177,7 +185,7 @@ export const projects: Project[] = [
       desktop: 'projects/shots/pickme-desktop.webp',
       mobile: 'projects/shots/pickme-mobile.webp',
     },
-    stack: ['Angular', 'TypeScript', 'Java', 'Spring Boot', 'PostgreSQL'],
+    stack: ['Angular', 'TypeScript', 'RxJS', 'Java', 'Spring Boot', 'PostgreSQL'],
     facts: [
       { label: 'Durée (temps libre)', value: '1 an' },
       { label: 'Nature', value: 'Full-stack' },
@@ -185,7 +193,7 @@ export const projects: Project[] = [
       { label: 'Cœur du sujet', value: 'Algorithme de sélection' },
     ],
     context:
-      'Le projet qui tient le front et le back en même temps : un front Angular exigeant en interactions, et un back Java/Spring avec une vraie modélisation relationnelle. Une application de rencontre est un excellent prétexte — elle concentre authentification, upload, filtrage, appariement et temps réel.',
+      'Le projet qui tient le front et le back en même temps : un front Angular exigeant en interactions, et un back Java/Spring avec une vraie modélisation relationnelle. Une application de rencontre est un excellent prétexte : elle concentre authentification, upload, filtrage, appariement et temps réel.',
     sections: [
       {
         title: 'Modéliser la correspondance',
@@ -193,7 +201,7 @@ export const projects: Project[] = [
       },
       {
         title: 'Pourquoi il n’est plus en ligne',
-        body: 'Il l’a été. Je l’ai retiré pour deux raisons : l’hébergement avait un coût que rien ne justifiait pour une application que je n’utilisais pas au quotidien, et les applications de rencontre actuelles vont plus loin — elles analysent les photos par intelligence artificielle pour établir un score d’attractivité, ce que mon algorithme ne fait pas. Le code reste ouvert en lecture sur GitHub.',
+        body: 'Il l’a été. Je l’ai retiré pour deux raisons : l’hébergement avait un coût que rien ne justifiait pour une application que je n’utilisais pas au quotidien, et les applications de rencontre actuelles vont plus loin : elles analysent les photos par intelligence artificielle pour établir un score d’attractivité, ce que mon algorithme ne fait pas. Le code reste ouvert en lecture sur GitHub.',
       },
     ],
     features: [
@@ -213,7 +221,7 @@ export const projects: Project[] = [
     name: 'Ce portfolio',
     tagline: 'Un site qui applique à lui-même ce qu’il met en avant',
     summary:
-      'Une vitrine technique autant qu’un CV : rendu prérendu, détection de changement sans Zone.js et accessibilité traitée dès la conception plutôt qu’en fin de projet.',
+      'Une vitrine technique autant qu’un CV : des pages prérendues, une détection de changement sans Zone.js et une accessibilité traitée dès la conception plutôt qu’en fin de projet.',
     year: '2026',
     startYear: 2026,
     status: 'live',
@@ -223,13 +231,7 @@ export const projects: Project[] = [
       desktop: 'projects/shots/portfolio-desktop.webp',
       mobile: 'projects/shots/portfolio-mobile.webp',
     },
-    stack: [
-      'Angular',
-      'Typescript',
-      'Angular Material',
-      'SSR / Prerender',
-      'Zoneless',
-    ],
+    stack: ['Angular', 'TypeScript', 'RxJS', 'Angular Material'],
     facts: [
       { label: 'Durée (temps libre)', value: '2 semaines' },
       { label: 'Rendu', value: 'Prérendu' },
@@ -244,7 +246,7 @@ export const projects: Project[] = [
         body: 'L’application tourne sans Zone.js : l’état est porté par des signals et tous les composants sont en stratégie OnPush. Le résultat est un bundle plus léger et une détection de changement prévisible. C’est le premier projet où je pousse ce parti pris jusqu’au bout, et je le reprends depuis sur mes développements personnels.',
       },
       {
-        title: 'Prerendering statique',
+        title: 'Le contenu avant le JavaScript',
         body: 'Chaque route, fiches projet comprises, est générée en HTML au moment du build. Firebase Hosting ne sert que des fichiers statiques, le contenu est visible immédiatement et indexable, puis l’application prend le relais côté navigateur.',
       },
       {
@@ -267,7 +269,7 @@ export const projects: Project[] = [
 
 /** Dernière année mentionnée dans le libellé de période. */
 const lastYear = (project: Project): number => {
-  const years = project.year.match(/d{4}/g) ?? [];
+  const years = project.year.match(/\d{4}/g) ?? [];
   return Number(years.at(-1) ?? project.startYear);
 };
 

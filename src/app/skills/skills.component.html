@@ -2,9 +2,9 @@
   eyebrow="Compétences"
   title="Ma stack, et ce que j’en fais concrètement"
   [lead]="
-    'Une liste de technologies ne dit rien. Voici, pour chacune des ' +
+    'Une liste de technologies ne dit rien. Voici, pour chacun des ' +
     skillCount +
-    ' briques que j’utilise, ce que j’en fais réellement en mission et le niveau auquel je me situe honnêtement.'
+    ' outils que j’utilise, ce que j’en fais réellement en mission et le niveau auquel je me situe honnêtement.'
   "
 >
   <app-filter-bar
@@ -25,7 +25,7 @@
           </span>
           <div>
             <h2>{{ group.title }}</h2>
-            <p>{{ group.description }}</p>
+            <p class="justified">{{ group.description }}</p>
           </div>
         </header>
 
@@ -41,7 +41,7 @@
               <div class="bar" aria-hidden="true">
                 <span class="bar-fill"></span>
               </div>
-              <p class="note">{{ skill.note }}</p>
+              <p class="note justified">{{ skill.note }}</p>
             </li>
           }
         </ul>
@@ -84,7 +84,7 @@
           <app-icon [name]="practice.icon" size="1.15em" />
         </span>
         <h3>{{ practice.title }}</h3>
-        <p>{{ practice.description }}</p>
+        <p class="justified">{{ practice.description }}</p>
       </li>
     }
   </ul>
@@ -106,7 +106,7 @@
         </span>
 
         <h3>{{ offer.title }}</h3>
-        <p class="pitch">{{ offer.pitch }}</p>
+        <p class="pitch justified">{{ offer.pitch }}</p>
 
         <ul class="deliverables">
           @for (item of offer.deliverables; track item) {

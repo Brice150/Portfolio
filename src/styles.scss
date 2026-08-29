@@ -1,7 +1,7 @@
 @use '@angular/material' as mat;
 
 /* ------------------------------------------------------------------------- */
-/* Angular Material – thème M3, piloté par color-scheme                       */
+/* Angular Material : thème M3, piloté par color-scheme                       */
 /* ------------------------------------------------------------------------- */
 
 html {
@@ -45,7 +45,7 @@ html {
   --surface-2: light-dark(#f2f4f9, #171c25);
   --surface-3: light-dark(#e8ecf4, #1e242f);
 
-  /* Texte — contrastes relevés pour rester lisibles sur les deux fonds */
+  /* Texte : contrastes relevés pour rester lisibles sur les deux fonds */
   --text: light-dark(#0b1017, #edf1f7);
   --text-muted: light-dark(#3d4756, #bcc5d1);
   --text-faint: light-dark(#5a6575, #98a3b2);
@@ -54,7 +54,7 @@ html {
   --border: light-dark(rgb(9 12 20 / 10%), rgb(255 255 255 / 9%));
   --border-strong: light-dark(rgb(9 12 20 / 18%), rgb(255 255 255 / 18%));
 
-  /* Accent — surchargé par [data-accent] */
+  /* Accent : surchargé par [data-accent] */
   --accent: light-dark(#2563eb, #4f8dff);
   --accent-hover: light-dark(#1d4ed8, #6ea3ff);
   --accent-2: light-dark(#0891b2, #22d3ee);
@@ -334,19 +334,26 @@ ol {
   color: var(--text-muted);
 }
 
-/* Texte long en pavé justifié. À réserver aux colonnes larges : sur une carte
-   étroite, la justification creuse des rivières. La césure s'appuie sur le
-   `lang="fr"` du document. */
+/* La justification n'est tenable que si la césure suit : sans elle, une
+   colonne étroite se remplit de blancs. `lang="fr"` est posé sur <html>,
+   les navigateurs disposent donc du bon dictionnaire de césure. */
 .justified {
   text-align: justify;
   text-wrap: pretty;
   hyphens: auto;
+  -webkit-hyphens: auto;
+  /* Pas de césure sous 6 lettres, ni de fragment de moins de 3 lettres. */
+  hyphenate-limit-chars: 6 3 3;
+  overflow-wrap: break-word;
 }
 
-@media (width < 560px) {
-  /* Sur colonne étroite, la justification produit trop d'espaces. */
-  .justified {
-    text-align: left;
+/* Les navigateurs sans césure automatique garderaient des blancs béants sur
+   colonne étroite : on y repasse au fer à gauche. */
+@supports not (hyphens: auto) {
+  @media (width < 560px) {
+    .justified {
+      text-align: left;
+    }
   }
 }
 
@@ -439,6 +446,24 @@ ol {
   font-size: var(--step--1);
   font-weight: 500;
   white-space: nowrap;
+  transition:
+    color var(--dur-fast) var(--ease),
+    border-color var(--dur-fast) var(--ease),
+    background var(--dur-fast) var(--ease),
+    translate var(--dur-fast) var(--ease);
+}
+
+.chip:hover {
+  border-color: color-mix(in srgb, var(--accent) 45%, transparent);
+  background: var(--accent-soft);
+  color: var(--text);
+  translate: 0 -2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .chip:hover {
+    translate: 0 0;
+  }
 }
 
 .btn {
@@ -496,7 +521,7 @@ ol {
 }
 
 /* ------------------------------------------------------------------------- */
-/* Angular Material – ajustements                                             */
+/* Angular Material : ajustements                                             */
 /* ------------------------------------------------------------------------- */
 
 .mat-mdc-form-field {

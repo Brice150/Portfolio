@@ -39,7 +39,7 @@ export const skillGroups: SkillGroup[] = [
         note: 'Obligatoire sur les projets publics. Parcours clavier complet, rôles ARIA là où le HTML ne suffit pas, contrastes vérifiés, prefers-reduced-motion respecté.',
       },
       {
-        name: 'DSFR — Design Système de l’État',
+        name: 'DSFR (Design Système de l’État)',
         level: 75,
         note: 'Le design system imposé aux sites de l’État. Composants, typographies et contrastes conformes, intégrés sans réécrire l’existant.',
       },

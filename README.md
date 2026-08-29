@@ -1,7 +1,7 @@
 <div align="center">
   <img height="130" width="130" src="./src/assets/images/logo.webp" alt="Brice Lecomte">
 
-  <h1>Portfolio — Brice Lecomte</h1>
+  <h1>Portfolio de Brice Lecomte</h1>
   <p>Développeur Full-Stack Angular / Java · Angular 21 · zoneless · prérendu</p>
 </div>
 
@@ -22,7 +22,7 @@ en avant sont celles qu'il applique à lui-même.
 | Framework | Angular 21, composants standalone | Architecture par feature, aucun NgModule |
 | Détection de changement | **Zoneless** + `OnPush` partout | Pas de Zone.js dans le bundle, recalculs prévisibles |
 | État | Signals (`signal`, `computed`, `input`) | Réactivité fine, interopérabilité RxJS via `toSignal` |
-| Rendu | `outputMode: static` — prerendering intégral | Chaque route livrée en HTML, y compris les fiches projet |
+| Rendu | `outputMode: static`, prerendering intégral | Chaque route livrée en HTML, y compris les fiches projet |
 | UI | Angular Material 3 + CDK | Theming par tokens système, accent dynamique |
 | Styles | CSS natif, `light-dark()`, container queries | Un seul jeu de tokens pour les deux thèmes |
 | Icônes | SVG inline maison | Zéro requête réseau, zéro police d'icônes |

@@ -286,7 +286,6 @@ h2 {
 }
 
 .state p {
-  max-width: 52ch;
   color: var(--text-muted);
 }
 

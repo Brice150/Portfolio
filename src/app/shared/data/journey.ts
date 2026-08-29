@@ -4,7 +4,7 @@ export const milestones: Milestone[] = [
   {
     id: 'open',
     kind: 'work',
-    period: 'Mai 2026 — aujourd’hui',
+    period: 'Mai 2026 - aujourd’hui',
     startYear: 2026,
     title: 'Développeur Full-Stack confirmé',
     organisation: 'Open',
@@ -22,17 +22,18 @@ export const milestones: Milestone[] = [
     stack: [
       'Angular',
       'TypeScript',
+      'RxJS',
+      'DSFR',
+      'RGAA',
       'Java',
       'Spring Boot',
       'PostgreSQL',
-      'DSFR',
-      'RGAA',
     ],
   },
   {
     id: 'capgemini',
     kind: 'work',
-    period: 'Nov. 2024 — Avr. 2026',
+    period: 'Nov. 2024 - Avr. 2026',
     startYear: 2024,
     title: 'Développeur Full-Stack confirmé',
     organisation: 'Capgemini',
@@ -61,30 +62,31 @@ export const milestones: Milestone[] = [
   {
     id: 'sopra',
     kind: 'work',
-    period: 'Juil. 2021 — Oct. 2024',
+    period: 'Juil. 2021 - Oct. 2024',
     startYear: 2021,
     title: 'Développeur Full-Stack',
     organisation: 'Sopra Steria',
     location: 'Paris puis Rennes',
     logo: 'history/sopra.webp',
     summary:
-      '3 ans et 4 mois au service du ministère des Armées, 6 mois à Paris puis le reste à Rennes, sur 2 missions successives : d’abord l’intégration de données, puis le développement Full-Stack, avec une prise de responsabilité progressive jusqu’au rôle de référent frontend.',
+      '3 ans et 4 mois pour le ministère des Armées, 6 mois à Paris puis le reste à Rennes. Deux missions successives : l’intégration de données d’abord, le développement Full-Stack ensuite, avec une prise de responsabilité progressive jusqu’au rôle de référent frontend.',
     missions: [
       {
-        label: 'Première mission — Intégration de données',
-        period: 'Juil. 2021 — Déc. 2022',
+        label: 'Première mission : intégration de données',
+        period: 'Juil. 2021 - Déc. 2022',
         summary:
           'Conception et exploitation de flux d’intégration Talend sur des données d’aéronefs militaires : reprises, transformations et contrôles de cohérence sur des volumes conséquents.',
-        stack: ['Talend', 'Java', 'PostgreSQL'],
+        stack: ['Java', 'PostgreSQL', 'Talend'],
       },
       {
-        label: 'Seconde mission — Développement Full-Stack',
-        period: 'Janv. 2023 — Oct. 2024',
+        label: 'Seconde mission : développement Full-Stack',
+        period: 'Janv. 2023 - Oct. 2024',
         summary:
           'Près de 2 ans sur une application web de gestion de la maintenance de véhicules militaires terrestres, de la conception au maintien en condition opérationnelle.',
         stack: [
           'Angular',
           'TypeScript',
+          'RxJS',
           'Java',
           'Spring Boot',
           'Oracle',
@@ -102,7 +104,7 @@ export const milestones: Milestone[] = [
   {
     id: 'reconversion',
     kind: 'turning-point',
-    period: 'Avr. — Juil. 2021',
+    period: 'Avr. - Juil. 2021',
     startYear: 2021,
     title: 'La bascule vers le développement',
     organisation: 'Reconversion professionnelle',
@@ -119,7 +121,7 @@ export const milestones: Milestone[] = [
   {
     id: 'ensma',
     kind: 'education',
-    period: 'Sept. 2017 — Avr. 2021',
+    period: 'Sept. 2017 - Avr. 2021',
     startYear: 2017,
     title: 'Double diplôme d’ingénieur aérospatial',
     organisation: 'ISAE-ENSMA',
@@ -128,18 +130,23 @@ export const milestones: Milestone[] = [
       'Une école d’ingénieurs tournée vers la mécanique et l’énergétique : optimisation moteur, analyse thermique avancée, gestion de projet. La formation qui apprend à modéliser un système complexe avant de le construire, et 2 stages de calcul menés en laboratoire puis en industrie.',
     missions: [
       {
-        label: 'Stage ingénieur aérothermique — Safran',
-        period: 'Juil. — Déc. 2020',
+        label: 'Stage ingénieur aérothermique, Safran',
+        period: 'Juil. - Déc. 2020',
         summary:
           'Modélisation CFD en 1D, 2D et 3D de cavités de turbines haute pression, avec pour objectif de limiter l’élévation de température des écoulements. 6 mois en Seine-et-Marne, sur un sujet directement industriel.',
         stack: ['CFD', 'Simulation numérique', 'Aérothermique'],
       },
       {
-        label: 'Stage ingénieur aérothermique — KTH, Stockholm (Suède)',
-        period: 'Juin — Sept. 2019',
+        label: 'Stage ingénieur aérothermique, KTH, Stockholm (Suède)',
+        period: 'Juin - Sept. 2019',
         summary:
           'Création d’un modèle CFD pour l’étude du flux radial de purge dans les cavités de turbines haute pression, au Kungliga Tekniska högskolan de Stockholm, en Suède. 4 mois de travail et de vie entièrement en anglais.',
-        stack: ['CFD', 'Simulation numérique', 'Aérothermique', 'Anglais professionnel'],
+        stack: [
+          'CFD',
+          'Simulation numérique',
+          'Aérothermique',
+          'Anglais professionnel',
+        ],
       },
     ],
     achievements: [
@@ -172,14 +179,14 @@ export const certifications: Certification[] = [
     icon: 'graduation',
   },
   {
-    title: 'TOEIC — 945/990 (C1)',
+    title: 'TOEIC : 945/990 (C1)',
     issuer: 'ETS Global',
     year: '2017',
     icon: 'globe',
   },
 ];
 
-/** Ce qui se passe en dehors de l'écran — et qui dit aussi quelque chose du profil. */
+/** Ce qui se passe en dehors de l'écran, et qui dit aussi quelque chose du profil. */
 export const personalNotes: {
   icon: 'star' | 'shield' | 'gauge';
   title: string;

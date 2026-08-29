@@ -1,6 +1,5 @@
 :host {
   display: block;
-  max-width: 62ch;
   margin-bottom: clamp(2rem, 1.4rem + 2vw, 3.25rem);
 }
 

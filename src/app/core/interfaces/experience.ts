@@ -13,7 +13,7 @@ export interface Mission {
 export interface Milestone {
   id: string;
   kind: MilestoneKind;
-  /** Libellé affiché, ex. « Juil. 2024 — Janv. 2026 ». */
+  /** Libellé affiché, ex. « Juil. 2024 - Janv. 2026 ». */
   period: string;
   /** Année de début, utilisée pour le tri et l'attribut datetime. */
   startYear: number;

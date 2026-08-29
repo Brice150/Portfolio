@@ -27,7 +27,6 @@
 }
 
 .cta-text .lead {
-  max-width: 52ch;
   font-size: var(--step-0);
 }
 
