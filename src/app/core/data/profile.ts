@@ -54,7 +54,7 @@ export const highlights: Highlight[] = [
     value: `${yearsOfExperience()} ans`,
     label: 'd’expérience Full-Stack',
     detail:
-      'Trois ESN, trois domaines métier exigeants : défense, maritime, secteur public. Toujours sur du Angular en front et du Java/Spring en back.',
+      'Trois missions en ESN, sur des domaines métier exigeants — défense puis maritime pour le secteur public. Toujours du Angular en front et du Java/Spring en back.',
   },
   {
     icon: 'users',
@@ -66,9 +66,9 @@ export const highlights: Highlight[] = [
   {
     icon: 'rocket',
     value: '5',
-    label: 'applications publiées',
+    label: 'projets personnels aboutis',
     detail:
-      'Des projets personnels menés de bout en bout : conception, développement, déploiement et maintenance, sans filet et sans équipe.',
+      'Menés de bout en bout : conception, développement, déploiement et maintenance. Quatre sont en ligne, le cinquième est démontré en vidéo.',
   },
   {
     icon: 'award',
