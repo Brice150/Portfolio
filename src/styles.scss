@@ -1,0 +1,688 @@
+@use '@angular/material' as mat;
+
+/* ------------------------------------------------------------------------- */
+/* Angular Material : thème M3, piloté par color-scheme                       */
+/* ------------------------------------------------------------------------- */
+
+html {
+  color-scheme: light dark;
+
+  @include mat.theme(
+    (
+      color: (
+        primary: mat.$azure-palette,
+        tertiary: mat.$cyan-palette,
+      ),
+      typography: (
+        plain-family: (
+          Inter,
+          system-ui,
+          -apple-system,
+          'Segoe UI',
+          sans-serif,
+        ),
+        brand-family: (
+          'Space Grotesk',
+          Inter,
+          system-ui,
+          sans-serif,
+        ),
+      ),
+      density: 0,
+    )
+  );
+}
+
+/* ------------------------------------------------------------------------- */
+/* Design tokens                                                              */
+/* ------------------------------------------------------------------------- */
+
+:root {
+  /* Surfaces */
+  --bg: light-dark(#fafbfd, #08090c);
+  --bg-elev: light-dark(#ffffff, #0e1116);
+  --surface: light-dark(#ffffff, #12161d);
+  --surface-2: light-dark(#f2f4f9, #171c25);
+  --surface-3: light-dark(#e8ecf4, #1e242f);
+
+  /* Texte : contrastes relevés pour rester lisibles sur les deux fonds */
+  --text: light-dark(#0b1017, #edf1f7);
+  --text-muted: light-dark(#3d4756, #bcc5d1);
+  --text-faint: light-dark(#5a6575, #98a3b2);
+
+  /* Bordures */
+  --border: light-dark(rgb(9 12 20 / 10%), rgb(255 255 255 / 9%));
+  --border-strong: light-dark(rgb(9 12 20 / 18%), rgb(255 255 255 / 18%));
+
+  /* Accent : surchargé par [data-accent] */
+  --accent: light-dark(#2563eb, #4f8dff);
+  --accent-hover: light-dark(#1d4ed8, #6ea3ff);
+  --accent-2: light-dark(#0891b2, #22d3ee);
+  --accent-contrast: #ffffff;
+  --accent-soft: light-dark(rgb(37 99 235 / 10%), rgb(79 141 255 / 14%));
+  --accent-ring: light-dark(rgb(37 99 235 / 35%), rgb(79 141 255 / 45%));
+  /* Version soutenue de l'accent, pour les aplats portant du texte blanc. */
+  --accent-deep: light-dark(#1d4ed8, #2a5fd0);
+
+  /* États */
+  --success: light-dark(#047857, #34d399);
+  --danger: light-dark(#be123c, #fb7185);
+  --warning: light-dark(#b45309, #fbbf24);
+
+  /* Rayons */
+  --r-xs: 8px;
+  --r-sm: 12px;
+  --r-md: 18px;
+  --r-lg: 26px;
+  --r-xl: 36px;
+  --r-full: 999px;
+
+  /* Ombres */
+  --shadow-sm: 0 1px 2px light-dark(rgb(9 12 20 / 6%), rgb(0 0 0 / 40%));
+  --shadow-md: 0 6px 20px -6px light-dark(rgb(9 12 20 / 12%), rgb(0 0 0 / 55%));
+  --shadow-lg: 0 24px 60px -20px light-dark(rgb(9 12 20 / 18%), rgb(0 0 0 / 70%));
+  --shadow-glow: 0 0 0 1px var(--accent-ring), 0 18px 50px -18px var(--accent-ring);
+
+  /* Typographie */
+  --font-body: Inter, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-display: 'Space Grotesk', Inter, system-ui, sans-serif;
+  --font-mono: ui-monospace, 'SF Mono', 'JetBrains Mono', Menlo, Consolas, monospace;
+
+  --step--1: clamp(0.82rem, 0.79rem + 0.15vw, 0.9rem);
+  --step-0: clamp(0.95rem, 0.91rem + 0.2vw, 1.05rem);
+  --step-1: clamp(1.12rem, 1.05rem + 0.35vw, 1.32rem);
+  --step-2: clamp(1.36rem, 1.24rem + 0.6vw, 1.75rem);
+  --step-3: clamp(1.65rem, 1.44rem + 1.05vw, 2.4rem);
+  --step-4: clamp(2rem, 1.62rem + 1.9vw, 3.3rem);
+  --step-5: clamp(2.4rem, 1.75rem + 3.25vw, 4.6rem);
+
+  /* Rythme */
+  --gutter: clamp(1.15rem, 0.8rem + 1.7vw, 2.5rem);
+  --section-y: clamp(3.5rem, 2.2rem + 6vw, 7.5rem);
+  --max-w: 1180px;
+  --nav-h: 68px;
+
+  /* Mouvement */
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --dur-fast: 160ms;
+  --dur: 320ms;
+  --dur-slow: 620ms;
+}
+
+/* Choix explicite de thème par l'utilisateur */
+html[data-theme='light'] {
+  color-scheme: light;
+}
+
+html[data-theme='dark'] {
+  color-scheme: dark;
+}
+
+/* Palettes d'accent */
+html[data-accent='violet'] {
+  --accent: light-dark(#7c3aed, #a78bfa);
+  --accent-hover: light-dark(#6d28d9, #bda5fc);
+  --accent-2: light-dark(#c026d3, #e879f9);
+  --accent-soft: light-dark(rgb(124 58 237 / 10%), rgb(167 139 250 / 15%));
+  --accent-ring: light-dark(rgb(124 58 237 / 35%), rgb(167 139 250 / 45%));
+  --accent-deep: light-dark(#5b21b6, #6d3fd4);
+}
+
+html[data-accent='emerald'] {
+  --accent: light-dark(#047857, #34d399);
+  --accent-hover: light-dark(#065f46, #6ee7b7);
+  --accent-2: light-dark(#0d9488, #2dd4bf);
+  --accent-contrast: light-dark(#ffffff, #04231a);
+  --accent-soft: light-dark(rgb(4 120 87 / 10%), rgb(52 211 153 / 15%));
+  --accent-ring: light-dark(rgb(4 120 87 / 35%), rgb(52 211 153 / 45%));
+  --accent-deep: light-dark(#065f46, #0f7a5a);
+}
+
+html[data-accent='amber'] {
+  --accent: light-dark(#b45309, #fbbf24);
+  --accent-hover: light-dark(#92400e, #fcd34d);
+  --accent-2: light-dark(#c2410c, #fb923c);
+  --accent-contrast: light-dark(#ffffff, #2b1a02);
+  --accent-soft: light-dark(rgb(180 83 9 / 10%), rgb(251 191 36 / 15%));
+  --accent-ring: light-dark(rgb(180 83 9 / 35%), rgb(251 191 36 / 45%));
+  --accent-deep: light-dark(#92400e, #a5620d);
+}
+
+/* Material suit l'accent choisi */
+:root {
+  --mat-sys-primary: var(--accent);
+  --mat-sys-on-primary: var(--accent-contrast);
+  --mat-sys-tertiary: var(--accent-2);
+  --mat-sys-surface: var(--surface);
+  --mat-sys-on-surface: var(--text);
+  --mat-sys-on-surface-variant: var(--text-muted);
+  --mat-sys-outline: var(--border-strong);
+  --mat-sys-outline-variant: var(--border);
+  --mat-sys-error: var(--danger);
+  --mat-sys-body-large-font: var(--font-body);
+  --mat-sys-body-medium-font: var(--font-body);
+}
+
+/* ------------------------------------------------------------------------- */
+/* Reset & base                                                               */
+/* ------------------------------------------------------------------------- */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--nav-h) + 1.5rem);
+}
+
+body {
+  margin: 0;
+  min-height: 100dvh;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: var(--step-0);
+  line-height: 1.65;
+  font-synthesis-weight: none;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  line-height: 1.12;
+  letter-spacing: -0.022em;
+  margin: 0;
+  text-wrap: balance;
+}
+
+p {
+  margin: 0;
+  text-wrap: pretty;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+}
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+:target {
+  scroll-margin-top: calc(var(--nav-h) + 2rem);
+}
+
+/* ------------------------------------------------------------------------- */
+/* Accessibilité                                                              */
+/* ------------------------------------------------------------------------- */
+
+:where(a, button, input, textarea, select, summary, [tabindex]):focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: var(--r-xs);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+.skip-link {
+  position: fixed;
+  top: 0.75rem;
+  left: 50%;
+  z-index: 200;
+  translate: -50% -200%;
+  padding: 0.7rem 1.3rem;
+  border-radius: var(--r-full);
+  background: var(--accent);
+  color: var(--accent-contrast);
+  font-weight: 600;
+  box-shadow: var(--shadow-lg);
+  transition: translate var(--dur) var(--ease);
+}
+
+.skip-link:focus-visible {
+  translate: -50% 0;
+}
+
+/* ------------------------------------------------------------------------- */
+/* Layout                                                                     */
+/* ------------------------------------------------------------------------- */
+
+.shell {
+  width: min(100% - 2 * var(--gutter), var(--max-w));
+  margin-inline: auto;
+}
+
+.shell-wide {
+  width: min(100% - 2 * var(--gutter), 1440px);
+  margin-inline: auto;
+}
+
+/* Moitié en haut, moitié en bas : deux sections voisines laissent un espace
+   égal à --section-y, sans doubler la respiration. */
+.section {
+  padding-block: calc(var(--section-y) / 2);
+}
+
+/* ------------------------------------------------------------------------- */
+/* Composants utilitaires                                                     */
+/* ------------------------------------------------------------------------- */
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-family: var(--font-mono);
+  font-size: var(--step--1);
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.eyebrow::before {
+  content: '';
+  width: 1.6rem;
+  height: 1px;
+  background: currentcolor;
+  opacity: 0.7;
+}
+
+.lead {
+  font-size: var(--step-1);
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+.muted {
+  color: var(--text-muted);
+}
+
+/* La justification n'est tenable que si la césure suit : sans elle, une
+   colonne étroite se remplit de blancs. `lang="fr"` est posé sur <html>,
+   les navigateurs disposent donc du bon dictionnaire de césure. */
+.justified {
+  text-align: justify;
+  text-wrap: pretty;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  /* Pas de césure sous 6 lettres, ni de fragment de moins de 3 lettres. */
+  hyphenate-limit-chars: 6 3 3;
+  overflow-wrap: break-word;
+}
+
+/* Les navigateurs sans césure automatique garderaient des blancs béants sur
+   colonne étroite : on y repasse au fer à gauche. */
+@supports not (hyphens: auto) {
+  @media (width < 560px) {
+    .justified {
+      text-align: left;
+    }
+  }
+}
+
+.gradient-text {
+  background: linear-gradient(100deg, var(--text) 20%, var(--accent) 65%, var(--accent-2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.surface {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+}
+
+/* Survol commun des cartes : contour teinté, léger soulèvement et halo venu
+   du haut. Le sélecteur est doublé pour passer devant la propriété border des
+   composants, qui a la même spécificité mais arrive plus tard dans la cascade. */
+.card-hover {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  transition:
+    border-color var(--dur) var(--ease),
+    translate var(--dur) var(--ease);
+}
+
+.card-hover::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: radial-gradient(130% 120% at 50% 0%, var(--accent-soft), transparent 62%);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--dur) var(--ease);
+}
+
+.card-hover.card-hover:hover,
+.card-hover.card-hover:focus-within {
+  border-color: color-mix(in srgb, var(--accent) 45%, transparent);
+  translate: 0 -3px;
+}
+
+.card-hover:hover::before,
+.card-hover:focus-within::before {
+  opacity: 1;
+}
+
+/* Trait dégradé, réservé à quelques blocs pour éviter l’uniformité totale. */
+.card-hover--line::after,
+.card-hover--line-top::after {
+  content: '';
+  position: absolute;
+  inset: auto 0 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  scale: 0 1;
+  transform-origin: left;
+  transition: scale var(--dur) var(--ease);
+}
+
+.card-hover--line-top::after {
+  inset: 0 0 auto;
+}
+
+.card-hover--line:hover::after,
+.card-hover--line:focus-within::after,
+.card-hover--line-top:hover::after,
+.card-hover--line-top:focus-within::after {
+  scale: 1 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card-hover.card-hover:hover,
+  .card-hover.card-hover:focus-within {
+    translate: 0 0;
+  }
+}
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.3rem 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: var(--r-full);
+  background: var(--surface-2);
+  color: var(--text-muted);
+  font-size: var(--step--1);
+  font-weight: 500;
+  white-space: nowrap;
+  transition:
+    color var(--dur-fast) var(--ease),
+    border-color var(--dur-fast) var(--ease),
+    background var(--dur-fast) var(--ease),
+    translate var(--dur-fast) var(--ease);
+}
+
+.chip:hover {
+  border-color: color-mix(in srgb, var(--accent) 45%, transparent);
+  background: var(--accent-soft);
+  color: var(--text);
+  translate: 0 -2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .chip:hover {
+    translate: 0 0;
+  }
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 0.8rem 1.5rem;
+  border: 1px solid transparent;
+  border-radius: var(--r-full);
+  background: var(--accent);
+  color: var(--accent-contrast);
+  font-family: var(--font-body);
+  font-size: var(--step-0);
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background var(--dur-fast) var(--ease),
+    translate var(--dur-fast) var(--ease),
+    box-shadow var(--dur) var(--ease);
+}
+
+.btn:hover {
+  background: var(--accent-deep);
+  translate: 0 -2px;
+  box-shadow: 0 8px 22px -14px var(--accent-ring);
+}
+
+.btn:active {
+  translate: 0 0;
+}
+
+.btn-ghost {
+  background: transparent;
+  border-color: var(--border-strong);
+  color: var(--text);
+}
+
+.btn-ghost:hover {
+  background: var(--surface-2);
+  border-color: var(--accent);
+  color: var(--text);
+  box-shadow: none;
+}
+
+.btn-soft {
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+.btn-soft:hover {
+  background: var(--accent-soft);
+  color: var(--accent-hover);
+  box-shadow: none;
+}
+
+/* ------------------------------------------------------------------------- */
+/* Angular Material : ajustements                                             */
+/* ------------------------------------------------------------------------- */
+
+.mat-mdc-form-field {
+  width: 100%;
+}
+
+/* Champs Material : on garde le contour natif, avec des angles plus doux,
+   accordés aux rayons du reste du site. */
+.mat-mdc-form-field {
+  --mat-form-field-outlined-container-shape: 14px;
+  --mdc-outlined-text-field-outline-color: var(--border-strong);
+  --mdc-outlined-text-field-hover-outline-color: var(--accent);
+  --mdc-outlined-text-field-focus-outline-width: 2px;
+
+  /* En erreur, le survol doit rester rouge et non repasser au blanc. */
+  --mdc-outlined-text-field-error-outline-color: var(--danger);
+  --mdc-outlined-text-field-error-hover-outline-color: var(--danger);
+  --mdc-outlined-text-field-error-focus-outline-color: var(--danger);
+  --mdc-outlined-text-field-error-label-text-color: var(--danger);
+  --mdc-outlined-text-field-error-hover-label-text-color: var(--danger);
+  --mdc-outlined-text-field-error-focus-label-text-color: var(--danger);
+  --mdc-outlined-text-field-error-caret-color: var(--danger);
+}
+
+/* Un message d’erreur ne doit pas coller au champ suivant. */
+.mat-mdc-form-field-subscript-wrapper {
+  padding-top: 0.35rem;
+}
+
+.mat-mdc-form-field-error {
+  line-height: 1.45;
+}
+
+/* ------------------------------------------------------------------------- */
+/* Scrollbars                                                                 */
+/* ------------------------------------------------------------------------- */
+
+@supports (scrollbar-color: auto) {
+  html {
+    scrollbar-color: var(--border-strong) transparent;
+    scrollbar-width: thin;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-strong);
+  border: 3px solid var(--bg);
+  border-radius: var(--r-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}
+
+/* ------------------------------------------------------------------------- */
+/* Préférences de mouvement                                                   */
+/* ------------------------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+html[data-motion='reduced'] {
+  scroll-behavior: auto;
+}
+
+html[data-motion='reduced'] *,
+html[data-motion='reduced'] *::before,
+html[data-motion='reduced'] *::after {
+  animation-duration: 0.01ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.01ms !important;
+}
+
+/* ------------------------------------------------------------------------- */
+/* Révélation au défilement                                                   */
+/* ------------------------------------------------------------------------- */
+
+html.js [data-reveal] {
+  opacity: 0;
+  translate: 0 22px;
+  transition:
+    opacity var(--dur-slow) var(--ease-out) var(--reveal-delay, 0ms),
+    translate var(--dur-slow) var(--ease-out) var(--reveal-delay, 0ms);
+}
+
+html.js [data-reveal].is-revealed {
+  opacity: 1;
+  translate: 0 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html.js [data-reveal] {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+
+html[data-motion='reduced'] [data-reveal] {
+  opacity: 1 !important;
+  translate: 0 0 !important;
+}
+
+/* ------------------------------------------------------------------------- */
+/* Transitions de vue entre les pages                                         */
+/* ------------------------------------------------------------------------- */
+
+/* Seul le contenu principal est animé. L'entête et le pied de page restent
+   stables d'une route à l'autre ; la pastille de l'onglet actif se contente
+   d'apparaître en fondu, sans traverser la barre. */
+
+::view-transition-old(page) {
+  animation: page-leave 150ms var(--ease) both;
+}
+
+::view-transition-new(page) {
+  animation: page-enter 340ms var(--ease-out) both;
+}
+
+@keyframes page-leave {
+  to {
+    opacity: 0;
+    translate: 0 -8px;
+  }
+}
+
+@keyframes page-enter {
+  from {
+    opacity: 0;
+    translate: 0 16px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-old(page),
+  ::view-transition-new(page) {
+    animation: none;
+  }
+}
+
+html[data-motion='reduced'] ::view-transition-old(page),
+html[data-motion='reduced'] ::view-transition-new(page) {
+  animation: none;
+}

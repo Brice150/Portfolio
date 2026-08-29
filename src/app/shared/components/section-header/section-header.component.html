@@ -1,0 +1,13 @@
+@if (eyebrow()) {
+  <p class="eyebrow">{{ eyebrow() }}</p>
+}
+
+@if (level() === 2) {
+  <h2>{{ title() }}</h2>
+} @else {
+  <h3>{{ title() }}</h3>
+}
+
+@if (lead()) {
+  <p class="lead">{{ lead() }}</p>
+}

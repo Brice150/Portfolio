@@ -1,58 +1,78 @@
-import { CommonModule } from '@angular/common';
 import {
-  AfterViewInit,
+  ChangeDetectionStrategy,
   Component,
-  CUSTOM_ELEMENTS_SCHEMA,
-  ElementRef,
-  inject,
   OnInit,
-  ViewChild,
+  computed,
+  inject,
+  signal,
 } from '@angular/core';
-import { RouterModule } from '@angular/router';
-import { projects } from '../../assets/data/projects';
+import { RouterLink } from '@angular/router';
+import { environment } from '../../environments/environment';
+import { ProjectStatus } from '../core/interfaces/project';
+import { projectsByDate } from '../shared/data/projects';
 import { SeoService } from '../core/services/seo.service';
-import { ProjectComponent } from './project/project.component';
-
-let swiperLoaderPromise: Promise<void> | null = null;
-
-function ensureSwiperRegistered(): Promise<void> {
-  if (!swiperLoaderPromise) {
-    swiperLoaderPromise = import('swiper/element/bundle').then(
-      ({ register }) => {
-        register();
-      },
-    );
-  }
-
-  return swiperLoaderPromise;
-}
+import { DeviceShowcaseComponent } from '../shared/components/device-showcase/device-showcase.component';
+import {
+  FilterBarComponent,
+  FilterOption,
+} from '../shared/components/filter-bar/filter-bar.component';
+import { IconComponent } from '../shared/components/icon/icon.component';
+import { PageHeroComponent } from '../shared/components/page-hero/page-hero.component';
+import { RevealDirective } from '../shared/directives/reveal.directive';
 
 @Component({
   selector: 'app-projects',
-  imports: [CommonModule, RouterModule, ProjectComponent],
+  imports: [
+    RouterLink,
+    PageHeroComponent,
+    FilterBarComponent,
+    DeviceShowcaseComponent,
+    IconComponent,
+    RevealDirective,
+  ],
   templateUrl: './projects.component.html',
   styleUrl: './projects.component.css',
-  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ProjectsComponent implements OnInit, AfterViewInit {
-  projects = projects;
-  seoService = inject(SeoService);
-  @ViewChild('swiperRef') swiperRef!: ElementRef;
+export class ProjectsComponent implements OnInit {
+  private readonly seoService = inject(SeoService);
+
+  readonly projects = projectsByDate();
+  readonly imagePath = environment.imagePath;
+
+  readonly statusLabels: Record<ProjectStatus, string> = {
+    live: 'En ligne',
+    archive: 'Non hébergé',
+    wip: 'En cours',
+  };
+
+  readonly activeProject = signal('all');
+
+  readonly filters: FilterOption[] = [
+    { value: 'all', label: 'Tous' },
+    ...this.projects.map((project) => ({
+      value: project.slug,
+      label: project.name,
+    })),
+  ];
+
+  readonly visibleProjects = computed(() => {
+    const active = this.activeProject();
+    return active === 'all'
+      ? this.projects
+      : this.projects.filter((project) => project.slug === active);
+  });
 
   ngOnInit(): void {
     this.seoService.setPage({
-      title: 'Projets - Brice Lecomte',
+      title: 'Projets | Brice Lecomte, développeur Angular & Java',
       description:
-        'Découvrez les projets web et SaaS développés par Brice Lecomte.',
-      url: 'https://portfolio-brice.web.app/projects',
+        '5 applications web conçues, développées et déployées de bout en bout : gestion du quotidien, quiz multijoueur, simulateur d’aides, application Full-Stack Java et ce portfolio.',
+      path: '/projets',
     });
-
-    void ensureSwiperRegistered();
   }
 
-  ngAfterViewInit() {
-    setTimeout(() => {
-      this.swiperRef.nativeElement.swiper?.update();
-    });
+  selectProject(slug: string): void {
+    this.activeProject.set(slug);
   }
 }

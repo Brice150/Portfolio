@@ -1,0 +1,84 @@
+@if (variant() === 'desktop') {
+  <div class="laptop">
+    <div class="lid">
+      <div class="bezel">
+        <div class="chrome" aria-hidden="true">
+          <span class="dots">
+            <i></i><i></i><i></i>
+          </span>
+          @if (url()) {
+            <span class="url">{{ url() }}</span>
+          }
+        </div>
+
+        <div
+          #screen
+          class="screen"
+          tabindex="0"
+          role="group"
+          [attr.aria-label]="label()"
+          (pointerenter)="onEnter()"
+          (pointerleave)="onLeave()"
+          (focusin)="onEnter()"
+          (focusout)="onLeave()"
+          (wheel)="onUserScroll()"
+          (pointerdown)="onUserScroll()"
+          (keydown)="onUserScroll()"
+        >
+          <img
+            [src]="source()"
+            [alt]="alt()"
+            width="1280"
+            height="3600"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+
+        @if (hintVisible()) {
+          <p class="hint" aria-hidden="true">
+            <app-icon name="scroll" size="0.95em" />
+            <span>Survolez pour faire défiler</span>
+          </p>
+        }
+      </div>
+    </div>
+    <div class="base" aria-hidden="true">
+      <span class="notch"></span>
+    </div>
+  </div>
+} @else {
+  <div class="phone">
+    <span class="button power" aria-hidden="true"></span>
+    <span class="button volume-up" aria-hidden="true"></span>
+    <span class="button volume-down" aria-hidden="true"></span>
+
+    <div class="bezel">
+      <div
+        #screen
+        class="screen"
+        tabindex="0"
+        role="group"
+        [attr.aria-label]="label()"
+        (pointerenter)="onEnter()"
+        (pointerleave)="onLeave()"
+        (focusin)="onEnter()"
+        (focusout)="onLeave()"
+        (wheel)="onUserScroll()"
+        (pointerdown)="onUserScroll()"
+        (keydown)="onUserScroll()"
+      >
+        <img
+          [src]="source()"
+          [alt]="alt()"
+          width="390"
+          height="2200"
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
+
+      <span class="home-bar" aria-hidden="true"></span>
+    </div>
+  </div>
+}

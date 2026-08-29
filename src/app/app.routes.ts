@@ -1,35 +1,50 @@
 import { Routes } from '@angular/router';
+import { projects } from './shared/data/projects';
 
 export const routes: Routes = [
   {
     path: '',
-    loadComponent: () =>
-      import('./home/home.component').then((m) => m.HomeComponent),
-    data: { animation: 'HomePage' },
+    loadComponent: () => import('./home/home.component').then((m) => m.HomeComponent),
+    title: 'Brice Lecomte | Développeur Full-Stack Angular & Java',
   },
   {
-    path: 'skills',
-    loadComponent: () =>
-      import('./skills/skills.component').then((m) => m.SkillsComponent),
-    data: { animation: 'SkillsPage' },
+    path: 'competences',
+    loadComponent: () => import('./skills/skills.component').then((m) => m.SkillsComponent),
+    title: 'Compétences | Brice Lecomte',
   },
   {
-    path: 'history',
-    loadComponent: () =>
-      import('./history/history.component').then((m) => m.HistoryComponent),
-    data: { animation: 'HistoryPage' },
+    path: 'parcours',
+    loadComponent: () => import('./journey/journey.component').then((m) => m.JourneyComponent),
+    title: 'Parcours | Brice Lecomte',
   },
   {
-    path: 'projects',
+    path: 'projets',
+    loadComponent: () => import('./projects/projects.component').then((m) => m.ProjectsComponent),
+    title: 'Projets | Brice Lecomte',
+  },
+  {
+    path: 'projets/:slug',
     loadComponent: () =>
-      import('./projects/projects.component').then((m) => m.ProjectsComponent),
-    data: { animation: 'ProjectsPage' },
+      import('./projects/project-detail/project-detail.component').then(
+        (m) => m.ProjectDetailComponent,
+      ),
   },
   {
     path: 'contact',
-    loadComponent: () =>
-      import('./contact/contact.component').then((m) => m.ContactComponent),
-    data: { animation: 'ContactPage' },
+    loadComponent: () => import('./contact/contact.component').then((m) => m.ContactComponent),
+    title: 'Contact | Brice Lecomte',
   },
-  { path: '**', redirectTo: '', pathMatch: 'full' },
+  // Anciennes URL : les liens déjà partagés continuent de fonctionner.
+  { path: 'prestations', redirectTo: 'competences', pathMatch: 'full' },
+  { path: 'expertise', redirectTo: 'competences', pathMatch: 'full' },
+  { path: 'a-propos', redirectTo: 'parcours', pathMatch: 'full' },
+  {
+    path: 'not-found',
+    loadComponent: () => import('./not-found/not-found.component').then((m) => m.NotFoundComponent),
+    title: 'Page introuvable | Brice Lecomte',
+  },
+  { path: '**', redirectTo: 'not-found' },
 ];
+
+/** Slugs connus, réutilisés pour le prerendering des fiches projet. */
+export const projectSlugs = projects.map((project) => project.slug);

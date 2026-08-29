@@ -1,21 +1,88 @@
-<section>
-  <div class="arrow left" routerLink="/history" title="Previous">
-    <i class="bx bx-chevron-left"></i>
-  </div>
-  <div class="arrow right" routerLink="/contact" title="Next">
-    <i class="bx bx-chevron-right"></i>
-  </div>
-  <div class="title">
-    <i class="bx bxs-briefcase-alt"></i>
-    <h1>Projets</h1>
-  </div>
-  <div class="content">
-    <swiper-container effect="cards" mousewheel="true" #swiperRef>
-      @for (project of projects; track project) {
-        <swiper-slide>
-          <app-project [project]="project"></app-project>
-        </swiper-slide>
-      }
-    </swiper-container>
-  </div>
-</section>
+<app-page-hero
+  eyebrow="Projets"
+  title="Des applications réelles, pas des exercices de tutoriel"
+  lead="Chacun de ces projets a été mené seul, du besoin initial au déploiement, et présenté ici du plus récent au plus ancien. Survolez un écran pour le faire défiler : ce sont les vraies interfaces, pas des maquettes."
+>
+  <app-filter-bar
+    [options]="filters"
+    [active]="activeProject()"
+    label="Filtrer les projets"
+    (changed)="selectProject($event)"
+  />
+</app-page-hero>
+
+<div class="section shell list">
+  @for (project of visibleProjects(); track project.slug; let i = $index) {
+    <article class="entry" [appReveal]="i * 60">
+      <p class="status" [class.is-live]="project.status === 'live'">
+        <span class="pulse" aria-hidden="true"></span>
+        {{ statusLabels[project.status] }}
+      </p>
+
+      <div class="preview">
+        @if (project.shots) {
+          <app-device-showcase [project]="project" />
+        } @else {
+          <img
+            [src]="imagePath + project.cover"
+            [alt]="'Aperçu du projet ' + project.name"
+            class="cover"
+            loading="lazy"
+            decoding="async"
+          />
+        }
+      </div>
+
+      <div class="details">
+        <p class="eyebrow">{{ project.year }}</p>
+        <h2>{{ project.name }}</h2>
+        <p class="tagline">{{ project.tagline }}</p>
+        <p class="summary justified">{{ project.summary }}</p>
+
+        <ul class="facts">
+          @for (fact of project.facts; track fact.label) {
+            <li>
+              <span class="fact-label">{{ fact.label }}</span>
+              <span class="fact-value">{{ fact.value }}</span>
+            </li>
+          }
+        </ul>
+
+        <ul class="stack" [attr.aria-label]="'Technologies de ' + project.name">
+          @for (tech of project.stack; track tech) {
+            <li class="chip">{{ tech }}</li>
+          }
+        </ul>
+
+        <div class="actions">
+          <a [routerLink]="['/projets', project.slug]" class="btn">
+            <span>Voir la fiche complète</span>
+            <app-icon name="arrow-right" size="1.05em" />
+          </a>
+
+          @if (project.links.live) {
+            <a
+              [href]="project.links.live"
+              target="_blank"
+              rel="noopener"
+              class="btn btn-ghost"
+            >
+              <span>Visiter le site</span>
+              <app-icon name="arrow-up-right" size="1.05em" />
+            </a>
+          } @else if (project.links.github) {
+            <a
+              [href]="project.links.github"
+              target="_blank"
+              rel="noopener"
+              class="btn btn-ghost"
+            >
+              <span>Code source</span>
+              <app-icon name="arrow-up-right" size="1.05em" />
+            </a>
+          }
+        </div>
+      </div>
+    </article>
+  }
+</div>

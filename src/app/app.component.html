@@ -1,9 +1,17 @@
-<app-nav></app-nav>
-<div
-  class="container"
-  [@sliderAnimation]="
-    outlet.isActivated ? outlet.activatedRouteData['animation'] : ''
-  "
->
-  <router-outlet #outlet="outlet"></router-outlet>
+<a class="skip-link" href="#contenu">Aller au contenu principal</a>
+
+<div class="ambience" aria-hidden="true">
+  <span class="orb orb-a"></span>
+  <span class="orb orb-b"></span>
+  <span class="grid"></span>
 </div>
+
+<app-header />
+
+<main id="contenu" tabindex="-1">
+  <router-outlet />
+</main>
+
+<app-footer />
+
+<app-toast-host />

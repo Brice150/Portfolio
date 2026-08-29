@@ -1,49 +1,38 @@
 import { registerLocaleData } from '@angular/common';
-import { provideHttpClient } from '@angular/common/http';
+import { provideHttpClient, withFetch } from '@angular/common/http';
 import localeFr from '@angular/common/locales/fr';
 import {
   ApplicationConfig,
   LOCALE_ID,
-  provideZoneChangeDetection,
+  provideBrowserGlobalErrorListeners,
+  provideZonelessChangeDetection,
 } from '@angular/core';
-import {
-  DateAdapter,
-  MAT_DATE_FORMATS,
-  MAT_DATE_LOCALE,
-} from '@angular/material/core';
-import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { provideClientHydration, withEventReplay } from '@angular/platform-browser';
 import {
   provideRouter,
+  withComponentInputBinding,
   withInMemoryScrolling,
-  withPreloading,
+  withViewTransitions,
 } from '@angular/router';
-import { provideToastr } from 'ngx-toastr';
 import { routes } from './app.routes';
-import { SmartPreloading } from './core/services/smart-preloading.service';
-import {
-  FRENCH_DATE_FORMATS,
-  FrenchDateAdapter,
-} from './shared/french-date-adapter';
 
 registerLocaleData(localeFr);
 
 export const appConfig: ApplicationConfig = {
   providers: [
-    provideZoneChangeDetection({ eventCoalescing: true }),
+    provideBrowserGlobalErrorListeners(),
+    provideZonelessChangeDetection(),
     provideRouter(
       routes,
       withInMemoryScrolling({
         scrollPositionRestoration: 'top',
         anchorScrolling: 'enabled',
       }),
-      withPreloading(SmartPreloading),
+      withViewTransitions({ skipInitialTransition: true }),
+      withComponentInputBinding(),
     ),
-    provideToastr(),
-    provideAnimationsAsync(),
-    provideHttpClient(),
+    provideClientHydration(withEventReplay()),
+    provideHttpClient(withFetch()),
     { provide: LOCALE_ID, useValue: 'fr-FR' },
-    { provide: MAT_DATE_LOCALE, useValue: 'fr-FR' },
-    { provide: DateAdapter, useClass: FrenchDateAdapter },
-    { provide: MAT_DATE_FORMATS, useValue: FRENCH_DATE_FORMATS },
   ],
 };

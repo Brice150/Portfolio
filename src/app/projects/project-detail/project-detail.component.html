@@ -1,0 +1,136 @@
+@let current = project();
+
+@if (current) {
+  <article>
+    <div class="head">
+      <div class="shell">
+        <nav class="breadcrumb" aria-label="Fil d’Ariane">
+          <ol>
+            <li><a routerLink="/">Accueil</a></li>
+            <li><a routerLink="/projets">Projets</a></li>
+            <li aria-current="page">{{ current.name }}</li>
+          </ol>
+        </nav>
+
+        <p class="eyebrow">{{ current.year }}</p>
+        <h1>{{ current.name }}</h1>
+        <p class="tagline">{{ current.tagline }}</p>
+
+        <div class="actions">
+          @if (current.links.live) {
+            <a [href]="current.links.live" target="_blank" rel="noopener" class="btn">
+              <span>Visiter le site</span>
+              <app-icon name="arrow-up-right" size="1.05em" />
+            </a>
+          }
+          @if (current.links.github) {
+            <a [href]="current.links.github" target="_blank" rel="noopener" class="btn btn-ghost">
+              <span>Code source</span>
+              <app-icon name="arrow-up-right" size="1.05em" />
+            </a>
+          } @else if (current.links.sourceRestricted) {
+            <button
+              type="button"
+              class="btn btn-ghost is-locked"
+              disabled
+              aria-describedby="source-restreint"
+            >
+              <span>Code source</span>
+              <app-icon name="shield" size="1.05em" />
+            </button>
+          }
+        </div>
+
+        @if (current.links.sourceRestricted) {
+          <p class="locked-note" id="source-restreint">
+            <app-icon name="info" size="1em" />
+            <span>{{ current.links.sourceRestricted }}</span>
+          </p>
+        }
+
+        <ul class="facts">
+          @for (fact of current.facts; track fact.label) {
+            <li>
+              <span class="fact-label">{{ fact.label }}</span>
+              <span class="fact-value">{{ fact.value }}</span>
+            </li>
+          }
+        </ul>
+      </div>
+    </div>
+
+    @if (current.shots) {
+      <section class="section shell" aria-label="Aperçu de l’interface">
+        <app-device-showcase [project]="current" />
+      </section>
+    }
+
+    <div class="section shell body">
+      <div class="content">
+        <section class="block" appReveal>
+          <h2>Le contexte</h2>
+          <p class="justified">{{ current.context }}</p>
+        </section>
+
+        @for (section of current.sections; track section.title; let i = $index) {
+          <section class="block" [appReveal]="i * 70">
+            <h2>{{ section.title }}</h2>
+            <p class="justified">{{ section.body }}</p>
+          </section>
+        }
+      </div>
+
+      <aside class="side" aria-label="Informations techniques">
+        <div class="side-card card-hover">
+          <h2>Fonctionnalités</h2>
+          <ul class="features">
+            @for (feature of current.features; track feature) {
+              <li>
+                <app-icon name="check" size="0.95em" />
+                <span>{{ feature }}</span>
+              </li>
+            }
+          </ul>
+        </div>
+
+        <div class="side-card card-hover">
+          <h2>Stack technique</h2>
+          <ul class="stack">
+            @for (tech of current.stack; track tech) {
+              <li class="chip">{{ tech }}</li>
+            }
+          </ul>
+        </div>
+      </aside>
+    </div>
+
+    @let previous = previousProject();
+    @let next = nextProject();
+
+    @if (previous || next) {
+      <nav class="section shell siblings" aria-label="Autres projets">
+        @if (previous) {
+          <a [routerLink]="['/projets', previous.slug]" class="sibling is-previous card-hover">
+            <app-icon name="arrow-left" size="1.3em" />
+            <span class="sibling-text">
+              <span class="sibling-label">Projet précédent</span>
+              <span class="sibling-name">{{ previous.name }}</span>
+              <span class="sibling-tagline">{{ previous.tagline }}</span>
+            </span>
+          </a>
+        }
+
+        @if (next) {
+          <a [routerLink]="['/projets', next.slug]" class="sibling is-next card-hover">
+            <span class="sibling-text">
+              <span class="sibling-label">Projet suivant</span>
+              <span class="sibling-name">{{ next.name }}</span>
+              <span class="sibling-tagline">{{ next.tagline }}</span>
+            </span>
+            <app-icon name="arrow-right" size="1.3em" />
+          </a>
+        }
+      </nav>
+    }
+  </article>
+}

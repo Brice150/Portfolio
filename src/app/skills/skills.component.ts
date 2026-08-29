@@ -1,39 +1,57 @@
-import { CommonModule } from '@angular/common';
-import {
-  Component,
-  ElementRef,
-  inject,
-  OnInit,
-  viewChild,
-} from '@angular/core';
-import { RouterModule } from '@angular/router';
-import { environment } from '../../environments/environment';
+import { ChangeDetectionStrategy, Component, OnInit, computed, inject, signal } from '@angular/core';
+import { serviceOffers } from '../shared/data/expertise';
+import { practices, skillGroups } from '../shared/data/skills';
 import { SeoService } from '../core/services/seo.service';
+import { IconComponent } from '../shared/components/icon/icon.component';
+import { SectionHeaderComponent } from '../shared/components/section-header/section-header.component';
+import { RevealDirective } from '../shared/directives/reveal.directive';
+import { FilterBarComponent, FilterOption } from '../shared/components/filter-bar/filter-bar.component';
+import { PageHeroComponent } from '../shared/components/page-hero/page-hero.component';
 
 @Component({
   selector: 'app-skills',
-  imports: [CommonModule, RouterModule],
+  imports: [
+    PageHeroComponent,
+    FilterBarComponent,
+    SectionHeaderComponent,
+    IconComponent,
+    RevealDirective,
+  ],
   templateUrl: './skills.component.html',
   styleUrl: './skills.component.css',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SkillsComponent implements OnInit {
-  imagePath: string = environment.imagePath + 'skills/';
-  readonly scrollContent = viewChild.required<ElementRef>('content');
-  seoService = inject(SeoService);
+  private readonly seoService = inject(SeoService);
+
+  readonly groups = skillGroups;
+  readonly practices = practices;
+  readonly offers = serviceOffers;
+
+  readonly activeGroup = signal('all');
+
+  readonly filters: FilterOption[] = [
+    { value: 'all', label: 'Toutes' },
+    ...this.groups.map((group) => ({ value: group.id, label: group.title, icon: group.icon })),
+  ];
+
+  readonly visibleGroups = computed(() => {
+    const active = this.activeGroup();
+    return active === 'all' ? this.groups : this.groups.filter((group) => group.id === active);
+  });
+
+  readonly skillCount = this.groups.reduce((total, group) => total + group.skills.length, 0);
 
   ngOnInit(): void {
     this.seoService.setPage({
-      title: 'Compétences | Angular, Java & Développement Web',
+      title: 'Compétences | Brice Lecomte, développeur Angular & Java',
       description:
-        'Explorez les compétences de Brice Lecomte : Angular, Java, Spring Boot, TypeScript et développement d’applications web modernes et performantes.',
-      url: 'https://portfolio-brice.web.app/skills',
+        'Le détail de ma stack : Angular, TypeScript, RxJS, Java, Spring Boot, PostgreSQL, Oracle, accessibilité et performance. Avec, pour chaque brique, ce que j’en fais réellement.',
+      path: '/competences',
     });
   }
 
-  scrollDown(): void {
-    this.scrollContent().nativeElement.scrollTo({
-      top: this.scrollContent().nativeElement.scrollHeight,
-      behavior: 'smooth',
-    });
+  selectGroup(id: string): void {
+    this.activeGroup.set(id);
   }
 }

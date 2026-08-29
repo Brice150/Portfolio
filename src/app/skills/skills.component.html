@@ -1,125 +1,122 @@
-<section>
-  <div class="arrow left" routerLink="/" title="Previous">
-    <i class="bx bx-chevron-left"></i>
+<app-page-hero
+  eyebrow="Compétences"
+  title="Ma stack, et ce que j’en fais concrètement"
+  [lead]="
+    'Une liste de technologies ne dit rien. Voici, pour chacun des ' +
+    skillCount +
+    ' outils que j’utilise, ce que j’en fais réellement en mission et le niveau auquel je me situe honnêtement.'
+  "
+>
+  <app-filter-bar
+    [options]="filters"
+    [active]="activeGroup()"
+    label="Filtrer par famille de compétences"
+    (changed)="selectGroup($event)"
+  />
+</app-page-hero>
+
+<section class="section shell">
+  <div class="groups">
+    @for (group of visibleGroups(); track group.id; let g = $index) {
+      <article class="group card-hover" [appReveal]="g * 90">
+        <header class="group-head">
+          <span class="group-icon" aria-hidden="true">
+            <app-icon [name]="group.icon" size="1.3em" />
+          </span>
+          <div>
+            <h2>{{ group.title }}</h2>
+            <p class="justified">{{ group.description }}</p>
+          </div>
+        </header>
+
+        <ul class="skills">
+          @for (skill of group.skills; track skill.name) {
+            <li class="skill" [style.--level.%]="skill.level">
+              <div class="skill-head">
+                <h3>{{ skill.name }}</h3>
+                <span class="level"
+                  >{{ skill.level }}<span aria-hidden="true">/100</span></span
+                >
+              </div>
+              <div class="bar" aria-hidden="true">
+                <span class="bar-fill"></span>
+              </div>
+              <p class="note justified">{{ skill.note }}</p>
+            </li>
+          }
+        </ul>
+      </article>
+    }
   </div>
-  <div class="arrow right" routerLink="/history" title="Next">
-    <i class="bx bx-chevron-right"></i>
-  </div>
-  <div class="arrow bottom" (click)="scrollDown()" title="Scroll Down">
-    <i class="bx bx-chevron-down"></i>
-  </div>
-  <div class="title">
-    <i class="bx bxs-notepad"></i>
-    <h1>Skills</h1>
-  </div>
-  <div class="content" #content>
-    <div class="categories">
-      <div class="category-wrapper" style="--delay: 0.2s">
-        <div class="category">
-          <h2>Frontend</h2>
-          <div class="skills">
-            <img
-              [src]="imagePath + 'angular.webp'"
-              alt="Angular"
-              title="Angular"
-              style="margin-top: -1px"
-              loading="lazy"
-              decoding="async"
-            />
-            <i class="bx bxl-html5" title="HTML" style="color: #e54c21"></i>
-            <i class="bx bxl-css3" title="CSS" style="color: #214ce5"></i>
-            <i
-              class="bx bxl-typescript"
-              title="Typescript"
-              style="color: #007acc"
-            ></i>
-            <i
-              class="bx bxl-javascript"
-              title="Javascript"
-              style="color: #f3e11d"
-            ></i>
-          </div>
-        </div>
-      </div>
-      <div class="category-wrapper" style="--delay: 0.4s">
-        <div class="category">
-          <h2>Backend</h2>
-          <div class="skills">
-            <i
-              class="bx bxl-spring-boot"
-              title="Spring Boot"
-              style="color: #6db33f"
-            ></i>
-            <img
-              [src]="imagePath + 'java.webp'"
-              alt="Java"
-              title="Java"
-              loading="lazy"
-              decoding="async"
-            />
-          </div>
-        </div>
-      </div>
-      <div class="category-wrapper" style="--delay: 0.6s">
-        <div class="category">
-          <h2>Base de données</h2>
-          <div class="skills">
-            <i
-              class="bx bxl-postgresql"
-              title="PostgresSQL"
-              style="color: #2f6792"
-            ></i>
-            <img
-              [src]="imagePath + 'oracle.webp'"
-              alt="Oracle"
-              title="Oracle"
-              loading="lazy"
-              decoding="async"
-            />
-            <i
-              class="bx bxl-firebase"
-              title="Firebase"
-              style="color: #ee9c11"
-            ></i>
-          </div>
-        </div>
-      </div>
-      <div class="category-wrapper" style="--delay: 0.8s">
-        <div class="category">
-          <h2>Editeurs</h2>
-          <div class="skills">
-            <img
-              [src]="imagePath + 'intelliJ.webp'"
-              alt="IntelliJ"
-              title="IntelliJ"
-              loading="lazy"
-              decoding="async"
-            />
-            <i
-              class="bx bxl-visual-studio"
-              title="VSCode"
-              style="color: #0a75b8"
-            ></i>
-            <img
-              [src]="imagePath + 'talend.webp'"
-              alt="Talend"
-              title="Talend"
-              loading="lazy"
-              decoding="async"
-            />
-          </div>
-        </div>
-      </div>
-      <div class="category-wrapper" style="--delay: 1s">
-        <div class="category">
-          <h2>Autres</h2>
-          <div class="skills">
-            <i class="bx bxl-git" title="Git" style="color: #f05033"></i>
-            <i class="bx bxl-github" title="Github" style="color: black"></i>
-            <i class="bx bxl-gitlab" title="Gitlab" style="color: #e24329"></i>
-          </div>
-        </div>
-      </div>
+</section>
+
+<section class="section shell">
+  <div class="honesty card-hover" appReveal>
+    <span class="honesty-icon" aria-hidden="true">
+      <app-icon name="info" size="1.2em" />
+    </span>
+    <div>
+      <h2>Une note sur ces niveaux</h2>
+      <p class="justified">
+        Les pourcentages ci-dessus sont une auto-évaluation, pas une note
+        d’examen. Ils traduisent ma capacité à intervenir seul sur un sujet
+        donné. Au-delà de 85, je suis autonome et je peux arbitrer pour
+        l’équipe. Entre 70 et 85, je livre sans difficulté mais je continue
+        d’apprendre. En dessous, j’ai pratiqué en contexte réel sans en faire ma
+        spécialité.
+      </p>
     </div>
   </div>
+</section>
+
+<section class="section shell" aria-labelledby="pratiques">
+  <app-section-header
+    eyebrow="Pratiques"
+    title="Ce que je mets en place dans un projet Angular"
+    lead="Les partis pris techniques que j’applique par défaut, et que ce site respecte lui-même."
+    centered
+  />
+
+  <ul class="practices">
+    @for (practice of practices; track practice.title; let i = $index) {
+      <li class="practice card-hover" [appReveal]="i * 90">
+        <span class="practice-icon" aria-hidden="true">
+          <app-icon [name]="practice.icon" size="1.15em" />
+        </span>
+        <h3>{{ practice.title }}</h3>
+        <p class="justified">{{ practice.description }}</p>
+      </li>
+    }
+  </ul>
+</section>
+
+<section class="section shell">
+  <app-section-header
+    eyebrow="Interventions"
+    title="Les situations où j’apporte le plus de valeur"
+    lead="Quatre types de sujets sur lesquels mon apport est le plus net, tirés de ce que j’ai réellement fait en mission."
+    centered
+  />
+
+  <ul class="offers">
+    @for (offer of offers; track offer.id; let i = $index) {
+      <li class="offer card-hover card-hover--line-top" [appReveal]="i * 90">
+        <span class="offer-icon" aria-hidden="true">
+          <app-icon [name]="offer.icon" size="1.3em" />
+        </span>
+
+        <h3>{{ offer.title }}</h3>
+        <p class="pitch justified">{{ offer.pitch }}</p>
+
+        <ul class="deliverables">
+          @for (item of offer.deliverables; track item) {
+            <li>
+              <app-icon name="check" size="0.95em" />
+              <span>{{ item }}</span>
+            </li>
+          }
+        </ul>
+      </li>
+    }
+  </ul>
 </section>

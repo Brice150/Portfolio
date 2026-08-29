@@ -1,0 +1,12 @@
+<div class="hero">
+  <div class="shell">
+    <p class="eyebrow">{{ eyebrow() }}</p>
+    <h1>{{ title() }}</h1>
+
+    @if (lead()) {
+      <p class="lead justified">{{ lead() }}</p>
+    }
+
+    <ng-content />
+  </div>
+</div>

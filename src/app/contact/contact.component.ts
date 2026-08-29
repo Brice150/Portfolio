@@ -1,129 +1,162 @@
-import { CommonModule } from '@angular/common';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Component, inject, OnInit } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { ChangeDetectionStrategy, Component, OnInit, computed, inject, signal } from '@angular/core';
 import {
   FormBuilder,
-  FormGroup,
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
-import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
-import { MatProgressSpinner } from '@angular/material/progress-spinner';
-import { RouterModule } from '@angular/router';
-import { ToastrService } from 'ngx-toastr';
+import { profile } from '../shared/data/profile';
 import { SeoService } from '../core/services/seo.service';
+import { ToastService } from '../core/services/toast.service';
+import { IconComponent } from '../shared/components/icon/icon.component';
+import { PageHeroComponent } from '../shared/components/page-hero/page-hero.component';
+import { CopyTextDirective } from '../shared/directives/copy-text.directive';
+import { RevealDirective } from '../shared/directives/reveal.directive';
+
+const FORMSPREE_ENDPOINT = 'https://formspree.io/f/mbjbjwpk';
+const MESSAGE_MAX_LENGTH = 1500;
+
+type FormStatus = 'idle' | 'sending' | 'sent' | 'error';
 
 @Component({
   selector: 'app-contact',
   imports: [
-    CommonModule,
-    RouterModule,
     ReactiveFormsModule,
     MatFormFieldModule,
     MatInputModule,
-    MatButtonModule,
-    MatIconModule,
-    MatProgressSpinner,
+    PageHeroComponent,
+    IconComponent,
+    RevealDirective,
+    CopyTextDirective,
   ],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.css',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ContactComponent implements OnInit {
-  contactForm!: FormGroup;
-  http = inject(HttpClient);
-  toastr = inject(ToastrService);
-  fb = inject(FormBuilder);
-  seoService = inject(SeoService);
-  isMessageSent = false;
-  loading = false;
+  private readonly http = inject(HttpClient);
+  private readonly formBuilder = inject(FormBuilder);
+  private readonly toastService = inject(ToastService);
+  private readonly seoService = inject(SeoService);
+  private readonly document = inject(DOCUMENT);
+
+  readonly profile = profile;
+  readonly messageMaxLength = MESSAGE_MAX_LENGTH;
+
+  readonly status = signal<FormStatus>('idle');
+  readonly errorMessage = signal('');
+
+  readonly form = this.formBuilder.nonNullable.group({
+    name: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(60)]],
+    email: ['', [Validators.required, Validators.email, Validators.maxLength(120)]],
+    message: [
+      '',
+      [Validators.required, Validators.minLength(20), Validators.maxLength(MESSAGE_MAX_LENGTH)],
+    ],
+    // Piège à robots : un humain ne remplit jamais ce champ.
+    website: [''],
+  });
+
+  readonly isSending = computed(() => this.status() === 'sending');
+
+  readonly channels = [
+    {
+      icon: 'linkedin' as const,
+      label: 'LinkedIn',
+      value: 'brice-lecomte',
+      href: profile.linkedin,
+      hint: 'Parcours détaillé et publications',
+    },
+    {
+      icon: 'github' as const,
+      label: 'GitHub',
+      value: 'Brice150',
+      href: profile.github,
+      hint: 'Le code des projets présentés ici',
+    },
+  ];
 
   ngOnInit(): void {
     this.seoService.setPage({
-      title: 'Contact - Brice Lecomte',
+      title: 'Contact | Brice Lecomte, développeur Angular & Java',
       description:
-        'Contactez Brice Lecomte pour vos projets de développement web et SaaS.',
-      url: 'https://portfolio-brice.web.app/contact',
-    });
-
-    this.contactForm = this.fb.group({
-      name: [
-        '',
-        [
-          Validators.required,
-          Validators.minLength(2),
-          Validators.maxLength(50),
-        ],
-      ],
-      email: ['', [Validators.required, Validators.email]],
-      subject: [
-        '',
-        [
-          Validators.required,
-          Validators.minLength(2),
-          Validators.maxLength(50),
-        ],
-      ],
-      message: [
-        '',
-        [
-          Validators.required,
-          Validators.minLength(4),
-          Validators.maxLength(500),
-        ],
-      ],
+        'Contacter Brice Lecomte, développeur Full-Stack Angular et Java : formulaire, e-mail ou LinkedIn. Réponse sous 48 heures ouvrées.',
+      path: '/contact',
     });
   }
 
-  submitForm(): void {
-    if (this.contactForm.valid) {
-      this.loading = true;
-      const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
-      this.http
-        .post(
-          'https://formspree.io/f/mbjbjwpk',
-          {
-            name: this.contactForm.value.name,
-            replyto: this.contactForm.value.email,
-            subject: this.contactForm.value.subject,
-            message: this.contactForm.value.message,
-          },
-          { headers: headers },
-        )
-        .subscribe({
-          next: () => {
-            this.clearForm();
-            this.isMessageSent = true;
-            this.loading = false;
-          },
-          error: () => {
-            this.clearForm();
-            this.loading = false;
-            this.toastr.error(
-              'Impossible d’envoyer votre message, veuillez réessayer ultérieurement ou envoyer un email',
-              'Erreur',
-              {
-                positionClass: 'toast-bottom-center',
-                toastClass: 'ngx-toastr custom error',
-              },
-            );
-          },
-        });
-    } else {
-      this.contactForm.markAllAsTouched();
+  submit(): void {
+    if (this.isSending()) return;
+
+    // Robot détecté : on simule un succès sans rien envoyer.
+    if (this.form.controls.website.value) {
+      this.status.set('sent');
+      return;
     }
+
+    if (this.form.invalid) {
+      this.form.markAllAsTouched();
+      this.focusFirstInvalidField();
+      return;
+    }
+
+    this.status.set('sending');
+    this.errorMessage.set('');
+
+    const { name, email, message } = this.form.getRawValue();
+
+    this.http
+      .post(FORMSPREE_ENDPOINT, {
+        name,
+        _replyto: email,
+        email,
+        _subject: `Message de ${name} via le portfolio`,
+        message,
+      })
+      .subscribe({
+        next: () => {
+          this.status.set('sent');
+          this.form.reset();
+          this.toastService.success('Message envoyé. Je reviens vers vous sous 48 h.');
+        },
+        error: (error: HttpErrorResponse) => {
+          this.status.set('error');
+          this.errorMessage.set(this.describeError(error));
+          this.toastService.error('L’envoi a échoué. Le détail est indiqué au-dessus du formulaire.');
+        },
+      });
   }
 
-  clearForm(): void {
-    this.contactForm.reset({
-      name: '',
-      email: '',
-      subject: '',
-      message: '',
-    });
-    this.contactForm.markAsPristine();
-    this.contactForm.markAsUntouched();
+  reset(): void {
+    this.form.reset();
+    this.status.set('idle');
+    this.errorMessage.set('');
+  }
+
+  /** Traduit l'échec technique en message compréhensible et actionnable. */
+  private describeError(error: HttpErrorResponse): string {
+    if (error.status === 0) {
+      return 'Impossible de joindre le service d’envoi. Vérifiez votre connexion, puis réessayez.';
+    }
+
+    if (error.status === 429) {
+      return 'Trop de messages envoyés en peu de temps. Patientez quelques minutes avant de réessayer.';
+    }
+
+    if (error.status >= 400 && error.status < 500) {
+      return 'Le formulaire a été refusé. Vérifiez notamment votre adresse e-mail, puis réessayez.';
+    }
+
+    return 'Le service d’envoi est momentanément indisponible. Réessayez plus tard ou écrivez-moi directement par e-mail.';
+  }
+
+  private focusFirstInvalidField(): void {
+    const invalid = this.document.querySelector<HTMLElement>(
+      'form .ng-invalid input, form .ng-invalid textarea',
+    );
+    invalid?.focus();
   }
 }

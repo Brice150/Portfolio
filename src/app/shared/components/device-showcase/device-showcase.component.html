@@ -1,0 +1,22 @@
+@let shots = project().shots;
+
+@if (shots) {
+  <div class="stage">
+    <div class="glow" aria-hidden="true"></div>
+
+    <app-device-frame
+      class="laptop-slot"
+      variant="desktop"
+      [src]="shots.desktop"
+      [alt]="project().name + ', vue sur ordinateur'"
+      [url]="displayUrl()"
+    />
+
+    <app-device-frame
+      class="phone-slot"
+      variant="phone"
+      [src]="shots.mobile"
+      [alt]="project().name + ', vue sur mobile'"
+    />
+  </div>
+}

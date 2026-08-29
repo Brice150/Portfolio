@@ -37,6 +37,12 @@ yarn-error.log
 testem.log
 /typings
 
+# Profil Chrome temporaire de tools/capture-shots.mjs
+/.chrome-capture-profile
+
+# Firebase
+/.firebase
+
 # System files
 .DS_Store
 Thumbs.db

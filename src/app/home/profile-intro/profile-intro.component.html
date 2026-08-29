@@ -1,0 +1,100 @@
+<div class="layout">
+  <div class="prose" appReveal>
+    <app-section-header
+      eyebrow="Le profil"
+      title="Un ingénieur devenu développeur"
+    />
+
+    <p class="justified">
+      Diplômé ingénieur en aérospatial de l’ISAE-ENSMA en 2021, j’ai choisi de
+      faire une reconversion dans le développement logiciel. Si le sujet des
+      turbines m’intéressait, le métier s’orientait surtout vers des calculs
+      très théoriques pour optimiser une fraction de pourcentage d’une
+      sous-partie de réacteur d'avion. En quête de réalisations aux résultats
+      plus concrets, en pro comme en perso, j'ai choisi de me reconvertir au
+      travers d'une POEI Java avec un CDI à la clé chez Sopra Steria.
+      Certification Java validée dans la foulée et premiers projets web
+      construits seul.
+    </p>
+
+    <p class="justified">
+      Depuis, 4 missions sur des applications métier à forte contrainte
+      réglementaire. Chez Sopra Steria, pour le ministère des Armées, j’ai passé
+      1 an et demi sur de la reprise de données (Talend, Java, SQL), depuis
+      différents fichiers vers la base d'une application web de maintenance
+      d'aéronefs militaires, puis 2 ans en développement Angular et Java sur une
+      autre application de maintenance, dédiée cette fois aux véhicules
+      terrestres. Chez Capgemini, j’ai repris les applications de gestion des
+      navires de plaisance de la Direction générale des affaires maritimes, de
+      la pêche et de l'aquaculture (DGAMPA), en Angular et Java, et développé de
+      bout en bout la taxation 2026. Aujourd’hui chez Open, toujours pour la
+      DGAMPA, je mène la refonte de l’application de gestion des parcelles du
+      cadastre aquacole, en Angular et Java, bâtie sur le Système de Design de
+      l’État et conforme au RGAA.
+    </p>
+
+    <p class="justified">
+      Au-delà de cette stack Angular/Java, c’est surtout la dimension de mon
+      rôle qui s’est élargie&nbsp;: référent frontend au bout de 2 ans, pilotage
+      d’une équipe de 2 développeurs sur les jalons client, encadrement d’un
+      stagiaire puis d’un alternant. Ce rôle a changé ma façon de
+      travailler&nbsp;: je passe désormais autant de temps à débloquer, relire
+      et expliquer qu’à écrire du code, et c’est ce qui fait avancer l’équipe.
+    </p>
+
+    <p class="justified">
+      L’IA fait aujourd’hui partie de mon outillage quotidien (explorer une
+      piste, générer un squelette, relire un diff), avec des prompts ciblés et
+      un contexte minimal pour en maîtriser le coût en tokens. Aucune ligne
+      n’est livrée sans avoir été relue, comprise et assumée. En parallèle, j’ai
+      conçu et déployé seul plusieurs applications, dont Life&nbsp;Rise, qui
+      réunit 19 modules, un assistant conversationnel et du partage entre
+      profils&nbsp;: mon terrain d’essai des nouveautés d’Angular avant de les
+      proposer en mission.
+    </p>
+
+    <a routerLink="/parcours" class="btn btn-soft">
+      <span>Voir le parcours détaillé</span>
+      <app-icon name="arrow-right" size="1.05em" />
+    </a>
+  </div>
+
+  <aside class="facts card-hover" appReveal="120" aria-label="Le profil en bref">
+    <h3>Le profil en bref</h3>
+    <dl>
+      @for (fact of facts; track fact.label) {
+        <div class="fact">
+          <dt>
+            <app-icon [name]="fact.icon" size="1.05em" />
+            <span>{{ fact.label }}</span>
+          </dt>
+          <dd>{{ fact.value }}</dd>
+        </div>
+      }
+    </dl>
+
+    <button
+      type="button"
+      class="mail-link"
+      [appCopyText]="profile.email"
+      appCopyLabel="Adresse e-mail copiée"
+      #copyMail="appCopyText"
+    >
+      <app-icon
+        [name]="
+          copyMail.copied() ? 'check' : copyMail.failed() ? 'alert' : 'copy'
+        "
+        size="1.05em"
+      />
+      <span>
+        @if (copyMail.copied()) {
+          Adresse copiée
+        } @else if (copyMail.failed()) {
+          Copie impossible&nbsp;: {{ profile.email }}
+        } @else {
+          {{ profile.email }}
+        }
+      </span>
+    </button>
+  </aside>
+</div>
