@@ -40,7 +40,7 @@ export const milestones: Milestone[] = [
     location: 'Rennes',
     logo: 'history/capgemini.webp',
     summary:
-      'Un an et demi sur les applications de gestion des navires de plaisance de la DGAMPA. Un domaine réglementaire où chaque règle de gestion a une portée juridique, et où la donnée existante ne se réécrit pas.',
+      'Un an et demi sur les applications de gestion des navires de plaisance de la DGAMPA. Un domaine réglementaire où chaque règle de gestion a une portée juridique.',
     achievements: [
       'Conception et évolution de plusieurs applications web de gestion des navires de plaisance.',
       'Développement complet de la taxation 2026 : traduction d’un nouveau barème réglementaire en règles de calcul, en modèle de données et en interfaces de saisie et de contrôle.',
