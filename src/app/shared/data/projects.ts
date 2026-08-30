@@ -185,6 +185,7 @@ export const projects: Project[] = [
       'Angular',
       'TypeScript',
       'RxJS',
+      'Angular Material',
       'Java',
       'Spring Boot',
       'PostgreSQL',

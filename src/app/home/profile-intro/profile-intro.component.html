@@ -12,9 +12,9 @@
       très théoriques pour optimiser une fraction de pourcentage d’une
       sous-partie de réacteur d'avion. En quête de réalisations aux résultats
       plus concrets, en pro comme en perso, j'ai choisi de me reconvertir au
-      travers d'une POEI Java avec un CDI à la clé chez Sopra Steria.
-      J’ai validé la certification Java à l’issue de cette formation, en
-      juillet 2021.
+      travers d'une POEI Java avec un CDI à la clé chez Sopra Steria. J’ai
+      validé la certification Java à l’issue de cette formation, en juillet
+      2021.
     </p>
 
     <p class="justified">
@@ -35,11 +35,11 @@
 
     <p class="justified">
       Au-delà de cette stack Angular/Java, c’est surtout la dimension de mon
-      rôle qui s’est élargie&nbsp;: référent frontend au bout de 2 ans, pilotage
-      d’une équipe de 2 développeurs sur les jalons client, encadrement d’un
-      stagiaire puis d’un alternant. Ce rôle a changé ma façon de
-      travailler&nbsp;: je passe désormais autant de temps à débloquer, relire
-      et expliquer qu’à écrire du code, et c’est ce qui fait avancer l’équipe.
+      rôle qui s’est élargie&nbsp;: référent frontend, pilotage d’une équipe de
+      2 développeurs sur les jalons client, encadrement d’un stagiaire puis d’un
+      alternant. Ce rôle a changé ma façon de travailler&nbsp;: je passe
+      désormais autant de temps à débloquer, relire et expliquer qu’à écrire du
+      code, et c’est ce qui fait avancer l’équipe.
     </p>
 
     <p class="justified">
@@ -59,7 +59,11 @@
     </a>
   </div>
 
-  <aside class="facts card-hover" appReveal="120" aria-label="Le profil en bref">
+  <aside
+    class="facts card-hover"
+    appReveal="120"
+    aria-label="Le profil en bref"
+  >
     <h3>Le profil en bref</h3>
     <dl>
       @for (fact of facts; track fact.label) {
@@ -79,7 +83,9 @@
       [appCopyText]="profile.email"
       appCopyLabel="Adresse e-mail copiée"
       #copyMail="appCopyText"
-      [attr.title]="copyMail.copied() ? 'Adresse e-mail copiée' : 'Copier l’adresse e-mail'"
+      [attr.title]="
+        copyMail.copied() ? 'Adresse e-mail copiée' : 'Copier l’adresse e-mail'
+      "
     >
       <app-icon
         [name]="
