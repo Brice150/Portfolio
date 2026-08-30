@@ -236,7 +236,7 @@ export const projects: Project[] = [
     stack: ['Angular', 'TypeScript', 'Angular Material'],
     facts: [
       { label: 'Durée (temps libre)', value: '2 semaines' },
-      { label: 'Thèmes', value: '8 combinaisons' },
+      { label: 'Thèmes', value: '8 variantes' },
       { label: 'Détection', value: 'OnPush' },
       { label: 'Référentiel', value: 'RGAA' },
     ],
