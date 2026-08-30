@@ -137,7 +137,7 @@ export const projects: Project[] = [
       desktop: 'projects/simulator-desktop.webp',
       mobile: 'projects/simulator-mobile.webp',
     },
-    stack: ['Angular', 'TypeScript', 'RxJS'],
+    stack: ['Angular', 'TypeScript'],
     facts: [
       { label: 'Durée (temps libre)', value: '2 jours' },
       { label: 'Nature', value: 'Calculateur' },
@@ -181,7 +181,14 @@ export const projects: Project[] = [
       desktop: 'projects/pickme-desktop.webp',
       mobile: 'projects/pickme-mobile.webp',
     },
-    stack: ['Angular', 'TypeScript', 'RxJS', 'Java', 'Spring Boot', 'PostgreSQL'],
+    stack: [
+      'Angular',
+      'TypeScript',
+      'RxJS',
+      'Java',
+      'Spring Boot',
+      'PostgreSQL',
+    ],
     facts: [
       { label: 'Durée (temps libre)', value: '1 an' },
       { label: 'Nature', value: 'Full-stack' },
@@ -229,7 +236,7 @@ export const projects: Project[] = [
     stack: ['Angular', 'TypeScript', 'RxJS', 'Angular Material'],
     facts: [
       { label: 'Durée (temps libre)', value: '2 semaines' },
-      { label: 'Rendu', value: 'Prérendu' },
+      { label: 'Dépendances', value: '0 hors Angular' },
       { label: 'Détection', value: 'OnPush' },
       { label: 'Référentiel', value: 'RGAA' },
     ],
