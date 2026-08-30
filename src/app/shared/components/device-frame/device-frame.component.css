@@ -15,6 +15,13 @@
   scrollbar-width: none;
 }
 
+/* Sans débordement notable, l’écran ne doit pas absorber la molette : les
+   quelques pixels disponibles passaient pour une secousse plutôt que pour
+   un défilement. */
+.screen.is-static {
+  overflow-y: hidden;
+}
+
 .screen::-webkit-scrollbar {
   display: none;
 }

@@ -59,13 +59,15 @@ export class DeviceFrameComponent implements OnDestroy {
 
   readonly imagePath = environment.imagePath;
   readonly hintVisible = signal(false);
+  /** Faux tant que la capture tient dans le cadre : le défilement est alors inutile. */
+  readonly scrollable = signal(false);
 
   readonly source = computed(() => `${this.imagePath}${this.src()}`);
-  readonly label = computed(() =>
-    this.variant() === 'phone'
-      ? `${this.alt()}, aperçu mobile défilable`
-      : `${this.alt()}, aperçu bureau défilable`,
-  );
+  readonly label = computed(() => {
+    const vue = this.variant() === 'phone' ? 'aperçu mobile' : 'aperçu bureau';
+
+    return this.scrollable() ? `${this.alt()}, ${vue} défilable` : `${this.alt()}, ${vue}`;
+  });
 
   ngOnDestroy(): void {
     this.stop();
@@ -73,11 +75,15 @@ export class DeviceFrameComponent implements OnDestroy {
 
   /** La hauteur réelle de la capture n’est connue qu’une fois l’image chargée. */
   onImageLoad(): void {
-    this.hintVisible.set(this.canScroll());
+    this.measure();
+    this.hintVisible.set(this.scrollable());
   }
 
   onEnter(): void {
-    if (this.themeService.motion() === 'reduced' || !this.canScroll()) return;
+    // La largeur du cadre a pu changer depuis le chargement de l’image.
+    this.measure();
+
+    if (this.themeService.motion() === 'reduced' || !this.scrollable()) return;
 
     this.userTook = false;
     this.start();
@@ -86,7 +92,7 @@ export class DeviceFrameComponent implements OnDestroy {
   onLeave(): void {
     this.stop();
 
-    if (this.userTook || !this.canScroll()) return;
+    if (this.userTook || !this.scrollable()) return;
 
     this.screen().nativeElement.scrollTo({ top: 0, behavior: 'smooth' });
     this.hintVisible.set(true);
@@ -99,11 +105,10 @@ export class DeviceFrameComponent implements OnDestroy {
     this.hintVisible.set(false);
   }
 
-  /** Vrai seulement si la capture dépasse assez du cadre pour valoir un défilement. */
-  private canScroll(): boolean {
+  private measure(): void {
     const element = this.screen().nativeElement;
 
-    return element.scrollHeight - element.clientHeight >= MIN_SCROLLABLE;
+    this.scrollable.set(element.scrollHeight - element.clientHeight >= MIN_SCROLLABLE);
   }
 
   private start(): void {
