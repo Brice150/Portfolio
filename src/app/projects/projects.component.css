@@ -33,12 +33,6 @@
   }
 }
 
-.cover {
-  width: 100%;
-  border: 1px solid var(--border);
-  border-radius: var(--r-md);
-}
-
 /* --- Contenu ------------------------------------------------------------- */
 
 .details h2 {

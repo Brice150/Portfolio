@@ -30,10 +30,7 @@ export interface Project {
   startYear: number;
   status: ProjectStatus;
   featured: boolean;
-  /** Image de couverture (carte + partage social). */
-  cover: string;
-  /** Absentes lorsque le projet n’a pas de démo publique à capturer. */
-  shots?: ProjectShots;
+  shots: ProjectShots;
   stack: string[];
   /** Chiffres ou faits marquants affichés en tête de fiche. */
   facts: { label: string; value: string }[];

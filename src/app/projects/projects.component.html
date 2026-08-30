@@ -20,17 +20,7 @@
       </p>
 
       <div class="preview">
-        @if (project.shots) {
-          <app-device-showcase [project]="project" />
-        } @else {
-          <img
-            [src]="imagePath + project.cover"
-            [alt]="'Aperçu du projet ' + project.name"
-            class="cover"
-            loading="lazy"
-            decoding="async"
-          />
-        }
+        <app-device-showcase [project]="project" />
       </div>
 
       <div class="details">

@@ -11,10 +11,9 @@ export const projects: Project[] = [
     startYear: 2025,
     status: 'live',
     featured: true,
-    cover: 'projects/LIFE-RISE.webp',
     shots: {
-      desktop: 'projects/shots/life-rise-desktop.webp',
-      mobile: 'projects/shots/life-rise-mobile.webp',
+      desktop: 'projects/life-rise-desktop.webp',
+      mobile: 'projects/life-rise-mobile.webp',
     },
     stack: [
       'Angular',
@@ -85,10 +84,9 @@ export const projects: Project[] = [
     startYear: 2024,
     status: 'live',
     featured: true,
-    cover: 'projects/GAMETIME.webp',
     shots: {
-      desktop: 'projects/shots/gametime-desktop.webp',
-      mobile: 'projects/shots/gametime-mobile.webp',
+      desktop: 'projects/gametime-desktop.webp',
+      mobile: 'projects/gametime-mobile.webp',
     },
     stack: ['Angular', 'TypeScript', 'RxJS', 'Angular Material', 'Firebase'],
     facts: [
@@ -135,10 +133,9 @@ export const projects: Project[] = [
     startYear: 2023,
     status: 'live',
     featured: false,
-    cover: 'projects/SIMULATOR.webp',
     shots: {
-      desktop: 'projects/shots/simulator-desktop.webp',
-      mobile: 'projects/shots/simulator-mobile.webp',
+      desktop: 'projects/simulator-desktop.webp',
+      mobile: 'projects/simulator-mobile.webp',
     },
     stack: ['Angular', 'TypeScript', 'RxJS'],
     facts: [
@@ -180,10 +177,9 @@ export const projects: Project[] = [
     startYear: 2023,
     status: 'archive',
     featured: false,
-    cover: 'projects/PICKME.webp',
     shots: {
-      desktop: 'projects/shots/pickme-desktop.webp',
-      mobile: 'projects/shots/pickme-mobile.webp',
+      desktop: 'projects/pickme-desktop.webp',
+      mobile: 'projects/pickme-mobile.webp',
     },
     stack: ['Angular', 'TypeScript', 'RxJS', 'Java', 'Spring Boot', 'PostgreSQL'],
     facts: [
@@ -226,10 +222,9 @@ export const projects: Project[] = [
     startYear: 2026,
     status: 'live',
     featured: true,
-    cover: 'logo.webp',
     shots: {
-      desktop: 'projects/shots/portfolio-desktop.webp',
-      mobile: 'projects/shots/portfolio-mobile.webp',
+      desktop: 'projects/portfolio-desktop.webp',
+      mobile: 'projects/portfolio-mobile.webp',
     },
     stack: ['Angular', 'TypeScript', 'RxJS', 'Angular Material'],
     facts: [
