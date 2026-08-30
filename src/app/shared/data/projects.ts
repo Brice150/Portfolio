@@ -126,7 +126,7 @@ export const projects: Project[] = [
   {
     slug: 'simulateur-renovation',
     name: 'Simulateur de rénovation',
-    tagline: 'Estimer ses aides à la rénovation sans y passer la journée',
+    tagline: 'Le montant de ses aides à la rénovation, en quelques questions',
     summary:
       'Un simulateur d’aides à la rénovation énergétique, écrit en 2 jours pour dépanner une connaissance en alternance marketing qui en avait besoin pour son projet.',
     year: '2023',
@@ -233,10 +233,10 @@ export const projects: Project[] = [
       desktop: 'projects/portfolio-desktop.webp',
       mobile: 'projects/portfolio-mobile.webp',
     },
-    stack: ['Angular', 'TypeScript', 'RxJS', 'Angular Material'],
+    stack: ['Angular', 'TypeScript', 'Angular Material'],
     facts: [
       { label: 'Durée (temps libre)', value: '2 semaines' },
-      { label: 'Dépendances', value: '0 hors Angular' },
+      { label: 'Thèmes', value: '8 combinaisons' },
       { label: 'Détection', value: 'OnPush' },
       { label: 'Référentiel', value: 'RGAA' },
     ],
