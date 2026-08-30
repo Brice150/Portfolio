@@ -19,6 +19,13 @@ export type DeviceVariant = 'desktop' | 'phone';
 const AUTO_SCROLL_SPEED = 0.7;
 
 /**
+ * En deçà de ce débordement, la capture tient presque entièrement dans le
+ * cadre : la faire défiler ne révélerait rien et produirait surtout une
+ * secousse au survol. Le défilement et son invite sont alors désactivés.
+ */
+const MIN_SCROLLABLE = 48;
+
+/**
  * Maquette d'appareil dont l'écran défile réellement.
  *
  * Le défilement est natif (donc utilisable à la molette, au doigt et au
@@ -51,7 +58,7 @@ export class DeviceFrameComponent implements OnDestroy {
   private userTook = false;
 
   readonly imagePath = environment.imagePath;
-  readonly hintVisible = signal(true);
+  readonly hintVisible = signal(false);
 
   readonly source = computed(() => `${this.imagePath}${this.src()}`);
   readonly label = computed(() =>
@@ -64,8 +71,13 @@ export class DeviceFrameComponent implements OnDestroy {
     this.stop();
   }
 
+  /** La hauteur réelle de la capture n’est connue qu’une fois l’image chargée. */
+  onImageLoad(): void {
+    this.hintVisible.set(this.canScroll());
+  }
+
   onEnter(): void {
-    if (this.themeService.motion() === 'reduced') return;
+    if (this.themeService.motion() === 'reduced' || !this.canScroll()) return;
 
     this.userTook = false;
     this.start();
@@ -74,7 +86,7 @@ export class DeviceFrameComponent implements OnDestroy {
   onLeave(): void {
     this.stop();
 
-    if (this.userTook) return;
+    if (this.userTook || !this.canScroll()) return;
 
     this.screen().nativeElement.scrollTo({ top: 0, behavior: 'smooth' });
     this.hintVisible.set(true);
@@ -85,6 +97,13 @@ export class DeviceFrameComponent implements OnDestroy {
     this.userTook = true;
     this.stop();
     this.hintVisible.set(false);
+  }
+
+  /** Vrai seulement si la capture dépasse assez du cadre pour valoir un défilement. */
+  private canScroll(): boolean {
+    const element = this.screen().nativeElement;
+
+    return element.scrollHeight - element.clientHeight >= MIN_SCROLLABLE;
   }
 
   private start(): void {
