@@ -2,7 +2,7 @@
   <div class="prose" appReveal>
     <app-section-header
       eyebrow="Le profil"
-      title="Un ingénieur devenu développeur"
+      heading="Un ingénieur devenu développeur"
     />
 
     <p class="justified">
@@ -13,8 +13,8 @@
       sous-partie de réacteur d'avion. En quête de réalisations aux résultats
       plus concrets, en pro comme en perso, j'ai choisi de me reconvertir au
       travers d'une POEI Java avec un CDI à la clé chez Sopra Steria.
-      Certification Java validée dans la foulée et premiers projets web
-      construits seul.
+      J’ai validé la certification Java à l’issue de cette formation, en
+      juillet 2021.
     </p>
 
     <p class="justified">
@@ -79,6 +79,7 @@
       [appCopyText]="profile.email"
       appCopyLabel="Adresse e-mail copiée"
       #copyMail="appCopyText"
+      [attr.title]="copyMail.copied() ? 'Adresse e-mail copiée' : 'Copier l’adresse e-mail'"
     >
       <app-icon
         [name]="

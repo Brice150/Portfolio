@@ -1,0 +1,55 @@
+{
+  "name": "Brice Lecomte | Développeur Full-Stack Angular & Java",
+  "short_name": "Brice Lecomte",
+  "description": "Portfolio de Brice Lecomte, développeur Full-Stack Angular et Java : projets, compétences et parcours.",
+  "id": "/",
+  "start_url": "/",
+  "scope": "/",
+  "display": "minimal-ui",
+  "orientation": "any",
+  "lang": "fr",
+  "dir": "ltr",
+  "categories": ["business", "productivity"],
+  "theme_color": "#08090c",
+  "background_color": "#08090c",
+  "icons": [
+    {
+      "src": "assets/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/icons/icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Projets",
+      "short_name": "Projets",
+      "url": "/projets",
+      "description": "Les applications livrées, avec leurs fiches détaillées"
+    },
+    {
+      "name": "Parcours",
+      "short_name": "Parcours",
+      "url": "/parcours",
+      "description": "Missions, reconversion, formation et certifications"
+    },
+    {
+      "name": "Contact",
+      "short_name": "Contact",
+      "url": "/contact",
+      "description": "Formulaire, e-mail et LinkedIn"
+    }
+  ]
+}

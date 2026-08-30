@@ -25,6 +25,14 @@
   min-width: 0;
 }
 
+/* En colonne unique, l’aperçu passe sous la pastille de statut : on réserve
+   sa hauteur pour éviter que la maquette vienne la toucher. */
+@media (width < 980px) {
+  .preview {
+    padding-top: 1.75rem;
+  }
+}
+
 .cover {
   width: 100%;
   border: 1px solid var(--border);

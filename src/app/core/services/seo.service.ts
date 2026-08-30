@@ -8,7 +8,10 @@ export interface PageSeo {
   description: string;
   /** Chemin de la route, ex. `/projets`. */
   path: string;
-  /** Chemin relatif dans les assets, ex. `projects/LIFE-RISE.webp`. */
+  /**
+   * Chemin relatif dans les assets, ex. `projects/LIFE-RISE.webp`.
+   * À défaut, la bannière de partage du site est utilisée.
+   */
   image?: string;
   type?: 'website' | 'article' | 'profile';
   /** Données structurées additionnelles injectées avec la page. */
@@ -16,6 +19,12 @@ export interface PageSeo {
 }
 
 const SCHEMA_ID = 'page-schema';
+
+/**
+ * Bannière de partage 1200x630. En JPEG et non en WebP : LinkedIn ne décode pas
+ * ce format et affichait donc les liens du site sans visuel.
+ */
+const SHARE_IMAGE = 'og-banner.jpg';
 
 /**
  * Métadonnées de page. Le service manipule `DOCUMENT` plutôt que le `document`
@@ -30,7 +39,7 @@ export class SeoService {
 
   setPage(config: PageSeo): void {
     const url = `${SITE_URL}${config.path === '/' ? '/' : config.path}`;
-    const image = `${SITE_URL}/assets/images/${config.image ?? 'logo.webp'}`;
+    const image = `${SITE_URL}/assets/images/${config.image ?? SHARE_IMAGE}`;
 
     this.title.setTitle(config.title);
     this.meta.updateTag({ name: 'description', content: config.description });

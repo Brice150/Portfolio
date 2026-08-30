@@ -35,8 +35,8 @@ export const roleRotation: string[] = [
 
 export const navItems: NavItem[] = [
   { label: 'Accueil', path: '/', icon: 'home', hint: 'Le profil en une page', exact: true },
-  { label: 'Compétences', path: '/competences', icon: 'code', hint: 'La stack, en détail' },
   { label: 'Parcours', path: '/parcours', icon: 'route', hint: 'De l’aérospatial au web' },
+  { label: 'Compétences', path: '/competences', icon: 'code', hint: 'La stack, en détail' },
   { label: 'Projets', path: '/projets', icon: 'briefcase', hint: 'Applications livrées' },
   { label: 'Contact', path: '/contact', icon: 'mail', hint: 'Échanger sur un sujet' },
 ];

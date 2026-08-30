@@ -57,7 +57,8 @@ export class ProjectDetailComponent implements OnInit {
       title: `${project.name} : ${project.tagline} | Brice Lecomte`,
       description: project.summary,
       path: `/projets/${project.slug}`,
-      image: project.cover,
+      // Pas de visuel dédié ici : les couvertures sont en WebP, que LinkedIn
+      // ignore. La bannière JPEG du site est reprise par défaut.
       type: 'article',
       schema: this.seoService.projectSchema(project.name, project.summary, url),
     });

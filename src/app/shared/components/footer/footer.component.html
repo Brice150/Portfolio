@@ -15,7 +15,7 @@
           <span>Écrire un message</span>
         </a>
         <a [href]="profile.cv" [download]="'CV ' + profile.fullName + '.pdf'"
-        (click)="onCvDownload()" class="btn btn-ghost">
+        (click)="onCvDownload()" class="btn btn-ghost" title="Télécharger le CV au format PDF">
           <app-icon name="download" size="1.05em" />
           <span>Télécharger le CV</span>
         </a>
@@ -54,7 +54,8 @@
           <li>
             <button type="button" class="copy" [appCopyText]="profile.email"
               appCopyLabel="Adresse e-mail copiée"
-              #copyMail="appCopyText">
+              #copyMail="appCopyText"
+              [attr.title]="copyMail.copied() ? 'Adresse e-mail copiée' : 'Copier l’adresse e-mail'">
               <app-icon
                 [name]="copyMail.copied() ? 'check' : copyMail.failed() ? 'alert' : 'copy'"
                 size="0.9em"
@@ -69,13 +70,13 @@
             </button>
           </li>
           <li>
-            <a [href]="profile.linkedin" target="_blank" rel="noopener">
+            <a [href]="profile.linkedin" target="_blank" rel="noopener" title="Ouvrir mon profil LinkedIn">
               LinkedIn
               <app-icon name="arrow-up-right" size="0.9em" />
             </a>
           </li>
           <li>
-            <a [href]="profile.github" target="_blank" rel="noopener">
+            <a [href]="profile.github" target="_blank" rel="noopener" title="Ouvrir mon profil GitHub">
               GitHub
               <app-icon name="arrow-up-right" size="0.9em" />
             </a>

@@ -49,6 +49,7 @@
         [attr.aria-expanded]="menuOpen()"
         aria-controls="menu-mobile"
         [attr.aria-label]="menuOpen() ? 'Fermer le menu' : 'Ouvrir le menu'"
+        [attr.title]="menuOpen() ? 'Fermer le menu' : 'Ouvrir le menu'"
       >
         <span class="burger-line" aria-hidden="true"></span>
         <span class="burger-line" aria-hidden="true"></span>
@@ -57,9 +58,7 @@
   </div>
 </header>
 
-@if (menuOpen()) {
-  <div class="overlay" (click)="closeMenu()" aria-hidden="true"></div>
-}
+<div class="overlay" [class.is-open]="menuOpen()" (click)="closeMenu()" aria-hidden="true"></div>
 
 <div
   id="menu-mobile"

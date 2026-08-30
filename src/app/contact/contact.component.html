@@ -1,6 +1,6 @@
 <app-page-hero
   eyebrow="Contact"
-  title="Parlons de votre projet"
+  heading="Parlons de votre projet"
   lead="Une mission Angular / Java, une question technique ou simplement l’envie d’échanger : tous les messages trouvent une réponse, sous 48 heures ouvrées."
 />
 
@@ -16,6 +16,7 @@
           [appCopyText]="profile.email"
           appCopyLabel="Adresse e-mail copiée"
           #copyMail="appCopyText"
+          [attr.title]="copyMail.copied() ? 'Adresse e-mail copiée' : 'Copier l’adresse e-mail'"
         >
           <span class="channel-icon" aria-hidden="true">
             <app-icon [name]="copyMail.copied() ? 'check' : 'mail'" size="1.15em" />

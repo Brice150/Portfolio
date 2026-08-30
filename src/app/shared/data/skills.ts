@@ -156,7 +156,7 @@ export const practices: Practice[] = [
     icon: 'code',
     title: 'Détection de changement maîtrisée',
     description:
-      'OnPush sur tous les composants, état porté par des signals, application zoneless. Mis en place sur ce site et repris sur les projets suivants.',
+      'OnPush sur tous les composants, état porté par des signals, application zoneless. Mis en place sur ce site, et prévu pour les prochains projets.',
   },
   {
     icon: 'shield',

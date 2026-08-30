@@ -34,10 +34,6 @@ export const routes: Routes = [
     loadComponent: () => import('./contact/contact.component').then((m) => m.ContactComponent),
     title: 'Contact | Brice Lecomte',
   },
-  // Anciennes URL : les liens déjà partagés continuent de fonctionner.
-  { path: 'prestations', redirectTo: 'competences', pathMatch: 'full' },
-  { path: 'expertise', redirectTo: 'competences', pathMatch: 'full' },
-  { path: 'a-propos', redirectTo: 'parcours', pathMatch: 'full' },
   {
     path: 'not-found',
     loadComponent: () => import('./not-found/not-found.component').then((m) => m.NotFoundComponent),

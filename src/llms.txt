@@ -3,6 +3,7 @@
 > Développeur Full-Stack confirmé, 5 ans d'expérience en ESN sur des applications
 > métier réglementées : ministère des Armées, puis administration maritime (DGAMPA).
 > Ingénieur aérospatial de formation (ISAE-ENSMA), reconverti au développement logiciel.
+> Basé à Rennes, France. Disponible pour des missions Angular et Java.
 
 ## Profil
 
@@ -11,6 +12,22 @@
 - Formation : Double diplôme d'ingénieur aérospatial, ISAE-ENSMA (2017-2021)
 - Certifications : Angular (Angular Training, 2024), Java (M2i Formation, 2021)
 - Langues : français (natif), anglais C1 (TOEIC 945/990)
+- Encadrement : référent frontend, pilotage d'une équipe de 2 développeurs,
+  encadrement d'un stagiaire puis d'un alternant
+
+## Missions
+
+- Open, pour la DGAMPA (2026-) : refonte de l'application de gestion des parcelles
+  du cadastre aquacole, en Angular et Java, bâtie sur le Système de Design de l'État
+  (DSFR) et conforme au RGAA.
+- Capgemini, pour la DGAMPA (2024-2026) : reprise des applications de gestion des
+  navires de plaisance, en Angular et Java, et développement de bout en bout de la
+  taxation 2026.
+- Sopra Steria, pour le ministère des Armées (2023-2024) : développement Angular et
+  Java sur une application de maintenance de véhicules terrestres militaires.
+- Sopra Steria, pour le ministère des Armées (2021-2022) : reprise de données
+  (Talend, Java, SQL) vers la base d'une application web de maintenance d'aéronefs
+  militaires.
 
 ## Compétences principales
 
@@ -19,14 +36,40 @@
 - Données : PostgreSQL, Oracle, Firebase/Firestore, Talend
 - Outils : Git (GitHub, GitLab), IntelliJ IDEA, VS Code, GitLab CI
 - Méthode : usage quotidien et maîtrisé de l'IA générative comme outillage de développement
+- Domaines : applications métier réglementées, accessibilité numérique (RGAA),
+  performance web, rendu côté serveur et prerendering
 
 ## Pages
 
 - [Accueil](https://portfolio-brice.web.app/) : synthèse du profil, chiffres clés, projets mis en avant
-- [Compétences](https://portfolio-brice.web.app/competences) : stack détaillée, domaines d'intervention, limites assumées
 - [Parcours](https://portfolio-brice.web.app/parcours) : missions détaillées, reconversion, formation, certifications, façon de travailler
+- [Compétences](https://portfolio-brice.web.app/competences) : 20 technologies détaillées, domaines d'intervention, limites assumées
 - [Projets](https://portfolio-brice.web.app/projets) : 5 applications avec fiches détaillées
 - [Contact](https://portfolio-brice.web.app/contact) : formulaire, e-mail, LinkedIn
+
+## Projets personnels
+
+Cinq applications menées seul de bout en bout : conception, développement,
+déploiement et maintenance.
+
+- [Life Rise](https://portfolio-brice.web.app/projets/life-rise) (2025-2026, en ligne) :
+  19 espaces de gestion du quotidien reliés par un assistant conversationnel et
+  partageables entre les profils d'un même foyer. Angular, Firebase, Firestore,
+  IndexedDB, IA générative, Stripe. Site : https://life-rise.web.app/
+- [Ce portfolio](https://portfolio-brice.web.app/projets/portfolio) (2026, en ligne) :
+  vitrine technique autant que CV, pages prérendues, détection de changement sans
+  Zone.js, accessibilité traitée dès la conception. Angular 21, Firebase Hosting.
+  Code : https://github.com/Brice150/Portfolio
+- [Game Time](https://portfolio-brice.web.app/projets/gametime) (2024, en ligne) :
+  3 jeux de réflexion jouables à plusieurs en temps réel, avec salons, décompte
+  synchronisé et classement en direct. Site : https://brice150.github.io/GAMETIME/
+- [Pick Me](https://portfolio-brice.web.app/projets/pickme) (2023-2024, archivé) :
+  application de rencontre construite de zéro, profils, correspondance réciproque et
+  messagerie, sur une API Java/Spring Boot et une base relationnelle.
+  Code : https://github.com/Brice150/PICKME
+- [Simulateur de rénovation](https://portfolio-brice.web.app/projets/simulateur-renovation)
+  (2023, en ligne) : simulateur d'aides à la rénovation énergétique, écrit en 2 jours.
+  Site : https://brice150.github.io/Simulator/
 
 ## Contact
 

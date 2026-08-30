@@ -6,7 +6,9 @@
     </h1>
 
     <p class="role">
-      Développeur Full-Stack <strong>Angular</strong>&nbsp;<span class="amp">&amp;</span>&nbsp;<strong>Java</strong>, {{ years }} ans d’expérience.
+      Développeur Full-Stack <strong>Angular</strong>&nbsp;<span class="amp"
+        >&amp;</span
+      >&nbsp;<strong>Java</strong>, {{ years }} ans d’expérience.
     </p>
 
     <p class="rotation" aria-live="off">
@@ -21,7 +23,7 @@
     <p class="pitch justified">
       Ingénieur aérospatial devenu développeur, je conçois depuis
       {{ years }} ans des applications métier en Angular et Java pour des
-      acteurs publics de premier plan&nbsp;: le ministère des Armées, puis la
+      acteurs publics de premier plan&nbsp;: le ministère des Armées puis la
       Direction générale des affaires maritimes, de la pêche et de l'aquaculture
       (DGAMPA). J'évolue dans des domaines fortement réglementés, où une règle
       de gestion mal traduite a des conséquences concrètes et où la qualité du
@@ -36,6 +38,7 @@
       <a
         [href]="profile.cv"
         [download]="'CV ' + profile.fullName + '.pdf'"
+        title="Télécharger le CV au format PDF"
         (click)="onCvDownload()"
         class="btn btn-ghost"
       >
@@ -46,12 +49,12 @@
 
     <ul class="socials">
       <li>
-        <a [href]="profile.linkedin" target="_blank" rel="noopener">
+        <a [href]="profile.linkedin" target="_blank" rel="noopener" title="Profil LinkedIn">
           <app-icon name="linkedin" label="Profil LinkedIn" />
         </a>
       </li>
       <li>
-        <a [href]="profile.github" target="_blank" rel="noopener">
+        <a [href]="profile.github" target="_blank" rel="noopener" title="Profil GitHub">
           <app-icon name="github" label="Profil GitHub" />
         </a>
       </li>
@@ -65,6 +68,9 @@
             copyMail.copied()
               ? 'Adresse e-mail copiée'
               : 'Copier l’adresse e-mail ' + profile.email
+          "
+          [attr.title]="
+            copyMail.copied() ? 'Adresse e-mail copiée' : 'Copier l’adresse e-mail'
           "
         >
           <app-icon [name]="copyMail.copied() ? 'check' : 'mail'" />

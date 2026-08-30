@@ -174,9 +174,13 @@ html[data-accent='amber'] {
   box-sizing: border-box;
 }
 
+/* Le défilement reste instantané : au changement de route, le retour en haut
+   doit être immédiat plutôt que de rejouer toute la page en accéléré. Les rares
+   défilements animés (bouton « haut de page », maquettes) passent leur propre
+   behavior: smooth, qui prime sur cette valeur. */
 html {
   -webkit-text-size-adjust: 100%;
-  scroll-behavior: smooth;
+  scroll-behavior: auto;
   scroll-padding-top: calc(var(--nav-h) + 1.5rem);
 }
 

@@ -10,7 +10,7 @@ import { ChangeDetectionStrategy, Component, booleanAttribute, input } from '@an
 })
 export class SectionHeaderComponent {
   readonly eyebrow = input<string>('');
-  readonly title = input.required<string>();
+  readonly heading = input.required<string>();
   readonly lead = input<string>('');
   readonly centered = input(false, { transform: booleanAttribute });
   /** Niveau de titre, pour conserver une hiérarchie correcte dans la page. */
