@@ -7,9 +7,12 @@ import {
   signal,
 } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { environment } from '../../environments/environment';
 import { ProjectStatus } from '../core/interfaces/project';
 import { projectsByDate } from '../shared/data/projects';
+import { techLabel } from '../shared/data/tech';
+import { Dictionary } from '../core/i18n/locales';
+import { fromDictionary } from '../core/i18n/localize';
+import { LanguageService } from '../core/services/language.service';
 import { SeoService } from '../core/services/seo.service';
 import { DeviceShowcaseComponent } from '../shared/components/device-showcase/device-showcase.component';
 import {
@@ -19,6 +22,14 @@ import {
 import { IconComponent } from '../shared/components/icon/icon.component';
 import { PageHeroComponent } from '../shared/components/page-hero/page-hero.component';
 import { RevealDirective } from '../shared/directives/reveal.directive';
+
+type StatusLabelKey = Extract<keyof Dictionary['projects'], `status${string}`>;
+
+const STATUS_LABELS: Record<ProjectStatus, StatusLabelKey> = {
+  live: 'statusLive',
+  archive: 'statusArchive',
+  wip: 'statusWip',
+};
 
 @Component({
   selector: 'app-projects',
@@ -36,25 +47,25 @@ import { RevealDirective } from '../shared/directives/reveal.directive';
 })
 export class ProjectsComponent implements OnInit {
   private readonly seoService = inject(SeoService);
+  private readonly languageService = inject(LanguageService);
+
+  readonly t = this.languageService.t;
+  readonly format = this.languageService.format;
+  readonly tr = this.languageService.tr;
+  readonly lang = this.languageService.lang;
+  readonly techLabel = techLabel;
 
   readonly projects = projectsByDate();
-  readonly imagePath = environment.imagePath;
-
-  readonly statusLabels: Record<ProjectStatus, string> = {
-    live: 'En ligne',
-    archive: 'Non hébergé',
-    wip: 'En cours',
-  };
 
   readonly activeProject = signal('all');
 
-  readonly filters: FilterOption[] = [
-    { value: 'all', label: 'Tous' },
+  readonly filters = computed<FilterOption[]>(() => [
+    { value: 'all', label: this.t().projects.filterAll },
     ...this.projects.map((project) => ({
       value: project.slug,
-      label: project.name,
+      label: this.tr(project.name),
     })),
-  ];
+  ]);
 
   readonly visibleProjects = computed(() => {
     const active = this.activeProject();
@@ -65,11 +76,14 @@ export class ProjectsComponent implements OnInit {
 
   ngOnInit(): void {
     this.seoService.setPage({
-      title: 'Projets | Brice Lecomte, développeur Angular & Java',
-      description:
-        '5 applications web conçues, développées et déployées de bout en bout : gestion du quotidien, quiz multijoueur, simulateur d’aides, application Full-Stack Java et ce portfolio.',
+      title: fromDictionary((dictionary) => dictionary.seo.projectsTitle),
+      description: fromDictionary((dictionary) => dictionary.seo.projectsDescription),
       path: '/projets',
     });
+  }
+
+  statusLabel(status: ProjectStatus): string {
+    return this.t().projects[STATUS_LABELS[status]];
   }
 
   selectProject(slug: string): void {

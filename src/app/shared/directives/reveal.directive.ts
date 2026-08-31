@@ -7,13 +7,7 @@ import {
   input,
 } from '@angular/core';
 
-/**
- * Révèle un élément à l'entrée dans le viewport.
- *
- * L'état initial masqué est porté par la feuille de styles globale, mais
- * uniquement sous `html.js` : sans JavaScript, le contenu reste visible.
- * L'attribut `data-reveal` est statique, donc présent dans le HTML prérendu.
- */
+/** L'état masqué n'est appliqué que sous `html.js` : sans JS, tout reste visible. */
 @Directive({
   selector: '[appReveal]',
   host: {
@@ -22,7 +16,6 @@ import {
   },
 })
 export class RevealDirective implements OnDestroy {
-  /** Décalage d'apparition, pour créer un effet de cascade. */
   readonly delay = input<number, unknown>(0, { alias: 'appReveal', transform: toDelay });
 
   private readonly host = inject(ElementRef<HTMLElement>);

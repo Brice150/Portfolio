@@ -6,8 +6,6 @@
   color: var(--text-muted);
 }
 
-/* --- Certifications ------------------------------------------------------ */
-
 .certifications {
   display: grid;
   gap: 1rem;
@@ -57,8 +55,6 @@
   font-size: 0.8rem;
   color: var(--accent);
 }
-
-/* --- Bagage et vie hors écran (repris de l'ancienne page « À propos ») ---- */
 
 .strengths {
   display: grid;

@@ -6,8 +6,6 @@
   background: linear-gradient(180deg, transparent, var(--surface-2));
 }
 
-/* --- Bandeau d'appel ----------------------------------------------------- */
-
 .cta-band {
   display: grid;
   gap: 1.75rem;
@@ -35,8 +33,6 @@
   flex-wrap: wrap;
   gap: 0.75rem;
 }
-
-/* --- Grille -------------------------------------------------------------- */
 
 .grid {
   display: grid;
@@ -131,8 +127,6 @@
   font-size: 0.8rem;
   color: var(--text-muted);
 }
-
-/* --- Bas de page --------------------------------------------------------- */
 
 .bottom {
   display: flex;

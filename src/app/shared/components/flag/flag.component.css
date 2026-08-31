@@ -1,0 +1,12 @@
+:host {
+  display: inline-flex;
+  flex: none;
+}
+
+.flag {
+  width: 1.4rem;
+  height: auto;
+  border-radius: 2px;
+  /* Le blanc des drapeaux se perdrait sur fond clair sans ce liseré. */
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--text) 22%, transparent);
+}

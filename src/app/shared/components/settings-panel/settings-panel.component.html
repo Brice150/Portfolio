@@ -5,8 +5,8 @@
   (click)="toggle()"
   [attr.aria-expanded]="open()"
   aria-controls="settings-popover"
-  aria-label="Personnaliser l’affichage"
-  title="Personnaliser l’affichage"
+  [attr.aria-label]="t().settings.trigger"
+  [title]="t().settings.trigger"
 >
   <app-icon name="palette" size="1.15em" />
 </button>
@@ -17,19 +17,25 @@
   [class.is-open]="open()"
   [attr.inert]="open() ? null : ''"
   role="dialog"
-  aria-label="Préférences d’affichage"
+  [attr.aria-label]="t().settings.dialog"
   cdkTrapFocus
   [cdkTrapFocusAutoCapture]="open()"
 >
   <div class="head">
-    <h2>Affichage</h2>
-    <button type="button" class="close" (click)="close()" aria-label="Fermer les préférences" title="Fermer les préférences">
+    <h2>{{ t().settings.heading }}</h2>
+    <button
+      type="button"
+      class="close"
+      (click)="close()"
+      [attr.aria-label]="t().settings.close"
+      [title]="t().settings.close"
+    >
       <app-icon name="close" size="1.05em" />
     </button>
   </div>
 
   <fieldset class="group">
-    <legend>Thème</legend>
+    <legend>{{ t().settings.theme }}</legend>
     <div class="segmented">
       @for (option of themeOptions; track option.value) {
         <button
@@ -39,14 +45,14 @@
           [attr.aria-pressed]="theme() === option.value"
         >
           <app-icon [name]="option.icon" size="1.05em" />
-          <span>{{ option.label }}</span>
+          <span>{{ t().theme[option.value] }}</span>
         </button>
       }
     </div>
   </fieldset>
 
   <fieldset class="group">
-    <legend>Couleur d’accent</legend>
+    <legend>{{ t().settings.accent }}</legend>
     <div class="swatches">
       @for (option of accentOptions; track option.value) {
         <button
@@ -56,8 +62,8 @@
           [style.--swatch]="option.swatch"
           (click)="selectAccent(option.value)"
           [attr.aria-pressed]="accent() === option.value"
-          [attr.aria-label]="'Couleur ' + option.label"
-          [title]="option.label"
+          [attr.aria-label]="format(t().settings.accentAria, { label: t().theme[option.value] })"
+          [title]="t().theme[option.value]"
         >
           <span class="dot" aria-hidden="true"></span>
         </button>
@@ -66,7 +72,7 @@
   </fieldset>
 
   <fieldset class="group">
-    <legend>Animations</legend>
+    <legend>{{ t().settings.motion }}</legend>
     <button
       type="button"
       class="switch"
@@ -75,14 +81,12 @@
     >
       <span class="switch-label">
         <app-icon name="motion" size="1.05em" />
-        <span>{{ motionEnabled() ? 'Activées' : 'Réduites' }}</span>
+        <span>{{ motionEnabled() ? t().settings.motionOn : t().settings.motionOff }}</span>
       </span>
       <span class="track" [class.is-on]="motionEnabled()" aria-hidden="true">
         <span class="thumb"></span>
       </span>
     </button>
-    <p class="note">
-      Les préférences système de réduction de mouvement sont respectées en priorité.
-    </p>
+    <p class="note">{{ t().settings.motionNote }}</p>
   </fieldset>
 </div>

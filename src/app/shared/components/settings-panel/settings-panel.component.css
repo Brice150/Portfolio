@@ -111,8 +111,6 @@ legend {
   color: var(--text-faint);
 }
 
-/* --- Segmenté ------------------------------------------------------------ */
-
 .segmented {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -151,8 +149,6 @@ legend {
   box-shadow: var(--shadow-sm);
 }
 
-/* --- Pastilles de couleur ------------------------------------------------ */
-
 .swatches {
   display: flex;
   gap: 0.5rem;
@@ -188,8 +184,6 @@ legend {
   border-radius: var(--r-full);
   background: var(--swatch);
 }
-
-/* --- Interrupteur -------------------------------------------------------- */
 
 .switch {
   display: flex;

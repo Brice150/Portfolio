@@ -1,10 +1,10 @@
 <app-hero />
 
-<section class="section shell" aria-label="Chiffres clés">
+<section class="section shell" [attr.aria-label]="t().home.keyFigures">
   <app-highlight-grid [items]="highlights" />
 </section>
 
-<app-tech-marquee [items]="technologies" />
+<app-tech-marquee [items]="technologies()" [label]="t().home.marqueeLabel" />
 
 <section id="profil" class="section shell">
   <app-profile-intro />
@@ -12,20 +12,20 @@
 
 <section class="section shell" aria-labelledby="principes-titre">
   <app-section-header
-    eyebrow="Méthode"
-    heading="Ce qui guide le code au quotidien"
-    lead="Ces six principes ne sont pas des slogans : ils se défendent en revue de code, sur des cas concrets."
+    [eyebrow]="t().home.principlesEyebrow"
+    [heading]="t().home.principlesHeading"
+    [lead]="t().home.principlesLead"
     centered
   />
 
   <ul class="principles">
-    @for (principle of principles; track principle.title; let i = $index) {
+    @for (principle of principles; track principle.icon; let i = $index) {
       <li class="principle card-hover" [appReveal]="i * 90">
         <span class="principle-icon" aria-hidden="true">
           <app-icon [name]="principle.icon" size="1.2em" />
         </span>
-        <h3>{{ principle.title }}</h3>
-        <p class="justified">{{ principle.description }}</p>
+        <h3>{{ tr(principle.title) }}</h3>
+        <p class="justified">{{ tr(principle.description) }}</p>
       </li>
     }
   </ul>
@@ -34,19 +34,19 @@
 
 <section class="section shell">
   <app-section-header
-    eyebrow="Collaboration"
-    [heading]="collaboration.title"
-    lead="Ce qui compte autant que la technique, et qui se voit dès les premières semaines d’une mission."
+    [eyebrow]="t().home.collaborationEyebrow"
+    [heading]="tr(collaboration.title)"
+    [lead]="t().home.collaborationLead"
     centered
   />
 
   <ul class="collab">
-    @for (point of collaboration.points; track point.title; let i = $index) {
+    @for (point of collaboration.points; track point.icon; let i = $index) {
       <li class="collab-item card-hover" [appReveal]="i * 80">
         <app-icon [name]="point.icon" size="1.2em" />
         <div>
-          <h3>{{ point.title }}</h3>
-          <p class="justified">{{ point.text }}</p>
+          <h3>{{ tr(point.title) }}</h3>
+          <p class="justified">{{ tr(point.text) }}</p>
         </div>
       </li>
     }

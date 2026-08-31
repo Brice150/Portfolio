@@ -33,8 +33,6 @@
   }
 }
 
-/* --- Contenu ------------------------------------------------------------- */
-
 .details h2 {
   margin-block: 0.6rem 0.5rem;
   font-size: var(--step-3);
@@ -105,7 +103,6 @@
     grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
   }
 
-  /* Une entrée sur deux inverse les colonnes, pour rythmer la lecture. */
   .entry:nth-child(even) .preview {
     order: 2;
   }
@@ -114,8 +111,6 @@
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 }
-
-/* --- Statut et code non public ------------------------------------------- */
 
 .entry {
   position: relative;

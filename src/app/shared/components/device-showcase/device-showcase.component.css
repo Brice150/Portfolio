@@ -24,7 +24,6 @@
   transition: translate var(--dur-slow) var(--ease);
 }
 
-/* Sur petits écrans, les deux maquettes se suivent verticalement. */
 .phone-slot {
   width: min(62%, 13rem);
   margin-inline: auto;
@@ -62,7 +61,6 @@
   }
 }
 
-/* Variante compacte : uniquement l'ordinateur, sans dépassement. */
 :host(.is-compact) .stage {
   padding-inline-end: 0;
   padding-block: 0;

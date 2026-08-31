@@ -1,5 +1,6 @@
-import { ChangeDetectionStrategy, Component, input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, input } from '@angular/core';
 import { Highlight } from '../../core/interfaces/content';
+import { LanguageService } from '../../core/services/language.service';
 import { IconComponent } from '../../shared/components/icon/icon.component';
 import { RevealDirective } from '../../shared/directives/reveal.directive';
 
@@ -12,4 +13,6 @@ import { RevealDirective } from '../../shared/directives/reveal.directive';
 })
 export class HighlightGridComponent {
   readonly items = input.required<Highlight[]>();
+
+  readonly tr = inject(LanguageService).tr;
 }

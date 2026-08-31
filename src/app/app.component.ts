@@ -1,5 +1,6 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { LanguageService } from './core/services/language.service';
 import { FooterComponent } from './shared/components/footer/footer.component';
 import { HeaderComponent } from './shared/components/header/header.component';
 import { ToastHostComponent } from './shared/components/toast-host/toast-host.component';
@@ -11,4 +12,6 @@ import { ToastHostComponent } from './shared/components/toast-host/toast-host.co
   styleUrl: './app.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class AppComponent {}
+export class AppComponent {
+  readonly t = inject(LanguageService).t;
+}

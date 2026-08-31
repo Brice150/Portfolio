@@ -1,7 +1,10 @@
-import { ChangeDetectionStrategy, Component, booleanAttribute, input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, booleanAttribute, inject, input } from '@angular/core';
 import { environment } from '../../../../environments/environment';
 import { Milestone, MilestoneKind } from '../../../core/interfaces/experience';
 import { IconName } from '../../../core/interfaces/icon';
+import { Dictionary } from '../../../core/i18n/locales';
+import { LanguageService } from '../../../core/services/language.service';
+import { techLabel } from '../../data/tech';
 import { IconComponent } from '../icon/icon.component';
 import { RevealDirective } from '../../directives/reveal.directive';
 
@@ -12,11 +15,13 @@ const KIND_ICONS: Record<MilestoneKind, IconName> = {
   'turning-point': 'rocket',
 };
 
-const KIND_LABELS: Record<MilestoneKind, string> = {
-  work: 'Expérience',
-  education: 'Formation',
-  certification: 'Certification',
-  'turning-point': 'Tournant',
+type KindLabelKey = Extract<keyof Dictionary['timeline'], `kind${string}`>;
+
+const KIND_LABELS: Record<MilestoneKind, KindLabelKey> = {
+  work: 'kindWork',
+  education: 'kindEducation',
+  certification: 'kindCertification',
+  'turning-point': 'kindTurningPoint',
 };
 
 @Component({
@@ -28,8 +33,15 @@ const KIND_LABELS: Record<MilestoneKind, string> = {
 })
 export class TimelineComponent {
   readonly milestones = input.required<Milestone[]>();
-  /** Version resserrée : résumé seul, sans la liste des réalisations. */
   readonly compact = input(false, { transform: booleanAttribute });
+
+  private readonly languageService = inject(LanguageService);
+
+  readonly t = this.languageService.t;
+  readonly format = this.languageService.format;
+  readonly tr = this.languageService.tr;
+  readonly lang = this.languageService.lang;
+  readonly techLabel = techLabel;
 
   readonly imagePath = environment.imagePath;
 
@@ -38,6 +50,6 @@ export class TimelineComponent {
   }
 
   labelFor(kind: MilestoneKind): string {
-    return KIND_LABELS[kind];
+    return this.t().timeline[KIND_LABELS[kind]];
   }
 }

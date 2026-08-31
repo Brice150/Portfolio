@@ -1,22 +1,22 @@
+import { Localized } from '../i18n/lang';
 import { IconName } from './icon';
 
 export interface Skill {
-  name: string;
-  /** Niveau de maîtrise sur 100, utilisé pour la jauge. */
+  name: Localized;
   level: number;
-  note: string;
+  note: Localized;
 }
 
 export interface SkillGroup {
   id: string;
-  title: string;
+  title: Localized;
   icon: IconName;
-  description: string;
+  description: Localized;
   skills: Skill[];
 }
 
 export interface Practice {
   icon: IconName;
-  title: string;
-  description: string;
+  title: Localized;
+  description: Localized;
 }

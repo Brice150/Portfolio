@@ -30,13 +30,16 @@ async function generate404() {
 /**
  * Le sitemap est dérivé des routes réellement prérendues : impossible qu'il
  * dérive du site au fil des ajouts de pages ou de projets.
+ *
+ * Ni `lastmod` ni `changefreq` ni `priority` : les deux derniers sont ignorés
+ * par les moteurs, et un `lastmod` mis à la date du build sur toutes les URL
+ * est faux dès le deuxième déploiement, ce qui décrédibilise le fichier.
  */
 async function generateSitemap() {
   const manifest = join(distDir, 'prerendered-routes.json');
 
   try {
     const { routes } = JSON.parse(await readFile(manifest, 'utf8'));
-    const today = new Date().toISOString().slice(0, 10);
 
     const entries = Object.keys(routes)
       .filter((route) => route !== '/not-found')
@@ -44,14 +47,7 @@ async function generateSitemap() {
       .map((route) => {
         const loc = route === '/' ? `${SITE_URL}/` : `${SITE_URL}${route}`;
 
-        return [
-          '  <url>',
-          `    <loc>${loc}</loc>`,
-          `    <lastmod>${today}</lastmod>`,
-          `    <changefreq>${route === '/' ? 'weekly' : 'monthly'}</changefreq>`,
-          `    <priority>${priorityFor(route)}</priority>`,
-          '  </url>',
-        ].join('\n');
+        return ['  <url>', `    <loc>${loc}</loc>`, '  </url>'].join('\n');
       });
 
     const xml = [
@@ -70,8 +66,3 @@ async function generateSitemap() {
   }
 }
 
-function priorityFor(route) {
-  if (route === '/') return '1.0';
-  if (route.startsWith('/projets/')) return '0.7';
-  return '0.8';
-}

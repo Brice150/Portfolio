@@ -1,8 +1,12 @@
 import { ChangeDetectionStrategy, Component, OnInit, computed, inject, input } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
-import { environment } from '../../../environments/environment';
 import { SITE_URL } from '../../shared/data/profile';
 import { projectBySlug, projectsByDate } from '../../shared/data/projects';
+import { techLabel } from '../../shared/data/tech';
+import { LOCALES } from '../../core/i18n/locales';
+import { format } from '../../core/i18n/format';
+import { fromLocales } from '../../core/i18n/localize';
+import { LanguageService } from '../../core/services/language.service';
 import { SeoService } from '../../core/services/seo.service';
 import { DeviceShowcaseComponent } from '../../shared/components/device-showcase/device-showcase.component';
 import { IconComponent } from '../../shared/components/icon/icon.component';
@@ -21,12 +25,15 @@ export class ProjectDetailComponent implements OnInit {
 
   private readonly seoService = inject(SeoService);
   private readonly router = inject(Router);
+  private readonly languageService = inject(LanguageService);
 
-  readonly imagePath = environment.imagePath;
+  readonly t = this.languageService.t;
+  readonly tr = this.languageService.tr;
+  readonly lang = this.languageService.lang;
+  readonly techLabel = techLabel;
 
   readonly project = computed(() => projectBySlug(this.slug()));
 
-  /** Voisins dans l’ordre chronologique de la page Projets. */
   private readonly neighbours = computed(() => {
     const current = this.project();
     if (!current) return { previous: undefined, next: undefined };
@@ -54,11 +61,14 @@ export class ProjectDetailComponent implements OnInit {
     const url = `${SITE_URL}/projets/${project.slug}`;
 
     this.seoService.setPage({
-      title: `${project.name} : ${project.tagline} | Brice Lecomte`,
+      title: fromLocales((lang) =>
+        format(LOCALES[lang].dictionary.seo.projectTitle, {
+          name: project.name[lang],
+          tagline: project.tagline[lang],
+        }),
+      ),
       description: project.summary,
       path: `/projets/${project.slug}`,
-      // Pas de visuel dédié ici : les couvertures sont en WebP, que LinkedIn
-      // ignore. La bannière JPEG du site est reprise par défaut.
       type: 'article',
       schema: this.seoService.projectSchema(project.name, project.summary, url),
     });

@@ -2,10 +2,7 @@ import { ChangeDetectionStrategy, Component, computed, input } from '@angular/co
 import { ICONS, IconDefinition } from '../../data/icons';
 import { IconName } from '../../../core/interfaces/icon';
 
-/**
- * Icône SVG inline. Décorative par défaut (aria-hidden) ; passer `label`
- * lorsqu'elle porte seule le sens, par exemple dans un bouton sans texte.
- */
+/** Décorative par défaut ; passer `label` quand elle porte seule le sens. */
 @Component({
   selector: 'app-icon',
   templateUrl: './icon.component.html',

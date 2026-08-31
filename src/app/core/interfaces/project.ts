@@ -1,41 +1,41 @@
+import { Localized, LocalizedList } from '../i18n/lang';
+
 export type ProjectStatus = 'live' | 'archive' | 'wip';
 
 export interface ProjectLink {
   live?: string;
   github?: string;
-  /** Raison affichée lorsque le code source n’est volontairement pas public. */
-  sourceRestricted?: string;
+  sourceRestricted?: Localized;
 }
 
 export interface ProjectShots {
-  /** Capture pleine hauteur affichée dans le mockup desktop. */
   desktop: string;
-  /** Capture pleine hauteur affichée dans le mockup mobile. */
   mobile: string;
 }
 
 export interface ProjectSection {
-  title: string;
-  body: string;
+  title: Localized;
+  body: Localized;
+}
+
+export interface ProjectFact {
+  label: Localized;
+  value: Localized;
 }
 
 export interface Project {
   slug: string;
-  name: string;
-  tagline: string;
-  /** Résumé court affiché sur la carte. */
-  summary: string;
+  name: Localized;
+  tagline: Localized;
+  summary: Localized;
   year: string;
-  /** Année de début, utilisée pour classer les projets du plus récent au plus ancien. */
   startYear: number;
   status: ProjectStatus;
-  featured: boolean;
   shots: ProjectShots;
   stack: string[];
-  /** Chiffres ou faits marquants affichés en tête de fiche. */
-  facts: { label: string; value: string }[];
-  context: string;
+  facts: ProjectFact[];
+  context: Localized;
   sections: ProjectSection[];
-  features: string[];
+  features: LocalizedList;
   links: ProjectLink;
 }

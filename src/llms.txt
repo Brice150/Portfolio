@@ -1,6 +1,6 @@
 # Brice Lecomte, développeur Full-Stack Angular / Java
 
-> Développeur Full-Stack confirmé, 5 ans d'expérience en ESN sur des applications
+> Développeur Full-Stack confirmé, en poste depuis 2021 en ESN sur des applications
 > métier réglementées : ministère des Armées, puis administration maritime (DGAMPA).
 > Ingénieur aérospatial de formation (ISAE-ENSMA), reconverti au développement logiciel.
 > Basé à Rennes, France. Disponible pour des missions Angular et Java.
@@ -43,7 +43,7 @@
 
 - [Accueil](https://portfolio-brice.web.app/) : synthèse du profil, chiffres clés, projets mis en avant
 - [Parcours](https://portfolio-brice.web.app/parcours) : missions détaillées, reconversion, formation, certifications, façon de travailler
-- [Compétences](https://portfolio-brice.web.app/competences) : 20 technologies détaillées, domaines d'intervention, limites assumées
+- [Compétences](https://portfolio-brice.web.app/competences) : la stack détaillée, domaines d'intervention, limites assumées
 - [Projets](https://portfolio-brice.web.app/projets) : 5 applications avec fiches détaillées
 - [Contact](https://portfolio-brice.web.app/contact) : formulaire, e-mail, LinkedIn
 

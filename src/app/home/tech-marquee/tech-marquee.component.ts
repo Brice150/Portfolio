@@ -1,9 +1,6 @@
 import { ChangeDetectionStrategy, Component, computed, input } from '@angular/core';
 
-/**
- * Bandeau défilant de technologies. La liste est dupliquée une fois afin que
- * la translation de 50 % boucle sans saut visible.
- */
+/** La liste est dupliquée pour que la translation de 50 % boucle sans saut. */
 @Component({
   selector: 'app-tech-marquee',
   templateUrl: './tech-marquee.component.html',
@@ -12,7 +9,7 @@ import { ChangeDetectionStrategy, Component, computed, input } from '@angular/co
 })
 export class TechMarqueeComponent {
   readonly items = input.required<string[]>();
-  readonly label = input('Technologies utilisées au quotidien');
+  readonly label = input.required<string>();
 
   readonly loop = computed(() => [...this.items(), ...this.items()]);
 }

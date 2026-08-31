@@ -1,12 +1,12 @@
 <ul class="grid">
-  @for (item of items(); track item.label; let i = $index) {
+  @for (item of items(); track item.icon; let i = $index) {
     <li class="cell card-hover card-hover--line" [appReveal]="i * 90">
       <span class="icon" aria-hidden="true">
         <app-icon [name]="item.icon" size="1.25em" />
       </span>
-      <p class="value">{{ item.value }}</p>
-      <p class="label">{{ item.label }}</p>
-      <p class="detail">{{ item.detail }}</p>
+      <p class="value">{{ tr(item.value) }}</p>
+      <p class="label">{{ tr(item.label) }}</p>
+      <p class="detail">{{ tr(item.detail) }}</p>
     </li>
   }
 </ul>

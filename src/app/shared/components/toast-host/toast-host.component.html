@@ -7,7 +7,12 @@
 
       <p class="message">{{ toast.message }}</p>
 
-      <button type="button" class="close" (click)="dismiss(toast.id)" aria-label="Fermer">
+      <button
+        type="button"
+        class="close"
+        (click)="dismiss(toast.id)"
+        [attr.aria-label]="t().common.close"
+      >
         <app-icon name="close" size="0.95em" />
       </button>
     </div>

@@ -1,6 +1,8 @@
 import { ChangeDetectionStrategy, Component, OnInit, computed, inject, signal } from '@angular/core';
 import { serviceOffers } from '../shared/data/expertise';
 import { practices, skillGroups } from '../shared/data/skills';
+import { fromDictionary } from '../core/i18n/localize';
+import { LanguageService } from '../core/services/language.service';
 import { SeoService } from '../core/services/seo.service';
 import { IconComponent } from '../shared/components/icon/icon.component';
 import { SectionHeaderComponent } from '../shared/components/section-header/section-header.component';
@@ -23,6 +25,11 @@ import { PageHeroComponent } from '../shared/components/page-hero/page-hero.comp
 })
 export class SkillsComponent implements OnInit {
   private readonly seoService = inject(SeoService);
+  private readonly languageService = inject(LanguageService);
+
+  readonly t = this.languageService.t;
+  readonly format = this.languageService.format;
+  readonly tr = this.languageService.tr;
 
   readonly groups = skillGroups;
   readonly practices = practices;
@@ -30,10 +37,14 @@ export class SkillsComponent implements OnInit {
 
   readonly activeGroup = signal('all');
 
-  readonly filters: FilterOption[] = [
-    { value: 'all', label: 'Toutes' },
-    ...this.groups.map((group) => ({ value: group.id, label: group.title, icon: group.icon })),
-  ];
+  readonly filters = computed<FilterOption[]>(() => [
+    { value: 'all', label: this.t().skills.filterAll },
+    ...this.groups.map((group) => ({
+      value: group.id,
+      label: this.tr(group.title),
+      icon: group.icon,
+    })),
+  ]);
 
   readonly visibleGroups = computed(() => {
     const active = this.activeGroup();
@@ -44,9 +55,8 @@ export class SkillsComponent implements OnInit {
 
   ngOnInit(): void {
     this.seoService.setPage({
-      title: 'Compétences | Brice Lecomte, développeur Angular & Java',
-      description:
-        'Le détail de ma stack : Angular, TypeScript, RxJS, Java, Spring Boot, PostgreSQL, Oracle, accessibilité et performance. Avec, pour chaque brique, ce que j’en fais réellement.',
+      title: fromDictionary((dictionary) => dictionary.seo.skillsTitle),
+      description: fromDictionary((dictionary) => dictionary.seo.skillsDescription),
       path: '/competences',
     });
   }

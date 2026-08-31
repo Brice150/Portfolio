@@ -1,0 +1,40 @@
+<button
+  type="button"
+  class="trigger"
+  [class.is-open]="open()"
+  (click)="toggle()"
+  [attr.aria-expanded]="open()"
+  aria-haspopup="menu"
+  aria-controls="language-menu"
+  [attr.aria-label]="format(t().language.trigger, { current: locale().label })"
+  [title]="format(t().language.trigger, { current: locale().label })"
+>
+  <app-flag [lang]="lang()" />
+</button>
+
+<div
+  id="language-menu"
+  class="menu"
+  [class.is-open]="open()"
+  [attr.inert]="open() ? null : ''"
+  role="menu"
+  [attr.aria-label]="t().language.menu"
+>
+  @for (entry of locales; track entry.code) {
+    <button
+      #option
+      type="button"
+      class="option"
+      role="menuitemradio"
+      [class.is-selected]="lang() === entry.code"
+      [attr.aria-checked]="lang() === entry.code"
+      (click)="select(entry.code)"
+    >
+      <app-flag [lang]="entry.code" />
+      <span class="label">{{ entry.label }}</span>
+      @if (lang() === entry.code) {
+        <app-icon name="check" size="1em" />
+      }
+    </button>
+  }
+</div>

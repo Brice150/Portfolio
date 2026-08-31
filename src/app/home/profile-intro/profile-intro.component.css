@@ -4,8 +4,6 @@
   align-items: start;
 }
 
-/* --- Texte --------------------------------------------------------------- */
-
 .prose p {
   margin-bottom: 1.15rem;
   font-size: var(--step-0);
@@ -26,8 +24,6 @@
 .prose .btn {
   margin-top: 1.5rem;
 }
-
-/* --- Encadré ------------------------------------------------------------- */
 
 .facts {
   padding: 1.5rem;

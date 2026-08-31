@@ -6,7 +6,6 @@
   padding-left: 2.75rem;
 }
 
-/* Rail vertical */
 .timeline::before {
   content: '';
   position: absolute;
@@ -51,8 +50,6 @@
   color: var(--accent);
   border-color: var(--accent);
 }
-
-/* --- Carte --------------------------------------------------------------- */
 
 .card {
   padding: 1.35rem;
@@ -155,8 +152,6 @@
   color: var(--text-muted);
 }
 
-/* --- Missions successives chez un même employeur -------------------------- */
-
 .missions {
   display: flex;
   flex-direction: column;
@@ -196,8 +191,6 @@
 .missions .stack {
   margin-top: 0.7rem;
 }
-
-/* --- Réalisations -------------------------------------------------------- */
 
 .achievements {
   display: flex;

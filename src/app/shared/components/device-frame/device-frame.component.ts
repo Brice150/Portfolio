@@ -10,28 +10,17 @@ import {
   viewChild,
 } from '@angular/core';
 import { environment } from '../../../../environments/environment';
+import { LanguageService } from '../../../core/services/language.service';
 import { ThemeService } from '../../../core/services/theme.service';
 import { IconComponent } from '../icon/icon.component';
 
 export type DeviceVariant = 'desktop' | 'phone';
 
-/** Vitesse du défilement automatique, en pixels par frame. */
 const AUTO_SCROLL_SPEED = 0.7;
 
-/**
- * En deçà de ce débordement, la capture tient presque entièrement dans le
- * cadre : la faire défiler ne révélerait rien et produirait surtout une
- * secousse au survol. Le défilement et son invite sont alors désactivés.
- */
+/** En deçà, faire défiler ne révélerait rien et secouerait l'image au survol. */
 const MIN_SCROLLABLE = 48;
 
-/**
- * Maquette d'appareil dont l'écran défile réellement.
- *
- * Le défilement est natif (donc utilisable à la molette, au doigt et au
- * clavier) et se lance automatiquement au survol ou à la prise de focus.
- * Toute interaction de l'utilisateur reprend la main immédiatement.
- */
 @Component({
   selector: 'app-device-frame',
   imports: [IconComponent],
@@ -45,35 +34,37 @@ const MIN_SCROLLABLE = 48;
 })
 export class DeviceFrameComponent implements OnDestroy {
   readonly variant = input<DeviceVariant>('desktop');
-  /** Chemin de la capture, relatif au dossier des images. */
   readonly src = input.required<string>();
   readonly alt = input.required<string>();
-  /** Libellé de l'URL affichée dans la barre du navigateur simulé. */
   readonly url = input<string>('');
 
   private readonly themeService = inject(ThemeService);
+  private readonly languageService = inject(LanguageService);
   private readonly screen = viewChild.required<ElementRef<HTMLElement>>('screen');
+
+  readonly t = this.languageService.t;
 
   private frameId = 0;
   private userTook = false;
 
   readonly imagePath = environment.imagePath;
   readonly hintVisible = signal(false);
-  /** Faux tant que la capture tient dans le cadre : le défilement est alors inutile. */
   readonly scrollable = signal(false);
 
   readonly source = computed(() => `${this.imagePath}${this.src()}`);
   readonly label = computed(() => {
-    const vue = this.variant() === 'phone' ? 'aperçu mobile' : 'aperçu bureau';
+    const device = this.t().device;
+    const view = this.variant() === 'phone' ? device.mobileView : device.desktopView;
 
-    return this.scrollable() ? `${this.alt()}, ${vue} défilable` : `${this.alt()}, ${vue}`;
+    return this.scrollable()
+      ? `${this.alt()}, ${view} ${device.scrollable}`
+      : `${this.alt()}, ${view}`;
   });
 
   ngOnDestroy(): void {
     this.stop();
   }
 
-  /** La hauteur réelle de la capture n’est connue qu’une fois l’image chargée. */
   onImageLoad(): void {
     this.measure();
     this.hintVisible.set(this.scrollable());
@@ -98,7 +89,6 @@ export class DeviceFrameComponent implements OnDestroy {
     this.hintVisible.set(true);
   }
 
-  /** Une action explicite de l'utilisateur interrompt le défilement auto. */
   onUserScroll(): void {
     this.userTook = true;
     this.stop();

@@ -1,8 +1,8 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { LanguageService } from '../../../core/services/language.service';
 import { ToastService } from '../../../core/services/toast.service';
 import { IconComponent } from '../icon/icon.component';
 
-/** Pile de notifications, montée une seule fois dans la coquille applicative. */
 @Component({
   selector: 'app-toast-host',
   imports: [IconComponent],
@@ -13,6 +13,7 @@ import { IconComponent } from '../icon/icon.component';
 export class ToastHostComponent {
   private readonly toastService = inject(ToastService);
 
+  readonly t = inject(LanguageService).t;
   readonly toasts = this.toastService.toasts;
 
   dismiss(id: number): void {

@@ -5,6 +5,7 @@ import { environment } from '../../../../environments/environment';
 import { navItems, profile } from '../../data/profile';
 import { IconComponent } from '../icon/icon.component';
 import { CopyTextDirective } from '../../directives/copy-text.directive';
+import { LanguageService } from '../../../core/services/language.service';
 import { ToastService } from '../../../core/services/toast.service';
 
 @Component({
@@ -17,13 +18,17 @@ import { ToastService } from '../../../core/services/toast.service';
 export class FooterComponent {
   private readonly toastService = inject(ToastService);
   private readonly document = inject(DOCUMENT);
+  private readonly languageService = inject(LanguageService);
+
+  readonly t = this.languageService.t;
+  readonly format = this.languageService.format;
+  readonly tr = this.languageService.tr;
 
   readonly profile = profile;
   readonly navItems = navItems;
   readonly imagePath = environment.imagePath;
   readonly currentYear = new Date().getFullYear();
 
-  /** Remonte la page courante sans changer de route. */
   scrollToTop(): void {
     this.document.defaultView?.scrollTo({ top: 0, behavior: 'smooth' });
     // L’utilisateur clavier ne doit pas rester coincé en bas du document.
@@ -31,6 +36,6 @@ export class FooterComponent {
   }
 
   onCvDownload(): void {
-    this.toastService.success('CV téléchargé. Merci de votre intérêt !');
+    this.toastService.success(this.t().toast.cvDownloaded);
   }
 }

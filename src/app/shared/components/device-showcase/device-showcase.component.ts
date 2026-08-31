@@ -1,19 +1,19 @@
-import { ChangeDetectionStrategy, Component, booleanAttribute, computed, input } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  booleanAttribute,
+  computed,
+  inject,
+  input,
+} from '@angular/core';
 import { Project } from '../../../core/interfaces/project';
+import { LanguageService } from '../../../core/services/language.service';
 import { SITE_URL } from '../../data/profile';
 import { DeviceFrameComponent } from '../device-frame/device-frame.component';
 
-/**
- * Le portfolio est le seul projet sans lien « Visiter le site » : il est déjà
- * la page courante. Sa maquette affiche donc l'adresse réelle du site plutôt
- * que le domaine local de repli.
- */
+/** Seul projet sans lien « Visiter le site » : il est déjà la page courante. */
 const SELF_SLUG = 'portfolio';
 
-/**
- * Présentation d'un projet dans une maquette d'ordinateur et une maquette de
- * téléphone, toutes deux réellement défilables.
- */
 @Component({
   selector: 'app-device-showcase',
   imports: [DeviceFrameComponent],
@@ -24,8 +24,13 @@ const SELF_SLUG = 'portfolio';
 })
 export class DeviceShowcaseComponent {
   readonly project = input.required<Project>();
-  /** Version resserrée, utilisée dans les cartes de la liste des projets. */
   readonly compact = input(false, { transform: booleanAttribute });
+
+  private readonly languageService = inject(LanguageService);
+
+  readonly t = this.languageService.t;
+  readonly format = this.languageService.format;
+  readonly tr = this.languageService.tr;
 
   readonly displayUrl = computed(() => {
     const project = this.project();

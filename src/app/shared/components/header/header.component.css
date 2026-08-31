@@ -41,8 +41,6 @@
   min-height: var(--nav-h);
 }
 
-/* --- Marque ------------------------------------------------------------- */
-
 .brand {
   display: inline-flex;
   align-items: center;
@@ -81,8 +79,6 @@
   font-size: 0.74rem;
   color: var(--text-muted);
 }
-
-/* --- Navigation desktop -------------------------------------------------- */
 
 .desktop-nav {
   display: none;
@@ -136,8 +132,6 @@
   }
 }
 
-/* --- Actions ------------------------------------------------------------- */
-
 .actions {
   display: flex;
   align-items: center;
@@ -183,8 +177,6 @@
   translate: 0 -3.5px;
   rotate: -45deg;
 }
-
-/* --- Menu mobile --------------------------------------------------------- */
 
 .overlay {
   position: fixed;
@@ -312,8 +304,6 @@
   }
 }
 
-/* --- Points de rupture --------------------------------------------------- */
-
 @media (width >= 1060px) {
   .desktop-nav {
     display: block;
@@ -329,7 +319,6 @@
   }
 }
 
-/* Sur petits écrans, le sous-titre de marque prend trop de place face au menu. */
 @media (width < 600px) {
   .brand-role {
     display: none;

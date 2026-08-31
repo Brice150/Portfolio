@@ -1,8 +1,3 @@
-/**
- * Registre d'icônes SVG inline (grille 24x24).
- * `d` : tracé. `filled` : rendu en aplat plutôt qu'en contour.
- * Zéro requête réseau, zéro police d'icônes : tout est inliné dans le bundle.
- */
 export interface IconDefinition {
   d: string;
   filled?: boolean;

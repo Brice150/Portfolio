@@ -1,16 +1,21 @@
+import { l, ll } from '../../core/i18n/lang';
 import { Project } from '../../core/interfaces/project';
 
 export const projects: Project[] = [
   {
     slug: 'life-rise',
-    name: 'Life Rise',
-    tagline: 'Toute la vie quotidienne réunie dans une seule application',
-    summary:
-      '19 espaces de gestion (repas, sport, finances, tâches, inventaire, voyages) reliés par un assistant conversationnel et partageables entre les profils d’un même foyer.',
+    name: l('Life Rise', 'Life Rise'),
+    tagline: l(
+      'Toute la vie quotidienne réunie dans une seule application',
+      'All of daily life brought together in a single application',
+    ),
+    summary: l(
+      '19 espaces de gestion — repas, sport, finances, tâches, inventaire, voyages — reliés par un assistant conversationnel et partageables entre profils.',
+      '19 management spaces — meals, fitness, finances, tasks, inventory, travel — tied together by a conversational assistant and shareable between profiles.',
+    ),
     year: '2025 - 2026',
     startYear: 2025,
     status: 'live',
-    featured: true,
     shots: {
       desktop: 'projects/life-rise-desktop.webp',
       mobile: 'projects/life-rise-mobile.webp',
@@ -27,97 +32,156 @@ export const projects: Project[] = [
       'Stripe',
     ],
     facts: [
-      { label: 'Durée (temps libre)', value: '1 an' },
-      { label: 'Espaces', value: '19' },
-      { label: 'Profils', value: '6 par compte' },
-      { label: 'Assistant', value: 'IA intégrée' },
-      { label: 'Hors ligne', value: 'Cache IndexedDB' },
+      { label: l('Durée (temps libre)', 'Duration (spare time)'), value: l('1 an', '1 year') },
+      { label: l('Espaces', 'Spaces'), value: l('19', '19') },
+      { label: l('Profils', 'Profiles'), value: l('6 par compte', '6 per account') },
+      { label: l('Assistant', 'Assistant'), value: l('IA intégrée', 'Built-in AI') },
+      { label: l('Hors ligne', 'Offline'), value: l('Cache IndexedDB', 'IndexedDB cache') },
     ],
-    context:
+    context: l(
       'Gérer son quotidien suppose aujourd’hui de jongler entre une dizaine d’applications qui ne communiquent jamais entre elles. Life Rise part de ce constat : un seul endroit pour suivre ce qui compte, avec une donnée unifiée, une expérience cohérente d’un espace à l’autre, et la possibilité de partager avec son conjoint, sa famille ou sa colocation.',
+      'Managing daily life now means juggling a dozen applications that never talk to one another. Life Rise starts from that observation: one place to track what matters, with unified data, a consistent experience from one space to the next, and the option to share with a partner, a family or a flatshare.',
+    ),
     sections: [
       {
-        title: 'Une base commune, 19 espaces',
-        body: 'Chaque domaine (nourriture, fitness, finance, organisation, inventaire, voyages, prévisions) est une feature Angular chargée en lazy loading, avec son propre modèle et ses propres services. Le noyau applicatif porte l’authentification, l’accès Firebase, le thème et les composants partagés. Ce découpage permet d’ajouter un espace sans toucher aux autres, et de garder un bundle initial léger malgré l’étendue fonctionnelle.',
+        title: l('Une base commune, 19 espaces', 'One shared foundation, 19 spaces'),
+        body: l(
+          'Chaque domaine (nourriture, fitness, finance, organisation, inventaire, voyages, prévisions) est une feature Angular chargée en lazy loading, avec son propre modèle et ses propres services. Le noyau applicatif porte l’authentification, l’accès Firebase, le thème et les composants partagés. Ce découpage permet d’ajouter un espace sans toucher aux autres, et de garder un bundle initial léger malgré l’étendue fonctionnelle.',
+          'Each domain (food, fitness, finance, organisation, inventory, travel, forecasts) is a lazy-loaded Angular feature with its own model and its own services. The application core carries authentication, Firebase access, theming and shared components. That split makes it possible to add a space without touching the others, and to keep the initial bundle light despite the functional breadth.',
+        ),
       },
       {
-        title: 'Un assistant conversationnel qui agit vraiment',
-        body: 'Bob, l’assistant intégré, ne se contente pas de répondre : il crée, modifie ou supprime n’importe quel élément de l’application, après confirmation explicite de l’utilisateur. Il accepte la saisie vocale, et une fonction de complétion automatique remplit les champs vides d’un formulaire à partir du contexte. Le quota par profil est plafonné, ce qui impose de concevoir des appels précis plutôt que d’envoyer tout l’état de l’application à chaque requête, exactement la discipline que j’applique à mon usage professionnel de l’IA.',
+        title: l(
+          'Un assistant conversationnel qui agit vraiment',
+          'A conversational assistant that actually acts',
+        ),
+        body: l(
+          'Bob, l’assistant intégré, ne se contente pas de répondre : il crée, modifie ou supprime n’importe quel élément de l’application, après confirmation explicite de l’utilisateur. Il accepte la saisie vocale, et une fonction de complétion automatique remplit les champs vides d’un formulaire à partir du contexte. Le quota par profil est plafonné, ce qui impose de concevoir des appels précis plutôt que d’envoyer tout l’état de l’application à chaque requête, exactement la discipline que j’applique à mon usage professionnel de l’IA.',
+          'Bob, the built-in assistant, does more than answer: it creates, edits or deletes any item in the application, after explicit confirmation from the user. It accepts voice input, and an auto-completion feature fills a form’s empty fields from context. The per-profile quota is capped, which forces precise calls rather than sending the whole application state with every request — exactly the discipline I apply to my professional use of AI.',
+        ),
       },
       {
-        title: 'Le collectif, pas seulement le solo',
-        body: 'Jusqu’à 6 profils par compte, avec partage de recettes, de séances de sport et d’éléments d’inventaire, gestion à plusieurs des tâches et des repas, et une messagerie temps réel avec réactions. Les finances, elles, restent strictement personnelles à chaque profil. C’est la partie qui a demandé le plus de soin sur le modèle de données : décider, domaine par domaine, ce qui se partage et ce qui ne se partage pas.',
+        title: l('Le collectif, pas seulement le solo', 'Built for groups, not just for one'),
+        body: l(
+          'Jusqu’à 6 profils par compte, avec partage de recettes, de séances de sport et d’éléments d’inventaire, gestion à plusieurs des tâches et des repas, et une messagerie temps réel avec réactions. Les finances, elles, restent strictement personnelles à chaque profil. C’est la partie qui a demandé le plus de soin sur le modèle de données : décider, domaine par domaine, ce qui se partage et ce qui ne se partage pas.',
+          'Up to 6 profiles per account, with sharing of recipes, workouts and inventory items, collaborative management of tasks and meals, and real-time messaging with reactions. Finances, by contrast, stay strictly private to each profile. That is the part that demanded the most care in the data model: deciding, domain by domain, what is shared and what is not.',
+        ),
       },
       {
-        title: 'Utilisable même sans réseau',
-        body: 'Les données déjà consultées sont conservées dans IndexedDB, côté navigateur. L’application s’ouvre donc sur du contenu immédiat plutôt que sur un écran de chargement, la navigation reste possible quand la connexion tombe, et les modifications faites hors ligne repartent vers Firestore dès son retour. Sur un modèle facturé à la lecture, c’est aussi une économie directe : les mêmes documents ne sont pas rechargés à chaque changement d’écran.',
+        title: l('Utilisable même sans réseau', 'Usable even without a network'),
+        body: l(
+          'Les données déjà consultées sont conservées dans IndexedDB, côté navigateur. L’application s’ouvre donc sur du contenu immédiat plutôt que sur un écran de chargement, la navigation reste possible quand la connexion tombe, et les modifications faites hors ligne repartent vers Firestore dès son retour. Sur un modèle facturé à la lecture, c’est aussi une économie directe : les mêmes documents ne sont pas rechargés à chaque changement d’écran.',
+          'Data already viewed is kept in IndexedDB, in the browser. The application therefore opens on real content rather than a loading screen, navigation still works when the connection drops, and changes made offline are pushed back to Firestore as soon as it returns. On a pricing model billed per read, that is also a direct saving: the same documents are not fetched again on every screen change.',
+        ),
       },
       {
-        title: 'Ce que le projet a apporté',
-        body: 'Mener un produit seul de bout en bout, sans product owner pour arbitrer ni tech lead pour valider, oblige à décider vite et à assumer ses choix. C’est aussi le meilleur terrain pour éprouver les nouveautés d’Angular en conditions réelles avant de les proposer en mission, et pour traiter sérieusement des sujets qu’on n’aborde pas toujours en régie : conformité RGPD, hébergement européen des données et chiffrement.',
+        title: l('Ce que le projet a apporté', 'What the project brought'),
+        body: l(
+          'Mener un produit seul de bout en bout, sans product owner pour arbitrer ni tech lead pour valider, oblige à décider vite et à assumer ses choix. C’est aussi le meilleur terrain pour éprouver les nouveautés d’Angular en conditions réelles avant de les proposer en mission, et pour traiter sérieusement des sujets qu’on n’aborde pas toujours en régie : conformité RGPD, hébergement européen des données et chiffrement.',
+          'Running a product alone from end to end, with no product owner to arbitrate and no tech lead to sign off, forces you to decide quickly and own your choices. It is also the best ground for testing new Angular features in real conditions before proposing them on an assignment, and for seriously tackling subjects you do not always meet as a contractor: GDPR compliance, European data hosting and encryption.',
+        ),
       },
     ],
-    features: [
-      '19 espaces de gestion, du tableau de bord aux prévisions',
-      'Assistant conversationnel capable de créer, modifier et supprimer après confirmation',
-      'Complétion automatique des formulaires à partir du contexte',
-      'Jusqu’à 6 profils par compte, avec partage d’éléments entre profils',
-      'Finances strictement personnelles à chaque profil',
-      'Messagerie temps réel avec réactions',
-      'Cache local IndexedDB : consultation et navigation possibles hors ligne',
-      'Pages publiques prérendues au build, pour un premier affichage immédiat',
-      'Données hébergées en Europe et conformité RGPD',
-    ],
+    features: ll(
+      [
+        '19 espaces de gestion, du tableau de bord aux prévisions',
+        'Assistant conversationnel capable de créer, modifier et supprimer après confirmation',
+        'Complétion automatique des formulaires à partir du contexte',
+        'Jusqu’à 6 profils par compte, avec partage d’éléments entre profils',
+        'Finances strictement personnelles à chaque profil',
+        'Messagerie temps réel avec réactions',
+        'Cache local IndexedDB : consultation et navigation possibles hors ligne',
+        'Pages publiques prérendues au build, pour un premier affichage immédiat',
+        'Données hébergées en Europe et conformité RGPD',
+      ],
+      [
+        '19 management spaces, from the dashboard to forecasts',
+        'A conversational assistant able to create, edit and delete after confirmation',
+        'Automatic form completion from context',
+        'Up to 6 profiles per account, with item sharing between profiles',
+        'Finances kept strictly private to each profile',
+        'Real-time messaging with reactions',
+        'Local IndexedDB cache: browsing and navigation possible offline',
+        'Public pages prerendered at build time, for an instant first paint',
+        'Data hosted in Europe and GDPR compliance',
+      ],
+    ),
     links: {
       live: 'https://life-rise.web.app/',
-      sourceRestricted:
+      sourceRestricted: l(
         'Life Rise est un produit payant, avec des comptes et des données d’utilisateurs réels. Ouvrir les sources reviendrait à offrir le moyen d’en faire tourner une copie gratuite en local, sans les limites de l’abonnement. Le code reste donc privé.',
+        'Life Rise is a paid product, with real user accounts and data. Opening the source would hand out the means to run a free local copy, without the subscription limits. The code therefore stays private.',
+      ),
     },
   },
   {
     slug: 'gametime',
-    name: 'Game Time',
-    tagline: 'Des jeux de réflexion à plusieurs, en temps réel',
-    summary:
+    name: l('Game Time', 'Game Time'),
+    tagline: l(
+      'Des jeux de réflexion à plusieurs, en temps réel',
+      'Real-time multiplayer puzzle games',
+    ),
+    summary: l(
       'Motus, drapeaux et marques : 3 jeux jouables à plusieurs dans une même partie, avec salons, décompte synchronisé et classement en direct.',
+      'Word guessing, flags and brands: 3 games playable together in a single session, with lobbies, a synchronised countdown and a live leaderboard.',
+    ),
     year: '2024',
     startYear: 2024,
     status: 'live',
-    featured: true,
     shots: {
       desktop: 'projects/gametime-desktop.webp',
       mobile: 'projects/gametime-mobile.webp',
     },
     stack: ['Angular', 'TypeScript', 'RxJS', 'Angular Material', 'Firebase'],
     facts: [
-      { label: 'Durée (temps libre)', value: '6 mois' },
-      { label: 'Jeux', value: '3' },
-      { label: 'Mode', value: 'Multijoueur' },
-      { label: 'Dictionnaire', value: '40 000 mots' },
+      { label: l('Durée (temps libre)', 'Duration (spare time)'), value: l('6 mois', '6 months') },
+      { label: l('Jeux', 'Games'), value: l('3', '3') },
+      { label: l('Mode', 'Mode'), value: l('Multijoueur', 'Multiplayer') },
+      { label: l('Dictionnaire', 'Dictionary'), value: l('40 000 mots', '40,000 words') },
     ],
-    context:
+    context: l(
       'Un projet volontairement orienté temps réel, pour sortir du CRUD et se confronter à la synchronisation d’états entre plusieurs joueurs : qui répond quand, que se passe-t-il si quelqu’un quitte la partie, comment garder tout le monde sur la même manche.',
+      'A project deliberately aimed at real time, to step outside CRUD and face state synchronisation between several players: who answers when, what happens if someone leaves the game, how to keep everyone on the same round.',
+    ),
     sections: [
       {
-        title: 'Le défi technique',
-        body: 'La difficulté d’un jeu multijoueur n’est pas le jeu : c’est le temps. Chaque client doit voir la même question au même moment, le décompte doit rester cohérent malgré les latences, et une déconnexion ne doit pas bloquer la partie pour les autres. La logique s’articule autour d’un état de partie unique stocké dans Firestore, dont chaque écran n’est qu’une projection.',
+        title: l('Le défi technique', 'The technical challenge'),
+        body: l(
+          'La difficulté d’un jeu multijoueur n’est pas le jeu : c’est le temps. Chaque client doit voir la même question au même moment, le décompte doit rester cohérent malgré les latences, et une déconnexion ne doit pas bloquer la partie pour les autres. La logique s’articule autour d’un état de partie unique stocké dans Firestore, dont chaque écran n’est qu’une projection.',
+          'The difficulty of a multiplayer game is not the game: it is time. Every client has to see the same question at the same moment, the countdown has to stay consistent despite latency, and a disconnection must not block the game for everyone else. The logic revolves around a single game state stored in Firestore, of which each screen is only a projection.',
+        ),
       },
       {
-        title: '3 jeux, une seule mécanique',
-        body: 'Motus, reconnaissance de drapeaux et identification de marques partagent le même moteur de partie : salon, manches, scores, classement. Seule la règle de validation d’une réponse change. Cette abstraction a permis d’ajouter le troisième jeu en une fraction du temps qu’avait demandé le premier.',
+        title: l('3 jeux, une seule mécanique', '3 games, one engine'),
+        body: l(
+          'Motus, reconnaissance de drapeaux et identification de marques partagent le même moteur de partie : salon, manches, scores, classement. Seule la règle de validation d’une réponse change. Cette abstraction a permis d’ajouter le troisième jeu en une fraction du temps qu’avait demandé le premier.',
+          'Word guessing, flag recognition and brand identification share the same game engine: lobby, rounds, scores, leaderboard. Only the rule that validates an answer changes. That abstraction made it possible to add the third game in a fraction of the time the first had taken.',
+        ),
       },
       {
-        title: 'Alimenter les jeux en contenu',
-        body: 'Motus s’appuie sur un dictionnaire de près de 40 000 mots français, filtré par longueur et nettoyé des formes inutilisables avant d’être embarqué. Le jeu des drapeaux, lui, consomme une API publique qui fournit pays, drapeaux et métadonnées : pas de banque d’images à maintenir, mais une dépendance externe à gérer, avec les erreurs et les temps de réponse que cela implique.',
+        title: l('Alimenter les jeux en contenu', 'Feeding the games with content'),
+        body: l(
+          'Motus s’appuie sur un dictionnaire de près de 40 000 mots français, filtré par longueur et nettoyé des formes inutilisables avant d’être embarqué. Le jeu des drapeaux, lui, consomme une API publique qui fournit pays, drapeaux et métadonnées : pas de banque d’images à maintenir, mais une dépendance externe à gérer, avec les erreurs et les temps de réponse que cela implique.',
+          'The word game relies on a dictionary of nearly 40,000 French words, filtered by length and stripped of unusable forms before being bundled. The flag game, in contrast, consumes a public API providing countries, flags and metadata: no image library to maintain, but an external dependency to handle, with the errors and response times that come with it.',
+        ),
       },
     ],
-    features: [
-      '3 jeux : Motus, drapeaux et marques',
-      'Salons multijoueurs avec plusieurs participants simultanés',
-      'Décompte synchronisé et enchaînement automatique des manches',
-      'Classement mis à jour en direct entre chaque question',
-      'Statistiques et scores conservés par joueur',
-    ],
+    features: ll(
+      [
+        '3 jeux : Motus, drapeaux et marques',
+        'Salons multijoueurs avec plusieurs participants simultanés',
+        'Décompte synchronisé et enchaînement automatique des manches',
+        'Classement mis à jour en direct entre chaque question',
+        'Statistiques et scores conservés par joueur',
+      ],
+      [
+        '3 games: word guessing, flags and brands',
+        'Multiplayer lobbies with several simultaneous participants',
+        'Synchronised countdown and automatic progression between rounds',
+        'Leaderboard updated live between each question',
+        'Statistics and scores kept per player',
+      ],
+    ),
     links: {
       live: 'https://brice150.github.io/GAMETIME/',
       github: 'https://github.com/Brice150/GAMETIME',
@@ -125,43 +189,63 @@ export const projects: Project[] = [
   },
   {
     slug: 'simulateur-renovation',
-    name: 'Simulateur de rénovation',
-    tagline: 'Le montant de ses aides à la rénovation, en quelques questions',
-    summary:
+    name: l('Simulateur de rénovation', 'Renovation grant simulator'),
+    tagline: l(
+      'Le montant de ses aides à la rénovation, en quelques questions',
+      'Your renovation grant amount, in a handful of questions',
+    ),
+    summary: l(
       'Un simulateur d’aides à la rénovation énergétique, écrit en 2 jours pour dépanner une connaissance en alternance marketing qui en avait besoin pour son projet.',
+      'A simulator for energy renovation grants, written in 2 days to help out an acquaintance on a marketing apprenticeship who needed it for their project.',
+    ),
     year: '2023',
     startYear: 2023,
     status: 'live',
-    featured: false,
     shots: {
       desktop: 'projects/simulator-desktop.webp',
       mobile: 'projects/simulator-mobile.webp',
     },
     stack: ['Angular', 'TypeScript'],
     facts: [
-      { label: 'Durée (temps libre)', value: '2 jours' },
-      { label: 'Nature', value: 'Calculateur' },
-      { label: 'Contexte', value: 'Rendre service' },
-      { label: 'Réalisation', value: 'En un weekend' },
+      { label: l('Durée (temps libre)', 'Duration (spare time)'), value: l('2 jours', '2 days') },
+      { label: l('Nature', 'Nature'), value: l('Calculateur', 'Calculator') },
+      { label: l('Contexte', 'Context'), value: l('Rendre service', 'Helping out') },
+      { label: l('Réalisation', 'Delivery'), value: l('En un weekend', 'Over one weekend') },
     ],
-    context:
+    context: l(
       'Une connaissance en alternance marketing avait besoin d’un simulateur d’aides à la rénovation énergétique pour son projet, sans avoir les moyens de le faire développer. Le sujet était clair, le besoin réel et le délai court : deux jours pour livrer quelque chose d’utilisable plutôt qu’une maquette.',
+      'An acquaintance on a marketing apprenticeship needed an energy renovation grant simulator for their project, without the budget to have one built. The subject was clear, the need real and the deadline short: two days to ship something usable rather than a mock-up.',
+    ),
     sections: [
       {
-        title: 'Traduire un barème en calcul',
-        body: 'Les dispositifs d’aide à la rénovation énergétique sont nombreux, cumulables et conditionnés à des seuils. L’essentiel du travail a consisté à transcrire ces barèmes en calculs justes à partir des informations saisies. Le même exercice, à une tout autre échelle, m’attendait 3 ans plus tard avec la taxation 2026 en mission.',
+        title: l('Traduire un barème en calcul', 'Turning a grant scale into a calculation'),
+        body: l(
+          'Les dispositifs d’aide à la rénovation énergétique sont nombreux, cumulables et conditionnés à des seuils. L’essentiel du travail a consisté à transcrire ces barèmes en calculs justes à partir des informations saisies. Le même exercice, à une tout autre échelle, m’attendait 3 ans plus tard avec la taxation 2026 en mission.',
+          'Energy renovation grants are numerous, can be combined and are conditional on thresholds. Most of the work consisted in transcribing those scales into correct calculations from the information entered. The same exercise, on an entirely different scale, was waiting for me 3 years later with the 2026 taxation scheme on assignment.',
+        ),
       },
       {
-        title: 'Livrer vite, sans sur-concevoir',
-        body: 'Deux jours imposent des arbitrages : pas d’architecture élaborée, pas de fonctionnalité en trop, juste le chemin le plus court entre les questions posées et le montant affiché. C’est aussi un rappel utile qu’un outil simple qui rend service vaut mieux qu’un projet ambitieux jamais terminé.',
+        title: l('Livrer vite, sans sur-concevoir', 'Ship fast, without over-engineering'),
+        body: l(
+          'Deux jours imposent des arbitrages : pas d’architecture élaborée, pas de fonctionnalité en trop, juste le chemin le plus court entre les questions posées et le montant affiché. C’est aussi un rappel utile qu’un outil simple qui rend service vaut mieux qu’un projet ambitieux jamais terminé.',
+          'Two days force trade-offs: no elaborate architecture, no extra features, just the shortest path between the questions asked and the amount displayed. It is also a useful reminder that a simple tool that helps beats an ambitious project that never ships.',
+        ),
       },
     ],
-    features: [
-      'Saisie des informations du foyer et du projet de rénovation',
-      'Calcul des aides applicables à partir des barèmes en vigueur',
-      'Résultat immédiat, sans compte ni installation',
-      'Développé en 2 jours pour répondre à un besoin concret',
-    ],
+    features: ll(
+      [
+        'Saisie des informations du foyer et du projet de rénovation',
+        'Calcul des aides applicables à partir des barèmes en vigueur',
+        'Résultat immédiat, sans compte ni installation',
+        'Développé en 2 jours pour répondre à un besoin concret',
+      ],
+      [
+        'Entry of household and renovation project details',
+        'Calculation of applicable grants from the scales in force',
+        'Immediate result, with no account and no installation',
+        'Built in 2 days to answer a concrete need',
+      ],
+    ),
     links: {
       live: 'https://brice150.github.io/Simulator/',
       github: 'https://github.com/Brice150/Simulator',
@@ -169,14 +253,18 @@ export const projects: Project[] = [
   },
   {
     slug: 'pickme',
-    name: 'Pick Me',
-    tagline: 'Une application de rencontre construite de zéro, front et back',
-    summary:
+    name: l('Pick Me', 'Pick Me'),
+    tagline: l(
+      'Une application de rencontre construite de zéro, front et back',
+      'A dating application built from scratch, front and back',
+    ),
+    summary: l(
       'Profils, préférences, système de correspondance réciproque et messagerie, sur une API Java/Spring Boot et une base relationnelle.',
+      'Profiles, preferences, a mutual matching system and messaging, on a Java/Spring Boot API and a relational database.',
+    ),
     year: '2023 - 2024',
     startYear: 2023,
     status: 'archive',
-    featured: false,
     shots: {
       desktop: 'projects/pickme-desktop.webp',
       mobile: 'projects/pickme-mobile.webp',
@@ -191,99 +279,134 @@ export const projects: Project[] = [
       'PostgreSQL',
     ],
     facts: [
-      { label: 'Durée (temps libre)', value: '1 an' },
-      { label: 'Nature', value: 'Full-stack' },
-      { label: 'Périmètre', value: 'Front, Back et BDD' },
-      { label: 'Cœur du sujet', value: 'Algorithme de sélection' },
+      { label: l('Durée (temps libre)', 'Duration (spare time)'), value: l('1 an', '1 year') },
+      { label: l('Nature', 'Nature'), value: l('Full-stack', 'Full-stack') },
+      { label: l('Périmètre', 'Scope'), value: l('Front, Back et BDD', 'Front, back and database') },
+      { label: l('Cœur du sujet', 'Core challenge'), value: l('Algorithme de sélection', 'Matching algorithm') },
     ],
-    context:
+    context: l(
       'Le projet qui tient le front et le back en même temps : un front Angular exigeant en interactions, et un back Java/Spring avec une vraie modélisation relationnelle. Une application de rencontre est un excellent prétexte : elle concentre authentification, upload, filtrage, appariement et temps réel.',
+      'The project that holds front and back at once: an Angular front end heavy on interaction, and a Java/Spring back end with genuine relational modelling. A dating application is an excellent pretext: it concentrates authentication, uploads, filtering, matching and real time.',
+    ),
     sections: [
       {
-        title: 'Modéliser la correspondance',
-        body: 'Le cœur du domaine est une relation many-to-many asymétrique : un utilisateur exprime un intérêt, la correspondance n’existe que s’il est réciproque. Traduire cette règle en schéma relationnel propre, puis en API qui ne laisse fuir aucune information sur les intentions de l’autre, a été la partie la plus intéressante.',
+        title: l('Modéliser la correspondance', 'Modelling the match'),
+        body: l(
+          'Le cœur du domaine est une relation many-to-many asymétrique : un utilisateur exprime un intérêt, la correspondance n’existe que s’il est réciproque. Traduire cette règle en schéma relationnel propre, puis en API qui ne laisse fuir aucune information sur les intentions de l’autre, a été la partie la plus intéressante.',
+          'The heart of the domain is an asymmetric many-to-many relationship: a user expresses interest, and the match only exists if it is mutual. Translating that rule into a clean relational schema, then into an API that leaks nothing about the other person’s intentions, was the most interesting part.',
+        ),
       },
       {
-        title: 'Pourquoi il n’est plus en ligne',
-        body: 'Il l’a été. Je l’ai retiré pour deux raisons : l’hébergement avait un coût que rien ne justifiait pour une application que je n’utilisais pas au quotidien, et les applications de rencontre actuelles vont plus loin : elles analysent les photos par intelligence artificielle pour établir un score d’attractivité, ce que mon algorithme ne fait pas. Le code reste ouvert en lecture sur GitHub.',
+        title: l('Pourquoi il n’est plus en ligne', 'Why it is no longer online'),
+        body: l(
+          'Il l’a été. Je l’ai retiré pour deux raisons : l’hébergement avait un coût que rien ne justifiait pour une application que je n’utilisais pas au quotidien, et les applications de rencontre actuelles vont plus loin : elles analysent les photos par intelligence artificielle pour établir un score d’attractivité, ce que mon algorithme ne fait pas. Le code reste ouvert en lecture sur GitHub.',
+          'It was, for a while. I took it down for two reasons: hosting had a cost that nothing justified for an application I was not using day to day, and today’s dating applications go further — they analyse photos with AI to produce an attractiveness score, which my algorithm does not do. The code remains open to read on GitHub.',
+        ),
       },
     ],
-    features: [
-      'Inscription, authentification et gestion de profil',
-      'Préférences de recherche et filtrage des profils',
-      'Algorithme de sélection des profils selon la distance et les attributs',
-      'Système de correspondance réciproque',
-      'Messagerie entre profils correspondants',
-      'API REST Java/Spring Boot sur base PostgreSQL',
-    ],
+    features: ll(
+      [
+        'Inscription, authentification et gestion de profil',
+        'Préférences de recherche et filtrage des profils',
+        'Algorithme de sélection des profils selon la distance et les attributs',
+        'Système de correspondance réciproque',
+        'Messagerie entre profils correspondants',
+        'API REST Java/Spring Boot sur base PostgreSQL',
+      ],
+      [
+        'Sign-up, authentication and profile management',
+        'Search preferences and profile filtering',
+        'Profile selection algorithm based on distance and attributes',
+        'Mutual matching system',
+        'Messaging between matched profiles',
+        'Java/Spring Boot REST API on a PostgreSQL database',
+      ],
+    ),
     links: {
       github: 'https://github.com/Brice150/PICKME',
     },
   },
   {
     slug: 'portfolio',
-    name: 'Ce portfolio',
-    tagline: 'Un site qui applique à lui-même ce qu’il met en avant',
-    summary:
-      'Une vitrine technique autant qu’un CV : des pages prérendues, une détection de changement sans Zone.js et une accessibilité traitée dès la conception plutôt qu’en fin de projet.',
+    name: l('Ce portfolio', 'This portfolio'),
+    tagline: l(
+      'Un site qui applique à lui-même ce qu’il met en avant',
+      'A site that applies to itself what it advocates',
+    ),
+    summary: l(
+      'Une vitrine technique autant qu’un CV : pages prérendues, détection de changement sans Zone.js et accessibilité traitée dès la conception.',
+      'A technical showcase as much as a CV: prerendered pages, change detection without Zone.js and accessibility handled from the design stage.',
+    ),
     year: '2026',
     startYear: 2026,
     status: 'live',
-    featured: true,
     shots: {
       desktop: 'projects/portfolio-desktop.webp',
       mobile: 'projects/portfolio-mobile.webp',
     },
     stack: ['Angular', 'TypeScript', 'Angular Material'],
     facts: [
-      { label: 'Durée (temps libre)', value: '2 semaines' },
-      { label: 'Thèmes', value: '8 variantes' },
-      { label: 'Détection', value: 'OnPush' },
-      { label: 'Référentiel', value: 'RGAA' },
+      { label: l('Durée (temps libre)', 'Duration (spare time)'), value: l('2 semaines', '2 weeks') },
+      { label: l('Thèmes', 'Themes'), value: l('8 variantes', '8 variants') },
+      { label: l('Détection', 'Detection'), value: l('OnPush', 'OnPush') },
+      { label: l('Référentiel', 'Standard'), value: l('RGAA', 'RGAA') },
     ],
-    context:
+    context: l(
       'Un portfolio de développeur est le seul projet dont le visiteur inspectera le code source, l’onglet réseau et parfois le score Lighthouse. Il devait donc démontrer, sur lui-même, les pratiques défendues en mission.',
+      'A developer’s portfolio is the one project whose source, network tab and sometimes Lighthouse score the visitor will actually inspect. It therefore had to demonstrate, on itself, the practices defended on assignment.',
+    ),
     sections: [
       {
-        title: 'Zoneless et signals',
-        body: 'L’application tourne sans Zone.js : l’état est porté par des signals et tous les composants sont en stratégie OnPush. Le résultat est un bundle plus léger et une détection de changement prévisible. C’est le premier projet où je pousse ce parti pris jusqu’au bout, et je le reprends depuis sur mes développements personnels.',
+        title: l('Zoneless et signals', 'Zoneless and signals'),
+        body: l(
+          'L’application tourne sans Zone.js : l’état est porté par des signals et tous les composants sont en stratégie OnPush. Le résultat est un bundle plus léger et une détection de changement prévisible. C’est le premier projet où je pousse ce parti pris jusqu’au bout, et je le reprends depuis sur mes développements personnels.',
+          'The application runs without Zone.js: state is carried by signals and every component uses the OnPush strategy. The result is a lighter bundle and predictable change detection. This is the first project where I take that stance all the way, and I have used it since on my personal work.',
+        ),
       },
       {
-        title: 'Le contenu avant le JavaScript',
-        body: 'Chaque route, fiches projet comprises, est générée en HTML au moment du build. Firebase Hosting ne sert que des fichiers statiques, le contenu est visible immédiatement et indexable, puis l’application prend le relais côté navigateur.',
+        title: l('Le contenu avant le JavaScript', 'Content before JavaScript'),
+        body: l(
+          'Chaque route, fiches projet comprises, est générée en HTML au moment du build. Firebase Hosting ne sert que des fichiers statiques, le contenu est visible immédiatement et indexable, puis l’application prend le relais côté navigateur.',
+          'Every route, project case studies included, is generated as HTML at build time. Firebase Hosting serves nothing but static files, the content is visible immediately and indexable, and the application then takes over in the browser.',
+        ),
       },
       {
-        title: 'Accessibilité dès la conception',
-        body: 'Structure sémantique, lien d’évitement, navigation clavier complète, contrastes vérifiés, préférences de mouvement respectées, et un panneau de réglages qui laisse la main au visiteur sur le thème, la couleur d’accent et les animations. Les règles d’accessibilité des templates sont vérifiées par ESLint à chaque build.',
+        title: l('Accessibilité dès la conception', 'Accessibility from the design stage'),
+        body: l(
+          'Structure sémantique, lien d’évitement, navigation clavier complète, contrastes vérifiés, préférences de mouvement respectées, et un panneau de réglages qui laisse la main au visiteur sur le thème, la couleur d’accent et les animations. Les règles d’accessibilité des templates sont vérifiées par ESLint à chaque build.',
+          'Semantic structure, a skip link, full keyboard navigation, verified contrast, motion preferences honoured, and a settings panel that hands the visitor control over theme, accent colour and animations. Template accessibility rules are checked by ESLint on every build.',
+        ),
       },
     ],
-    features: [
-      'Thème clair, sombre ou système, avec 4 couleurs d’accent',
-      'Réglage des animations, mémorisé entre les visites',
-      'Maquettes desktop et mobile réellement défilables',
-      'Routes prérendues, dont les fiches projet générées à partir des données',
-      'Aucune dépendance d’icônes ni de carrousel : tout est fait main',
-    ],
+    features: ll(
+      [
+        'Thème clair, sombre ou système, avec 4 couleurs d’accent',
+        'Réglage des animations, mémorisé entre les visites',
+        'Maquettes desktop et mobile réellement défilables',
+        'Routes prérendues, dont les fiches projet générées à partir des données',
+        'Aucune dépendance d’icônes ni de carrousel : tout est fait main',
+      ],
+      [
+        'Light, dark or system theme, with 4 accent colours',
+        'Animation setting, remembered between visits',
+        'Desktop and mobile mock-ups that genuinely scroll',
+        'Prerendered routes, including project pages generated from the data',
+        'No icon or carousel dependency: everything is hand-made',
+      ],
+    ),
     links: {
       github: 'https://github.com/Brice150/Portfolio',
     },
   },
 ];
 
-/** Dernière année mentionnée dans le libellé de période. */
 const lastYear = (project: Project): number => {
   const years = project.year.match(/\d{4}/g) ?? [];
   return Number(years.at(-1) ?? project.startYear);
 };
 
-/** Projets classés du plus récent au plus ancien. */
 export const projectsByDate = (): Project[] =>
-  [...projects].sort(
-    (a, b) => lastYear(b) - lastYear(a) || b.startYear - a.startYear,
-  );
+  [...projects].sort((a, b) => lastYear(b) - lastYear(a) || b.startYear - a.startYear);
 
 export const projectBySlug = (slug: string): Project | undefined =>
   projects.find((project) => project.slug === slug);
-
-export const featuredProjects = (): Project[] =>
-  projects.filter((project) => project.featured);

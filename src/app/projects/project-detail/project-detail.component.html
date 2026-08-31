@@ -4,28 +4,28 @@
   <article>
     <div class="head">
       <div class="shell">
-        <nav class="breadcrumb" aria-label="Fil d’Ariane">
+        <nav class="breadcrumb" [attr.aria-label]="t().projectDetail.breadcrumb">
           <ol>
-            <li><a routerLink="/">Accueil</a></li>
-            <li><a routerLink="/projets">Projets</a></li>
-            <li aria-current="page">{{ current.name }}</li>
+            <li><a routerLink="/">{{ t().common.home }}</a></li>
+            <li><a routerLink="/projets">{{ t().common.projects }}</a></li>
+            <li aria-current="page">{{ tr(current.name) }}</li>
           </ol>
         </nav>
 
         <p class="eyebrow">{{ current.year }}</p>
-        <h1>{{ current.name }}</h1>
-        <p class="tagline">{{ current.tagline }}</p>
+        <h1>{{ tr(current.name) }}</h1>
+        <p class="tagline">{{ tr(current.tagline) }}</p>
 
         <div class="actions">
           @if (current.links.live) {
             <a [href]="current.links.live" target="_blank" rel="noopener" class="btn">
-              <span>Visiter le site</span>
+              <span>{{ t().common.viewSite }}</span>
               <app-icon name="arrow-up-right" size="1.05em" />
             </a>
           }
           @if (current.links.github) {
             <a [href]="current.links.github" target="_blank" rel="noopener" class="btn btn-ghost">
-              <span>Code source</span>
+              <span>{{ t().common.sourceCode }}</span>
               <app-icon name="arrow-up-right" size="1.05em" />
             </a>
           } @else if (current.links.sourceRestricted) {
@@ -35,54 +35,54 @@
               disabled
               aria-describedby="source-restreint"
             >
-              <span>Code source</span>
+              <span>{{ t().common.sourceCode }}</span>
               <app-icon name="shield" size="1.05em" />
             </button>
           }
         </div>
 
-        @if (current.links.sourceRestricted) {
+        @if (current.links.sourceRestricted; as restricted) {
           <p class="locked-note" id="source-restreint">
             <app-icon name="info" size="1em" />
-            <span>{{ current.links.sourceRestricted }}</span>
+            <span>{{ tr(restricted) }}</span>
           </p>
         }
 
         <ul class="facts">
-          @for (fact of current.facts; track fact.label) {
+          @for (fact of current.facts; track $index) {
             <li>
-              <span class="fact-label">{{ fact.label }}</span>
-              <span class="fact-value">{{ fact.value }}</span>
+              <span class="fact-label">{{ tr(fact.label) }}</span>
+              <span class="fact-value">{{ tr(fact.value) }}</span>
             </li>
           }
         </ul>
       </div>
     </div>
 
-    <section class="section shell" aria-label="Aperçu de l’interface">
+    <section class="section shell" [attr.aria-label]="t().projectDetail.preview">
       <app-device-showcase [project]="current" />
     </section>
 
     <div class="section shell body">
       <div class="content">
         <section class="block" appReveal>
-          <h2>Le contexte</h2>
-          <p class="justified">{{ current.context }}</p>
+          <h2>{{ t().projectDetail.context }}</h2>
+          <p class="justified">{{ tr(current.context) }}</p>
         </section>
 
-        @for (section of current.sections; track section.title; let i = $index) {
+        @for (section of current.sections; track $index; let i = $index) {
           <section class="block" [appReveal]="i * 70">
-            <h2>{{ section.title }}</h2>
-            <p class="justified">{{ section.body }}</p>
+            <h2>{{ tr(section.title) }}</h2>
+            <p class="justified">{{ tr(section.body) }}</p>
           </section>
         }
       </div>
 
-      <aside class="side" aria-label="Informations techniques">
+      <aside class="side" [attr.aria-label]="t().projectDetail.technicalInfo">
         <div class="side-card card-hover">
-          <h2>Fonctionnalités</h2>
+          <h2>{{ t().projectDetail.features }}</h2>
           <ul class="features">
-            @for (feature of current.features; track feature) {
+            @for (feature of tr(current.features); track feature) {
               <li>
                 <app-icon name="check" size="0.95em" />
                 <span>{{ feature }}</span>
@@ -92,10 +92,10 @@
         </div>
 
         <div class="side-card card-hover">
-          <h2>Stack technique</h2>
+          <h2>{{ t().projectDetail.stack }}</h2>
           <ul class="stack">
             @for (tech of current.stack; track tech) {
-              <li class="chip">{{ tech }}</li>
+              <li class="chip">{{ techLabel(tech, lang()) }}</li>
             }
           </ul>
         </div>
@@ -106,14 +106,14 @@
     @let next = nextProject();
 
     @if (previous || next) {
-      <nav class="section shell siblings" aria-label="Autres projets">
+      <nav class="section shell siblings" [attr.aria-label]="t().projectDetail.siblings">
         @if (previous) {
           <a [routerLink]="['/projets', previous.slug]" class="sibling is-previous card-hover">
             <app-icon name="arrow-left" size="1.3em" />
             <span class="sibling-text">
-              <span class="sibling-label">Projet précédent</span>
-              <span class="sibling-name">{{ previous.name }}</span>
-              <span class="sibling-tagline">{{ previous.tagline }}</span>
+              <span class="sibling-label">{{ t().projectDetail.previous }}</span>
+              <span class="sibling-name">{{ tr(previous.name) }}</span>
+              <span class="sibling-tagline">{{ tr(previous.tagline) }}</span>
             </span>
           </a>
         }
@@ -121,9 +121,9 @@
         @if (next) {
           <a [routerLink]="['/projets', next.slug]" class="sibling is-next card-hover">
             <span class="sibling-text">
-              <span class="sibling-label">Projet suivant</span>
-              <span class="sibling-name">{{ next.name }}</span>
-              <span class="sibling-tagline">{{ next.tagline }}</span>
+              <span class="sibling-label">{{ t().projectDetail.next }}</span>
+              <span class="sibling-name">{{ tr(next.name) }}</span>
+              <span class="sibling-tagline">{{ tr(next.tagline) }}</span>
             </span>
             <app-icon name="arrow-right" size="1.3em" />
           </a>

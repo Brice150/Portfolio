@@ -9,8 +9,6 @@ h2 {
   font-size: var(--step-2);
 }
 
-/* --- Canaux -------------------------------------------------------------- */
-
 .channels h2 {
   font-size: 1.1rem;
 }
@@ -131,8 +129,6 @@ h2 {
   background: currentcolor;
 }
 
-/* --- Formulaire ---------------------------------------------------------- */
-
 .form-zone {
   transition: border-color var(--dur) var(--ease);
   padding: clamp(1.35rem, 1rem + 1.5vw, 2.5rem);
@@ -163,8 +159,6 @@ h2 {
 .message-field {
   margin-top: 0.25rem;
 }
-
-/* --- Alerte -------------------------------------------------------------- */
 
 .alert {
   display: flex;
@@ -204,8 +198,6 @@ h2 {
   text-underline-offset: 2px;
 }
 
-/* --- Piège à robots ------------------------------------------------------ */
-
 .honeypot {
   position: absolute;
   width: 1px;
@@ -214,8 +206,6 @@ h2 {
   clip-path: inset(50%);
   white-space: nowrap;
 }
-
-/* --- Envoi --------------------------------------------------------------- */
 
 .submit-row {
   display: flex;
@@ -252,8 +242,6 @@ h2 {
   line-height: 1.55;
   color: var(--text-faint);
 }
-
-/* --- Confirmation -------------------------------------------------------- */
 
 .state {
   display: flex;

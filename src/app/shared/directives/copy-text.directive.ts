@@ -1,20 +1,10 @@
 import { DOCUMENT } from '@angular/common';
 import { Directive, OnDestroy, inject, input, signal } from '@angular/core';
+import { LanguageService } from '../../core/services/language.service';
 import { ToastService } from '../../core/services/toast.service';
 
-/** Durée d'affichage de la confirmation, en millisecondes. */
 const FEEDBACK_DELAY = 2200;
 
-/**
- * Copie une valeur dans le presse-papier au clic, plutôt que d'ouvrir un
- * client mail. Le retour visuel est laissé à l'hôte, qui lit `copied()` :
- *
- * ```html
- * <button type="button" [appCopyText]="email" #copy="appCopyText">
- *   {{ copy.copied() ? 'Adresse copiée' : email }}
- * </button>
- * ```
- */
 @Directive({
   selector: '[appCopyText]',
   exportAs: 'appCopyText',
@@ -25,29 +15,29 @@ const FEEDBACK_DELAY = 2200;
 })
 export class CopyTextDirective implements OnDestroy {
   readonly appCopyText = input.required<string>();
-  /** Libellé annoncé dans la notification de confirmation. */
-  readonly appCopyLabel = input('Copié dans le presse-papier');
+  readonly appCopyLabel = input('');
 
   private readonly document = inject(DOCUMENT);
   private readonly toastService = inject(ToastService);
+  private readonly languageService = inject(LanguageService);
   private timer?: ReturnType<typeof setTimeout>;
 
   readonly copied = signal(false);
-  /** Vrai lorsque le presse-papier est refusé par le navigateur. */
   readonly failed = signal(false);
 
   async copy(): Promise<void> {
     const value = this.appCopyText();
+    const messages = this.languageService.t().toast;
 
     try {
       await this.write(value);
       this.failed.set(false);
       this.copied.set(true);
-      this.toastService.success(this.appCopyLabel());
+      this.toastService.success(this.appCopyLabel() || messages.copied);
     } catch {
       this.copied.set(false);
       this.failed.set(true);
-      this.toastService.error('Copie impossible. Sélectionnez le texte pour le copier à la main.');
+      this.toastService.error(messages.copyFailed);
     }
 
     clearTimeout(this.timer);
@@ -64,9 +54,8 @@ export class CopyTextDirective implements OnDestroy {
   private async write(value: string): Promise<void> {
     const view = this.document.defaultView;
 
-    // L'API moderne existe mais rejette dans plusieurs cas courants : document
-    // sans focus, contexte non sécurisé, permission refusée. On tente d'abord,
-    // puis on retombe sur la méthode historique plutôt que d'abandonner.
+    // `navigator.clipboard` rejette hors contexte sécurisé ou sans focus : on
+    // tente, puis on retombe sur la méthode historique.
     if (view?.navigator.clipboard) {
       try {
         await view.navigator.clipboard.writeText(value);

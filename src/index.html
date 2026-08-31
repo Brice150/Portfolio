@@ -121,11 +121,23 @@
       }
     </script>
 
-    <!-- Applique les préférences enregistrées avant le premier rendu, pour éviter tout clignotement. -->
     <script>
       (function () {
         var root = document.documentElement;
         root.classList.add('js');
+
+        // Posée avant l'amorçage : le `lang` ne doit jamais être lu erroné.
+        try {
+          var lang = localStorage.getItem('portfolio-lang');
+
+          if (lang !== 'fr' && lang !== 'en') {
+            lang = (navigator.language || 'fr').toLowerCase().indexOf('en') === 0 ? 'en' : 'fr';
+          }
+
+          root.setAttribute('lang', lang);
+        } catch (error) {
+          root.setAttribute('lang', 'fr');
+        }
 
         try {
           var stored = JSON.parse(localStorage.getItem('portfolio-preferences') || '{}');

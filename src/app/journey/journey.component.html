@@ -1,12 +1,12 @@
 <app-page-hero
-  eyebrow="Parcours"
-  heading="4 missions, un diplôme d’ingénieur et une bascule assumée"
-  lead="Chaque étape avec son contexte réel, les réalisations précises et la stack employée, détaillée mission par mission lorsqu’elles se sont succédé chez un même employeur."
+  [eyebrow]="t().journey.eyebrow"
+  [heading]="t().journey.heading"
+  [lead]="t().journey.lead"
 >
   <app-filter-bar
-    [options]="filters"
+    [options]="filters()"
     [active]="filter()"
-    label="Filtrer le parcours"
+    [label]="t().journey.filterLabel"
     (changed)="setFilter($event)"
   />
 </app-page-hero>
@@ -15,26 +15,26 @@
   @if (visibleMilestones().length) {
     <app-timeline [milestones]="visibleMilestones()" />
   } @else {
-    <p class="empty">Aucune étape ne correspond à ce filtre.</p>
+    <p class="empty">{{ t().journey.empty }}</p>
   }
 </section>
 
 <section class="section shell">
   <app-section-header
-    eyebrow="Diplômes & certifications"
-    heading="Ce qui est validé sur le papier"
-    lead="Une certification ne remplace pas l’expérience, mais elle prouve que les bases ont été posées sérieusement."
+    [eyebrow]="t().journey.certificationsEyebrow"
+    [heading]="t().journey.certificationsHeading"
+    [lead]="t().journey.certificationsLead"
     centered
   />
 
   <ul class="certifications">
-    @for (certification of certifications; track certification.title; let i = $index) {
+    @for (certification of certifications; track certification.issuer; let i = $index) {
       <li class="certification card-hover" [appReveal]="i * 80">
         <span class="cert-icon" aria-hidden="true">
           <app-icon [name]="certification.icon" size="1.2em" />
         </span>
         <div>
-          <h3>{{ certification.title }}</h3>
+          <h3>{{ tr(certification.title) }}</h3>
           <p class="issuer">{{ certification.issuer }}</p>
         </div>
         <span class="year">{{ certification.year }}</span>
@@ -45,20 +45,20 @@
 
 <section class="section shell">
   <app-section-header
-    eyebrow="Bagage"
-    heading="Ce que l’ingénierie a laissé et que le code n’aurait pas donné"
-    lead="Une reconversion ne remet pas le compteur à zéro : elle déplace ce qu’on sait déjà faire."
+    [eyebrow]="t().journey.strengthsEyebrow"
+    [heading]="t().journey.strengthsHeading"
+    [lead]="t().journey.strengthsLead"
     centered
   />
 
   <ul class="strengths">
-    @for (strength of strengths; track strength.title; let i = $index) {
+    @for (strength of strengths; track strength.icon; let i = $index) {
       <li class="strength card-hover" [appReveal]="i * 90">
         <span class="strength-icon" aria-hidden="true">
           <app-icon [name]="strength.icon" size="1.2em" />
         </span>
-        <h3>{{ strength.title }}</h3>
-        <p>{{ strength.description }}</p>
+        <h3>{{ tr(strength.title) }}</h3>
+        <p>{{ tr(strength.description) }}</p>
       </li>
     }
   </ul>
@@ -66,30 +66,30 @@
 
 <section class="section shell">
   <app-section-header
-    eyebrow="Hors écran"
-    heading="Le reste, qui compte aussi"
-    lead="Parce qu’un entretien technique finit toujours par la question « et à côté, vous faites quoi ? »"
+    [eyebrow]="t().journey.notesEyebrow"
+    [heading]="t().journey.notesHeading"
+    [lead]="t().journey.notesLead"
   />
 
   <ul class="notes">
-    @for (note of notes; track note.title; let i = $index) {
+    @for (note of notes; track note.icon; let i = $index) {
       <li class="note card-hover" [appReveal]="i * 80">
         <app-icon [name]="note.icon" size="1.15em" />
         <div>
-          <h3>{{ note.title }}</h3>
-          <p>{{ note.text }}</p>
+          <h3>{{ tr(note.title) }}</h3>
+          <p>{{ tr(note.text) }}</p>
         </div>
       </li>
     }
   </ul>
 
   <div class="languages card-hover" appReveal>
-    <h3>Langues</h3>
+    <h3>{{ t().journey.languages }}</h3>
     <ul>
-      @for (language of profile.languages; track language.label) {
+      @for (language of profile.languages; track $index) {
         <li>
-          <span class="lang-label">{{ language.label }}</span>
-          <span class="lang-level">{{ language.level }}</span>
+          <span class="lang-label">{{ tr(language.label) }}</span>
+          <span class="lang-level">{{ tr(language.level) }}</span>
         </li>
       }
     </ul>

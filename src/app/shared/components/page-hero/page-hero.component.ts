@@ -1,6 +1,5 @@
 import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 
-/** Entête de page : sur-titre, titre principal et chapeau, sur fond dégradé. */
 @Component({
   selector: 'app-page-hero',
   templateUrl: './page-hero.component.html',

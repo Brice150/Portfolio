@@ -2,12 +2,12 @@ import { ChangeDetectionStrategy, Component, OnDestroy, afterNextRender, inject,
 import { RouterLink } from '@angular/router';
 import { environment } from '../../../environments/environment';
 import { profile, roleRotation, yearsOfExperience } from '../../shared/data/profile';
+import { LanguageService } from '../../core/services/language.service';
 import { ThemeService } from '../../core/services/theme.service';
 import { IconComponent } from '../../shared/components/icon/icon.component';
 import { CopyTextDirective } from '../../shared/directives/copy-text.directive';
 import { ToastService } from '../../core/services/toast.service';
 
-/** Durée d'affichage de chaque accroche, en millisecondes. */
 const ROTATION_INTERVAL = 3200;
 
 @Component({
@@ -19,7 +19,10 @@ const ROTATION_INTERVAL = 3200;
 })
 export class HeroComponent implements OnDestroy {
   private readonly toastService = inject(ToastService);
+  private readonly languageService = inject(LanguageService);
 
+  readonly t = this.languageService.t;
+  readonly format = this.languageService.format;
   readonly profile = profile;
   readonly rotation = roleRotation;
   readonly years = yearsOfExperience();
@@ -31,7 +34,6 @@ export class HeroComponent implements OnDestroy {
   private timer?: ReturnType<typeof setInterval>;
 
   constructor() {
-    // Uniquement dans le navigateur : aucun minuteur ne doit tourner au prerendering.
     afterNextRender(() => {
       if (this.themeService.motion() === 'reduced') return;
 
@@ -46,6 +48,6 @@ export class HeroComponent implements OnDestroy {
   }
 
   onCvDownload(): void {
-    this.toastService.success('CV téléchargé. Merci de votre intérêt !');
+    this.toastService.success(this.t().toast.cvDownloaded);
   }
 }

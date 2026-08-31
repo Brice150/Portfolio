@@ -1,70 +1,90 @@
 import { DOCUMENT } from '@angular/common';
-import { Injectable, inject } from '@angular/core';
+import { Injectable, effect, inject, signal } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { SITE_URL, profile } from '../../shared/data/profile';
+import { Lang, Localized } from '../i18n/lang';
+import { LOCALES } from '../i18n/locales';
+import { LanguageService } from './language.service';
 
 export interface PageSeo {
-  title: string;
-  description: string;
-  /** Chemin de la route, ex. `/projets`. */
+  title: Localized;
+  description: Localized;
   path: string;
-  /**
-   * Chemin relatif dans les assets, ex. `projects/LIFE-RISE.webp`.
-   * À défaut, la bannière de partage du site est utilisée.
-   */
   image?: string;
   type?: 'website' | 'article' | 'profile';
-  /** Données structurées additionnelles injectées avec la page. */
-  schema?: Record<string, unknown>;
+  noindex?: boolean;
+  schema?: (lang: Lang) => Record<string, unknown>;
 }
 
 const SCHEMA_ID = 'page-schema';
 
-/**
- * Bannière de partage 1200x630. En JPEG et non en WebP : LinkedIn ne décode pas
- * ce format et affichait donc les liens du site sans visuel.
- */
+const ROBOTS_INDEXED = 'index, follow, max-image-preview:large';
+const ROBOTS_EXCLUDED = 'noindex, follow';
+
+/** En JPEG et non en WebP : LinkedIn ne décode pas ce format. */
 const SHARE_IMAGE = 'og-banner.jpg';
 
-/**
- * Métadonnées de page. Le service manipule `DOCUMENT` plutôt que le `document`
- * global afin que le canonical et le JSON-LD soient présents dans le HTML
- * généré au prerendering, et pas seulement côté navigateur.
- */
+/** `DOCUMENT` et non le `document` global : le JSON-LD doit sortir au prerendering. */
 @Injectable({ providedIn: 'root' })
 export class SeoService {
   private readonly meta = inject(Meta);
   private readonly title = inject(Title);
   private readonly document = inject(DOCUMENT);
+  private readonly languageService = inject(LanguageService);
+
+  private readonly config = signal<PageSeo | undefined>(undefined);
+
+  constructor() {
+    effect(() => {
+      const config = this.config();
+      const lang = this.languageService.lang();
+
+      if (config) this.apply(config, lang);
+    });
+  }
 
   setPage(config: PageSeo): void {
+    this.config.set(config);
+    // Le prerendering sérialise dès que l'application est stable : pas d'attente.
+    this.apply(config, this.languageService.lang());
+  }
+
+  private apply(config: PageSeo, lang: Lang): void {
     const url = `${SITE_URL}${config.path === '/' ? '/' : config.path}`;
     const image = `${SITE_URL}/assets/images/${config.image ?? SHARE_IMAGE}`;
+    const locale = LOCALES[lang].tag;
+    const title = config.title[lang];
+    const description = config.description[lang];
 
-    this.title.setTitle(config.title);
-    this.meta.updateTag({ name: 'description', content: config.description });
+    this.title.setTitle(title);
+    this.meta.updateTag({ name: 'description', content: description });
+    this.meta.updateTag({
+      name: 'robots',
+      content: config.noindex ? ROBOTS_EXCLUDED : ROBOTS_INDEXED,
+    });
 
     this.meta.updateTag({ property: 'og:type', content: config.type ?? 'website' });
-    this.meta.updateTag({ property: 'og:title', content: config.title });
-    this.meta.updateTag({ property: 'og:description', content: config.description });
+    this.meta.updateTag({ property: 'og:title', content: title });
+    this.meta.updateTag({ property: 'og:description', content: description });
     this.meta.updateTag({ property: 'og:url', content: url });
     this.meta.updateTag({ property: 'og:image', content: image });
+    this.meta.updateTag({ property: 'og:locale', content: locale.replace('-', '_') });
 
     this.meta.updateTag({ name: 'twitter:card', content: 'summary_large_image' });
-    this.meta.updateTag({ name: 'twitter:title', content: config.title });
-    this.meta.updateTag({ name: 'twitter:description', content: config.description });
+    this.meta.updateTag({ name: 'twitter:title', content: title });
+    this.meta.updateTag({ name: 'twitter:description', content: description });
     this.meta.updateTag({ name: 'twitter:image', content: image });
 
     this.setCanonical(url);
     this.setSchema(
-      config.schema ?? {
+      config.schema?.(lang) ?? {
         '@context': 'https://schema.org',
         '@type': 'WebPage',
         '@id': `${url}#page`,
-        name: config.title,
-        description: config.description,
+        name: title,
+        description,
         url,
-        inLanguage: 'fr-FR',
+        inLanguage: locale,
         isPartOf: { '@id': `${SITE_URL}/#website` },
         about: { '@id': `${SITE_URL}/#person` },
       },
@@ -95,17 +115,20 @@ export class SeoService {
     head.appendChild(script);
   }
 
-  /** Fiche projet : données structurées dédiées. */
-  projectSchema(name: string, description: string, url: string): Record<string, unknown> {
-    return {
+  projectSchema(
+    name: Localized,
+    description: Localized,
+    url: string,
+  ): (lang: Lang) => Record<string, unknown> {
+    return (lang) => ({
       '@context': 'https://schema.org',
       '@type': 'CreativeWork',
       '@id': `${url}#project`,
-      name,
-      description,
+      name: name[lang],
+      description: description[lang],
       url,
-      inLanguage: 'fr-FR',
+      inLanguage: LOCALES[lang].tag,
       author: { '@type': 'Person', name: profile.fullName, url: SITE_URL },
-    };
+    });
   }
 }

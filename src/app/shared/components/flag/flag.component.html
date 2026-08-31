@@ -1,0 +1,19 @@
+@switch (lang()) {
+  @case ('fr') {
+    <svg class="flag" viewBox="0 0 24 16" focusable="false" aria-hidden="true">
+      <rect width="8" height="16" fill="#0055a4" />
+      <rect x="8" width="8" height="16" fill="#ffffff" />
+      <rect x="16" width="8" height="16" fill="#ef4135" />
+    </svg>
+  }
+  @case ('en') {
+    <!-- Union Jack simplifié : les diagonales ne sont pas décalées. -->
+    <svg class="flag" viewBox="0 0 24 16" focusable="false" aria-hidden="true">
+      <rect width="24" height="16" fill="#012169" />
+      <path d="M0 0 24 16M24 0 0 16" fill="none" stroke="#ffffff" stroke-width="3.4" />
+      <path d="M0 0 24 16M24 0 0 16" fill="none" stroke="#c8102e" stroke-width="1.7" />
+      <path d="M12 0V16M0 8H24" fill="none" stroke="#ffffff" stroke-width="5.4" />
+      <path d="M12 0V16M0 8H24" fill="none" stroke="#c8102e" stroke-width="3.2" />
+    </svg>
+  }
+}

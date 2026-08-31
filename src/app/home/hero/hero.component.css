@@ -7,8 +7,6 @@
     clamp(3rem, 2rem + 4vw, 5rem);
 }
 
-/* --- Colonne texte ------------------------------------------------------- */
-
 h1 {
   display: flex;
   flex-direction: column;
@@ -122,8 +120,6 @@ h1 {
   translate: 0 -3px;
 }
 
-/* --- Portrait ------------------------------------------------------------ */
-
 .portrait {
   position: relative;
   justify-self: center;
@@ -157,10 +153,6 @@ h1 {
   object-fit: cover;
 }
 
-/* --- Points de rupture --------------------------------------------------- */
-
-/* Sur mobile, le portrait passe en tête : plus incarné qu’un mur de texte.
-   Aucun élément interactif dedans, l’ordre de lecture reste correct. */
 @media (width < 880px) {
   .portrait {
     order: -1;

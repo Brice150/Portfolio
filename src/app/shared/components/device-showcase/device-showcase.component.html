@@ -1,4 +1,5 @@
 @let shots = project().shots;
+@let name = tr(project().name);
 
 <div class="stage">
   <div class="glow" aria-hidden="true"></div>
@@ -7,7 +8,7 @@
     class="laptop-slot"
     variant="desktop"
     [src]="shots.desktop"
-    [alt]="project().name + ', vue sur ordinateur'"
+    [alt]="format(t().device.desktopViewOf, { name })"
     [url]="displayUrl()"
   />
 
@@ -15,6 +16,6 @@
     class="phone-slot"
     variant="phone"
     [src]="shots.mobile"
-    [alt]="project().name + ', vue sur mobile'"
+    [alt]="format(t().device.mobileViewOf, { name })"
   />
 </div>

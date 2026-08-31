@@ -12,18 +12,33 @@ import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { filter } from 'rxjs/operators';
 import { environment } from '../../../../environments/environment';
 import { navItems, profile } from '../../data/profile';
+import { LanguageService } from '../../../core/services/language.service';
 import { IconComponent } from '../icon/icon.component';
+import { LanguageSwitcherComponent } from '../language-switcher/language-switcher.component';
 import { SettingsPanelComponent } from '../settings-panel/settings-panel.component';
 
 @Component({
   selector: 'app-header',
-  imports: [RouterLink, RouterLinkActive, A11yModule, IconComponent, SettingsPanelComponent],
+  imports: [
+    RouterLink,
+    RouterLinkActive,
+    A11yModule,
+    IconComponent,
+    LanguageSwitcherComponent,
+    SettingsPanelComponent,
+  ],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: { id: 'haut-de-page', tabindex: '-1' },
 })
 export class HeaderComponent {
+  private readonly languageService = inject(LanguageService);
+
+  readonly t = this.languageService.t;
+  readonly format = this.languageService.format;
+  readonly tr = this.languageService.tr;
+
   readonly navItems = navItems;
   readonly profile = profile;
   readonly imagePath = environment.imagePath;

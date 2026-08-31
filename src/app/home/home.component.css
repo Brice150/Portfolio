@@ -1,4 +1,3 @@
-/* Six convictions : grille 3x2 sur grand écran. */
 .principles {
   display: grid;
   gap: 1rem;
@@ -33,8 +32,6 @@
   line-height: 1.7;
   color: var(--text-muted);
 }
-
-/* --- Comment je travaille ------------------------------------------------ */
 
 .collab {
   display: grid;

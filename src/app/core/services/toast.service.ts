@@ -17,17 +17,11 @@ const ICONS: Record<ToastTone, IconName> = {
   info: 'info',
 };
 
-/** Durée d'affichage avant disparition automatique, en millisecondes. */
 const DURATION = 4000;
 
-/** Nombre maximum de messages empilés, pour ne pas noyer l'écran. */
 const MAX_STACK = 3;
 
-/**
- * File de notifications éphémères. Écrite à la main plutôt que d'embarquer
- * `MatSnackBar` : le composant hôte est monté dans la coquille applicative,
- * donc son poids compterait dans le bundle initial.
- */
+/** Fait main plutôt que `MatSnackBar`, dont le poids irait au bundle initial. */
 @Injectable({ providedIn: 'root' })
 export class ToastService {
   private readonly platformId = inject(PLATFORM_ID);
@@ -36,7 +30,6 @@ export class ToastService {
   readonly toasts = signal<Toast[]>([]);
 
   show(message: string, tone: ToastTone = 'info'): void {
-    // Aucun message au prerendering : ils n'auraient aucun sens dans le HTML.
     if (!isPlatformBrowser(this.platformId)) return;
 
     const id = ++this.nextId;

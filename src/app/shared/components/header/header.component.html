@@ -4,7 +4,7 @@
   </div>
 
   <div class="inner shell-wide">
-    <a routerLink="/" class="brand" [attr.aria-label]="profile.fullName + ', retour à l’accueil'">
+    <a routerLink="/" class="brand" [attr.aria-label]="format(t().header.brandHome, { name: profile.fullName })">
       <img
         [src]="imagePath + 'logo.webp'"
         alt=""
@@ -16,11 +16,11 @@
       />
       <span class="brand-text">
         <span class="brand-name">{{ profile.fullName }}</span>
-        <span class="brand-role">{{ profile.role }}</span>
+        <span class="brand-role">{{ tr(profile.role) }}</span>
       </span>
     </a>
 
-    <nav class="desktop-nav" aria-label="Navigation principale">
+    <nav class="desktop-nav" [attr.aria-label]="t().header.mainNav">
       <ul>
         @for (item of navItems; track item.path) {
           <li>
@@ -31,7 +31,7 @@
               [routerLinkActiveOptions]="{ exact: !!item.exact }"
               [attr.aria-current]="link.isActive ? 'page' : null"
             >
-              {{ item.label }}
+              {{ tr(item.label) }}
             </a>
           </li>
         }
@@ -39,6 +39,7 @@
     </nav>
 
     <div class="actions">
+      <app-language-switcher />
       <app-settings-panel />
 
       <button
@@ -48,8 +49,8 @@
         (click)="toggleMenu()"
         [attr.aria-expanded]="menuOpen()"
         aria-controls="menu-mobile"
-        [attr.aria-label]="menuOpen() ? 'Fermer le menu' : 'Ouvrir le menu'"
-        [attr.title]="menuOpen() ? 'Fermer le menu' : 'Ouvrir le menu'"
+        [attr.aria-label]="menuOpen() ? t().header.closeMenu : t().header.openMenu"
+        [attr.title]="menuOpen() ? t().header.closeMenu : t().header.openMenu"
       >
         <span class="burger-line" aria-hidden="true"></span>
         <span class="burger-line" aria-hidden="true"></span>
@@ -68,7 +69,7 @@
   cdkTrapFocus
   [cdkTrapFocusAutoCapture]="menuOpen()"
 >
-  <nav aria-label="Navigation mobile">
+  <nav [attr.aria-label]="t().header.mobileNav">
     <ul>
       @for (item of navItems; track item.path; let i = $index) {
         <li [style.--i]="i">
@@ -82,8 +83,8 @@
           >
             <app-icon [name]="item.icon" size="1.35em" />
             <span class="labels">
-              <span class="label">{{ item.label }}</span>
-              <span class="hint">{{ item.hint }}</span>
+              <span class="label">{{ tr(item.label) }}</span>
+              <span class="hint">{{ tr(item.hint) }}</span>
             </span>
             <app-icon name="chevron-right" size="1.1em" />
           </a>

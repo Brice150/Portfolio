@@ -9,6 +9,9 @@ import {
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { profile } from '../shared/data/profile';
+import { IconName } from '../core/interfaces/icon';
+import { fromDictionary } from '../core/i18n/localize';
+import { LanguageService } from '../core/services/language.service';
 import { SeoService } from '../core/services/seo.service';
 import { ToastService } from '../core/services/toast.service';
 import { IconComponent } from '../shared/components/icon/icon.component';
@@ -20,6 +23,14 @@ const FORMSPREE_ENDPOINT = 'https://formspree.io/f/mbjbjwpk';
 const MESSAGE_MAX_LENGTH = 1500;
 
 type FormStatus = 'idle' | 'sending' | 'sent' | 'error';
+
+interface ContactChannel {
+  icon: IconName;
+  label: string;
+  value: string;
+  href: string;
+  hint: string;
+}
 
 @Component({
   selector: 'app-contact',
@@ -42,12 +53,29 @@ export class ContactComponent implements OnInit {
   private readonly toastService = inject(ToastService);
   private readonly seoService = inject(SeoService);
   private readonly document = inject(DOCUMENT);
+  private readonly languageService = inject(LanguageService);
+
+  readonly t = this.languageService.t;
+  readonly format = this.languageService.format;
 
   readonly profile = profile;
   readonly messageMaxLength = MESSAGE_MAX_LENGTH;
 
   readonly status = signal<FormStatus>('idle');
-  readonly errorMessage = signal('');
+
+  private readonly errorStatus = signal<number | null>(null);
+
+  readonly errorMessage = computed(() => {
+    const status = this.errorStatus();
+    const contact = this.t().contact;
+
+    if (status === null) return '';
+    if (status === 0) return contact.errorOffline;
+    if (status === 429) return contact.errorRateLimited;
+    if (status >= 400 && status < 500) return contact.errorRejected;
+
+    return contact.errorUnavailable;
+  });
 
   readonly form = this.formBuilder.nonNullable.group({
     name: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(60)]],
@@ -56,34 +84,36 @@ export class ContactComponent implements OnInit {
       '',
       [Validators.required, Validators.minLength(20), Validators.maxLength(MESSAGE_MAX_LENGTH)],
     ],
-    // Piège à robots : un humain ne remplit jamais ce champ.
     website: [''],
   });
 
   readonly isSending = computed(() => this.status() === 'sending');
 
-  readonly channels = [
-    {
-      icon: 'linkedin' as const,
-      label: 'LinkedIn',
-      value: 'brice-lecomte',
-      href: profile.linkedin,
-      hint: 'Parcours détaillé et publications',
-    },
-    {
-      icon: 'github' as const,
-      label: 'GitHub',
-      value: 'Brice150',
-      href: profile.github,
-      hint: 'Le code des projets présentés ici',
-    },
-  ];
+  readonly channels = computed<ContactChannel[]>(() => {
+    const contact = this.t().contact;
+
+    return [
+      {
+        icon: 'linkedin',
+        label: 'LinkedIn',
+        value: 'brice-lecomte',
+        href: profile.linkedin,
+        hint: contact.linkedinHint,
+      },
+      {
+        icon: 'github',
+        label: 'GitHub',
+        value: 'Brice150',
+        href: profile.github,
+        hint: contact.githubHint,
+      },
+    ];
+  });
 
   ngOnInit(): void {
     this.seoService.setPage({
-      title: 'Contact | Brice Lecomte, développeur Angular & Java',
-      description:
-        'Contacter Brice Lecomte, développeur Full-Stack Angular et Java : formulaire, e-mail ou LinkedIn. Réponse sous 48 heures ouvrées.',
+      title: fromDictionary((dictionary) => dictionary.seo.contactTitle),
+      description: fromDictionary((dictionary) => dictionary.seo.contactDescription),
       path: '/contact',
     });
   }
@@ -104,7 +134,7 @@ export class ContactComponent implements OnInit {
     }
 
     this.status.set('sending');
-    this.errorMessage.set('');
+    this.errorStatus.set(null);
 
     const { name, email, message } = this.form.getRawValue();
 
@@ -113,19 +143,19 @@ export class ContactComponent implements OnInit {
         name,
         _replyto: email,
         email,
-        _subject: `Message de ${name} via le portfolio`,
+        _subject: this.format(this.t().contact.subject, { name }),
         message,
       })
       .subscribe({
         next: () => {
           this.status.set('sent');
           this.form.reset();
-          this.toastService.success('Message envoyé. Je reviens vers vous sous 48 h.');
+          this.toastService.success(this.t().toast.messageSent);
         },
         error: (error: HttpErrorResponse) => {
           this.status.set('error');
-          this.errorMessage.set(this.describeError(error));
-          this.toastService.error('L’envoi a échoué. Le détail est indiqué au-dessus du formulaire.');
+          this.errorStatus.set(error.status);
+          this.toastService.error(this.t().toast.messageFailed);
         },
       });
   }
@@ -133,24 +163,7 @@ export class ContactComponent implements OnInit {
   reset(): void {
     this.form.reset();
     this.status.set('idle');
-    this.errorMessage.set('');
-  }
-
-  /** Traduit l'échec technique en message compréhensible et actionnable. */
-  private describeError(error: HttpErrorResponse): string {
-    if (error.status === 0) {
-      return 'Impossible de joindre le service d’envoi. Vérifiez votre connexion, puis réessayez.';
-    }
-
-    if (error.status === 429) {
-      return 'Trop de messages envoyés en peu de temps. Patientez quelques minutes avant de réessayer.';
-    }
-
-    if (error.status >= 400 && error.status < 500) {
-      return 'Le formulaire a été refusé. Vérifiez notamment votre adresse e-mail, puis réessayez.';
-    }
-
-    return 'Le service d’envoi est momentanément indisponible. Réessayez plus tard ou écrivez-moi directement par e-mail.';
+    this.errorStatus.set(null);
   }
 
   private focusFirstInvalidField(): void {

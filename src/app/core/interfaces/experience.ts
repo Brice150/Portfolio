@@ -1,37 +1,33 @@
+import { Localized, LocalizedList } from '../i18n/lang';
 import { IconName } from './icon';
 
 export type MilestoneKind = 'work' | 'education' | 'certification' | 'turning-point';
 
-/** Une mission au sein d'une même entreprise, avec sa propre stack. */
 export interface Mission {
-  label: string;
-  period: string;
-  summary: string;
+  label: Localized;
+  period: Localized;
+  summary: Localized;
   stack: string[];
 }
 
 export interface Milestone {
   id: string;
   kind: MilestoneKind;
-  /** Libellé affiché, ex. « Juil. 2024 - Janv. 2026 ». */
-  period: string;
-  /** Année de début, utilisée pour le tri et l'attribut datetime. */
+  period: Localized;
   startYear: number;
-  title: string;
-  organisation: string;
-  location?: string;
+  title: Localized;
+  organisation: Localized;
+  location?: Localized;
   logo?: string;
-  summary: string;
-  achievements: string[];
-  /** Stack globale, utilisée lorsque l'étape ne détaille pas ses missions. */
+  summary: Localized;
+  achievements: LocalizedList;
   stack: string[];
-  /** Missions successives chez le même employeur, chacune avec sa stack. */
   missions?: Mission[];
   current?: boolean;
 }
 
 export interface Certification {
-  title: string;
+  title: Localized;
   issuer: string;
   year: string;
   icon: IconName;

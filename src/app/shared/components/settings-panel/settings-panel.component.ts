@@ -1,5 +1,6 @@
 import { A11yModule } from '@angular/cdk/a11y';
 import { ChangeDetectionStrategy, Component, HostListener, computed, inject, signal } from '@angular/core';
+import { LanguageService } from '../../../core/services/language.service';
 import { AccentName, ThemeMode, ThemeService } from '../../../core/services/theme.service';
 import { IconComponent } from '../icon/icon.component';
 
@@ -12,6 +13,11 @@ import { IconComponent } from '../icon/icon.component';
 })
 export class SettingsPanelComponent {
   private readonly themeService = inject(ThemeService);
+
+  private readonly languageService = inject(LanguageService);
+
+  readonly t = this.languageService.t;
+  readonly format = this.languageService.format;
 
   readonly open = signal(false);
 

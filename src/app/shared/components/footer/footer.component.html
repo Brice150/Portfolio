@@ -2,22 +2,24 @@
   <div class="shell">
     <div class="cta-band card-hover card-hover--top">
       <div class="cta-text">
-        <p class="eyebrow">Contact</p>
-        <h2>Un sujet Angular ou Java à creuser&nbsp;?</h2>
-        <p class="lead">
-          Question technique, retour sur un projet, proposition de collaboration&nbsp;: tous les
-          messages trouvent une réponse, sous 48&nbsp;heures ouvrées.
-        </p>
+        <p class="eyebrow">{{ t().footer.ctaEyebrow }}</p>
+        <h2>{{ t().footer.ctaHeading }}</h2>
+        <p class="lead">{{ t().footer.ctaLead }}</p>
       </div>
       <div class="cta-actions">
         <a routerLink="/contact" class="btn">
           <app-icon name="send" size="1.05em" />
-          <span>Écrire un message</span>
+          <span>{{ t().footer.write }}</span>
         </a>
-        <a [href]="profile.cv" [download]="'CV ' + profile.fullName + '.pdf'"
-        (click)="onCvDownload()" class="btn btn-ghost" title="Télécharger le CV au format PDF">
+        <a
+          [href]="profile.cv"
+          [download]="'CV ' + profile.fullName + '.pdf'"
+          (click)="onCvDownload()"
+          class="btn btn-ghost"
+          [title]="t().common.downloadCvTitle"
+        >
           <app-icon name="download" size="1.05em" />
-          <span>Télécharger le CV</span>
+          <span>{{ t().common.downloadCv }}</span>
         </a>
       </div>
     </div>
@@ -34,35 +36,39 @@
           decoding="async"
         />
         <p class="name">{{ profile.fullName }}</p>
-        <p class="role">{{ profile.role }}</p>
+        <p class="role">{{ tr(profile.role) }}</p>
       </div>
 
-      <nav class="col" aria-label="Plan du site">
-        <h3>Navigation</h3>
+      <nav class="col" [attr.aria-label]="t().footer.siteMap">
+        <h3>{{ t().footer.navigation }}</h3>
         <ul>
           @for (item of navItems; track item.path) {
             <li>
-              <a [routerLink]="item.path">{{ item.label }}</a>
+              <a [routerLink]="item.path">{{ tr(item.label) }}</a>
             </li>
           }
         </ul>
       </nav>
 
       <div class="col">
-        <h3>Contact</h3>
+        <h3>{{ t().footer.contact }}</h3>
         <ul>
           <li>
-            <button type="button" class="copy" [appCopyText]="profile.email"
-              appCopyLabel="Adresse e-mail copiée"
+            <button
+              type="button"
+              class="copy"
+              [appCopyText]="profile.email"
+              [appCopyLabel]="t().common.emailCopied"
               #copyMail="appCopyText"
-              [attr.title]="copyMail.copied() ? 'Adresse e-mail copiée' : 'Copier l’adresse e-mail'">
+              [attr.title]="copyMail.copied() ? t().common.emailCopied : t().common.copyEmail"
+            >
               <app-icon
                 [name]="copyMail.copied() ? 'check' : copyMail.failed() ? 'alert' : 'copy'"
                 size="0.9em"
               />
               <span>
                 @if (copyMail.copied()) {
-                  Adresse copiée
+                  {{ t().common.addressCopied }}
                 } @else {
                   {{ profile.email }}
                 }
@@ -70,13 +76,23 @@
             </button>
           </li>
           <li>
-            <a [href]="profile.linkedin" target="_blank" rel="noopener" title="Ouvrir mon profil LinkedIn">
+            <a
+              [href]="profile.linkedin"
+              target="_blank"
+              rel="noopener"
+              [title]="t().footer.openLinkedin"
+            >
               LinkedIn
               <app-icon name="arrow-up-right" size="0.9em" />
             </a>
           </li>
           <li>
-            <a [href]="profile.github" target="_blank" rel="noopener" title="Ouvrir mon profil GitHub">
+            <a
+              [href]="profile.github"
+              target="_blank"
+              rel="noopener"
+              [title]="t().footer.openGithub"
+            >
               GitHub
               <app-icon name="arrow-up-right" size="0.9em" />
             </a>
@@ -85,20 +101,20 @@
       </div>
 
       <div class="col">
-        <h3>Ce site</h3>
+        <h3>{{ t().footer.thisSite }}</h3>
         <ul class="tech">
           <li>Angular 21 · zoneless</li>
           <li>Signals · OnPush</li>
-          <li>Prerendering statique</li>
+          <li>{{ t().footer.techPrerendering }}</li>
           <li>Firebase Hosting</li>
         </ul>
       </div>
     </div>
 
     <div class="bottom">
-      <p>© {{ currentYear }} {{ profile.fullName }}. Conçu et développé de A à Z.</p>
+      <p>{{ format(t().footer.copyright, { year: currentYear, name: profile.fullName }) }}</p>
       <button type="button" class="top-link" (click)="scrollToTop()">
-        <span>Haut de page</span>
+        <span>{{ t().footer.backToTop }}</span>
         <app-icon name="chevron-up" size="1em" />
       </button>
     </div>

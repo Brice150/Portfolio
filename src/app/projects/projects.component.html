@@ -1,12 +1,12 @@
 <app-page-hero
-  eyebrow="Projets"
-  heading="Des applications réelles, pas des exercices de tutoriel"
-  lead="Chacun de ces projets a été mené seul, du besoin initial au déploiement, et présenté ici du plus récent au plus ancien. Survolez un écran pour le faire défiler : ce sont les vraies interfaces, pas des maquettes."
+  [eyebrow]="t().projects.eyebrow"
+  [heading]="t().projects.heading"
+  [lead]="t().projects.lead"
 >
   <app-filter-bar
-    [options]="filters"
+    [options]="filters()"
     [active]="activeProject()"
-    label="Filtrer les projets"
+    [label]="t().projects.filterLabel"
     (changed)="selectProject($event)"
   />
 </app-page-hero>
@@ -16,7 +16,7 @@
     <article class="entry" [appReveal]="i * 60">
       <p class="status" [class.is-live]="project.status === 'live'">
         <span class="pulse" aria-hidden="true"></span>
-        {{ statusLabels[project.status] }}
+        {{ statusLabel(project.status) }}
       </p>
 
       <div class="preview">
@@ -25,28 +25,28 @@
 
       <div class="details">
         <p class="eyebrow">{{ project.year }}</p>
-        <h2>{{ project.name }}</h2>
-        <p class="tagline">{{ project.tagline }}</p>
-        <p class="summary justified">{{ project.summary }}</p>
+        <h2>{{ tr(project.name) }}</h2>
+        <p class="tagline">{{ tr(project.tagline) }}</p>
+        <p class="summary justified">{{ tr(project.summary) }}</p>
 
         <ul class="facts">
-          @for (fact of project.facts; track fact.label) {
+          @for (fact of project.facts; track $index) {
             <li>
-              <span class="fact-label">{{ fact.label }}</span>
-              <span class="fact-value">{{ fact.value }}</span>
+              <span class="fact-label">{{ tr(fact.label) }}</span>
+              <span class="fact-value">{{ tr(fact.value) }}</span>
             </li>
           }
         </ul>
 
-        <ul class="stack" [attr.aria-label]="'Technologies de ' + project.name">
+        <ul class="stack" [attr.aria-label]="format(t().projects.stackOf, { name: tr(project.name) })">
           @for (tech of project.stack; track tech) {
-            <li class="chip">{{ tech }}</li>
+            <li class="chip">{{ techLabel(tech, lang()) }}</li>
           }
         </ul>
 
         <div class="actions">
           <a [routerLink]="['/projets', project.slug]" class="btn">
-            <span>Voir la fiche complète</span>
+            <span>{{ t().projects.seeDetail }}</span>
             <app-icon name="arrow-right" size="1.05em" />
           </a>
 
@@ -57,7 +57,7 @@
               rel="noopener"
               class="btn btn-ghost"
             >
-              <span>Visiter le site</span>
+              <span>{{ t().common.viewSite }}</span>
               <app-icon name="arrow-up-right" size="1.05em" />
             </a>
           } @else if (project.links.github) {
@@ -67,7 +67,7 @@
               rel="noopener"
               class="btn btn-ghost"
             >
-              <span>Code source</span>
+              <span>{{ t().common.sourceCode }}</span>
               <app-icon name="arrow-up-right" size="1.05em" />
             </a>
           }

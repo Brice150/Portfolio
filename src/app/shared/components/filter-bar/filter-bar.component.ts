@@ -8,11 +8,7 @@ export interface FilterOption {
   icon?: IconName;
 }
 
-/**
- * Barre de filtres en pastilles, partagée par les pages Compétences,
- * Parcours et Projets. Les boutons portent `aria-pressed` plutôt qu'un
- * rôle d'onglet : ils filtrent une liste, ils ne changent pas de panneau.
- */
+/** `aria-pressed` et non un rôle d'onglet : on filtre une liste, sans changer de panneau. */
 @Component({
   selector: 'app-filter-bar',
   imports: [IconComponent],

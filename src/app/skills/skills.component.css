@@ -1,5 +1,3 @@
-/* --- Familles ------------------------------------------------------------ */
-
 .groups {
   display: flex;
   flex-direction: column;
@@ -41,8 +39,6 @@
   font-size: 0.92rem;
   color: var(--text-muted);
 }
-
-/* --- Compétences --------------------------------------------------------- */
 
 .skills {
   display: grid;
@@ -101,8 +97,6 @@ html:not(.js) .bar-fill {
   color: var(--text-muted);
 }
 
-/* --- Pratiques ----------------------------------------------------------- */
-
 .practices {
   display: grid;
   gap: 1rem;
@@ -138,8 +132,6 @@ html:not(.js) .bar-fill {
   color: var(--text-muted);
 }
 
-/* --- Note d'honnêteté ---------------------------------------------------- */
-
 .honesty {
   display: flex;
   gap: 1.1rem;
@@ -164,8 +156,6 @@ html:not(.js) .bar-fill {
   line-height: 1.75;
   color: var(--text-muted);
 }
-
-/* --- Domaines d’intervention (repris de l’ancienne page Expertise) -------- */
 
 .offers {
   display: grid;

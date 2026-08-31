@@ -9,17 +9,17 @@
         <header class="card-head">
           <div class="titles">
             <p class="period">
-              <time [attr.datetime]="milestone.startYear">{{ milestone.period }}</time>
+              <time [attr.datetime]="milestone.startYear">{{ tr(milestone.period) }}</time>
               @if (milestone.current) {
-                <span class="badge-current">En poste</span>
+                <span class="badge-current">{{ t().timeline.current }}</span>
               }
             </p>
-            <h3>{{ milestone.title }}</h3>
+            <h3>{{ tr(milestone.title) }}</h3>
             <p class="org">
-              <span class="org-name">{{ milestone.organisation }}</span>
-              @if (milestone.location) {
+              <span class="org-name">{{ tr(milestone.organisation) }}</span>
+              @if (milestone.location; as location) {
                 <span class="sep" aria-hidden="true">·</span>
-                <span>{{ milestone.location }}</span>
+                <span>{{ tr(location) }}</span>
               }
             </p>
           </div>
@@ -28,7 +28,7 @@
             <div class="logo">
               <img
                 [src]="imagePath + milestone.logo"
-                [alt]="'Logo ' + milestone.organisation"
+                [alt]="format(t().timeline.logoOf, { organisation: tr(milestone.organisation) })"
                 loading="lazy"
                 decoding="async"
               />
@@ -38,20 +38,20 @@
           }
         </header>
 
-        <p class="summary justified">{{ milestone.summary }}</p>
+        <p class="summary justified">{{ tr(milestone.summary) }}</p>
 
         @if (!compact() && milestone.missions?.length) {
           <ol class="missions">
-            @for (mission of milestone.missions; track mission.label) {
+            @for (mission of milestone.missions; track $index) {
               <li>
                 <p class="mission-head">
-                  <span class="mission-label">{{ mission.label }}</span>
-                  <span class="mission-period">{{ mission.period }}</span>
+                  <span class="mission-label">{{ tr(mission.label) }}</span>
+                  <span class="mission-period">{{ tr(mission.period) }}</span>
                 </p>
-                <p class="mission-summary justified">{{ mission.summary }}</p>
-                <ul class="stack" [attr.aria-label]="'Technologies : ' + mission.label">
+                <p class="mission-summary justified">{{ tr(mission.summary) }}</p>
+                <ul class="stack" [attr.aria-label]="format(t().timeline.techOf, { label: tr(mission.label) })">
                   @for (tech of mission.stack; track tech) {
-                    <li class="chip">{{ tech }}</li>
+                    <li class="chip">{{ techLabel(tech, lang()) }}</li>
                   }
                 </ul>
               </li>
@@ -59,9 +59,9 @@
           </ol>
         }
 
-        @if (!compact() && milestone.achievements.length) {
+        @if (!compact() && tr(milestone.achievements).length) {
           <ul class="achievements">
-            @for (achievement of milestone.achievements; track achievement) {
+            @for (achievement of tr(milestone.achievements); track achievement) {
               <li>
                 <app-icon name="check" size="0.95em" />
                 <span>{{ achievement }}</span>
@@ -71,9 +71,12 @@
         }
 
         @if (milestone.stack.length) {
-          <ul class="stack" [attr.aria-label]="'Technologies : ' + milestone.organisation">
+          <ul
+            class="stack"
+            [attr.aria-label]="format(t().timeline.techOf, { label: tr(milestone.organisation) })"
+          >
             @for (tech of milestone.stack; track tech) {
-              <li class="chip">{{ tech }}</li>
+              <li class="chip">{{ techLabel(tech, lang()) }}</li>
             }
           </ul>
         }

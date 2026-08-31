@@ -13,6 +13,8 @@ import {
 } from '../shared/data/journey';
 import { profile, transferableStrengths } from '../shared/data/profile';
 import { MilestoneKind } from '../core/interfaces/experience';
+import { fromDictionary } from '../core/i18n/localize';
+import { LanguageService } from '../core/services/language.service';
 import { SeoService } from '../core/services/seo.service';
 import { IconComponent } from '../shared/components/icon/icon.component';
 import {
@@ -42,6 +44,10 @@ type JourneyFilter = 'all' | MilestoneKind;
 })
 export class JourneyComponent implements OnInit {
   private readonly seoService = inject(SeoService);
+  private readonly languageService = inject(LanguageService);
+
+  readonly t = this.languageService.t;
+  readonly tr = this.languageService.tr;
 
   readonly certifications = certifications;
   readonly strengths = transferableStrengths;
@@ -50,12 +56,16 @@ export class JourneyComponent implements OnInit {
 
   readonly filter = signal<JourneyFilter>('all');
 
-  readonly filters: FilterOption[] = [
-    { value: 'all', label: 'Tout le parcours' },
-    { value: 'work', label: 'Expériences' },
-    { value: 'turning-point', label: 'Reconversion' },
-    { value: 'education', label: 'Formation' },
-  ];
+  readonly filters = computed<FilterOption[]>(() => {
+    const journey = this.t().journey;
+
+    return [
+      { value: 'all', label: journey.filterAll },
+      { value: 'work', label: journey.filterWork },
+      { value: 'turning-point', label: journey.filterTurningPoint },
+      { value: 'education', label: journey.filterEducation },
+    ];
+  });
 
   readonly visibleMilestones = computed(() => {
     const value = this.filter();
@@ -66,9 +76,8 @@ export class JourneyComponent implements OnInit {
 
   ngOnInit(): void {
     this.seoService.setPage({
-      title: 'Parcours | Brice Lecomte, développeur Angular & Java',
-      description:
-        'De l’ISAE-ENSMA à Open en passant par Sopra Steria et Capgemini : 4 missions Full-Stack Angular et Java sur des domaines réglementés, après une reconversion assumée.',
+      title: fromDictionary((dictionary) => dictionary.seo.journeyTitle),
+      description: fromDictionary((dictionary) => dictionary.seo.journeyDescription),
       path: '/parcours',
     });
   }
