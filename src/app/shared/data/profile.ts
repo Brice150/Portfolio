@@ -17,7 +17,9 @@ export const profile = {
   email: 'brice.lecomte0@gmail.com',
   linkedin: 'https://www.linkedin.com/in/brice-lecomte/',
   github: 'https://github.com/Brice150',
-  cv: './assets/files/Brice Lecomte.pdf',
+  /** Le CV existe dans les deux langues : le lien suit celle affichée. */
+  cv: l('./assets/files/CV Brice Lecomte.pdf', './assets/files/Brice Lecomte Resume.pdf'),
+  cvFileName: l('CV Brice Lecomte.pdf', 'Brice Lecomte Resume.pdf'),
   languages: [
     { label: l('Français', 'French'), level: l('Langue maternelle', 'Native speaker') },
     { label: l('Anglais', 'English'), level: l('C1 (TOEIC 945/990)', 'C1 (TOEIC 945/990)') },

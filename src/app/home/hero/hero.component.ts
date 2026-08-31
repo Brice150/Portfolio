@@ -22,6 +22,7 @@ export class HeroComponent implements OnDestroy {
   private readonly languageService = inject(LanguageService);
 
   readonly t = this.languageService.t;
+  readonly tr = this.languageService.tr;
   readonly format = this.languageService.format;
   readonly profile = profile;
   readonly rotation = roleRotation;

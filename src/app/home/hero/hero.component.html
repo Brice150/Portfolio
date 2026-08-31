@@ -27,8 +27,8 @@
         <app-icon name="arrow-right" size="1.05em" />
       </a>
       <a
-        [href]="profile.cv"
-        [download]="'CV ' + profile.fullName + '.pdf'"
+        [href]="tr(profile.cv)"
+        [download]="tr(profile.cvFileName)"
         [title]="t().common.downloadCvTitle"
         (click)="onCvDownload()"
         class="btn btn-ghost"

@@ -12,8 +12,8 @@
           <span>{{ t().footer.write }}</span>
         </a>
         <a
-          [href]="profile.cv"
-          [download]="'CV ' + profile.fullName + '.pdf'"
+          [href]="tr(profile.cv)"
+          [download]="tr(profile.cvFileName)"
           (click)="onCvDownload()"
           class="btn btn-ghost"
           [title]="t().common.downloadCvTitle"
