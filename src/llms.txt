@@ -62,7 +62,7 @@ déploiement et maintenance.
   Code : https://github.com/Brice150/Portfolio
 - [Game Time](https://portfolio-brice.web.app/projets/gametime) (2024, en ligne) :
   3 jeux de réflexion jouables à plusieurs en temps réel, avec salons, décompte
-  synchronisé et classement en direct. Site : https://brice150.github.io/GAMETIME/
+  synchronisé et classement en direct. Site : https://game-time-64133.web.app/
 - [Pick Me](https://portfolio-brice.web.app/projets/pickme) (2023-2024, archivé) :
   application de rencontre construite de zéro, profils, correspondance réciproque et
   messagerie, sur une API Java/Spring Boot et une base relationnelle.

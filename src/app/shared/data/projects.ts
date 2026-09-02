@@ -183,7 +183,7 @@ export const projects: Project[] = [
       ],
     ),
     links: {
-      live: 'https://brice150.github.io/GAMETIME/',
+      live: 'https://game-time-64133.web.app/',
       github: 'https://github.com/Brice150/GAMETIME',
     },
   },

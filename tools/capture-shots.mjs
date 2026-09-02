@@ -25,7 +25,7 @@ const PORT = 9333;
 
 const TARGETS = [
   { slug: 'life-rise', url: 'https://life-rise.web.app/' },
-  { slug: 'gametime', url: 'https://brice150.github.io/GAMETIME/' },
+  { slug: 'gametime', url: 'https://game-time-64133.web.app/' },
   { slug: 'simulator', url: 'https://brice150.github.io/Simulator/' },
   { slug: 'portfolio', url: 'http://localhost:4200/' },
 ];
