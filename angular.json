@@ -77,10 +77,7 @@
           "options": {
             "buildTarget": "portfolio:build:development",
             "tsConfig": "tsconfig.spec.json",
-            "runner": "vitest",
-            "browsers": [
-              "chromium"
-            ]
+            "runner": "vitest"
           }
         },
         "lint": {
