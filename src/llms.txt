@@ -68,7 +68,8 @@ déploiement et maintenance.
   messagerie, sur une API Java/Spring Boot et une base relationnelle.
   Code : https://github.com/Brice150/PICKME
 - [Simulateur de rénovation](https://portfolio-brice.web.app/projets/simulateur-renovation)
-  (2023, en ligne) : simulateur d'aides à la rénovation énergétique, écrit en 2 jours.
+  (2023, en ligne) : simulateur d'aides à la rénovation énergétique, écrit en 2 jours,
+  depuis modernisé : zoneless, OnPush, pages prérendues.
   Site : https://brice150.github.io/Simulator/
 
 ## Contact

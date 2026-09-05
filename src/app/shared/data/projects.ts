@@ -238,7 +238,7 @@ export const projects: Project[] = [
       { label: l('Durée (temps libre)', 'Duration (spare time)'), value: l('2 jours', '2 days') },
       { label: l('Nature', 'Nature'), value: l('Calculateur', 'Calculator') },
       { label: l('Contexte', 'Context'), value: l('Rendre service', 'Helping out') },
-      { label: l('Réalisation', 'Delivery'), value: l('En un weekend', 'Over one weekend') },
+      { label: l('Détection', 'Detection'), value: l('Zoneless + OnPush', 'Zoneless + OnPush') },
     ],
     context: l(
       'Une connaissance en alternance marketing avait besoin d’un simulateur d’aides à la rénovation énergétique pour son projet, sans avoir les moyens de le faire développer. Le sujet était clair, le besoin réel et le délai court : deux jours pour livrer quelque chose d’utilisable plutôt qu’une maquette.',
@@ -259,18 +259,27 @@ export const projects: Project[] = [
           'Two days force trade-offs: no elaborate architecture, no extra features, just the shortest path between the questions asked and the amount displayed. It is also a useful reminder that a simple tool that helps beats an ambitious project that never ships.',
         ),
       },
+      {
+        title: l('Remis à niveau, sans réécriture', 'Brought up to date, without a rewrite'),
+        body: l(
+          'Le simulateur a depuis suivi mes pratiques actuelles : détection de changement sans Zone.js, OnPush sur tous les composants, et pages prérendues au build servies en statique sur GitHub Pages, l’application prenant le relais côté navigateur. Ni les barèmes ni le parcours de questions n’ont bougé : le projet était resté assez simple pour absorber la mise à niveau.',
+          'The simulator has since followed my current practices: change detection without Zone.js, OnPush on every component, and pages prerendered at build time then served statically on GitHub Pages, with the application taking over in the browser. Neither the grant scales nor the question flow moved: the project had stayed simple enough to absorb the upgrade.',
+        ),
+      },
     ],
     features: ll(
       [
         'Saisie des informations du foyer et du projet de rénovation',
         'Calcul des aides applicables à partir des barèmes en vigueur',
         'Résultat immédiat, sans compte ni installation',
+        'Pages prérendues au build et servies en statique, sans serveur',
         'Développé en 2 jours pour répondre à un besoin concret',
       ],
       [
         'Entry of household and renovation project details',
         'Calculation of applicable grants from the scales in force',
         'Immediate result, with no account and no installation',
+        'Pages prerendered at build time and served statically, with no server',
         'Built in 2 days to answer a concrete need',
       ],
     ),
