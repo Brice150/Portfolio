@@ -1,5 +1,12 @@
 import { DOCUMENT, isPlatformBrowser } from '@angular/common';
-import { Injectable, PLATFORM_ID, computed, effect, inject, signal } from '@angular/core';
+import {
+  Injectable,
+  PLATFORM_ID,
+  computed,
+  effect,
+  inject,
+  signal,
+} from '@angular/core';
 import { format } from '../i18n/format';
 import { DEFAULT_LANG, LANGS, Lang, isLang } from '../i18n/lang';
 import { Dictionary, LOCALES, LOCALE_LIST } from '../i18n/locales';
@@ -40,7 +47,8 @@ export class LanguageService {
   }
 
   /** Fléchée : appelée depuis un template, la lecture du signal y est tracée. */
-  readonly tr = <T extends string | string[]>(value: Record<Lang, T>): T => value[this.lang()];
+  readonly tr = <T extends string | string[]>(value: Record<Lang, T>): T =>
+    value[this.lang()];
 
   setLang(lang: Lang): void {
     this.lang.set(lang);

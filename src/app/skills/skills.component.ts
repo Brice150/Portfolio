@@ -1,4 +1,11 @@
-import { ChangeDetectionStrategy, Component, OnInit, computed, inject, signal } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  OnInit,
+  computed,
+  inject,
+  signal,
+} from '@angular/core';
 import { serviceOffers } from '../shared/data/expertise';
 import { practices, skillGroups } from '../shared/data/skills';
 import { fromDictionary } from '../core/i18n/localize';
@@ -7,7 +14,10 @@ import { SeoService } from '../core/services/seo.service';
 import { IconComponent } from '../shared/components/icon/icon.component';
 import { SectionHeaderComponent } from '../shared/components/section-header/section-header.component';
 import { RevealDirective } from '../shared/directives/reveal.directive';
-import { FilterBarComponent, FilterOption } from '../shared/components/filter-bar/filter-bar.component';
+import {
+  FilterBarComponent,
+  FilterOption,
+} from '../shared/components/filter-bar/filter-bar.component';
 import { PageHeroComponent } from '../shared/components/page-hero/page-hero.component';
 
 @Component({
@@ -48,15 +58,22 @@ export class SkillsComponent implements OnInit {
 
   readonly visibleGroups = computed(() => {
     const active = this.activeGroup();
-    return active === 'all' ? this.groups : this.groups.filter((group) => group.id === active);
+    return active === 'all'
+      ? this.groups
+      : this.groups.filter((group) => group.id === active);
   });
 
-  readonly skillCount = this.groups.reduce((total, group) => total + group.skills.length, 0);
+  readonly skillCount = this.groups.reduce(
+    (total, group) => total + group.skills.length,
+    0,
+  );
 
   ngOnInit(): void {
     this.seoService.setPage({
       title: fromDictionary((dictionary) => dictionary.seo.skillsTitle),
-      description: fromDictionary((dictionary) => dictionary.seo.skillsDescription),
+      description: fromDictionary(
+        (dictionary) => dictionary.seo.skillsDescription,
+      ),
       path: '/competences',
     });
   }

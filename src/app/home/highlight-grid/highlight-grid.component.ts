@@ -1,4 +1,9 @@
-import { ChangeDetectionStrategy, Component, inject, input } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  inject,
+  input,
+} from '@angular/core';
 import { Highlight } from '../../core/interfaces/content';
 import { LanguageService } from '../../core/services/language.service';
 import { IconComponent } from '../../shared/components/icon/icon.component';

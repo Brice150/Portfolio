@@ -1,7 +1,18 @@
-import { ChangeDetectionStrategy, Component, OnDestroy, afterNextRender, inject, signal } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  OnDestroy,
+  afterNextRender,
+  inject,
+  signal,
+} from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { environment } from '../../../environments/environment';
-import { profile, roleRotation, yearsOfExperience } from '../../shared/data/profile';
+import {
+  profile,
+  roleRotation,
+  yearsOfExperience,
+} from '../../shared/data/profile';
 import { LanguageService } from '../../core/services/language.service';
 import { ThemeService } from '../../core/services/theme.service';
 import { IconComponent } from '../../shared/components/icon/icon.component';
@@ -39,7 +50,9 @@ export class HeroComponent implements OnDestroy {
       if (this.themeService.motion() === 'reduced') return;
 
       this.timer = setInterval(() => {
-        this.rotationIndex.update((index) => (index + 1) % this.rotation.length);
+        this.rotationIndex.update(
+          (index) => (index + 1) % this.rotation.length,
+        );
       }, ROTATION_INTERVAL);
     });
   }

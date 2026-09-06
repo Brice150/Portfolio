@@ -40,7 +40,8 @@ export class DeviceFrameComponent implements OnDestroy {
 
   private readonly themeService = inject(ThemeService);
   private readonly languageService = inject(LanguageService);
-  private readonly screen = viewChild.required<ElementRef<HTMLElement>>('screen');
+  private readonly screen =
+    viewChild.required<ElementRef<HTMLElement>>('screen');
 
   readonly t = this.languageService.t;
 
@@ -54,7 +55,8 @@ export class DeviceFrameComponent implements OnDestroy {
   readonly source = computed(() => `${this.imagePath}${this.src()}`);
   readonly label = computed(() => {
     const device = this.t().device;
-    const view = this.variant() === 'phone' ? device.mobileView : device.desktopView;
+    const view =
+      this.variant() === 'phone' ? device.mobileView : device.desktopView;
 
     return this.scrollable()
       ? `${this.alt()}, ${view} ${device.scrollable}`
@@ -98,7 +100,9 @@ export class DeviceFrameComponent implements OnDestroy {
   private measure(): void {
     const element = this.screen().nativeElement;
 
-    this.scrollable.set(element.scrollHeight - element.clientHeight >= MIN_SCROLLABLE);
+    this.scrollable.set(
+      element.scrollHeight - element.clientHeight >= MIN_SCROLLABLE,
+    );
   }
 
   private start(): void {

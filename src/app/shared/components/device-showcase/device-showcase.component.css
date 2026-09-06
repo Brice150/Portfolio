@@ -14,7 +14,11 @@
   inset: 8% -6% 12%;
   z-index: -1;
   border-radius: 50%;
-  background: radial-gradient(closest-side, var(--accent-soft), transparent 72%);
+  background: radial-gradient(
+    closest-side,
+    var(--accent-soft),
+    transparent 72%
+  );
   filter: blur(28px);
   pointer-events: none;
 }

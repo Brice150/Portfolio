@@ -22,7 +22,9 @@ async function generate404() {
     await copyFile(source, join(browserDir, '404.html'));
     console.log('✔ 404.html généré depuis la page « introuvable » prérendue.');
   } catch {
-    console.warn('✖ Page « introuvable » prérendue absente : 404.html non généré.');
+    console.warn(
+      '✖ Page « introuvable » prérendue absente : 404.html non généré.',
+    );
     process.exitCode = 1;
   }
 }
@@ -65,4 +67,3 @@ async function generateSitemap() {
     process.exitCode = 1;
   }
 }
-

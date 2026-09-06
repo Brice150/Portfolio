@@ -1,6 +1,16 @@
-import { ChangeDetectionStrategy, Component, OnInit, computed, inject } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  OnInit,
+  computed,
+  inject,
+} from '@angular/core';
 import { collaboration } from '../shared/data/expertise';
-import { highlights, principles, yearsOfExperience } from '../shared/data/profile';
+import {
+  highlights,
+  principles,
+  yearsOfExperience,
+} from '../shared/data/profile';
 import { skillGroups } from '../shared/data/skills';
 import { fromDictionary } from '../core/i18n/localize';
 import { LanguageService } from '../core/services/language.service';
@@ -51,7 +61,10 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.seoService.setPage({
       title: fromDictionary((dictionary) => dictionary.seo.homeTitle),
-      description: fromDictionary((dictionary) => dictionary.seo.homeDescription, { years: this.years }),
+      description: fromDictionary(
+        (dictionary) => dictionary.seo.homeDescription,
+        { years: this.years },
+      ),
       path: '/',
       type: 'profile',
     });

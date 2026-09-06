@@ -8,8 +8,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="robots" content="index, follow, max-image-preview:large" />
     <meta name="color-scheme" content="dark light" />
-    <meta name="theme-color" content="#08090c" media="(prefers-color-scheme: dark)" />
-    <meta name="theme-color" content="#fafbfd" media="(prefers-color-scheme: light)" />
+    <meta
+      name="theme-color"
+      content="#08090c"
+      media="(prefers-color-scheme: dark)"
+    />
+    <meta
+      name="theme-color"
+      content="#fafbfd"
+      media="(prefers-color-scheme: light)"
+    />
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta
@@ -59,7 +67,10 @@
     <link rel="manifest" href="manifest.webmanifest" />
     <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png" />
     <meta name="apple-mobile-web-app-title" content="Brice Lecomte" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
     <meta name="application-name" content="Brice Lecomte" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -131,7 +142,10 @@
           var lang = localStorage.getItem('portfolio-lang');
 
           if (lang !== 'fr' && lang !== 'en') {
-            lang = (navigator.language || 'fr').toLowerCase().indexOf('en') === 0 ? 'en' : 'fr';
+            lang =
+              (navigator.language || 'fr').toLowerCase().indexOf('en') === 0
+                ? 'en'
+                : 'fr';
           }
 
           root.setAttribute('lang', lang);
@@ -140,14 +154,19 @@
         }
 
         try {
-          var stored = JSON.parse(localStorage.getItem('portfolio-preferences') || '{}');
+          var stored = JSON.parse(
+            localStorage.getItem('portfolio-preferences') || '{}',
+          );
 
           if (stored.theme && stored.theme !== 'system') {
             root.setAttribute('data-theme', stored.theme);
           }
 
           root.setAttribute('data-accent', stored.accent || 'azure');
-          root.setAttribute('data-motion', stored.motion === 'reduced' ? 'reduced' : 'full');
+          root.setAttribute(
+            'data-motion',
+            stored.motion === 'reduced' ? 'reduced' : 'full',
+          );
         } catch (error) {
           root.setAttribute('data-accent', 'azure');
         }

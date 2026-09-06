@@ -3,6 +3,9 @@
 
   <h1>Portfolio de Brice Lecomte</h1>
   <p>Développeur Full-Stack Angular / Java · Angular 21 · zoneless · prérendu</p>
+
+[![CI](https://github.com/Brice150/Portfolio/actions/workflows/ci.yml/badge.svg)](https://github.com/Brice150/Portfolio/actions/workflows/ci.yml)
+
 </div>
 
 ---
@@ -17,16 +20,16 @@ en avant sont celles qu'il applique à lui-même.
 
 ## Choix techniques
 
-| Sujet | Choix | Pourquoi |
-| --- | --- | --- |
-| Framework | Angular 21, composants standalone | Architecture par feature, aucun NgModule |
-| Détection de changement | **Zoneless** + `OnPush` partout | Pas de Zone.js dans le bundle, recalculs prévisibles |
-| État | Signals (`signal`, `computed`, `input`) | Réactivité fine, interopérabilité RxJS via `toSignal` |
-| Rendu | `outputMode: static`, prerendering intégral | Chaque route livrée en HTML, y compris les fiches projet |
-| UI | Angular Material 3 + CDK | Theming par tokens système, accent dynamique |
-| Styles | CSS natif, `light-dark()`, container queries | Un seul jeu de tokens pour les deux thèmes |
-| Icônes | SVG inline maison | Zéro requête réseau, zéro police d'icônes |
-| Formulaire | Reactive Forms typés + Formspree | Pas de backend à maintenir |
+| Sujet                   | Choix                                        | Pourquoi                                                 |
+| ----------------------- | -------------------------------------------- | -------------------------------------------------------- |
+| Framework               | Angular 21, composants standalone            | Architecture par feature, aucun NgModule                 |
+| Détection de changement | **Zoneless** + `OnPush` partout              | Pas de Zone.js dans le bundle, recalculs prévisibles     |
+| État                    | Signals (`signal`, `computed`, `input`)      | Réactivité fine, interopérabilité RxJS via `toSignal`    |
+| Rendu                   | `outputMode: static`, prerendering intégral  | Chaque route livrée en HTML, y compris les fiches projet |
+| UI                      | Angular Material 3 + CDK                     | Theming par tokens système, accent dynamique             |
+| Styles                  | CSS natif, `light-dark()`, container queries | Un seul jeu de tokens pour les deux thèmes               |
+| Icônes                  | SVG inline maison                            | Zéro requête réseau, zéro police d'icônes                |
+| Formulaire              | Reactive Forms typés + Formspree             | Pas de backend à maintenir                               |
 
 Aucune dépendance de carrousel, de notifications ou d'icônes : tout est fait main.
 
@@ -103,8 +106,25 @@ que `npm start` tourne.
 ## Qualité
 
 ```bash
+npm run format:check
 npm run lint
+npm run test:ci
 ```
 
 ESLint impose notamment `OnPush` sur tous les composants, l'absence de `any` et les
 règles d'accessibilité des templates Angular.
+
+Les tests tournent sous Vitest, sur jsdom : 90 tests, sans navigateur à installer.
+La couverture est verrouillée par un seuil que la CI refuse de voir baisser — 94 %
+des instructions, 90 % des branches. Les gabarits compilés et le bootstrap en sont
+exclus : ce n'est pas du code qu'on teste, et les compter diluerait le chiffre.
+
+### Intégration continue
+
+Chaque push et chaque pull request déclenchent un job unique : installation,
+vérification du formatage Prettier, ESLint, tests, puis build de production. Un
+nouveau push sur une branche annule le run encore en cours.
+
+Dependabot suit les dépendances npm et les actions GitHub, groupées par famille.
+Les majors d'Angular en sont exclus : ils se migrent avec `ng update`, pas en
+fusionnant un bot.

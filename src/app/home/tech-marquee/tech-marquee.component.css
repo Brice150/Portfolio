@@ -3,7 +3,13 @@
   overflow: hidden;
   padding-block: 1.1rem;
   border-block: 1px solid var(--border);
-  mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+  mask-image: linear-gradient(
+    90deg,
+    transparent,
+    #000 12%,
+    #000 88%,
+    transparent
+  );
 }
 
 .track {

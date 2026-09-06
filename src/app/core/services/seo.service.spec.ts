@@ -14,7 +14,9 @@ const page = {
 
 beforeEach(() => {
   localStorage.clear();
-  TestBed.configureTestingModule({ providers: [provideZonelessChangeDetection()] });
+  TestBed.configureTestingModule({
+    providers: [provideZonelessChangeDetection()],
+  });
   // jsdom annonce un navigateur anglophone : on fixe la langue attendue.
   TestBed.inject(LanguageService).setLang('fr');
 });
@@ -27,20 +29,26 @@ describe('SeoService', () => {
     expect(TestBed.inject(Meta).getTag('name="description"')?.content).toBe(
       'Description française',
     );
-    expect(TestBed.inject(Meta).getTag('property="og:url"')?.content).toContain('/parcours');
+    expect(TestBed.inject(Meta).getTag('property="og:url"')?.content).toContain(
+      '/parcours',
+    );
   });
 
   it('pose une canonique unique et un JSON-LD', () => {
     TestBed.inject(SeoService).setPage(page);
 
     expect(document.querySelectorAll('link[rel="canonical"]').length).toBe(1);
-    expect(document.getElementById('page-schema')?.textContent).toContain('WebPage');
+    expect(document.getElementById('page-schema')?.textContent).toContain(
+      'WebPage',
+    );
   });
 
   it('exclut de l’index les pages marquées noindex', () => {
     TestBed.inject(SeoService).setPage({ ...page, noindex: true });
 
-    expect(TestBed.inject(Meta).getTag('name="robots"')?.content).toContain('noindex');
+    expect(TestBed.inject(Meta).getTag('name="robots"')?.content).toContain(
+      'noindex',
+    );
   });
 
   it('suit la langue courante', () => {

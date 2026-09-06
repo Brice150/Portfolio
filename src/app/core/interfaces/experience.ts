@@ -1,7 +1,8 @@
 import { Localized, LocalizedList } from '../i18n/lang';
 import { IconName } from './icon';
 
-export type MilestoneKind = 'work' | 'education' | 'certification' | 'turning-point';
+export type MilestoneKind =
+  'work' | 'education' | 'certification' | 'turning-point';
 
 export interface Mission {
   label: Localized;

@@ -32,7 +32,10 @@ export const serviceOffers: ServiceOffer[] = [
   {
     id: 'existant',
     icon: 'wrench',
-    title: l('Reprendre et faire évoluer un existant', 'Taking over and evolving an existing system'),
+    title: l(
+      'Reprendre et faire évoluer un existant',
+      'Taking over and evolving an existing system',
+    ),
     pitch: l(
       'Le cœur de mes 5 dernières années. Reprendre une base de code écrite par d’autres, comprendre les règles métier avant de les toucher, et livrer des évolutions sans casser ce qui tourne.',
       'The heart of my last 5 years. Take over a codebase written by others, understand the business rules before touching them, and ship changes without breaking what already runs.',
@@ -55,7 +58,10 @@ export const serviceOffers: ServiceOffer[] = [
   {
     id: 'performance',
     icon: 'gauge',
-    title: l('Reprendre la main sur les performances', 'Getting performance back under control'),
+    title: l(
+      'Reprendre la main sur les performances',
+      'Getting performance back under control',
+    ),
     pitch: l(
       'Des écrans qui se figent et des temps de réponse qui s’allongent, les utilisateurs le remarquent bien avant les nouvelles fonctionnalités. Identifier où le temps se perd réellement, côté navigateur comme côté base de données.',
       'Screens that freeze and response times that stretch out get noticed by users long before new features do. Find where the time is actually lost, in the browser as well as in the database.',
@@ -109,40 +115,47 @@ export interface CollaborationPoint {
   text: Localized;
 }
 
-export const collaboration: { title: Localized; points: CollaborationPoint[] } = {
-  title: l('Comment je travaille', 'How I work'),
-  points: [
-    {
-      icon: 'users',
-      title: l('Intégré à l’équipe, pas en silo', 'Part of the team, not in a silo'),
-      text: l(
-        'Daily, refinement, revues de code croisées, démonstrations client : je prends ma part des rituels et je m’adapte aux outils en place plutôt que d’imposer les miens.',
-        'Daily stand-ups, refinement, peer code reviews, client demos: I take my share of the rituals and adapt to the tools already in place rather than imposing my own.',
-      ),
-    },
-    {
-      icon: 'globe',
-      title: l('À l’aise en équipe répartie', 'Comfortable in a distributed team'),
-      text: l(
-        '5 ans d’ESN sur des projets distribués : écrit soigné, décisions tracées, disponibilité réelle sur les plages communes. Le distanciel demande plus de rigueur, pas moins.',
-        '5 years of consultancy on distributed projects: careful writing, decisions on record, genuine availability during shared hours. Remote work demands more rigour, not less.',
-      ),
-    },
-    {
-      icon: 'clock',
-      title: l('Des engagements tenables', 'Commitments that hold'),
-      text: l(
-        'Estimer honnêtement, y compris quand la réponse est « plus long que prévu ». Sur mes missions, tenir les jalons annoncés a toujours primé sur l’effet d’annonce.',
-        'Estimating honestly, including when the answer is “longer than expected”. On my assignments, meeting the milestones announced has always mattered more than the announcement itself.',
-      ),
-    },
-    {
-      icon: 'book',
-      title: l('Ce que je laisse derrière moi', 'What I leave behind'),
-      text: l(
-        'Une base de code qu’un autre développeur peut reprendre : conventions explicites, découpage lisible, décisions documentées. Quand je quitte une mission, l’équipe doit pouvoir continuer sans avoir à me rappeler.',
-        'A codebase another developer can pick up: explicit conventions, readable structure, documented decisions. When I leave an assignment, the team should be able to carry on without having to call me back.',
-      ),
-    },
-  ],
-};
+export const collaboration: { title: Localized; points: CollaborationPoint[] } =
+  {
+    title: l('Comment je travaille', 'How I work'),
+    points: [
+      {
+        icon: 'users',
+        title: l(
+          'Intégré à l’équipe, pas en silo',
+          'Part of the team, not in a silo',
+        ),
+        text: l(
+          'Daily, refinement, revues de code croisées, démonstrations client : je prends ma part des rituels et je m’adapte aux outils en place plutôt que d’imposer les miens.',
+          'Daily stand-ups, refinement, peer code reviews, client demos: I take my share of the rituals and adapt to the tools already in place rather than imposing my own.',
+        ),
+      },
+      {
+        icon: 'globe',
+        title: l(
+          'À l’aise en équipe répartie',
+          'Comfortable in a distributed team',
+        ),
+        text: l(
+          '5 ans d’ESN sur des projets distribués : écrit soigné, décisions tracées, disponibilité réelle sur les plages communes. Le distanciel demande plus de rigueur, pas moins.',
+          '5 years of consultancy on distributed projects: careful writing, decisions on record, genuine availability during shared hours. Remote work demands more rigour, not less.',
+        ),
+      },
+      {
+        icon: 'clock',
+        title: l('Des engagements tenables', 'Commitments that hold'),
+        text: l(
+          'Estimer honnêtement, y compris quand la réponse est « plus long que prévu ». Sur mes missions, tenir les jalons annoncés a toujours primé sur l’effet d’annonce.',
+          'Estimating honestly, including when the answer is “longer than expected”. On my assignments, meeting the milestones announced has always mattered more than the announcement itself.',
+        ),
+      },
+      {
+        icon: 'book',
+        title: l('Ce que je laisse derrière moi', 'What I leave behind'),
+        text: l(
+          'Une base de code qu’un autre développeur peut reprendre : conventions explicites, découpage lisible, décisions documentées. Quand je quitte une mission, l’équipe doit pouvoir continuer sans avoir à me rappeler.',
+          'A codebase another developer can pick up: explicit conventions, readable structure, documented decisions. When I leave an assignment, the team should be able to carry on without having to call me back.',
+        ),
+      },
+    ],
+  };

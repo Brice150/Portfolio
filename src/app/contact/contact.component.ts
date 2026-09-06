@@ -1,11 +1,14 @@
 import { DOCUMENT } from '@angular/common';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { ChangeDetectionStrategy, Component, OnInit, computed, inject, signal } from '@angular/core';
 import {
-  FormBuilder,
-  ReactiveFormsModule,
-  Validators,
-} from '@angular/forms';
+  ChangeDetectionStrategy,
+  Component,
+  OnInit,
+  computed,
+  inject,
+  signal,
+} from '@angular/core';
+import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { profile } from '../shared/data/profile';
@@ -78,11 +81,21 @@ export class ContactComponent implements OnInit {
   });
 
   readonly form = this.formBuilder.nonNullable.group({
-    name: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(60)]],
-    email: ['', [Validators.required, Validators.email, Validators.maxLength(120)]],
+    name: [
+      '',
+      [Validators.required, Validators.minLength(2), Validators.maxLength(60)],
+    ],
+    email: [
+      '',
+      [Validators.required, Validators.email, Validators.maxLength(120)],
+    ],
     message: [
       '',
-      [Validators.required, Validators.minLength(20), Validators.maxLength(MESSAGE_MAX_LENGTH)],
+      [
+        Validators.required,
+        Validators.minLength(20),
+        Validators.maxLength(MESSAGE_MAX_LENGTH),
+      ],
     ],
     website: [''],
   });
@@ -113,7 +126,9 @@ export class ContactComponent implements OnInit {
   ngOnInit(): void {
     this.seoService.setPage({
       title: fromDictionary((dictionary) => dictionary.seo.contactTitle),
-      description: fromDictionary((dictionary) => dictionary.seo.contactDescription),
+      description: fromDictionary(
+        (dictionary) => dictionary.seo.contactDescription,
+      ),
       path: '/contact',
     });
   }

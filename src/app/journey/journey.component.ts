@@ -77,7 +77,9 @@ export class JourneyComponent implements OnInit {
   ngOnInit(): void {
     this.seoService.setPage({
       title: fromDictionary((dictionary) => dictionary.seo.journeyTitle),
-      description: fromDictionary((dictionary) => dictionary.seo.journeyDescription),
+      description: fromDictionary(
+        (dictionary) => dictionary.seo.journeyDescription,
+      ),
       path: '/parcours',
     });
   }

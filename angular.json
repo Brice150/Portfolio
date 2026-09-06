@@ -28,9 +28,7 @@
               "src/manifest.webmanifest",
               "src/llms.txt"
             ],
-            "styles": [
-              "src/styles.scss"
-            ],
+            "styles": ["src/styles.scss"],
             "scripts": []
           },
           "configurations": {
@@ -77,16 +75,29 @@
           "options": {
             "buildTarget": "portfolio:build:development",
             "tsConfig": "tsconfig.spec.json",
-            "runner": "vitest"
+            "runner": "vitest",
+            "coverage": true,
+            "coverageExclude": [
+              "**/*.html",
+              "src/main.ts",
+              "src/main.server.ts",
+              "src/app/app.config.ts",
+              "src/app/app.config.server.ts",
+              "src/app/app.routes.server.ts"
+            ],
+            "coverageReporters": ["text-summary", "html"],
+            "coverageThresholds": {
+              "statements": 94,
+              "branches": 90,
+              "functions": 93,
+              "lines": 95
+            }
           }
         },
         "lint": {
           "builder": "@angular-eslint/builder:lint",
           "options": {
-            "lintFilePatterns": [
-              "src/**/*.ts",
-              "src/**/*.html"
-            ]
+            "lintFilePatterns": ["src/**/*.ts", "src/**/*.html"]
           }
         }
       }

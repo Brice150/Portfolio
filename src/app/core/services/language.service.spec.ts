@@ -8,7 +8,9 @@ const inject = (): LanguageService => TestBed.inject(LanguageService);
 
 beforeEach(() => {
   localStorage.clear();
-  TestBed.configureTestingModule({ providers: [provideZonelessChangeDetection()] });
+  TestBed.configureTestingModule({
+    providers: [provideZonelessChangeDetection()],
+  });
 });
 
 describe('LanguageService', () => {

@@ -1,4 +1,11 @@
-import { ChangeDetectionStrategy, Component, OnInit, computed, inject, input } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  OnInit,
+  computed,
+  inject,
+  input,
+} from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 import { SITE_URL } from '../../shared/data/profile';
 import { projectBySlug, projectsByDate } from '../../shared/data/projects';
@@ -14,7 +21,12 @@ import { RevealDirective } from '../../shared/directives/reveal.directive';
 
 @Component({
   selector: 'app-project-detail',
-  imports: [RouterLink, DeviceShowcaseComponent, IconComponent, RevealDirective],
+  imports: [
+    RouterLink,
+    DeviceShowcaseComponent,
+    IconComponent,
+    RevealDirective,
+  ],
   templateUrl: './project-detail.component.html',
   styleUrl: './project-detail.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,

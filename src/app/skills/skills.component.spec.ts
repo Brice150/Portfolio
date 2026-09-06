@@ -7,8 +7,12 @@ describe('SkillsComponent', () => {
   it('affiche tous les groupes par défaut', async () => {
     const fixture = await mount(SkillsComponent);
 
-    expect(fixture.componentInstance.visibleGroups().length).toBe(skillGroups.length);
-    expect(fixture.componentInstance.filters().length).toBe(skillGroups.length + 1);
+    expect(fixture.componentInstance.visibleGroups().length).toBe(
+      skillGroups.length,
+    );
+    expect(fixture.componentInstance.filters().length).toBe(
+      skillGroups.length + 1,
+    );
   });
 
   it('restreint la liste au groupe sélectionné', async () => {

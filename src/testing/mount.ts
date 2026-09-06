@@ -44,4 +44,6 @@ export const mount = async <T>(
 
 /** Texte rendu, espaces normalisés : les gabarits sont indentés. */
 export const textOf = (fixture: ComponentFixture<unknown>): string =>
-  (fixture.nativeElement as HTMLElement).textContent?.replace(/\s+/g, ' ').trim() ?? '';
+  (fixture.nativeElement as HTMLElement).textContent
+    ?.replace(/\s+/g, ' ')
+    .trim() ?? '';

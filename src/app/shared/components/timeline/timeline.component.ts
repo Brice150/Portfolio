@@ -1,4 +1,10 @@
-import { ChangeDetectionStrategy, Component, booleanAttribute, inject, input } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  booleanAttribute,
+  inject,
+  input,
+} from '@angular/core';
 import { environment } from '../../../../environments/environment';
 import { Milestone, MilestoneKind } from '../../../core/interfaces/experience';
 import { IconName } from '../../../core/interfaces/icon';

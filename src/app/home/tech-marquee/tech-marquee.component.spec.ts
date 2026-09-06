@@ -8,6 +8,11 @@ describe('TechMarqueeComponent', () => {
       inputs: { items: ['Angular', 'Java'], label: 'Technologies' },
     });
 
-    expect(fixture.componentInstance.loop()).toEqual(['Angular', 'Java', 'Angular', 'Java']);
+    expect(fixture.componentInstance.loop()).toEqual([
+      'Angular',
+      'Java',
+      'Angular',
+      'Java',
+    ]);
   });
 });

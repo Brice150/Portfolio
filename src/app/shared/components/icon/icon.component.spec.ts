@@ -7,7 +7,9 @@ describe('IconComponent', () => {
     const fixture = await mount(IconComponent, { inputs: { name: 'home' } });
 
     expect(fixture.componentInstance.icon().d).toBeTruthy();
-    expect((fixture.nativeElement as HTMLElement).querySelector('svg')).toBeTruthy();
+    expect(
+      (fixture.nativeElement as HTMLElement).querySelector('svg'),
+    ).toBeTruthy();
   });
 
   it('reste décorative sans libellé', async () => {

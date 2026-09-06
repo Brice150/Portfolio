@@ -1,4 +1,9 @@
-import { ChangeDetectionStrategy, Component, computed, input } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  computed,
+  input,
+} from '@angular/core';
 import { ICONS, IconDefinition } from '../../data/icons';
 import { IconName } from '../../../core/interfaces/icon';
 

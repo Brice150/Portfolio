@@ -34,7 +34,9 @@ export class ToastService {
 
     const id = ++this.nextId;
 
-    this.toasts.update((list) => [...list, { id, message, tone, icon: ICONS[tone] }].slice(-MAX_STACK));
+    this.toasts.update((list) =>
+      [...list, { id, message, tone, icon: ICONS[tone] }].slice(-MAX_STACK),
+    );
 
     setTimeout(() => this.dismiss(id), DURATION);
   }

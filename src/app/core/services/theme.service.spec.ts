@@ -7,7 +7,9 @@ const inject = (): ThemeService => TestBed.inject(ThemeService);
 
 beforeEach(() => {
   localStorage.clear();
-  TestBed.configureTestingModule({ providers: [provideZonelessChangeDetection()] });
+  TestBed.configureTestingModule({
+    providers: [provideZonelessChangeDetection()],
+  });
 });
 
 describe('ThemeService', () => {

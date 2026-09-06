@@ -26,7 +26,8 @@ export class LanguageSwitcherComponent {
   private readonly languageService = inject(LanguageService);
   private readonly host = inject<ElementRef<HTMLElement>>(ElementRef);
   private readonly injector = inject(Injector);
-  private readonly options = viewChildren<ElementRef<HTMLButtonElement>>('option');
+  private readonly options =
+    viewChildren<ElementRef<HTMLButtonElement>>('option');
 
   readonly open = signal(false);
 
@@ -82,7 +83,9 @@ export class LanguageSwitcherComponent {
     this.open.set(false);
 
     if (options.restoreFocus) {
-      this.host.nativeElement.querySelector<HTMLButtonElement>('.trigger')?.focus();
+      this.host.nativeElement
+        .querySelector<HTMLButtonElement>('.trigger')
+        ?.focus();
     }
   }
 
@@ -103,7 +106,9 @@ export class LanguageSwitcherComponent {
     if (!options.length) return;
 
     const active = options.findIndex(
-      (option) => option.nativeElement === this.host.nativeElement.ownerDocument.activeElement,
+      (option) =>
+        option.nativeElement ===
+        this.host.nativeElement.ownerDocument.activeElement,
     );
     const from = active === -1 ? this.selectedIndex() : active;
 

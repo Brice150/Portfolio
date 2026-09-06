@@ -4,7 +4,9 @@ import { SectionHeaderComponent } from './section-header.component';
 
 describe('SectionHeaderComponent', () => {
   it('affiche le titre demandé', async () => {
-    const fixture = await mount(SectionHeaderComponent, { inputs: { heading: 'Compétences' } });
+    const fixture = await mount(SectionHeaderComponent, {
+      inputs: { heading: 'Compétences' },
+    });
 
     expect(textOf(fixture)).toContain('Compétences');
   });
@@ -14,6 +16,8 @@ describe('SectionHeaderComponent', () => {
       inputs: { heading: 'Compétences', centered: true },
     });
 
-    expect((fixture.nativeElement as HTMLElement).classList).toContain('is-centered');
+    expect((fixture.nativeElement as HTMLElement).classList).toContain(
+      'is-centered',
+    );
   });
 });

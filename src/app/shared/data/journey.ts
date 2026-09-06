@@ -31,7 +31,16 @@ export const milestones: Milestone[] = [
         'Picked the maritime business domain back up from the previous assignment, with no ramp-up time.',
       ],
     ),
-    stack: ['Angular', 'TypeScript', 'RxJS', 'DSFR', 'RGAA', 'Java', 'Spring Boot', 'PostgreSQL'],
+    stack: [
+      'Angular',
+      'TypeScript',
+      'RxJS',
+      'DSFR',
+      'RGAA',
+      'Java',
+      'Spring Boot',
+      'PostgreSQL',
+    ],
   },
   {
     id: 'capgemini',
@@ -88,7 +97,10 @@ export const milestones: Milestone[] = [
     ),
     missions: [
       {
-        label: l('Première mission : intégration de données', 'First assignment: data integration'),
+        label: l(
+          'Première mission : intégration de données',
+          'First assignment: data integration',
+        ),
         period: l('Juil. 2021 - Déc. 2022', 'Jul. 2021 - Dec. 2022'),
         summary: l(
           'Conception et exploitation de flux d’intégration Talend sur des données d’aéronefs militaires : reprises, transformations et contrôles de cohérence sur des volumes conséquents.',
@@ -106,7 +118,14 @@ export const milestones: Milestone[] = [
           'Près de 2 ans sur une application web de gestion de la maintenance de véhicules militaires terrestres, de la conception au maintien en condition opérationnelle.',
           'Nearly 2 years on a web application for managing the maintenance of military ground vehicles, from design through to operational upkeep.',
         ),
-        stack: ['Angular', 'TypeScript', 'RxJS', 'Java', 'Spring Boot', 'Oracle'],
+        stack: [
+          'Angular',
+          'TypeScript',
+          'RxJS',
+          'Java',
+          'Spring Boot',
+          'Oracle',
+        ],
       },
     ],
     achievements: ll(
@@ -130,7 +149,10 @@ export const milestones: Milestone[] = [
     kind: 'turning-point',
     period: l('Avr. - Juil. 2021', 'Apr. - Jul. 2021'),
     startYear: 2021,
-    title: l('La bascule vers le développement', 'The switch to software development'),
+    title: l(
+      'La bascule vers le développement',
+      'The switch to software development',
+    ),
     organisation: l('Reconversion professionnelle', 'Career change'),
     location: l('À distance', 'Remote'),
     summary: l(
@@ -156,7 +178,10 @@ export const milestones: Milestone[] = [
     kind: 'education',
     period: l('Sept. 2017 - Fév. 2021', 'Sep. 2017 - Feb. 2021'),
     startYear: 2017,
-    title: l('Double diplôme d’ingénieur aérospatial', 'Dual aerospace engineering degree'),
+    title: l(
+      'Double diplôme d’ingénieur aérospatial',
+      'Dual aerospace engineering degree',
+    ),
     organisation: l('ISAE-ENSMA', 'ISAE-ENSMA'),
     location: l('Poitiers', 'Poitiers, France'),
     summary: l(
@@ -165,7 +190,10 @@ export const milestones: Milestone[] = [
     ),
     missions: [
       {
-        label: l('Stage ingénieur aérothermique, Safran', 'Aerothermal engineering internship, Safran'),
+        label: l(
+          'Stage ingénieur aérothermique, Safran',
+          'Aerothermal engineering internship, Safran',
+        ),
         period: l('Juil. - Déc. 2020', 'Jul. - Dec. 2020'),
         summary: l(
           'Modélisation CFD en 1D, 2D et 3D de cavités de turbines haute pression, avec pour objectif de limiter l’élévation de température des écoulements. 6 mois en Seine-et-Marne, sur un sujet directement industriel.',
@@ -183,7 +211,12 @@ export const milestones: Milestone[] = [
           'Création d’un modèle CFD pour l’étude du flux radial de purge dans les cavités de turbines haute pression, au Kungliga Tekniska högskolan de Stockholm, en Suède. 4 mois de travail et de vie entièrement en anglais.',
           'Building a CFD model to study radial purge flow in high-pressure turbine cavities, at the Kungliga Tekniska högskolan in Stockholm, Sweden. 4 months of work and daily life entirely in English.',
         ),
-        stack: ['CFD', 'Simulation numérique', 'Aérothermique', 'Anglais professionnel'],
+        stack: [
+          'CFD',
+          'Simulation numérique',
+          'Aérothermique',
+          'Anglais professionnel',
+        ],
       },
     ],
     achievements: ll(
@@ -218,7 +251,10 @@ export const certifications: Certification[] = [
     icon: 'server',
   },
   {
-    title: l('Double diplôme d’ingénieur aérospatial', 'Dual aerospace engineering degree'),
+    title: l(
+      'Double diplôme d’ingénieur aérospatial',
+      'Dual aerospace engineering degree',
+    ),
     issuer: 'ISAE-ENSMA',
     year: '2021',
     icon: 'graduation',

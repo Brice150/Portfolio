@@ -6,7 +6,9 @@ import { ToastService } from './toast.service';
 const inject = (): ToastService => TestBed.inject(ToastService);
 
 beforeEach(() =>
-  TestBed.configureTestingModule({ providers: [provideZonelessChangeDetection()] }),
+  TestBed.configureTestingModule({
+    providers: [provideZonelessChangeDetection()],
+  }),
 );
 
 describe('ToastService', () => {
@@ -16,15 +18,23 @@ describe('ToastService', () => {
     service.success('ok');
     service.error('ko');
 
-    expect(service.toasts().map((toast) => toast.icon)).toEqual(['check', 'alert']);
+    expect(service.toasts().map((toast) => toast.icon)).toEqual([
+      'check',
+      'alert',
+    ]);
   });
 
   it('ne conserve que les trois derniers messages', () => {
     const service = inject();
 
-    for (const message of ['un', 'deux', 'trois', 'quatre']) service.show(message);
+    for (const message of ['un', 'deux', 'trois', 'quatre'])
+      service.show(message);
 
-    expect(service.toasts().map((toast) => toast.message)).toEqual(['deux', 'trois', 'quatre']);
+    expect(service.toasts().map((toast) => toast.message)).toEqual([
+      'deux',
+      'trois',
+      'quatre',
+    ]);
   });
 
   it('retire le message demandé', () => {

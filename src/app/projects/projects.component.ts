@@ -77,7 +77,9 @@ export class ProjectsComponent implements OnInit {
   ngOnInit(): void {
     this.seoService.setPage({
       title: fromDictionary((dictionary) => dictionary.seo.projectsTitle),
-      description: fromDictionary((dictionary) => dictionary.seo.projectsDescription),
+      description: fromDictionary(
+        (dictionary) => dictionary.seo.projectsDescription,
+      ),
       path: '/projets',
     });
   }

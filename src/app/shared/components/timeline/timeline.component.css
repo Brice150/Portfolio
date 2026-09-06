@@ -14,7 +14,12 @@
   left: 1.05rem;
   width: 2px;
   border-radius: 2px;
-  background: linear-gradient(180deg, var(--accent), var(--border) 55%, transparent);
+  background: linear-gradient(
+    180deg,
+    var(--accent),
+    var(--border) 55%,
+    transparent
+  );
 }
 
 .entry {

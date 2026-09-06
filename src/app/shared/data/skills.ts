@@ -60,7 +60,10 @@ export const skillGroups: SkillGroup[] = [
         ),
       },
       {
-        name: l('DSFR (Design Système de l’État)', 'DSFR (French State Design System)'),
+        name: l(
+          'DSFR (Design Système de l’État)',
+          'DSFR (French State Design System)',
+        ),
         level: 75,
         note: l(
           'Le design system imposé aux sites de l’État. Composants, typographies et contrastes conformes, intégrés sans réécrire l’existant.',
@@ -227,7 +230,10 @@ export const practices: Practice[] = [
   },
   {
     icon: 'code',
-    title: l('Détection de changement maîtrisée', 'Change detection under control'),
+    title: l(
+      'Détection de changement maîtrisée',
+      'Change detection under control',
+    ),
     description: l(
       'OnPush sur tous les composants, état porté par des signals, application zoneless. Mis en place sur ce site, et prévu pour les prochains projets.',
       'OnPush on every component, state carried by signals, a zoneless application. Applied on this site, and planned for the next projects.',

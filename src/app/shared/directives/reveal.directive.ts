@@ -16,7 +16,10 @@ import {
   },
 })
 export class RevealDirective implements OnDestroy {
-  readonly delay = input<number, unknown>(0, { alias: 'appReveal', transform: toDelay });
+  readonly delay = input<number, unknown>(0, {
+    alias: 'appReveal',
+    transform: toDelay,
+  });
 
   private readonly host = inject(ElementRef<HTMLElement>);
   private observer?: IntersectionObserver;

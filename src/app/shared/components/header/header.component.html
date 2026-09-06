@@ -4,7 +4,13 @@
   </div>
 
   <div class="inner shell-wide">
-    <a routerLink="/" class="brand" [attr.aria-label]="format(t().header.brandHome, { name: profile.fullName })">
+    <a
+      routerLink="/"
+      class="brand"
+      [attr.aria-label]="
+        format(t().header.brandHome, { name: profile.fullName })
+      "
+    >
       <img
         [src]="imagePath + 'logo.webp'"
         alt=""
@@ -49,7 +55,9 @@
         (click)="toggleMenu()"
         [attr.aria-expanded]="menuOpen()"
         aria-controls="menu-mobile"
-        [attr.aria-label]="menuOpen() ? t().header.closeMenu : t().header.openMenu"
+        [attr.aria-label]="
+          menuOpen() ? t().header.closeMenu : t().header.openMenu
+        "
         [attr.title]="menuOpen() ? t().header.closeMenu : t().header.openMenu"
       >
         <span class="burger-line" aria-hidden="true"></span>
@@ -59,7 +67,12 @@
   </div>
 </header>
 
-<div class="overlay" [class.is-open]="menuOpen()" (click)="closeMenu()" aria-hidden="true"></div>
+<div
+  class="overlay"
+  [class.is-open]="menuOpen()"
+  (click)="closeMenu()"
+  aria-hidden="true"
+></div>
 
 <div
   id="menu-mobile"

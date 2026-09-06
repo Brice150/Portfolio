@@ -11,7 +11,11 @@
   inset: -55% 25% auto -12%;
   aspect-ratio: 1;
   border-radius: 50%;
-  background: radial-gradient(closest-side, var(--accent-soft), transparent 70%);
+  background: radial-gradient(
+    closest-side,
+    var(--accent-soft),
+    transparent 70%
+  );
   pointer-events: none;
 }
 

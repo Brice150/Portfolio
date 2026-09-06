@@ -5,7 +5,11 @@ import { PageHeroComponent } from './page-hero.component';
 describe('PageHeroComponent', () => {
   it('affiche le surtitre, le titre et le chapô', async () => {
     const fixture = await mount(PageHeroComponent, {
-      inputs: { eyebrow: 'Parcours', heading: 'De l’aérospatial au web', lead: 'Un chapô' },
+      inputs: {
+        eyebrow: 'Parcours',
+        heading: 'De l’aérospatial au web',
+        lead: 'Un chapô',
+      },
     });
 
     expect(textOf(fixture)).toContain('Parcours');

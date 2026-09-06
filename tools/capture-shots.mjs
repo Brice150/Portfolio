@@ -20,7 +20,14 @@ const CHROME_CANDIDATES = [
   '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',
 ];
 
-const OUTPUT_DIR = join(process.cwd(), 'src', 'assets', 'images', 'projects', 'shots');
+const OUTPUT_DIR = join(
+  process.cwd(),
+  'src',
+  'assets',
+  'images',
+  'projects',
+  'shots',
+);
 const PORT = 9333;
 
 const TARGETS = [
@@ -41,7 +48,9 @@ const MAX_HEIGHT = { desktop: 3400, mobile: 2600 };
 const chromePath = CHROME_CANDIDATES.find((candidate) => existsSync(candidate));
 
 if (!chromePath) {
-  console.error('Chrome introuvable. Renseignez son chemin dans CHROME_CANDIDATES.');
+  console.error(
+    'Chrome introuvable. Renseignez son chemin dans CHROME_CANDIDATES.',
+  );
   process.exit(1);
 }
 
@@ -84,7 +93,12 @@ try {
       process.stdout.write(`→ ${target.slug} (${variant}) … `);
 
       try {
-        const data = await capture(browserWsUrl, target.url, viewport, MAX_HEIGHT[variant]);
+        const data = await capture(
+          browserWsUrl,
+          target.url,
+          viewport,
+          MAX_HEIGHT[variant],
+        );
         await writeFile(file, Buffer.from(data, 'base64'));
         console.log('ok');
       } catch (error) {
@@ -112,7 +126,9 @@ async function waitForDevTools() {
 
 async function capture(browserWsUrl, url, viewport, maxHeight) {
   const browser = await connect(browserWsUrl);
-  const { targetId } = await browser.send('Target.createTarget', { url: 'about:blank' });
+  const { targetId } = await browser.send('Target.createTarget', {
+    url: 'about:blank',
+  });
 
   try {
     const { sessionId } = await browser.send('Target.attachToTarget', {
@@ -198,7 +214,11 @@ async function connect(wsUrl) {
   const socket = new WebSocket(wsUrl);
   await new Promise((resolve, reject) => {
     socket.addEventListener('open', resolve, { once: true });
-    socket.addEventListener('error', () => reject(new Error('WebSocket refusé')), { once: true });
+    socket.addEventListener(
+      'error',
+      () => reject(new Error('WebSocket refusé')),
+      { once: true },
+    );
   });
 
   let nextId = 1;
@@ -211,7 +231,9 @@ async function connect(wsUrl) {
     if (message.id && pending.has(message.id)) {
       const { resolve, reject } = pending.get(message.id);
       pending.delete(message.id);
-      message.error ? reject(new Error(message.error.message)) : resolve(message.result);
+      message.error
+        ? reject(new Error(message.error.message))
+        : resolve(message.result);
       return;
     }
 

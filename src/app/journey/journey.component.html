@@ -28,7 +28,11 @@
   />
 
   <ul class="certifications">
-    @for (certification of certifications; track certification.issuer; let i = $index) {
+    @for (
+      certification of certifications;
+      track certification.issuer;
+      let i = $index
+    ) {
       <li class="certification card-hover" [appReveal]="i * 80">
         <span class="cert-icon" aria-hidden="true">
           <app-icon [name]="certification.icon" size="1.2em" />

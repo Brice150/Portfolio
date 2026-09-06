@@ -1,5 +1,8 @@
 import { provideHttpClient } from '@angular/common/http';
-import { HttpTestingController, provideHttpClientTesting } from '@angular/common/http/testing';
+import {
+  HttpTestingController,
+  provideHttpClientTesting,
+} from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
 import { afterEach, describe, expect, it } from 'vitest';
 import { mount } from '../../testing/mount';
@@ -46,7 +49,10 @@ describe('ContactComponent', () => {
 
     TestBed.inject(HttpTestingController)
       .expectOne((candidate) => candidate.method === 'POST')
-      .flush('Trop de requêtes', { status: 429, statusText: 'Too Many Requests' });
+      .flush('Trop de requêtes', {
+        status: 429,
+        statusText: 'Too Many Requests',
+      });
 
     expect(fixture.componentInstance.status()).toBe('error');
     expect(fixture.componentInstance.errorMessage()).toBeTruthy();

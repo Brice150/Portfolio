@@ -1,4 +1,9 @@
-import { ChangeDetectionStrategy, Component, OnInit, inject } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  OnInit,
+  inject,
+} from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { navItems } from '../shared/data/profile';
 import { fromDictionary } from '../core/i18n/localize';
@@ -25,7 +30,9 @@ export class NotFoundComponent implements OnInit {
   ngOnInit(): void {
     this.seoService.setPage({
       title: fromDictionary((dictionary) => dictionary.seo.notFoundTitle),
-      description: fromDictionary((dictionary) => dictionary.seo.notFoundDescription),
+      description: fromDictionary(
+        (dictionary) => dictionary.seo.notFoundDescription,
+      ),
       path: '/not-found',
       noindex: true,
     });

@@ -63,14 +63,23 @@ export class SeoService {
       content: config.noindex ? ROBOTS_EXCLUDED : ROBOTS_INDEXED,
     });
 
-    this.meta.updateTag({ property: 'og:type', content: config.type ?? 'website' });
+    this.meta.updateTag({
+      property: 'og:type',
+      content: config.type ?? 'website',
+    });
     this.meta.updateTag({ property: 'og:title', content: title });
     this.meta.updateTag({ property: 'og:description', content: description });
     this.meta.updateTag({ property: 'og:url', content: url });
     this.meta.updateTag({ property: 'og:image', content: image });
-    this.meta.updateTag({ property: 'og:locale', content: locale.replace('-', '_') });
+    this.meta.updateTag({
+      property: 'og:locale',
+      content: locale.replace('-', '_'),
+    });
 
-    this.meta.updateTag({ name: 'twitter:card', content: 'summary_large_image' });
+    this.meta.updateTag({
+      name: 'twitter:card',
+      content: 'summary_large_image',
+    });
     this.meta.updateTag({ name: 'twitter:title', content: title });
     this.meta.updateTag({ name: 'twitter:description', content: description });
     this.meta.updateTag({ name: 'twitter:image', content: image });

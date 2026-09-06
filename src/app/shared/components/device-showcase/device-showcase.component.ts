@@ -34,7 +34,8 @@ export class DeviceShowcaseComponent {
 
   readonly displayUrl = computed(() => {
     const project = this.project();
-    const live = project.links.live ?? (project.slug === SELF_SLUG ? SITE_URL : undefined);
+    const live =
+      project.links.live ?? (project.slug === SELF_SLUG ? SITE_URL : undefined);
 
     if (!live) return `${project.slug}.local`;
 

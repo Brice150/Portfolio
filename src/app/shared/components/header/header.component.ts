@@ -7,7 +7,12 @@ import {
   inject,
   signal,
 } from '@angular/core';
-import { NavigationEnd, Router, RouterLink, RouterLinkActive } from '@angular/router';
+import {
+  NavigationEnd,
+  Router,
+  RouterLink,
+  RouterLinkActive,
+} from '@angular/router';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { filter } from 'rxjs/operators';
 import { environment } from '../../../../environments/environment';
@@ -65,7 +70,8 @@ export class HeaderComponent {
     if (!view) return;
 
     const offset = view.scrollY;
-    const height = this.document.documentElement.scrollHeight - view.innerHeight;
+    const height =
+      this.document.documentElement.scrollHeight - view.innerHeight;
 
     this.scrolled.set(offset > 12);
     this.progress.set(height > 0 ? Math.min(100, (offset / height) * 100) : 0);

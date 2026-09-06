@@ -1,7 +1,18 @@
 import { A11yModule } from '@angular/cdk/a11y';
-import { ChangeDetectionStrategy, Component, HostListener, computed, inject, signal } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  HostListener,
+  computed,
+  inject,
+  signal,
+} from '@angular/core';
 import { LanguageService } from '../../../core/services/language.service';
-import { AccentName, ThemeMode, ThemeService } from '../../../core/services/theme.service';
+import {
+  AccentName,
+  ThemeMode,
+  ThemeService,
+} from '../../../core/services/theme.service';
 import { IconComponent } from '../icon/icon.component';
 
 @Component({

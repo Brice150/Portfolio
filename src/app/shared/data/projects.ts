@@ -32,11 +32,23 @@ export const projects: Project[] = [
       'Stripe',
     ],
     facts: [
-      { label: l('Durée (temps libre)', 'Duration (spare time)'), value: l('1 an', '1 year') },
+      {
+        label: l('Durée (temps libre)', 'Duration (spare time)'),
+        value: l('1 an', '1 year'),
+      },
       { label: l('Espaces', 'Spaces'), value: l('19', '19') },
-      { label: l('Profils', 'Profiles'), value: l('6 par compte', '6 per account') },
-      { label: l('Assistant', 'Assistant'), value: l('IA intégrée', 'Built-in AI') },
-      { label: l('Hors ligne', 'Offline'), value: l('Cache IndexedDB', 'IndexedDB cache') },
+      {
+        label: l('Profils', 'Profiles'),
+        value: l('6 par compte', '6 per account'),
+      },
+      {
+        label: l('Assistant', 'Assistant'),
+        value: l('IA intégrée', 'Built-in AI'),
+      },
+      {
+        label: l('Hors ligne', 'Offline'),
+        value: l('Cache IndexedDB', 'IndexedDB cache'),
+      },
     ],
     context: l(
       'Gérer son quotidien suppose aujourd’hui de jongler entre une dizaine d’applications qui ne communiquent jamais entre elles. Life Rise part de ce constat : un seul endroit pour suivre ce qui compte, avec une donnée unifiée, une expérience cohérente d’un espace à l’autre, et la possibilité de partager avec son conjoint, sa famille ou sa colocation.',
@@ -44,7 +56,10 @@ export const projects: Project[] = [
     ),
     sections: [
       {
-        title: l('Une base commune, 19 espaces', 'One shared foundation, 19 spaces'),
+        title: l(
+          'Une base commune, 19 espaces',
+          'One shared foundation, 19 spaces',
+        ),
         body: l(
           'Chaque domaine (nourriture, fitness, finance, organisation, inventaire, voyages, prévisions) est une feature Angular chargée en lazy loading, avec son propre modèle et ses propres services. Le noyau applicatif porte l’authentification, l’accès Firebase, le thème et les composants partagés. Ce découpage permet d’ajouter un espace sans toucher aux autres, et de garder un bundle initial léger malgré l’étendue fonctionnelle.',
           'Each domain (food, fitness, finance, organisation, inventory, travel, forecasts) is a lazy-loaded Angular feature with its own model and its own services. The application core carries authentication, Firebase access, theming and shared components. That split makes it possible to add a space without touching the others, and to keep the initial bundle light despite the functional breadth.',
@@ -61,14 +76,20 @@ export const projects: Project[] = [
         ),
       },
       {
-        title: l('Le collectif, pas seulement le solo', 'Built for groups, not just for one'),
+        title: l(
+          'Le collectif, pas seulement le solo',
+          'Built for groups, not just for one',
+        ),
         body: l(
           'Jusqu’à 6 profils par compte, avec partage de recettes, de séances de sport et d’éléments d’inventaire, gestion à plusieurs des tâches et des repas, et une messagerie temps réel avec réactions. Les finances, elles, restent strictement personnelles à chaque profil. C’est la partie qui a demandé le plus de soin sur le modèle de données : décider, domaine par domaine, ce qui se partage et ce qui ne se partage pas.',
           'Up to 6 profiles per account, with sharing of recipes, workouts and inventory items, collaborative management of tasks and meals, and real-time messaging with reactions. Finances, by contrast, stay strictly private to each profile. That is the part that demanded the most care in the data model: deciding, domain by domain, what is shared and what is not.',
         ),
       },
       {
-        title: l('Utilisable même sans réseau', 'Usable even without a network'),
+        title: l(
+          'Utilisable même sans réseau',
+          'Usable even without a network',
+        ),
         body: l(
           'Les données déjà consultées sont conservées dans IndexedDB, côté navigateur. L’application s’ouvre donc sur du contenu immédiat plutôt que sur un écran de chargement, la navigation reste possible quand la connexion tombe, et les modifications faites hors ligne repartent vers Firestore dès son retour. Sur un modèle facturé à la lecture, c’est aussi une économie directe : les mêmes documents ne sont pas rechargés à chaque changement d’écran.',
           'Data already viewed is kept in IndexedDB, in the browser. The application therefore opens on real content rather than a loading screen, navigation still works when the connection drops, and changes made offline are pushed back to Firestore as soon as it returns. On a pricing model billed per read, that is also a direct saving: the same documents are not fetched again on every screen change.',
@@ -141,11 +162,23 @@ export const projects: Project[] = [
       'IndexedDB',
     ],
     facts: [
-      { label: l('Durée (temps libre)', 'Duration (spare time)'), value: l('1 an', '1 year') },
+      {
+        label: l('Durée (temps libre)', 'Duration (spare time)'),
+        value: l('1 an', '1 year'),
+      },
       { label: l('Jeux', 'Games'), value: l('6', '6') },
-      { label: l('Détection', 'Detection'), value: l('Zoneless + OnPush', 'Zoneless + OnPush') },
-      { label: l('Arbitrage', 'Arbitration'), value: l('Côté serveur', 'Server-side') },
-      { label: l('Dictionnaire', 'Dictionary'), value: l('19 000 mots', '19,000 words') },
+      {
+        label: l('Détection', 'Detection'),
+        value: l('Zoneless + OnPush', 'Zoneless + OnPush'),
+      },
+      {
+        label: l('Arbitrage', 'Arbitration'),
+        value: l('Côté serveur', 'Server-side'),
+      },
+      {
+        label: l('Dictionnaire', 'Dictionary'),
+        value: l('19 000 mots', '19,000 words'),
+      },
     ],
     context: l(
       'Game Time est né en 2023 comme un Motus en ligne à deux joueurs. La refonte de 2025-2026 en a fait autre chose : un catalogue de six jeux sur un moteur unique, une partie dont l’issue ne dépend plus de ce que le navigateur déclare, et une application installable qui se met à jour sans interrompre une manche.',
@@ -160,7 +193,10 @@ export const projects: Project[] = [
         ),
       },
       {
-        title: l('Ne plus croire le client sur parole', 'No longer trusting the client'),
+        title: l(
+          'Ne plus croire le client sur parole',
+          'No longer trusting the client',
+        ),
         body: l(
           'Au départ, le navigateur annonçait lui-même s’il avait gagné : il suffisait d’appeler la fonction avec « gagné » pour remplir son compteur sans jouer. Il envoie désormais le mot saisi, pas un verdict. Une Cloud Function le compare à la réponse dans une transaction, vérifie que la manche soumise est bien la suivante, et écrit seule les médailles. Les règles Firestore ferment au joueur ses statistiques, ses amis et son rôle.',
           'At first the browser announced its own win: calling the function with “won” was enough to fill your counter without playing. It now sends the word typed, not a verdict. A Cloud Function compares it to the answer inside a transaction, checks that the submitted round really is the next one, and is alone in writing medals. Firestore rules close off a player’s own statistics, friends and role.',
@@ -174,7 +210,10 @@ export const projects: Project[] = [
         ),
       },
       {
-        title: l('Les détails qui font qu’on revient', 'The details that bring people back'),
+        title: l(
+          'Les détails qui font qu’on revient',
+          'The details that bring people back',
+        ),
         body: l(
           'Le code de salon fait quatre caractères, dont aucun ne prête à confusion à voix haute : ni O ni I, ni 0 ni 1. On rejoint par ce code, par un lien, par un QR code ou depuis sa liste d’amis. Une invitation déclenche un toast si l’onglet est ouvert, une notification système s’il est en arrière-plan, une push s’il est fermé. Un interrupteur de confidentialité masque ses parties sans rendre injoignable.',
           'The room code is four characters long, none of which can be confused when read aloud: no O, no I, no 0, no 1. You join with that code, a link, a QR code or from your friends list. An invitation triggers a toast if the tab is open, a system notification if it is in the background, a push if it is closed. A privacy switch hides your games without making you unreachable.',
@@ -235,10 +274,19 @@ export const projects: Project[] = [
     },
     stack: ['Angular', 'TypeScript'],
     facts: [
-      { label: l('Durée (temps libre)', 'Duration (spare time)'), value: l('2 jours', '2 days') },
+      {
+        label: l('Durée (temps libre)', 'Duration (spare time)'),
+        value: l('2 jours', '2 days'),
+      },
       { label: l('Nature', 'Nature'), value: l('Calculateur', 'Calculator') },
-      { label: l('Contexte', 'Context'), value: l('Rendre service', 'Helping out') },
-      { label: l('Détection', 'Detection'), value: l('Zoneless + OnPush', 'Zoneless + OnPush') },
+      {
+        label: l('Contexte', 'Context'),
+        value: l('Rendre service', 'Helping out'),
+      },
+      {
+        label: l('Détection', 'Detection'),
+        value: l('Zoneless + OnPush', 'Zoneless + OnPush'),
+      },
     ],
     context: l(
       'Une connaissance en alternance marketing avait besoin d’un simulateur d’aides à la rénovation énergétique pour son projet, sans avoir les moyens de le faire développer. Le sujet était clair, le besoin réel et le délai court : deux jours pour livrer quelque chose d’utilisable plutôt qu’une maquette.',
@@ -246,21 +294,30 @@ export const projects: Project[] = [
     ),
     sections: [
       {
-        title: l('Traduire un barème en calcul', 'Turning a grant scale into a calculation'),
+        title: l(
+          'Traduire un barème en calcul',
+          'Turning a grant scale into a calculation',
+        ),
         body: l(
           'Les dispositifs d’aide à la rénovation énergétique sont nombreux, cumulables et conditionnés à des seuils. L’essentiel du travail a consisté à transcrire ces barèmes en calculs justes à partir des informations saisies. Le même exercice, à une tout autre échelle, m’attendait 3 ans plus tard avec la taxation 2026 en mission.',
           'Energy renovation grants are numerous, can be combined and are conditional on thresholds. Most of the work consisted in transcribing those scales into correct calculations from the information entered. The same exercise, on an entirely different scale, was waiting for me 3 years later with the 2026 taxation scheme on assignment.',
         ),
       },
       {
-        title: l('Livrer vite, sans sur-concevoir', 'Ship fast, without over-engineering'),
+        title: l(
+          'Livrer vite, sans sur-concevoir',
+          'Ship fast, without over-engineering',
+        ),
         body: l(
           'Deux jours imposent des arbitrages : pas d’architecture élaborée, pas de fonctionnalité en trop, juste le chemin le plus court entre les questions posées et le montant affiché. C’est aussi un rappel utile qu’un outil simple qui rend service vaut mieux qu’un projet ambitieux jamais terminé.',
           'Two days force trade-offs: no elaborate architecture, no extra features, just the shortest path between the questions asked and the amount displayed. It is also a useful reminder that a simple tool that helps beats an ambitious project that never ships.',
         ),
       },
       {
-        title: l('Remis à niveau, sans réécriture', 'Brought up to date, without a rewrite'),
+        title: l(
+          'Remis à niveau, sans réécriture',
+          'Brought up to date, without a rewrite',
+        ),
         body: l(
           'Le simulateur a depuis suivi mes pratiques actuelles : détection de changement sans Zone.js, OnPush sur tous les composants, et pages prérendues au build servies en statique sur GitHub Pages, l’application prenant le relais côté navigateur. Ni les barèmes ni le parcours de questions n’ont bougé : le projet était resté assez simple pour absorber la mise à niveau.',
           'The simulator has since followed my current practices: change detection without Zone.js, OnPush on every component, and pages prerendered at build time then served statically on GitHub Pages, with the application taking over in the browser. Neither the grant scales nor the question flow moved: the project had stayed simple enough to absorb the upgrade.',
@@ -316,10 +373,19 @@ export const projects: Project[] = [
       'PostgreSQL',
     ],
     facts: [
-      { label: l('Durée (temps libre)', 'Duration (spare time)'), value: l('1 an', '1 year') },
+      {
+        label: l('Durée (temps libre)', 'Duration (spare time)'),
+        value: l('1 an', '1 year'),
+      },
       { label: l('Nature', 'Nature'), value: l('Full-stack', 'Full-stack') },
-      { label: l('Périmètre', 'Scope'), value: l('Front, Back et BDD', 'Front, back and database') },
-      { label: l('Cœur du sujet', 'Core challenge'), value: l('Algorithme de sélection', 'Matching algorithm') },
+      {
+        label: l('Périmètre', 'Scope'),
+        value: l('Front, Back et BDD', 'Front, back and database'),
+      },
+      {
+        label: l('Cœur du sujet', 'Core challenge'),
+        value: l('Algorithme de sélection', 'Matching algorithm'),
+      },
     ],
     context: l(
       'Le projet qui tient le front et le back en même temps : un front Angular exigeant en interactions, et un back Java/Spring avec une vraie modélisation relationnelle. Une application de rencontre est un excellent prétexte : elle concentre authentification, upload, filtrage, appariement et temps réel.',
@@ -334,7 +400,10 @@ export const projects: Project[] = [
         ),
       },
       {
-        title: l('Pourquoi il n’est plus en ligne', 'Why it is no longer online'),
+        title: l(
+          'Pourquoi il n’est plus en ligne',
+          'Why it is no longer online',
+        ),
         body: l(
           'Il l’a été. Je l’ai retiré pour deux raisons : l’hébergement avait un coût que rien ne justifiait pour une application que je n’utilisais pas au quotidien, et les applications de rencontre actuelles vont plus loin : elles analysent les photos par intelligence artificielle pour établir un score d’attractivité, ce que mon algorithme ne fait pas. Le code reste ouvert en lecture sur GitHub.',
           'It was, for a while. I took it down for two reasons: hosting had a cost that nothing justified for an application I was not using day to day, and today’s dating applications go further — they analyse photos with AI to produce an attractiveness score, which my algorithm does not do. The code remains open to read on GitHub.',
@@ -383,9 +452,15 @@ export const projects: Project[] = [
     },
     stack: ['Angular', 'TypeScript', 'Angular Material'],
     facts: [
-      { label: l('Durée (temps libre)', 'Duration (spare time)'), value: l('2 semaines', '2 weeks') },
+      {
+        label: l('Durée (temps libre)', 'Duration (spare time)'),
+        value: l('2 semaines', '2 weeks'),
+      },
       { label: l('Thèmes', 'Themes'), value: l('8 variantes', '8 variants') },
-      { label: l('Détection', 'Detection'), value: l('Zoneless + OnPush', 'Zoneless + OnPush') },
+      {
+        label: l('Détection', 'Detection'),
+        value: l('Zoneless + OnPush', 'Zoneless + OnPush'),
+      },
       { label: l('Référentiel', 'Standard'), value: l('RGAA', 'RGAA') },
     ],
     context: l(
@@ -408,7 +483,10 @@ export const projects: Project[] = [
         ),
       },
       {
-        title: l('Accessibilité dès la conception', 'Accessibility from the design stage'),
+        title: l(
+          'Accessibilité dès la conception',
+          'Accessibility from the design stage',
+        ),
         body: l(
           'Structure sémantique, lien d’évitement, navigation clavier complète, contrastes vérifiés, préférences de mouvement respectées, et un panneau de réglages qui laisse la main au visiteur sur le thème, la couleur d’accent et les animations. Les règles d’accessibilité des templates sont vérifiées par ESLint à chaque build.',
           'Semantic structure, a skip link, full keyboard navigation, verified contrast, motion preferences honoured, and a settings panel that hands the visitor control over theme, accent colour and animations. Template accessibility rules are checked by ESLint on every build.',
@@ -443,7 +521,9 @@ const lastYear = (project: Project): number => {
 };
 
 export const projectsByDate = (): Project[] =>
-  [...projects].sort((a, b) => lastYear(b) - lastYear(a) || b.startYear - a.startYear);
+  [...projects].sort(
+    (a, b) => lastYear(b) - lastYear(a) || b.startYear - a.startYear,
+  );
 
 export const projectBySlug = (slug: string): Project | undefined =>
   projects.find((project) => project.slug === slug);

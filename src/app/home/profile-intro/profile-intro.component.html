@@ -43,10 +43,14 @@
       [appCopyText]="profile.email"
       [appCopyLabel]="t().common.emailCopied"
       #copyMail="appCopyText"
-      [attr.title]="copyMail.copied() ? t().common.emailCopied : t().common.copyEmail"
+      [attr.title]="
+        copyMail.copied() ? t().common.emailCopied : t().common.copyEmail
+      "
     >
       <app-icon
-        [name]="copyMail.copied() ? 'check' : copyMail.failed() ? 'alert' : 'copy'"
+        [name]="
+          copyMail.copied() ? 'check' : copyMail.failed() ? 'alert' : 'copy'
+        "
         size="1.05em"
       />
       <span>

@@ -7,7 +7,9 @@ describe('JourneyComponent', () => {
   it('affiche tous les jalons par défaut', async () => {
     const fixture = await mount(JourneyComponent);
 
-    expect(fixture.componentInstance.visibleMilestones().length).toBe(milestones.length);
+    expect(fixture.componentInstance.visibleMilestones().length).toBe(
+      milestones.length,
+    );
   });
 
   it('ne garde que les jalons de la nature filtrée', async () => {

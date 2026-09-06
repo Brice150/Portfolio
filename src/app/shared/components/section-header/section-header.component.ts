@@ -1,4 +1,9 @@
-import { ChangeDetectionStrategy, Component, booleanAttribute, input } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  booleanAttribute,
+  input,
+} from '@angular/core';
 
 @Component({
   selector: 'app-section-header',

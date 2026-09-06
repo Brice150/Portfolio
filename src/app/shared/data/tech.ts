@@ -8,4 +8,5 @@ const TECH_LABELS: Record<string, Localized> = {
   'Anglais professionnel': l('Anglais professionnel', 'Professional English'),
 };
 
-export const techLabel = (name: string, lang: Lang): string => TECH_LABELS[name]?.[lang] ?? name;
+export const techLabel = (name: string, lang: Lang): string =>
+  TECH_LABELS[name]?.[lang] ?? name;

@@ -13,7 +13,9 @@ describe('FilterBarComponent', () => {
       inputs: { options, active: 'work', label: 'Filtrer' },
     });
 
-    const buttons = (fixture.nativeElement as HTMLElement).querySelectorAll('button');
+    const buttons = (fixture.nativeElement as HTMLElement).querySelectorAll(
+      'button',
+    );
 
     expect(buttons.length).toBe(2);
     expect(buttons[1].getAttribute('aria-pressed')).toBe('true');
@@ -26,7 +28,9 @@ describe('FilterBarComponent', () => {
 
     let emitted = '';
     fixture.componentInstance.changed.subscribe((value) => (emitted = value));
-    (fixture.nativeElement as HTMLElement).querySelectorAll('button')[1].click();
+    (fixture.nativeElement as HTMLElement)
+      .querySelectorAll('button')[1]
+      .click();
 
     expect(emitted).toBe('work');
   });

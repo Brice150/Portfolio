@@ -17,6 +17,8 @@ describe('NotFoundComponent', () => {
   it('se retire de l’indexation', async () => {
     await mount(NotFoundComponent);
 
-    expect(TestBed.inject(Meta).getTag('name="robots"')?.content).toContain('noindex');
+    expect(TestBed.inject(Meta).getTag('name="robots"')?.content).toContain(
+      'noindex',
+    );
   });
 });

@@ -1,11 +1,16 @@
 import { l } from '../../core/i18n/lang';
-import { Highlight, NavItem, WorkPrinciple } from '../../core/interfaces/content';
+import {
+  Highlight,
+  NavItem,
+  WorkPrinciple,
+} from '../../core/interfaces/content';
 
 export const SITE_URL = 'https://portfolio-brice.web.app';
 
 export const CAREER_START = 2021;
 
-export const yearsOfExperience = (): number => new Date().getFullYear() - CAREER_START;
+export const yearsOfExperience = (): number =>
+  new Date().getFullYear() - CAREER_START;
 
 export const profile = {
   firstName: 'Brice',
@@ -13,16 +18,28 @@ export const profile = {
   get fullName(): string {
     return `${this.firstName} ${this.lastName}`;
   },
-  role: l('Développeur Full-Stack Angular / Java', 'Full-Stack Angular / Java Developer'),
+  role: l(
+    'Développeur Full-Stack Angular / Java',
+    'Full-Stack Angular / Java Developer',
+  ),
   email: 'brice.lecomte0@gmail.com',
   linkedin: 'https://www.linkedin.com/in/brice-lecomte/',
   github: 'https://github.com/Brice150',
   /** Le CV existe dans les deux langues : le lien suit celle affichée. */
-  cv: l('./assets/files/CV Brice Lecomte.pdf', './assets/files/Brice Lecomte Resume.pdf'),
+  cv: l(
+    './assets/files/CV Brice Lecomte.pdf',
+    './assets/files/Brice Lecomte Resume.pdf',
+  ),
   cvFileName: l('CV Brice Lecomte.pdf', 'Brice Lecomte Resume.pdf'),
   languages: [
-    { label: l('Français', 'French'), level: l('Langue maternelle', 'Native speaker') },
-    { label: l('Anglais', 'English'), level: l('C1 (TOEIC 945/990)', 'C1 (TOEIC 945/990)') },
+    {
+      label: l('Français', 'French'),
+      level: l('Langue maternelle', 'Native speaker'),
+    },
+    {
+      label: l('Anglais', 'English'),
+      level: l('C1 (TOEIC 945/990)', 'C1 (TOEIC 945/990)'),
+    },
   ],
 };
 
@@ -125,7 +142,10 @@ export const principles: WorkPrinciple[] = [
   },
   {
     icon: 'accessibility',
-    title: l('L’accessibilité n’est pas une option', 'Accessibility is not optional'),
+    title: l(
+      'L’accessibilité n’est pas une option',
+      'Accessibility is not optional',
+    ),
     description: l(
       'Navigation clavier complète, contrastes vérifiés, structure sémantique, préférences de mouvement respectées. Sur les projets publics, le RGAA se traite dès le premier commit, pas en recette.',
       'Full keyboard navigation, verified contrast, semantic structure, motion preferences honoured. On public-sector projects, accessibility standards are handled from the first commit, not during acceptance testing.',
@@ -133,7 +153,10 @@ export const principles: WorkPrinciple[] = [
   },
   {
     icon: 'sparkles',
-    title: l('L’IA comme accélérateur, pas comme auteur', 'AI as an accelerator, not an author'),
+    title: l(
+      'L’IA comme accélérateur, pas comme auteur',
+      'AI as an accelerator, not an author',
+    ),
     description: l(
       'Utilisée tous les jours pour explorer une piste, générer un squelette ou relire un diff, avec des prompts ciblés et un contexte minimal afin de maîtriser le coût en tokens. Le code livré reste relu, compris et assumé ligne à ligne.',
       'Used every day to explore an approach, generate a skeleton or review a diff, with targeted prompts and minimal context to keep the token cost under control. Shipped code is still reviewed, understood and owned line by line.',
@@ -141,7 +164,10 @@ export const principles: WorkPrinciple[] = [
   },
   {
     icon: 'target',
-    title: l('Le métier avant la technique', 'The domain before the technology'),
+    title: l(
+      'Le métier avant la technique',
+      'The domain before the technology',
+    ),
     description: l(
       'Traduire un barème réglementaire ou un référentiel cadastral en modèle de données suppose d’avoir compris la règle. Le temps passé avec les utilisateurs métier évite des semaines de correctifs.',
       'Turning a regulatory scale or a land registry into a data model means understanding the rule first. Time spent with business users saves weeks of patches.',
@@ -149,7 +175,10 @@ export const principles: WorkPrinciple[] = [
   },
   {
     icon: 'branch',
-    title: l('La transmission fait partie du travail', 'Passing it on is part of the job'),
+    title: l(
+      'La transmission fait partie du travail',
+      'Passing it on is part of the job',
+    ),
     description: l(
       'Un stagiaire, un alternant et plusieurs développeurs juniors accompagnés. Expliquer un choix technique oblige à le clarifier : l’équipe y gagne, et celui qui explique aussi.',
       'An intern, an apprentice and several junior developers mentored. Explaining a technical choice forces you to clarify it: the team gains, and so does whoever explains.',

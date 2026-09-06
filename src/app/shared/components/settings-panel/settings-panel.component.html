@@ -62,7 +62,9 @@
           [style.--swatch]="option.swatch"
           (click)="selectAccent(option.value)"
           [attr.aria-pressed]="accent() === option.value"
-          [attr.aria-label]="format(t().settings.accentAria, { label: t().theme[option.value] })"
+          [attr.aria-label]="
+            format(t().settings.accentAria, { label: t().theme[option.value] })
+          "
           [title]="t().theme[option.value]"
         >
           <span class="dot" aria-hidden="true"></span>
@@ -81,7 +83,9 @@
     >
       <span class="switch-label">
         <app-icon name="motion" size="1.05em" />
-        <span>{{ motionEnabled() ? t().settings.motionOn : t().settings.motionOff }}</span>
+        <span>{{
+          motionEnabled() ? t().settings.motionOn : t().settings.motionOff
+        }}</span>
       </span>
       <span class="track" [class.is-on]="motionEnabled()" aria-hidden="true">
         <span class="thumb"></span>

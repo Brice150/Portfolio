@@ -38,7 +38,12 @@
           }
         </ul>
 
-        <ul class="stack" [attr.aria-label]="format(t().projects.stackOf, { name: tr(project.name) })">
+        <ul
+          class="stack"
+          [attr.aria-label]="
+            format(t().projects.stackOf, { name: tr(project.name) })
+          "
+        >
           @for (tech of project.stack; track tech) {
             <li class="chip">{{ techLabel(tech, lang()) }}</li>
           }

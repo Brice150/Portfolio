@@ -9,7 +9,9 @@ describe('ProjectsComponent', () => {
     const listed = fixture.componentInstance.projects;
 
     expect(listed.length).toBe(projects.length);
-    expect(listed[0].startYear).toBeGreaterThanOrEqual(listed[listed.length - 1].startYear);
+    expect(listed[0].startYear).toBeGreaterThanOrEqual(
+      listed[listed.length - 1].startYear,
+    );
   });
 
   it('restreint la liste au projet sélectionné', async () => {
@@ -19,9 +21,11 @@ describe('ProjectsComponent', () => {
     fixture.componentInstance.selectProject(slug);
     fixture.detectChanges();
 
-    expect(fixture.componentInstance.visibleProjects().map((project) => project.slug)).toEqual([
-      slug,
-    ]);
+    expect(
+      fixture.componentInstance
+        .visibleProjects()
+        .map((project) => project.slug),
+    ).toEqual([slug]);
   });
 
   it('traduit chaque statut de projet', async () => {

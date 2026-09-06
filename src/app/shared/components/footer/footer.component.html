@@ -60,10 +60,20 @@
               [appCopyText]="profile.email"
               [appCopyLabel]="t().common.emailCopied"
               #copyMail="appCopyText"
-              [attr.title]="copyMail.copied() ? t().common.emailCopied : t().common.copyEmail"
+              [attr.title]="
+                copyMail.copied()
+                  ? t().common.emailCopied
+                  : t().common.copyEmail
+              "
             >
               <app-icon
-                [name]="copyMail.copied() ? 'check' : copyMail.failed() ? 'alert' : 'copy'"
+                [name]="
+                  copyMail.copied()
+                    ? 'check'
+                    : copyMail.failed()
+                      ? 'alert'
+                      : 'copy'
+                "
                 size="0.9em"
               />
               <span>
@@ -112,7 +122,14 @@
     </div>
 
     <div class="bottom">
-      <p>{{ format(t().footer.copyright, { year: currentYear, name: profile.fullName }) }}</p>
+      <p>
+        {{
+          format(t().footer.copyright, {
+            year: currentYear,
+            name: profile.fullName,
+          })
+        }}
+      </p>
       <button type="button" class="top-link" (click)="scrollToTop()">
         <span>{{ t().footer.backToTop }}</span>
         <app-icon name="chevron-up" size="1em" />

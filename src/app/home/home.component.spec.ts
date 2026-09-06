@@ -18,6 +18,8 @@ describe('HomeComponent', () => {
     const fixture = await mount(HomeComponent);
 
     expect(TestBed.inject(Title).getTitle()).toBeTruthy();
-    expect(fixture.componentInstance.technologies().length).toBeLessThanOrEqual(14);
+    expect(fixture.componentInstance.technologies().length).toBeLessThanOrEqual(
+      14,
+    );
   });
 });

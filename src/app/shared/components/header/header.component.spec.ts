@@ -8,7 +8,8 @@ describe('HeaderComponent', () => {
     const fixture = await mount(HeaderComponent);
 
     expect(
-      (fixture.nativeElement as HTMLElement).querySelectorAll('nav a[href]').length,
+      (fixture.nativeElement as HTMLElement).querySelectorAll('nav a[href]')
+        .length,
     ).toBeGreaterThanOrEqual(navItems.length);
   });
 

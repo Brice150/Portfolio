@@ -10,7 +10,9 @@ describe('ProjectDetailComponent', () => {
     const fixture = await mount(ProjectDetailComponent, { inputs: { slug } });
 
     expect(fixture.componentInstance.project()?.slug).toBe(slug);
-    expect(textOf(fixture)).toContain(fixture.componentInstance.tr(projects[0].name));
+    expect(textOf(fixture)).toContain(
+      fixture.componentInstance.tr(projects[0].name),
+    );
   });
 
   it('propose au moins un projet voisin', async () => {

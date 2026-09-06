@@ -1,0 +1,6 @@
+# Generated or vendored: formatting it would produce a diff nobody wrote.
+/dist
+/.angular
+/.firebase
+**/node_modules
+package-lock.json

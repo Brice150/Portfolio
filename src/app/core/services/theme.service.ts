@@ -65,7 +65,10 @@ export class ThemeService {
       }
 
       root.setAttribute('data-accent', accent);
-      root.setAttribute('data-motion', motion === 'reduced' ? 'reduced' : 'full');
+      root.setAttribute(
+        'data-motion',
+        motion === 'reduced' ? 'reduced' : 'full',
+      );
 
       this.persist({ theme, accent, motion });
     });
@@ -84,14 +87,18 @@ export class ThemeService {
   }
 
   toggleTheme(): void {
-    this.theme.update((mode) => (this.resolved(mode) === 'dark' ? 'light' : 'dark'));
+    this.theme.update((mode) =>
+      this.resolved(mode) === 'dark' ? 'light' : 'dark',
+    );
   }
 
   resolved(mode: ThemeMode = this.theme()): 'light' | 'dark' {
     if (mode !== 'system') return mode;
     if (!this.isBrowser) return 'dark';
 
-    return this.document.defaultView?.matchMedia('(prefers-color-scheme: light)').matches
+    return this.document.defaultView?.matchMedia(
+      '(prefers-color-scheme: light)',
+    ).matches
       ? 'light'
       : 'dark';
   }
@@ -115,7 +122,10 @@ export class ThemeService {
 
   private persist(preferences: StoredPreferences): void {
     try {
-      this.document.defaultView?.localStorage.setItem(STORAGE_KEY, JSON.stringify(preferences));
+      this.document.defaultView?.localStorage.setItem(
+        STORAGE_KEY,
+        JSON.stringify(preferences),
+      );
     } catch {
       // Navigation privée ou stockage bloqué : sans conséquence sur l'affichage.
     }

@@ -4,10 +4,17 @@
   <article>
     <div class="head">
       <div class="shell">
-        <nav class="breadcrumb" [attr.aria-label]="t().projectDetail.breadcrumb">
+        <nav
+          class="breadcrumb"
+          [attr.aria-label]="t().projectDetail.breadcrumb"
+        >
           <ol>
-            <li><a routerLink="/">{{ t().common.home }}</a></li>
-            <li><a routerLink="/projets">{{ t().common.projects }}</a></li>
+            <li>
+              <a routerLink="/">{{ t().common.home }}</a>
+            </li>
+            <li>
+              <a routerLink="/projets">{{ t().common.projects }}</a>
+            </li>
             <li aria-current="page">{{ tr(current.name) }}</li>
           </ol>
         </nav>
@@ -18,13 +25,23 @@
 
         <div class="actions">
           @if (current.links.live) {
-            <a [href]="current.links.live" target="_blank" rel="noopener" class="btn">
+            <a
+              [href]="current.links.live"
+              target="_blank"
+              rel="noopener"
+              class="btn"
+            >
               <span>{{ t().common.viewSite }}</span>
               <app-icon name="arrow-up-right" size="1.05em" />
             </a>
           }
           @if (current.links.github) {
-            <a [href]="current.links.github" target="_blank" rel="noopener" class="btn btn-ghost">
+            <a
+              [href]="current.links.github"
+              target="_blank"
+              rel="noopener"
+              class="btn btn-ghost"
+            >
               <span>{{ t().common.sourceCode }}</span>
               <app-icon name="arrow-up-right" size="1.05em" />
             </a>
@@ -59,7 +76,10 @@
       </div>
     </div>
 
-    <section class="section shell" [attr.aria-label]="t().projectDetail.preview">
+    <section
+      class="section shell"
+      [attr.aria-label]="t().projectDetail.preview"
+    >
       <app-device-showcase [project]="current" />
     </section>
 
@@ -106,12 +126,20 @@
     @let next = nextProject();
 
     @if (previous || next) {
-      <nav class="section shell siblings" [attr.aria-label]="t().projectDetail.siblings">
+      <nav
+        class="section shell siblings"
+        [attr.aria-label]="t().projectDetail.siblings"
+      >
         @if (previous) {
-          <a [routerLink]="['/projets', previous.slug]" class="sibling is-previous card-hover">
+          <a
+            [routerLink]="['/projets', previous.slug]"
+            class="sibling is-previous card-hover"
+          >
             <app-icon name="arrow-left" size="1.3em" />
             <span class="sibling-text">
-              <span class="sibling-label">{{ t().projectDetail.previous }}</span>
+              <span class="sibling-label">{{
+                t().projectDetail.previous
+              }}</span>
               <span class="sibling-name">{{ tr(previous.name) }}</span>
               <span class="sibling-tagline">{{ tr(previous.tagline) }}</span>
             </span>
@@ -119,7 +147,10 @@
         }
 
         @if (next) {
-          <a [routerLink]="['/projets', next.slug]" class="sibling is-next card-hover">
+          <a
+            [routerLink]="['/projets', next.slug]"
+            class="sibling is-next card-hover"
+          >
             <span class="sibling-text">
               <span class="sibling-label">{{ t().projectDetail.next }}</span>
               <span class="sibling-name">{{ tr(next.name) }}</span>

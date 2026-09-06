@@ -6,7 +6,8 @@
     </h1>
 
     <p class="role">
-      {{ t().hero.rolePrefix }}<strong>Angular</strong>&nbsp;<span class="amp">&amp;</span
+      {{ t().hero.rolePrefix }}<strong>Angular</strong>&nbsp;<span class="amp"
+        >&amp;</span
       >&nbsp;<strong>Java</strong>{{ format(t().hero.roleSuffix, { years }) }}
     </p>
 
@@ -66,9 +67,13 @@
           [appCopyLabel]="t().common.emailCopied"
           #copyMail="appCopyText"
           [attr.aria-label]="
-            copyMail.copied() ? t().common.emailCopied : format(t().hero.copyEmailFull, { email: profile.email })
+            copyMail.copied()
+              ? t().common.emailCopied
+              : format(t().hero.copyEmailFull, { email: profile.email })
           "
-          [attr.title]="copyMail.copied() ? t().common.emailCopied : t().common.copyEmail"
+          [attr.title]="
+            copyMail.copied() ? t().common.emailCopied : t().common.copyEmail
+          "
         >
           <app-icon [name]="copyMail.copied() ? 'check' : 'mail'" />
         </button>
