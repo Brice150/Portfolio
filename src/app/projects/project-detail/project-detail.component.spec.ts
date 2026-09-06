@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { projects } from '../../shared/data/projects';
+import { projects, projectsByDate } from '../../shared/data/projects';
 import { mount, textOf } from '../../../testing/mount';
 import { ProjectDetailComponent } from './project-detail.component';
 
@@ -29,5 +29,30 @@ describe('ProjectDetailComponent', () => {
     });
 
     expect(fixture.componentInstance.project()).toBeUndefined();
+    expect(fixture.componentInstance.previousProject()).toBeUndefined();
+    expect(fixture.componentInstance.nextProject()).toBeUndefined();
+  });
+
+  it('n’annonce pas de précédent sur le projet le plus récent', async () => {
+    const ordered = projectsByDate();
+    const fixture = await mount(ProjectDetailComponent, {
+      inputs: { slug: ordered[0].slug },
+    });
+
+    expect(fixture.componentInstance.previousProject()).toBeUndefined();
+    expect(fixture.componentInstance.nextProject()?.slug).toBe(ordered[1].slug);
+  });
+
+  it('n’annonce pas de suivant sur le projet le plus ancien', async () => {
+    const ordered = projectsByDate();
+    const last = ordered[ordered.length - 1];
+    const fixture = await mount(ProjectDetailComponent, {
+      inputs: { slug: last.slug },
+    });
+
+    expect(fixture.componentInstance.nextProject()).toBeUndefined();
+    expect(fixture.componentInstance.previousProject()?.slug).toBe(
+      ordered[ordered.length - 2].slug,
+    );
   });
 });

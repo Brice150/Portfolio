@@ -114,10 +114,11 @@ npm run test:ci
 ESLint impose notamment `OnPush` sur tous les composants, l'absence de `any` et les
 règles d'accessibilité des templates Angular.
 
-Les tests tournent sous Vitest, sur jsdom : 90 tests, sans navigateur à installer.
-La couverture est verrouillée par un seuil que la CI refuse de voir baisser — 94 %
-des instructions, 90 % des branches. Les gabarits compilés et le bootstrap en sont
-exclus : ce n'est pas du code qu'on teste, et les compter diluerait le chiffre.
+Les tests tournent sous Vitest, sur jsdom : 138 tests, sans navigateur à installer.
+La couverture est verrouillée par un seuil que la CI refuse de voir baisser — 99 %
+des instructions, des branches, des fonctions et des lignes. Les gabarits compilés
+et le bootstrap en sont exclus : ce n'est pas du code qu'on teste, et les compter
+diluerait le chiffre.
 
 ### Intégration continue
 

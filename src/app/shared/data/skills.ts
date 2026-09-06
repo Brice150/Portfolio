@@ -60,6 +60,14 @@ export const skillGroups: SkillGroup[] = [
         ),
       },
       {
+        name: l('Tests front (Vitest, Playwright)', 'Front-end testing'),
+        level: 84,
+        note: l(
+          'Vitest pour les composants, les services et les guards, Playwright pour les parcours complets. Un seuil de couverture par projet, vérifié par la CI à chaque push.',
+          'Vitest for components, services and guards, Playwright for full journeys. One coverage threshold per project, checked by CI on every push.',
+        ),
+      },
+      {
         name: l(
           'DSFR (Design Système de l’État)',
           'DSFR (French State Design System)',

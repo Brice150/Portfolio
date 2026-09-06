@@ -79,6 +79,25 @@ describe('SettingsPanelComponent', () => {
     expect(fixture.componentInstance.open()).toBe(false);
   });
 
+  it('ecoute reellement le clavier et les clics du document', async () => {
+    const fixture = await mount(SettingsPanelComponent);
+    fixture.componentInstance.toggle();
+
+    // Un vrai clic part toujours d'un élément, jamais du document lui-même.
+    const elsewhere = document.createElement('button');
+    document.body.appendChild(elsewhere);
+    elsewhere.dispatchEvent(new MouseEvent('click', { bubbles: true }));
+    await fixture.whenStable();
+    expect(fixture.componentInstance.open()).toBe(false);
+    elsewhere.remove();
+
+    fixture.componentInstance.toggle();
+    document.dispatchEvent(new KeyboardEvent('keydown', { key: 'Escape' }));
+    await fixture.whenStable();
+
+    expect(fixture.componentInstance.open()).toBe(false);
+  });
+
   it('bascule le theme depuis le raccourci', async () => {
     const fixture = await mount(SettingsPanelComponent);
     const theme = TestBed.inject(ThemeService);

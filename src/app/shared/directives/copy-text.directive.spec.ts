@@ -52,4 +52,57 @@ describe('CopyTextDirective', () => {
 
     expect(TestBed.inject(ToastService).toasts()[0].tone).toBe('error');
   });
+
+  it('retombe sur la méthode historique quand le presse-papier refuse', async () => {
+    stubClipboard(() => Promise.reject(new Error('hors contexte sécurisé')));
+    const execCommand = vi.fn(() => true);
+    Object.defineProperty(document, 'execCommand', {
+      value: execCommand,
+      configurable: true,
+    });
+
+    const fixture = await mount(HostComponent);
+    (fixture.nativeElement as HTMLElement).querySelector('button')?.click();
+    await fixture.whenStable();
+
+    expect(execCommand).toHaveBeenCalledWith('copy');
+    expect(TestBed.inject(ToastService).toasts()[0].tone).toBe('success');
+    // Le champ technique ne doit pas rester dans le document.
+    expect(document.querySelector('body > textarea')).toBeNull();
+  });
+
+  it('copie sans presse-papier disponible du tout', async () => {
+    const execCommand = vi.fn(() => true);
+    Object.defineProperty(document, 'execCommand', {
+      value: execCommand,
+      configurable: true,
+    });
+
+    const fixture = await mount(HostComponent);
+    (fixture.nativeElement as HTMLElement).querySelector('button')?.click();
+    await fixture.whenStable();
+
+    expect(execCommand).toHaveBeenCalledWith('copy');
+    expect(TestBed.inject(ToastService).toasts()[0].tone).toBe('success');
+  });
+
+  it('efface la confirmation visuelle après son délai', async () => {
+    vi.useFakeTimers();
+    stubClipboard(() => Promise.resolve());
+
+    const fixture = await mount(HostComponent);
+    const button = (fixture.nativeElement as HTMLElement).querySelector(
+      'button',
+    );
+    const directive = fixture.debugElement
+      .query((node) => node.name === 'button')
+      .injector.get(CopyTextDirective);
+
+    button?.click();
+    await vi.runAllTimersAsync();
+
+    expect(directive.copied()).toBe(false);
+    expect(directive.failed()).toBe(false);
+    vi.useRealTimers();
+  });
 });

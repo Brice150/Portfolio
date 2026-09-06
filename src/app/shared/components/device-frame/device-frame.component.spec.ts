@@ -152,6 +152,66 @@ describe('DeviceFrameComponent', () => {
     expect(screen.scrollTo).toHaveBeenCalledTimes(1);
   });
 
+  it('avance image par image, puis se coupe une fois en bas', async () => {
+    const fixture = await frame();
+    const screen = sizeScreen(fixture, {
+      scrollHeight: 2000,
+      clientHeight: 300,
+    });
+    // jsdom ne fait pas défiler : on porte la position nous-mêmes.
+    let scrollTop = 0;
+    Object.defineProperty(screen, 'scrollTop', {
+      get: () => scrollTop,
+      set: (value: number) => (scrollTop = value),
+      configurable: true,
+    });
+    fixture.componentInstance.onImageLoad();
+
+    const steps: FrameRequestCallback[] = [];
+    vi.mocked(requestAnimationFrame).mockImplementation(((
+      callback: FrameRequestCallback,
+    ) => {
+      steps.push(callback);
+      return steps.length;
+    }) as typeof requestAnimationFrame);
+
+    fixture.componentInstance.onEnter();
+    steps.pop()?.(0);
+
+    expect(scrollTop).toBeGreaterThan(0);
+    expect(steps.length).toBe(1);
+
+    // Arrivé en bas, le pas suivant ne redemande pas d'image.
+    scrollTop = 1700;
+    steps.pop()?.(0);
+
+    expect(steps.length).toBe(0);
+  });
+
+  it('cesse d’avancer dès que le visiteur prend la main', async () => {
+    const fixture = await frame();
+    const screen = sizeScreen(fixture, {
+      scrollHeight: 2000,
+      clientHeight: 300,
+    });
+    Object.defineProperty(screen, 'scrollTop', { value: 0, writable: true });
+    fixture.componentInstance.onImageLoad();
+
+    const steps: FrameRequestCallback[] = [];
+    vi.mocked(requestAnimationFrame).mockImplementation(((
+      callback: FrameRequestCallback,
+    ) => {
+      steps.push(callback);
+      return steps.length;
+    }) as typeof requestAnimationFrame);
+
+    fixture.componentInstance.onEnter();
+    fixture.componentInstance.onUserScroll();
+    steps.pop()?.(0);
+
+    expect(steps.length).toBe(0);
+  });
+
   it('arrête la boucle quand le composant disparaît', async () => {
     const fixture = await frame();
     sizeScreen(fixture, { scrollHeight: 2000, clientHeight: 300 });

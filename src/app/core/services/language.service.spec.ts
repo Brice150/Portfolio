@@ -1,16 +1,28 @@
 import { TestBed } from '@angular/core/testing';
-import { provideZonelessChangeDetection } from '@angular/core';
-import { beforeEach, describe, expect, it } from 'vitest';
+import { PLATFORM_ID, provideZonelessChangeDetection } from '@angular/core';
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { l } from '../i18n/lang';
 import { LanguageService } from './language.service';
 
 const inject = (): LanguageService => TestBed.inject(LanguageService);
+
+const stubNavigatorLanguage = (value: string): void => {
+  Object.defineProperty(navigator, 'language', {
+    value,
+    configurable: true,
+  });
+};
 
 beforeEach(() => {
   localStorage.clear();
   TestBed.configureTestingModule({
     providers: [provideZonelessChangeDetection()],
   });
+});
+
+afterEach(() => {
+  Reflect.deleteProperty(navigator, 'language');
+  vi.restoreAllMocks();
 });
 
 describe('LanguageService', () => {
@@ -43,5 +55,60 @@ describe('LanguageService', () => {
 
     expect(document.documentElement.getAttribute('lang')).toBe('en');
     expect(localStorage.getItem('portfolio-lang')).toBe('en');
+  });
+
+  it('reprend la langue mémorisée à l’ouverture', () => {
+    localStorage.setItem('portfolio-lang', 'en');
+
+    expect(inject().lang()).toBe('en');
+  });
+
+  it('suit la langue du navigateur en l’absence de choix mémorisé', () => {
+    stubNavigatorLanguage('en-GB');
+
+    expect(inject().lang()).toBe('en');
+  });
+
+  it('retombe sur le français pour une langue non traduite', () => {
+    stubNavigatorLanguage('de-DE');
+
+    expect(inject().lang()).toBe('fr');
+  });
+
+  it('se rabat sur la langue du navigateur si le stockage est illisible', () => {
+    vi.spyOn(Storage.prototype, 'getItem').mockImplementation(() => {
+      throw new Error('stockage refusé');
+    });
+    stubNavigatorLanguage('en-US');
+
+    expect(inject().lang()).toBe('en');
+  });
+
+  it('survit à un stockage bloqué en écriture', () => {
+    vi.spyOn(Storage.prototype, 'setItem').mockImplementation(() => {
+      throw new Error('stockage refusé');
+    });
+
+    const service = inject();
+    service.setLang('en');
+
+    expect(() => TestBed.tick()).not.toThrow();
+    expect(service.lang()).toBe('en');
+  });
+
+  it('reste en français côté serveur, sans navigateur à interroger', () => {
+    TestBed.resetTestingModule();
+    TestBed.configureTestingModule({
+      providers: [
+        provideZonelessChangeDetection(),
+        { provide: PLATFORM_ID, useValue: 'server' },
+      ],
+    });
+
+    const service = inject();
+    service.setLang('en');
+
+    expect(() => TestBed.tick()).not.toThrow();
+    expect(service.lang()).toBe('en');
   });
 });

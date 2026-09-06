@@ -142,6 +142,52 @@ describe('LanguageSwitcherComponent', () => {
     expect(fixture.componentInstance.open()).toBe(true);
   });
 
+  it('rend la main au déclencheur après un choix', async () => {
+    const fixture = await opened();
+
+    fixture.componentInstance.select('en');
+    fixture.detectChanges();
+
+    const trigger = (fixture.nativeElement as HTMLElement).querySelector(
+      '.trigger',
+    );
+
+    // Le focus ne doit pas retomber sur <body> : le clavier reprend là où il était.
+    expect(document.activeElement).toBe(trigger);
+  });
+
+  it('ne fait rien de plus quand on referme un menu déjà fermé', async () => {
+    const fixture = await mount(LanguageSwitcherComponent);
+
+    expect(() =>
+      fixture.componentInstance.close({ restoreFocus: true }),
+    ).not.toThrow();
+    expect(fixture.componentInstance.open()).toBe(false);
+  });
+
+  it('ne déplace aucun focus tant que les options ne sont pas rendues', async () => {
+    const fixture = await mount(LanguageSwitcherComponent);
+    // Ouvert dans l'état, mais pas encore dans le DOM : il n'y a rien à viser.
+    fixture.componentInstance.toggle();
+
+    expect(() => press(fixture, 'ArrowDown')).not.toThrow();
+    expect(fixture.componentInstance.open()).toBe(true);
+  });
+
+  it('repart de l’option courante quand le focus est ailleurs', async () => {
+    const fixture = await opened();
+    (document.activeElement as HTMLElement | null)?.blur();
+
+    press(fixture, 'ArrowDown');
+    await fixture.whenStable();
+
+    const options = (fixture.nativeElement as HTMLElement).querySelectorAll(
+      '[role="option"], .option',
+    );
+
+    expect([...options]).toContain(document.activeElement);
+  });
+
   it('propose une option par langue disponible', async () => {
     const fixture = await opened();
 
