@@ -4,7 +4,8 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build && node tools/postbuild.mjs",
+    "build": "ng build",
+    "postbuild": "node tools/postbuild.mjs",
     "build:dev": "ng build --configuration development",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
@@ -30,18 +31,18 @@
     "tslib": "^2.3.0"
   },
   "devDependencies": {
-    "@angular/build": "^21.2.12",
+    "@angular/build": "21.2.13",
     "@angular/cli": "^21.2.11",
     "@angular/compiler-cli": "^21.2.13",
     "@eslint/js": "^10.0.1",
     "@types/node": "^20.17.19",
-    "@vitest/coverage-v8": "^5.0.0",
+    "@vitest/coverage-v8": "^4.0.8",
     "angular-eslint": "21.4.0",
     "eslint": "^10.3.0",
     "jsdom": "^30.0.1",
     "prettier": "^3.9.6",
     "typescript": "~5.9.0",
     "typescript-eslint": "8.59.2",
-    "vitest": "^5.0.0"
+    "vitest": "^4.0.8"
   }
 }

@@ -92,7 +92,8 @@
               "branches": 88,
               "functions": 91,
               "lines": 93
-            }
+            },
+            "runnerConfig": "vitest.config.ts"
           }
         },
         "lint": {
