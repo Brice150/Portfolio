@@ -46,6 +46,10 @@ export const projects: Project[] = [
         value: l('IA intégrée', 'Built-in AI'),
       },
       {
+        label: l('Détection', 'Detection'),
+        value: l('Zoneless + OnPush', 'Zoneless + OnPush'),
+      },
+      {
         label: l('Hors ligne', 'Offline'),
         value: l('Cache IndexedDB', 'IndexedDB cache'),
       },
@@ -319,12 +323,12 @@ export const projects: Project[] = [
       },
       {
         title: l(
-          'Remis à niveau, sans réécriture',
-          'Brought up to date, without a rewrite',
+          'Les mêmes pratiques, même en deux jours',
+          'The same practices, even in two days',
         ),
         body: l(
-          'Le simulateur a depuis suivi mes pratiques actuelles : détection de changement sans Zone.js, OnPush sur tous les composants, et pages prérendues au build servies en statique sur GitHub Pages, l’application prenant le relais côté navigateur. Ni les barèmes ni le parcours de questions n’ont bougé : le projet était resté assez simple pour absorber la mise à niveau.',
-          'The simulator has since followed my current practices: change detection without Zone.js, OnPush on every component, and pages prerendered at build time then served statically on GitHub Pages, with the application taking over in the browser. Neither the grant scales nor the question flow moved: the project had stayed simple enough to absorb the upgrade.',
+          'Le simulateur suit les mêmes pratiques que le reste : détection de changement sans Zone.js, OnPush sur tous les composants, et pages prérendues au build servies en statique sur GitHub Pages, l’application prenant le relais côté navigateur. Le projet est resté assez simple pour les porter sans architecture supplémentaire.',
+          'The simulator follows the same practices as the rest: change detection without Zone.js, OnPush on every component, and pages prerendered at build time then served statically on GitHub Pages, with the application taking over in the browser. The project stayed simple enough to carry them without any extra architecture.',
         ),
       },
     ],
@@ -387,6 +391,10 @@ export const projects: Project[] = [
       {
         label: l('Périmètre', 'Scope'),
         value: l('Front, Back et BDD', 'Front, back and database'),
+      },
+      {
+        label: l('Détection', 'Detection'),
+        value: l('Zoneless + OnPush', 'Zoneless + OnPush'),
       },
       {
         label: l('Cœur du sujet', 'Core challenge'),
@@ -479,8 +487,8 @@ export const projects: Project[] = [
       {
         title: l('Zoneless et signals', 'Zoneless and signals'),
         body: l(
-          'L’application tourne sans Zone.js : l’état est porté par des signals et tous les composants sont en stratégie OnPush. Le résultat est un bundle plus léger et une détection de changement prévisible. C’est le premier projet où je pousse ce parti pris jusqu’au bout, et je le reprends depuis sur mes développements personnels.',
-          'The application runs without Zone.js: state is carried by signals and every component uses the OnPush strategy. The result is a lighter bundle and predictable change detection. This is the first project where I take that stance all the way, and I have used it since on my personal work.',
+          'L’application tourne sans Zone.js : l’état est porté par des signals et tous les composants sont en stratégie OnPush. Le résultat est un bundle plus léger et une détection de changement prévisible. C’est le parti pris que je tiens sur l’ensemble de mes développements personnels.',
+          'The application runs without Zone.js: state is carried by signals and every component uses the OnPush strategy. The result is a lighter bundle and predictable change detection. It is the stance I hold across all my personal work.',
         ),
       },
       {

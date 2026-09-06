@@ -63,8 +63,8 @@ export const skillGroups: SkillGroup[] = [
         name: l('Tests front (Vitest, Playwright)', 'Front-end testing'),
         level: 84,
         note: l(
-          'Vitest pour les composants, les services et les guards, Playwright pour les parcours complets. Un seuil de couverture par projet, vérifié par la CI à chaque push.',
-          'Vitest for components, services and guards, Playwright for full journeys. One coverage threshold per project, checked by CI on every push.',
+          'Vitest pour les composants, les services et les guards, Playwright pour les parcours complets. Un plancher de 95 % de couverture sur chaque projet, vérifié par la CI à chaque push.',
+          'Vitest for components, services and guards, Playwright for full journeys. A 95% coverage floor on every project, checked by CI on every push.',
         ),
       },
       {
@@ -243,8 +243,8 @@ export const practices: Practice[] = [
       'Change detection under control',
     ),
     description: l(
-      'OnPush sur tous les composants, état porté par des signals, application zoneless. Mis en place sur ce site, et prévu pour les prochains projets.',
-      'OnPush on every component, state carried by signals, a zoneless application. Applied on this site, and planned for the next projects.',
+      'OnPush sur tous les composants, état porté par des signals, applications zoneless. La règle sur l’ensemble de mes projets, pas une exception réservée aux plus récents.',
+      'OnPush on every component, state carried by signals, zoneless applications. The rule across all my projects, not an exception kept for the recent ones.',
     ),
   },
   {
