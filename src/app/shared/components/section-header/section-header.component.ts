@@ -4,6 +4,7 @@ import {
   booleanAttribute,
   input,
 } from '@angular/core';
+import { RevealDirective } from '../../directives/reveal.directive';
 
 @Component({
   selector: 'app-section-header',
@@ -11,6 +12,8 @@ import {
   styleUrl: './section-header.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: { '[class.is-centered]': 'centered()' },
+  // L'en-tête apparaît au défilement, puis dessine le trait de son surtitre.
+  hostDirectives: [RevealDirective],
 })
 export class SectionHeaderComponent {
   readonly eyebrow = input<string>('');

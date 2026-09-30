@@ -25,3 +25,19 @@ h3 {
 .lead {
   font-size: var(--step-1);
 }
+
+/* Une fois l'en-tête révélé, le trait du surtitre se dessine. */
+.eyebrow::before {
+  transform-origin: left;
+}
+
+:host(.is-revealed) .eyebrow::before {
+  animation: section-header-draw 0.8s var(--ease-out)
+    calc(var(--reveal-delay, 0ms) + 250ms) backwards;
+}
+
+@keyframes section-header-draw {
+  from {
+    scale: 0 1;
+  }
+}

@@ -5,12 +5,13 @@ import { environment } from '../../../../environments/environment';
 import { navItems, profile } from '../../data/profile';
 import { IconComponent } from '../icon/icon.component';
 import { CopyTextDirective } from '../../directives/copy-text.directive';
+import { RevealDirective } from '../../directives/reveal.directive';
 import { LanguageService } from '../../../core/services/language.service';
 import { ToastService } from '../../../core/services/toast.service';
 
 @Component({
   selector: 'app-footer',
-  imports: [RouterLink, IconComponent, CopyTextDirective],
+  imports: [RouterLink, IconComponent, CopyTextDirective, RevealDirective],
   templateUrl: './footer.component.html',
   styleUrl: './footer.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,

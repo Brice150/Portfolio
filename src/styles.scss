@@ -628,14 +628,23 @@ html[data-motion='reduced'] [data-reveal] {
   }
 }
 
+/* Entre la liste des projets et la page d'un projet, la maquette et le titre
+   se déplacent d'une page à l'autre au lieu de disparaître. */
+::view-transition-group(*) {
+  animation-duration: 420ms;
+  animation-timing-function: var(--ease-out);
+}
+
 @media (prefers-reduced-motion: reduce) {
   ::view-transition-old(page),
-  ::view-transition-new(page) {
+  ::view-transition-new(page),
+  ::view-transition-group(*) {
     animation: none;
   }
 }
 
 html[data-motion='reduced'] ::view-transition-old(page),
-html[data-motion='reduced'] ::view-transition-new(page) {
+html[data-motion='reduced'] ::view-transition-new(page),
+html[data-motion='reduced'] ::view-transition-group(*) {
   animation: none;
 }

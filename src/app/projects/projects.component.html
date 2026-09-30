@@ -20,12 +20,18 @@
       </p>
 
       <div class="preview">
-        <app-device-showcase [project]="project" />
+        <!-- Même nom que sur la page du projet : la maquette s'y transporte. -->
+        <app-device-showcase
+          [project]="project"
+          [style.view-transition-name]="'maquette-' + project.slug"
+        />
       </div>
 
       <div class="details">
         <p class="eyebrow">{{ project.year }}</p>
-        <h2>{{ tr(project.name) }}</h2>
+        <h2 [style.view-transition-name]="'titre-' + project.slug">
+          {{ tr(project.name) }}
+        </h2>
         <p class="tagline">{{ tr(project.tagline) }}</p>
         <p class="summary justified">{{ tr(project.summary) }}</p>
 

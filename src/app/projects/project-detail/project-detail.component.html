@@ -20,7 +20,9 @@
         </nav>
 
         <p class="eyebrow">{{ current.year }}</p>
-        <h1>{{ tr(current.name) }}</h1>
+        <h1 [style.view-transition-name]="'titre-' + current.slug">
+          {{ tr(current.name) }}
+        </h1>
         <p class="tagline">{{ tr(current.tagline) }}</p>
 
         <div class="actions">
@@ -80,7 +82,10 @@
       class="section shell"
       [attr.aria-label]="t().projectDetail.preview"
     >
-      <app-device-showcase [project]="current" />
+      <app-device-showcase
+        [project]="current"
+        [style.view-transition-name]="'maquette-' + current.slug"
+      />
     </section>
 
     <div class="section shell body">

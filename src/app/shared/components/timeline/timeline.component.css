@@ -251,3 +251,36 @@
     height: 2.8rem;
   }
 }
+
+/* Chaque marqueur arrive d'un rebond, juste après sa carte. */
+.entry.is-revealed .marker {
+  animation: timeline-pop 0.55s cubic-bezier(0.34, 1.56, 0.64, 1)
+    calc(var(--reveal-delay, 0ms) + 180ms) backwards;
+}
+
+@keyframes timeline-pop {
+  from {
+    opacity: 0;
+    scale: 0.4;
+  }
+}
+
+/* La ligne se dessine au fil du défilement. Une animation liée au défilement
+   ignore les durées : les règles globales de réduction ne l'atteignent pas,
+   d'où les deux gardes explicites. */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    :host-context(html[data-motion='full']) .timeline::before {
+      transform-origin: top;
+      animation: timeline-draw linear both;
+      animation-timeline: view();
+      animation-range: entry 10% cover 70%;
+    }
+  }
+}
+
+@keyframes timeline-draw {
+  from {
+    scale: 1 0;
+  }
+}

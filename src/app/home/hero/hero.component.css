@@ -170,6 +170,80 @@ h1 {
   }
 }
 
+/* Entrée en cascade : chaque ligne arrive un peu après la précédente, le nom
+   sort d'un flou et le portrait s'avance. Images clés sans `to` et
+   remplissage `backwards` : une fois jouées, elles ne retiennent rien, et le
+   survol garde la main sur `translate`. La réduction des animations les
+   ramène à un instant, via les règles globales. */
+.hello,
+.role,
+.rotation,
+.pitch,
+.actions,
+.socials li {
+  animation: hero-rise 0.7s var(--ease-out) backwards;
+}
+
+.name {
+  animation: hero-focus 0.9s var(--ease-out) 0.12s backwards;
+}
+
+.role {
+  animation-delay: 0.3s;
+}
+
+.rotation {
+  animation-delay: 0.4s;
+}
+
+.pitch {
+  animation-delay: 0.5s;
+}
+
+.actions {
+  animation-delay: 0.6s;
+}
+
+.socials li {
+  animation-delay: calc(0.7s + var(--i, 0) * 70ms);
+}
+
+.socials li:nth-child(2) {
+  --i: 1;
+}
+
+.socials li:nth-child(3) {
+  --i: 2;
+}
+
+/* Pas d'opacité sur le portrait : c'est l'image la plus grande de la page,
+   elle doit s'afficher dès la première image. */
+.portrait-frame {
+  animation: hero-portrait 1s var(--ease-out) 0.1s backwards;
+}
+
+@keyframes hero-rise {
+  from {
+    opacity: 0;
+    translate: 0 14px;
+  }
+}
+
+/* Sans opacité non plus : le nom est candidat au plus grand rendu de la page. */
+@keyframes hero-focus {
+  from {
+    translate: 0 0.25em;
+    filter: blur(10px);
+  }
+}
+
+@keyframes hero-portrait {
+  from {
+    scale: 0.94;
+    translate: 0 12px;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .rotation-item {
     animation: none;

@@ -4,7 +4,7 @@
       <span class="icon" aria-hidden="true">
         <app-icon [name]="item.icon" size="1.25em" />
       </span>
-      <p class="value">{{ tr(item.value) }}</p>
+      <p class="value" [appCountUp]="tr(item.value)"></p>
       <p class="label">{{ tr(item.label) }}</p>
       <p class="detail">{{ tr(item.detail) }}</p>
     </li>
