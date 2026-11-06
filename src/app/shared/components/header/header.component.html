@@ -45,6 +45,18 @@
     </nav>
 
     <div class="actions">
+      <button
+        type="button"
+        class="palette-trigger"
+        (click)="openPalette()"
+        aria-haspopup="dialog"
+        [attr.aria-label]="t().palette.trigger"
+        [attr.aria-keyshortcuts]="'Control+K Meta+K'"
+        [title]="t().palette.trigger + ' (' + shortcut() + ')'"
+      >
+        <app-icon name="search" size="1.05em" />
+        <kbd aria-hidden="true">{{ shortcut() }}</kbd>
+      </button>
       <app-language-switcher />
       <app-settings-panel />
 

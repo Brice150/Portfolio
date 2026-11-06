@@ -1,0 +1,18 @@
+:host {
+  display: inline;
+}
+
+.word {
+  white-space: nowrap;
+}
+
+/* Hors animation, les lettres restent en ligne : le crénage du texte final
+   est intact. Pendant l'effet, chacune garde la largeur de sa lettre finale. */
+.is-running .ch {
+  display: inline-block;
+  text-align: center;
+}
+
+.ch.is-scrambled {
+  opacity: 0.55;
+}

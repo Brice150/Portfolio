@@ -4,6 +4,7 @@ import {
   ChangeDetectionStrategy,
   Component,
   HostListener,
+  afterNextRender,
   inject,
   signal,
 } from '@angular/core';
@@ -17,6 +18,7 @@ import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { filter } from 'rxjs/operators';
 import { environment } from '../../../../environments/environment';
 import { navItems, profile } from '../../data/profile';
+import { CommandPaletteService } from '../../../core/services/command-palette.service';
 import { LanguageService } from '../../../core/services/language.service';
 import { IconComponent } from '../icon/icon.component';
 import { LanguageSwitcherComponent } from '../language-switcher/language-switcher.component';
@@ -51,6 +53,10 @@ export class HeaderComponent {
   readonly menuOpen = signal(false);
   readonly scrolled = signal(false);
   readonly progress = signal(0);
+  /** Raccourci affiché : ⌘ sur Mac, Ctrl ailleurs (et au prérendu). */
+  readonly shortcut = signal('Ctrl K');
+
+  private readonly palette = inject(CommandPaletteService);
 
   private readonly document = inject(DOCUMENT);
   private readonly router = inject(Router);
@@ -62,6 +68,16 @@ export class HeaderComponent {
         takeUntilDestroyed(),
       )
       .subscribe(() => this.closeMenu());
+
+    afterNextRender(() => {
+      const platform = this.document.defaultView?.navigator.platform ?? '';
+      if (/mac|iphone|ipad/i.test(platform)) this.shortcut.set('⌘ K');
+    });
+  }
+
+  openPalette(): void {
+    this.closeMenu();
+    this.palette.open();
   }
 
   @HostListener('document:scroll')
