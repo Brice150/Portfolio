@@ -18,13 +18,13 @@ export const serviceOffers: ServiceOffer[] = [
       [
         'Architecture Angular par domaine, prête à accueillir plusieurs équipes',
         'API REST Java / Spring Boot et modèle de données relationnel',
-        'Conventions de code, revues et pipeline de build dès le premier sprint',
+        'Conventions de code, revues, pipeline de build et déploiement automatisé dès le premier sprint',
         'Premiers écrans en production plutôt qu’une maquette parfaite',
       ],
       [
         'Domain-driven Angular architecture, ready for several teams',
         'Java / Spring Boot REST API and relational data model',
-        'Coding conventions, reviews and a build pipeline from the first sprint',
+        'Coding conventions, reviews, a build pipeline and automated deployment from the first sprint',
         'First screens in production rather than a perfect mock-up',
       ],
     ),

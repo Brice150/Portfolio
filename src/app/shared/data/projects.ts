@@ -118,7 +118,7 @@ export const projects: Project[] = [
         'Cache local IndexedDB : consultation et navigation possibles hors ligne',
         'Pages publiques prérendues au build, pour un premier affichage immédiat',
         'Données hébergées en Europe et conformité RGPD',
-        'Tests, lint et build rejoués par la CI à chaque push',
+        'Tests, lint et build rejoués par la CI à chaque push, puis déploiement automatique sur Firebase',
       ],
       [
         '19 management spaces, from the dashboard to forecasts',
@@ -130,7 +130,7 @@ export const projects: Project[] = [
         'Local IndexedDB cache: browsing and navigation possible offline',
         'Public pages prerendered at build time, for an instant first paint',
         'Data hosted in Europe and GDPR compliance',
-        'Tests, linting and build replayed by CI on every push',
+        'Tests, linting and build replayed by CI on every push, then an automatic deployment to Firebase',
       ],
     ),
     links: {
@@ -243,7 +243,7 @@ export const projects: Project[] = [
         'Médailles par jeu, succès et classement entre amis ou général',
         'Connexion Google, GitHub ou invité, liable ensuite sans perte',
         'Application installable et invitations poussées en temps réel',
-        'Tests, lint et build rejoués par la CI à chaque push',
+        'Tests, lint et build rejoués par la CI à chaque push, puis déploiement automatique sur Firebase',
       ],
       [
         'Six games on a shared engine, spread across three worlds',
@@ -254,7 +254,7 @@ export const projects: Project[] = [
         'Medals per game, achievements and a friends or global leaderboard',
         'Google, GitHub or guest sign-in, linkable later without loss',
         'Installable application and invitations pushed in real time',
-        'Tests, linting and build replayed by CI on every push',
+        'Tests, linting and build replayed by CI on every push, then an automatic deployment to Firebase',
       ],
     ),
     links: {
@@ -339,7 +339,7 @@ export const projects: Project[] = [
         'Résultat immédiat, sans compte ni installation',
         'Pages prérendues au build et servies en statique, sans serveur',
         'Développé en 2 jours pour répondre à un besoin concret',
-        'Tests, lint et build rejoués par la CI à chaque push',
+        'Tests, lint et build rejoués par la CI à chaque push, puis déploiement automatique sur GitHub Pages',
       ],
       [
         'Entry of household and renovation project details',
@@ -347,7 +347,7 @@ export const projects: Project[] = [
         'Immediate result, with no account and no installation',
         'Pages prerendered at build time and served statically, with no server',
         'Built in 2 days to answer a concrete need',
-        'Tests, linting and build replayed by CI on every push',
+        'Tests, linting and build replayed by CI on every push, then an automatic deployment to GitHub Pages',
       ],
     ),
     links: {
@@ -516,7 +516,7 @@ export const projects: Project[] = [
         'Maquettes desktop et mobile réellement défilables',
         'Routes prérendues, dont les fiches projet générées à partir des données',
         'Aucune dépendance d’icônes ni de carrousel : tout est fait main',
-        'Tests, lint et build rejoués par la CI à chaque push',
+        'Tests, lint et build rejoués par la CI à chaque push, puis déploiement automatique sur Firebase',
       ],
       [
         'Light, dark or system theme, with 4 accent colours',
@@ -524,7 +524,7 @@ export const projects: Project[] = [
         'Desktop and mobile mock-ups that genuinely scroll',
         'Prerendered routes, including project pages generated from the data',
         'No icon or carousel dependency: everything is hand-made',
-        'Tests, linting and build replayed by CI on every push',
+        'Tests, linting and build replayed by CI on every push, then an automatic deployment to Firebase',
       ],
     ),
     links: {

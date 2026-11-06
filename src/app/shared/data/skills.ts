@@ -193,10 +193,10 @@ export const skillGroups: SkillGroup[] = [
       },
       {
         name: l('CI/CD & déploiement', 'CI/CD & deployment'),
-        level: 65,
+        level: 72,
         note: l(
-          'Pipelines GitLab CI, builds automatisés, déploiement continu sur Firebase Hosting.',
-          'GitLab CI pipelines, automated builds, continuous deployment to Firebase Hosting.',
+          'Pipelines GitLab CI en mission, GitHub Actions sur mes projets personnels : format, lint, tests et build à chaque push, puis déploiement automatique en production sur Firebase Hosting ou GitHub Pages.',
+          'GitLab CI pipelines on assignment, GitHub Actions on my own projects: formatting, linting, tests and build on every push, then an automatic deployment to production on Firebase Hosting or GitHub Pages.',
         ),
       },
       {
