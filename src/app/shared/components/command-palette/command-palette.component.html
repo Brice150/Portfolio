@@ -1,0 +1,97 @@
+<dialog
+  #dialog
+  class="palette"
+  [attr.aria-label]="t().palette.dialog"
+  (close)="onDialogClose()"
+>
+  @if (isOpen()) {
+    <div class="panel">
+      <div class="search">
+        <app-icon name="search" size="1.15em" />
+        <input
+          #input
+          type="text"
+          role="combobox"
+          aria-autocomplete="list"
+          aria-expanded="true"
+          aria-controls="palette-liste"
+          [attr.aria-activedescendant]="activeId()"
+          [attr.aria-label]="t().palette.placeholder"
+          [placeholder]="t().palette.placeholder"
+          [value]="query()"
+          (input)="onInput($any($event.target).value)"
+          (keydown)="onKeydown($event)"
+          autocomplete="off"
+          spellcheck="false"
+        />
+        <kbd class="esc">Esc</kbd>
+      </div>
+
+      <div
+        #list
+        id="palette-liste"
+        class="results"
+        role="listbox"
+        [attr.aria-label]="t().palette.results"
+      >
+        @for (section of sections(); track section.group) {
+          <div
+            class="group"
+            role="group"
+            [attr.aria-labelledby]="'palette-groupe-' + section.group"
+          >
+            <p
+              class="group-label"
+              role="presentation"
+              [id]="'palette-groupe-' + section.group"
+            >
+              {{ t().palette[section.group] }}
+            </p>
+            @for (entry of section.commands; track entry.command.id) {
+              <div
+                class="option"
+                role="option"
+                [id]="'commande-' + entry.command.id"
+                [attr.data-index]="entry.index"
+                [class.is-active]="entry.index === activeIndex()"
+                [attr.aria-selected]="entry.index === activeIndex()"
+                (pointermove)="
+                  entry.index !== activeIndex() && activeIndex.set(entry.index)
+                "
+              >
+                <span class="option-icon" aria-hidden="true">
+                  <app-icon [name]="entry.command.icon" size="1.05em" />
+                </span>
+                <span class="option-text">
+                  <span class="option-label">{{ entry.command.label }}</span>
+                  @if (entry.command.hint) {
+                    <span class="option-hint">{{ entry.command.hint }}</span>
+                  }
+                </span>
+                <app-icon
+                  class="option-enter"
+                  name="arrow-right"
+                  size="0.95em"
+                />
+              </div>
+            }
+          </div>
+        } @empty {
+          <p class="empty">
+            {{ format(t().palette.empty, { query: query() }) }}
+          </p>
+        }
+      </div>
+
+      <p class="sr-only" aria-live="polite">
+        {{ format(t().palette.count, { count: results().length }) }}
+      </p>
+
+      <footer class="keys" aria-hidden="true">
+        <span><kbd>↑</kbd><kbd>↓</kbd> {{ t().palette.keyNavigate }}</span>
+        <span><kbd>↵</kbd> {{ t().palette.keySelect }}</span>
+        <span><kbd>Esc</kbd> {{ t().palette.keyClose }}</span>
+      </footer>
+    </div>
+  }
+</dialog>

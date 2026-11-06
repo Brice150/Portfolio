@@ -146,6 +146,37 @@ h1 {
   translate: 0 -3px;
 }
 
+/* Inclinaison vers le curseur (directive `appTilt`) : `transform` se compose
+   avec le `translate` du survol et le `scale` de l'entrée. */
+.portrait {
+  perspective: 1100px;
+}
+
+.portrait-frame {
+  transform: rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
+  transition:
+    border-color var(--dur) var(--ease),
+    translate var(--dur) var(--ease),
+    transform 0.6s var(--ease-out);
+}
+
+.portrait-frame.is-tilting {
+  transition:
+    border-color var(--dur) var(--ease),
+    translate var(--dur) var(--ease),
+    transform 0.12s linear;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .portrait-frame {
+    transform: none;
+  }
+}
+
+:host-context(html[data-motion='reduced']) .portrait-frame {
+  transform: none;
+}
+
 .portrait-frame img {
   width: 100%;
   height: 100%;

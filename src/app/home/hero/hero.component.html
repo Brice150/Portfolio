@@ -2,7 +2,9 @@
   <div class="text">
     <h1 id="hero-titre">
       <span class="hello">{{ t().hero.greeting }}</span>
-      <span class="name gradient-text">{{ profile.fullName }}</span>
+      <span class="name gradient-text"
+        ><app-scramble-text [text]="profile.fullName"
+      /></span>
     </h1>
 
     <p class="role">
@@ -82,7 +84,7 @@
   </div>
 
   <div class="portrait">
-    <div class="portrait-frame">
+    <div class="portrait-frame" appTilt="9">
       <img
         [src]="imagePath + 'logo.webp'"
         [alt]="format(t().hero.portraitAlt, { name: profile.fullName })"

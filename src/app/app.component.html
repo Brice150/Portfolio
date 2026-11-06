@@ -1,9 +1,10 @@
 <a class="skip-link" href="#contenu">{{ t().common.skipLink }}</a>
 
-<div class="ambience" aria-hidden="true">
+<div #ambience class="ambience" aria-hidden="true">
   <span class="orb orb-a"></span>
   <span class="orb orb-b"></span>
   <span class="grid"></span>
+  <span class="grid grid-glow"></span>
 </div>
 
 <app-header />
@@ -15,3 +16,10 @@
 <app-footer />
 
 <app-toast-host />
+
+<!-- Chargée une fois la page au repos : ses données (projets compris) ne
+     pèsent pas sur le premier affichage. Un clic sur le bouton avant son
+     arrivée reste mémorisé par le service et l’ouvre dès son chargement. -->
+@defer (on idle) {
+  <app-command-palette />
+}

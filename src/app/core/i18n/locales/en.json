@@ -38,6 +38,27 @@
     "motionOff": "Reduced",
     "motionNote": "System reduced-motion preferences always take precedence."
   },
+  "palette": {
+    "trigger": "Open the command palette",
+    "dialog": "Command palette",
+    "placeholder": "Go to a page, a project, an action…",
+    "results": "Results",
+    "empty": "No results for “{query}”",
+    "count": "{count} result(s)",
+    "navigation": "Navigation",
+    "projects": "Projects",
+    "actions": "Actions",
+    "preferences": "Preferences",
+    "themeLight": "Switch to light theme",
+    "themeDark": "Switch to dark theme",
+    "lang": "View the site in {label}",
+    "motionOff": "Reduce animations",
+    "motionOn": "Enable animations",
+    "accent": "Accent colour: {label}",
+    "keyNavigate": "navigate",
+    "keySelect": "select",
+    "keyClose": "close"
+  },
   "hero": {
     "greeting": "Hi, I’m",
     "rolePrefix": "Full-Stack ",

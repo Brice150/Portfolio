@@ -1,0 +1,24 @@
+<!-- Le prérendu ne contient qu'une fois le texte. Pendant l'effet seulement,
+     les lettres brouillées sont masquées aux aides techniques et une copie
+     intacte prend le relais. -->
+@if (running()) {
+  <span class="sr-only">{{ text() }}</span>
+}
+<span
+  class="glyphs"
+  [class.is-running]="running()"
+  [attr.aria-hidden]="running() || null"
+>
+  @for (word of words(); track $index; let last = $last) {
+    <span class="word">
+      @for (letter of word; track letter.index) {
+        <span class="ch" [class.is-scrambled]="scrambled()[letter.index]">{{
+          glyph(letter)
+        }}</span>
+      }
+    </span>
+    @if (!last) {
+      {{ ' ' }}
+    }
+  }
+</span>

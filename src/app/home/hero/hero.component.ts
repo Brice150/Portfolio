@@ -17,13 +17,21 @@ import { LanguageService } from '../../core/services/language.service';
 import { ThemeService } from '../../core/services/theme.service';
 import { IconComponent } from '../../shared/components/icon/icon.component';
 import { CopyTextDirective } from '../../shared/directives/copy-text.directive';
+import { TiltDirective } from '../../shared/directives/tilt.directive';
+import { ScrambleTextComponent } from '../../shared/components/scramble-text/scramble-text.component';
 import { ToastService } from '../../core/services/toast.service';
 
 const ROTATION_INTERVAL = 3200;
 
 @Component({
   selector: 'app-hero',
-  imports: [RouterLink, IconComponent, CopyTextDirective],
+  imports: [
+    RouterLink,
+    IconComponent,
+    CopyTextDirective,
+    TiltDirective,
+    ScrambleTextComponent,
+  ],
   templateUrl: './hero.component.html',
   styleUrl: './hero.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,

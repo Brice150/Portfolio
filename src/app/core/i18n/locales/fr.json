@@ -38,6 +38,27 @@
     "motionOff": "Réduites",
     "motionNote": "Les préférences système de réduction de mouvement sont respectées en priorité."
   },
+  "palette": {
+    "trigger": "Ouvrir la palette de commandes",
+    "dialog": "Palette de commandes",
+    "placeholder": "Aller à une page, un projet, une action…",
+    "results": "Résultats",
+    "empty": "Aucun résultat pour « {query} »",
+    "count": "{count} résultat(s)",
+    "navigation": "Navigation",
+    "projects": "Projets",
+    "actions": "Actions",
+    "preferences": "Préférences",
+    "themeLight": "Passer en thème clair",
+    "themeDark": "Passer en thème sombre",
+    "lang": "Afficher le site en {label}",
+    "motionOff": "Réduire les animations",
+    "motionOn": "Activer les animations",
+    "accent": "Couleur d’accent : {label}",
+    "keyNavigate": "naviguer",
+    "keySelect": "valider",
+    "keyClose": "fermer"
+  },
   "hero": {
     "greeting": "Bonjour, je suis",
     "rolePrefix": "Développeur Full-Stack ",
