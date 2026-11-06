@@ -69,9 +69,11 @@ export class HeaderComponent {
       )
       .subscribe(() => this.closeMenu());
 
+    // Navigateur seulement : le prérendu garde « Ctrl K ».
     afterNextRender(() => {
-      const platform = this.document.defaultView?.navigator.platform ?? '';
-      if (/mac|iphone|ipad/i.test(platform)) this.shortcut.set('⌘ K');
+      if (/mac|iphone|ipad/i.test(navigator.platform)) {
+        this.shortcut.set('⌘ K');
+      }
     });
   }
 

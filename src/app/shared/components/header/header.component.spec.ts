@@ -1,6 +1,7 @@
 import { TestBed } from '@angular/core/testing';
 import { Router } from '@angular/router';
-import { afterEach, describe, expect, it } from 'vitest';
+import { afterEach, describe, expect, it, vi } from 'vitest';
+import { CommandPaletteService } from '../../../core/services/command-palette.service';
 import { navItems } from '../../data/profile';
 import { mount } from '../../../../testing/mount';
 import { HeaderComponent } from './header.component';
@@ -141,5 +142,30 @@ describe('HeaderComponent', () => {
     fixture.componentInstance.closeMenu();
 
     expect(fixture.componentInstance.menuOpen()).toBe(false);
+  });
+
+  it('ouvre la palette de commandes et referme le menu mobile', async () => {
+    const fixture = await mount(HeaderComponent);
+    const header = fixture.componentInstance;
+    const host = fixture.nativeElement as HTMLElement;
+
+    header.toggleMenu();
+    host.querySelector<HTMLButtonElement>('.palette-trigger')?.click();
+
+    expect(TestBed.inject(CommandPaletteService).isOpen()).toBe(true);
+    expect(header.menuOpen()).toBe(false);
+  });
+
+  it('affiche le raccourci propre à la plateforme', async () => {
+    vi.spyOn(navigator, 'platform', 'get').mockReturnValue('MacIntel');
+    const mac = await mount(HeaderComponent);
+    await mac.whenStable();
+    expect(mac.componentInstance.shortcut()).toBe('⌘ K');
+
+    TestBed.resetTestingModule();
+    vi.spyOn(navigator, 'platform', 'get').mockReturnValue('Win32');
+    const windows = await mount(HeaderComponent);
+    await windows.whenStable();
+    expect(windows.componentInstance.shortcut()).toBe('Ctrl K');
   });
 });

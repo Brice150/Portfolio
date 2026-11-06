@@ -12,6 +12,13 @@ import { TiltDirective } from './tilt.directive';
 })
 class HostComponent {}
 
+@Component({
+  imports: [TiltDirective],
+  template: '<div appTilt></div>',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+})
+class DefaultHostComponent {}
+
 const move = (
   element: HTMLElement,
   x: number,
@@ -81,5 +88,36 @@ describe('TiltDirective', () => {
     TestBed.inject(ThemeService).motion.set('reduced');
     move(element, 200, 100);
     expect(element.style.getPropertyValue('--ry')).toBe('');
+  });
+
+  it('ne fait rien tant que l’élément n’a pas de taille', async () => {
+    const element = await build();
+    vi.mocked(element.getBoundingClientRect).mockReturnValue({
+      left: 0,
+      top: 0,
+      width: 0,
+      height: 0,
+    } as DOMRect);
+
+    move(element, 10, 10);
+
+    expect(element.classList).not.toContain('is-tilting');
+  });
+
+  it('retombe sur 8 degrés sans valeur fournie', async () => {
+    const fixture = await mount(DefaultHostComponent);
+    const element = (fixture.nativeElement as HTMLElement).querySelector(
+      'div',
+    ) as HTMLElement;
+    vi.spyOn(element, 'getBoundingClientRect').mockReturnValue({
+      left: 0,
+      top: 0,
+      width: 200,
+      height: 100,
+    } as DOMRect);
+
+    move(element, 200, 50);
+
+    expect(element.style.getPropertyValue('--ry')).toBe('8.00deg');
   });
 });

@@ -1,3 +1,4 @@
+import { PLATFORM_ID } from '@angular/core';
 import { TestBed } from '@angular/core/testing';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { PointerEffectsService } from './pointer-effects.service';
@@ -85,5 +86,32 @@ describe('PointerEffectsService', () => {
     move(document.body, 250, 400);
 
     expect(frames.length).toBe(0);
+  });
+
+  it('annule l’image en attente quand on le débranche', () => {
+    move(document.body, 250, 400);
+    detach();
+
+    expect(window.cancelAnimationFrame).toHaveBeenCalledWith(1);
+  });
+});
+
+describe('PointerEffectsService côté serveur', () => {
+  it('ne branche rien et rend une fonction sans effet', () => {
+    TestBed.configureTestingModule({
+      providers: [{ provide: PLATFORM_ID, useValue: 'server' }],
+    });
+    const listen = vi.spyOn(window, 'addEventListener');
+    const ambience = document.createElement('div');
+
+    const detach = TestBed.inject(PointerEffectsService).attach(ambience);
+
+    expect(detach()).toBeUndefined();
+    expect(listen).not.toHaveBeenCalledWith(
+      'pointermove',
+      expect.anything(),
+      expect.anything(),
+    );
+    listen.mockRestore();
   });
 });

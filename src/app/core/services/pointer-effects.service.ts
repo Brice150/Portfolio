@@ -21,21 +21,13 @@ export class PointerEffectsService {
 
     const reduced = view.matchMedia?.('(prefers-reduced-motion: reduce)');
     let frame = 0;
-    let last: PointerEvent | undefined;
+    let x = 0;
+    let y = 0;
 
     const apply = (): void => {
       frame = 0;
-      if (!last) return;
-
-      const { clientX, clientY } = last;
-      ambience.style.setProperty(
-        '--px',
-        (clientX / view.innerWidth).toFixed(4),
-      );
-      ambience.style.setProperty(
-        '--py',
-        (clientY / view.innerHeight).toFixed(4),
-      );
+      ambience.style.setProperty('--px', (x / view.innerWidth).toFixed(4));
+      ambience.style.setProperty('--py', (y / view.innerHeight).toFixed(4));
     };
 
     const onMove = (event: PointerEvent): void => {
@@ -43,7 +35,8 @@ export class PointerEffectsService {
       if (event.pointerType === 'touch') return;
       if (this.themeService.motion() === 'reduced' || reduced?.matches) return;
 
-      last = event;
+      x = event.clientX;
+      y = event.clientY;
       if (!frame) frame = view.requestAnimationFrame(apply);
     };
 

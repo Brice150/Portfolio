@@ -3,6 +3,7 @@ import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { mount } from '../../../../testing/mount';
 import {
   SCRAMBLE_DELAY,
+  SCRAMBLE_GLYPHS,
   SCRAMBLE_STEP,
   ScrambleTextComponent,
 } from './scramble-text.component';
@@ -94,5 +95,22 @@ describe('ScrambleTextComponent', () => {
     expect(host.querySelector('.glyphs')?.hasAttribute('aria-hidden')).toBe(
       false,
     );
+  });
+
+  it('ne renouvelle les caractères qu’à intervalle régulier', async () => {
+    const fixture = await mount(ScrambleTextComponent, {
+      inputs: { text: TEXT },
+    });
+    await fixture.whenStable();
+
+    await runFrame(fixture, 10);
+    const first = fixture.componentInstance.scrambled();
+    expect(first.every((glyph) => SCRAMBLE_GLYPHS.includes(glyph ?? ''))).toBe(
+      true,
+    );
+
+    // Une image trop proche de la précédente ne change rien.
+    await runFrame(fixture, 20);
+    expect(fixture.componentInstance.scrambled()).toBe(first);
   });
 });
