@@ -33,34 +33,31 @@
     centered
   />
 
-  <ol class="pipeline">
-    <li class="node" appReveal>
-      <span class="node-icon" aria-hidden="true">
-        <app-icon [name]="start.icon" size="1.1em" />
+  <ol class="rail">
+    <li class="rail-entry" appReveal>
+      <span class="rail-marker" aria-hidden="true">
+        <app-icon [name]="start.icon" size="1.05em" />
       </span>
-      <div>
-        <p class="node-label">{{ tr(start.label) }}</p>
-        <p class="node-detail">{{ tr(start.detail) }}</p>
+      <div class="rail-card">
+        <p class="rail-kicker">{{ t().ai.startLabel }}</p>
+        <h3 class="rail-title">{{ tr(start.label) }}</h3>
+        <p class="detail">{{ tr(start.detail) }}</p>
       </div>
     </li>
 
     @for (agent of agents; track agent.id; let i = $index) {
-      <li class="step" [appReveal]="i * 90">
-        <article
-          class="agent card-hover card-hover--line-top"
-          [attr.aria-labelledby]="'agent-' + agent.id"
-        >
+      <li class="rail-entry" [appReveal]="(i + 1) * 80">
+        <span class="rail-marker" aria-hidden="true">
+          <app-icon [name]="agent.icon" size="1.05em" />
+        </span>
+
+        <article class="rail-card agent">
           <header class="agent-head">
-            <span class="agent-icon" aria-hidden="true">
-              <app-icon [name]="agent.icon" size="1.3em" />
-            </span>
-            <div>
-              <p class="agent-step">
-                {{ t().ai.agentLabel }} {{ i + 1 }}/{{ agents.length }}
-              </p>
-              <h3 [id]="'agent-' + agent.id">{{ tr(agent.name) }}</h3>
-              <p class="tagline">{{ tr(agent.tagline) }}</p>
-            </div>
+            <p class="rail-kicker">
+              {{ t().ai.agentLabel }} {{ i + 1 }}/{{ agents.length }}
+            </p>
+            <h3 class="rail-title">{{ tr(agent.name) }}</h3>
+            <p class="detail">{{ tr(agent.tagline) }}</p>
           </header>
 
           <div class="agent-body">
@@ -97,13 +94,14 @@
       </li>
     }
 
-    <li class="node node--end" appReveal>
-      <span class="node-icon" aria-hidden="true">
-        <app-icon [name]="end.icon" size="1.1em" />
+    <li class="rail-entry" [appReveal]="(agents.length + 1) * 80">
+      <span class="rail-marker" aria-hidden="true">
+        <app-icon [name]="end.icon" size="1.05em" />
       </span>
-      <div>
-        <p class="node-label">{{ tr(end.label) }}</p>
-        <p class="node-detail">{{ tr(end.detail) }}</p>
+      <div class="rail-card">
+        <p class="rail-kicker">{{ t().ai.endLabel }}</p>
+        <h3 class="rail-title">{{ tr(end.label) }}</h3>
+        <p class="detail">{{ tr(end.detail) }}</p>
       </div>
     </li>
   </ol>
@@ -149,12 +147,4 @@
       </li>
     }
   </ul>
-
-  <div class="cta" appReveal>
-    <p>{{ t().ai.ctaBody }}</p>
-    <a routerLink="/contact" class="btn">
-      <span>{{ t().ai.ctaButton }}</span>
-      <app-icon name="arrow-right" size="1.05em" />
-    </a>
-  </div>
 </section>

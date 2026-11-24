@@ -133,6 +133,8 @@
     "pipelineEyebrow": "La chaîne",
     "pipelineHeading": "Ce que fait chaque agent, et avec quoi",
     "pipelineLead": "Les trois agents s’enchaînent comme les étapes d’un développement en équipe : écrire, relire, présenter. La décision finale reste humaine.",
+    "startLabel": "Point de départ",
+    "endLabel": "Décision finale",
     "agentLabel": "Agent",
     "reads": "Lit",
     "does": "Fait",
@@ -142,9 +144,7 @@
     "guardrailsLead": "Un agent utile en production se conçoit comme un coéquipier : un périmètre net, des sources maîtrisées et une relecture systématique.",
     "benefitsEyebrow": "Apport",
     "benefitsHeading": "Ce que l’équipe y gagne",
-    "benefitsLead": "L’objectif n’est pas de produire plus de code, mais de mieux répartir l’attention.",
-    "ctaBody": "Vous voulez outiller votre équipe avec des agents IA, sur une stack Angular / Java ou dans un contexte public exigeant (DSFR, RGAA) ? Parlons-en.",
-    "ctaButton": "Échanger sur le sujet"
+    "benefitsLead": "L’objectif n’est pas de produire plus de code, mais de mieux répartir l’attention."
   },
   "journey": {
     "eyebrow": "Parcours",
@@ -250,8 +250,8 @@
   },
   "footer": {
     "ctaEyebrow": "Contact",
-    "ctaHeading": "Un sujet Angular ou Java à creuser ?",
-    "ctaLead": "Question technique, retour sur un projet, proposition de collaboration : tous les messages trouvent une réponse, sous 48 heures ouvrées.",
+    "ctaHeading": "Un sujet Angular, Java ou IA à creuser ?",
+    "ctaLead": "Question technique, retour sur un projet, mise en place d’agents IA ou proposition de collaboration : tous les messages trouvent une réponse, sous 48 heures ouvrées.",
     "write": "Écrire un message",
     "siteMap": "Plan du site",
     "navigation": "Navigation",

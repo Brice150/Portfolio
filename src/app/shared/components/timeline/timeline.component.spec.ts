@@ -11,7 +11,7 @@ describe('TimelineComponent', () => {
     });
 
     expect(
-      (fixture.nativeElement as HTMLElement).querySelectorAll('li.entry')
+      (fixture.nativeElement as HTMLElement).querySelectorAll('li.rail-entry')
         .length,
     ).toBe(items.length);
   });
