@@ -78,7 +78,7 @@
     "collaborationLead": "Ce qui compte autant que la technique, et qui se voit dès les premières semaines d’une mission.",
     "aiEyebrow": "IA appliquée",
     "aiHeading": "3 agents IA dans ma chaîne de livraison",
-    "aiLead": "Chez Open, je conçois des agents qui développent depuis le ticket Jira, relisent le code et préparent les merge requests GitLab, sous validation humaine.",
+    "aiLead": "Chez Open, je conçois des agents qui développent depuis le ticket Jira, relisent le code et préparent les merge requests GitLab, sous validation humaine. En moyenne, 2 jours de développement gagnés par semaine.",
     "aiSee": "Découvrir les agents"
   },
   "profileIntro": {
@@ -126,6 +126,10 @@
     "heading": "3 agents IA, du ticket Jira à la merge request",
     "lead": "Au-delà de l’usage quotidien de l’IA, je conçois les agents qui outillent la chaîne de livraison de l’équipe : un agent développe à partir du ticket, un deuxième relit, un troisième prépare la merge request. Chacun a un rôle précis, des sources choisies et les règles du projet comme contrat.",
     "context": "Mis en place chez Open, sur la refonte du cadastre aquacole de la DGAMPA",
+    "gainValue": "2 jours",
+    "gainLabel": "de développement gagnés par semaine, en moyenne",
+    "toolsLabel": "Outils :",
+    "toolsValue": "GitHub Copilot en mission · Claude Code sur mes projets personnels",
     "pipelineEyebrow": "La chaîne",
     "pipelineHeading": "Ce que fait chaque agent, et avec quoi",
     "pipelineLead": "Les trois agents s’enchaînent comme les étapes d’un développement en équipe : écrire, relire, présenter. La décision finale reste humaine.",
@@ -287,7 +291,7 @@
     "journeyTitle": "Parcours | Brice Lecomte, développeur Angular & Java",
     "journeyDescription": "De l’ISAE-ENSMA à Open, via Sopra Steria et Capgemini : 4 missions Full-Stack Angular et Java sur des domaines réglementés, après une reconversion assumée.",
     "aiTitle": "IA appliquée | Brice Lecomte, développeur Angular & Java",
-    "aiDescription": "Les 3 agents IA que je conçois et utilise chez Open : développement full-stack depuis le ticket Jira, relecture du code, création des merge requests GitLab. Sous contrôle humain.",
+    "aiDescription": "Les 3 agents IA que je conçois chez Open sur GitHub Copilot : développement full-stack depuis le ticket Jira, relecture du code, merge requests GitLab. 2 jours gagnés par semaine.",
     "projectsTitle": "Projets | Brice Lecomte, développeur Angular & Java",
     "projectsDescription": "5 applications conçues, développées et déployées de bout en bout : gestion du quotidien, jeux multijoueur, simulateur d’aides et application Full-Stack Java.",
     "contactTitle": "Contact | Brice Lecomte, développeur Angular & Java",

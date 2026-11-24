@@ -3,10 +3,26 @@
   [heading]="t().ai.heading"
   [lead]="t().ai.lead"
 >
-  <p class="context">
-    <app-icon name="briefcase" size="1em" />
-    <span>{{ t().ai.context }}</span>
-  </p>
+  <div class="facts">
+    <p class="gain">
+      <span class="gain-value">{{ t().ai.gainValue }}</span>
+      <span class="gain-label">{{ t().ai.gainLabel }}</span>
+    </p>
+
+    <ul class="meta">
+      <li>
+        <app-icon name="briefcase" size="1em" />
+        <span>{{ t().ai.context }}</span>
+      </li>
+      <li>
+        <app-icon name="wrench" size="1em" />
+        <span
+          ><span class="meta-label">{{ t().ai.toolsLabel }}</span>
+          {{ t().ai.toolsValue }}</span
+        >
+      </li>
+    </ul>
+  </div>
 </app-page-hero>
 
 <section class="section shell">

@@ -78,7 +78,7 @@
     "collaborationLead": "What matters as much as the technical side, and shows within the first weeks of an assignment.",
     "aiEyebrow": "Applied AI",
     "aiHeading": "3 AI agents in my delivery chain",
-    "aiLead": "At Open, I design agents that build from the Jira ticket, review the code and prepare the GitLab merge requests, under human approval.",
+    "aiLead": "At Open, I design agents that build from the Jira ticket, review the code and prepare the GitLab merge requests, under human approval. On average, 2 days of development time saved per week.",
     "aiSee": "Discover the agents"
   },
   "profileIntro": {
@@ -126,6 +126,10 @@
     "heading": "3 AI agents, from Jira ticket to merge request",
     "lead": "Beyond everyday use of AI, I design the agents that equip the team’s delivery chain: one agent builds from the ticket, a second one reviews, a third one prepares the merge request. Each has a precise role, hand-picked sources and the project rules as its contract.",
     "context": "Set up at Open, on the rebuild of the DGAMPA aquaculture land registry",
+    "gainValue": "2 days",
+    "gainLabel": "of development time saved per week, on average",
+    "toolsLabel": "Tools:",
+    "toolsValue": "GitHub Copilot on assignment · Claude Code on my personal projects",
     "pipelineEyebrow": "The chain",
     "pipelineHeading": "What each agent does, and with what",
     "pipelineLead": "The three agents follow one another like the stages of team development: write, review, present. The final decision stays human.",
@@ -287,7 +291,7 @@
     "journeyTitle": "Career path | Brice Lecomte, Angular & Java developer",
     "journeyDescription": "From ISAE-ENSMA to Open, via Sopra Steria and Capgemini: 4 Full-Stack Angular and Java assignments in regulated domains, after a deliberate career switch.",
     "aiTitle": "Applied AI | Brice Lecomte, Angular & Java developer",
-    "aiDescription": "The 3 AI agents I design and use at Open: full-stack development from the Jira ticket, code review, GitLab merge request creation. Under human control.",
+    "aiDescription": "The 3 AI agents I design at Open on GitHub Copilot: full-stack development from the Jira ticket, code review, GitLab merge requests. 2 days saved per week.",
     "projectsTitle": "Projects | Brice Lecomte, Angular & Java developer",
     "projectsDescription": "5 web applications designed, built and deployed solo: daily-life management, multiplayer games, a grant simulator and a Full-Stack Java application.",
     "contactTitle": "Contact | Brice Lecomte, Angular & Java developer",

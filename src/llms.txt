@@ -19,7 +19,8 @@
 
 - Open, pour la DGAMPA (2026-) : refonte de l'application de gestion des parcelles
   du cadastre aquacole, en Angular et Java, bâtie sur le Système de Design de l'État
-  (DSFR) et conforme au RGAA. Conception de 3 agents IA sur la chaîne de livraison :
+  (DSFR) et conforme au RGAA. Conception de 3 agents IA (GitHub Copilot) sur la chaîne de livraison,
+  2 jours de développement gagnés par semaine en moyenne :
   développement full-stack depuis le ticket Jira, la maquette et la spécification
   Confluence (règles de nommage, DSFR, RGAA), relecture du code avec compte rendu des
   écarts et vulnérabilités, création des merge requests GitLab (labels, description,
@@ -41,7 +42,7 @@
 - Outils : Git (GitHub, GitLab), IntelliJ IDEA, VS Code, GitLab CI
 - IA : conception et usage d'agents IA (développement, relecture, merge request) connectés
   à Jira, Confluence et GitLab, sous validation humaine ; usage quotidien et maîtrisé de
-  l'IA générative
+  l'IA générative (GitHub Copilot en mission, Claude Code en personnel)
 - Domaines : applications métier réglementées, accessibilité numérique (RGAA),
   performance web, rendu côté serveur et prerendering
 

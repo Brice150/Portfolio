@@ -209,10 +209,10 @@ export const skillGroups: SkillGroup[] = [
       },
       {
         name: l('Conception d’agents IA', 'AI agent design'),
-        level: 80,
+        level: 82,
         note: l(
-          'Découpage en agents spécialisés, connectés à Jira, Confluence et GitLab, avec un contexte choisi et une validation humaine. Utilisés au quotidien chez Open.',
-          'Splitting work into specialised agents, connected to Jira, Confluence and GitLab, with hand-picked context and human approval. Used daily at Open.',
+          'Découpage en agents spécialisés, connectés à Jira, Confluence et GitLab, avec un contexte choisi et une validation humaine. GitHub Copilot en mission, Claude Code sur mes projets personnels.',
+          'Splitting work into specialised agents, connected to Jira, Confluence and GitLab, with hand-picked context and human approval. GitHub Copilot on assignment, Claude Code on my personal projects.',
         ),
       },
       {

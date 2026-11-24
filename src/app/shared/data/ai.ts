@@ -185,8 +185,8 @@ export const agentBenefits: WorkPrinciple[] = [
     icon: 'clock',
     title: l('Le temps humain là où il compte', 'Human time where it matters'),
     description: l(
-      'La mise en place répétitive est déléguée. L’attention se reporte sur les règles métier, les cas limites et la revue.',
-      'Repetitive groundwork is delegated. Attention moves to business rules, edge cases and review.',
+      'Les 2 jours gagnés chaque semaine ne servent pas à produire plus : ils se reportent sur les règles métier, les cas limites et la revue.',
+      'The 2 days saved each week are not spent producing more: they go to business rules, edge cases and review.',
     ),
   },
   {
