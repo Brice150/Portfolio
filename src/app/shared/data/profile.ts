@@ -71,6 +71,12 @@ export const navItems: NavItem[] = [
     hint: l('La stack, en détail', 'The stack, in detail'),
   },
   {
+    label: l('IA', 'AI'),
+    path: '/ia',
+    icon: 'sparkles',
+    hint: l('Mes agents IA en mission', 'My AI agents on assignment'),
+  },
+  {
     label: l('Projets', 'Projects'),
     path: '/projets',
     icon: 'briefcase',
@@ -158,8 +164,8 @@ export const principles: WorkPrinciple[] = [
       'AI as an accelerator, not an author',
     ),
     description: l(
-      'Utilisée tous les jours pour explorer une piste, générer un squelette ou relire un diff, avec des prompts ciblés et un contexte minimal afin de maîtriser le coût en tokens. Le code livré reste relu, compris et assumé ligne à ligne.',
-      'Used every day to explore an approach, generate a skeleton or review a diff, with targeted prompts and minimal context to keep the token cost under control. Shipped code is still reviewed, understood and owned line by line.',
+      'Les agents proposent, le développeur décide. Un contexte minimal pour maîtriser le coût en tokens, et un code livré qui reste relu, compris et assumé ligne à ligne.',
+      'Agents propose, the developer decides. Minimal context to keep the token cost under control, and shipped code that is still reviewed, understood and owned line by line.',
     ),
   },
   {

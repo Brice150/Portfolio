@@ -22,12 +22,14 @@ export const milestones: Milestone[] = [
         'Refonte d’une application de gestion des parcelles du cadastre aquacole, en Angular et Java.',
         'Mise en œuvre du DSFR, le Design Système de l’État, comme socle d’interface.',
         'Conformité RGAA visée sur l’ensemble du périmètre, hors partie cartographique.',
+        'Conception de 3 agents IA sur GitHub Copilot, intégrés à la chaîne de livraison (développement full-stack, relecture de code, création des merge requests GitLab) : 2 jours de développement gagnés par semaine en moyenne.',
         'Reprise du domaine métier maritime déjà pratiqué sur la mission précédente, sans temps de latence.',
       ],
       [
         'Rebuild of an aquaculture land registry management application, in Angular and Java.',
         'Adoption of the DSFR, the French State Design System, as the interface foundation.',
         'RGAA accessibility compliance targeted across the whole scope, apart from the mapping section.',
+        'Designed 3 AI agents on GitHub Copilot, built into the delivery chain (full-stack development, code review, GitLab merge request creation): 2 days of development time saved per week on average.',
         'Picked the maritime business domain back up from the previous assignment, with no ramp-up time.',
       ],
     ),
@@ -40,6 +42,8 @@ export const milestones: Milestone[] = [
       'Java',
       'Spring Boot',
       'PostgreSQL',
+      'GitHub Copilot',
+      'Agents IA',
     ],
   },
   {

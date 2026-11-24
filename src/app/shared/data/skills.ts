@@ -29,7 +29,7 @@ export const skillGroups: SkillGroup[] = [
       },
       {
         name: l('RxJS', 'RxJS'),
-        level: 85,
+        level: 82,
         note: l(
           'Pour tout ce qui arrive de façon asynchrone. Composition d’opérateurs, switchMap et debounce sur les recherches, désabonnements maîtrisés.',
           'For everything that arrives asynchronously. Operator composition, switchMap and debounce on searches, unsubscriptions under control.',
@@ -158,7 +158,7 @@ export const skillGroups: SkillGroup[] = [
       },
       {
         name: l('Firebase', 'Firebase'),
-        level: 85,
+        level: 82,
         note: l(
           'Firestore, Authentication et Hosting sur mes projets personnels. Le bon outil quand il faut livrer vite et seul.',
           'Firestore, Authentication and Hosting on my personal projects. The right tool when you have to ship fast and alone.',
@@ -205,6 +205,14 @@ export const skillGroups: SkillGroup[] = [
         note: l(
           'Exploration, squelettes, relecture de diff. Prompts ciblés et contexte minimal pour maîtriser le coût en tokens, et rien n’est livré sans relecture.',
           'Exploration, skeletons, diff review. Targeted prompts and minimal context to keep the token cost under control, and nothing ships without review.',
+        ),
+      },
+      {
+        name: l('Conception d’agents IA', 'AI agent design'),
+        level: 82,
+        note: l(
+          'Découpage en agents spécialisés, connectés à Jira, Confluence et GitLab, avec un contexte choisi et une validation humaine. GitHub Copilot en mission, Claude Code sur mes projets personnels.',
+          'Splitting work into specialised agents, connected to Jira, Confluence and GitLab, with hand-picked context and human approval. GitHub Copilot on assignment, Claude Code on my personal projects.',
         ),
       },
       {

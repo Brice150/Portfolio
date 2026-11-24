@@ -1,0 +1,160 @@
+<app-page-hero
+  [eyebrow]="t().ai.eyebrow"
+  [heading]="t().ai.heading"
+  [lead]="t().ai.lead"
+>
+  <div class="facts">
+    <p class="gain">
+      <span class="gain-value">{{ t().ai.gainValue }}</span>
+      <span class="gain-label">{{ t().ai.gainLabel }}</span>
+    </p>
+
+    <ul class="meta">
+      <li>
+        <app-icon name="briefcase" size="1em" />
+        <span>{{ t().ai.context }}</span>
+      </li>
+      <li>
+        <app-icon name="wrench" size="1em" />
+        <span
+          ><span class="meta-label">{{ t().ai.toolsLabel }}</span>
+          {{ t().ai.toolsValue }}</span
+        >
+      </li>
+    </ul>
+  </div>
+</app-page-hero>
+
+<section class="section shell">
+  <app-section-header
+    [eyebrow]="t().ai.pipelineEyebrow"
+    [heading]="t().ai.pipelineHeading"
+    [lead]="t().ai.pipelineLead"
+    centered
+  />
+
+  <ol class="pipeline">
+    <li class="node" appReveal>
+      <span class="node-icon" aria-hidden="true">
+        <app-icon [name]="start.icon" size="1.1em" />
+      </span>
+      <div>
+        <p class="node-label">{{ tr(start.label) }}</p>
+        <p class="node-detail">{{ tr(start.detail) }}</p>
+      </div>
+    </li>
+
+    @for (agent of agents; track agent.id; let i = $index) {
+      <li class="step" [appReveal]="i * 90">
+        <article
+          class="agent card-hover card-hover--line-top"
+          [attr.aria-labelledby]="'agent-' + agent.id"
+        >
+          <header class="agent-head">
+            <span class="agent-icon" aria-hidden="true">
+              <app-icon [name]="agent.icon" size="1.3em" />
+            </span>
+            <div>
+              <p class="agent-step">
+                {{ t().ai.agentLabel }} {{ i + 1 }}/{{ agents.length }}
+              </p>
+              <h3 [id]="'agent-' + agent.id">{{ tr(agent.name) }}</h3>
+              <p class="tagline">{{ tr(agent.tagline) }}</p>
+            </div>
+          </header>
+
+          <div class="agent-body">
+            <div class="block">
+              <h4>{{ t().ai.reads }}</h4>
+              <ul class="sources">
+                @for (source of tr(agent.inputs); track source) {
+                  <li class="chip">{{ source }}</li>
+                }
+              </ul>
+            </div>
+
+            <div class="block">
+              <h4>{{ t().ai.does }}</h4>
+              <ul class="actions">
+                @for (action of tr(agent.actions); track action) {
+                  <li>
+                    <app-icon name="check" size="0.95em" />
+                    <span>{{ action }}</span>
+                  </li>
+                }
+              </ul>
+            </div>
+
+            <div class="block output">
+              <h4>{{ t().ai.delivers }}</h4>
+              <p>
+                <app-icon name="arrow-right" size="1em" />
+                <span>{{ tr(agent.output) }}</span>
+              </p>
+            </div>
+          </div>
+        </article>
+      </li>
+    }
+
+    <li class="node node--end" appReveal>
+      <span class="node-icon" aria-hidden="true">
+        <app-icon [name]="end.icon" size="1.1em" />
+      </span>
+      <div>
+        <p class="node-label">{{ tr(end.label) }}</p>
+        <p class="node-detail">{{ tr(end.detail) }}</p>
+      </div>
+    </li>
+  </ol>
+</section>
+
+<section class="section shell">
+  <app-section-header
+    [eyebrow]="t().ai.guardrailsEyebrow"
+    [heading]="t().ai.guardrailsHeading"
+    [lead]="t().ai.guardrailsLead"
+    centered
+  />
+
+  <ul class="cards">
+    @for (item of guardrails; track item.icon; let i = $index) {
+      <li class="card card-hover" [appReveal]="i * 90">
+        <span class="card-icon" aria-hidden="true">
+          <app-icon [name]="item.icon" size="1.15em" />
+        </span>
+        <h3>{{ tr(item.title) }}</h3>
+        <p class="justified">{{ tr(item.description) }}</p>
+      </li>
+    }
+  </ul>
+</section>
+
+<section class="section shell">
+  <app-section-header
+    [eyebrow]="t().ai.benefitsEyebrow"
+    [heading]="t().ai.benefitsHeading"
+    [lead]="t().ai.benefitsLead"
+    centered
+  />
+
+  <ul class="benefits">
+    @for (item of benefits; track item.icon; let i = $index) {
+      <li class="benefit card-hover" [appReveal]="i * 80">
+        <app-icon [name]="item.icon" size="1.2em" />
+        <div>
+          <h3>{{ tr(item.title) }}</h3>
+          <p class="justified">{{ tr(item.description) }}</p>
+        </div>
+      </li>
+    }
+  </ul>
+
+  <div class="cta" appReveal>
+    <p>{{ t().ai.ctaBody }}</p>
+    <a routerLink="/contact" class="btn">
+      <span>{{ t().ai.ctaButton }}</span>
+      <app-icon name="arrow-right" size="1.05em" />
+    </a>
+  </div>
+</section>
