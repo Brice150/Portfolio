@@ -133,6 +133,7 @@
     }
   },
   "cli": {
+    "cache": { "environment": "all" },
     "analytics": false
   }
 }
