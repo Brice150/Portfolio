@@ -18,6 +18,10 @@ export const routes: Routes = [
       import('./journey/journey.component').then((m) => m.JourneyComponent),
   },
   {
+    path: 'ia',
+    loadComponent: () => import('./ai/ai.component').then((m) => m.AiComponent),
+  },
+  {
     path: 'projets',
     loadComponent: () =>
       import('./projects/projects.component').then((m) => m.ProjectsComponent),

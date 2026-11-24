@@ -10,6 +10,35 @@
   <app-profile-intro />
 </section>
 
+<section class="section shell">
+  <div class="ai card-hover card-hover--line-top" appReveal>
+    <app-section-header
+      [eyebrow]="t().home.aiEyebrow"
+      [heading]="t().home.aiHeading"
+      [lead]="t().home.aiLead"
+    />
+
+    <ol class="ai-agents">
+      @for (agent of agents; track agent.id; let i = $index) {
+        <li class="ai-agent">
+          <span class="ai-icon" aria-hidden="true">
+            <app-icon [name]="agent.icon" size="1.15em" />
+          </span>
+          <div>
+            <h3>{{ tr(agent.name) }}</h3>
+            <p>{{ tr(agent.tagline) }}</p>
+          </div>
+        </li>
+      }
+    </ol>
+
+    <a routerLink="/ia" class="btn btn-soft">
+      <span>{{ t().home.aiSee }}</span>
+      <app-icon name="arrow-right" size="1.05em" />
+    </a>
+  </div>
+</section>
+
 <section class="section shell" aria-labelledby="principes-titre">
   <app-section-header
     [eyebrow]="t().home.principlesEyebrow"

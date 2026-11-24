@@ -22,12 +22,14 @@ export const milestones: Milestone[] = [
         'Refonte d’une application de gestion des parcelles du cadastre aquacole, en Angular et Java.',
         'Mise en œuvre du DSFR, le Design Système de l’État, comme socle d’interface.',
         'Conformité RGAA visée sur l’ensemble du périmètre, hors partie cartographique.',
+        'Conception de 3 agents IA sur la chaîne de livraison : un agent de développement full-stack qui part du ticket Jira, de la maquette et de la spécification Confluence en respectant les règles de nommage, le DSFR et le RGAA, un agent de relecture qui rend compte des écarts, des vulnérabilités et des points à corriger, et un agent qui crée la merge request GitLab avec ses labels, sa description et ses choix techniques et fonctionnels.',
         'Reprise du domaine métier maritime déjà pratiqué sur la mission précédente, sans temps de latence.',
       ],
       [
         'Rebuild of an aquaculture land registry management application, in Angular and Java.',
         'Adoption of the DSFR, the French State Design System, as the interface foundation.',
         'RGAA accessibility compliance targeted across the whole scope, apart from the mapping section.',
+        'Designed 3 AI agents for the delivery chain: a full-stack development agent that starts from the Jira ticket, the mock-up and the Confluence specification while following the naming rules, the DSFR and RGAA, a review agent that reports gaps, vulnerabilities and issues to fix, and an agent that creates the GitLab merge request with its labels, description and technical and functional choices.',
         'Picked the maritime business domain back up from the previous assignment, with no ramp-up time.',
       ],
     ),
@@ -40,6 +42,7 @@ export const milestones: Milestone[] = [
       'Java',
       'Spring Boot',
       'PostgreSQL',
+      'Agents IA',
     ],
   },
   {

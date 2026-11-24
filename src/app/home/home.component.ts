@@ -5,6 +5,8 @@ import {
   computed,
   inject,
 } from '@angular/core';
+import { RouterLink } from '@angular/router';
+import { agents } from '../shared/data/ai';
 import { collaboration } from '../shared/data/expertise';
 import {
   highlights,
@@ -28,6 +30,7 @@ const MARQUEE_SIZE = 14;
 @Component({
   selector: 'app-home',
   imports: [
+    RouterLink,
     HeroComponent,
     HighlightGridComponent,
     ProfileIntroComponent,
@@ -50,6 +53,7 @@ export class HomeComponent implements OnInit {
   readonly highlights = highlights;
   readonly principles = principles;
   readonly collaboration = collaboration;
+  readonly agents = agents;
   readonly years = yearsOfExperience();
 
   readonly technologies = computed(() =>

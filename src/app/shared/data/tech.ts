@@ -3,6 +3,7 @@ import { Lang, Localized, l } from '../../core/i18n/lang';
 /** Seules les entrées rédigées en français ; les noms propres passent tels quels. */
 const TECH_LABELS: Record<string, Localized> = {
   'IA générative': l('IA générative', 'Generative AI'),
+  'Agents IA': l('Agents IA', 'AI agents'),
   'Simulation numérique': l('Simulation numérique', 'Numerical simulation'),
   Aérothermique: l('Aérothermique', 'Aerothermal engineering'),
   'Anglais professionnel': l('Anglais professionnel', 'Professional English'),
