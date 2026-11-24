@@ -4,7 +4,6 @@ import {
   OnInit,
   inject,
 } from '@angular/core';
-import { RouterLink } from '@angular/router';
 import {
   agentBenefits,
   agentGuardrails,
@@ -23,7 +22,6 @@ import { RevealDirective } from '../shared/directives/reveal.directive';
 @Component({
   selector: 'app-ai',
   imports: [
-    RouterLink,
     PageHeroComponent,
     SectionHeaderComponent,
     IconComponent,

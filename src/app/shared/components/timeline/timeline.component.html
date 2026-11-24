@@ -1,18 +1,18 @@
-<ol class="timeline">
+<ol class="rail">
   @for (milestone of milestones(); track milestone.id; let i = $index) {
     <li
-      class="entry"
+      class="rail-entry"
       [class.is-current]="milestone.current"
       [appReveal]="i * 80"
     >
-      <span class="marker" aria-hidden="true">
+      <span class="rail-marker" aria-hidden="true">
         <app-icon [name]="iconFor(milestone.kind)" size="1.05em" />
       </span>
 
-      <article class="card">
+      <article class="rail-card">
         <header class="card-head">
           <div class="titles">
-            <p class="period">
+            <p class="rail-kicker">
               <time [attr.datetime]="milestone.startYear">{{
                 tr(milestone.period)
               }}</time>
@@ -20,7 +20,7 @@
                 <span class="badge-current">{{ t().timeline.current }}</span>
               }
             </p>
-            <h3>{{ tr(milestone.title) }}</h3>
+            <h3 class="rail-title">{{ tr(milestone.title) }}</h3>
             <p class="org">
               <span class="org-name">{{ tr(milestone.organisation) }}</span>
               @if (milestone.location; as location) {

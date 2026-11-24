@@ -133,6 +133,8 @@
     "pipelineEyebrow": "The chain",
     "pipelineHeading": "What each agent does, and with what",
     "pipelineLead": "The three agents follow one another like the stages of team development: write, review, present. The final decision stays human.",
+    "startLabel": "Starting point",
+    "endLabel": "Final decision",
     "agentLabel": "Agent",
     "reads": "Reads",
     "does": "Does",
@@ -142,9 +144,7 @@
     "guardrailsLead": "An agent that is useful in production is designed like a teammate: a clear scope, controlled sources and a systematic review.",
     "benefitsEyebrow": "Value",
     "benefitsHeading": "What the team gains",
-    "benefitsLead": "The goal is not to produce more code, but to spread attention better.",
-    "ctaBody": "Want to equip your team with AI agents, on an Angular / Java stack or in a demanding public-sector context (DSFR, RGAA)? Let’s talk.",
-    "ctaButton": "Talk about it"
+    "benefitsLead": "The goal is not to produce more code, but to spread attention better."
   },
   "journey": {
     "eyebrow": "Career path",
@@ -250,8 +250,8 @@
   },
   "footer": {
     "ctaEyebrow": "Contact",
-    "ctaHeading": "An Angular or Java topic to dig into?",
-    "ctaLead": "A technical question, feedback on a project, a collaboration proposal: every message gets an answer, within 48 working hours.",
+    "ctaHeading": "An Angular, Java or AI topic to dig into?",
+    "ctaLead": "A technical question, feedback on a project, setting up AI agents or a collaboration proposal: every message gets an answer, within 48 working hours.",
     "write": "Write a message",
     "siteMap": "Site map",
     "navigation": "Navigation",

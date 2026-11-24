@@ -6,8 +6,8 @@ export const pipelineStart: PipelineEnd = {
   icon: 'book',
   label: l('Ticket Jira', 'Jira ticket'),
   detail: l(
-    'Le point de départ : un besoin rédigé, avec ses critères d’acceptation.',
-    'The starting point: a written need, with its acceptance criteria.',
+    'Un besoin rédigé, avec ses critères d’acceptation.',
+    'A written need, with its acceptance criteria.',
   ),
 };
 
