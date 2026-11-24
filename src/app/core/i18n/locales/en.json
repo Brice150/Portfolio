@@ -78,7 +78,7 @@
     "collaborationLead": "What matters as much as the technical side, and shows within the first weeks of an assignment.",
     "aiEyebrow": "Applied AI",
     "aiHeading": "3 AI agents in my delivery chain",
-    "aiLead": "At Open, I design and use agents that build from the Jira ticket, review the code and prepare the GitLab merge requests. Always under human approval.",
+    "aiLead": "At Open, I design agents that build from the Jira ticket, review the code and prepare the GitLab merge requests, under human approval.",
     "aiSee": "Discover the agents"
   },
   "profileIntro": {
@@ -87,7 +87,7 @@
     "paragraph1": "After graduating as an aerospace engineer from ISAE-ENSMA in 2021, I chose to retrain as a software developer. Turbines were an interesting subject, but the job leaned towards highly theoretical calculations aimed at optimising a fraction of a percent of a sub-assembly of an aircraft engine. Looking for work with more tangible results, professionally and personally, I retrained through a Java conversion programme that came with a permanent contract at Sopra Steria. I passed the Java certification at the end of that training, in July 2021.",
     "paragraph2": "Since then, 4 assignments on business applications under strong regulatory constraints. At Sopra Steria, for the Ministry of the Armed Forces, I spent a year and a half on data migration (Talend, Java, SQL), loading various source files into the database of a military aircraft maintenance web application, then 2 years of Angular and Java development on another maintenance application, this time for ground vehicles. At Capgemini, I took over the pleasure-craft management applications of the Directorate-General for Maritime Affairs, Fisheries and Aquaculture (DGAMPA), in Angular and Java, and built the 2026 taxation scheme end to end. Today at Open, still for the DGAMPA, I am leading the rebuild of the aquaculture land registry management application, in Angular and Java, based on the French State Design System and compliant with the RGAA accessibility standard.",
     "paragraph3": "Beyond that Angular/Java stack, it is above all the scope of my role that has widened: frontend referent, leading a team of 2 developers against client milestones, mentoring an intern and then an apprentice. That role changed the way I work: I now spend as much time unblocking, reviewing and explaining as writing code, and that is what moves the team forward.",
-    "paragraph4": "AI is now an integral part of how I deliver. Beyond daily use (exploring an approach, reviewing a diff), at Open I design AI agents that cover the whole chain: a development agent that starts from the Jira ticket, the mock-up and the Confluence specification to deliver full-stack code that complies with the DSFR, RGAA and naming rules, a review agent that reports gaps and vulnerabilities, and an agent that creates the documented GitLab merge request. Not a single line is merged without being reviewed, understood and owned. In parallel, I have designed and deployed several applications on my own, including Life Rise, which brings together 19 modules, a conversational assistant and sharing between profiles: my testing ground for new Angular features before proposing them on an assignment.",
+    "paragraph4": "In parallel, I have designed and deployed several applications on my own, including Life Rise, which brings together 19 modules, a conversational assistant and sharing between profiles: my testing ground for new Angular features before proposing them on an assignment.",
     "seeJourney": "See the full career path",
     "factsHeading": "The profile at a glance",
     "copyFailed": "Copy failed: {email}",
@@ -124,7 +124,7 @@
   "ai": {
     "eyebrow": "Applied AI",
     "heading": "3 AI agents, from Jira ticket to merge request",
-    "lead": "I no longer just use AI: I design the agents that equip the team’s delivery chain. One agent builds from the ticket, a second one reviews, a third one prepares the merge request. Each has a precise role, hand-picked sources and the project rules as its contract.",
+    "lead": "Beyond everyday use of AI, I design the agents that equip the team’s delivery chain: one agent builds from the ticket, a second one reviews, a third one prepares the merge request. Each has a precise role, hand-picked sources and the project rules as its contract.",
     "context": "Set up at Open, on the rebuild of the DGAMPA aquaculture land registry",
     "pipelineEyebrow": "The chain",
     "pipelineHeading": "What each agent does, and with what",

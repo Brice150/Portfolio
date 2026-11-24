@@ -48,7 +48,6 @@ export const roleRotation: string[] = [
   'Java · Spring Boot · REST',
   'PostgreSQL · Oracle · SQL',
   'DSFR · RGAA · Performance',
-  'Agents IA · Jira · Confluence · GitLab',
 ];
 
 export const navItems: NavItem[] = [
@@ -165,8 +164,8 @@ export const principles: WorkPrinciple[] = [
       'AI as an accelerator, not an author',
     ),
     description: l(
-      'Des agents IA conçus pour développer, relire et préparer les merge requests, chacun avec un rôle précis et un contexte minimal pour maîtriser le coût en tokens. Le code livré reste relu, compris et assumé ligne à ligne.',
-      'AI agents designed to build, review and prepare merge requests, each with a precise role and minimal context to keep the token cost under control. Shipped code is still reviewed, understood and owned line by line.',
+      'Les agents proposent, le développeur décide. Un contexte minimal pour maîtriser le coût en tokens, et un code livré qui reste relu, compris et assumé ligne à ligne.',
+      'Agents propose, the developer decides. Minimal context to keep the token cost under control, and shipped code that is still reviewed, understood and owned line by line.',
     ),
   },
   {

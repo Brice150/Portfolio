@@ -78,7 +78,7 @@
     "collaborationLead": "Ce qui compte autant que la technique, et qui se voit dès les premières semaines d’une mission.",
     "aiEyebrow": "IA appliquée",
     "aiHeading": "3 agents IA dans ma chaîne de livraison",
-    "aiLead": "Chez Open, je conçois et j’utilise des agents qui développent depuis le ticket Jira, relisent le code et préparent les merge requests GitLab. Toujours sous validation humaine.",
+    "aiLead": "Chez Open, je conçois des agents qui développent depuis le ticket Jira, relisent le code et préparent les merge requests GitLab, sous validation humaine.",
     "aiSee": "Découvrir les agents"
   },
   "profileIntro": {
@@ -87,7 +87,7 @@
     "paragraph1": "Diplômé ingénieur en aérospatial de l’ISAE-ENSMA en 2021, j’ai choisi de faire une reconversion dans le développement logiciel. Si le sujet des turbines m’intéressait, le métier s’orientait surtout vers des calculs très théoriques pour optimiser une fraction de pourcentage d’une sous-partie de réacteur d'avion. En quête de réalisations aux résultats plus concrets, en pro comme en perso, j'ai choisi de me reconvertir au travers d'une POEI Java avec un CDI à la clé chez Sopra Steria. J’ai validé la certification Java à l’issue de cette formation, en juillet 2021.",
     "paragraph2": "Depuis, 4 missions sur des applications métier à forte contrainte réglementaire. Chez Sopra Steria, pour le ministère des Armées, j’ai passé 1 an et demi sur de la reprise de données (Talend, Java, SQL), depuis différents fichiers vers la base d'une application web de maintenance d'aéronefs militaires, puis 2 ans en développement Angular et Java sur une autre application de maintenance, dédiée cette fois aux véhicules terrestres. Chez Capgemini, j’ai repris les applications de gestion des navires de plaisance de la Direction générale des affaires maritimes, de la pêche et de l'aquaculture (DGAMPA), en Angular et Java, et développé de bout en bout la taxation 2026. Aujourd’hui chez Open, toujours pour la DGAMPA, je mène la refonte de l’application de gestion des parcelles du cadastre aquacole, en Angular et Java, bâtie sur le Système de Design de l’État et conforme au RGAA.",
     "paragraph3": "Au-delà de cette stack Angular/Java, c’est surtout la dimension de mon rôle qui s’est élargie : référent frontend, pilotage d’une équipe de 2 développeurs sur les jalons client, encadrement d’un stagiaire puis d’un alternant. Ce rôle a changé ma façon de travailler : je passe désormais autant de temps à débloquer, relire et expliquer qu’à écrire du code, et c’est ce qui fait avancer l’équipe.",
-    "paragraph4": "L’IA fait aujourd’hui partie intégrante de ma façon de livrer. Au-delà de l’usage quotidien (explorer une piste, relire un diff), je conçois chez Open des agents IA qui couvrent la chaîne complète : un agent de développement qui part du ticket Jira, de la maquette et de la spécification Confluence pour livrer du full-stack conforme au DSFR, au RGAA et aux règles de nommage, un agent de relecture qui produit un compte rendu des écarts et des vulnérabilités, et un agent qui crée la merge request GitLab documentée. Aucune ligne n’est fusionnée sans avoir été relue, comprise et assumée. En parallèle, j’ai conçu et déployé seul plusieurs applications, dont Life Rise, qui réunit 19 modules, un assistant conversationnel et du partage entre profils : mon terrain d’essai des nouveautés d’Angular avant de les proposer en mission.",
+    "paragraph4": "En parallèle, j’ai conçu et déployé seul plusieurs applications, dont Life Rise, qui réunit 19 modules, un assistant conversationnel et du partage entre profils : mon terrain d’essai des nouveautés d’Angular avant de les proposer en mission.",
     "seeJourney": "Voir le parcours détaillé",
     "factsHeading": "Le profil en bref",
     "copyFailed": "Copie impossible : {email}",
@@ -124,7 +124,7 @@
   "ai": {
     "eyebrow": "IA appliquée",
     "heading": "3 agents IA, du ticket Jira à la merge request",
-    "lead": "Je ne me contente plus d’utiliser l’IA : je conçois les agents qui outillent la chaîne de livraison de l’équipe. Un agent développe à partir du ticket, un deuxième relit, un troisième prépare la merge request. Chacun a un rôle précis, des sources choisies et les règles du projet comme contrat.",
+    "lead": "Au-delà de l’usage quotidien de l’IA, je conçois les agents qui outillent la chaîne de livraison de l’équipe : un agent développe à partir du ticket, un deuxième relit, un troisième prépare la merge request. Chacun a un rôle précis, des sources choisies et les règles du projet comme contrat.",
     "context": "Mis en place chez Open, sur la refonte du cadastre aquacole de la DGAMPA",
     "pipelineEyebrow": "La chaîne",
     "pipelineHeading": "Ce que fait chaque agent, et avec quoi",
