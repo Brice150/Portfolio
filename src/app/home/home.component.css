@@ -88,6 +88,22 @@
   border: 1px solid var(--border);
   border-radius: var(--r-md);
   background: var(--surface-2);
+  transition:
+    border-color var(--dur-fast) var(--ease),
+    background var(--dur-fast) var(--ease),
+    translate var(--dur-fast) var(--ease);
+}
+
+.ai-agent:hover {
+  border-color: color-mix(in srgb, var(--accent) 40%, transparent);
+  background: color-mix(in srgb, var(--accent) 6%, var(--surface-2));
+  translate: 0 -2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ai-agent:hover {
+    translate: 0 0;
+  }
 }
 
 .ai-icon {
