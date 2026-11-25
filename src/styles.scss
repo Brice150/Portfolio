@@ -37,8 +37,8 @@ html {
   --surface-3: light-dark(#e8ecf4, #1e242f);
 
   --text: light-dark(#0b1017, #edf1f7);
-  --text-muted: light-dark(#3d4756, #bcc5d1);
-  --text-faint: light-dark(#5a6575, #98a3b2);
+  --text-muted: light-dark(#3d4756, #d5dbe4);
+  --text-faint: light-dark(#5a6575, #b4bdca);
 
   --border: light-dark(rgb(9 12 20 / 10%), rgb(255 255 255 / 9%));
   --border-strong: light-dark(rgb(9 12 20 / 18%), rgb(255 255 255 / 18%));
@@ -481,17 +481,6 @@ ol {
   background: var(--surface-2);
   border-color: var(--accent);
   color: var(--text);
-  box-shadow: none;
-}
-
-.btn-soft {
-  background: var(--accent-soft);
-  color: var(--accent);
-}
-
-.btn-soft:hover {
-  background: var(--accent-soft);
-  color: var(--accent-hover);
   box-shadow: none;
 }
 
